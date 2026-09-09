@@ -1,0 +1,21 @@
+schema_version: 1
+
+ticket:
+  key: ""
+  folder_name: ""
+  source_directory: ""
+  primary_source: "ticket.md"
+
+input_snapshot:
+  revision: 1
+  generated_at: ""
+  files: []
+
+workflow:
+  status: "pending"
+  current_phase: "DISCOVER"
+  last_completed_phase: null
+  updated_at: ""
+
+phases: {}
+outputs: {}

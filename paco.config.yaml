@@ -1,0 +1,23 @@
+product: Paco
+environments:
+  default: dev
+  dev:
+    baseUrl: https://blinx.dev.blinxpaco-np.com
+    dashboardPath: /paco/dashboard
+
+paths:
+  ticketSource: ticket
+  ticketOutput: docs/tickets
+  testResults: test-results
+  playwrightAuth: playwright/.auth
+
+ticket:
+  sourcePattern: "^[A-Z][A-Z0-9]*-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*$"
+  primarySourceFile: ticket.md
+
+defaults:
+  readOnly: true
+  language: vi
+  uiTermsLanguage: en
+  browser: chromium
+  authStrategy: manual
