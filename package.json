@@ -4,10 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "validate": "bash validate-config.sh && npm run type-check",
+    "validate": "npm run validate:static && npm run type-check && npm run test:fixtures && npm run test:synthetic && playwright test --list",
+    "validate:static": "bash validate-config.sh && bash validate-standards.sh && bash validate-docs-structure.sh && bash validate-skills.sh && bash validate-playwright.sh",
     "type-check": "tsc --noEmit",
-    "test:synthetic": "bash scripts/synthetic-validation.sh",
-    "test:fixtures": "node --loader ts-node/esm scripts/test-fixtures.ts"
+    "test:synthetic": "node --loader ts-node/esm --test scripts/tests/synthetic-workflow.test.ts",
+    "test:fixtures": "node --loader ts-node/esm --test scripts/tests/*.test.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.0",

@@ -1,11 +1,13 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-[ -f "playwright.config.ts" ] || (echo "FAIL: playwright.config.ts missing" && exit 1)
-[ -d "playwright/.auth" ] || (echo "FAIL: .auth directory missing" && exit 1)
-[ -f "playwright/fixtures/auth-fixtures.ts" ] || (echo "FAIL: auth fixtures missing" && exit 1)
+files=(playwright.config.ts playwright/fixtures/auth-fixtures.ts playwright/tests/smoke/dashboard.spec.ts playwright/README.md scripts/manual-login.md)
+for file in "${files[@]}"; do
+  [ -f "$file" ] || { echo "FAIL: $file missing"; exit 1; }
+done
 
-# Check .gitignore includes auth state
-grep -q "playwright/.auth/" .gitignore || (echo "FAIL: .auth not in .gitignore" && exit 1)
+grep -q '^playwright/.auth/$' .gitignore || { echo "FAIL: .auth not in .gitignore"; exit 1; }
+grep -q 'Blocked: Authentication state not found' playwright/fixtures/auth-fixtures.ts || { echo "FAIL: missing auth Blocked handling"; exit 1; }
+grep -q 'Blocked: Authentication expired' playwright/fixtures/auth-fixtures.ts || { echo "FAIL: missing expiry Blocked handling"; exit 1; }
 
 echo "PASS: Playwright scaffold complete"

@@ -8,31 +8,41 @@
 ## Progress
 
 | Phase | Status | Outcome | Updated |
-|-------|--------|---------|---------|
+|---|---|---|---|
 | DISCOVER | pending | - | - |
 | INGEST | pending | - | - |
+| ANALYZE | pending | - | - |
+| EXPLORE | pending | - | - |
+| TEST_DESIGN | pending | - | - |
+| AUTOMATION_REVIEW | pending | - | - |
+| AUTOMATE | pending | - | - |
+| EXECUTE | pending | - | - |
+| REPORT | pending | - | - |
+| COMPLETE | pending | - | - |
 
 ## Completed Work
 
-[Liệt kê phase đã hoàn thành]
+- Chưa có
 
 ## Warnings & Blockers
 
-[Warnings và blockers hiện tại]
+- Không có
 
 ## Valid Artifacts
 
-[Danh sách artifact còn hợp lệ]
+- Không có
+
+## Stale Artifacts
+
+- Không có
 
 ## Next Action
 
-[Action cụ thể tiếp theo]
+Chạy `DISCOVER` cho đúng ticket được chọn.
 
 ## Checkpoint History
 
-[Append-only log của checkpoints]
-
----
+- Chưa có checkpoint
 
 ## Tester notes
 

@@ -15,9 +15,15 @@ Output: `docs/tickets/<TICKET-ID>-<short-title>/`
 | `requirements.md` | `paco-requirements` | Read-only |
 | `exploration.md` | `paco-explore` | Read-only |
 | `test-cases.md` | `paco-test-design` | Read-only |
-| `automation.md` | `paco-playwright` | Read-only |
-| `report.md` | `paco-report` | Read-only |
+| `automation.md`, Playwright ticket source | `paco-playwright` | Read-only |
+| Raw Playwright artifact | Playwright runner | Chỉ tham chiếu, không copy secrets vào docs |
+| `report.md`, `defects/**`, curated `evidence/**` | `paco-report` | Read-only hoặc proposal |
+| `docs/test-runs/**` | `paco-report` | Chỉ tạo khi có run thật |
+
+Child skill được gọi trực tiếp chỉ ghi artifact thuộc ownership và trả checkpoint proposal. Chỉ `paco-ticket` được cập nhật `manifest.yaml`/`status.md` sau khi verify artifact và checksum.
 
 ## Protected Content
 
-Mọi file có section `## Tester notes` là protected. Skill merge cẩn thận hoặc dừng nếu conflict.
+Mọi Markdown do skill quản lý phải có đúng một final section `## Tester notes`. Skill giữ nguyên section này theo byte hoặc dừng nếu merge không an toàn.
+
+Raw runner artifact ở `test-results/`, không đưa authentication state, token, cookie hoặc dữ liệu nhạy cảm vào report/evidence.

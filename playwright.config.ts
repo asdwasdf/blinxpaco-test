@@ -1,8 +1,8 @@
 import { defineConfig, devices } from '@playwright/test';
-import { loadConfig } from './scripts/load-config.js';
+import { getDefaultEnvironment, loadConfig } from './scripts/load-config.js';
 
 const config = loadConfig();
-const baseURL = config.environments.dev.baseUrl;
+const baseURL = getDefaultEnvironment(config).baseUrl;
 
 export default defineConfig({
   testDir: './playwright/tests',
