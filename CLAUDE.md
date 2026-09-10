@@ -44,6 +44,12 @@ Mặc định **read-only**: điều hướng, xem, search, filter, sort, pagina
 - Input revision tracking bằng SHA-256 checksum
 - Stale propagation khi source thay đổi
 
+## Knowledge và Result
+
+- Phân biệt `Confirmed`, `Observed`, `Inferred`, `Open Question`; mọi claim có provenance
+- Result chỉ dùng `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive`
+- Automation tùy chọn; không automate assertion chỉ dựa trên `Inferred`
+
 ## Protected Content
 
 Mọi artifact có khu vực `## Tester notes` được bảo vệ. Skill không được ghi đè; merge conflict phải dừng và báo.
@@ -52,6 +58,8 @@ Mọi artifact có khu vực `## Tester notes` được bảo vệ. Skill không
 
 Orchestrator: `paco-ticket`
 Phase skills: `paco-requirements`, `paco-explore`, `paco-test-design`, `paco-playwright`, `paco-report`
+
+Child skill gọi trực tiếp chỉ ghi artifact thuộc ownership và trả checkpoint proposal; chỉ `paco-ticket` cập nhật manifest/status.
 
 Chi tiết: `docs/standards/`
 

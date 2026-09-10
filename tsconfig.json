@@ -9,8 +9,13 @@
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "outDir": "./dist",
-    "rootDir": "./scripts"
+    "rootDir": "."
   },
-  "include": ["scripts/**/*"],
+  "include": [
+    "scripts/**/*.ts",
+    "playwright.config.ts",
+    "playwright/fixtures/**/*.ts",
+    "playwright/tests/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

@@ -1,50 +1,37 @@
 # Manual Login Guide
 
-## Setup Authentication State
+Playwright dùng authentication state do tester tạo thủ công. Không nhập credential vào prompt, skill, docs hoặc test code.
 
-Playwright tests require manual login to create auth state.
+## Tạo local state
 
-### Steps
+1. Chạy headed browser:
 
-1. **Run headed browser:**
 ```bash
-npx playwright codegen https://blinx.dev.blinxpaco-np.com/paco/dashboard
+rtk npx playwright codegen https://blinx.dev.blinxpaco-np.com/paco/dashboard
 ```
 
-2. **Login manually:**
-   - Enter credentials
-   - Complete SSO/MFA if required
-   - Verify dashboard loads
+2. Tự nhập credentials và hoàn thành SSO/MFA.
+3. Xác nhận dashboard tải xong.
+4. Trong Playwright Inspector, lưu Storage State thành `playwright/.auth/user.json`.
+5. Chỉ tạo role-specific state khi role thật đã được xác định.
 
-3. **Save auth state:**
+## Security
+
+- `playwright/.auth/` Git ignored và local-only.
+- Không đọc nội dung state vào prompt.
+- Không copy state, token, cookie hoặc header vào report/evidence/defect.
+- Không commit hoặc chia sẻ state file.
+
+## Expiration
+
+Missing state trả `Blocked: Authentication state not found.`. Redirect về login trả `Blocked: Authentication expired`; đây không phải product failure. Tạo lại state bằng quy trình thủ công trên.
+
+## Read-only smoke
+
+Liệt kê test mà không mở Paco:
+
 ```bash
-# In Playwright Inspector, after login:
-# Tools > Save Storage State > playwright/.auth/user.json
+rtk npx playwright test --list
 ```
 
-4. **Verify state saved:**
-```bash
-ls -lh playwright/.auth/user.json
-```
-
-### Security
-
-- `playwright/.auth/` is Git ignored
-- Never commit auth state files
-- Never copy auth state into docs/reports
-- Auth state is local-only
-
-### Expiration
-
-If tests fail with "Authentication expired":
-1. Delete old state: `rm playwright/.auth/user.json`
-2. Repeat manual login steps
-3. Save new auth state
-
-### Role-Specific States
-
-Create separate states for different roles:
-- `user.json` - default user role
-- `admin.json` - admin role (if needed)
-
-Tests specify which state via fixture.
+Chỉ chạy smoke sau authorization riêng. Test dashboard không click mutation control, fill, submit, upload, import hoặc probe private API.

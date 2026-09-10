@@ -13,9 +13,12 @@
 ### REQ-[TICKET]-001
 
 **Classification:** [Confirmed/Observed/Inferred]
-**Lifecycle:** Active
-**Feature:** [feature name]
-**Actor/Role:** [nếu biết]
+**Lifecycle:** [Candidate/Active/Disputed/Superseded/Retired]
+**Feature/Scope:** [feature và scope]
+**Actor/Role:** [role hoặc Unknown]
+**Inference Basis:** [bắt buộc nếu Inferred]
+**Observation Context:** [environment/role/timestamp nếu Observed]
+**Acceptance Criteria Status:** [Present/Missing/Ambiguous]
 
 **Preconditions:**
 - [điều kiện]
@@ -35,9 +38,9 @@
 
 ---
 
-## Ambiguities
+## Ambiguities and Conflicts
 
-[Ambiguity đã phát hiện với source reference]
+[Ambiguity hoặc conflicting claims với source reference; giữ `Disputed`, không tự chọn nguồn]
 
 ## Open Questions
 

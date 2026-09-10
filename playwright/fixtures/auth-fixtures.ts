@@ -1,28 +1,36 @@
-// playwright/fixtures/auth-fixtures.ts
-import { test as base } from '@playwright/test';
-import path from 'path';
+import { existsSync } from 'node:fs';
+import path from 'node:path';
+import { test as base, type BrowserContext, type Page } from '@playwright/test';
+import { getDefaultEnvironment, loadConfig } from '../../scripts/load-config.js';
+
+const config = loadConfig();
+const environment = getDefaultEnvironment(config);
+const authFile = path.resolve(config.paths.playwrightAuth, 'user.json');
 
 type AuthFixtures = {
-  authenticatedContext: any;
+  authenticatedContext: BrowserContext;
+  authenticatedPage: Page;
 };
 
 export const test = base.extend<AuthFixtures>({
   authenticatedContext: async ({ browser }, use) => {
-    const authFile = path.join('.', 'playwright', '.auth', 'user.json');
-
-    // Check if auth state exists
-    if (!require('fs').existsSync(authFile)) {
+    if (!existsSync(authFile)) {
       throw new Error(
-        'Auth state not found. Run manual login first: see scripts/manual-login.md'
+        'Blocked: Authentication state not found. Run manual login first; see scripts/manual-login.md',
       );
     }
-
-    const context = await browser.newContext({
-      storageState: authFile,
-    });
-
+    const context = await browser.newContext({ storageState: authFile });
     await use(context);
     await context.close();
+  },
+  authenticatedPage: async ({ authenticatedContext }, use) => {
+    const page = await authenticatedContext.newPage();
+    await page.goto(environment.dashboardPath);
+    if (/\/(?:login|signin|sign-in|auth)(?:[/?#]|$)/i.test(new URL(page.url()).pathname)) {
+      throw new Error('Blocked: Authentication expired');
+    }
+    await use(page);
+    await page.close();
   },
 });
 

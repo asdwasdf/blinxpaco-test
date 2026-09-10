@@ -4,7 +4,7 @@ ticket:
   key: ""
   folder_name: ""
   source_directory: ""
-  primary_source: "ticket.md"
+  primary_source: ticket.md
 
 input_snapshot:
   revision: 1
@@ -12,10 +12,29 @@ input_snapshot:
   files: []
 
 workflow:
-  status: "pending"
-  current_phase: "DISCOVER"
+  status: pending
+  current_phase: DISCOVER
   last_completed_phase: null
   updated_at: ""
+  checkpoints: []
 
-phases: {}
+phases:
+  DISCOVER: &pending_phase
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST: *pending_phase
+  ANALYZE: *pending_phase
+  EXPLORE: *pending_phase
+  TEST_DESIGN: *pending_phase
+  AUTOMATION_REVIEW: *pending_phase
+  AUTOMATE: *pending_phase
+  EXECUTE: *pending_phase
+  REPORT: *pending_phase
+  COMPLETE: *pending_phase
+
 outputs: {}
