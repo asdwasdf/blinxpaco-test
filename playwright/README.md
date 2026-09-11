@@ -1,7 +1,8 @@
 # Paco Playwright
 
 - Chromium-only v1, one worker.
-- Manual authentication state: `playwright/.auth/user.json`.
+- Manual browser authentication state: `playwright/.auth/user.json`.
+- Tạo state bằng `npm run auth:login`; tester tự nhập credential trong browser.
 - Missing/expired authentication is `Blocked`, not product failure.
 - Default run scope is read-only.
 - Mutation requires explicit scoped approval and runtime guards.

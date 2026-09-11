@@ -6,7 +6,7 @@ description: Use when exploring selected Paco scope through authorized read-only
 # Paco Explore
 
 ## Scope and dependencies
-`EXPLORE` only. Require selected ticket, valid requirements, environment, manual-auth status, and role when permissions matter. Read data-safety/evidence/knowledge standards and `docs/templates/exploration.md`. Do not crawl, mutate data, treat behavior as intent, design full suites, or orchestrate phases.
+`EXPLORE` only. Require selected ticket, valid requirements, environment, valid local browser-auth state, and role when permissions matter. Read data-safety/evidence/knowledge standards, `scripts/manual-login.md`, and `docs/templates/exploration.md`. If auth state is missing or expired, direct tester to `npm run auth:login`; never request or use credentials. Do not crawl, mutate data, treat behavior as intent, design full suites, or orchestrate phases.
 
 ## Ownership
 Write only `exploration.md`; preserve final `## Tester notes`. Evidence is curated reference, never auth state.

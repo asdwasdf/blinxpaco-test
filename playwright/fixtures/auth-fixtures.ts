@@ -16,7 +16,7 @@ export const test = base.extend<AuthFixtures>({
   authenticatedContext: async ({ browser }, use) => {
     if (!existsSync(authFile)) {
       throw new Error(
-        'Blocked: Authentication state not found. Run manual login first; see scripts/manual-login.md',
+        'Blocked: Authentication state not found. Run npm run auth:login; see scripts/manual-login.md',
       );
     }
     const context = await browser.newContext({ storageState: authFile });

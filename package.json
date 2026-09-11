@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "auth:login": "node --loader ts-node/esm scripts/playwright-login.ts",
     "validate": "npm run validate:static && npm run type-check && npm run test:fixtures && npm run test:synthetic && playwright test --list",
     "validate:static": "bash validate-config.sh && bash validate-standards.sh && bash validate-docs-structure.sh && bash validate-skills.sh && bash validate-playwright.sh",
     "type-check": "tsc --noEmit",
@@ -11,10 +12,10 @@
     "test:fixtures": "node --loader ts-node/esm --test scripts/tests/*.test.ts"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0",
+    "@playwright/test": "^1.63.0",
     "@types/node": "^20.0.0",
-    "typescript": "^5.3.0",
     "ts-node": "^10.9.0",
+    "typescript": "^5.3.0",
     "yaml": "^2.3.0"
   }
 }

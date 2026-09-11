@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-files=(playwright.config.ts playwright/fixtures/auth-fixtures.ts playwright/tests/smoke/dashboard.spec.ts playwright/README.md scripts/manual-login.md)
+files=(playwright.config.ts playwright/fixtures/auth-fixtures.ts playwright/tests/smoke/dashboard.spec.ts playwright/README.md scripts/manual-login.md scripts/playwright-login.ts)
 for file in "${files[@]}"; do
   [ -f "$file" ] || { echo "FAIL: $file missing"; exit 1; }
 done

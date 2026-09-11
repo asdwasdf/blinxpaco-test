@@ -1,0 +1,127 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-6963
+  folder_name: PAC2-6963
+  source_directory: ticket/PAC2-6963
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-11T13:49:19Z"
+  files:
+    - path: ticket/PAC2-6963/ticket.md
+      sha256: a964d1c3e857a76346f5c483ef0f49ed49431f67ec353886f02184d842f4ca44
+
+workflow:
+  status: in_progress
+  current_phase: EXPLORE
+  last_completed_phase: ANALYZE
+  updated_at: "2026-09-11T13:50:25Z"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-11T13:49:19Z"
+    - phase: INGEST
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-11T13:49:19Z"
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      timestamp: "2026-09-11T13:50:25Z"
+      artifact: docs/tickets/PAC2-6963/requirements.md
+      sha256: 00a0ba1e4319bd0220e27d99a08d268a4ce3908ba3010384db64d920d7cb62b1
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-11T13:49:19Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-11T13:49:19Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-11T13:50:25Z"
+    artifacts:
+      - path: docs/tickets/PAC2-6963/requirements.md
+        sha256: 00a0ba1e4319bd0220e27d99a08d268a4ce3908ba3010384db64d920d7cb62b1
+    warnings:
+      - Deleted/inactive signals in ticket conflict and authoritative status source is unknown.
+      - Campaign send comparison point and repeatability conditions are ambiguous.
+    blockers: []
+  EXPLORE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements:
+    path: docs/tickets/PAC2-6963/requirements.md
+    sha256: 00a0ba1e4319bd0220e27d99a08d268a4ce3908ba3010384db64d920d7cb62b1
+    input_revision: 1

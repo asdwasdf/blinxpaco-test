@@ -1,0 +1,152 @@
+schema_version: 1
+
+ticket:
+  key: "PAC2-5776"
+  folder_name: "PAC2-5776-intermittent-scheduler-link-needed-popup"
+  source_directory: "ticket/PAC2-5776-intermittent-scheduler-link-needed-popup"
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-10T19:55:13+07:00"
+  files:
+    - path: "ticket/PAC2-5776-intermittent-scheduler-link-needed-popup/ticket.md"
+      sha256: "b8a491b0811e7a5aa19171130964d37b2309e115c6ada72d718ea31ec245baa4"
+
+workflow:
+  status: blocked
+  current_phase: AUTOMATION_REVIEW
+  last_completed_phase: TEST_DESIGN
+  updated_at: "2026-09-10T22:00:40+07:00"
+  checkpoints:
+    - phase: INGEST
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-10T19:55:13+07:00"
+      artifacts: []
+      warnings: []
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      timestamp: "2026-09-10T19:58:56+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/requirements.md"
+          sha256: "003b2144d161db1613803c85872b70e7050a4da526950347b78c3a9ef21238dd"
+      warnings:
+        - "Ticket Outcome và Acceptance Criteria là placeholder; expected behavior chỉ được phân loại Inferred."
+    - phase: EXPLORE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-10T21:43:00+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/exploration.md"
+          sha256: "e124ef27c8b790073eb0aee2786af00369d6f038e4900b822c229bb297821728"
+      warnings:
+        - "Recording không có screenshot, assertion, DOM snapshot hoặc trace để xác nhận popup scheduler-link."
+    - phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      timestamp: "2026-09-10T21:49:55+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/test-cases.md"
+          sha256: "15337013dff20c3d3ab3c5d6498674e30704f847daa5b09f5d28eef2f64d5d25"
+      warnings:
+        - "Cả 3 test case có expected result Inferred và mutation class Unknown; cần approval trước execution."
+    - phase: AUTOMATION_REVIEW
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-10T22:00:40+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/automation.md"
+          sha256: "7332b757716ae961c45961c0d05be4276b526bca9c54d744f31be6e1e1888250"
+      warnings:
+        - "3/3 case không phù hợp automation hiện tại vì expected result Inferred, mutation Unknown, thiếu test data và approval."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-10T19:55:13+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-10T19:55:13+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-10T19:58:56+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/requirements.md"
+        sha256: "003b2144d161db1613803c85872b70e7050a4da526950347b78c3a9ef21238dd"
+    warnings:
+      - "Ticket Outcome và Acceptance Criteria là placeholder; expected behavior chỉ được phân loại Inferred."
+    blockers: []
+  EXPLORE:
+    status: completed
+    outcome: inconclusive
+    input_revision: 1
+    updated_at: "2026-09-10T21:43:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/exploration.md"
+        sha256: "e124ef27c8b790073eb0aee2786af00369d6f038e4900b822c229bb297821728"
+    warnings:
+      - "Recording không có screenshot, assertion, DOM snapshot hoặc trace để xác nhận popup scheduler-link."
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-10T21:49:55+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/test-cases.md"
+        sha256: "15337013dff20c3d3ab3c5d6498674e30704f847daa5b09f5d28eef2f64d5d25"
+    warnings:
+      - "Cả 3 test case có expected result Inferred và mutation class Unknown; cần approval trước execution."
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-10T22:00:40+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/automation.md"
+        sha256: "7332b757716ae961c45961c0d05be4276b526bca9c54d744f31be6e1e1888250"
+    warnings:
+      - "3/3 case không phù hợp automation hiện tại vì expected result Inferred, mutation Unknown, thiếu test data và approval."
+    blockers:
+      - "Thiếu expected behavior được xác nhận."
+      - "Thiếu test data và exact mutation approval."
+  AUTOMATE: &pending_phase
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXECUTE: *pending_phase
+  REPORT: *pending_phase
+  COMPLETE: *pending_phase
+
+outputs:
+  requirements:
+    path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/requirements.md"
+    sha256: "003b2144d161db1613803c85872b70e7050a4da526950347b78c3a9ef21238dd"
+  exploration:
+    path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/exploration.md"
+    sha256: "e124ef27c8b790073eb0aee2786af00369d6f038e4900b822c229bb297821728"
+  test_cases:
+    path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/test-cases.md"
+    sha256: "15337013dff20c3d3ab3c5d6498674e30704f847daa5b09f5d28eef2f64d5d25"
+  automation:
+    path: "docs/tickets/PAC2-5776-intermittent-scheduler-link-needed-popup/automation.md"
+    sha256: "7332b757716ae961c45961c0d05be4276b526bca9c54d744f31be6e1e1888250"

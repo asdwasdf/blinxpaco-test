@@ -6,7 +6,7 @@ description: Use when assessing, implementing, or executing explicitly selected 
 # Paco Playwright
 
 ## Scope and dependencies
-Only `AUTOMATION_REVIEW`, `AUTOMATE`, or `EXECUTE`. Require selected valid case, clear expected basis, environment, manual-auth status, role when relevant, and exact mutation approval. Read data-safety/evidence standards, `docs/templates/automation.md`, and `scripts/manual-login.md`. Do not automate unassessed cases, infer correctness from `Inferred` knowledge, auto-login, or broaden scope.
+Only `AUTOMATION_REVIEW`, `AUTOMATE`, or `EXECUTE`. Require selected valid case, clear expected basis, environment, valid local browser-auth state, role when relevant, and exact mutation approval. Read data-safety/evidence standards, `docs/templates/automation.md`, and `scripts/manual-login.md`. If auth state is missing or expired, direct tester to `npm run auth:login`; never request or use credentials. Do not automate unassessed cases, infer correctness from `Inferred` knowledge, auto-fill login credentials, or broaden scope.
 
 ## Ownership
 Own `automation.md` and selected Playwright source; raw output stays in `test-results/`. Preserve final `## Tester notes`.
