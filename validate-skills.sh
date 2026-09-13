@@ -9,4 +9,7 @@ for skill in "${skills[@]}"; do
   grep -q '^description: Use when' "$file" || { echo "FAIL: $file description"; exit 1; }
 done
 
+grep -q 'markFeatureLocationStale' .claude/skills/paco-ticket/SKILL.md || { echo "FAIL: paco-ticket semantic location stale gate"; exit 1; }
+grep -q 'evaluateUiLocationGate' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright UI location gate"; exit 1; }
+
 echo "PASS: skill contracts complete"

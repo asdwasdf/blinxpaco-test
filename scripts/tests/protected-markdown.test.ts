@@ -9,6 +9,13 @@ test('preserves tester notes byte-for-byte', () => {
   if (result.ok) assert.equal(result.content, `# New\n\n${notes}`);
 });
 
+test('preserves feature-location tester notes while updating route', () => {
+  const notes = '## Tester notes\n\nKhông đổi ghi chú này.\n';
+  const result = mergeManagedMarkdown(`# Feature Location: PAC9-101\n\nOld route\n\n${notes}`, '# Feature Location: PAC9-101\n\nNew route');
+  assert.equal(result.ok, true);
+  if (result.ok) assert.equal(result.content, `# Feature Location: PAC9-101\n\nNew route\n\n${notes}`);
+});
+
 test('rejects missing, duplicate, and non-final tester notes', () => {
   assert.deepEqual(parseTesterNotes('# No notes\n'), { ok: false, reason: 'missing_tester_notes' });
   assert.deepEqual(parseTesterNotes('## Tester notes\n## Tester notes\n'), { ok: false, reason: 'duplicate_tester_notes' });

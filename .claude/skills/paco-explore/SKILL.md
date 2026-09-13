@@ -1,23 +1,35 @@
 ---
 name: paco-explore
-description: Use when exploring selected Paco scope through authorized read-only browser observation and evidence capture.
+description: Use when locating or observing selected Paco scope through authorized read-only browser work.
 ---
 
 # Paco Explore
 
 ## Scope and dependencies
-`EXPLORE` only. Require selected ticket, valid requirements, environment, valid local browser-auth state, and role when permissions matter. Read data-safety/evidence/knowledge standards, `scripts/manual-login.md`, and `docs/templates/exploration.md`. If auth state is missing or expired, direct tester to `npm run auth:login`; never request or use credentials. Do not crawl, mutate data, treat behavior as intent, design full suites, or orchestrate phases.
+
+Require explicit mode `locate` (`LOCATE`) or `observe` (`EXPLORE`), selected ticket, valid requirements, environment, valid local browser auth and role. Read feature-location/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. If auth is missing/expired, return `Blocked: Authentication expired` with `npm run auth:login`; never request credentials. Do not crawl, mutate, probe private APIs, infer intent, design suites or orchestrate phases.
 
 ## Ownership
-Write only `exploration.md`; preserve final `## Tester notes`. Evidence is curated reference, never auth state.
 
-## Workflow
-1. Record environment, role label, scope, and timestamp.
-2. Navigate, view, search, filter, sort, paginate, or open clearly read-only detail only.
-3. Stop before `Create`, `Update`, `Delete`, `Submit`, `Approve`, `Reject`, upload, import, send, or unclear action.
-4. Record `Observed` behavior apart from intent with URL and redacted evidence.
-5. Record unperformed actions, mismatches, possible defects, and suggested coverage.
-6. Never probe private APIs or retain unnecessary bodies, headers, cookies, tokens, or personal data.
+Mode `locate` writes only `feature-location.md`; mode `observe` writes only `exploration.md`. Preserve final `## Tester notes`. Raw locate evidence stays under `test-results/<ticket-key>/locate/<run-id>/`; only reviewed/redacted evidence enters docs.
 
-## Direct invocation, stop, outcome
-Write only owned artifact and return checkpoint proposal; never update manifest/status or call next skill. Missing/expired auth, unknown required role, or mutation boundary is `Blocked`; browser/write fault is `Failed`; weak evidence is `Inconclusive`. Return `ChildSkillOutcome` v1 with checksum, mutation/cleanup, redaction, blockers/warnings, and next phase.
+## Mode `locate`
+
+1. Require `environment`, `role`, auth and read-only mode. Ask optional module/page/context/menu clues; “không biết” is not blocker and tester clues remain tester-provided.
+2. Read exact terms, aliases, actor/context and trigger/target nouns from requirements. Check `feature-map.md`; validate reusable route in 1–3 meaningful views.
+3. If route is missing/stale/mismatched, scan from dashboard through global navigation, page search, visible menu, authorized contextual menu and read-only detail. Stop at verified route, 12 meaningful views or 15 minutes.
+4. Count only new useful page/module/menu/dialog/drawer/search-result states. Retry, reload and same-state screenshot do not count.
+5. Allow navigate/view/search/filter/sort/paginate and known read-only detail/menu/dialog. Stop before mutation, send/upload/import, adding an item to a draft/template or unknown persistence.
+6. Record ordered entry path, context, landmarks, up to three useful candidates, rejected paths with dependency revision, budget and exact next action. Do not assert business behavior.
+7. Capture only useful milestones: module/context landmark, entry control/menu and opened feature root. Never put unredacted PII/auth data in docs.
+
+## Mode `observe`
+
+1. Start only from valid feature location or documented non-UI exception.
+2. Record environment, role, scope and timestamp.
+3. Observe behavior using read-only actions; stop at mutation/unknown action.
+4. Separate `Observed` behavior from intent; record unperformed actions, mismatch, possible defect and suggested coverage.
+
+## Outcome
+
+Return `ChildSkillOutcome` v1; `LOCATE` also returns location mode, route status, budget and next action with mutation `None`. Missing auth/role/permission/context or mutation boundary is `Blocked`; exhausted budget with useful candidates is `Inconclusive`; browser/write fault is `Failed`. Direct invocation never updates manifest/status or calls next skill.

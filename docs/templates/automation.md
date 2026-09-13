@@ -4,6 +4,12 @@
 **Environment:** [environment]
 **Updated:** [timestamp]
 
+## Feature Location Gate
+
+| Test Case | UI-dependent | Location State | Route Status | Entry/Context/Role/Data Ready | Decision |
+|---|---|---|---|---|---|
+| [TC-ID] | [Yes/No] | [valid/stale/missing/N/A] | [Confirmed/Candidate/Blocked/Inconclusive/N/A] | [Yes/No] | [Allowed/Blocked] |
+
 ## Assessment
 
 | Test Case | Decision | Reason | Mutation | Approval |

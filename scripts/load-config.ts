@@ -24,6 +24,11 @@ function literal<T>(value: unknown, expected: T, field: string): T {
   return expected;
 }
 
+function positiveInteger(value: unknown, field: string): number {
+  if (!Number.isInteger(value) || Number(value) <= 0) throw new Error(`Invalid config: ${field} must be a positive integer`);
+  return Number(value);
+}
+
 function environment(value: unknown, field: string): PacoEnvironment {
   const input = record(value, field);
   const baseUrl = string(input.baseUrl, `${field}.baseUrl`);
@@ -86,6 +91,9 @@ export function loadConfig(configPath = path.resolve(process.cwd(), 'paco.config
       uiTermsLanguage: literal(defaults.uiTermsLanguage, 'en', 'defaults.uiTermsLanguage'),
       browser: literal(defaults.browser, 'chromium', 'defaults.browser'),
       authStrategy: literal(defaults.authStrategy, 'manual', 'defaults.authStrategy'),
+      locateMaxMinutes: positiveInteger(defaults.locateMaxMinutes, 'defaults.locateMaxMinutes'),
+      locateMaxViews: positiveInteger(defaults.locateMaxViews, 'defaults.locateMaxViews'),
+      reusableRouteMaxViews: positiveInteger(defaults.reusableRouteMaxViews, 'defaults.reusableRouteMaxViews'),
     },
   };
 }

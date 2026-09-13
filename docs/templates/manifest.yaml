@@ -29,6 +29,13 @@ phases:
     blockers: []
   INGEST: *pending_phase
   ANALYZE: *pending_phase
+  LOCATE:
+    <<: *pending_phase
+    budget:
+      views_used: 0
+      views_limit: 12
+      elapsed_minutes: 0
+      minutes_limit: 15
   EXPLORE: *pending_phase
   TEST_DESIGN: *pending_phase
   AUTOMATION_REVIEW: *pending_phase
@@ -37,4 +44,10 @@ phases:
   REPORT: *pending_phase
   COMPLETE: *pending_phase
 
-outputs: {}
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/<ticket-folder>/feature-location.md"
+    state: missing
+    input_revision: 1
+    sha256: null

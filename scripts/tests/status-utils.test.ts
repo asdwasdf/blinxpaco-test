@@ -13,10 +13,15 @@ test('renders complete status projection', () => {
   );
   manifest.phases.DISCOVER.status = 'completed';
   manifest.phases.INGEST.warnings.push('Synthetic warning');
+  manifest.phases.LOCATE.budget = { views_used: 4, views_limit: 12, elapsed_minutes: 6, minutes_limit: 15 };
+  manifest.phases.LOCATE.warnings.push('Context: patient record; Candidate: none');
   manifest.outputs['requirements.md'] = { owner: 'paco-requirements', path: 'docs/tickets/PAC9-101-test/requirements.md', state: 'stale', input_revision: 1, sha256: null };
   manifest.workflow.checkpoints.push({ at: now, phase: 'DISCOVER', outcome: 'completed', input_revision: 2, message: 'Selected' });
   const output = renderStatus(manifest, 'Chạy `INGEST`.');
-  assert.equal((output.match(/^\| (?:DISCOVER|INGEST|ANALYZE|EXPLORE|TEST_DESIGN|AUTOMATION_REVIEW|AUTOMATE|EXECUTE|REPORT|COMPLETE) /gm) ?? []).length, 10);
+  assert.equal((output.match(/^\| (?:DISCOVER|INGEST|ANALYZE|LOCATE|EXPLORE|TEST_DESIGN|AUTOMATION_REVIEW|AUTOMATE|EXECUTE|REPORT|COMPLETE) /gm) ?? []).length, 11);
+  assert.match(output, /## Feature Location/);
+  assert.match(output, /4\/12 views; 6\/15 minutes/);
+  assert.match(output, /Context: patient record; Candidate: none/);
   assert.match(output, /requirements\.md: stale/);
   assert.match(output, /Chạy `INGEST`\./);
   assert.match(output, /2026-09-10T00:00:00.000Z \| revision 2 \| DISCOVER/);

@@ -25,6 +25,9 @@ defaults:
   uiTermsLanguage: en
   browser: chromium
   authStrategy: manual
+  locateMaxMinutes: 15
+  locateMaxViews: 12
+  reusableRouteMaxViews: 3
 `;
 
 async function configFile(content: string): Promise<string> {
@@ -41,6 +44,12 @@ test('loads and resolves valid config', async () => {
     baseUrl: 'https://example.test',
     dashboardPath: '/paco/dashboard',
   });
+  assert.deepEqual({ minutes: config.defaults.locateMaxMinutes, views: config.defaults.locateMaxViews, reuse: config.defaults.reusableRouteMaxViews }, { minutes: 15, views: 12, reuse: 3 });
+});
+
+test('rejects invalid LOCATE limits', async () => {
+  const file = await configFile(validConfig.replace('  locateMaxViews: 12', '  locateMaxViews: 0'));
+  assert.throws(() => loadConfig(file), /defaults\.locateMaxViews/);
 });
 
 test('rejects missing field with path', async () => {

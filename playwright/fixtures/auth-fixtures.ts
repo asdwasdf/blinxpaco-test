@@ -1,11 +1,13 @@
-import { existsSync } from 'node:fs';
-import path from 'node:path';
-import { test as base, type BrowserContext, type Page } from '@playwright/test';
+import { chromium, test as base, type BrowserContext, type Page } from '@playwright/test';
 import { getDefaultEnvironment, loadConfig } from '../../scripts/load-config.js';
+import {
+  cdpEndpoint,
+  isAuthenticationUrl,
+  isDashboardUrl,
+  PACO_CDP_PORT,
+} from '../../scripts/playwright-login.js';
 
-const config = loadConfig();
-const environment = getDefaultEnvironment(config);
-const authFile = path.resolve(config.paths.playwrightAuth, 'user.json');
+const environment = getDefaultEnvironment(loadConfig());
 
 type AuthFixtures = {
   authenticatedContext: BrowserContext;
@@ -13,24 +15,33 @@ type AuthFixtures = {
 };
 
 export const test = base.extend<AuthFixtures>({
-  authenticatedContext: async ({ browser }, use) => {
-    if (!existsSync(authFile)) {
-      throw new Error(
-        'Blocked: Authentication state not found. Run npm run auth:login; see scripts/manual-login.md',
-      );
+  authenticatedContext: async ({}, use) => {
+    let browser;
+    try {
+      browser = await chromium.connectOverCDP(cdpEndpoint(PACO_CDP_PORT));
+    } catch {
+      throw new Error('Blocked: Login browser not running. Run npm run auth:login and keep it open.');
     }
-    const context = await browser.newContext({ storageState: authFile });
-    await use(context);
-    await context.close();
+
+    const contexts = browser.contexts();
+    if (contexts.length !== 1) {
+      throw new Error(`Blocked: expected one login browser context, found ${contexts.length}`);
+    }
+
+    await use(contexts[0]);
   },
   authenticatedPage: async ({ authenticatedContext }, use) => {
-    const page = await authenticatedContext.newPage();
-    await page.goto(environment.dashboardPath);
-    if (/\/(?:login|signin|sign-in|auth)(?:[/?#]|$)/i.test(new URL(page.url()).pathname)) {
+    const dashboardPages = authenticatedContext.pages().filter((page) =>
+      isDashboardUrl(page.url(), environment.baseUrl, environment.dashboardPath));
+    if (dashboardPages.length !== 1) {
+      throw new Error(`Blocked: expected one authenticated dashboard tab, found ${dashboardPages.length}`);
+    }
+
+    const page = dashboardPages[0];
+    if (isAuthenticationUrl(page.url())) {
       throw new Error('Blocked: Authentication expired');
     }
     await use(page);
-    await page.close();
   },
 });
 

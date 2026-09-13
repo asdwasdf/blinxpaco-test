@@ -3,8 +3,9 @@
 ## Traceability Chain
 
 ```
-Ticket/Observation 
-  → Ticket/Product Requirement 
+Ticket/Observation
+  → Ticket/Product Requirement
+  → Feature Location (UI-dependent only)
   → Test Case 
   → Automation (optional)
   → Test Run 
@@ -18,6 +19,7 @@ Mỗi test result phải trả lời:
 - Test requirement nào?
 - Classification và source nào hỗ trợ expected result?
 - Environment, role, input revision nào?
+- Nếu phụ thuộc UI: valid `feature-location.md`, ordered entry path và context nào?
 - Evidence ở đâu?
 - Có mutation không? Cleanup hoàn tất chưa?
 

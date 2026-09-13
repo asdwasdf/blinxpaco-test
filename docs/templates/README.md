@@ -4,7 +4,7 @@
 |---|---|
 | `manifest.yaml`, `status.md` | `paco-ticket` |
 | `requirements.md` | `paco-requirements` |
-| `exploration.md` | `paco-explore` |
+| `feature-location.md`, `exploration.md` | `paco-explore` |
 | `test-cases.md` | `paco-test-design` |
 | `automation.md` | `paco-playwright` |
 | `report.md`, `defect.md`, `open-question.md` | `paco-report` |

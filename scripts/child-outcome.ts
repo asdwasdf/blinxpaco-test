@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { calculateFileChecksum } from './checksum-utils.js';
+import type { LocationBudgetRecord } from './manifest-utils.js';
 import { PHASES, type MutationClass, type Phase, type SkillOutcomeCode } from './workflow-types.js';
 
 export type ChildSkill = 'paco-requirements' | 'paco-explore' | 'paco-test-design' | 'paco-playwright' | 'paco-report';
@@ -12,12 +13,13 @@ export interface ChildSkillOutcome {
   artifacts: ChildArtifactResult[]; summary: { message: string; counts: Record<string, number> };
   mutation: { class: MutationClass; occurred: boolean; cleanup: 'not_applicable' | 'not_required' | 'completed' | 'failed' | 'pending'; leftover_identifiers: string[] };
   sensitive_data: { detected: boolean; redacted: boolean; details: string[] };
+  location?: { mode: 'locate'; route_status: 'Confirmed' | 'Candidate' | 'Blocked' | 'Inconclusive'; budget: LocationBudgetRecord; next_action: string };
   blockers: string[]; warnings: string[]; recommended_next_phase: Phase | null;
 }
 
 const owners: Record<ChildSkill, RegExp> = {
   'paco-requirements': /\/requirements\.md$/,
-  'paco-explore': /\/exploration\.md$/,
+  'paco-explore': /\/(?:feature-location|exploration)\.md$/,
   'paco-test-design': /\/test-cases\.md$/,
   'paco-playwright': /\/(?:automation\.md|playwright\/.*\.spec\.ts)$/,
   'paco-report': /\/(?:report\.md|defects\/.*\.md|evidence\/.*)$/,
@@ -46,6 +48,14 @@ export function validateChildOutcome(
   else if (value.sensitive_data.detected === true && value.sensitive_data.redacted !== true) issues.push('sensitive data must be redacted');
   const mutation = record(value.mutation) ? value.mutation : {};
   if (mutation.occurred === false && !['not_applicable', 'not_required'].includes(String(mutation.cleanup))) issues.push('cleanup is inconsistent with no mutation');
+  if (value.phase === 'LOCATE') {
+    const location = record(value.location) ? value.location : {};
+    const budget = record(location.budget) ? location.budget : {};
+    if (location.mode !== 'locate' || !['Confirmed', 'Candidate', 'Blocked', 'Inconclusive'].includes(String(location.route_status)) || typeof location.next_action !== 'string') issues.push('location metadata is invalid');
+    for (const field of ['views_used', 'elapsed_minutes']) if (typeof budget[field] !== 'number' || Number(budget[field]) < 0) issues.push(`location budget ${field} is invalid`);
+    for (const field of ['views_limit', 'minutes_limit']) if (typeof budget[field] !== 'number' || Number(budget[field]) <= 0) issues.push(`location budget ${field} is invalid`);
+    if (mutation.occurred !== false) issues.push('LOCATE cannot record mutation');
+  } else if (value.location !== undefined) issues.push('location metadata is only valid for LOCATE');
   if (!Array.isArray(value.blockers) || !Array.isArray(value.warnings)) issues.push('blockers and warnings must be arrays');
   return issues.length ? { ok: false, issues } : { ok: true, value: value as unknown as ChildSkillOutcome };
 }
@@ -68,6 +78,7 @@ export async function verifyChildArtifacts(
     const normalized = artifact.path.split(path.sep).join('/');
     if (!confined(allowedRoot, fullPath)) { issues.push(`${artifact.path}: outside ticket output`); continue; }
     if (!owners[outcome.skill].test(`/${normalized}`)) { issues.push(`${artifact.path}: wrong owner`); continue; }
+    if (outcome.skill === 'paco-explore' && ((outcome.phase === 'LOCATE') !== normalized.endsWith('/feature-location.md'))) { issues.push(`${artifact.path}: wrong paco-explore mode`); continue; }
     try {
       const stat = await fs.lstat(fullPath);
       if (!stat.isFile() || stat.isSymbolicLink()) throw new Error('not regular');

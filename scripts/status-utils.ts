@@ -18,6 +18,10 @@ export function renderStatus(manifest: Manifest, nextAction: string): string {
   const checkpoints = manifest.workflow.checkpoints.map(
     (item) => `- ${item.at} | revision ${item.input_revision} | ${item.phase} | ${item.outcome} | ${item.message}`,
   );
+  const location = manifest.phases.LOCATE;
+  const budget = location.budget
+    ? `${location.budget.views_used}/${location.budget.views_limit} views; ${location.budget.elapsed_minutes}/${location.budget.minutes_limit} minutes`
+    : 'Chưa ghi';
 
   return `# Ticket Status: ${manifest.ticket.key}
 
@@ -39,6 +43,12 @@ ${list(completed, 'Chưa có')}
 ## Warnings & Blockers
 
 ${list([...warnings, ...blockers], 'Không có')}
+
+## Feature Location
+
+- Status: ${location.status}
+- Budget: ${budget}
+${list([...location.warnings, ...location.blockers], 'Không có context, candidate hoặc blocker')}
 
 ## Valid Artifacts
 

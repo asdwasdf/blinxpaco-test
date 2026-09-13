@@ -15,6 +15,8 @@
 **Classification:** [Confirmed/Observed/Inferred]
 **Lifecycle:** [Candidate/Active/Disputed/Superseded/Retired]
 **Feature/Scope:** [feature và scope]
+**Search Terms/Aliases:** [exact terms, spelling variants, trigger adaptive nouns]
+**Known Location:** [route clue hoặc Unknown]
 **Actor/Role:** [role hoặc Unknown]
 **Inference Basis:** [bắt buộc nếu Inferred]
 **Observation Context:** [environment/role/timestamp nếu Observed]

@@ -5,21 +5,37 @@ import { chromium } from '@playwright/test';
 import { getDefaultEnvironment, loadConfig } from './load-config.js';
 
 const LOGIN_TIMEOUT_MS = 5 * 60 * 1000;
+export const PACO_CDP_PORT = 9222;
 
-export function browserLaunchOptions(): { headless: false; channel: 'chrome' } {
-  return { headless: false, channel: 'chrome' };
+export function persistentContextOptions(port: number) {
+  return {
+    headless: false,
+    channel: 'chrome',
+    args: [
+      '--remote-debugging-address=127.0.0.1',
+      `--remote-debugging-port=${port}`,
+    ],
+  };
+}
+
+export function cdpEndpoint(port: number): string {
+  return `http://127.0.0.1:${port}`;
 }
 
 export function buildLoginUrl(baseUrl: string): string {
   return new URL('/paco/login', baseUrl).href;
 }
 
-export function resolveAuthFile(root: string, authDirectory: string): string {
-  return path.resolve(root, authDirectory, 'user.json');
+export function resolveProfileDirectory(root: string, authDirectory: string): string {
+  return path.resolve(root, authDirectory, 'chrome-profile');
 }
 
 export async function ensureAuthDirectory(directory: string): Promise<void> {
   await mkdir(directory, { recursive: true });
+}
+
+export function isAuthenticationUrl(currentUrl: string): boolean {
+  return /\/(?:login|signin|sign-in|auth)(?:[/?#]|$)/i.test(new URL(currentUrl).pathname);
 }
 
 export function isDashboardUrl(
@@ -29,36 +45,43 @@ export function isDashboardUrl(
 ): boolean {
   const current = new URL(currentUrl);
   const expected = new URL(dashboardPath, baseUrl);
-  return current.origin === expected.origin && current.pathname === expected.pathname;
+  const normalizePath = (value: string) => value.replace(/\/+$/, '') || '/';
+  const currentPath = normalizePath(current.pathname);
+  const expectedPath = normalizePath(expected.pathname);
+  return current.origin === expected.origin
+    && (currentPath === expectedPath || currentPath.startsWith(`${expectedPath}/`));
 }
 
 export async function main(): Promise<void> {
   const config = loadConfig();
   const environment = getDefaultEnvironment(config);
-  const authFile = resolveAuthFile(process.cwd(), config.paths.playwrightAuth);
-  await ensureAuthDirectory(path.dirname(authFile));
+  const profileDirectory = resolveProfileDirectory(process.cwd(), config.paths.playwrightAuth);
+  await ensureAuthDirectory(profileDirectory);
 
-  const browser = await chromium.launch(browserLaunchOptions());
-  const context = await browser.newContext();
-  const page = await context.newPage();
+  const context = await chromium.launchPersistentContext(
+    profileDirectory,
+    persistentContextOptions(PACO_CDP_PORT),
+  );
+  const page = context.pages()[0] ?? await context.newPage();
 
   try {
-    console.log('Browser đã mở. Tự nhập credential và hoàn thành SSO/MFA.');
-    console.log('Không đóng browser trước khi dashboard tải xong.');
+    console.log('Browser profile test đã mở. Tự nhập credential và hoàn thành SSO/MFA.');
+    console.log('Không đóng browser; Playwright test sẽ kết nối vào đúng browser này.');
     await page.goto(buildLoginUrl(environment.baseUrl));
     await page.waitForURL(
       (url) => isDashboardUrl(url.href, environment.baseUrl, environment.dashboardPath),
       { timeout: LOGIN_TIMEOUT_MS },
     );
-    await context.storageState({ path: authFile });
-    console.log(`Authentication state đã lưu local tại ${authFile}`);
+    console.log(`Authentication đã xác minh. CDP local: ${cdpEndpoint(PACO_CDP_PORT)}`);
+    console.log('Giữ browser mở. Chạy Playwright test trong PowerShell khác; tự đóng browser khi xong.');
+    await new Promise<void>((resolve) => context.browser()?.on('disconnected', () => resolve()));
   } catch (error) {
+    await context.close();
+    const current = new URL(page.url());
     throw new Error(
-      `Blocked: Manual browser login chưa hoàn tất trong ${LOGIN_TIMEOUT_MS / 60000} phút`,
+      `Blocked: Manual browser login chưa tới dashboard; current URL: ${current.origin}${current.pathname}`,
       { cause: error },
     );
-  } finally {
-    await browser.close();
   }
 }
 

@@ -1,12 +1,12 @@
 import type { MutationRunScope } from '../../scripts/mutation-gate.js';
 
 export const PAC2_5776_TC_004_SCOPE: MutationRunScope = {
-  run_id: 'PAC2-5776-TC-004-guided-2026-09-10',
+  run_id: 'PAC2-5776-TC-004-guided-2026-09-12-06',
   environment: 'dev',
   ticket_key: 'PAC2-5776',
   case_id: 'PAC2-5776-TC-004',
-  action: 'Insert one Booking Link and one Health Form into one Quick Send draft',
-  test_data_fingerprint: 'patient=katie sparrow;slot=Virtual Mental Health;form=sleep ap',
+  action: 'Select General Patient Message, insert one Booking Link and one Health Form into one Quick Send draft',
+  test_data_fingerprint: 'patient=katie sparrow;nhs=222 222 9537;template=General Patient Message;slot=Adult Phlebotomy paco-connect;form=Sleep Ap',
   mutation_class: 'Unknown',
 };
 

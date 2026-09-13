@@ -10,9 +10,10 @@
 
 ## Storage Location
 
-- Large artifacts: `test-results/` (local, Git ignored)
+- Large/raw artifacts: `test-results/` (local, Git ignored)
+- Raw `LOCATE`: `test-results/<ticket-key>/locate/<run-id>/`
 - Referenced in docs: link hoặc tóm tắt, không embed full artifact
-- Evidence per ticket: `docs/tickets/<ticket-folder>/evidence/`
+- Evidence đã review/redact per ticket: `docs/tickets/<ticket-folder>/evidence/`
 
 ## Security Requirements
 
@@ -28,6 +29,7 @@
 Pattern: `<test-case-id>-<type>-<timestamp>.<ext>`
 
 Example:
+- `PAC2-5776-LOCATE-entry-20260913-103045.png`
 - `PAC2-5776-TC-001-screenshot-20260909-103045.png`
 - `PAC2-5776-TC-002-trace-20260909-104512.zip`
 

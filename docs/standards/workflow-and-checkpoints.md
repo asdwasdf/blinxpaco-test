@@ -3,7 +3,7 @@
 ## Phases
 
 ```
-DISCOVER → INGEST → ANALYZE → EXPLORE → TEST_DESIGN 
+DISCOVER → INGEST → ANALYZE → LOCATE → EXPLORE → TEST_DESIGN
   → AUTOMATION_REVIEW → AUTOMATE → EXECUTE → REPORT → COMPLETE
 ```
 
@@ -33,7 +33,11 @@ DISCOVER → INGEST → ANALYZE → EXPLORE → TEST_DESIGN
 3. So sánh với `input_snapshot.revision`
 4. Nếu khác → tăng revision, đánh dấu dependency stale
 5. Nếu giống và phase `completed` → skip
-6. Tiếp tục từ phase đầu tiên chưa hoàn thành
+6. Existing v1 manifest thiếu `LOCATE` được reconcile trong bộ nhớ: `pending` nếu chưa tới `EXPLORE`, hoặc `skipped/no_change` kèm legacy warning nếu workflow đã đi qua vị trí đó; checkpoint history giữ nguyên
+7. Với `LOCATE`, validate checksum, đọc budget/candidate/rejected path và không lặp rejected path khi dependency không đổi
+8. Tiếp tục từ phase đầu tiên chưa hoàn thành
+
+`LOCATE` bắt buộc mặc định. Chỉ skip case không phụ thuộc UI và phải ghi lý do cụ thể.
 
 ## Idempotency Rules
 

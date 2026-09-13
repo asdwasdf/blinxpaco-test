@@ -1,5 +1,9 @@
+import { existsSync } from 'node:fs';
+import { loadEnvFile } from 'node:process';
 import { defineConfig, devices } from '@playwright/test';
 import { getDefaultEnvironment, loadConfig } from './scripts/load-config.js';
+
+if (existsSync('.env')) loadEnvFile();
 
 const config = loadConfig();
 const baseURL = getDefaultEnvironment(config).baseUrl;
@@ -14,6 +18,7 @@ export default defineConfig({
 
   use: {
     baseURL,
+    launchOptions: { slowMo: Number(process.env.PACO_SLOW_MO_MS ?? 0) },
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },

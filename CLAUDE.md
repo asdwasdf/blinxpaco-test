@@ -43,6 +43,9 @@ Mặc định **read-only**: điều hướng, xem, search, filter, sort, pagina
 - Checkpoint cho resume sau khi hết token/context
 - Input revision tracking bằng SHA-256 checksum
 - Stale propagation khi source thay đổi
+- Workflow: `DISCOVER → INGEST → ANALYZE → LOCATE → EXPLORE → TEST_DESIGN → AUTOMATION_REVIEW → AUTOMATE → EXECUTE → REPORT → COMPLETE`
+- `LOCATE` yêu cầu `environment`, `role`, manual auth và read-only mode; location clue từ tester là tùy chọn
+- `LOCATE` tra reusable route trước, rồi bounded scan tối đa 12 meaningful views hoặc 15 phút
 
 ## Knowledge và Result
 

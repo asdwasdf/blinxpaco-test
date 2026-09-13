@@ -3,10 +3,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import YAML from 'yaml';
 import { calculateFileChecksum, type InputSnapshot, type SnapshotDelta } from './checksum-utils.js';
+import { locationNeedsReview, type LocationChange } from './locate-policy.js';
 import { PHASES, type ArtifactState, type Phase, type PhaseStatus, type SkillOutcomeCode } from './workflow-types.js';
 
 export interface ManifestTicket { key: string; folder_name: string; source_directory: string; primary_source: string }
-export interface PhaseRecord { status: PhaseStatus; outcome: SkillOutcomeCode | null; input_revision: number; updated_at: string; artifacts: string[]; warnings: string[]; blockers: string[] }
+export interface LocationBudgetRecord { views_used: number; views_limit: number; elapsed_minutes: number; minutes_limit: number }
+export interface PhaseRecord { status: PhaseStatus; outcome: SkillOutcomeCode | null; input_revision: number; updated_at: string; artifacts: string[]; budget?: LocationBudgetRecord; warnings: string[]; blockers: string[] }
 export type ArtifactOwner = 'paco-ticket' | 'paco-requirements' | 'paco-explore' | 'paco-test-design' | 'paco-playwright' | 'paco-report';
 export interface OutputRecord { owner: ArtifactOwner; path: string; state: ArtifactState; input_revision: number; sha256: string | null }
 export interface CheckpointRecord { at: string; phase: Phase; outcome: SkillOutcomeCode; input_revision: number; message: string }
@@ -14,13 +16,13 @@ export interface WorkflowStatus { status: 'pending' | 'in_progress' | 'blocked' 
 export interface Manifest { schema_version: 1; ticket: ManifestTicket; input_snapshot: InputSnapshot; workflow: WorkflowStatus; phases: Record<Phase, PhaseRecord>; outputs: Record<string, OutputRecord> }
 
 const transitions: Record<Phase, readonly Phase[]> = {
-  DISCOVER: ['INGEST'], INGEST: ['ANALYZE'], ANALYZE: ['EXPLORE', 'TEST_DESIGN'],
+  DISCOVER: ['INGEST'], INGEST: ['ANALYZE'], ANALYZE: ['LOCATE'], LOCATE: ['EXPLORE', 'TEST_DESIGN'],
   EXPLORE: ['TEST_DESIGN'], TEST_DESIGN: ['AUTOMATION_REVIEW', 'REPORT'],
   AUTOMATION_REVIEW: ['AUTOMATE', 'REPORT'], AUTOMATE: ['EXECUTE'], EXECUTE: ['REPORT'],
   REPORT: ['COMPLETE'], COMPLETE: [],
 };
 const requiredOutput: Partial<Record<Phase, string>> = {
-  ANALYZE: 'requirements.md', EXPLORE: 'exploration.md', TEST_DESIGN: 'test-cases.md',
+  ANALYZE: 'requirements.md', LOCATE: 'feature-location.md', EXPLORE: 'exploration.md', TEST_DESIGN: 'test-cases.md',
   AUTOMATION_REVIEW: 'automation.md', AUTOMATE: 'automation.md', REPORT: 'report.md',
 };
 
@@ -51,8 +53,16 @@ export function validateManifest(value: unknown): { ok: true; value: Manifest } 
   const phases = isRecord(value.phases) ? value.phases : {};
   for (const phase of PHASES) {
     const entry = phases[phase];
-    if (!isRecord(entry)) issues.push(`phases.${phase} must be an object`);
-    else if (!['pending', 'in_progress', 'completed', 'blocked', 'stale', 'skipped', 'failed'].includes(String(entry.status))) issues.push(`phases.${phase}.status is invalid`);
+    if (!isRecord(entry)) { issues.push(`phases.${phase} must be an object`); continue; }
+    if (!['pending', 'in_progress', 'completed', 'blocked', 'stale', 'skipped', 'failed'].includes(String(entry.status))) issues.push(`phases.${phase}.status is invalid`);
+    if (entry.outcome !== null && !['completed', 'completed_with_warnings', 'blocked', 'failed', 'inconclusive', 'no_change'].includes(String(entry.outcome))) issues.push(`phases.${phase}.outcome is invalid`);
+    if (entry.budget !== undefined) {
+      if (phase !== 'LOCATE' || !isRecord(entry.budget)) issues.push(`phases.${phase}.budget is invalid`);
+      else {
+        for (const field of ['views_used', 'elapsed_minutes']) if (typeof entry.budget[field] !== 'number' || Number(entry.budget[field]) < 0) issues.push(`phases.${phase}.budget.${field} must be non-negative`);
+        for (const field of ['views_limit', 'minutes_limit']) if (typeof entry.budget[field] !== 'number' || Number(entry.budget[field]) <= 0) issues.push(`phases.${phase}.budget.${field} must be positive`);
+      }
+    }
   }
   const snapshot = isRecord(value.input_snapshot) ? value.input_snapshot : {};
   if (!Number.isInteger(snapshot.revision) || Number(snapshot.revision) < 1) issues.push('input_snapshot.revision must be a positive integer');
@@ -68,6 +78,7 @@ function invalidDependency(manifest: Manifest): string | null {
 export function transitionPhase(manifest: Manifest, next: Phase, now: string): { ok: true; manifest: Manifest } | { ok: false; reason: string } {
   const current = manifest.workflow.current_phase;
   if (!transitions[current].includes(next)) return { ok: false, reason: `Invalid transition: ${current} to ${next}` };
+  if (current === 'LOCATE' && next === 'TEST_DESIGN' && (manifest.phases.LOCATE.status !== 'skipped' || manifest.phases.LOCATE.warnings.length === 0)) return { ok: false, reason: 'Cannot skip LOCATE without a specific reason' };
   if (next === 'EXECUTE') {
     const invalid = invalidDependency(manifest);
     if (invalid) return { ok: false, reason: `Cannot execute: ${invalid}` };
@@ -88,6 +99,16 @@ export function transitionPhase(manifest: Manifest, next: Phase, now: string): {
 
 function setOutputState(manifest: Manifest, name: string, state: ArtifactState): void {
   if (manifest.outputs[name]) manifest.outputs[name].state = state;
+}
+
+export function markFeatureLocationStale(manifest: Manifest, changes: readonly LocationChange[], now: string): Manifest {
+  if (!locationNeedsReview(changes)) return manifest;
+  const result = structuredClone(manifest);
+  setOutputState(result, 'feature-location.md', 'stale');
+  result.phases.LOCATE.status = 'stale';
+  result.phases.LOCATE.updated_at = now;
+  result.workflow.updated_at = now;
+  return result;
 }
 
 export function propagateStale(manifest: Manifest, delta: SnapshotDelta, nextSnapshot: InputSnapshot, now: string): Manifest {
@@ -140,8 +161,20 @@ export function planResume(manifest: Manifest, requestedPhase?: Phase): { ok: tr
   return { ok: true, phase, reason: `First incomplete phase: ${phase}` };
 }
 
-export async function loadManifest(filePath: string): Promise<Manifest> {
-  const parsed: unknown = YAML.parse(await fs.readFile(filePath, 'utf8'));
+export function reconcileManifestV1(value: unknown, now: string): unknown {
+  if (!isRecord(value) || value.schema_version !== 1 || !isRecord(value.phases) || value.phases.LOCATE !== undefined) return value;
+  const result = structuredClone(value);
+  if (!isRecord(result.phases) || !isRecord(result.workflow) || !isRecord(result.input_snapshot)) return value;
+  const current = result.workflow.current_phase;
+  const passedLocate = typeof current === 'string' && PHASES.indexOf(current as Phase) > PHASES.indexOf('LOCATE');
+  const revision = Number(result.input_snapshot.revision) || 1;
+  result.phases.LOCATE = emptyPhase(revision, now);
+  if (passedLocate) result.phases.LOCATE = { ...emptyPhase(revision, now), status: 'skipped', outcome: 'no_change', warnings: ['Legacy v1 reconciliation: LOCATE was not recorded'] };
+  return result;
+}
+
+export async function loadManifest(filePath: string, now = new Date().toISOString()): Promise<Manifest> {
+  const parsed: unknown = reconcileManifestV1(YAML.parse(await fs.readFile(filePath, 'utf8')), now);
   const validation = validateManifest(parsed);
   if (!validation.ok) throw new Error(`Invalid manifest: ${validation.issues.join('; ')}`);
   return validation.value;

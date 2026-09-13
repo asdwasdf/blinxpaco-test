@@ -2,6 +2,7 @@ export const PHASES = [
   'DISCOVER',
   'INGEST',
   'ANALYZE',
+  'LOCATE',
   'EXPLORE',
   'TEST_DESIGN',
   'AUTOMATION_REVIEW',
@@ -69,5 +70,8 @@ export interface PacoConfig {
     uiTermsLanguage: 'en';
     browser: 'chromium';
     authStrategy: 'manual';
+    locateMaxMinutes: number;
+    locateMaxViews: number;
+    reusableRouteMaxViews: number;
   };
 }

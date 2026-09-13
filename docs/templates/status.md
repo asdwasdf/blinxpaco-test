@@ -12,6 +12,7 @@
 | DISCOVER | pending | - | - |
 | INGEST | pending | - | - |
 | ANALYZE | pending | - | - |
+| LOCATE | pending | - | - |
 | EXPLORE | pending | - | - |
 | TEST_DESIGN | pending | - | - |
 | AUTOMATION_REVIEW | pending | - | - |
@@ -27,6 +28,12 @@
 ## Warnings & Blockers
 
 - Không có
+
+## Feature Location
+
+- Status: pending
+- Context/candidate: Chưa có
+- Budget: 0/12 views; 0/15 minutes
 
 ## Valid Artifacts
 
