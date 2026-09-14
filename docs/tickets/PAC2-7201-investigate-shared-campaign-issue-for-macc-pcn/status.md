@@ -40,6 +40,7 @@
 - [2026-09-14] Video evidence gốc của ticket xác nhận là **production** (Beth Green qua Slack, screenshot do tester cung cấp) — kết quả EXPLORE trên dev chỉ là loại suy (Inferred), chưa verify trực tiếp trên production/Macclesfield PCN. Tester xác nhận quyền production hiện khó xin.
 - [2026-09-14] Cần tài khoản single-org trên domain dev (`nhs-comms-hub-dev.blinxhealthcare.com`) để loại trừ khả năng hành vi quan sát được là do đặc thù tài khoản multi-org hiện tại, không phải do org — hiện chưa có tài khoản này.
 - [2026-09-14] **Quyết định của tester:** coi 2 open question trên là bất khả thi trong phạm vi ticket này (không chặn workflow). Độ tin cậy thống nhất: pattern lỗi là có thật trên dev (~90%); là root cause trực tiếp của bug Macclesfield PCN trên production thì thấp hơn (~60-65%, do chưa verify trực tiếp môi trường/tổ chức gốc). `TEST_DESIGN`/`REPORT` phải ghi rõ mức độ tin cậy này, không khẳng định tuyệt đối.
+- [2026-09-14] **Phát hiện mới (OBS-005):** tester login tài khoản thứ 2 qua `npm run auth:login` (vẫn multi-org: Blinx Demo Site + PC24 Urgent Care, không phải single-org) — tìm thấy campaign `BH-37920 Updated Version` ("macclesfield shared campaign - updated", Beth Green tạo 05/05/2026) xác nhận độc lập lần 3 cùng pattern lỗi, với cặp org hoàn toàn khác Redmoor. Tên campaign gợi ý liên hệ tới Jira BH-37920 — có thể là ticket liên quan/trùng lặp, cần tra cứu thêm nếu muốn xác nhận.
 
 ## Feature Location
 
@@ -51,7 +52,7 @@
 
 - `requirements.md` (sha256 48494b0a..., input_revision 1)
 - `feature-location.md` (sha256 835df4dc..., input_revision 1)
-- `exploration.md` (sha256 c5a2282b..., input_revision 1)
+- `exploration.md` (sha256 e4df80b0..., input_revision 1)
 - `test-cases.md` (sha256 9e39e197..., input_revision 1)
 
 ## Stale Artifacts

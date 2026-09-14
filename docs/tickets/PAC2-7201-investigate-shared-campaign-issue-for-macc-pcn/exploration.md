@@ -56,11 +56,23 @@
 **Evidence:** Screenshot phiên làm việc; campaign còn tồn tại trên hệ thống dev, chưa cleanup hoàn toàn (xem Blockers)
 **Sensitive Data Review:** None
 
+### OBS-PAC2-7201-005 [bổ sung 2026-09-14, tài khoản khác]
+
+**Classification:** Observed
+**Location/URL:** `Campaign Manager`, `Viewing data for = PC24 Urgent Care (Y05825)` — tài khoản đăng nhập qua `npm run auth:login` (khác tài khoản dùng ở OBS-001..004; tài khoản này có home organisation = Blinx Demo Site, quyền xem thêm PC24 Urgent Care thay vì Redmoor Liverpool — vẫn multi-org, chưa phải single-org)
+**Action:** Tìm kiếm `macclesfield` trong ô Search campaigns (read-only)
+**Observed Behavior:** Tìm thấy đúng 1 kết quả: campaign **"BH-37920 Updated Version"**, description **"macclesfield shared campaign - updated"**. Chi tiết: `Created By Organisation` = **General Practice (Blinx Demo Site)**, `Shared To Orgs` = **PC24 Urgent Care**, `Created By` = **Beth Green**, `Created Date` = **05/05/2026 09:56** (hơn 4 tháng trước ticket này). Xem từ PC24 Urgent Care (org được share vào, KHÔNG phải creator) — campaign có đầy đủ icon `Performance` + ✏️ Edit + 🗑️ Delete.
+**Requirement Links:** REQ-PAC2-7201-001, REQ-PAC2-7201-003
+**Evidence:** Screenshot phiên làm việc qua Playwright/CDP (chưa curate vào `evidence/`)
+**Sensitive Data Review:** None (không có dữ liệu bệnh nhân)
+
+**Ý nghĩa:** Đây là nguồn độc lập **thứ 3** (sau Santhosh/2025 và self-test/2026 tại Redmoor) xác nhận cùng 1 pattern: org được share vào (không phải creator) lại có đầy đủ quyền Edit/Delete — với **một cặp tổ chức hoàn toàn khác** (Blinx Demo Site → PC24 Urgent Care, không liên quan Redmoor). Quan trọng hơn: tên campaign **"BH-37920"** trùng định dạng mã Jira với các tham chiếu khác đã thấy trong ticket (`BH-41375` video, tab `[BH-37378] MACC PC...` trong `image (1).png`), và mô tả **"macclesfield shared campaign"** — cùng tác giả **Beth Green** (người viết "Testing Details" của chính ticket PAC2-7201). Gợi ý mạnh rằng đây có thể là cùng một vấn đề Beth Green đã điều tra từ tháng 5/2026 (ticket BH-37920 khả năng liên quan/trùng lặp), không chỉ là hành vi tương tự ngẫu nhiên. Vẫn giữ mức **Inferred** cho việc "đây chính là cùng 1 bug" — chưa xác nhận trực tiếp quan hệ giữa BH-37920 và PAC2-7201.
+
 ## Mismatches and Possible Defects
 
-**Pattern nhất quán qua 3 nguồn độc lập (Beth Green hôm nay, Santhosh ~1.5 năm trước, và test tự tạo hôm nay):**
+**Pattern nhất quán qua 4 nguồn độc lập (Beth Green hôm nay tại Redmoor, Santhosh ~1.5 năm trước, test tự tạo hôm nay, và Beth Green tháng 5/2026 tại PC24 Urgent Care):**
 
-- Campaign **tạo bởi Blinx Demo Site, share sang Redmoor** → editable từ **cả hai phía** (đúng cho creator, nhưng **sai** cho org được share — vi phạm chính tuyên bố thiết kế của sản phẩm ở OBS-001). Xác nhận độc lập 2 lần (Santhosh 2025 + tự tạo 2026).
+- Campaign **tạo bởi Blinx Demo Site, share sang org khác** (Redmoor HOẶC PC24 Urgent Care) → editable từ **cả hai phía** (đúng cho creator, nhưng **sai** cho org được share — vi phạm chính tuyên bố thiết kế của sản phẩm ở OBS-001). Xác nhận độc lập 3 lần (Santhosh 2025 tại Redmoor, tự tạo 2026 tại Redmoor, Beth Green 05/2026 tại PC24 Urgent Care — OBS-005). Không phụ thuộc org cụ thể nào được share vào, mà có vẻ là hành vi hệ thống chung mỗi khi Blinx Demo Site share ra.
 - Campaign **tạo bởi Redmoor, share sang org khác** → **không editable ngay cả từ Redmoor (creator của chính nó)** — khớp trực tiếp với mô tả bug trong ticket ("campaigns do not show up in the home organisation... and thereby cannot be managed"). Xác nhận qua 2 campaign của Beth Green, tạo cùng ngày hôm nay.
 
 **Suy luận [Inferred from: OBS-002/003/004, cần xác nhận]:** hành vi cấp quyền `edit` cho shared campaign có vẻ gắn với **hướng cụ thể liên quan tới org Redmoor Liverpool** (và có thể tương tự với Macclesfield PCN, do ticket mô tả cùng triệu chứng "không quản lý được từ home organisation") chứ không phải một swap logic đơn giản giữa creator/shared-to. Chưa xác định được nguyên nhân kỹ thuật chính xác (không có quyền xem log/DB); đây là quan sát hành vi UI, không phải root cause.
@@ -86,7 +98,8 @@
 
 - Blocker quyền: không có tài khoản truy cập `Macclesfield PCN` trên `dev` để verify trực tiếp REQ-001
 - **Cleanup chưa hoàn tất:** campaign test `PAC2-7201-TEST-BDS-to-Redmoor-edited` (Quick Send, status `Available Quick Send`) còn tồn tại tại Blinx Demo Site, shared sang Redmoor Liverpool. Nút `Pause`/`Resend` trong dialog Campaign Details không phản hồi (có thể không áp dụng cho loại `Quick Send`). Không thực hiện `Delete` (destructive, chưa có approval riêng theo `data-safety.md`). Identifier còn lại: tên campaign `PAC2-7201-TEST-BDS-to-Redmoor-edited`, org `General Practice (Blinx Demo Site) (YGMQJ)`, shared to `Redmoor Liverpool (Non-OBE) (M85065)`.
-- Open question: hành vi quan sát được là do org-level permission hay user-level (tài khoản `nhat.pham` hiện có quyền multi-org) — cần test với tài khoản single-org **trên cùng domain dev** (`nhs-comms-hub-dev.blinxhealthcare.com`) để loại trừ. Tính đến 2026-09-14, chưa có tài khoản single-org khả dụng cho việc này.
+- Open question: hành vi quan sát được là do org-level permission hay user-level (tài khoản `nhat.pham` hiện có quyền multi-org) — cần test với tài khoản single-org **trên cùng domain dev** (`nhs-comms-hub-dev.blinxhealthcare.com`) để loại trừ. Tính đến 2026-09-14, đã thử tài khoản thứ 2 (qua `npm run auth:login`) nhưng vẫn là multi-org (Blinx Demo Site + PC24 Urgent Care thay vì + Redmoor Liverpool) — chưa có tài khoản single-org thật sự.
+- Open question mới [2026-09-14, OBS-005]: campaign `BH-37920 Updated Version` ("macclesfield shared campaign - updated", tạo bởi Beth Green 05/05/2026) có phải cùng ticket/điều tra với PAC2-7201 không? Nếu đúng, đây là bằng chứng rất mạnh cho thấy pattern lỗi đã tồn tại và được biết tới từ nhiều tháng trước — nên hỏi trực tiếp Beth Green hoặc tra Jira BH-37920 để xác nhận quan hệ.
 - Open question [2026-09-14]: video evidence gốc của ticket xác nhận là **production**, không phải dev (theo Beth Green qua Slack) — pattern quan sát được trên dev chỉ là loại suy, chưa verify trực tiếp trên production hoặc trên org Macclesfield PCN. Tester xác nhận việc xin quyền production/Macclesfield PCN hiện khó thực hiện.
 
 ## Tester notes

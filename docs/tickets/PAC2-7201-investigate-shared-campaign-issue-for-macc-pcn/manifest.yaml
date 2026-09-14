@@ -47,6 +47,10 @@ workflow:
       outcome: completed_with_warnings
       timestamp: "2026-09-14"
       note: "paco-test-design: 6 test case (PAC2-7201-TC-001..006), coverage map cho 4 requirement. TC-001/002/004 Explored (co evidence ad-hoc), TC-003/005/006 Preliminary/Blocked do thieu tai khoan Redmoor creator va quyen Macclesfield PCN. Mutation: None (chi thiet ke, khong thuc thi)."
+    - phase: EXPLORE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-14"
+      note: "OBS-005: tai khoan thu 2 (npm run auth:login, van multi-org: Blinx Demo Site + PC24 Urgent Care) tim thay campaign 'BH-37920 Updated Version' (macclesfield shared campaign - updated, tao boi Beth Green 05/05/2026) - xac nhan doc lap lan thu 3 pattern shared-to-org-co-edit-sai. Ten campaign trung dinh dang Jira BH-xxxxx, co the lien quan/trung PAC2-7201. Mutation: None (chi doc)."
 
 phases:
   DISCOVER: &done_phase
@@ -93,7 +97,7 @@ phases:
     updated_at: "2026-09-14"
     artifacts:
       - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/exploration.md"
-        sha256: c5a2282b5430500bfc15631c1e89a43617276ce1f3c74b1ba889608127260e82
+        sha256: e4df80b0c01bf478c7b16b2f27b82d897fdbe59d8f954b14bd24b06f2f88b12b
     warnings:
       - "REQ-001 (Macclesfield PCN) chua verify truc tiep do thieu quyen."
       - "Mutation ngoai formal AUTOMATE/EXECUTE flow da xay ra theo yeu cau truc tiep cua tester (co approval), xem exploration.md."
@@ -171,7 +175,7 @@ outputs:
     path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/exploration.md"
     state: valid
     input_revision: 1
-    sha256: c5a2282b5430500bfc15631c1e89a43617276ce1f3c74b1ba889608127260e82
+    sha256: e4df80b0c01bf478c7b16b2f27b82d897fdbe59d8f954b14bd24b06f2f88b12b
   test-cases.md:
     owner: paco-test-design
     path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/test-cases.md"
