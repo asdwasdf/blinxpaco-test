@@ -52,6 +52,14 @@ export function isDashboardUrl(
     && (currentPath === expectedPath || currentPath.startsWith(`${expectedPath}/`));
 }
 
+export function reachedDashboardAfterWaitError(
+  currentUrl: string,
+  baseUrl: string,
+  dashboardPath: string,
+): boolean {
+  return isDashboardUrl(currentUrl, baseUrl, dashboardPath);
+}
+
 export async function main(): Promise<void> {
   const config = loadConfig();
   const environment = getDefaultEnvironment(config);
@@ -76,6 +84,11 @@ export async function main(): Promise<void> {
     console.log('Giữ browser mở. Chạy Playwright test trong PowerShell khác; tự đóng browser khi xong.');
     await new Promise<void>((resolve) => context.browser()?.on('disconnected', () => resolve()));
   } catch (error) {
+    if (reachedDashboardAfterWaitError(page.url(), environment.baseUrl, environment.dashboardPath)) {
+      console.log(`Authentication đã xác minh. CDP local: ${cdpEndpoint(PACO_CDP_PORT)}`);
+      await new Promise<void>((resolve) => context.browser()?.on('disconnected', () => resolve()));
+      return;
+    }
     await context.close();
     const current = new URL(page.url());
     throw new Error(

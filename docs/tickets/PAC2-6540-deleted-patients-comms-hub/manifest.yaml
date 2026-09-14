@@ -1,0 +1,242 @@
+schema_version: 1
+
+ticket:
+  key: "PAC2-6540"
+  folder_name: "PAC2-6540-deleted-patients-comms-hub"
+  source_directory: "ticket/PAC2-6540-deleted-patients-comms-hub"
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-13T03:55:10Z"
+  files:
+    - path: "ticket/PAC2-6540-deleted-patients-comms-hub/ticket.md"
+      sha256: "a964d1c3e857a76346f5c483ef0f49ed49431f67ec353886f02184d842f4ca44"
+
+workflow:
+  status: blocked
+  current_phase: LOCATE
+  last_completed_phase: ANALYZE
+  updated_at: "2026-09-14T02:29:04Z"
+  checkpoints:
+    - phase: INGEST
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-13T03:55:10Z"
+      artifacts: []
+      warnings: []
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      timestamp: "2026-09-13T03:57:55Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/requirements.md"
+          sha256: "a09b4be4569f240f32cf6bbb101921262066489188b5056b24d882e47b9f1179"
+      warnings:
+        - "Ticket mâu thuẫn giữa nhóm bị xem là deleted và deleted status False; count 404 trừ 23 cũng không khớp 379."
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-13T03:57:55Z"
+      artifacts: []
+      warnings:
+        - "Chưa mở browser hoặc thực hiện mutation."
+      blockers:
+        - "Thiếu role/permission cụ thể và xác nhận manual authentication còn valid trên dev."
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-13T04:12:05Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "378c34b6665eec2d12636da421e0399599ea9d60ed22f1f506532906c75a01ae"
+      warnings:
+        - "Root Analytics and Reports mở được; Advanced Search và deleted-patient filters chưa thấy."
+      blockers:
+        - "Role GP Paco Assist không truy cập được PaComms/Comms Hub; control disabled."
+      budget:
+        views_used: 6
+        views_limit: 12
+        elapsed_minutes: 13
+        minutes_limit: 15
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-13T04:20:29Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "a85462d7ad137ca66216027ef3da5402e5f4e4fa1e5b08ffcc83652b650e4aa7"
+      warnings:
+        - "Role Super User được xác nhận trên dashboard nhưng PaComms vẫn disabled."
+      blockers:
+        - "Cần xác nhận entitlement, organisation/location hoặc role chính xác cho PaComms/Comms Hub."
+      budget:
+        views_used: 7
+        views_limit: 12
+        elapsed_minutes: 14
+        minutes_limit: 15
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-13T04:29:54Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "196cc052830405286991536e310f6c0b231c9ec977cfbb8de197dc7f2217d07d"
+      warnings:
+        - "Role Blinx Deployment được xác nhận trên dashboard nhưng PaComms vẫn disabled."
+      blockers:
+        - "Cần xác nhận entitlement và organisation/location chính xác cho PaComms/Comms Hub."
+      budget:
+        views_used: 8
+        views_limit: 12
+        elapsed_minutes: 15
+        minutes_limit: 15
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-14T02:05:10Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "b350130539ad7f197c8452a1e863f9860747a2df2808b44c3a803386e059724e"
+      warnings:
+        - "QA xác nhận PaComms không cần cho ticket; candidate đã chuyển thành rejected path."
+      blockers:
+        - "Thiếu module/page/menu, URL hoặc screenshot thay thế cho Advanced Search, campaign results hoặc Outbox."
+      budget:
+        views_used: 8
+        views_limit: 12
+        elapsed_minutes: 15
+        minutes_limit: 15
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-14T02:29:04Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "7cc2880b6932807e2864f0369883b2f685208a10ec0a3cdbce5d99e6839b4ff2"
+      warnings:
+        - "Correct route found: sidebar Comms Hub > Campaign Manager opens external Comms Hub app."
+      blockers:
+        - "External Comms Hub authentication missing or expired; redirected to login."
+      budget:
+        views_used: 10
+        views_limit: 12
+        elapsed_minutes: 15
+        minutes_limit: 15
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-13T03:55:10Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-13T03:55:10Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-13T03:57:55Z"
+    artifacts:
+      - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/requirements.md"
+        sha256: "a09b4be4569f240f32cf6bbb101921262066489188b5056b24d882e47b9f1179"
+    warnings:
+      - "Ticket mâu thuẫn giữa nhóm bị xem là deleted và deleted status False; count 404 trừ 23 cũng không khớp 379."
+    blockers: []
+  LOCATE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-14T02:29:04Z"
+    artifacts:
+      - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+        sha256: "7cc2880b6932807e2864f0369883b2f685208a10ec0a3cdbce5d99e6839b4ff2"
+    warnings:
+      - "QA xác nhận top-bar PaComms không cần cho ticket; prior observations giữ làm rejected-path history."
+      - "Correct route found: sidebar Comms Hub > Campaign Manager opens external Comms Hub app."
+    blockers:
+      - "External Comms Hub authentication missing or expired; redirected to login."
+    budget:
+      views_used: 10
+      views_limit: 12
+      elapsed_minutes: 15
+      minutes_limit: 15
+  EXPLORE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/requirements.md"
+    state: valid
+    input_revision: 1
+    sha256: "a09b4be4569f240f32cf6bbb101921262066489188b5056b24d882e47b9f1179"
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+    state: blocked
+    input_revision: 1
+    sha256: "7cc2880b6932807e2864f0369883b2f685208a10ec0a3cdbce5d99e6839b4ff2"

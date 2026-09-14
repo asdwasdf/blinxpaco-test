@@ -11,6 +11,7 @@ import {
   isAuthenticationUrl,
   isDashboardUrl,
   persistentContextOptions,
+  reachedDashboardAfterWaitError,
   resolveProfileDirectory,
 } from '../playwright-login.js';
 
@@ -63,6 +64,17 @@ test('recognizes client-side redirects to authentication pages', () => {
   assert.equal(isAuthenticationUrl('https://blinx.dev.blinxpaco-np.com/paco/login'), true);
   assert.equal(isAuthenticationUrl('https://blinx.dev.blinxpaco-np.com/sign-in?returnUrl=%2Fpaco'), true);
   assert.equal(isAuthenticationUrl('https://blinx.dev.blinxpaco-np.com/paco/dashboard'), false);
+});
+
+test('accepts dashboard reached at wait timeout boundary', () => {
+  assert.equal(
+    reachedDashboardAfterWaitError(
+      'https://blinx.dev.blinxpaco-np.com/paco/dashboard',
+      'https://blinx.dev.blinxpaco-np.com',
+      '/paco/dashboard',
+    ),
+    true,
+  );
 });
 
 test('accepts only dashboard URL on configured origin', () => {

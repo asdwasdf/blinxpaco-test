@@ -1,0 +1,180 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-7201
+  folder_name: PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn
+  source_directory: ticket/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-14"
+  files:
+    - path: ticket/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/ticket.md
+      sha256: 90b380768af52e99d61081a132b7efe526198807cf49b6432fa005f2b963d8ef
+
+workflow:
+  status: in_progress
+  current_phase: AUTOMATION_REVIEW
+  last_completed_phase: TEST_DESIGN
+  updated_at: "2026-09-14"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      timestamp: "2026-09-14"
+      note: "Ticket key resolved: PAC2-7201. Regex hop le, folder khong trung lap."
+    - phase: INGEST
+      outcome: completed
+      timestamp: "2026-09-14"
+      note: "Hash raw source ticket.md, revision=1."
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-14"
+      note: "paco-requirements: 4 atomic requirements (REQ-001..004), tat ca Inferred (ticket khong co AC). 3 ambiguity, 7 open question. Mutation: None."
+    - phase: LOCATE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-14"
+      note: "Route do tester cung cap truc tiep, xac nhan ngay (3 views). Khong co quyen Macclesfield PCN."
+    - phase: EXPLORE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-14"
+      note: "Phat hien pattern edit-permission dao nguoc theo huong org lien quan Redmoor Liverpool, xac nhan qua 3 nguon doc lap (Beth Green hom nay, Santhosh 2025, self-created test). Co mutation (Create+Share+Edit campaign test, co approval) nam ngoai formal TEST_DESIGN/AUTOMATE flow theo yeu cau truc tiep cua tester. Cleanup chua hoan tat: campaign test con ton tai (xem exploration.md Blockers)."
+    - phase: EXPLORE
+      outcome: no_change
+      timestamp: "2026-09-14"
+      note: "Tester quyet dinh coi 2 open question (production/Macclesfield PCN access; single-org dev account) la bat kha thi, khong chan workflow. Do tin cay thong nhat: pattern loi co that tren dev ~90%; la root cause truc tiep cua bug Macclesfield PCN tren production ~60-65%. Ghi vao status.md."
+    - phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      timestamp: "2026-09-14"
+      note: "paco-test-design: 6 test case (PAC2-7201-TC-001..006), coverage map cho 4 requirement. TC-001/002/004 Explored (co evidence ad-hoc), TC-003/005/006 Preliminary/Blocked do thieu tai khoan Redmoor creator va quyen Macclesfield PCN. Mutation: None (chi thiet ke, khong thuc thi)."
+
+phases:
+  DISCOVER: &done_phase
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-14"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST: *done_phase
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-14"
+    artifacts:
+      - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/requirements.md"
+        sha256: 48494b0aab06015a0fe4df4ec5b09dbd4210eaf4a2cd32c7db93e6d4823f25c5
+    warnings:
+      - "Ticket khong co Acceptance Criteria: toan bo requirement la Inferred, can BA/PO xac nhan."
+      - "Domain trong image (1).png (nhs-comms-hub.blinxhealthcare.com) khong khop domain dev mac dinh; can lam ro truoc LOCATE."
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-14"
+    artifacts:
+      - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/feature-location.md"
+        sha256: 835df4dc20ec943b7846a9cb93d09512a8d91c045343889f7cf316872ef61255
+    warnings:
+      - "Khong co quyen truy cap org Macclesfield PCN (org goc trong ticket) tren dev."
+    blockers: []
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 3
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-14"
+    artifacts:
+      - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/exploration.md"
+        sha256: c5a2282b5430500bfc15631c1e89a43617276ce1f3c74b1ba889608127260e82
+    warnings:
+      - "REQ-001 (Macclesfield PCN) chua verify truc tiep do thieu quyen."
+      - "Mutation ngoai formal AUTOMATE/EXECUTE flow da xay ra theo yeu cau truc tiep cua tester (co approval), xem exploration.md."
+      - "Cleanup chua hoan tat: campaign test PAC2-7201-TEST-BDS-to-Redmoor-edited con ton tai tren dev (khong the Pause/Delete qua UI)."
+      - "Video evidence goc cua ticket xac nhan la production (Beth Green qua Slack, 2026-09-14); ket qua EXPLORE tren dev chi la loai suy, chua verify truc tiep tren production/Macclesfield PCN."
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-14"
+    artifacts:
+      - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/test-cases.md"
+        sha256: 9e39e197f5eac2e133fcaf69db9fcef9e8410c478c527b305334e98d38bd9cd6
+    warnings:
+      - "TC-003, TC-005, TC-006 con Preliminary/Blocked do thieu tai khoan Redmoor creator va quyen Macclesfield PCN."
+      - "TC-006 chua co expected-result ro rang (dinh nghia Failed con Disputed)."
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/requirements.md"
+    state: valid
+    input_revision: 1
+    sha256: 48494b0aab06015a0fe4df4ec5b09dbd4210eaf4a2cd32c7db93e6d4823f25c5
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/feature-location.md"
+    state: valid
+    input_revision: 1
+    sha256: 835df4dc20ec943b7846a9cb93d09512a8d91c045343889f7cf316872ef61255
+  exploration.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/exploration.md"
+    state: valid
+    input_revision: 1
+    sha256: c5a2282b5430500bfc15631c1e89a43617276ce1f3c74b1ba889608127260e82
+  test-cases.md:
+    owner: paco-test-design
+    path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/test-cases.md"
+    state: valid
+    input_revision: 1
+    sha256: 9e39e197f5eac2e133fcaf69db9fcef9e8410c478c527b305334e98d38bd9cd6
