@@ -18,8 +18,9 @@ Write only `requirements.md`; `ticket/**` is read-only. Preserve final `## Teste
 4. Classify `Confirmed`, `Observed`, or `Inferred`; track missing knowledge as `Open Question`.
 5. Record lifecycle, exact source/revision, dates, basis, evidence, and related tests.
 6. For UI scope, extract exact feature terms, reasonable spelling aliases, actor/context, trigger nouns, target nouns, and known location or `Unknown`. Aliases support search only; never mark a route `Observed` without browser evidence.
-7. Keep missing Acceptance Criteria and OCR uncertainty explicit. Mark conflict `Disputed`; never silently choose a source.
-8. Compare before write; preserve IDs and deduplicate sources/questions.
+7. Optionally read matching `docs/product/workflows/*.md` for search terms, actor/context, prerequisite and open-question hints. Survey workflow is not a requirement source: never create a requirement, expected behavior or `Confirmed` claim from it; record any conflict with ticket sources instead.
+8. Keep missing Acceptance Criteria and OCR uncertainty explicit. Mark conflict `Disputed`; never silently choose a source.
+9. Compare before write; preserve IDs and deduplicate sources/questions.
 
 ## Direct invocation, stop, outcome
 Write only owned artifact and return checkpoint proposal; never edit manifest/status or call next skill. Missing source is `Blocked`; technical/merge error is `Failed`; ambiguity may warn. Return `ChildSkillOutcome` v1 with artifact action/checksum, counts, mutation `None`, sensitive-data status, blockers/warnings, and recommended next phase.

@@ -15,6 +15,28 @@ import { discoverTicket } from '../ticket-utils.js';
 const now = '2026-09-10T00:00:00.000Z';
 const pattern = /^[A-Z][A-Z0-9]*-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
+const workflowTemplatePath = path.resolve('docs/templates/workflow.md');
+
+test('keeps survey workflow observational and bounded', async () => {
+  const template = await readFile(workflowTemplatePath, 'utf8');
+  for (const required of [
+    'Classification: `[Observed:',
+    'Starting data state:',
+    '## Read-only flow',
+    '## Safety boundary',
+    'Approval stop:',
+    'Mutation: `None`',
+    '## Execution guidance',
+    '## Automation guidance',
+    'Assertions lacking trusted expected basis:',
+    '## Tester notes',
+  ]) assert.match(template, new RegExp(required.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
+  assert.doesNotMatch(template, /Classification:\s*`\[Confirmed\]/);
+
+  const standard = await readFile(path.resolve('docs/standards/knowledge-classification.md'), 'utf8');
+  assert.match(standard, /không được tạo ticket requirement hoặc expected result/);
+});
+
 test('runs LOCATE state mechanics without Paco access or source mutation', async () => {
   const root = await mkdtemp(path.join(tmpdir(), 'paco-synthetic-'));
   const sourceDirectory = path.join(root, 'ticket', 'PAC9-201-synthetic-flow');

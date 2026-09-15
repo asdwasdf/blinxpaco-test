@@ -38,3 +38,11 @@
 2. Behavior hiện tại ≠ behavior đúng
 3. Source mâu thuẫn → `Disputed` + open question, không tự chọn
 4. Mọi classification cần provenance: source location, revision, timestamp
+
+## Workflow observations
+
+- Product workflow survey records ordered current behavior, not correct or intended behavior.
+- Bắt buộc ghi environment, role, timestamp, evidence, prerequisites, starting data state và mutation boundary.
+- Workflow observation có thể hỗ trợ navigation, setup, test-data choice, risk, coverage, manual guidance và automation waits.
+- Workflow observation không được tạo ticket requirement hoặc expected result; hai phần đó cần ticket/trusted-source basis độc lập.
+- Khi workflow observation mâu thuẫn ticket source, ghi mismatch/`Open Question`; không tự chọn nguồn hoặc auto-promote `Confirmed`.

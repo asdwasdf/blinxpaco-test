@@ -3,7 +3,9 @@
 ## Traceability Chain
 
 ```
-Ticket/Observation
+Product Workflow Observation (optional navigation/setup/coverage hint)
+  ↘
+Ticket/Trusted Source
   → Ticket/Product Requirement
   → Feature Location (UI-dependent only)
   → Test Case 
@@ -12,6 +14,8 @@ Ticket/Observation
   → Evidence 
   → Defect (if failed)
 ```
+
+Workflow observation không thay ticket/trusted source và không xác lập expected result. Nó chỉ bổ sung route, prerequisite, data state, safe steps, risk và coverage; route/context phải re-verify trên run hiện tại.
 
 ## Required Links
 

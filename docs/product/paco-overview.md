@@ -6,10 +6,10 @@ Reusable read-only observations about Paco product areas. This file records curr
 
 - Coverage: `Partial`
 - Last environment: `dev` (`https://blinx.dev.blinxpaco-np.com`)
-- Last role: `GP - paco assist`
-- Last surveyed: `2026-09-14`
-- Views surveyed: 48 cumulative top-level routes; 9 new child routes checked in batch 4, plus a re-check pass (batch 5) confirming the 5 previously-inconclusive captures were all capture-timing artifacts, not real empty states. Batch 6 went deeper into `Patient Search` in-page content (list filter, row actions, `View Patient` detail dialog, `Filters` drawer) rather than new top-level routes.
-- Resume checkpoint: The sidebar map is fully enumerated and confirmed. In-page depth has been sampled on `Patient Search` (batch 6, extended in batches 12 and 13), `Unallocated` (batch 7), `Health Form Inbox` (batch 8, revisited in batch 13), `Case Workboards` (batch 9, extended in batch 13), `Task Workboards` (batch 10), and `Media Library` (batch 11). Batch 13 opened an entirely new area — the patient clinical profile (`/paco/patient-profile/<id>/...`) — and batch 14 toured all 12 of its tabs at a landing-page level. Remaining unexplored: deeper content within each patient-profile tab (e.g. actually reading a full consultation's notes, opening a document, drilling into an investigation result), and the task `Change Status`/`Move Task`/`Link Task` dialogs (not opened, since they read as mutation-adjacent).
+- Last role: `Super Admin GB`
+- Last surveyed: `2026-09-15`
+- Views surveyed: 48 cumulative top-level routes through batch 14. Batch 15 compared the complete visible sidebar under `Super Admin GB` against the prior `GP - paco assist` map; no new sidebar route was found.
+- Resume checkpoint: Case Load Management business-flow survey lives at `docs/product/workflows/case-load-management.md`. Latest pass confirmed Case Workboards also remains `Loading workboards...` with `Tasks (0)`/`Cases (0)` under the current session, matching Task Workboards; no populated-board control became available. Defer both Workboards until session/environment loading is understood or a fresh session is provided; avoid repeating the same state. Do not choose staff status or use case/task mutations without approval.
 - `[Observed: dev, GP - paco assist, 2026-09-14]` A prior run ended early after automation triggered an unintended `Sign Out` while on the broken `Patients > Care Navigation` page. The tester re-authenticated manually before this run; this run added stricter selector guards (exact text match, position disambiguation, unsafe-URL circuit breaker) and completed without further mutation.
 - `[Observed: dev, GP - paco assist, 2026-09-14]` Between batches, the manual login browser (`npm run auth:login`) was closed by the tester and had to be relaunched and re-authenticated before the survey could resume; the skill correctly reported `Blocked: Authentication expired` rather than attempting to proceed or requesting credentials.
 - `[Observed: dev, GP - paco assist, 2026-09-14]` Separately, the browser session was also once signed out automatically ("We couldn't confirm your session was still active, so you were signed out for security") mid-survey, unrelated to any automation action; the tester re-authenticated manually before the run resumed.
@@ -148,6 +148,76 @@ Reusable read-only observations about Paco product areas. This file records curr
 - `[Observed: dev, GP - paco assist, 2026-09-14]` `Documents` shows `Create Document`/`From Template`/`New Fit Note`/`Upload` actions (mutations), `All`/`Pending`/`Reviewed` and `All`/`Mine` filters, sort control, and an empty state (`Showing 0/0 documents`, "There are no patient attachments").
 - `[Observed: dev, GP - paco assist, 2026-09-14]` `Payments` rendered only a bare `Payments` heading with no further content in this run — inconclusive whether this is a genuine empty state, a permission gate, or a slow-loading widget (per the pattern seen elsewhere in the app).
 - `[Observed: dev, GP - paco assist, 2026-09-14]` `Tasks` is a patient-scoped view of the same task system seen in the standalone `Task Workboards`: `Active`/`Closed`/`All` filters, `Create New task` (mutation), sort (`Time on Board`), `Filters`, and the identical `Group by:` options (`By Task Type`, `By Patient`, `By Team/Stage`, `By Priority`, `By Author`) plus a `Time in Stage` column — confirming the task system is shared/cross-cutting rather than board-specific, and is also surfaced per-patient here. Empty for this patient in this run.
+
+### Super Admin GB route comparison — batch 15
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Từ `/paco/dashboard`, sidebar mở rộng hiển thị cùng 8 nhóm và 4 route độc lập đã ghi nhận cho role `GP - paco assist`: `Dashboards`, `Analytics & Reports`, `Comms Hub`, `Health Forms`, `Patients`, `Web Chat & Video`, `Case Load Management`, `Appointment Book`; cùng `Quick Pay`, `User Portal`, `Configuration`, `Rocket Bar`.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Child item hiển thị trong từng nhóm cũng khớp map cũ: `Dashboard`/`Manager`/`Connect`/`Clinician`; 7 mục Analytics; 3 mục Comms Hub; 3 mục Health Forms; 2 mục Patients; 3 mục Web Chat & Video; 4 mục Case Load Management; 2 mục Appointment Book.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Không phát hiện route sidebar mới so với baseline `GP - paco assist` ngày 2026-09-14. Kết luận này chỉ áp dụng cho visible global navigation; route ẩn theo deep link, permission-specific contextual menu hoặc feature flag chưa được loại trừ.
+- Evidence local, raw: `test-results/product-survey/20260915-092204/sidebar-map.json` (không chứa credential, cookie, token hoặc PII).
+
+### Hidden/contextual route discovery — batch 16
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Bounded read-only pass inspected 6 meaningful states: `Patient Search`, its `Filters` drawer, `Unallocated`, Case Workboard entry, Task Workboard entry, and `Configuration` navigation attempt. No previously-unmapped route was verified.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Patient Search > Filters` remains an in-page drawer on `/paco/patient-search`; it does not create a deep link. Mutation-shaped `Save` was not used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Case Workboard entry `/paco/workboards?tab=case` resolved to a board-specific deep link `/paco/workboards/58`. This URL family was already known; board ID is environment data, not a new product route type.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Attempting to continue at `Configuration` redirected to `/paco/login`; survey stopped as `Blocked: Authentication expired`. No credentials or auth state were captured.
+- Evidence local, raw: `test-results/product-survey/20260915-092552/` (review before sharing; controls may include environment labels).
+
+### Hidden/contextual route discovery — batch 17
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Sau re-authentication, `Patient Search > row Actions` hiển thị đúng 6 action đã biết: `Profile`, `View`, `Edit`, `View Audit`, `Archive`, `Save for offline access`. Không có action riêng cho role `Super Admin GB`; các action mutation/unknown không được mở.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Actions > Profile` mở `/paco/patient-profile/<patient-guid>/dashboard`. 12 child route đã biết (`dashboard`, `timeline`, `coding`, `consultations`, `medications`, `patient-comms`, `shared-records`, `investigations`, `appointments`, `documents`, `payments`, `tasks`) đều resolve dưới role này; không thấy tab hoặc URL segment mới.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Actions > View Audit` không đổi URL khỏi `/paco/patient-search`; không tạo deep link. Không có dialog ổn định được capture trong lần mở này.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Batch đạt bound 12 meaningful patient-profile views; survey dừng đúng checkpoint thay vì mở rộng sang menu khác.
+- Evidence local, raw: `test-results/product-survey/20260915-094748/` (patient identity đã được lược khỏi docs; raw local không chia sẻ).
+
+### Patient actions — batch 18
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Patient-profile `Patient actions` menu exposes 16 items: `New Consultation`, `Quick Script`, `Quick Book`, `Quick Send`, `Quick Form`, `Care Navigation`, `Open Patient in EPR`, `Pull Patient Record`, `Quick Pay`, `Create Task`, `PACO Talk`, `Edit Details`, `Update relationships`, `Save for offline access`, `Investigations`, `Show Audit`.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Safe action `Investigations` opens `/paco/patient-profile/<patient-guid>/test-results`, a newly verified hidden URL alias for the visible `Investigations` area previously recorded as `/investigations`. Page landmarks remain `Results`, `Requested`, `+ New Request`, `ICE`; mutation action `+ New Request` was not used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `/test-results` displayed `Failed to load ICE. Please try again.` in this run. This is current observed behavior, not proof of intended behavior.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Safe action `Show Audit` stays on the current patient-profile URL and opens an in-page dialog with `View: Medications`, `Refresh`, `Date & Time`, `Close`; it creates no deep link. `Refresh` was not used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Remaining 14 patient actions were not opened because they are mutation-shaped, external-system-shaped, or have unknown persistence. Mutation: `None`.
+- Evidence local, raw: `test-results/product-survey/20260915-095540/` (patient identifiers excluded from docs; raw local evidence is not shareable).
+
+### Read-only follow-up — batch 19
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Pass chạy tuần tự `Unallocated` → Case Workboard → `Configuration`, dùng auth browser local qua CDP. Tổng cộng 5 meaningful states: ba landing page, `Unallocated > Filters`, và Case Workboard `List View`. Mutation: `None`.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Unallocated` hiển thị `Unallocated (0)`, `List View`, `Create new case`, sort `Breaching (high to low)`, `Filters`, tab `All`, cùng legend `PDS Validated` / `PDS Validation Pending` / `PDS Not Matched`. `Filters` mở drawer với `Clear all`, `Cancel`, `Save`; drawer còn ở trạng thái `Loading filters` khi capture. `Save` không được dùng.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Case Workboard entry resolve tới `/paco/workboards/58`, chọn `Master Case Board`; global counts là `Tasks (0)` và `Cases (0)`. Vì board không có case, không có card menu hoặc `View Audit` để khảo sát trong pass này.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Configuration > Organisation > General` hiển thị child navigation `Practice Profiles`, `Locations`, `Skills`, `Code Rule`, `Sharing Agreements`, `Pathways Config`, `Services`, `Dx Priority`, `Org Priority`, `Inbound Priority Flow`, `Announcements`, `Integrations`; các top-level area khác gồm `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, `Users & Staff`, `Clinical Config`, `Case Prioritisation`.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Configuration > General` báo `No Main care site found for this organisation. Please add a care site to manage address and contact info.` Trang chứa mutation controls `Upload Photo`, `Remove Photo`, `Edit Address`, `+ Add Special Opening Hours`, rich-text editors cho `Standard Header`/`Standard Footer`, và `Save`; không control nào được dùng.
+- Evidence local, raw: `test-results/product-survey/2026-09-15T03-38-31/` (ảnh và `observations.json`; raw evidence có thể chứa environment identity, không chia sẻ trực tiếp).
+
+### Configuration organisation survey — batch 20
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Bounded pass captured 12 `Configuration > Organisation` states. `General`, `Locations`, `Sharing Agreements`, `Services`, `Inbound Priority Flow`, and `Announcements` rendered feature content. Mutation controls were only observed; none were used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Locations` lists `Assigned Staff`, `Name`, `Address`, `Contact Number`, `Email Address`, `Actions`, plus `Add Location`. `Sharing Agreements` lists organisations with `ODS Code`, `Name`, `Address`, `Access`, `Status`; visible access includes prescribing, consultations, documents, and codings.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Services` exposes repeated `Service ID`, `Service Name`, `Case Type` rows (visible values `111`, `OOH / IUC`, `CAS`, `PCAS`) plus `Add Another` and `Save`.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Inbound priority rules engine` contains `Questions` and `Outcomes`, an entry-node selector, `Preview walk`, `Reset to default`, `Add`, `Delete`, and `Save`. Visible outcomes include `Call 111`, `20-minute DCA`, `Consider 999`, `2-hour home visit`, `Local pharmacy`, `DCA at identified priority`, `Call back once assessed`, and `Unexpected death — follow organisation policy`.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Announcements` contains `Welcome Message`, `Apply to locations`, `Service Updates`, `Add another`, `Delete`, and `Save`.
+- `[Inferred: automation limitation, 2026-09-15]` `Practice Profiles`, `Code Rule`, `Pathways Config`, `Dx Priority`, and `Org Priority` were reached through guessed fallback URLs after their visible navigation items were not semantic links; those guesses produced `Page Not Found` and do not establish that the real UI destinations are broken. `Skills` rendered blank at the guessed URL. These six items require retry by clicking their visible navigation controls, not by direct guessed routes.
+- Evidence local, raw: `test-results/product-survey/2026-09-15T03-41-16/`.
+
+### Configuration navigation controls — batch 21
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Bounded pass clicked 12 visible `Configuration` navigation controls. `Skills`, `Code Rule`, `DX Priorities`, `Org Priorities`, and `Integrations` reached distinct destinations; mutation controls were not used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Skills` opens `/paco/configuration/organisation/skills` and lists `Name`, `Created By`, `Pathways`, `RBAC Skill`, `Snomed CT Code`, `Actions`; `Add Skill` was not used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Code Rule` opens legacy-looking `/configuration/#code-rules-config`, showing `Last Updated: N/A` and two `Select an Organisation` controls. No selection was made.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Dx Priority` opens `/paco/configuration/organisation/dx-priorities`; rows map `Disposition Code`/`Disposition Text` to `Service` and `Priority`, with `Add Service & Priority` and `Save` controls left untouched.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Org Priority` opens `/paco/configuration/organisation/org-priorities`, exposing `Priorities`, `Priority Grouping`, `Total Time`, `Breaching Red`, `Breaching Amber`, `Breaching Green`, `Case Ranking`, and `Default`; `Add new`, `Edit`, and `Save` were not used.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Integrations` opens `/paco/configuration/organisation/integrations`; only heading and `Save` were visible in this capture.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Clicking `Practice Profiles` and `Pathways Config` produced `/paco/configuration/organisation/practice-profiles` and `/paco/configuration/organisation/pathways`, both rendering `Page Not Found`. This time routes came from real visible controls, not guessed URLs.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Clicking top-level `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, and `Users & Staff` expands child navigation while retaining current `General` page. Visible child items: Patient (`DFD`, `Care Navigation`); Appointment Books (`Scheduler`, `Appointment Books`, `Sessions`, `Slot Types`, `Appointments`, `External Appt Reminders`); Quick Pay (`Product Catalogue`, `Accounts`); Patients & Proxy (`Role Groups`); Users & Staff (`Staff Profiles`, `Role Groups`, `Teams`). These child items remain pending.
+- Evidence local, raw: `test-results/product-survey/2026-09-15T03-48-23/`.
+
+### Configuration child screens — batch 22
+
+- `[Observed: dev, Super Admin GB, 2026-09-15]` Bounded pass attempted 12 child navigation states. Verified destinations: `Patient > DFD` opens legacy `/configuration/#dfd-config` but rendered blank; `Appointment Books > Slot Types` opens `/paco-connect/configuration/#service-types` but rendered blank; `External Appt Reminders` opens `/configuration/#externalApptReminders` and remained at `Loading...`; `Quick Pay > Product Catalogue` opens `/paco-connect/quick-pay/products` but rendered blank in this capture.
+- `[Observed: dev, Super Admin GB, 2026-09-15]` `Patients & Proxy > Role Groups` opens `/paco/configuration/proxy/role-groups`. It lists `Role`, `Role Group`, `RBAC Role`, and `RBAC Activities`; visible permissions span patient access, workboards, appointments, audits, configuration, communications, reports, documents, tasks, prescriptions, and integrations. `Add New` and `Save` were not used.
+- `[Inferred: automation limitation, 2026-09-15]` `Patient > Care Navigation`, `Appointment Books > Scheduler`/`Sessions`/`Appointments`, `Quick Pay > Accounts`, and `Users & Staff > Staff Profiles` were not captured because their parent group was not visible after repeated page resets. `Appointment Books > Appointment Books` matched its parent label, so selector ambiguity left the page on `Organisation > General`. These states remain pending and are not treated as product failures.
+- Evidence local, raw: `test-results/product-survey/2026-09-15T03-51-52/` (contains role/permission inventory; keep local).
 
 ## Open questions
 
