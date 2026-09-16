@@ -4,8 +4,8 @@
 **Environment:** dev
 **Role:** `Patient (scheduler link, no PACO login)` — cross-check thực hiện với `Super Admin GB` (PACO dashboard, tài khoản Test Fiona Nguyen, General Practice (Blinx Demo Site))
 **Observed:** 2026-09-16
-**Status:** Blocked
-**Budget:** 12/12 views; ~14/15 minutes
+**Status:** Located (patient details boundary)
+**Budget:** 12/12 original views + targeted recheck; original LOCATE budget exhausted
 
 ## Search clues
 
@@ -50,9 +50,17 @@
    - Resulting state: app `Blinx Scheduler` load thành công, hiển thị card "Link Error — No token found. Your link may have expired." (route hợp lệ, app đang chạy, nhưng thiếu token per-patient trong URL)
    - Context dependency: cần token/query param sinh theo từng patient (qua campaign send) mới vào được flow đặt lịch thật
 
+7. Starting state: URL generic `https://dev.blinxscheduler-np.com/patient-self-booking/`
+   - Landmark/control: heading `Welcome to the General Practice (Blinx Demo Site) Digital Front Door`, ô `Search Services...`
+   - Read-only action: search `Same Day GP` → chọn service `Same Day GP routine Appointment` (alias hiển thị của campaign `Simple EMIS Booking - Same Day GP`)
+   - Resulting state: loading `We are currently checking availability with your healthcare provider...`, sau đó mở `Patient Details` với yêu cầu NHS Number và Date of Birth
+   - Mutation boundary: dừng trước nhập patient data, `Send Secure Link`, `I understand`, chọn slot hoặc `Book`
+   - Context dependency: route generic hoạt động không cần JWT ở bước Digital Front Door; cần dữ liệu patient hợp lệ để đi sâu hơn
+
 ## Context requirements
 
-- Flow patient-facing (`Book Appointment`, refresh/re-entry bug) đòi hỏi một **scheduler link đã được gửi cho một patient cụ thể** (chứa token), không phải một route cố định trong PACO dashboard.
+- Flow patient-facing có thể bắt đầu từ route generic `https://dev.blinxscheduler-np.com/patient-self-booking/`, chọn service `Same Day GP routine Appointment`, rồi xác minh patient bằng NHS Number và Date of Birth.
+- Các bước sau `Patient Details` vẫn cần patient test data hợp lệ; chưa xác minh được màn `Book Appointment` hoặc booking behavior.
 - Link được sinh ra khi practice user gửi campaign qua Comms Hub `Campaign Manager` (hoặc `Quick Send`/`Template Manager`) tới patient — cần tài khoản Comms Hub riêng biệt với PACO.
 - Domain patient-facing: `*.blinxscheduler-np.com` (tách biệt hoàn toàn khỏi domain PACO `blinx.dev.blinxpaco-np.com` và Comms Hub `*.blinxhealthcare.com`).
 
@@ -82,14 +90,10 @@
 
 ## Blockers and next action
 
-- Blocker 1 (đã giải quyết một phần): thiếu quyền Comms Hub — tester đã tự đăng nhập thủ công trong phiên này, mở khoá được `Campaign Manager` và `Campaign Outbox`.
-- Blocker 2 (còn tồn tại, đã re-verify): tính năng `Resend` trên Campaign Outbox — con đường duy nhất quan sát được qua UI để lấy nội dung link/token thật — thất bại với lỗi kỹ thuật HTTP 400, tái lập ổn định qua **3 lần thử độc lập** (không phải glitch tạm thời). Đây nhiều khả năng là một defect riêng của Comms Hub (ngoài phạm vi PAC2-1805) cần báo cáo riêng, và nó chặn hoàn toàn khả năng lấy token mới qua UI trong phiên LOCATE này.
-- Budget đã cạn (12/12 views, ~14/15 phút) — dừng LOCATE tại đây theo stop condition.
-- Next action (cần tester xác nhận một trong các lựa chọn):
-  1. Cung cấp trực tiếp một scheduler link (token) còn hiệu lực đã có sẵn (ví dụ từ email/SMS thật của số test +447379060817, hoặc link khác đã lưu), hoặc
-  2. Thử lại `Resend` trên môi trường khác/thời điểm khác (nếu nghi ngờ lỗi 400 là tạm thời) — cần approval mutation riêng cho lần thử tiếp theo, hoặc
-  3. Báo cáo lỗi `Resend` (HTTP 400 + exception `editCampaignDetailsModal.js`) như một defect riêng (không thuộc PAC2-1805) trước, rồi quay lại LOCATE sau khi có cách khác lấy token, hoặc
-  4. Đánh dấu `EXPLORE` cho PAC2-1805 là blocked với lý do cụ thể (không lấy được token thật) và tiến hành `TEST_DESIGN` ở mức `Preliminary` (route context đã Confirmed một phần qua Campaign Outbox, nhưng chưa có token thật để verify hành vi UI — automation gate sẽ chặn cho tới khi có route đầy đủ).
+- Entry path đã định vị qua route generic; JWT/Comms Hub `Resend` không còn là blocker cho bước vào `Patient Details`.
+- Boundary còn lại: cần NHS Number và Date of Birth của patient test hợp lệ để đi sâu tới màn chọn slot/`Book Appointment`. Không nhập dữ liệu hoặc thực hiện mutation trong LOCATE.
+- `Resend` trên Comms Hub vẫn là defect riêng: HTTP 400 ổn định 3/3; không retry.
+- Next action: bắt đầu `EXPLORE` từ `Patient Details` sau khi có patient test data hợp lệ và approval cho các bước có side effect; quan sát tới trước booking mutation.
 
 ## Tester notes
 
