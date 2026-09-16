@@ -4,8 +4,8 @@
 **Environment:** dev
 **Role:** `GP Paco Assist`
 **Observed:** 2026-09-13T03:59:00Z
-**Status:** Blocked
-**Budget:** 8/12 views; bounded resume completed
+**Status:** Confirmed
+**Budget:** 3/12 views in latest bounded run
 
 ## Search clues
 
@@ -101,10 +101,46 @@ Route trên chỉ xác minh root `Analytics and Reports`; chưa xác minh đư�
 - External app hiển thị login; Paco authentication không tạo valid Comms Hub session trong lần điều hướng này.
 - Không nhập credential, không tạo campaign và không thực hiện mutation.
 
+## Super Admin GB validation
+
+**Observed:** 2026-09-15T15:02:44Z
+**Role:** `Super Admin GB`
+**Scope:** Resume route read-only với external Comms Hub authentication được tester xác nhận valid
+**Additional budget:** 2 meaningful views
+
+- External Comms Hub home mở tại `/commshub/`; heading `Communications Hub` và context `General Practice (Blinx Demo Site)` hiển thị.
+- Route `Comms Hub` → `Campaign Manager` mở `/commshub/campaign-manager` thành công.
+- `Campaign Manager` hiển thị các control `Create Campaign`, `Campaign Outbox`, `Reset Column Widths`, `Show All Columns`, `Clear Filters`.
+- Không dùng `Create Campaign`, không chọn campaign, không gửi dữ liệu và không có mutation.
+- Lần thử mở `Campaign Outbox` bị `Blocked` vì control không còn tồn tại sau khi page state tải xong; chưa xác minh được `Outbox` detail.
+
+## Evidence bổ sung
+
+- `test-results/PAC2-6540/locate/20260915T000000Z/PAC2-6540-LOCATE-campaign-manager-20260915T000000Z.png` — local raw evidence; `dev`; `Super Admin GB`; cần review/redact trước khi chia sẻ.
+
+## Campaign Outbox validation
+
+**Observed:** 2026-09-15T15:08:45Z
+**Role:** `Super Admin GB`
+**Environment:** `dev`
+**Scope:** Fresh bounded read-only validation
+**Budget:** 3/12 meaningful views
+
+- Context hiển thị `General Practice (Blinx Demo Site) (YGMQJ)`.
+- `Campaign Manager` mở tại `/commshub/campaign-manager`.
+- Entry `Campaign Outbox` được xác minh visible và enabled qua ancestor `button`; mở thành công `/commshub/campaign-outbox`.
+- `Outbox` root hiển thị `Campaigns`, `Campaign Types` và prompt `Select a Campaign to view communication`.
+- Không chọn campaign vì hành động có thể mở dữ liệu bệnh nhân/message; không dùng `Create Campaign`, không gửi dữ liệu và không có mutation.
+
+## Evidence bổ sung
+
+- `test-results/PAC2-6540/locate/20260915T151000Z/PAC2-6540-LOCATE-campaign-outbox-20260915T151000Z.png` — local raw evidence; `dev`; `Super Admin GB`; cần review/redact trước khi chia sẻ.
+
 ## Blockers and next action
 
-- Blocker: authentication của external Comms Hub app thiếu hoặc hết hạn; chưa thể mở campaign results/`Outbox`.
-- Next action: đăng nhập thủ công external Comms Hub app trong browser test, quay lại Paco dashboard, rồi resume route `Comms Hub` → `Campaign Manager`. Không gửi hoặc tạo campaign.
+- Không còn blocker cho route tới `Campaign Outbox` root.
+- Route status: `Confirmed`.
+- Next action: chuyển sang `EXPLORE` read-only để xác định campaign phù hợp. Dừng trước chọn campaign nếu chưa xác nhận data context và quyền xem patient/message data.
 
 ## Tester notes
 

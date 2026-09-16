@@ -2,7 +2,7 @@
 
 **Input Revision:** 1
 **Environment:** dev — `https://nhs-comms-hub-dev.blinxhealthcare.com`
-**Role:** `nhat.pham@tda.company`; Home Organisation `General Practice (Blinx Demo Site) (YGMQJ)`; quyền xem thêm `Redmoor Liverpool (Non-OBE) (M85065)`; không có quyền `Macclesfield PCN`
+**Role:** `blinx_johnny.bravo`; Home Organisation `General Practice (Blinx Demo Site) (YGMQJ)`; quyền xem thêm `Redmoor Liverpool (Non-OBE) (M85065)`; không có quyền `Macclesfield PCN`
 **Observed:** 2026-09-14
 **Status:** Complete (trong phạm vi quyền tài khoản hiện có); Inconclusive cho phần liên quan trực tiếp Macclesfield PCN
 
@@ -98,9 +98,78 @@
 
 - Blocker quyền: không có tài khoản truy cập `Macclesfield PCN` trên `dev` để verify trực tiếp REQ-001
 - **Cleanup chưa hoàn tất:** campaign test `PAC2-7201-TEST-BDS-to-Redmoor-edited` (Quick Send, status `Available Quick Send`) còn tồn tại tại Blinx Demo Site, shared sang Redmoor Liverpool. Nút `Pause`/`Resend` trong dialog Campaign Details không phản hồi (có thể không áp dụng cho loại `Quick Send`). Không thực hiện `Delete` (destructive, chưa có approval riêng theo `data-safety.md`). Identifier còn lại: tên campaign `PAC2-7201-TEST-BDS-to-Redmoor-edited`, org `General Practice (Blinx Demo Site) (YGMQJ)`, shared to `Redmoor Liverpool (Non-OBE) (M85065)`.
-- Open question: hành vi quan sát được là do org-level permission hay user-level (tài khoản `nhat.pham` hiện có quyền multi-org) — cần test với tài khoản single-org **trên cùng domain dev** (`nhs-comms-hub-dev.blinxhealthcare.com`) để loại trừ. Tính đến 2026-09-14, đã thử tài khoản thứ 2 (qua `npm run auth:login`) nhưng vẫn là multi-org (Blinx Demo Site + PC24 Urgent Care thay vì + Redmoor Liverpool) — chưa có tài khoản single-org thật sự.
+- Open question: hành vi quan sát được là do org-level permission hay user-level (tài khoản `blinx_johnny.bravo` hiện có quyền multi-org) — cần test với tài khoản single-org **trên cùng domain dev** (`nhs-comms-hub-dev.blinxhealthcare.com`) để loại trừ. Tính đến 2026-09-14, đã thử tài khoản thứ 2 (qua `npm run auth:login`) nhưng vẫn là multi-org (Blinx Demo Site + PC24 Urgent Care thay vì + Redmoor Liverpool) — chưa có tài khoản single-org thật sự.
 - Open question mới [2026-09-14, OBS-005]: campaign `BH-37920 Updated Version` ("macclesfield shared campaign - updated", tạo bởi Beth Green 05/05/2026) có phải cùng ticket/điều tra với PAC2-7201 không? Nếu đúng, đây là bằng chứng rất mạnh cho thấy pattern lỗi đã tồn tại và được biết tới từ nhiều tháng trước — nên hỏi trực tiếp Beth Green hoặc tra Jira BH-37920 để xác nhận quan hệ.
 - Open question [2026-09-14]: video evidence gốc của ticket xác nhận là **production**, không phải dev (theo Beth Green qua Slack) — pattern quan sát được trên dev chỉ là loại suy, chưa verify trực tiếp trên production hoặc trên org Macclesfield PCN. Tester xác nhận việc xin quyền production/Macclesfield PCN hiện khó thực hiện.
+
+### OBS-PAC2-7201-006 [2026-09-14, video BH-41375 — PRODUCTION ground truth]
+
+**Classification:** Observed
+**Location/URL:** Video BH-41375 (file `ticket/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/BH-41375.mp4`)
+**Environment:** Production — `nhs-comms-hub.blinxhealthcare.com` (xác nhận bởi Beth Green qua Slack)
+**Role:** Victoria F / Alex Paul / Nicholas — staff của Macclesfield PCN và Broken Cross Surgery
+**Action:** Đọc bảng `Campaign Manager` tại 2 góc nhìn: Macclesfield PCN (home org) và Broken Cross Surgery (site được share tới)
+**Observed Behavior:**
+
+**View 1 — Macclesfield PCN (Home Organisation):**
+- `Viewing data for: Macclesfield PCN`, tab `Non-Shared Campaigns (7)` / `Shared Campaigns (0)`
+- 7 campaign đều **Non-Shared**, do Macclesfield PCN tạo
+- Icon: 👁️ View + ✏️ Edit + 🗑️ Delete đầy đủ
+- **Hành vi đúng** — creator org có full quyền
+
+**View 2 — Broken Cross Surgery (N81632) — Shared-to org:**
+- `Viewing data for: Broken Cross Surgery`, tab `Shared Campaigns (4)`
+- Tất cả campaign: `Created By Organisation = Macclesfield PCN`, `Shared To = Broken Cross Surgery`
+- Icon: **CHỈ có 👁️ View — KHÔNG có ✏️ Edit và KHÔNG có 🗑️ Delete**
+- **Hành vi đúng theo thiết kế** — shared-to org chỉ có quyền view, không edit
+
+**Requirement Links:** REQ-PAC2-7201-003, REQ-PAC2-7201-001
+**Evidence:** `ticket/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/BH-41375.mp4`; curated vào `evidence/bh-41375-video-analysis.md`
+**Sensitive Data Review:** Tên nhân sự (Victoria F, Alex Paul, Nicholas) — thông tin nội bộ, cân nhắc redact nếu shared rộng. Không có dữ liệu bệnh nhân.
+
+**Ý nghĩa — PHÁT HIỆN QUAN TRỌNG:**
+Đây là **ground truth từ production** — hành vi hoàn toàn **đúng theo thiết kế**: shared-to org (Broken Cross) chỉ có View, không có Edit/Delete. Kết hợp với OBS-PAC2-7201-003/004/005 trên dev cho thấy:
+
+| Environment | Shared-to org | Edit/Delete? | Status |
+|---|---|---|---|
+| Production (BH-41375) | Broken Cross | ❌ Không | ✅ Đúng |
+| Dev (OBS-003/004/005) | Redmoor Liverpool / PC24 Urgent Care | ✅ Có | ❌ Bug |
+
+→ **Dev có bug, production đúng** — đây là discrepancy lớn, thay đổi đáng kể đánh giá độ tin cậy của bug PAC2-7201.
+
+---
+
+## Updated Analysis [2026-09-14, sau khi xem BH-41375 video]
+
+### Production vs Dev Discrepancy
+
+**Trước khi xem video:** OBS-002/003/004/005 xác nhận bug trên dev → giả định bug cũng tồn tại trên production.
+
+**Sau khi xem video (OBS-006):** Production hoàn toàn **đúng hành vi**. Bug chỉ xuất hiện trên **dev**.
+
+**Giả thuyết khả dĩ:**
+1. **Bug đã được fix trên production** — dev chưa sync code mới
+2. **Môi trường deploy độc lập** — production và dev có version khác nhau
+3. **Bug chỉ xảy ra với cặp org cụ thể** trên dev (Blinx Demo Site + Redmoor/PC24) nhưng không xảy ra với Macclesfield + Broken Cross trên production
+
+**Độ tin cậy đã điều chỉnh:**
+- Bug trên dev: **Confirmed** (4 nguồn độc lập, bao gồm test của user)
+- Bug trên production (Macclesfield PCN): **Inferred** (chưa verify trực tiếp; video BH-41375 cho thấy production đúng behavior, không thấy bug)
+- Root cause giống nhau: **Unconfirmed** — chưa có bằng chứng production cũng bị bug
+
+### Split Conclusion
+
+**Ticket PAC2-7201 có thể mô tả 2 vấn đề riêng biệt:**
+
+| Issue | Evidence | Classification |
+|---|---|---|
+| Bug quyền Edit/Delete trên dev (Redmoor/PC24) | OBS-003/004/005/006 (dev) | **Confirmed** (dev only) |
+| Campaign "Adult Blood Test" thiếu ở Macclesfield PCN | ticket.md, OBS-006 (video) | **Inferred** — video không thấy campaign đó; Shared Campaigns = 0 tại Macclesfield, nhưng có thể nằm ở trạng thái khác |
+| Bug quyền Edit/Delete trên production (Macclesfield) | OBS-006 (video) | **Not Confirmed** — video cho thấy production đúng behavior |
+
+**Khuyến nghị:**
+- Báo cáo bug trên dev như **defect riêng** (REGRESSION trên môi trường dev)
+- Ticket PAC2-7201 gốc (production/Macclesfield) vẫn cần verify trực tiếp — claim "campaign Adult Blood Test thiếu" chưa được xác nhận trong video (Macclesfield Shared = 0, nhưng đó có thể không phải campaign Adult Blood Test)
 
 ## Tester notes
 

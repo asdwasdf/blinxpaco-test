@@ -15,9 +15,9 @@ input_snapshot:
 
 workflow:
   status: blocked
-  current_phase: LOCATE
-  last_completed_phase: ANALYZE
-  updated_at: "2026-09-14T02:29:04Z"
+  current_phase: EXPLORE
+  last_completed_phase: LOCATE
+  updated_at: "2026-09-15T15:20:37Z"
   checkpoints:
     - phase: INGEST
       outcome: completed
@@ -31,7 +31,7 @@ workflow:
       timestamp: "2026-09-13T03:57:55Z"
       artifacts:
         - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/requirements.md"
-          sha256: "a09b4be4569f240f32cf6bbb101921262066489188b5056b24d882e47b9f1179"
+          sha256: "e28400a15844d5a2dcd5e8324ffced06361eca0a2de8559c143c0be323579e82"
       warnings:
         - "Ticket mâu thuẫn giữa nhóm bị xem là deleted và deleted status False; count 404 trừ 23 cũng không khớp 379."
     - phase: LOCATE
@@ -123,6 +123,70 @@ workflow:
         views_limit: 12
         elapsed_minutes: 15
         minutes_limit: 15
+    - phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-15T15:02:44Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "9e7d0fd8b60d9e2f25cdaad2ff9665855c390c07d80507f78b02f0682e84a815"
+      warnings:
+        - "External Comms Hub authentication valid; Campaign Manager root opened for role Super Admin GB."
+      blockers:
+        - "Campaign Outbox control disappeared after data loaded; stable read-only route to Outbox detail remains unverified."
+      budget:
+        views_used: 12
+        views_limit: 12
+        elapsed_minutes: 15
+        minutes_limit: 15
+    - phase: LOCATE
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-15T15:08:45Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+          sha256: "96af1b9261943061e02e71220c306fcf9cd0f9b7a40ce3b1703228bf5a83dfd2"
+      warnings:
+        - "Campaign/site context observed as General Practice (Blinx Demo Site) (YGMQJ); ticket-specific campaign remains unselected."
+      blockers: []
+      budget:
+        views_used: 3
+        views_limit: 12
+        elapsed_minutes: 2
+        minutes_limit: 15
+    - phase: EXPLORE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-15T15:13:36Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/exploration.md"
+          sha256: "f727f4d69374b334a38de12c40da93bd1734ced01939825359fff07d58ffa424"
+      warnings:
+        - "Exact ticket campaign not found in current site and default date range."
+      blockers:
+        - "Need target site/organisation and campaign date range or run date; ticket example references Myrtle Practice but current context is Blinx Demo Site."
+    - phase: EXPLORE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-15T15:17:53Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/exploration.md"
+          sha256: "57a7ffb18133ea02a1ae4d8f1325a2adaa65f61555bb7f05a33ce7eab0fe72f5"
+      warnings:
+        - "All Time scan loaded 4,385 campaigns; exact ticket campaign was absent."
+      blockers:
+        - "Myrtle Practice is absent from visible organisation options for this role/session; exact campaign detail cannot be selected safely."
+    - phase: EXPLORE
+      outcome: blocked
+      input_revision: 1
+      timestamp: "2026-09-15T15:20:37Z"
+      artifacts:
+        - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/exploration.md"
+          sha256: "785c0ce5bc0c030ecb3f6a2238a8c262d7a4f24327373b7038ba300eb23d8837"
+      warnings:
+        - "No trusted mapping found from Myrtle Practice to any visible organisation."
+      blockers:
+        - "An administrator must grant Myrtle Practice context or provide trusted organisation mapping; the QA workflow cannot self-grant entitlement."
 
 phases:
   DISCOVER:
@@ -148,36 +212,40 @@ phases:
     updated_at: "2026-09-13T03:57:55Z"
     artifacts:
       - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/requirements.md"
-        sha256: "a09b4be4569f240f32cf6bbb101921262066489188b5056b24d882e47b9f1179"
+        sha256: "e28400a15844d5a2dcd5e8324ffced06361eca0a2de8559c143c0be323579e82"
     warnings:
       - "Ticket mâu thuẫn giữa nhóm bị xem là deleted và deleted status False; count 404 trừ 23 cũng không khớp 379."
     blockers: []
   LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-15T15:08:45Z"
+    artifacts:
+      - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+        sha256: "96af1b9261943061e02e71220c306fcf9cd0f9b7a40ce3b1703228bf5a83dfd2"
+    warnings:
+      - "QA xác nhận top-bar PaComms không cần cho ticket; prior observations giữ làm rejected-path history."
+      - "Campaign/site context observed as General Practice (Blinx Demo Site) (YGMQJ); ticket-specific campaign remains unselected."
+    blockers: []
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 2
+      minutes_limit: 15
+  EXPLORE:
     status: blocked
     outcome: blocked
     input_revision: 1
-    updated_at: "2026-09-14T02:29:04Z"
+    updated_at: "2026-09-15T15:20:37Z"
     artifacts:
-      - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
-        sha256: "7cc2880b6932807e2864f0369883b2f685208a10ec0a3cdbce5d99e6839b4ff2"
+      - path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/exploration.md"
+        sha256: "785c0ce5bc0c030ecb3f6a2238a8c262d7a4f24327373b7038ba300eb23d8837"
     warnings:
-      - "QA xác nhận top-bar PaComms không cần cho ticket; prior observations giữ làm rejected-path history."
-      - "Correct route found: sidebar Comms Hub > Campaign Manager opens external Comms Hub app."
+      - "All Time scan loaded 4,385 campaigns; exact ticket campaign was absent."
+      - "No trusted mapping found from Myrtle Practice to any visible organisation."
     blockers:
-      - "External Comms Hub authentication missing or expired; redirected to login."
-    budget:
-      views_used: 10
-      views_limit: 12
-      elapsed_minutes: 15
-      minutes_limit: 15
-  EXPLORE:
-    status: pending
-    outcome: null
-    input_revision: 1
-    updated_at: ""
-    artifacts: []
-    warnings: []
-    blockers: []
+      - "An administrator must grant Myrtle Practice context or provide trusted organisation mapping; the QA workflow cannot self-grant entitlement."
   TEST_DESIGN:
     status: pending
     outcome: null
@@ -233,10 +301,16 @@ outputs:
     path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/requirements.md"
     state: valid
     input_revision: 1
-    sha256: "a09b4be4569f240f32cf6bbb101921262066489188b5056b24d882e47b9f1179"
+    sha256: "e28400a15844d5a2dcd5e8324ffced06361eca0a2de8559c143c0be323579e82"
   feature-location.md:
     owner: paco-explore
     path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/feature-location.md"
+    state: valid
+    input_revision: 1
+    sha256: "96af1b9261943061e02e71220c306fcf9cd0f9b7a40ce3b1703228bf5a83dfd2"
+  exploration.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-6540-deleted-patients-comms-hub/exploration.md"
     state: blocked
     input_revision: 1
-    sha256: "7cc2880b6932807e2864f0369883b2f685208a10ec0a3cdbce5d99e6839b4ff2"
+    sha256: "785c0ce5bc0c030ecb3f6a2238a8c262d7a4f24327373b7038ba300eb23d8837"

@@ -23,7 +23,7 @@ Ticket mô tả bug về `shared` patient-initiated `campaign` trong tổ chức
 **Known Location:** Unknown (clue từ ticket: `Comms Hub` > `Campaign Manager`, `Shared Campaigns` tab; screenshot cho thấy path `/commshub/campaign-manager` trên domain `nhs-comms-hub.blinxhealthcare.com`, khác domain `dev` mặc định — cần `LOCATE` xác minh trên môi trường test thực tế)
 **Actor/Role:** Unknown (practice/PCN-level user quản lý shared campaign tại home organisation; role cụ thể chưa nêu)
 **Inference Basis:** Ticket không có Acceptance Criteria; suy luận ngược từ mô tả bug "campaigns do not show up in the home organisation of macclesfield PCN, and thereby cannot be managed" — ngụ ý hành vi đúng là campaign phải hiển thị và quản lý được tại home organisation nơi tạo/chia sẻ. Cần BA/PO xác nhận.
-**Observation Context:** Không áp dụng (QA chưa tự quan sát trên môi trường dev)
+**Observation Context:** OBS-PAC2-7201-006: production (Macclesfield PCN) thấy Non-Shared campaigns (7), Shared Campaigns = 0. Dev (Blinx Demo Site): shared campaign hiển thị tốt trong Shared, nhưng shared-to org có Edit/Delete sai (bug).
 **Acceptance Criteria Status:** Missing
 
 **Preconditions:**
@@ -39,9 +39,9 @@ Mọi `shared campaign` do PCN tạo/quản lý phải hiển thị trong danh s
 - **First Recorded:** 2026-09-14
 - **Last Verified:** 2026-09-14
 
-**Evidence:** `ticket/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/image (1).png` (chưa curate vào `docs/tickets/.../evidence/`)
-**Related Tests:** Chưa thiết kế
-**Notes:** Ticket claim cụ thể (chưa Confirmed/Observed bởi QA): campaign `Adult Blood Test` và "SEVERAL others" thiếu hoàn toàn khỏi Macclesfield PCN; ước tính tối thiểu 3 campaign thiếu/practice cho nhóm blood test (Adult, LD, Child). Số lượng chính xác và danh sách đầy đủ campaign thiếu chưa được liệt kê trong ticket.
+**Evidence:** `evidence/bh-41375-video-analysis.md` (production video); `image (1).png` (ticket source)
+**Related Tests:** PAC2-7201-TC-002
+**Notes:** [Bổ sung 2026-09-14] Ticket claim cụ thể: campaign `Adult Blood Test` và "SEVERAL others" thiếu hoàn toàn khỏi Macclesfield PCN. Tuy nhiên trong video BH-41375, Macclesfield PCN thấy 7 Non-Shared campaigns, Shared Campaigns = 0. Campaign "Adult Blood Test" có thể nằm ở trạng thái/thư mục khác (ví dụ đã bị xóa hoặc nằm trong tab khác), không nhất thiết là bug hiển thị. Cần verify trực tiếp trên production để xác nhận.
 
 ---
 
@@ -69,9 +69,9 @@ Mọi `shared campaign` do PCN tạo/quản lý phải hiển thị trong danh s
 - **First Recorded:** 2026-09-14
 - **Last Verified:** 2026-09-14
 
-**Evidence:** Video `BH-41375.mp4` (chưa phân tích trong `ANALYZE`); Jira BH-41375
-**Related Tests:** Chưa thiết kế
-**Notes:** Mâu thuẫn nội tại trong ticket (status `Failed` nhưng campaign "appear to be working") được ghi tại mục Ambiguities. Claim "tested off video" (bệnh nhân truy cập được) là quan sát của reporter qua video, chưa phải QA `Observed` trực tiếp.
+**Evidence:** Video `BH-41375.mp4` đã phân tích — xem `evidence/bh-41375-video-analysis.md` và OBS-PAC2-7201-006 trong `exploration.md`
+**Related Tests:** PAC2-7201-TC-002
+**Notes:** [Bổ sung 2026-09-14] Sau khi phân tích video BH-41375 (OBS-006): production hoàn toàn **đúng hành vi** — Broken Cross (shared-to org) chỉ có View, không có Edit/Delete. Bug chỉ xuất hiện trên **dev** (OBS-003/004/005). Điều này gợi ý bug có thể đã được fix trên production, hoặc dev chưa sync code mới.
 
 ---
 
@@ -100,9 +100,9 @@ Sau khi share, creator organisation vẫn `view` và `edit` được campaign đ
 - **First Recorded:** 2026-09-14
 - **Last Verified:** 2026-09-14
 
-**Evidence:** Không có (đề xuất test, chưa có evidence quan sát)
-**Related Tests:** Chưa thiết kế
-**Notes:** Đây là mutation action (`Create`, `Share`) — nằm ngoài read-only scope mặc định của `LOCATE`/`EXPLORE`; cần approval tường minh trước khi thực hiện ở `AUTOMATE`/`EXECUTE`.
+**Evidence:** OBS-PAC2-7201-001 (design text), OBS-PAC2-7201-006 (production = đúng), OBS-PAC2-7201-003/004/005 (dev = sai)
+**Related Tests:** PAC2-7201-TC-001, PAC2-7201-TC-002
+**Notes:** [Bổ sung 2026-09-14] Production (BH-41375 video, OBS-006): ✅ creator org (Macclesfield) có đầy đủ View/Edit/Delete, shared-to org (Broken Cross) chỉ có View — **hành vi đúng**. Dev (OBS-003/004/005): ❌ shared-to org (Redmoor Liverpool, PC24 Urgent Care) **cũng có Edit/Delete** — **hành vi sai (bug)**. Bug chỉ xuất hiện trên dev, production đúng. Đây là mutation action (`Create`, `Share`); cần approval tường minh trước khi thực hiện ở `AUTOMATE`/`EXECUTE`.
 
 ---
 
@@ -150,7 +150,7 @@ Sau khi `edit` một shared campaign (từ creator hoặc từ site nhận), cam
 4. Role/permission cụ thể nào được dùng để quản lý shared campaign tại home organisation, và role nào dùng để tạo/share campaign tại Redmoor Liverpool / Blinx Demo Site trong môi trường test?
 5. Có thể quan sát hiện tượng (campaign thiếu, status `Failed`) bằng read-only browsing trên dữ liệu có sẵn không, hay bắt buộc phải tạo mới campaign (mutation, cần approval) để tái hiện theo "Testing Details"?
 6. Giả thuyết đăng nhập Comms Hub từ Blinx Demo Site (`ticket.md:20`) có liên quan/ảnh hưởng phạm vi test không, hay chỉ là ghi chú riêng của reporter gửi technical team?
-7. Video `BH-41375.mp4` và `Screen sharing - 2026-09-14 3_13_51 PM.mp4` có nội dung gì hỗ trợ thêm cho REQ-001/REQ-002 (cần xem thủ công, ngoài khả năng phân tích tự động của phase `ANALYZE`)?
+7. Video `BH-41375.mp4` đã phân tích (OBS-PAC2-7201-006) — production cho thấy hành vi đúng, dev có bug. `Screen sharing - 2026-09-14 3_13_51 PM.mp4` chưa xem.
 
 ---
 

@@ -2,7 +2,7 @@
 
 **Input Revision:** 1
 **Environment:** dev — `https://nhs-comms-hub-dev.blinxhealthcare.com` (domain do tester cung cấp trực tiếp; khác `dashboardPath` mặc định trong `paco.config.yaml` nhưng cùng hậu tố `-dev` với domain production thấy trong `image (1).png` của ticket)
-**Role:** `nhat.pham@tda.company`, manual auth có sẵn trong Chrome profile của tester. Home Organisation cố định: `General Practice (Blinx Demo Site) (YGMQJ)`. Quyền xem thêm (không phải creator): `Redmoor Liverpool (Non-OBE) (M85065)`. Không có quyền truy cập `Macclesfield PCN`.
+**Role:** `blinx_johnny.bravo`, manual auth có sẵn trong Chrome profile của tester. Home Organisation cố định: `General Practice (Blinx Demo Site) (YGMQJ)`. Quyền xem thêm (không phải creator): `Redmoor Liverpool (Non-OBE) (M85065)`. Không có quyền truy cập `Macclesfield PCN`.
 **Observed:** 2026-09-14
 **Status:** Confirmed
 **Budget:** 3/12 views; ~3/15 minutes (route do tester cung cấp trực tiếp, xác nhận gần như ngay lập tức)

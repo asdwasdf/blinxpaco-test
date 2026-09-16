@@ -15,7 +15,7 @@ input_snapshot:
 
 workflow:
   status: in_progress
-  current_phase: AUTOMATION_REVIEW
+  current_phase: AUTOMATE
   last_completed_phase: TEST_DESIGN
   updated_at: "2026-09-14"
   checkpoints:
@@ -51,6 +51,14 @@ workflow:
       outcome: completed_with_warnings
       timestamp: "2026-09-14"
       note: "OBS-005: tai khoan thu 2 (npm run auth:login, van multi-org: Blinx Demo Site + PC24 Urgent Care) tim thay campaign 'BH-37920 Updated Version' (macclesfield shared campaign - updated, tao boi Beth Green 05/05/2026) - xac nhan doc lap lan thu 3 pattern shared-to-org-co-edit-sai. Ten campaign trung dinh dang Jira BH-xxxxx, co the lien quan/trung PAC2-7201. Mutation: None (chi doc)."
+    - phase: AUTOMATION_REVIEW
+      outcome: completed
+      timestamp: "2026-09-14"
+      note: "2/6 case du dieu kien AUTOMATE (TC-001, TC-002); 4/6 con BLOCKED (TC-003: thieu Redmoor creator account; TC-004: expected-result basis la Inferred; TC-005/TC-006: thieu quyen Macclesfield PCN). TC-002 uu tien cao nhat - phan anh truc tiep bug REQ-003. Artifact: automation-review.md (sha256 d5732624...)."
+    - phase: EXPLORE
+      outcome: completed
+      timestamp: "2026-09-14"
+      note: "Phan tich video BH-41375 (OBS-006): production (Broken Cross Surgery) HOAN TOAN DUNG hanh vi - shared-to org chi co View, khong co Edit/Delete. Dev (Redmoor Liverpool, PC24 Urgent Care) co bug Edit/Delete. Ket luan: production dung, dev co bug. Artifact: evidence/bh-41375-video-analysis.md. Exploration.md, requirements.md, automation-review.md da cap nhat."
 
 phases:
   DISCOVER: &done_phase
@@ -69,7 +77,7 @@ phases:
     updated_at: "2026-09-14"
     artifacts:
       - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/requirements.md"
-        sha256: 48494b0aab06015a0fe4df4ec5b09dbd4210eaf4a2cd32c7db93e6d4823f25c5
+        sha256: cf2434eb8b00035d77c0e4349ab13ba97f84afaf2ff6c9d4cfd04a9038756cb1
     warnings:
       - "Ticket khong co Acceptance Criteria: toan bo requirement la Inferred, can BA/PO xac nhan."
       - "Domain trong image (1).png (nhs-comms-hub.blinxhealthcare.com) khong khop domain dev mac dinh; can lam ro truoc LOCATE."
@@ -97,12 +105,13 @@ phases:
     updated_at: "2026-09-14"
     artifacts:
       - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/exploration.md"
-        sha256: e4df80b0c01bf478c7b16b2f27b82d897fdbe59d8f954b14bd24b06f2f88b12b
+        sha256: 4c9287a3fc5bc45c51e7bf3807aa98642d1506c6710047fbb1cf00a2baaae4b8
     warnings:
       - "REQ-001 (Macclesfield PCN) chua verify truc tiep do thieu quyen."
       - "Mutation ngoai formal AUTOMATE/EXECUTE flow da xay ra theo yeu cau truc tiep cua tester (co approval), xem exploration.md."
       - "Cleanup chua hoan tat: campaign test PAC2-7201-TEST-BDS-to-Redmoor-edited con ton tai tren dev (khong the Pause/Delete qua UI)."
       - "Video evidence goc cua ticket xac nhan la production (Beth Green qua Slack, 2026-09-14); ket qua EXPLORE tren dev chi la loai suy, chua verify truc tiep tren production/Macclesfield PCN."
+      - "[2026-09-14] Video BH-41375 da phan tich: production DUNG hanh vi (shared-to org chi co View), dev CO BUG (shared-to org co Edit/Delete). Production co the da duoc fix, dev chua sync."
     blockers: []
   TEST_DESIGN:
     status: completed
@@ -117,12 +126,17 @@ phases:
       - "TC-006 chua co expected-result ro rang (dinh nghia Failed con Disputed)."
     blockers: []
   AUTOMATION_REVIEW:
-    status: pending
-    outcome: null
+    status: completed
+    outcome: completed
     input_revision: 1
-    updated_at: ""
-    artifacts: []
-    warnings: []
+    updated_at: "2026-09-14"
+    artifacts:
+      - path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/automation-review.md"
+        sha256: 996c95f5f69c93284aeeae3b28919cc95fbbc15902d2bc710b2755e65ac11300
+    warnings:
+      - "TC-004 khong du dieu kien automate vi expected-result basis la Inferred, khong phai Confirmed."
+      - "TC-003, TC-005, TC-006 con BLOCKED do thieu quyen/tai khoan - khong co action trong AUTOMATE."
+      - "Campaign test tu EXPLORE (PAC2-7201-TEST-BDS-to-Redmoor-edited) co the dung lai cho TC-002 - can kiem tra ton tai truoc khi AUTOMATE."
     blockers: []
   AUTOMATE:
     status: pending
@@ -163,7 +177,7 @@ outputs:
     path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/requirements.md"
     state: valid
     input_revision: 1
-    sha256: 48494b0aab06015a0fe4df4ec5b09dbd4210eaf4a2cd32c7db93e6d4823f25c5
+    sha256: cf2434eb8b00035d77c0e4349ab13ba97f84afaf2ff6c9d4cfd04a9038756cb1
   feature-location.md:
     owner: paco-explore
     path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/feature-location.md"
@@ -175,10 +189,22 @@ outputs:
     path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/exploration.md"
     state: valid
     input_revision: 1
-    sha256: e4df80b0c01bf478c7b16b2f27b82d897fdbe59d8f954b14bd24b06f2f88b12b
+    sha256: 4c9287a3fc5bc45c51e7bf3807aa98642d1506c6710047fbb1cf00a2baaae4b8
+  bh-41375-video-analysis.md:
+    owner: paco-ticket
+    path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/evidence/bh-41375-video-analysis.md"
+    state: valid
+    input_revision: 1
+    sha256: 6dfaf6cb548a0af0d83ef0aff11352d4d6e5a074163f7c747ffd55b494dd4b72
   test-cases.md:
     owner: paco-test-design
     path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/test-cases.md"
     state: valid
     input_revision: 1
     sha256: 9e39e197f5eac2e133fcaf69db9fcef9e8410c478c527b305334e98d38bd9cd6
+  automation-review.md:
+    owner: paco-ticket
+    path: "docs/tickets/PAC2-7201-investigate-shared-campaign-issue-for-macc-pcn/automation-review.md"
+    state: valid
+    input_revision: 1
+    sha256: 996c95f5f69c93284aeeae3b28919cc95fbbc15902d2bc710b2755e65ac11300
