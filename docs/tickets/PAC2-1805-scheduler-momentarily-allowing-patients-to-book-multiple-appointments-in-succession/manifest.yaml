@@ -1,0 +1,154 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-1805
+  folder_name: PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession
+  source_directory: ticket/PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-16"
+  files:
+    - path: ticket/PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession/ticket.md
+      sha256: e9123830f7579c709e364d7449269297a324c3f428f90d0c2ab8d8cf346e27a5
+
+workflow:
+  status: blocked
+  current_phase: LOCATE
+  last_completed_phase: ANALYZE
+  updated_at: "2026-09-16"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      timestamp: "2026-09-16"
+      note: "Ticket key resolved: PAC2-1805. Regex hop le, folder khong trung lap, khong co manifest cu."
+    - phase: INGEST
+      outcome: completed
+      timestamp: "2026-09-16"
+      note: "Hash raw source ticket.md, revision=1."
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-16"
+      note: "paco-requirements: 6 atomic requirements (REQ-001..006), phan lon Confirmed tu ticket (AC + comment ky su co log/commit), REQ-006 Inferred. 3 ambiguity (Disputed: reschedule-cancel timing, pham vi fix rollback, OLD vs Current design), 6 open question (deploy/migration status tren UAT/prod, route production chua ro, pham vi day du cua fix REQ-005). Mutation: None."
+    - phase: LOCATE
+      outcome: blocked
+      timestamp: "2026-09-16"
+      note: "paco-explore locate: PACO dashboard xac nhan (Super Admin GB). Sidebar Quick Send > Campaign Manager redirect sang Comms Hub (nhs-comms-hub-dev.blinxhealthcare.com) - can tai khoan rieng, khong share session voi PACO. Candidate truc tiep dev.blinxscheduler-np.com/feature-branch/pac2-1805-booking-state/ (tu anh dinh kem ticket) load duoc nhung bao 'Link Error - No token found' - can token per-patient sinh qua Comms Hub. Budget 5/12 views, ~6/15 phut. Blocker: thieu Comms Hub access. Mutation: None."
+    - phase: LOCATE
+      outcome: blocked
+      timestamp: "2026-09-16"
+      note: "paco-explore locate (tiep tuc): tester tu dang nhap thu cong Comms Hub trong phien nay - mo khoa Campaign Manager. Tim thay campaign 'Simple EMIS Booking - Same Day GP' (Quick Send) khop ten trong anh dinh kem ticket; Campaign Outbox cho thay 19 dong lich su gui cho patient Michael Ramella (NHS 70986) - dung patient trong anh ticket. Voi approval cua tester, thu Resend 'Initial Email' de lay token moi - THAT BAI KY THUAT: HTTP 400 (console: campaignOutbox.js:683), kem exception phu editCampaignDetailsModal.js. Thu 3 lan doc lap (17:40:02, 17:44:25, 17:45:51), cung loi moi lan - tai lap on dinh, khong phai glitch tam thoi. Dung thu them. Budget het (12/12 views, ~14/15 phut). Mutation: co (3 lan bam Resend, co approval, khong gui thanh cong do loi ky thuat, khong tao du lieu moi). Co the la defect rieng cua Comms Hub, ngoai pham vi PAC2-1805."
+
+phases:
+  DISCOVER: &done_phase
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-16"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST: *done_phase
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-16"
+    artifacts:
+      - path: "docs/tickets/PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession/requirements.md"
+        sha256: 794602d89f459062fe3395c6e26ac47c7d93f1fee97b54beb142beeb50fbcfbd
+    warnings:
+      - "Ticket chi co mot dong Acceptance Criteria tong quat; chi tiet hanh vi nam rai rac trong comment ky su, khong phai format AC chuan."
+      - "Nhieu fix duoc mo ta 'Fixed' trong comment nhung trang thai deploy tren UAT/prod tai thoi diem test (2026-09-16) chua duoc xac nhan (gap review 2026-09-07 ghi 'Nothing is merged or deployed yet'; QA report 2026-09-11 chi xac nhan tren feature stage)."
+      - "Khong co route production/dev chinh thuc cho scheduler patient link trong text ticket; chi co URL feature-branch trong anh dinh kem."
+      - "REQ-005 (khong huy appointment khong do chinh link tao) moi xac nhan Fixed cho case cu the (rollback theo slot id); pham vi day du con Disputed vi Beth khong replicate duoc voi patient khac."
+    blockers: []
+  LOCATE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-16"
+    artifacts:
+      - path: "docs/tickets/PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession/feature-location.md"
+        sha256: bac6003d77cedf3dca8602aabe6fbfc04f487ee777ee1f30fc47f9527668ee27
+    warnings:
+      - "App scheduler (dev.blinxscheduler-np.com) da xac nhan song, tu choi dung khi thieu token - hanh vi nay dung nhu ky vong, khong phai bug."
+      - "Tinh nang Resend tren Comms Hub Campaign Outbox that bai voi HTTP 400, tai lap on dinh qua 3 lan thu doc lap (co approval) - co the la defect rieng cua Comms Hub, ngoai pham vi PAC2-1805, nhung chan hoan toan kha nang tu lay token moi qua UI."
+    blockers:
+      - "Khong lay duoc token/scheduler-link that cho patient test (Michael Ramella, NHS 70986) do Resend loi ky thuat HTTP 400 (tai lap 3/3 lan thu). Route context (Campaign Manager > Campaign Outbox) da Confirmed nhung chua co token de vao flow booking that."
+    budget:
+      views_used: 12
+      views_limit: 12
+      elapsed_minutes: 14
+      minutes_limit: 15
+  EXPLORE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession/requirements.md"
+    state: valid
+    input_revision: 1
+    sha256: 794602d89f459062fe3395c6e26ac47c7d93f1fee97b54beb142beeb50fbcfbd
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-1805-scheduler-momentarily-allowing-patients-to-book-multiple-appointments-in-succession/feature-location.md"
+    state: valid
+    input_revision: 1
+    sha256: bac6003d77cedf3dca8602aabe6fbfc04f487ee777ee1f30fc47f9527668ee27

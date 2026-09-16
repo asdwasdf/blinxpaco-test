@@ -1,6 +1,6 @@
 # Workflow: Configuration
 
-- Classification: `[Observed: dev, Super Admin GB, 2026-09-15]`
+- Classification: `[Observed: dev, Super Admin GB, 2026-09-15 to 2026-09-16]`
 - Aliases: `Configuration`, `Organisation`, `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, `Users & Staff`, `Clinical Config`, `Case Prioritisation`
 - Coverage: `Partial`
 - Confidence: `Medium`
@@ -68,6 +68,18 @@
     - **Transition:** route `/paco/configuration/`.
     - **Observed result:** chỉ hiển thị heading `Configuration` và message `Please select a menu item`; chưa có trusted basis để kết luận đây là expected empty state hay navigation defect.
     - **Evidence:** `test-results/product-survey/20260915-clinical-config/08-prescribing-formularies.png`.
+13. **Action:** re-check `Appointment Books > Scheduler` qua visible navigation.
+    - **Transition:** `/paco/configuration/` → expand `Appointment Books` → exact child `Scheduler` → `/configuration/#scheduler-config`.
+    - **Observed result:** heading `SCHEDULER CONFIG` và `Loading...` vẫn hiện sau bounded wait 5 giây; không phải body hoàn toàn blank. Console ghi warning về external-sharing initialization nhưng không có page exception trong capture này.
+    - **Evidence:** `test-results/product-survey/batch30/scheduler-via-menu.png`.
+14. **Action:** re-check `Clinical Config > Template Library > Prescribing Formularies` qua visible navigation.
+    - **Transition:** expand `Clinical Config`, expand `Template Library`, chọn exact child `Prescribing Formularies`.
+    - **Observed result:** URL giữ nguyên `/paco/configuration/`; submenu vẫn mở; body giữ `Please select a menu item`. Không thấy loading, error hoặc feature heading.
+    - **Evidence:** `test-results/product-survey/batch30/prescribing-via-menu.png`.
+15. **Action:** re-check legacy `/configuration/#care-navigation-config`.
+    - **Transition:** route resolve với title `Care Navigation Config`.
+    - **Observed result:** heading `CARE NAVIGATION CONFIG` và header context render; không có configuration body hoặc explicit loading/error message sau bounded wait. Console ghi warning thiếu permission setting `PACOMMS`, nhưng observation chưa chứng minh warning này gây heading-only state.
+    - **Evidence:** `test-results/product-survey/batch30/care-navigation.png`.
 
 ## Decision points
 
@@ -81,7 +93,7 @@
 ## End and exceptional states
 
 - End state observed: `Case Prioritisation` factor list.
-- Empty/loading/error states: `Care Navigation`, `Scheduler` và `Accounts` vẫn blank sau bounded wait dài hơn ở pass thứ hai. `Prescribing Formularies` chuyển về configuration root với `Please select a menu item`. Chưa phân loại các trạng thái này là product defect.
+- Empty/loading/error states: `[Observed: dev, Super Admin GB, 2026-09-16]` `Scheduler` hiện heading và persistent `Loading...`; `Care Navigation` hiện heading/header nhưng không có configuration body; `Prescribing Formularies` giữ configuration root với `Please select a menu item`. Đây là stable observed behavior qua nhiều pass, chưa phân loại là product defect vì thiếu trusted expected basis. `Accounts` vẫn là prior blank observation.
 - Cross-feature handoff: `Appointment Books` và `Quick Pay` chuyển sang PACO Connect; một số cấu hình chuyển sang legacy `/configuration/`; template configuration dùng route chính `/paco/configuration/clinical-config/...` ngoại trừ observed transition của `Prescribing Formularies`.
 
 ## Safety boundary
@@ -101,7 +113,7 @@
 ## Automation guidance
 
 - Stable roles/labels/landmarks: heading `Configuration`; group labels và headings `Role Groups`, `Teams`, `Case Prioritisation`.
-- Observable waits: top-level labels tải bất đồng bộ; không kết luận blank ngay sau navigation; chờ visible landmark hoặc bounded stable blank state.
+- Observable waits: top-level labels tải bất đồng bộ; sau route legacy chờ heading và body state. `Scheduler` có observable heading `SCHEDULER CONFIG` nhưng `Loading...` có thể kéo dài; `Care Navigation` có heading `CARE NAVIGATION CONFIG`; `Prescribing Formularies` không đổi URL/body sau click. Không dùng fixed timeout làm expected-result assertion.
 - Data dependencies: role/config entitlement và organisation-specific configuration.
 - Assertions lacking trusted expected basis: content đúng của legacy/PACO Connect pages, team membership, role permissions và priority-factor values.
 
@@ -109,9 +121,9 @@
 
 - Environment: `dev` (`https://blinx.dev.blinxpaco-np.com`).
 - Role: `Super Admin GB`.
-- Observed at: `2026-09-15`.
-- Raw evidence: `test-results/product-survey/20260915-continue-config/`, `test-results/product-survey/20260915-config-followup/`, `test-results/product-survey/20260915-clinical-config/`.
-- Open questions: các destination blank do loading, permission hay app failure; `Prescribing Formularies` có chủ đích quay về configuration root hay navigation bị lỗi; read-only detail behavior của từng risk model và template chưa khảo sát vì row/card selection có persistence chưa rõ.
-- Exact resume state: khảo sát read-only detail/menu của `Document Templates` và `Consultation Templates` chỉ khi xác minh selection không mutate; không dùng create/edit/rename/delete/save controls; không retry các blank destination nếu session/dependency không đổi. Batch 26 (2026-09-16) confirmed `Document Templates` row-click opens inline edit form with safe `CANCEL`; `Consultation Templates` card-click opens side panel with safe `CANCEL`. Safe close actions confirmed.
+- Observed at: `2026-09-15` và `2026-09-16`.
+- Raw evidence: `test-results/product-survey/20260915-continue-config/`, `test-results/product-survey/20260915-config-followup/`, `test-results/product-survey/20260915-clinical-config/`, `test-results/product-survey/batch30/`.
+- Open questions: `Scheduler` loading có hoàn tất khi dependency khác hoạt động không; `Care Navigation` thiếu body do permission, data dependency hay app failure; `Prescribing Formularies` có chủ đích ở configuration root hay click handler/route bị thiếu. Warning `PACOMMS` chỉ là correlated console observation, chưa phải causal evidence.
+- Exact resume state: không retry ba gap trên khi session/dependency không đổi. Cần product/API owner cung cấp trusted expected behavior hoặc dependency/permission prerequisite; sau đó mới observe lại. Batch 26 (2026-09-16) confirmed `Document Templates` row-click opens inline edit form with safe `CANCEL`; `Consultation Templates` card-click opens side panel with safe `CANCEL`. Safe close actions confirmed.
 
 ## Tester notes
