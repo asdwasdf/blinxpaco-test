@@ -1,0 +1,319 @@
+{
+  "runId": "20260917-connect-readonly",
+  "environment": "dev",
+  "role": "Super Admin GB",
+  "scope": "PACO Connect branch pac2-4700-qs-only read-only landing surfaces",
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "results": [
+    {
+      "id": "dashboard",
+      "expectedPath": "/",
+      "observedAt": "2026-09-17T12:45:42.336Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyPresent": true,
+      "bodyLength": 177,
+      "headings": [],
+      "safeMarkers": {
+        "Dashboard": true,
+        "Appointment Book": true,
+        "Booking Links": false,
+        "Export PDF": true,
+        "CSV": false,
+        "EMIS": false,
+        "Slot Type": false,
+        "Virtual Mental Health": false,
+        "No available options": false,
+        "Loading": true
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        }
+      ],
+      "counts": {
+        "visibleControls": 1,
+        "visibleButtons": 8,
+        "visibleLinks": 0,
+        "forms": 0,
+        "tableRows": 0
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "actions": [
+        "direct navigation to observed feature route",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "search",
+        "filter",
+        "export PDF",
+        "export CSV",
+        "select appointment",
+        "create",
+        "edit",
+        "submit",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values, appointment details, patient values, or result-row text recorded; screenshots remain local.",
+      "httpStatus": 200,
+      "navigationError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "appointment-book",
+      "expectedPath": "/appointment-book",
+      "observedAt": "2026-09-17T12:45:54.470Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/appointment-book",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyPresent": true,
+      "bodyLength": 244,
+      "headings": [],
+      "safeMarkers": {
+        "Dashboard": true,
+        "Appointment Book": true,
+        "Booking Links": false,
+        "Export PDF": false,
+        "CSV": false,
+        "EMIS": false,
+        "Slot Type": false,
+        "Virtual Mental Health": false,
+        "No available options": false,
+        "Loading": true
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        }
+      ],
+      "counts": {
+        "visibleControls": 2,
+        "visibleButtons": 20,
+        "visibleLinks": 0,
+        "forms": 0,
+        "tableRows": 0
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "actions": [
+        "direct navigation to observed feature route",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "search",
+        "filter",
+        "export PDF",
+        "export CSV",
+        "select appointment",
+        "create",
+        "edit",
+        "submit",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values, appointment details, patient values, or result-row text recorded; screenshots remain local.",
+      "httpStatus": 200,
+      "navigationError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    },
+    {
+      "id": "booking-links",
+      "expectedPath": "/booking-links",
+      "observedAt": "2026-09-17T12:46:05.241Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/booking-links",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyPresent": true,
+      "bodyLength": 16,
+      "headings": [
+        "404"
+      ],
+      "safeMarkers": {
+        "Dashboard": false,
+        "Appointment Book": false,
+        "Booking Links": false,
+        "Export PDF": false,
+        "CSV": false,
+        "EMIS": false,
+        "Slot Type": false,
+        "Virtual Mental Health": false,
+        "No available options": false,
+        "Loading": false
+      },
+      "controls": [],
+      "counts": {
+        "visibleControls": 0,
+        "visibleButtons": 0,
+        "visibleLinks": 1,
+        "forms": 0,
+        "tableRows": 0
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1273,
+          "height": 740
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "actions": [
+        "direct navigation to observed feature route",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "search",
+        "filter",
+        "export PDF",
+        "export CSV",
+        "select appointment",
+        "create",
+        "edit",
+        "submit",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values, appointment details, patient values, or result-row text recorded; screenshots remain local.",
+      "httpStatus": 200,
+      "navigationError": null,
+      "consoleErrors": [],
+      "pageErrors": []
+    }
+  ],
+  "stabilityEvidence": {
+    "dashboard": {
+      "path": "test-results/PAC2-4700/explore/20260917-connect-readonly/dashboard-stability.json",
+      "samples": 4,
+      "durationSeconds": 30,
+      "finalState": {
+        "observedAt": "2026-09-17T12:51:11.634Z",
+        "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+        "title": "PACO Connect",
+        "authExpired": false,
+        "bodyLength": 1458,
+        "knownMarkers": {
+          "Dashboard": true,
+          "Appointment Book": true,
+          "Export PDF": true,
+          "CSV": true,
+          "Loading": false,
+          "No available options": false,
+          "Booking Links": false,
+          "EMIS": false,
+          "Slot Type": true
+        },
+        "visibleControls": 1,
+        "visibleButtons": 17,
+        "visibleSpinners": 0,
+        "tableRows": 18,
+        "horizontalOverflow": false,
+        "mutation": {
+          "class": "None",
+          "occurred": false
+        }
+      }
+    },
+    "appointmentBook": {
+      "path": "test-results/PAC2-4700/explore/20260917-connect-readonly/appointment-book-stability.json",
+      "samples": 4,
+      "durationSeconds": 30,
+      "finalState": {
+        "observedAt": "2026-09-17T12:47:23.673Z",
+        "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/appointment-book",
+        "title": "PACO Connect",
+        "authExpired": false,
+        "bodyLength": 71167,
+        "knownMarkers": {
+          "Dashboard": true,
+          "Appointment Book": true,
+          "Export PDF": false,
+          "CSV": false,
+          "Loading": false,
+          "No available options": false,
+          "Booking Links": false,
+          "EMIS": false,
+          "Slot Type": false
+        },
+        "visibleControls": 2,
+        "visibleButtons": 75,
+        "visibleSpinners": 0,
+        "tableRows": 0,
+        "horizontalOverflow": false,
+        "mutation": {
+          "class": "None",
+          "occurred": false
+        }
+      }
+    }
+  }
+}

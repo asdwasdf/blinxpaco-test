@@ -1,0 +1,122 @@
+{
+  "observedAt": "2026-09-17T12:29:05.150Z",
+  "environment": "dev",
+  "role": "Super Admin GB",
+  "scope": "GP pac2-4700-qs-only Scheduler Configuration landing state",
+  "urlPath": "/feature-branch/pac2-4700-qs-only/configuration/",
+  "title": "Scheduler Configuration",
+  "authExpired": false,
+  "landmarks": {
+    "schedulerConfig": true,
+    "campaignTemplateControl": true,
+    "visibleOpenButton": false
+  },
+  "controls": {
+    "inputs": [
+      {
+        "tag": "input",
+        "type": "text",
+        "role": "combobox",
+        "labelled": true,
+        "placeholderPresent": false,
+        "valuePresent": false,
+        "visible": true,
+        "disabled": false,
+        "required": false,
+        "expanded": "false"
+      },
+      {
+        "tag": "input",
+        "type": null,
+        "role": null,
+        "labelled": false,
+        "placeholderPresent": true,
+        "valuePresent": false,
+        "visible": true,
+        "disabled": false,
+        "required": false,
+        "expanded": null
+      },
+      {
+        "tag": "input",
+        "type": null,
+        "role": null,
+        "labelled": false,
+        "placeholderPresent": true,
+        "valuePresent": false,
+        "visible": true,
+        "disabled": false,
+        "required": false,
+        "expanded": null
+      },
+      {
+        "tag": "input",
+        "type": null,
+        "role": null,
+        "labelled": false,
+        "placeholderPresent": true,
+        "valuePresent": false,
+        "visible": true,
+        "disabled": false,
+        "required": false,
+        "expanded": null
+      }
+    ],
+    "selects": [],
+    "combos": [
+      {
+        "tag": "input",
+        "type": "text",
+        "role": "combobox",
+        "labelled": true,
+        "placeholderPresent": false,
+        "valuePresent": false,
+        "visible": true,
+        "disabled": false,
+        "required": false,
+        "expanded": "false"
+      }
+    ],
+    "visibleButtonCount": 287,
+    "buttonState": {
+      "enabled": 223,
+      "disabled": 64
+    },
+    "visibleLinkCount": 1,
+    "forms": 0
+  },
+  "layout": {
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "document": {
+      "width": 1280,
+      "height": 720
+    },
+    "horizontalOverflow": false,
+    "verticalOverflow": false
+  },
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "actions": [
+    "observe current rendered state",
+    "inspect DOM control structure",
+    "capture local screenshots"
+  ],
+  "actionsNotTaken": [
+    "select campaign template",
+    "open template",
+    "edit",
+    "compose",
+    "send",
+    "attach",
+    "submit",
+    "create",
+    "delete",
+    "any unknown-persistence action"
+  ],
+  "sensitiveDataReview": "Raw local evidence only; no values or visible text copied into structured summary."
+}

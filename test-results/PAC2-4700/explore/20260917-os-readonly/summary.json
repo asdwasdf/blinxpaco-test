@@ -1,0 +1,433 @@
+{
+  "runId": "20260917-os-readonly",
+  "environment": "dev",
+  "role": "Super Admin GB",
+  "scope": "PACO OS / PACO 24 branch pac2-4700-qs-only read-only surfaces",
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "results": [
+    {
+      "id": "health-forms",
+      "observedAt": "2026-09-17T12:36:48.191Z",
+      "urlPath": "/paco/feature-branch/pac2-4700-qs-only/health-forms",
+      "expectedPath": "/health-forms",
+      "title": "PACO OS",
+      "authExpired": false,
+      "landmarks": {
+        "Health Form Templates": true
+      },
+      "safeKnownMarkers": {
+        "Health Form Templates": true,
+        "Patient Search": false,
+        "Configuration": false,
+        "Filters": true,
+        "Show archived": false,
+        "Create new patient": false,
+        "Offline config": false,
+        "Organisation": false,
+        "Patient": false,
+        "Appointment Books": false,
+        "Quick Pay": false,
+        "Patients & Proxy": false,
+        "Users & Staff": false,
+        "Clinical Config": false,
+        "Case Prioritisation": false,
+        "Please select a menu item": false,
+        "No available options": false,
+        "Loading": false
+      },
+      "headings": [
+        "Health Form Templates"
+      ],
+      "tableHeaders": [
+        "Name",
+        "Type",
+        "Created date",
+        "Created by",
+        "Updated date 1",
+        "Updated by",
+        "Actions"
+      ],
+      "controls": [
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        },
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        }
+      ],
+      "counts": {
+        "visibleControls": 2,
+        "visibleButtons": 5,
+        "visibleLinks": 0,
+        "forms": 0,
+        "tableRows": 1
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "httpStatus": 200,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": [],
+      "actions": [
+        "direct navigation to observed feature route",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "search",
+        "filter",
+        "toggle checkbox",
+        "create",
+        "edit",
+        "submit",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values or result-row text recorded; screenshots remain local."
+    },
+    {
+      "id": "patient-search",
+      "observedAt": "2026-09-17T12:36:54.359Z",
+      "urlPath": "/paco/feature-branch/pac2-4700-qs-only/patient-search",
+      "expectedPath": "/patient-search",
+      "title": "PACO OS",
+      "authExpired": false,
+      "landmarks": {
+        "Patient Search": true
+      },
+      "safeKnownMarkers": {
+        "Health Form Templates": false,
+        "Patient Search": true,
+        "Configuration": false,
+        "Filters": true,
+        "Show archived": true,
+        "Create new patient": true,
+        "Offline config": false,
+        "Organisation": false,
+        "Patient": true,
+        "Appointment Books": false,
+        "Quick Pay": false,
+        "Patients & Proxy": false,
+        "Users & Staff": false,
+        "Clinical Config": false,
+        "Case Prioritisation": false,
+        "Please select a menu item": false,
+        "No available options": false,
+        "Loading": false
+      },
+      "headings": [
+        "Patient Search (78,780)"
+      ],
+      "tableHeaders": [
+        "Registration Type",
+        "Title",
+        "First Name",
+        "Middle Name",
+        "Last Name",
+        "Known as",
+        "Date of Birth",
+        "Date of Death",
+        "Gender",
+        "NHS Number",
+        "Patient Identifier",
+        "Marital Status",
+        "Ethnicity",
+        "Country of Birth",
+        "Date of Entry to UK",
+        "Main Language",
+        "Interpreter Required",
+        "Religion",
+        "Home Phone",
+        "Mobile Phone",
+        "Email Address",
+        "Preferred Contact Method",
+        "SMS Options",
+        "Email Options",
+        "House Name / Flat Number",
+        "Number & Street",
+        "City",
+        "County",
+        "Postcode",
+        "Preferred Communication Method"
+      ],
+      "controls": [
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        },
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        },
+        {
+          "tag": "input",
+          "type": "checkbox",
+          "role": null,
+          "labelled": true,
+          "placeholderPresent": false,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "checked": false,
+          "valuePresent": true
+        }
+      ],
+      "counts": {
+        "visibleControls": 3,
+        "visibleButtons": 23,
+        "visibleLinks": 0,
+        "forms": 0,
+        "tableRows": 52
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "httpStatus": 200,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": [],
+      "actions": [
+        "direct navigation to observed feature route",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "search",
+        "filter",
+        "toggle checkbox",
+        "create",
+        "edit",
+        "submit",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values or result-row text recorded; screenshots remain local."
+    },
+    {
+      "id": "configuration",
+      "observedAt": "2026-09-17T12:37:00.042Z",
+      "urlPath": "/paco/feature-branch/pac2-4700-qs-only/configuration/",
+      "expectedPath": "/configuration/",
+      "title": "PACO OS",
+      "authExpired": false,
+      "landmarks": {
+        "Configuration": true
+      },
+      "safeKnownMarkers": {
+        "Health Form Templates": false,
+        "Patient Search": false,
+        "Configuration": true,
+        "Filters": false,
+        "Show archived": false,
+        "Create new patient": false,
+        "Offline config": false,
+        "Organisation": true,
+        "Patient": true,
+        "Appointment Books": true,
+        "Quick Pay": true,
+        "Patients & Proxy": true,
+        "Users & Staff": true,
+        "Clinical Config": true,
+        "Case Prioritisation": true,
+        "Please select a menu item": true,
+        "No available options": false,
+        "Loading": false
+      },
+      "headings": [
+        "Configuration"
+      ],
+      "tableHeaders": [],
+      "controls": [
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        }
+      ],
+      "counts": {
+        "visibleControls": 1,
+        "visibleButtons": 3,
+        "visibleLinks": 8,
+        "forms": 0,
+        "tableRows": 0
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "httpStatus": 200,
+      "consoleErrors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "pageErrors": [],
+      "actions": [
+        "direct navigation to observed feature route",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "search",
+        "filter",
+        "toggle checkbox",
+        "create",
+        "edit",
+        "submit",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values or result-row text recorded; screenshots remain local."
+    },
+    {
+      "id": "configuration-appointment-books",
+      "observedAt": "2026-09-17T12:38:02.162Z",
+      "entry": {
+        "tag": "a",
+        "hrefPath": "/paco/feature-branch/pac2-4700-qs-only/configuration/",
+        "disabled": false
+      },
+      "urlPath": "/paco/feature-branch/pac2-4700-qs-only/configuration/",
+      "title": "PACO OS",
+      "authExpired": false,
+      "headings": [
+        "Configuration"
+      ],
+      "safeKnownMarkers": {
+        "Appointment Books": true,
+        "Booking Links": false,
+        "EMIS": false,
+        "Slot Type": false,
+        "Configuration": true,
+        "No available options": false,
+        "Loading": false
+      },
+      "controls": [
+        {
+          "tag": "input",
+          "type": null,
+          "role": null,
+          "labelled": false,
+          "placeholderPresent": true,
+          "disabled": false,
+          "required": false,
+          "expanded": null,
+          "valuePresent": false
+        }
+      ],
+      "counts": {
+        "visibleControls": 1,
+        "visibleButtons": 3,
+        "visibleLinks": 8,
+        "forms": 0
+      },
+      "layout": {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "document": {
+          "width": 1280,
+          "height": 720
+        },
+        "horizontalOverflow": false
+      },
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      },
+      "actions": [
+        "inspect Appointment Books entry href",
+        "navigate by observed href",
+        "inspect rendered DOM and default control state",
+        "capture local screenshot"
+      ],
+      "actionsNotTaken": [
+        "open edit action",
+        "change configuration",
+        "create",
+        "update",
+        "submit",
+        "delete",
+        "upload/import",
+        "any unknown-persistence action"
+      ],
+      "sensitiveDataReview": "No field values or record text recorded; screenshot remains local."
+    }
+  ]
+}

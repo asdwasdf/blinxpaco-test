@@ -1,0 +1,23 @@
+{
+  "caseId": "PAC2-4700-TC-004",
+  "result": "Inconclusive",
+  "reason": "Reviewer auto-add toast not observed; account may already be reviewer or precondition may not hold",
+  "toastMatched": false,
+  "reviewerListVerified": false,
+  "mutation": {
+    "class": "Persistent",
+    "occurred": false,
+    "action": "No reviewer mutation observed"
+  },
+  "cleanup": {
+    "required": false,
+    "performed": false,
+    "leftovers": []
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false,
+    "toastTextPersisted": false
+  },
+  "observedAt": "2026-09-17T14:52:51.801Z"
+}

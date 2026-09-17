@@ -1,0 +1,42 @@
+{
+  "caseId": "PAC2-4700-TC-001-entry-probe",
+  "app": "PACO Connect",
+  "result": "Blocked",
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "inventory": {
+    "url": "https://blinx.dev.blinxpaco-np.com/paco/patient-search",
+    "heading": "Patient Search (0)",
+    "controls": [
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Search patients by name or NHS number"
+      },
+      {
+        "tag": "INPUT",
+        "type": null,
+        "label": "Search Patients..."
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Filters"
+      },
+      {
+        "tag": "BUTTON",
+        "type": null,
+        "label": "Create new patient"
+      }
+    ],
+    "hasQuickSend": false
+  },
+  "reason": "Patient flow reached; Quick Send requires selecting or searching a patient",
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false
+  },
+  "observedAt": "2026-09-17T14:10:26.120Z"
+}

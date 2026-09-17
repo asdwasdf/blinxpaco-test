@@ -1,0 +1,45 @@
+{
+  "runId": "20260917-gp-scheduler-readonly",
+  "observedAt": "2026-09-17T12:02:03.713Z",
+  "environment": "dev",
+  "role": "Super Admin GB",
+  "scope": "GP Scheduler Configuration landing state only",
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "actions": [
+    "navigate to observed feature root",
+    "inspect rendered DOM and default control state",
+    "capture local screenshot"
+  ],
+  "actionsNotTaken": [
+    "change campaign-template selection",
+    "click Open",
+    "compose",
+    "send",
+    "attach",
+    "submit",
+    "any unknown-persistence action"
+  ],
+  "observed": {
+    "url": "https://pac2-4700-qs-only.dev.blinxpaco-np.com/feature-branch/pac2-4700-qs-only/configuration/",
+    "title": "Scheduler Configuration",
+    "headings": [],
+    "visibleTextMarkers": {
+      "schedulerConfig": true,
+      "selectCampaignTemplate": false,
+      "open": false
+    },
+    "selects": [],
+    "roleComboboxes": [],
+    "buttons": [],
+    "inputs": [],
+    "forms": []
+  },
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 404 ()",
+    "Refused to execute script from 'https://pac2-4700-qs-only.dev.blinxpaco-np.com/web-chat-bundle/remote/remoteEntry.js' because its MIME type ('text/html') is not executable, and strict MIME type checking is enabled."
+  ],
+  "pageErrors": []
+}

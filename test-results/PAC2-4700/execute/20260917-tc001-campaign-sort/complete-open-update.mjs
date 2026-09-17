@@ -1,0 +1,26 @@
+import { chromium } from '@playwright/test';
+import { writeFile, readFile } from 'node:fs/promises';
+import path from 'node:path';
+if (process.env.PACO_ALLOW_MUTATION !== 'true') throw new Error('Blocked: mutation guard');
+const outDir = path.resolve('test-results/PAC2-4700/execute/20260917-tc001-campaign-sort');
+const { qaCampaignName } = JSON.parse(await readFile(path.join(outDir, '42-save-new-qa-campaign.json'), 'utf8'));
+const browser = await chromium.connectOverCDP('http://127.0.0.1:9222');
+const pages = browser.contexts()[0]?.pages().filter((candidate) => /\/paco\/patient-profile\//i.test(candidate.url())) || [];
+let page;
+for (const candidate of pages.toReversed()) if (await candidate.locator('[role="dialog"][class*="quick-send-dialog"]:visible').count()) { page = candidate; break; }
+if (!page) throw new Error('Blocked: Quick Send missing');
+const dialog = page.locator('[role="dialog"][class*="quick-send-dialog"]').last();
+if (!(await dialog.innerText()).includes(qaCampaignName)) throw new Error('Blocked: current campaign is not owned QA data');
+const choice = page.getByRole('dialog').filter({ hasText: /^Save Campaign/i }).last();
+await choice.waitFor({ state: 'visible', timeout: 10_000 });
+const updateOption = choice.getByRole('button').filter({ hasText: /^Update existing/i }).first();
+if ((await updateOption.getAttribute('aria-pressed')) !== 'true' && !(await updateOption.getAttribute('class') || '').includes('selected')) await updateOption.click();
+await choice.getByRole('button', { name: /^Update$/i }).last().click();
+await choice.waitFor({ state: 'hidden', timeout: 15_000 });
+const toast = page.locator('.p-toast-message').last();
+await toast.waitFor({ state: 'visible', timeout: 15_000 }).catch(() => {});
+const success = await toast.isVisible().catch(() => false) && /success/i.test(await toast.innerText());
+const summary = { scope: 'Quick Send Update existing', result: success ? 'Pass' : 'Inconclusive', qaCampaignName, observation: { dialogClosed: true, toastCategory: success ? 'Success' : 'OtherOrNone' }, mutation: { class: 'Persistent', occurred: true, action: 'Updated only owned QA campaign' }, cleanup: { required: true, performed: false, leftovers: [qaCampaignName] }, sensitiveData: { persisted: false, screenshots: false }, observedAt: new Date().toISOString() };
+await writeFile(path.join(outDir, '43-update-qa-campaign.json'), JSON.stringify(summary, null, 2));
+console.log(JSON.stringify(summary, null, 2));
+await browser.close();

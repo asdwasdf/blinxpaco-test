@@ -1,0 +1,128 @@
+{
+  "caseId": "PAC2-4700-probe-sidebar",
+  "app": "PACO Connect",
+  "result": "Observed",
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "foundCampaignHint": true,
+  "steps": {
+    "baseline": {
+      "url": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "markers": {
+        "BookingLinks": false,
+        "HealthForms": false,
+        "Campaign": false,
+        "Comms": false
+      },
+      "buttons": [
+        "Accessibility Menu",
+        "Expand sidebar",
+        "More options",
+        "Dashboard",
+        "Appointment Book",
+        "Date17 Sep 2026",
+        "Appt. Book11 oct -2 -21",
+        "Export PDF",
+        "Export capacity breakdown to CSV",
+        "Export slot types to CSV",
+        "Export demand by hour to CSV",
+        "Export demand by day of week to CSV",
+        "Export clinicians to CSV",
+        "Export frequent patients to CSV",
+        "Export cancellation split to CSV",
+        "Export appointment status flow to CSV",
+        "Export slot type detail to CSV"
+      ],
+      "bodySnippet": "TFN Test Fiona Nguyen Super Admin GB General Practice (Blinx Demo Site) 0 Dashboard Appointment Book Date 17 Sep 2026 Appt. Book 11 oct -2 -21 Export PDF 1,600 Total Capacity 1,600 bookable 0% Utilisation 1 of 1,600 slots 0 Patients Seen of 55 appts 100% DNA Rate 1 did not attend 54 Cancelled 0 patient / 54 team 0m Avg Wait arrival to start Capacity Breakdown CSV 0% Utilised Booked (1) Available (1,599) Non-bookable (0) By Slot Type CSV Booked Available Non-bookable Demand by Hour CSV Booked Unbooked Demand by Day of Week CSV Booked Unbooked By Clinician / Role CSV Clinician Slots Booked Seen DNA Util. Johnny (2255) Bravo 768 1 0 1 0% Mr Test Harness 288 0 0 0 0% Katie SparrowTest 96 0 0 0 0% Michael Ramella 88 0 0 0 0% Vinay Cloe 48 0 0 0 0% Vedu Sharma 48 0 0 0 0% ammar 01022295446 48 0 0 0 0% Mr Matthew Lynas 48 0 0 0 0% Alex Paul 24 0 0 0 0% Most Frequent Patients CSV # Patient NHS No. Appointments 1 Mrs MAJDIYYA FAWZIA DUAL 9449309981 1 Cancellation Split CSV 0 By Patient 54 By Team Appointment Status Flow CSV Booked 1 Arrived 0 In Progress 0 Completed 0 DNA 1 Slot Type Detail CSV Slot Type Total Booked Available Non-bookable Utilisation First Contact Physio - eGPlearning 662 1 661 0 0% Mike Audit Test Update 337 0 337 0 0% Test Billable 288 0 288 0 0% test by handsome mike 4 Jul 192 0 192 0 0% Dermatology Clinic 48 0 48 0 0% Home Visit FJ 48 0 48 0 0% Hillingdon Extended Access (Nurse V1) 24 0 24 0 0% Andy Mike Test 1 1 0 1 0 0%"
+    },
+    "afterExpand": {
+      "url": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "markers": {
+        "BookingLinks": false,
+        "HealthForms": true,
+        "Campaign": false,
+        "Comms": true
+      },
+      "buttons": [
+        "Accessibility Menu",
+        "Collapse sidebar",
+        "More options",
+        "Dashboard",
+        "Appointment Book",
+        "Date17 Sep 2026",
+        "Appt. Book11 oct -2 -21",
+        "Export PDF",
+        "Export capacity breakdown to CSV",
+        "Export slot types to CSV",
+        "Export demand by hour to CSV",
+        "Export demand by day of week to CSV",
+        "Export clinicians to CSV",
+        "Export frequent patients to CSV",
+        "Export cancellation split to CSV",
+        "Export appointment status flow to CSV",
+        "Export slot type detail to CSV"
+      ],
+      "bodySnippet": "Dashboards Analytics & Reports Comms Hub Health Forms Patients Web Chat & Video Case Load Management Appointment Book Quick Pay User Portal Configuration Rocket Bar Sign Out TFN Test Fiona Nguyen Super Admin GB General Practice (Blinx Demo Site) 0 Dashboard Appointment Book Date 17 Sep 2026 Appt. Book 11 oct -2 -21 Export PDF 1,600 Total Capacity 1,600 bookable 0% Utilisation 1 of 1,600 slots 0 Patients Seen of 55 appts 100% DNA Rate 1 did not attend 54 Cancelled 0 patient / 54 team 0m Avg Wait arrival to start Capacity Breakdown CSV 0% Utilised Booked (1) Available (1,599) Non-bookable (0) By Slot Type CSV Booked Available Non-bookable Demand by Hour CSV Booked Unbooked Demand by Day of Week CSV Booked Unbooked By Clinician / Role CSV Clinician Slots Booked Seen DNA Util. Johnny (2255) Bravo 768 1 0 1 0% Mr Test Harness 288 0 0 0 0% Katie SparrowTest 96 0 0 0 0% Michael Ramella 88 0 0 0 0% Vinay Cloe 48 0 0 0 0% Vedu Sharma 48 0 0 0 0% ammar 01022295446 48 0 0 0 0% Mr Matthew Lynas 48 0 0 0 0% Alex Paul 24 0 0 0 0% Most Frequent Patients CSV # Patient NHS No. Appointments 1 Mrs MAJDIYYA FAWZIA DUAL 9449309981 1 Cancellation Split CSV 0 By Patient 54 By Team Appointment Status Flow CSV Booked 1 Arrived 0 In Progress 0 Completed 0 DNA 1 Slot Type Detail CSV Slot Type Total Booked Available Non-bookable Utilisation First Contact Physio - eGPlearning 662 1 661 0 0% Mike Audit Test Update 337 0 337 0 0% Test Billable 288 0 288 0 0% test by handsome mike 4 Jul 192 0 192 0 0% Dermatology Clinic 48 0 48 0 0% Home Visit FJ 48 0 48 0 0% Hillingdon Extended Access (Nurse V1) 24 0 24 0 0% Andy Mike Test 1 1 0 1 0 0% Close menu sidebar",
+      "sidebarExpanded": true
+    },
+    "afterMore": {
+      "url": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "markers": {
+        "BookingLinks": false,
+        "HealthForms": false,
+        "Campaign": false,
+        "Comms": true
+      },
+      "buttons": [
+        "Accessibility Menu",
+        "Expand sidebar",
+        "More options",
+        "Dashboard",
+        "Appointment Book",
+        "Date17 Sep 2026",
+        "Appt. Book11 oct -2 -21",
+        "Export PDF",
+        "Export capacity breakdown to CSV",
+        "Export slot types to CSV",
+        "Export demand by hour to CSV",
+        "Export demand by day of week to CSV",
+        "Export clinicians to CSV",
+        "Export frequent patients to CSV",
+        "Export cancellation split to CSV",
+        "Export appointment status flow to CSV",
+        "Export slot type detail to CSV",
+        "PaComms",
+        "PaComms",
+        "Quick View",
+        "Quick View",
+        "Idle",
+        "Idle",
+        "Idle",
+        "Idle"
+      ],
+      "bodySnippet": "TFN Test Fiona Nguyen Super Admin GB General Practice (Blinx Demo Site) 0 Dashboard Appointment Book Date 17 Sep 2026 Appt. Book 11 oct -2 -21 Export PDF 1,600 Total Capacity 1,600 bookable 0% Utilisation 1 of 1,600 slots 0 Patients Seen of 55 appts 100% DNA Rate 1 did not attend 54 Cancelled 0 patient / 54 team 0m Avg Wait arrival to start Capacity Breakdown CSV 0% Utilised Booked (1) Available (1,599) Non-bookable (0) By Slot Type CSV Booked Available Non-bookable Demand by Hour CSV Booked Unbooked Demand by Day of Week CSV Booked Unbooked By Clinician / Role CSV Clinician Slots Booked Seen DNA Util. Johnny (2255) Bravo 768 1 0 1 0% Mr Test Harness 288 0 0 0 0% Katie SparrowTest 96 0 0 0 0% Michael Ramella 88 0 0 0 0% Vinay Cloe 48 0 0 0 0% Vedu Sharma 48 0 0 0 0% ammar 01022295446 48 0 0 0 0% Mr Matthew Lynas 48 0 0 0 0% Alex Paul 24 0 0 0 0% Most Frequent Patients CSV # Patient NHS No. Appointments 1 Mrs MAJDIYYA FAWZIA DUAL 9449309981 1 Cancellation Split CSV 0 By Patient 54 By Team Appointment Status Flow CSV Booked 1 Arrived 0 In Progress 0 Completed 0 DNA 1 Slot Type Detail CSV Slot Type Total Booked Available Non-bookable Utilisation First Contact Physio - eGPlearning 662 1 661 0 0% Mike Audit Test Update 337 0 337 0 0% Test Billable 288 0 288 0 0% test by handsome mike 4 Jul 192 0 192 0 0% Dermatology Clinic 48 0 48 0 0% Home Visit FJ 48 0 48 0 0% Hillingdon Extended Access (Nurse V1) 24 0 24 0 0% Andy Mike Test 1 1 0 1 0 0% 0 PaComms Quick View Idle Idle",
+      "moreOpened": true
+    },
+    "menuItems": [
+      "PaComms",
+      "0PaComms",
+      "PaComms",
+      "PaComms",
+      "Quick View",
+      "Quick View",
+      "Quick View",
+      "Quick View",
+      "Idle",
+      "Idle",
+      "Idle",
+      "Idle",
+      "Idle",
+      "Idle",
+      "Idle",
+      "Idle"
+    ]
+  },
+  "observedAt": "2026-09-17T13:58:16.904Z"
+}

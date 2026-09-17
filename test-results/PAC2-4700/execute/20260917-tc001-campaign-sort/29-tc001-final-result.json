@@ -1,0 +1,36 @@
+{
+  "caseId": "PAC2-4700-TC-001",
+  "app": "PACO Connect → patient → Quick Send → Select Campaign",
+  "result": "Pass",
+  "reason": "30 visible campaigns sorted ascending",
+  "sort": {
+    "selected": "A - Z",
+    "expected": "A - Z"
+  },
+  "campaignCountChecked": 30,
+  "firstFive": [
+    "6 July - Test Case 1",
+    "6 July - Test Case 3",
+    "7-feb-general-camp",
+    "Access kp",
+    "Blinx Advice"
+  ],
+  "lastFive": [
+    "SNOMED CONSULT TEST 3",
+    "Test (updated due to duplicate name) updated 2",
+    "Test wording on modal",
+    "Tower House Practice - New Online Booking!",
+    "TR Logo - KS Test"
+  ],
+  "inversions": [],
+  "mutation": {
+    "class": "Temporary",
+    "occurred": true,
+    "action": "A–Z sort only"
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false
+  },
+  "observedAt": "2026-09-17T14:37:02.148Z"
+}

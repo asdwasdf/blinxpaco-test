@@ -1,0 +1,48 @@
+{
+  "runId": "20260917-booking-1789663209856",
+  "result": "Inconclusive",
+  "results": [
+    {
+      "key": "base",
+      "bookingLink": {},
+      "errors": [
+        "locator.click: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "key": "connect",
+      "bookingLink": {},
+      "errors": [
+        "locator.click: Timeout 30000ms exceeded."
+      ]
+    },
+    {
+      "key": "os",
+      "bookingLink": {},
+      "errors": [
+        "locator.click: Timeout 30000ms exceeded."
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "key": "connect",
+      "controlsMatch": true,
+      "comboboxCountMatch": true,
+      "mappedSlotMatch": true,
+      "schedulerPopupMatch": true
+    },
+    {
+      "key": "os",
+      "controlsMatch": true,
+      "comboboxCountMatch": true,
+      "mappedSlotMatch": true,
+      "schedulerPopupMatch": true
+    }
+  ],
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "observedAt": "2026-09-17T16:42:20.740Z"
+}

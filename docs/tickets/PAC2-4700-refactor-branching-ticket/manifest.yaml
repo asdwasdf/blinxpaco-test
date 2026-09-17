@@ -1,0 +1,292 @@
+schema_version: 2
+
+ticket:
+  key: "PAC2-4700"
+  folder_name: "PAC2-4700-refactor-branching-ticket"
+  source_directory: "ticket/PAC2-4700-refactor-branching-ticket"
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-17T18:14:18+07:00"
+  files:
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/ticket.md"
+      sha256: "9464263c8ce5ef24265ceba2124eacb9221698354cd2fce938f318a084724c20"
+  supporting_media:
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/IMG-01.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/IMG-02.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/IMG-03.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/IMG-04.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-05.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-06.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-07.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-08.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-09.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-10.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-11.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-12.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-13.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-14.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-15.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-16.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-17.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-18.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-19.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-20.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-21.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-22.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-23.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-24.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-25.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-26.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-27.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-28.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/connect-screenshots/IMG-29.png"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/VID-01.mp4"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/VID-02.mp4"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/VID-03.mp4"
+    - path: "ticket/PAC2-4700-refactor-branching-ticket/VID-04.mp4"
+
+scope:
+  apps:
+    - id: paco-os-24
+      label: "PACO OS / PACO 24"
+      url: "https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard"
+    - id: paco-connect
+      label: "PACO Connect"
+      url: "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/"
+    - id: gp-supergrid
+      label: "GP (Supergrid)"
+      url: "https://pac2-4700-qs-only.dev.blinxpaco-np.com"
+  feature_branch: "pac2-4700-qs-only"
+  environment: "dev"
+  note: "User chọn All 3 apps; LOCATE read-only bằng role Super Admin GB."
+
+workflow:
+  status: in_progress
+  current_phase: EXPLORE
+  last_completed_phase: ANALYZE
+  updated_at: "2026-09-17T20:00:21+07:00"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-17T18:14:18+07:00"
+      artifacts: []
+      warnings:
+        - "Scope mở rộng 3 app (OS/Connect/GP); skill Paco gốc tập trung PACO OS/24."
+    - phase: INGEST
+      outcome: completed
+      input_revision: 1
+      timestamp: "2026-09-17T18:14:18+07:00"
+      artifacts: []
+      warnings:
+        - "Media checklist còn IMG-05 thiếu trong folder source."
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      timestamp: "2026-09-17T18:30:00+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/requirements.md"
+          sha256: "15ef5b7e253f238bb6b546e3bca6f8ebc09057f666007d69054f6cf37f92951a"
+      warnings:
+        - "Ticket Outcome placeholder; AC rộng/refactor-style."
+        - "IMG-05 listed nhưng file thiếu; VID-01..04 chưa transcribe."
+        - "Nhiều REQ Inferred/Disputed (dataset OS, default SMS vs email, EMIS mapping, attachments empty)."
+        - "PC24 trong AC nhưng session scope chỉ 3 app (OS/Connect/GP)."
+    - phase: LOCATE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-17T18:52:50+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/feature-location.md"
+          sha256: "6e000bda50ded6c772df8d8a81a83c7e760d53da2e6707077b1a5ad5fe2c6610"
+      warnings:
+        - "Chạm ceiling 12/12 views; route status Candidate."
+        - "GP Scheduler Configuration đã locate; Booking Links và patient/profile exact entry chưa xác minh."
+    - phase: EXPLORE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-17T19:29:05+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/exploration.md"
+          sha256: "bb9d9ad9fdcf48c08f80e30dbeba748c5873c2ca22d62e0cc3bf7f290c0e38b9"
+      warnings:
+        - "GP pac2-4700-qs-only checkpoint hoàn tất read-only; OS/Connect chưa bắt đầu theo thứ tự test từng branch."
+        - "Initial render transient kèm resource 404/MIME mismatch; state sau render ổn định."
+        - "Không kết luận cross-app parity hoặc default template từ requirement Inferred/Disputed."
+    - phase: EXPLORE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-17T19:38:02+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/exploration.md"
+          sha256: "3437ac4f07a5d7d5866aeff37c4cd0de3b689cb6ee9f885081def1dabc834df9"
+      warnings:
+        - "PACO OS / PACO 24 checkpoint hoàn tất read-only trên Health Form Templates, Patient Search và Configuration; Connect chưa bắt đầu."
+        - "Ba PACO OS route có console resource 404 nhưng vẫn render landmark; chưa đủ evidence kết luận functional defect."
+        - "Patient Search live state đổi từ 0 sang 78,780 results; chỉ ghi nhận data/context theo timestamp, không lưu patient values."
+        - "Không kết luận cross-app parity hoặc accessibility failure từ structural observation."
+    - phase: EXPLORE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-17T19:51:11+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/exploration.md"
+          sha256: "b2a4e6c7c5e8595a06109d44c1a5bb1e6625d398ff85f44def4eee498ca2e419"
+      warnings:
+        - "PACO Connect checkpoint hoàn tất read-only trên Dashboard, Appointment Book và direct candidate /booking-links."
+        - "Dashboard và Appointment Book hết Loading khoảng sample 15 giây và giữ stable tới 30 giây."
+        - "Direct /booking-links trả HTTP 200 nhưng render app-level 404 Page Not Found; exact entry path vẫn chưa locate."
+        - "Không kết luận cross-app parity từ các landing surfaces khác nhau."
+    - phase: EXPLORE
+      outcome: inconclusive
+      input_revision: 1
+      timestamp: "2026-09-17T20:00:21+07:00"
+      artifacts:
+        - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/exploration.md"
+          sha256: "d11a03256d45c828bc64579cfb5747621a4c7ee7dae38b57e9bb2beac7164ea7"
+      warnings:
+        - "Bounded DOM/navigation scan trên Connect Dashboard và Appointment Book không tìm thấy semantic entry hoặc route hint cho Booking Links, EMIS hay Slot Type."
+        - "Semantic popup control duy nhất được xác minh là Accessibility Menu; unlabeled controls không được click vì intent/persistence chưa rõ."
+        - "Exact feature entry vẫn là Open Question; cần tester/QA/BA route hoặc menu clue trước deeper exploration."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-17T18:14:18+07:00"
+    artifacts: []
+    warnings:
+      - "Scope mở rộng 3 app (OS/Connect/GP); skill Paco gốc tập trung PACO OS/24."
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-17T18:14:18+07:00"
+    artifacts: []
+    warnings:
+      - "Media checklist còn IMG-05 thiếu trong folder source."
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-17T18:30:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/requirements.md"
+        sha256: "15ef5b7e253f238bb6b546e3bca6f8ebc09057f666007d69054f6cf37f92951a"
+    warnings:
+      - "Ticket Outcome placeholder; AC rộng/refactor-style."
+      - "IMG-05 listed nhưng file thiếu; VID-01..04 chưa transcribe."
+      - "Nhiều REQ Inferred/Disputed (dataset OS, default SMS vs email, EMIS mapping, attachments empty)."
+      - "PC24 trong AC nhưng session scope chỉ 3 app (OS/Connect/GP)."
+    blockers: []
+  LOCATE:
+    status: inconclusive
+    outcome: inconclusive
+    input_revision: 1
+    updated_at: "2026-09-17T18:52:50+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/feature-location.md"
+        sha256: "6e000bda50ded6c772df8d8a81a83c7e760d53da2e6707077b1a5ad5fe2c6610"
+    warnings:
+      - "Chạm ceiling 12/12 views; route status Candidate."
+      - "GP Scheduler Configuration đã locate; Booking Links và patient/profile exact entry chưa xác minh."
+    blockers:
+      - "Thiếu patient/result để mở profile, Attachments hoặc email dialog read-only."
+      - "Comms Hub cần manual login riêng."
+    budget:
+      views_used: 12
+      views_limit: 12
+      elapsed_minutes: 15
+      minutes_limit: 15
+  EXPLORE:
+    status: in_progress
+    outcome: inconclusive
+    input_revision: 1
+    updated_at: "2026-09-17T20:00:21+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4700-refactor-branching-ticket/exploration.md"
+        sha256: "d11a03256d45c828bc64579cfb5747621a4c7ee7dae38b57e9bb2beac7164ea7"
+    warnings:
+      - "GP, PACO OS / PACO 24 và PACO Connect checkpoints hoàn tất tuần tự ở read-only landing surfaces."
+      - "GP initial render transient kèm resource 404/MIME mismatch; state sau render ổn định."
+      - "Ba PACO OS route có console resource 404 nhưng vẫn render landmark; chưa đủ evidence kết luận functional defect."
+      - "PACO Connect Dashboard và Appointment Book hết Loading khoảng sample 15 giây; direct /booking-links render app-level 404 dù HTTP 200."
+      - "Bounded Connect DOM/navigation scan không tìm thấy semantic Booking Links/EMIS/Slot Type entry; không kết luận feature thiếu."
+      - "Không kết luận cross-app parity, accessibility failure hoặc default template từ evidence hiện tại."
+    blockers:
+      - "Chọn template hoặc click Open chưa được xác nhận là non-persistent; cần approval trước deeper interaction."
+      - "Chọn patient row hoặc PACO OS config section chưa được xác minh là pure read-only transition."
+      - "PACO Connect exact Booking Links entry, EMIS mapping và deeper controls chưa locate; cần tester/QA/BA route hoặc menu clue."
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-4700-refactor-branching-ticket/feature-location.md"
+    state: valid
+    input_revision: 1
+    sha256: "6e000bda50ded6c772df8d8a81a83c7e760d53da2e6707077b1a5ad5fe2c6610"
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-4700-refactor-branching-ticket/requirements.md"
+    state: valid
+    input_revision: 1
+    sha256: "15ef5b7e253f238bb6b546e3bca6f8ebc09057f666007d69054f6cf37f92951a"
+  exploration.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-4700-refactor-branching-ticket/exploration.md"
+    state: partial
+    input_revision: 1
+    sha256: "d11a03256d45c828bc64579cfb5747621a4c7ee7dae38b57e9bb2beac7164ea7"

@@ -1,0 +1,24 @@
+{
+  "caseId": "PAC2-4700-TC-001",
+  "app": "PACO Connect",
+  "url": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+  "mutation": {
+    "class": "Temporary",
+    "occurred": false
+  },
+  "opened": false,
+  "openMethod": null,
+  "sortClicked": false,
+  "sortMethod": null,
+  "top3": [],
+  "expectedTopHint": [
+    "6 July - Test Case 1",
+    "6 July - Test Case 3",
+    "7-feb-general-camp"
+  ],
+  "result": "Blocked",
+  "reason": "Không mở được Campaign selector trên Connect Dashboard",
+  "consoleErrors": [],
+  "pageErrors": [],
+  "observedAt": "2026-09-17T13:52:31.514Z"
+}

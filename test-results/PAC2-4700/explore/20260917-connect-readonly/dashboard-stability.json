@@ -1,0 +1,132 @@
+{
+  "route": "/dashboard",
+  "samplingSeconds": [
+    0,
+    5,
+    15,
+    30
+  ],
+  "actions": [
+    "direct navigation",
+    "observe rendered state repeatedly",
+    "capture local screenshot"
+  ],
+  "actionsNotTaken": [
+    "search",
+    "filter",
+    "export PDF",
+    "export CSV",
+    "select appointment",
+    "any unknown-persistence action"
+  ],
+  "samples": [
+    {
+      "observedAt": "2026-09-17T12:50:41.580Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyLength": 109,
+      "knownMarkers": {
+        "Dashboard": true,
+        "Appointment Book": true,
+        "Export PDF": true,
+        "CSV": false,
+        "Loading": true,
+        "No available options": false,
+        "Booking Links": false,
+        "EMIS": false,
+        "Slot Type": false
+      },
+      "visibleControls": 1,
+      "visibleButtons": 8,
+      "visibleSpinners": 0,
+      "tableRows": 0,
+      "horizontalOverflow": false,
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      }
+    },
+    {
+      "observedAt": "2026-09-17T12:50:46.607Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyLength": 179,
+      "knownMarkers": {
+        "Dashboard": true,
+        "Appointment Book": true,
+        "Export PDF": true,
+        "CSV": false,
+        "Loading": true,
+        "No available options": false,
+        "Booking Links": false,
+        "EMIS": false,
+        "Slot Type": false
+      },
+      "visibleControls": 1,
+      "visibleButtons": 8,
+      "visibleSpinners": 0,
+      "tableRows": 0,
+      "horizontalOverflow": false,
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      }
+    },
+    {
+      "observedAt": "2026-09-17T12:50:56.628Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyLength": 1458,
+      "knownMarkers": {
+        "Dashboard": true,
+        "Appointment Book": true,
+        "Export PDF": true,
+        "CSV": true,
+        "Loading": false,
+        "No available options": false,
+        "Booking Links": false,
+        "EMIS": false,
+        "Slot Type": true
+      },
+      "visibleControls": 1,
+      "visibleButtons": 17,
+      "visibleSpinners": 0,
+      "tableRows": 18,
+      "horizontalOverflow": false,
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      }
+    },
+    {
+      "observedAt": "2026-09-17T12:51:11.634Z",
+      "urlPath": "/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "title": "PACO Connect",
+      "authExpired": false,
+      "bodyLength": 1458,
+      "knownMarkers": {
+        "Dashboard": true,
+        "Appointment Book": true,
+        "Export PDF": true,
+        "CSV": true,
+        "Loading": false,
+        "No available options": false,
+        "Booking Links": false,
+        "EMIS": false,
+        "Slot Type": true
+      },
+      "visibleControls": 1,
+      "visibleButtons": 17,
+      "visibleSpinners": 0,
+      "tableRows": 18,
+      "horizontalOverflow": false,
+      "mutation": {
+        "class": "None",
+        "occurred": false
+      }
+    }
+  ]
+}

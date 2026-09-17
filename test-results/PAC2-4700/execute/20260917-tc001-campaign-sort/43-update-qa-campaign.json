@@ -1,0 +1,26 @@
+{
+  "scope": "Quick Send Update existing",
+  "result": "Pass",
+  "qaCampaignName": "QA PAC2-4700 1789659104200",
+  "observation": {
+    "dialogClosed": true,
+    "toastCategory": "Success"
+  },
+  "mutation": {
+    "class": "Persistent",
+    "occurred": true,
+    "action": "Updated only owned QA campaign"
+  },
+  "cleanup": {
+    "required": true,
+    "performed": false,
+    "leftovers": [
+      "QA PAC2-4700 1789659104200"
+    ]
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false
+  },
+  "observedAt": "2026-09-17T15:36:58.743Z"
+}

@@ -1,0 +1,208 @@
+{
+  "runId": "20260917-cross-app-1789662076521",
+  "result": "Inconclusive",
+  "results": [
+    {
+      "key": "base",
+      "entryUrl": "https://blinx.dev.blinxpaco-np.com/paco/dashboard/",
+      "finalUrl": "https://blinx.dev.blinxpaco-np.com/paco/dashboard/",
+      "openMs": 9924,
+      "campaign": {
+        "controls": {
+          "Preview": false,
+          "Edit": false,
+          "Merge Fields": false,
+          "Templates": true
+        },
+        "selectorVisible": true,
+        "sortOptions": [
+          "By date (descending)",
+          "By date (ascending)",
+          "By message type",
+          "A - Z",
+          "Z - A"
+        ],
+        "categoryCount": 0,
+        "sortChecks": [
+          {
+            "name": "By date (descending)",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "By date (ascending)",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "By message type",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "A–Z",
+            "available": false,
+            "selected": false
+          },
+          {
+            "name": "Z–A",
+            "available": false,
+            "selected": false
+          }
+        ]
+      },
+      "healthForms": {},
+      "bookingLink": {},
+      "files": {},
+      "errors": [
+        "locator.waitFor: Timeout 10000ms exceeded."
+      ]
+    },
+    {
+      "key": "connect",
+      "entryUrl": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/",
+      "finalUrl": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard",
+      "openMs": 17371,
+      "campaign": {
+        "controls": {
+          "Preview": false,
+          "Edit": false,
+          "Merge Fields": false,
+          "Templates": true
+        },
+        "selectorVisible": true,
+        "sortOptions": [
+          "By date (descending)",
+          "By date (ascending)",
+          "By message type",
+          "A - Z",
+          "Z - A"
+        ],
+        "categoryCount": 4,
+        "sortChecks": [
+          {
+            "name": "By date (descending)",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "By date (ascending)",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "By message type",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "A–Z",
+            "available": false,
+            "selected": false
+          },
+          {
+            "name": "Z–A",
+            "available": false,
+            "selected": false
+          }
+        ]
+      },
+      "healthForms": {},
+      "bookingLink": {},
+      "files": {},
+      "errors": [
+        "locator.waitFor: Timeout 10000ms exceeded."
+      ]
+    },
+    {
+      "key": "os",
+      "entryUrl": "https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard",
+      "finalUrl": "https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard",
+      "openMs": 9926,
+      "campaign": {
+        "controls": {
+          "Preview": false,
+          "Edit": false,
+          "Merge Fields": false,
+          "Templates": true
+        },
+        "selectorVisible": true,
+        "sortOptions": [
+          "By date (descending)",
+          "By date (ascending)",
+          "By message type",
+          "A - Z",
+          "Z - A"
+        ],
+        "categoryCount": 4,
+        "sortChecks": [
+          {
+            "name": "By date (descending)",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "By date (ascending)",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "By message type",
+            "available": true,
+            "selected": true
+          },
+          {
+            "name": "A–Z",
+            "available": false,
+            "selected": false
+          },
+          {
+            "name": "Z–A",
+            "available": false,
+            "selected": false
+          }
+        ]
+      },
+      "healthForms": {},
+      "bookingLink": {},
+      "files": {},
+      "errors": [
+        "locator.waitFor: Timeout 10000ms exceeded."
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "key": "connect",
+      "sortOptionsMatch": true,
+      "campaignControlsMatch": true,
+      "healthLoadRatio": null,
+      "bookingControlsMatch": true,
+      "fileAcceptMatch": true,
+      "errors": [
+        "locator.waitFor: Timeout 10000ms exceeded."
+      ]
+    },
+    {
+      "key": "os",
+      "sortOptionsMatch": true,
+      "campaignControlsMatch": true,
+      "healthLoadRatio": null,
+      "bookingControlsMatch": true,
+      "fileAcceptMatch": true,
+      "errors": [
+        "locator.waitFor: Timeout 10000ms exceeded."
+      ]
+    }
+  ],
+  "mutation": {
+    "class": "None",
+    "occurred": false
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false,
+    "optionLabelsPersisted": false
+  },
+  "observedAt": "2026-09-17T16:22:37.458Z"
+}

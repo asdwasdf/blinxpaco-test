@@ -1,0 +1,30 @@
+{
+  "scope": "Quick Send file invalid-type validation and remove",
+  "result": "Fail",
+  "reason": "File picker advertises an allowlist, but synthetic .exe was accepted into the draft without validation feedback; valid synthetic file removal succeeded",
+  "observation": {
+    "accept": ".txt,.pdf,.doc,.docx,.jpg,.png,.bmp,.webm,.mp4",
+    "invalidRejected": false,
+    "invalidFileRendered": true,
+    "validationFeedbackVisible": false,
+    "validFileAttached": true,
+    "removeControlVisible": true,
+    "removed": true,
+    "removalVerifiedBy": "Files panel contained no synthetic filename after removal attempt"
+  },
+  "mutation": {
+    "class": "Temporary draft",
+    "occurred": true,
+    "action": "Attempted synthetic invalid file; attached then removed synthetic text file"
+  },
+  "cleanup": {
+    "required": true,
+    "performed": true,
+    "leftovers": []
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false
+  },
+  "observedAt": "2026-09-17T15:37:56.403Z"
+}

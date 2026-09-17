@@ -1,0 +1,26 @@
+{
+  "caseId": "PAC2-4700-TC-002",
+  "result": "Pass",
+  "reason": "Duplicate Save as New was rejected and no campaign was created; generic error feedback is accepted for this execution",
+  "duplicateName": "NEW TEST CAMPAIGN",
+  "modalRemainedOpen": true,
+  "observedFeedbackCategory": "Generic error",
+  "creationPrevented": true,
+  "mutation": {
+    "class": "Persistent attempt",
+    "occurred": false,
+    "action": "Duplicate Save as New rejected before creation"
+  },
+  "cleanup": {
+    "required": false,
+    "performed": false,
+    "leftovers": []
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false,
+    "feedbackTextPersisted": false
+  },
+  "correctedAt": "2026-09-17",
+  "correctionBasis": "Tester confirmed generic error behavior is correct"
+}

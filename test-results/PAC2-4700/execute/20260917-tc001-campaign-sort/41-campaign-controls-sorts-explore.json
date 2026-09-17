@@ -1,0 +1,59 @@
+{
+  "scope": "Quick Send Campaign controls and sort options",
+  "result": "Inconclusive",
+  "observation": {
+    "visibleControls": {
+      "Preview": false,
+      "Edit": false,
+      "Virtual Consult Link": false,
+      "Merge Fields": false,
+      "Copy to Email": false,
+      "Resources": false
+    },
+    "previewOpened": false,
+    "templatesOpened": false,
+    "mergeFieldsOpened": false,
+    "sortResults": [
+      {
+        "option": "By date (descending)",
+        "result": "Inconclusive",
+        "selectedMatched": true,
+        "rowCount": 0
+      },
+      {
+        "option": "By date (ascending)",
+        "result": "Inconclusive",
+        "selectedMatched": true,
+        "rowCount": 0
+      },
+      {
+        "option": "By message type",
+        "result": "Pass",
+        "selectedMatched": true,
+        "rowCount": 4
+      },
+      {
+        "option": "A–Z",
+        "result": "Not Run",
+        "reason": "Option not visible"
+      },
+      {
+        "option": "Z–A",
+        "result": "Not Run",
+        "reason": "Option not visible"
+      }
+    ]
+  },
+  "action": "Read-only overlays and temporary sort state only; Edit, Resources, and Virtual Consult Link not selected",
+  "mutation": {
+    "class": "Temporary",
+    "occurred": true,
+    "action": "Sort state changed; no campaign saved"
+  },
+  "sensitiveData": {
+    "persisted": false,
+    "screenshots": false,
+    "campaignNamesPersisted": false
+  },
+  "observedAt": "2026-09-17T15:24:01.252Z"
+}
