@@ -64,6 +64,8 @@ Phase skills: `paco-requirements`, `paco-explore`, `paco-test-design`, `paco-pla
 
 Child skill gọi trực tiếp chỉ ghi artifact thuộc ownership và trả checkpoint proposal; chỉ `paco-ticket` cập nhật manifest/status.
 
+**IMPORTANT**: NEVER spawn Paco skills với `isolation: "worktree"`. Tất cả artifacts và Playwright tests phải viết vào main repo (`/home/nhatpham/blinxpaco-test/`), không vào `.claude/worktrees/`.
+
 Chi tiết: `docs/standards/`
 
 ## References
