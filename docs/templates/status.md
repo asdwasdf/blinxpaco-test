@@ -21,6 +21,15 @@
 | REPORT | pending | - | - |
 | COMPLETE | pending | - | - |
 
+## Fast Path
+
+- Video ingest: not applicable
+- Product graph lookup: pending
+- Unresolved QA blockers: 0
+- Automation decision: pending
+- Mutation ledger: none
+- Durable evidence: none
+
 ## Completed Work
 
 - Chưa có

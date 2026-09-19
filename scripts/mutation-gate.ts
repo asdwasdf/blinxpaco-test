@@ -1,4 +1,4 @@
-import type { MutationClass } from './workflow-types.js';
+import type { MutationClass, PacoConfig } from './workflow-types.js';
 
 export interface MutationApproval {
   run_id: string;
@@ -15,6 +15,7 @@ export interface MutationApproval {
 export interface MutationRunScope {
   run_id: string;
   environment: string;
+  current_url?: string;
   ticket_key: string;
   case_id: string;
   action: string;
@@ -31,8 +32,23 @@ export function evaluateMutationGate(
   approval: MutationApproval | null,
   guards: { PACO_ALLOW_MUTATION?: string; PACO_ALLOW_DESTRUCTIVE?: string },
   now: string,
+  safety?: PacoConfig['safety'],
 ): MutationGateDecision {
   if (scope.mutation_class === 'None') return { allowed: true, reason: 'read_only' };
+  if (safety) {
+    if (!safety.mutationEnabledEnvironments.includes(scope.environment) || !scope.current_url) {
+      return { allowed: false, reason: 'Mutation blocked outside configured dev hosts' };
+    }
+    let hostname: string;
+    try {
+      hostname = new URL(scope.current_url).hostname.toLowerCase();
+    } catch {
+      return { allowed: false, reason: 'Mutation blocked outside configured dev hosts' };
+    }
+    if (![...safety.allowedHosts, ...safety.externalDevHosts].includes(hostname)) {
+      return { allowed: false, reason: 'Mutation blocked outside configured dev hosts' };
+    }
+  }
   if (!approval) return { allowed: false, reason: 'Explicit approval is required' };
   const requiredClass = scope.mutation_class === 'Unknown' ? 'Persistent' : scope.mutation_class;
   if (approval.run_id !== scope.run_id || approval.environment !== scope.environment || approval.ticket_key !== scope.ticket_key ||

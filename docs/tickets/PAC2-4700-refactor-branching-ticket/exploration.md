@@ -373,6 +373,192 @@ Quan sát read-only tuần tự ba app trên feature branch `pac2-4700-qs-only`:
 | "blinx healthcare" placeholder | ⚠️ Observed | Hiện khi campaign không có session |
 | Slot types PACO-CONNECT only | ⚠️ Observed | Không cross-check được với OS/GP |
 
+## Base dev Quick Send modal survey — 2026-09-18
+
+**Classification:** Observed  
+**Environment:** base dev `/paco/dashboard`  
+**Role:** `Super Admin GB`  
+**Method:** thao tác trực tiếp bằng `claude-plugin-playwright`  
+**Scope:** inventory modal trước mutation; không `Send Now`, không `Schedule`
+
+### OBS-PAC2-4700-037 — Modal header và campaign compose
+
+- Header hiển thị patient identity, NHS, postcode, contact-channel indicators và `DOB: Unknown (Unknown)`.
+- `View Patient Details` mở panel `Patient Information`; `Close Patient Details` đóng panel.
+- Campaign hiện tại có picker `(click to change)`, `Patient Reply`, rich-text editor, `Preview`, `Edit`, `Enable SMS`, `Email enabled`, `Edit subject line`, `Copy to SMS`, `Resources`, `Button`, `Templates` và `Save`.
+- `Save` disabled trước khi draft thay đổi. Trong probe TC-009 trước survey, `Edit` + enable SMS + local draft change làm `Save` enabled; marker test được xóa và dialog đóng không lưu.
+
+### OBS-PAC2-4700-038 — Patient Information
+
+Panel có `Contact Details` với dropdown `Number` và `Email`, consent state, `Search all tabs...`, cùng 10 section:
+
+1. `Personal Info`
+2. `Significant Info`
+3. `Allergies`
+4. `Active Medications`
+5. `Past Medications`
+6. `Appointments`
+7. `Active Problems`
+8. `Significant Past Problems`
+9. `Test Results`
+10. `Attachments`
+
+### OBS-PAC2-4700-039 — Campaign selector và sort
+
+- Picker có search và category tree: `Favourites`, `Booking Links & Health Forms`, `General News`, `Guidance & Advice`.
+- Sort dropdown thật hiển thị current value `By message type`.
+- Options: `By date (descending)`, `By date (ascending)`, `By message type`, `A - Z`, `Z - A`.
+
+### OBS-PAC2-4700-040 — Health Forms và Files
+
+- `Health Forms` có badge `2`, `Select Health Form`, `Add Health Form(s)` và hai item đang added.
+- `Files` có `Add files from patient record`, `Select Attachment`, vùng drag/drop và `Browse or record video`.
+- Chưa add/remove form hoặc file trong checkpoint này.
+
+### OBS-PAC2-4700-041 — Booking Link
+
+Tab `Booking Link` có:
+
+- `Date & Time` và `Refresh Availability`
+- `Face to Face Slot Type(s)`, `Phone Slot Type(s)`, video và `Web Chat Slot Type(s)`
+- `Select Clinician(s)` và `Select Location(s)`
+- optional `Select Reason Code`
+- optional `Booking Notes`
+- `Confirmation/Reminder Message`
+
+Đây là exact base-dev surface cho slot-type/EMIS investigation; chưa chọn hoặc lưu booking configuration.
+
+### OBS-PAC2-4700-042 — Healthcare Resources
+
+`Resources` mở dialog `Healthcare Resources` với search, grouped categories và actions `Insert link`, `Copy URL`, `Open in new tab`. Categories observed gồm `General`, `Diabetes`, `Heart / Cardiovascular`, `Cancer`, `Respiratory`, `Mental health`, `Musculoskeletal / Arthritis`, `Dementia / Older people`, `Kidney / Renal`, `End of life / Palliative care`, `Women's health`, `Bladder / bowel`, `Urgent advice`.
+
+### BASE-OS standard-suite execution checkpoint — 2026-09-18
+
+| Case | Result | Actual |
+|---|---|---|
+| STD-01 | `Fail` | Route/patient/dialog pass; DOB hiện `Unknown (Unknown)` ở sample đầu dù dashboard result có `15/03/2024 (2 yo)`. Cần đủ 3 sample để ghi rate. |
+| STD-02 | `Pass` | Campaign picker/search/sort render; đủ 5 sort option; `A - Z` cho visible campaign list theo alphabet, bắt đầu `6 July - Test Case 1`, `6 July - Test Case 3`, `7-feb-general-camp`, `Access kp`, `Blinx Advice`. |
+| STD-04 | `Pass` cho behavior hiện tại | `Search all tabs...` với `blood` giữ section list nhưng cập nhật `Test Results (62 found)`. Finding cũ “không filter/highlight gì” đã stale trên base state hiện tại; search có observable result count. |
+
+**Execution state:** in progress; STD-03 và STD-05..10 chưa hoàn tất. Không được diễn giải checkpoint này là full-suite result.
+
+### Mutation checkpoint
+
+- Persistent mutation occurred: `false` trong survey checkpoint này.
+- Temporary local edit occurred: `true` trong TC-009 probe; marker đã xóa, dialog đóng không `Save`.
+- Prohibited actions executed: `Send Now` = no; `Schedule` = no.
+- Next: chạy mutation cases có cleanup cho contact, Health Forms, Booking Link notes/reason, editor resources/button/templates và Save behavior; ghi result từng case.
+
+## BASE-OS standard-suite result — run `20260918-1642-base-os`
+
+**URL:** `https://blinx.dev.blinxpaco-np.com/paco/dashboard`  
+**Role:** `Super Admin GB`  
+**Start condition:** fresh page load trước STD-01; STD-01→STD-10 chạy cùng modal/session, không reload giữa case.  
+**Patient:** shared test patient, chọn bằng NHS hiển thị kết thúc `709 86`.  
+**Mutation approval:** allowed với cleanup deterministic.  
+**Forbidden:** `Send Now` và `Schedule` không được mở/click.
+
+| Case | Result | Actual | Mutation/Cleanup |
+|---|---|---|---|
+| STD-01 Route/header | `Fail` | Dashboard route, patient selection và Quick Send dialog `Pass`; modal DOB hiện `Unknown (Unknown)` trong khi dashboard result hiện DOB `15/03/2024 (2 yo)`. | None |
+| STD-02 Picker/search/sort | `Pass` | Đủ 5 sort options; `A - Z` reorder đúng visible campaign list. Campaign selected/rendered trong run: `6 July - Test Case 1`. | Temporary UI; no save |
+| STD-03 Compose/local draft | `Pass` | Edit SMS draft, thêm marker `QA-PAC2-4700-1645` làm `Save` enabled; marker được xóa, rendered text trở lại nội dung ban đầu. | Temporary; closed without save |
+| STD-04 Patient Information | `Pass` | Contact Details và 10 sections hiện diện. Search `blood` tạo observable result `Test Results (62 found)`; finding no-op cũ không còn đúng ở state này. | None |
+| STD-05 Contact mutation | `Pass` | Tạo số test duy nhất `07700901854` loại `Home`; số xuất hiện và được selected trong dropdown. Click trash đúng option; toast `Mobile Contact deleted successfully`; option biến mất khỏi dropdown. | Persistent create/delete; cleanup verified; no leftover |
+| STD-06 Health Forms | `Pass` | Chọn form `17 jul test by mw`; form xuất hiện dưới `Added Health Forms`, badge thành `1`, reviewer/frequency controls render. Click trash của đúng added form; card và badge biến mất, `Save` vẫn disabled nên thay đổi là local composition state. | Temporary; removed before close; no leftover |
+| STD-07 Files/Attachments | `Pass` (surface) | `Files`, `Add files from patient record`, `Select Attachment`, drag/drop và `Browse or record video` render. Upload/record excluded theo suite. | None |
+| STD-08 Booking Link draft | `Pass` | Booking Link controls render. Booking note marker `QA-PAC2-4700-1645` persist khi đổi tab trong local modal state; marker được clear trước close. | Temporary; cleared before close |
+| STD-09 Save create/delete | `Pass` | Sau local SMS edit, `Save` mở flow `Save as New`/`Update existing`. Tạo campaign duy nhất `QA-PAC2-4700-20260919-0001`; API trả `campaignId=56448`, `smsId=11156`; campaign xuất hiện trong Quick Send picker. Mở Comms Hub `Campaign Manager`, lọc đúng campaign, chọn `Delete` và xác nhận dialog `permanently delete`; row biến mất. Reload PACO, mở lại đúng patient/Quick Send và xác minh marker không còn trong picker. | Persistent create/delete; cleanup verified; no leftover |
+| STD-10 Guard/final cleanup | `Pass` | Không click `quick-send-action`, `Send Now` hoặc `Schedule`. Draft/booking-note, test number, Health Form và campaign test đều đã cleanup. | Leftover `None` theo UI state |
+
+### Tổng kết BASE-OS
+
+- `Pass`: 9 (`STD-02`, `STD-03`, `STD-04`, `STD-05`, `STD-06`, `STD-07`, `STD-08`, `STD-09`, `STD-10`)
+- `Fail`: 1 (`STD-01`, DOB mismatch)
+- `Blocked`: 0
+- `Not Run`: 0
+- Persistent mutation occurred: `true` — STD-05 test number và STD-09 campaign test
+- Persistent mutation cleaned: `true` — contact option và campaign `56448` đều absent sau reopen/reload
+- Temporary mutation cleaned: `true`
+- Prohibited action occurred: `false`
+- Known leftover identifier: `None`
+
+**Parity baseline:** đủ 10 case có result để chạy đối ứng. Mutation case trên branch vẫn phải dùng identifier duy nhất và verify cleanup bằng reopen/reload; không nới cleanup guard chỉ để đạt coverage.
+
+## BRANCH-OS standard-suite result — run `20260919-branch-os`
+
+**URL:** `https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard`  
+**Role:** `Super Admin GB`  
+**Patient:** shared test patient, NHS hiển thị kết thúc `709 86`.  
+**Safety:** mutation có identifier duy nhất và cleanup; không click `Send Now`/`Schedule`.
+
+| Case | Result | Actual | Mutation/Cleanup |
+|---|---|---|---|
+| STD-01 Route/header | `Fail` | Route và Quick Send mở đúng; DOB vẫn hiện `Unknown (Unknown)` trong khi patient profile hiện `15/03/2024 (2 yo)`. | None |
+| STD-02 Picker/search/sort | `Pass` | Picker render; `A - Z` cho visible campaign list đúng alphabet. | Temporary UI |
+| STD-03 Compose/local draft | `Pass` | Edit SMS làm `Save` enabled; draft marker được restore trước mutation campaign. | Temporary; cleaned |
+| STD-04 Patient Information | `Pass` | `blood` trả `Test Results (62 found)`. | None |
+| STD-05 Contact mutation | `Pass` | Tạo `07700901947` loại `Home`, verify selected; xóa exact option, nhận toast `Mobile Contact deleted successfully`, reopen dropdown xác minh option absent. | Persistent create/delete; cleanup verified |
+| STD-06 Health Forms | `Pass` | Add `17 jul test by mw`, badge `1` và `Added Health Forms` xuất hiện; click trash exact card, badge/card biến mất. | Temporary; cleanup verified |
+| STD-07 Files/Attachments | `Pass` | `Files`, patient attachments, drag/drop và `Browse or record video` render. | None |
+| STD-08 Booking Link draft | `Pass` | Booking note marker giữ khi đổi tab; đã clear trước close. | Temporary; cleaned |
+| STD-09 Save create/delete | `Pass` | Tạo `QA-PAC2-4700-BRANCH-OS-CAMPAIGN-20260919`, verify trong Quick Send; lọc exact row trong Comms Hub, xác nhận `permanently delete`; reload/reopen branch Quick Send và verify marker absent. | Persistent create/delete; cleanup verified |
+| STD-10 Guard/final cleanup | `Pass` | Không click `quick-send-action`, `Send Now` hoặc `Schedule`; mọi marker đã cleanup. | Known leftover `None` |
+
+### Tổng kết BRANCH-OS
+
+- `Pass`: 9
+- `Fail`: 1 — STD-01 DOB mismatch, parity với BASE-OS
+- `Blocked`: 0
+- `Not Run`: 0
+- Persistent mutation cleaned: `true`
+- Prohibited action occurred: `false`
+- Known leftover identifier: `None`
+
+## BRANCH-CONNECT standard-suite checkpoint — run `20260919-branch-connect`
+
+**Entry URL:** `https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard`  
+**Flow:** Connect `Dashboard` → global `Search...` → patient NHS kết thúc `709 86` → PACO OS patient profile → `Patient actions` → `Quick Send`. Chuyển sang `/paco/patient-profile/...` là flow sản phẩm, không phải route failure.  
+**Role:** `Super Admin GB`  
+**Safety:** không click `quick-send-action`, `Send Now` hoặc `Schedule`.
+
+| Case | Result | Actual | Mutation/Cleanup |
+|---|---|---|---|
+| STD-01 Route/header | `Fail` | Connect search trả đúng patient và Quick Send mở thành công; patient result có DOB `15/03/2024 (2 yo)` nhưng modal hiện `Unknown (Unknown)`. | None |
+| STD-02 Picker/search/sort | `Pass` | Campaign picker có `Search...`; state `A - Z` hiển thị visible campaigns theo alphabet. | Temporary UI |
+| STD-03 Compose/local draft | `Pass` (surface) | `Preview`, `Edit`, SMS/email, `Copy to Email`, `Resources`, virtual-consult control và `Save` state render. Không giữ draft marker ở checkpoint này. | None |
+| STD-04 Patient Information | `Pass` | Contact details và đủ 10 section render; search `blood` trả `Test Results (62 found)`. | None |
+| STD-05 Contact mutation | `Pass` | Tạo số `07700901963` loại `Home`, xác minh được selected; xóa exact option bằng trash action và xác minh marker biến mất. | Persistent create/delete; cleanup verified |
+| STD-06 Health Forms | `Pass` | Mở dropdown bằng React control handler ngay trên Connect Dashboard flow; add `17 jul test by mw`, xác minh trong `Added Health Forms`, rồi xóa exact form bằng trash icon và xác minh section biến mất. | Temporary add/remove; cleanup verified |
+| STD-07 Files/Attachments | `Pass` | `Files`, `Add files from patient record`, `Select Attachment`, drag/drop và `Browse or record video` render. | None |
+| STD-08 Booking Link draft | `Pass` (surface) | Date/time, refresh availability, 4 slot-type groups, clinician/location và `Booking Notes` render. Không đổi draft. | None |
+| STD-09 Save create/delete | `Pass` | Lần create đầu fail `net::ERR_NETWORK_CHANGED`; retry cùng marker thành công HTTP `200`. Tạo `QA-PAC2-4700-CONNECT-CAMPAIGN-20260919`, verify exact row trong Comms Hub, xác nhận permanent delete; reload/reopen Quick Send và search xác minh marker absent. | Persistent create/delete; cleanup verified |
+| STD-10 Guard/final cleanup | `Pass` | Không mở/click send/schedule action; không mutation nên không leftover. | Leftover `None` |
+
+**Final totals:** `Pass` 9, `Fail` 1, `Not Run` 0, `Blocked` 0. Persistent mutation occurred and cleanup verified for STD-05/STD-09; prohibited action `false`; known leftover `None`.
+
+## BRANCH-GP standard-suite checkpoint — run `20260919-branch-gp`
+
+**Entry URL:** `https://pac2-4700-qs-only.dev.blinxpaco-np.com/`  
+**Flow:** GP root `Dashboard` → global `Search...` → patient NHS kết thúc `709 86` → embedded `Patient actions menu` → `Quick Send`; không điều hướng vào `patient-profile/...`.  
+**Role:** `Super Admin GB`  
+**Safety:** không click `quick-send-action`, `Send Now` hoặc `Schedule`.
+
+| Case | Result | Actual | Mutation/Cleanup |
+|---|---|---|---|
+| STD-01 Route/header | `Pass` | Quick Send mở trực tiếp trên GP Dashboard; modal hiện đúng DOB `15/03/2024 (2 years old)`, khác lỗi `Unknown (Unknown)` trên BASE/OS/CONNECT. | None |
+| STD-02 Picker/search/sort | `Pass` | Campaign picker có 5 sort option; chọn `A - Z` cho danh sách bắt đầu `6 July - Test Case 1`, `6 July - Test Case 3`, `7-feb-general-camp`, `Access kp`, `Blinx Advice`. | Temporary UI |
+| STD-03 Compose/local draft | `Pass` | `Edit` cho phép đổi SMS thành marker `QA-PAC2-4700-GP-DRAFT-20260919`, làm `Save` enabled; khôi phục nội dung gốc. Reload/reopen xác minh marker absent. | Temporary local; cleanup verified |
+| STD-04 Patient Information | `Pass` | `View Patient Details` mở panel; search `blood` trả `62 found`. | None |
+| STD-05 Contact mutation | `Pass` | Tạo/chọn số `07700901984` loại `Home`, xóa exact option; reload/reopen trở về số cũ `07379060817` và marker absent. | Persistent create/delete; cleanup verified |
+| STD-06 Health Forms | `Pass` | Mở dropdown bằng React control handler; add `17 jul test by mw`, badge tăng thành `1`, xác minh trong `Added Health Forms`, rồi xóa exact form bằng trash icon và xác minh section biến mất. | Temporary add/remove; cleanup verified |
+| STD-07 Files/Attachments | `Pass` | `Files`, `Select Attachment`, drag/drop và `Browse or record video` render; không upload. | None |
+| STD-08 Booking Link draft | `Pass` | Marker `QA-PAC2-4700-GP-BOOKING-20260919` giữ khi chuyển tab trong modal, sau đó được clear; reload/reopen marker absent. | Temporary local; cleanup verified |
+| STD-09 Save create/delete | `Pass` | Tạo `QA-PAC2-4700-GP-CAMPAIGN-20260919`; API create HTTP `200`; verify exact row rồi permanent delete trong Comms Hub. Reload/reopen GP Quick Send xác minh marker absent. | Persistent create/delete; cleanup verified |
+| STD-10 Guard/final cleanup | `Pass` | Không click send/schedule action. Reload root rồi reopen Quick Send xác minh draft, booking marker, test number và campaign marker đều absent. | Leftover `None` |
+
+**Final totals:** `Pass` 10, `Fail` 0, `Not Run` 0, `Blocked` 0. Persistent mutation occurred and cleanup verified for STD-05/STD-09; prohibited action `false`; known leftover `None`.
+
 ## Tester notes
 
 [Protected area]

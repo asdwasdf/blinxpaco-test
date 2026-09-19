@@ -1,0 +1,47 @@
+- generic [active] [ref=f7e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f7e8] [cursor=pointer]
+  - generic [ref=f7e11]:
+    - generic [ref=f7e12]:
+      - generic [ref=f7e13]:
+        - button "Expand sidebar" [ref=f7e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f7e15]
+        - generic [ref=f7e17]:
+          - img "Dashboards" [ref=f7e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f7e27] [cursor=pointer]
+          - img "Quick Send" [ref=f7e32] [cursor=pointer]
+          - img "Health Forms" [ref=f7e37] [cursor=pointer]
+          - img "Patient Search" [ref=f7e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f7e47] [cursor=pointer]
+          - img "case load management" [ref=f7e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f7e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f7e62] [cursor=pointer]
+          - img "Users" [ref=f7e67] [cursor=pointer]
+          - img "Configuration" [ref=f7e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f7e77] [cursor=pointer]
+          - generic [ref=f7e79] [cursor=pointer]
+        - button [ref=f7e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f7e88]
+      - generic [ref=f7e93]:
+        - paragraph [ref=f7e96]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f7e97]:
+          - generic [ref=f7e98]: Analytics
+          - generic [ref=f7e103]: Comms Hub
+          - generic [ref=f7e108]: Web Chat & Video
+          - generic [ref=f7e113]: Patient Search
+          - generic [ref=f7e118]: Health Forms
+          - generic [ref=f7e123]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f7e128]:
+      - generic [ref=f7e130]:
+        - generic [ref=f7e133]:
+          - generic [ref=f7e134]: TFN
+          - generic [ref=f7e136]:
+            - generic [ref=f7e137]: Test Fiona Nguyen
+            - generic [ref=f7e138]: Super Admin GB
+            - generic [ref=f7e140]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f7e145]
+        - generic [ref=f7e146]:
+          - button "More options" [ref=f7e148] [cursor=pointer]
+          - generic [ref=f7e154] [cursor=pointer]
+          - generic [ref=f7e155] [cursor=pointer]: "0"
+  - alert [ref=f7e6]

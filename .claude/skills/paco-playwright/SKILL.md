@@ -12,12 +12,13 @@ Only `AUTOMATION_REVIEW`, `AUTOMATE`, or `EXECUTE`. Require selected valid case,
 Own `automation.md` and selected Playwright source; raw output stays in `test-results/`. Preserve final `## Tester notes`.
 
 ## Workflow
-1. Decide each case `Yes`, `Later`, `No`, or `Blocked` with reason.
-2. Prefer Chromium read-only smoke, role locators, observable waits, and sourced assertions. No fixed sleep/private API bypass.
-3. Use local ignored storage state without reading it into prompt/docs. Missing or login redirect is `Blocked: Authentication expired`, not product failure.
-4. Mutation requires exact approval plus `PACO_ALLOW_MUTATION=true`; destructive also requires `PACO_ALLOW_DESTRUCTIVE=true`.
-5. If route is verified but locators are insufficient, use a separate read-only scoped probe with budget and delete-or-promote decision. Keep it outside default smoke, without business assertions or fixed waits; wait for observable dialog/listbox/spinner/landmark.
-6. Record `Pass`/`Fail`/`Blocked`/`Not Run`/`Inconclusive`, evidence, mutation, cleanup, leftovers, and redaction. Only clear expected result plus met precondition may `Fail`.
+1. **Plugin-first:** dùng Claude Playwright plugin để explore và execute observable test trước khi viết code. Quyết định mỗi case `Worth automating`, `Not worth automating`, `Later`, hoặc `Blocked` với lý do.
+2. Chỉ tạo `.spec.ts` nhỏ khi regression quan trọng, expected result dựa trên `Confirmed`/`Observed`, flow/locator ổn định và chạy lại có giá trị. Không automate để khám phá expected behavior.
+3. Prefer Chromium, role locators, observable waits, and sourced assertions. No fixed sleep/private API bypass.
+4. Use local ignored storage state without reading it into prompt/docs. Missing or login redirect is `Blocked: Authentication expired`, not product failure.
+5. Trên dev, mutation đầy đủ phải gọi hostname-aware `evaluateMutationGate()` với `paco.config.yaml`, exact approval và runtime guards. Production/unknown host luôn bị chặn; mọi mutation ghi ledger đã redact.
+6. Nếu thiếu domain rule, test recipient, test data hoặc expected result, **Ask QA early** với blocker, observation, evidence/timestamp, decision, concrete choices và affected cases; không đoán hoặc viết automation để né blocker.
+7. Record `Pass`/`Fail`/`Blocked`/`Not Run`/`Inconclusive`, durable evidence, mutation, cleanup, leftovers, and redaction. Raw output ở `test-results/`; evidence dùng sau `REPORT` phải promote vào `docs/tickets/<ticket-folder>/evidence/`. Only clear expected result plus met precondition may `Fail`.
 
 ## Direct invocation, stop, outcome
 Write owned artifact/source and return proposal; never update manifest/status or call next skill. Stale dependency/auth/approval is `Blocked`; runner fault is `Failed`. Return `ChildSkillOutcome` v1 with checksums, counts, mutation/cleanup, sensitive-data status, blockers/warnings, and next phase.

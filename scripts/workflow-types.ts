@@ -64,6 +64,11 @@ export interface PacoConfig {
     sourcePattern: string;
     primarySourceFile: 'ticket.md';
   };
+  safety: {
+    mutationEnabledEnvironments: string[];
+    allowedHosts: string[];
+    externalDevHosts: string[];
+  };
   defaults: {
     readOnly: true;
     language: 'vi';

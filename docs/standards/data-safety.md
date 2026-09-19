@@ -8,6 +8,12 @@
 - `Destructive`: delete/bulk/hard-to-undo, cần approval riêng
 - `Unknown`: xử lý như persistent
 
+## Dev Authorization
+
+Trên environment `dev` và hostname nằm trong `paco.config.yaml` safety allowlist, approved test/survey scope được phép `Create`, `Update`, `Save`, `Submit`, `Send`, `Delete`, `Approve`, `Reject`, upload, import, download và relevant external dev flow. Production hoặc unknown host luôn bị chặn.
+
+`Send` cần test recipient/destination đã xác minh. Thiếu domain rule, expected result hoặc safe test data phải Ask QA early; không đoán. Mọi mutation ghi ledger đã redact và cleanup khi không phá dữ liệu nền.
+
 ## Safety Gates
 
 ### Design-time

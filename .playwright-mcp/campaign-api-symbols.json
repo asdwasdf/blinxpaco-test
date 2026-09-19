@@ -1,0 +1,6 @@
+{
+  "url": "https://blinx.dev.blinxpaco-np.com/paco/assets/index-CzhX4szJ.js",
+  "snippets": [
+    "sync e=>(await T2.post(\"CommsHub/Campaigns/getCampaignsByType\",e)).data,flt=async e=>(await T2.post(\"CommsHub/Campaigns/createNewCampaignFromQuickSend\",e)).data,X7r=async e=>(await T2.post(\"CommsHub/Campaigns/getRequiredActionsOrder\",{CAMPAIGN_ID:e.CAMPAIGN_ID})).data,K7r=async e=>(await T2.post(\"CommsHub/Campaigns/createAndAtta"
+  ]
+}

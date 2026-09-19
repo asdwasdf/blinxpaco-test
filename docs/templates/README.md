@@ -1,5 +1,7 @@
 # Artifact Templates
 
+Ticket artifacts giữ `## Tester notes` được bảo vệ. Survey dùng `survey-view.md` và `survey-checkpoint.yaml`; generated graph không phải nguồn sửa tay. Raw evidence ở `test-results/`, evidence bền phải promote vào `docs/tickets/<ticket-folder>/evidence/`.
+
 | Template | Owner |
 |---|---|
 | `manifest.yaml`, `status.md` | `paco-ticket` |

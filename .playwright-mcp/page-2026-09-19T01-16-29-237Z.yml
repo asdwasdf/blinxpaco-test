@@ -1,0 +1,88 @@
+- generic [ref=f7e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f7e8] [cursor=pointer]
+  - generic [ref=f7e11]:
+    - generic [ref=f7e12]:
+      - generic [ref=f7e13]:
+        - button "Expand sidebar" [ref=f7e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f7e15]
+        - generic [ref=f7e17]:
+          - img "Dashboards" [ref=f7e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f7e27] [cursor=pointer]
+          - img "Quick Send" [ref=f7e32] [cursor=pointer]
+          - img "Health Forms" [ref=f7e37] [cursor=pointer]
+          - img "Patient Search" [ref=f7e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f7e47] [cursor=pointer]
+          - img "case load management" [ref=f7e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f7e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f7e62] [cursor=pointer]
+          - img "Users" [ref=f7e67] [cursor=pointer]
+          - img "Configuration" [ref=f7e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f7e77] [cursor=pointer]
+          - generic [ref=f7e79] [cursor=pointer]
+        - button [ref=f7e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f7e88]
+      - generic [ref=f7e93]:
+        - paragraph [ref=f7e96]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f7e97]:
+          - generic [ref=f7e98]: Analytics
+          - generic [ref=f7e103]: Comms Hub
+          - generic [ref=f7e108]: Web Chat & Video
+          - generic [ref=f7e113]: Patient Search
+          - generic [ref=f7e118]: Health Forms
+          - generic [ref=f7e123]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f7e128]:
+      - generic [ref=f7e130]:
+        - generic [ref=f7e133]:
+          - generic [ref=f7e134]: TFN
+          - generic [ref=f7e136]:
+            - generic [ref=f7e137]: Test Fiona Nguyen
+            - generic [ref=f7e138]: Super Admin GB
+            - generic [ref=f7e140]: General Practice (Blinx Demo Site)
+        - generic [ref=f7e142]:
+          - generic [ref=f7e144]:
+            - textbox "Search..." [active] [ref=f7e145]: Michael Ramella
+            - button "Clear search" [ref=f7e158] [cursor=pointer]
+          - generic [ref=f7e164]:
+            - generic [ref=f7e165]:
+              - generic [ref=f7e166]: Results (2)
+              - generic [ref=f7e167]: Consent & Actions
+            - generic [ref=f7e168]:
+              - generic [ref=f7e170] [cursor=pointer]:
+                - generic [ref=f7e172]:
+                  - generic [ref=f7e173]: MR
+                  - generic [ref=f7e176]:
+                    - generic [ref=f7e177]:
+                      - generic [ref=f7e183]:
+                        - generic [ref=f7e184]: Michael Ramella
+                        - generic [ref=f7e185]: "NHS No: 709 86"
+                      - generic [ref=f7e186]: More Info
+                    - generic [ref=f7e191]:
+                      - generic [ref=f7e192]: 15/03/2024 (2 yo)
+                      - generic [ref=f7e197]: "07379060817"
+                - button "Patient actions menu" [ref=f7e217]
+              - generic [ref=f7e220] [cursor=pointer]:
+                - generic [ref=f7e222]:
+                  - generic [ref=f7e223]: MR
+                  - generic [ref=f7e226]:
+                    - generic [ref=f7e227]:
+                      - generic [ref=f7e232]:
+                        - generic [ref=f7e233]: Michael Ramella
+                        - generic [ref=f7e234]: "NHS No: 100 001 9932"
+                      - generic [ref=f7e235]: More Info
+                    - generic [ref=f7e240]: 01/01/1900 (126 yo)
+                - button "Patient actions menu" [ref=f7e261]
+            - generic [ref=f7e262]:
+              - generic [ref=f7e263]:
+                - checkbox "Include deleted patients" [ref=f7e265] [cursor=pointer]
+                - generic [ref=f7e267] [cursor=pointer]: Include deleted patients
+              - generic [ref=f7e268]:
+                - generic [ref=f7e269]: PACO Patient(s)
+                - checkbox [ref=f7e271]:
+                  - switch [ref=f7e272] [cursor=pointer]
+                - generic [ref=f7e273]: Sync From Other EPR
+        - generic [ref=f7e146]:
+          - button "More options" [ref=f7e148] [cursor=pointer]
+          - generic [ref=f7e154] [cursor=pointer]
+          - generic [ref=f7e155] [cursor=pointer]: "0"
+  - alert [ref=f7e6]

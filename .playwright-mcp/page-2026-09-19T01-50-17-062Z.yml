@@ -1,0 +1,201 @@
+- generic [ref=f24e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f24e3] [cursor=pointer]
+  - generic [ref=f24e8]:
+    - generic [ref=f24e9]:
+      - button "Expand sidebar" [ref=f24e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f24e11]
+      - generic [ref=f24e13]:
+        - img "Dashboards" [ref=f24e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f24e23] [cursor=pointer]
+        - img "Quick Send" [ref=f24e28] [cursor=pointer]
+        - img "Health Forms" [ref=f24e33] [cursor=pointer]
+        - img "Patient Search" [ref=f24e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f24e43] [cursor=pointer]
+        - img "case load management" [ref=f24e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f24e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f24e58] [cursor=pointer]
+        - img "Users" [ref=f24e63] [cursor=pointer]
+        - img "Configuration" [ref=f24e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f24e73] [cursor=pointer]
+        - generic [ref=f24e75] [cursor=pointer]
+      - button [ref=f24e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f24e84]
+    - generic [ref=f24e85]:
+      - generic [ref=f24e86]:
+        - generic [ref=f24e87]: 45m
+        - generic [ref=f24e92]:
+          - generic [ref=f24e95]:
+            - generic [ref=f24e96] [cursor=pointer]: TFN
+            - generic [ref=f24e98]:
+              - generic [ref=f24e99]: Test Fiona Nguyen
+              - generic [ref=f24e100]: Super Admin GB
+              - generic [ref=f24e102]: General Practice (Blinx Demo Site)
+          - generic [ref=f24e106]:
+            - textbox "Search patients by name or NHS number" [ref=f24e107]: Michael Ramella
+            - button "Clear search" [ref=f24e334] [cursor=pointer]
+          - generic [ref=f24e108]:
+            - button "More options" [ref=f24e110] [cursor=pointer]
+            - generic [ref=f24e114] [cursor=pointer]: "0"
+      - generic [ref=f24e118]:
+        - generic [ref=f24e120]:
+          - button "day" [ref=f24e122] [cursor=pointer]
+          - button "week" [ref=f24e126] [cursor=pointer]
+          - button "month" [ref=f24e130] [cursor=pointer]
+          - button "year" [ref=f24e134] [cursor=pointer]
+        - generic [ref=f24e135]:
+          - generic [ref=f24e136]:
+            - generic [ref=f24e137]:
+              - generic [ref=f24e142]:
+                - generic [ref=f24e145] [cursor=pointer]:
+                  - generic [ref=f24e146]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=f24e148]: Master Task Board Overview
+                  - button [ref=f24e149]
+                - generic [ref=f24e154]:
+                  - generic [ref=f24e155]: "0"
+                  - generic:
+                    - list
+                  - generic [ref=f24e167]: Completed 0
+              - generic [ref=f24e175]:
+                - generic [ref=f24e176]: Call Status
+                - img [ref=f24e182]:
+                  - generic [ref=f24e188]:
+                    - generic [ref=f24e189]: Calls Waiting
+                    - generic [ref=f24e190]: ConsultationsCompleted
+                    - generic [ref=f24e191]: Failed to Contact
+                    - generic [ref=f24e192]: active calls
+                  - generic [ref=f24e193]:
+                    - generic [ref=f24e194]: "0"
+                    - generic [ref=f24e195]: "60"
+                    - generic [ref=f24e196]: "120"
+                    - generic [ref=f24e197]: "180"
+                    - generic [ref=f24e198]: "240"
+                    - generic [ref=f24e199]: "300"
+            - generic [ref=f24e200]:
+              - generic [ref=f24e205]:
+                - generic [ref=f24e206]: Staff Status
+                - generic [ref=f24e209]:
+                  - list [ref=f24e211]:
+                    - listitem [ref=f24e212]: Available (75)
+                    - listitem [ref=f24e214]: F2F (65)
+                    - listitem [ref=f24e216]: Screening (50)
+                    - listitem [ref=f24e218]: Lunch (15)
+                    - listitem [ref=f24e220]: Away (50)
+                  - generic [ref=f24e222]: Out of a possible 132
+                - generic [ref=f24e251]: Coming soon
+              - generic [ref=f24e256]:
+                - generic [ref=f24e257]: Opel level
+                - generic [ref=f24e291]:
+                  - generic [ref=f24e292]: Level 2
+                  - generic [ref=f24e293]: Moderate Pressure
+                - generic [ref=f24e295]: Coming soon
+          - generic [ref=f24e299]:
+            - generic [ref=f24e300]:
+              - generic [ref=f24e301]:
+                - generic [ref=f24e302]: Staff Availability
+                - button "What do these statuses mean?" [ref=f24e303] [cursor=pointer]
+              - generic [ref=f24e307] [cursor=pointer]:
+                - generic [ref=f24e308]:
+                  - textbox: A - Z Last Name
+                - generic [ref=f24e310]: A - Z Last Name
+                - button [ref=f24e311]
+            - generic [ref=f24e314]:
+              - textbox "Search Clinicians..." [ref=f24e316]
+              - generic [ref=f24e317]:
+                - generic [ref=f24e318]: 1 on Rota
+                - generic [ref=f24e319]: Sat 19 Sept, 08:49
+            - generic [ref=f24e320]:
+              - button "Available (1)" [ref=f24e321] [cursor=pointer]
+              - button "On Leave (0)" [ref=f24e322] [cursor=pointer]
+            - generic [ref=f24e324]:
+              - generic [ref=f24e325]:
+                - img "Admin · 11m" [ref=f24e778]
+                - text: MTF
+              - button "Miss Test Fiona Nguyen Super Admin GB Admin · 11m" [ref=f24e779] [cursor=pointer]:
+                - generic "Miss Test Fiona Nguyen" [ref=f24e329]
+                - generic [ref=f24e330]:
+                  - generic [ref=f24e331]: Super Admin GB
+                  - generic [ref=f24e332]: Admin · 11m
+              - generic "Coming soon — PACOmms user messaging" [ref=f24e333]:
+                - button "Send Message" [disabled]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: Unknown (Unknown)" [ref=f24e514]':
+    - generic [ref=f24e516]:
+      - generic [ref=f24e520]:
+        - img "Quick Send rocket icon" [ref=f24e522]
+        - generic [ref=f24e524]:
+          - generic [ref=f24e525]:
+            - generic [ref=f24e526]: Michael Ramella
+            - generic [ref=f24e527]: "|"
+            - generic [ref=f24e528]:
+              - generic [ref=f24e529]: "NHS Nr:"
+              - generic [ref=f24e530] [cursor=pointer]: "70986"
+            - button "View Patient Details" [ref=f24e531] [cursor=pointer]
+            - generic [ref=f24e534]:
+              - img "sms on file" [ref=f24e537]
+              - img "email on file" [ref=f24e540]
+          - generic [ref=f24e541]:
+            - generic [ref=f24e542]:
+              - generic [ref=f24e543]: "Post Code:"
+              - generic [ref=f24e544] [cursor=pointer]: L61PH
+            - generic [ref=f24e545]:
+              - generic [ref=f24e546]: "DOB:"
+              - generic [ref=f24e547] [cursor=pointer]: Unknown (Unknown)
+      - button "Close" [ref=f24e548] [cursor=pointer]
+    - generic [ref=f24e551]:
+      - generic [ref=f24e552]:
+        - generic [ref=f24e554]:
+          - generic [ref=f24e812]:
+            - generic [ref=f24e815] [cursor=pointer]: 6 July - Test Case 1
+            - generic [ref=f24e816] [cursor=pointer]: (click to change)
+          - generic [ref=f24e817]:
+            - generic [ref=f24e818]: "Patient Reply:"
+            - button "Set up Patient Reply" [ref=f24e819] [cursor=pointer]
+        - generic [ref=f24e822]:
+          - generic [ref=f24e824]:
+            - generic [ref=f24e825]:
+              - generic [ref=f24e826]:
+                - button "Preview" [ref=f24e827] [cursor=pointer]
+                - button "Edit" [ref=f24e828] [cursor=pointer]
+              - generic [ref=f24e829]: "ADHD TEST Michael, complete your Health Form via the link below. Thanks, THE CORRECT PRACTICE {{{scheduler_link}}}"
+              - generic [ref=f24e832] [cursor=pointer]:
+                - generic:
+                  - generic "PACO Assist"
+            - generic:
+              - generic:
+                - button "Generate Virtual Consult Link":
+                  - generic [ref=f24e836] [cursor=pointer]:
+                    - button [ref=f24e837]
+                    - menu:
+                      - menuitem "Virtual Consult Link":
+                        - menuitem "Virtual Consult Link"
+                      - menuitem "Merge Fields":
+                        - menuitem "Merge Fields"
+          - generic [ref=f24e840]:
+            - generic [ref=f24e841]:
+              - generic [ref=f24e842]: "Send as:"
+              - button "SMS enabled" [disabled] [ref=f24e843]
+              - button "Enable Email" [ref=f24e846] [cursor=pointer]
+            - generic [ref=f24e849]:
+              - generic [ref=f24e850]: "To:"
+              - generic "07379060817" [ref=f24e851]
+            - generic [ref=f24e852]:
+              - generic [ref=f24e853]: "Preview:"
+              - button "Preview SMS" [ref=f24e854] [cursor=pointer]
+              - button "Preview Email" [disabled] [ref=f24e857]
+            - button "Copy to Email" [ref=f24e861] [cursor=pointer]
+            - button "Resources" [ref=f24e865] [cursor=pointer]
+      - generic "bottom-nav" [ref=f24e613]:
+        - generic [ref=f24e614]:
+          - button "quick-send-action" [ref=f24e616] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=f24e617]
+          - generic [ref=f24e618]:
+            - button "tab-Campaign" [active] [ref=f24e619] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=f24e621]: Campaign
+            - button "tab-Health Forms" [ref=f24e644] [cursor=pointer]:
+              - generic "tab-Health Forms" [ref=f24e635]: Health Forms
+            - button "tab-Files" [ref=f24e636] [cursor=pointer]:
+              - generic "tab-Files" [ref=f24e638]: Files
+            - button "tab-Booking Link" [ref=f24e639] [cursor=pointer]:
+              - generic "tab-Booking Link" [ref=f24e641]: Booking Link
+            - button "Save" [disabled]

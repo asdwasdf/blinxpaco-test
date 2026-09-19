@@ -117,22 +117,23 @@ Các supporting entry path đã **Observed**:
 
 **Classification:** Confirmed từ tester + Observed qua `OBS-PAC2-4700-012` đến `OBS-PAC2-4700-024`, run `20260918-quicksend-base-vs-branch`, và re-verify run `20260918-quicksend-base` (base dashboard, không qua PACO Connect).
 
-Áp dụng cho TC-006, TC-008, TC-012, TC-015 và TC-016:
+Áp dụng cho TC-006, TC-008, TC-011, TC-012, TC-014, TC-015 và TC-016:
 
 1. Mở base dashboard (search field có sẵn trực tiếp trên dashboard, không cần PACO Connect riêng):
    - Base: `https://blinx.dev.blinxpaco-np.com/paco/`
-   - Branch: `https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/`
+   - Branch: `https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard`
 2. Dùng patient search trên Dashboard, search theo tên patient test đã chỉ định. **Quan sát 2026-09-18 (base):** search theo tên có thể trả nhiều kết quả trùng tên; phân biệt bằng NHS number hiển thị trên UI — NHS hiển thị có khoảng trắng giữa (ví dụ `709 86`), không phải chuỗi số liền.
 3. Trong đúng patient result, mở `Patient actions menu` — control này render như accessible button thật (`getByRole('button', { name: 'Patient actions menu' })` nhận diện được), không phải luôn cần CSS class suy đoán.
 4. Chọn menu item `Quick Send` (item trong menu chứa nhiều action khác: `New Consultation`, `Quick Script`, `Quick Book`, `Quick Form`, `Care Navigation`, `Open Patient in EPR`, `Pull Patient Record`, `Quick Pay`, `Create Task`, `Edit Details`).
 5. Xác minh dialog `Quick Send` mở (`role="dialog"`; render có animation, cần wait theo trạng thái visible, không phải tức thời sau click). Từ đây dùng các context đã Observed:
    - `Campaign` → `(click to change)` mở ra **category list** (`Favourites`, `Booking Links & Health Forms`, `General News`, `Guidance & Advice`...) dưới dạng tree (`role="treeitem"`). Sort control cho TC-006 — **Confirmed (đã sửa lỗi nhận diện)**: control tên hiển thị "By message type" ngay cạnh category list KHÔNG phải filter tĩnh, mà là giá trị hiện tại của dropdown thật (`.sort-dropdown`). Click mở panel lộ 5 option: `By date (descending)`, `By date (ascending)`, `By message type`, `A - Z`, `Z - A`. Chọn `A - Z` → tree re-render flat (bỏ category header), item theo alphabet.
    - Header action `Patient Reply` cho TC-008 — **Confirmed** control: `[title="Set up Patient Reply"]`. Actual behavior Observed (không phải expected, OQ-7 vẫn mở): click chuyển active tab sang `Health Forms` (`getByRole('button', { name: 'tab-Health Forms' })`), khớp bug đã ghi nhận trong `status.md`.
-   - `Patient Information` → `Search all tabs...` cho TC-012 — **Confirmed** control: input trong panel mở bằng `View Patient Details`, `getByPlaceholder(/search all tabs/i)`. Actual behavior Observed (OQ-10 vẫn mở): gõ text không filter/highlight gì, khớp bug đã ghi nhận.
+   - `Patient Information` → `Contact Details` cho TC-011/TC-014 — **Confirmed**: mở bằng `View Patient Details`; field `Number`/`Email` dùng sibling `.p-dropdown`. Dropdown lần lượt có `+ Add new number`/`+ Add new email`; click mở modal `Enter Number`/`Enter Email`, có thể `Cancel` mà không mutation.
+   - `Patient Information` → `Search all tabs...` cho TC-012 — **Confirmed** control: input trong panel mở bằng `View Patient Details`, `getByPlaceholder(/search all tabs/i)`. Actual behavior Observed: gõ `blood`, số accordion visible giữ 10 và không có filter/highlight.
    - `Campaign` compose controls cho TC-015 — **Confirmed**: campaign default đã chọn sẵn khi dialog mở (không cần picker); controls xác định bằng `title` attribute: `Healthcare resources and links` (Resources), `Create a custom button for your email` (Button), `Insert professional email templates` (Templates), `Copy your Email text into the SMS template` (Copy to SMS — khác `Copy to Email` giả định gốc).
    - `Patient Information` → `Significant Info` cho TC-016 — **Confirmed (đã sửa)**: control đúng không phải text "Patient Information" (chỉ là `<p>` label ẩn) mà là button `aria-label="View Patient Details"` (class `patient-details-toggle-btn`, ở dialog header). Click mở accordion category: `Personal Info`, `Significant Info`, `Allergies`, `Active Medications`, `Past Medications`, `Appointments`, `Active Problems`, `Significant Past Problems`, `Test Results`, `Attachments` (không có `PACO Registers` như giả định gốc). Cùng khu vực có button `title="Set up Patient Reply"` — candidate cho TC-008.
 
-**Context:** Patient-specific Quick Send trên base dashboard (`/paco/`) hoặc branch qua PACO Connect.
+**Context:** Patient-specific Quick Send trên base dashboard (`/paco/`) hoặc OS branch (`/paco/feature-branch/pac2-4700-qs-only/dashboard`).
 **Role:** `Super Admin GB`.
 **Test-data category:** Shared test patient (`Michael Ramella`, NHS hiển thị `709 86`); không ghi PII vào screenshot/report và không mutation.
 **Route status:** Confirmed cho cả năm case trên (route + dialog + control cụ thể).
@@ -147,9 +148,10 @@ Các supporting entry path đã **Observed**:
 4. `Files` render `Add files from patient record`, `Select Attachment`, `Browse or record video`; không upload/chọn file.
 5. `Health Forms` render `Add Health Form(s)`; không add form.
 6. Campaign picker là source consume campaign/template (Comms Hub data) ngay trong modal. Không cần mở `nhs-comms-hub-dev.blinxhealthcare.com` cho phạm vi consume/render.
-7. Re-check riêng 2026-09-18: sau khi click `Booking Link`, modal chỉ expose button `Booking Link`; không có text/control `EMIS`, `slot` hoặc `slot type`. Scan campaign picker theo các search term liên quan tìm được 3 candidate: `GP Requested Appointment`, `How do i set up an quick send message (no appointment)`, `Tower House Practice - New Online Booking!`. Hai candidate đầu mở read-only nhưng không expose `EMIS`, `slot type`, `Virtual Mental Health` hay scheduler-link mapping. Candidate `Tower House Practice - New Online Booking!` visible trong result nhưng click không hoàn tất trong observable wait window, nên chưa inspect được. Exact mapped slot vẫn `Candidate`.
+7. Re-check 2026-09-18: chọn campaign `Tower House Practice - New Online Booking!` thành công theo approval. Compose area có `{{{scheduler_link}}}` và `Booking Link`, nhưng không expose text/control `EMIS`, `slot` hoặc `slot type`; exact mapped slot vẫn `Inconclusive`.
+8. `Save` disabled trước và sau chọn campaign. Sau click `Edit` và thay đổi local SMS draft, `Save` enabled; đây là điều kiện enable đã Observed trên OS branch. Dialog/tab được đóng mà không click `Save`, nên thay đổi không persist.
 
-**Safety boundary:** Không click `Edit`, `Virtual Consult Link`, `Add Health Form(s)`, attachment/upload hoặc `Save`; các action có thể tạo/persist dữ liệu.
+**Safety boundary:** Campaign selection và local draft edit đã được tester approve riêng. Không click `Virtual Consult Link`, `Add Health Form(s)`, attachment/upload hoặc `Save`; không send/schedule/update/delete.
 
 **Evidence classification:** Observed, không dùng làm business-correct assertion. Raw structural probe đã xóa vì chứa patient/contact/template data; finding đã được review và redacted tại đây.
 

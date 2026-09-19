@@ -1,0 +1,219 @@
+- generic [ref=f13e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f13e8] [cursor=pointer]
+  - generic [ref=f13e11]:
+    - generic [ref=f13e12]:
+      - generic [ref=f13e13]:
+        - button "Expand sidebar" [ref=f13e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f13e15]
+        - generic [ref=f13e17]:
+          - img "Dashboards" [ref=f13e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f13e27] [cursor=pointer]
+          - img "Quick Send" [ref=f13e32] [cursor=pointer]
+          - img "Health Forms" [ref=f13e37] [cursor=pointer]
+          - img "Patient Search" [ref=f13e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f13e47] [cursor=pointer]
+          - img "case load management" [ref=f13e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f13e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f13e62] [cursor=pointer]
+          - img "Users" [ref=f13e67] [cursor=pointer]
+          - img "Configuration" [ref=f13e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f13e77] [cursor=pointer]
+          - generic [ref=f13e79] [cursor=pointer]
+        - button [ref=f13e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f13e88]
+      - generic [ref=f13e93]:
+        - paragraph [ref=f13e96]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f13e97]:
+          - generic [ref=f13e98]: Analytics
+          - generic [ref=f13e103]: Comms Hub
+          - generic [ref=f13e108]: Web Chat & Video
+          - generic [ref=f13e113]: Patient Search
+          - generic [ref=f13e118]: Health Forms
+          - generic [ref=f13e123]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f13e128]:
+      - generic [ref=f13e130]:
+        - generic [ref=f13e133]:
+          - generic [ref=f13e134]: TFN
+          - generic [ref=f13e136]:
+            - generic [ref=f13e137]: Test Fiona Nguyen
+            - generic [ref=f13e138]: Super Admin GB
+            - generic [ref=f13e140]: General Practice (Blinx Demo Site)
+        - generic [ref=f13e142]:
+          - generic [ref=f13e144]:
+            - textbox "Search..." [ref=f13e145]: Michael Ramella
+            - button "Clear search" [ref=f13e158] [cursor=pointer]
+          - generic [ref=f13e169]:
+            - generic [ref=f13e170]:
+              - generic [ref=f13e171]: Results (2)
+              - generic [ref=f13e172]: Consent & Actions
+            - generic [ref=f13e173]:
+              - generic [ref=f13e175] [cursor=pointer]:
+                - generic [ref=f13e177]:
+                  - generic [ref=f13e178]: MR
+                  - generic [ref=f13e181]:
+                    - generic [ref=f13e182]:
+                      - generic [ref=f13e188]:
+                        - generic [ref=f13e189]: Michael Ramella
+                        - generic [ref=f13e190]: "NHS No: 709 86"
+                      - generic [ref=f13e191]: More Info
+                    - generic [ref=f13e196]:
+                      - generic [ref=f13e197]: 15/03/2024 (2 yo)
+                      - generic [ref=f13e202]: "07379060817"
+                - button "Patient actions menu" [ref=f13e340]
+              - generic [ref=f13e225] [cursor=pointer]:
+                - generic [ref=f13e227]:
+                  - generic [ref=f13e228]: MR
+                  - generic [ref=f13e231]:
+                    - generic [ref=f13e232]:
+                      - generic [ref=f13e237]:
+                        - generic [ref=f13e238]: Michael Ramella
+                        - generic [ref=f13e239]: "NHS No: 100 001 9932"
+                      - generic [ref=f13e240]: More Info
+                    - generic [ref=f13e245]: 01/01/1900 (126 yo)
+                - button "Patient actions menu" [ref=f13e345]
+            - generic [ref=f13e267]:
+              - generic [ref=f13e268]:
+                - checkbox "Include deleted patients" [ref=f13e270] [cursor=pointer]
+                - generic [ref=f13e272] [cursor=pointer]: Include deleted patients
+              - generic [ref=f13e273]:
+                - generic [ref=f13e274]: PACO Patient(s)
+                - checkbox [ref=f13e276]:
+                  - switch [ref=f13e277] [cursor=pointer]
+                - generic [ref=f13e278]: Sync From Other EPR
+        - generic [ref=f13e146]:
+          - button "More options" [ref=f13e148] [cursor=pointer]
+          - generic [ref=f13e154] [cursor=pointer]
+          - generic [ref=f13e155] [cursor=pointer]: "0"
+  - alert [ref=f13e6]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email not on file Post Code: L61PH DOB: 15/03/2024 (2 years old)" [ref=f13e347]':
+    - generic [ref=f13e348]:
+      - generic [ref=f13e352]:
+        - img "Quick Send rocket icon" [ref=f13e354]
+        - generic [ref=f13e356]:
+          - generic [ref=f13e357]:
+            - generic [ref=f13e358]: Michael Ramella
+            - generic [ref=f13e359]: "|"
+            - generic [ref=f13e360]:
+              - generic [ref=f13e361]: "NHS Nr:"
+              - generic [ref=f13e362] [cursor=pointer]: "70986"
+            - button "View Patient Details" [active] [ref=f13e363] [cursor=pointer]
+            - generic [ref=f13e366]:
+              - img "sms on file" [ref=f13e369]
+              - img "email not on file" [ref=f13e372]
+          - generic [ref=f13e373]:
+            - generic [ref=f13e374]:
+              - generic [ref=f13e375]: "Post Code:"
+              - generic [ref=f13e376] [cursor=pointer]: L61PH
+            - generic [ref=f13e377]:
+              - generic [ref=f13e378]: "DOB:"
+              - generic [ref=f13e379] [cursor=pointer]: 15/03/2024 (2 years old)
+      - button "Close" [ref=f13e380] [cursor=pointer]
+    - generic [ref=f13e383]:
+      - generic [ref=f13e394]:
+        - generic [ref=f13e396]:
+          - generic [ref=f13e397]:
+            - generic [ref=f13e400] [cursor=pointer]: Choose template
+            - generic [ref=f13e401] [cursor=pointer]: (click to change)
+          - generic [ref=f13e402]:
+            - generic [ref=f13e403]: "Patient Reply:"
+            - button "Set up Patient Reply" [ref=f13e404] [cursor=pointer]
+        - generic [ref=f13e408]:
+          - application [ref=f13e412]:
+            - generic [ref=f13e413]:
+              - generic [ref=f13e414]:
+                - button "Bold" [ref=f13e415] [cursor=pointer]
+                - button "Italic" [ref=f13e419] [cursor=pointer]
+                - button "Underline" [ref=f13e423] [cursor=pointer]
+                - button "Font Size" [ref=f13e427] [cursor=pointer]
+                - option [ref=f13e431] [cursor=pointer]: "8"
+                - option [ref=f13e432] [cursor=pointer]: "9"
+                - option [ref=f13e433] [cursor=pointer]: "10"
+                - option [ref=f13e434] [cursor=pointer]: "11"
+                - option [ref=f13e435] [cursor=pointer]: "12"
+                - option [ref=f13e436] [cursor=pointer]: "14"
+                - option [ref=f13e437] [cursor=pointer]: "18"
+                - option [ref=f13e438] [cursor=pointer]: "24"
+                - option [ref=f13e439] [cursor=pointer]: "30"
+                - option [ref=f13e440] [cursor=pointer]: "36"
+                - option [ref=f13e441] [cursor=pointer]: "48"
+                - option [ref=f13e442] [cursor=pointer]: "60"
+                - option [ref=f13e443] [cursor=pointer]: "72"
+                - option [ref=f13e444] [cursor=pointer]: "96"
+                - button "Font Family" [ref=f13e445] [cursor=pointer]
+                - option [ref=f13e449] [cursor=pointer]: Arial
+                - option [ref=f13e450] [cursor=pointer]: Georgia
+                - option [ref=f13e451] [cursor=pointer]: Times New Roman
+                - option [ref=f13e452] [cursor=pointer]: Verdana
+                - option [ref=f13e453] [cursor=pointer]: Roboto
+                - option [ref=f13e454] [cursor=pointer]: Open Sans
+                - option [ref=f13e455] [cursor=pointer]: Lato
+                - option [ref=f13e456] [cursor=pointer]: Montserrat
+                - option [ref=f13e457] [cursor=pointer]: Poppins
+                - option [ref=f13e458] [cursor=pointer]: Inter
+                - button "More Text" [ref=f13e459] [cursor=pointer]
+              - generic [ref=f13e463]:
+                - generic [ref=f13e464]:
+                  - button "Ordered List" [ref=f13e465] [cursor=pointer]
+                  - button "Ordered List" [ref=f13e469] [cursor=pointer]
+                  - option [ref=f13e470] [cursor=pointer]: Default
+                  - option [ref=f13e471] [cursor=pointer]: Lower Alpha
+                  - option [ref=f13e472] [cursor=pointer]: Lower Greek
+                  - option [ref=f13e473] [cursor=pointer]: Lower Roman
+                  - option [ref=f13e474] [cursor=pointer]: Upper Alpha
+                  - option [ref=f13e475] [cursor=pointer]: Upper Roman
+                - generic [ref=f13e476]:
+                  - button "Unordered List" [ref=f13e477] [cursor=pointer]
+                  - button "Unordered List" [ref=f13e481] [cursor=pointer]
+                  - option [ref=f13e482] [cursor=pointer]: Default
+                  - option [ref=f13e483] [cursor=pointer]: Circle
+                  - option [ref=f13e484] [cursor=pointer]: Disc
+                  - option [ref=f13e485] [cursor=pointer]: Square
+                - button "Align Left" [ref=f13e486] [cursor=pointer]
+                - button "Align Center" [ref=f13e490] [cursor=pointer]
+                - button "Align Right" [ref=f13e494] [cursor=pointer]
+                - button "Align Justify" [ref=f13e498] [cursor=pointer]
+                - button "Undo" [disabled] [ref=f13e502]
+                - button "Redo" [disabled] [ref=f13e506]
+              - generic [ref=f13e510]:
+                - button "Insert Link" [ref=f13e511] [cursor=pointer]
+                - button "Insert Table" [ref=f13e515] [cursor=pointer]
+                - button "Insert Image" [ref=f13e519] [cursor=pointer]
+                - button "Insert Video" [ref=f13e523] [cursor=pointer]
+                - button "Fullscreen" [ref=f13e527] [cursor=pointer]
+                - button "Code View" [ref=f13e531] [cursor=pointer]
+              - button "Text Color" [ref=f13e536] [cursor=pointer]
+            - generic [ref=f13e540]:
+              - generic:
+                - paragraph
+              - generic [ref=f13e541]: Template content will be shown here...
+          - generic [ref=f13e543]:
+            - generic [ref=f13e544]:
+              - generic [ref=f13e545]: "Send as:"
+              - button "Enable SMS" [disabled] [ref=f13e546]
+              - button "Enable Email" [disabled] [ref=f13e549]
+            - generic [ref=f13e552]:
+              - generic [ref=f13e553]: "Preview:"
+              - button "Preview SMS" [disabled] [ref=f13e554]
+              - button "Preview Email" [disabled] [ref=f13e557]
+            - generic [ref=f13e560]:
+              - generic [ref=f13e561]: "Subject:"
+              - button "Edit subject line" [ref=f13e562] [cursor=pointer]
+            - button "Copy to SMS" [ref=f13e566] [cursor=pointer]
+            - button "Resources" [ref=f13e570] [cursor=pointer]
+            - button "Button" [ref=f13e574] [cursor=pointer]
+            - button "Templates" [ref=f13e578] [cursor=pointer]
+      - generic "bottom-nav" [ref=f13e582]:
+        - generic [ref=f13e583]:
+          - button "quick-send-action" [ref=f13e585] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=f13e586]
+          - generic [ref=f13e587]:
+            - button "tab-Campaign" [ref=f13e588] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=f13e590]: Campaign
+            - button "tab-Health Forms" [ref=f13e591] [cursor=pointer]:
+              - generic "tab-Health Forms" [ref=f13e593]: Health Forms
+            - button "tab-Files" [ref=f13e594] [cursor=pointer]:
+              - generic "tab-Files" [ref=f13e596]: Files
+            - button "tab-Booking Link" [ref=f13e597] [cursor=pointer]:
+              - generic "tab-Booking Link" [ref=f13e599]: Booking Link
+            - button "Save" [disabled]

@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "auth:login": "node --loader ts-node/esm scripts/playwright-login.ts",
+    "video:ingest": "node --loader ts-node/esm scripts/video-ingest.ts",
+    "graph:generate": "node --loader ts-node/esm scripts/generate-product-graph.ts",
     "validate": "npm run validate:static && npm run type-check && npm run test:fixtures && npm run test:synthetic && playwright test --list",
     "validate:static": "bash validate-config.sh && bash validate-standards.sh && bash validate-docs-structure.sh && bash validate-skills.sh && bash validate-playwright.sh",
     "type-check": "tsc --noEmit",

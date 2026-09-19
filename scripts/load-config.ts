@@ -29,6 +29,21 @@ function positiveInteger(value: unknown, field: string): number {
   return Number(value);
 }
 
+function stringArray(value: unknown, field: string, allowEmpty = true): string[] {
+  if (!Array.isArray(value) || (!allowEmpty && value.length === 0) || value.some((item) => typeof item !== 'string' || item.length === 0)) {
+    throw new Error(`Invalid config: ${field} must be ${allowEmpty ? 'an' : 'a non-empty'} array of strings`);
+  }
+  return value as string[];
+}
+
+function hosts(value: unknown, field: string, allowEmpty = true): string[] {
+  const values = stringArray(value, field, allowEmpty);
+  if (values.some((host) => host !== host.toLowerCase() || host.includes('://') || host.includes('/') || host.includes(':'))) {
+    throw new Error(`Invalid config: ${field} must contain lowercase hostnames without scheme, port, or path`);
+  }
+  return values;
+}
+
 function environment(value: unknown, field: string): PacoEnvironment {
   const input = record(value, field);
   const baseUrl = string(input.baseUrl, `${field}.baseUrl`);
@@ -64,6 +79,7 @@ export function loadConfig(configPath = path.resolve(process.cwd(), 'paco.config
 
   const paths = record(root.paths, 'paths');
   const ticket = record(root.ticket, 'ticket');
+  const safety = record(root.safety, 'safety');
   const defaults = record(root.defaults, 'defaults');
   const sourcePattern = string(ticket.sourcePattern, 'ticket.sourcePattern');
   try {
@@ -84,6 +100,11 @@ export function loadConfig(configPath = path.resolve(process.cwd(), 'paco.config
     ticket: {
       sourcePattern,
       primarySourceFile: literal(ticket.primarySourceFile, 'ticket.md', 'ticket.primarySourceFile'),
+    },
+    safety: {
+      mutationEnabledEnvironments: stringArray(safety.mutationEnabledEnvironments, 'safety.mutationEnabledEnvironments', false),
+      allowedHosts: hosts(safety.allowedHosts, 'safety.allowedHosts', false),
+      externalDevHosts: hosts(safety.externalDevHosts, 'safety.externalDevHosts'),
     },
     defaults: {
       readOnly: literal(defaults.readOnly, true, 'defaults.readOnly'),

@@ -1,0 +1,665 @@
+- generic [ref=e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=e3] [cursor=pointer]
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - button "Expand sidebar" [ref=e51] [cursor=pointer]:
+        - img "Paco Logo" [ref=e52]
+      - generic [ref=e54]:
+        - img "Dashboards" [ref=e59] [cursor=pointer]
+        - img "Analytics & Reports" [ref=e64] [cursor=pointer]
+        - img "Quick Send" [ref=e69] [cursor=pointer]
+        - img "Health Forms" [ref=e74] [cursor=pointer]
+        - img "Patient Search" [ref=e79] [cursor=pointer]
+        - img "Web Chat & Video" [ref=e84] [cursor=pointer]
+        - img "case load management" [ref=e89] [cursor=pointer]
+        - img "Appointment Book" [ref=e94] [cursor=pointer]
+        - img "Quick Pay" [ref=e99] [cursor=pointer]
+        - img "Users" [ref=e104] [cursor=pointer]
+        - img "Configuration" [ref=e109] [cursor=pointer]
+        - img "Rocket Bar" [ref=e114] [cursor=pointer]
+        - generic [ref=e116] [cursor=pointer]
+      - button [ref=e124] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=e125]
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]: 9m
+        - generic [ref=e133]:
+          - generic [ref=e136]:
+            - generic [ref=e137] [cursor=pointer]: TFN
+            - generic [ref=e139]:
+              - generic [ref=e140]: Test Fiona Nguyen
+              - generic [ref=e141]: Super Admin GB
+              - generic [ref=e143]: General Practice (Blinx Demo Site)
+          - generic [ref=e147]:
+            - textbox "Search patients by name or NHS number" [ref=e148]: Michael Ramella
+            - button "Clear search" [ref=e395] [cursor=pointer]
+          - generic [ref=e149]:
+            - button "More options" [ref=e151] [cursor=pointer]
+            - generic [ref=e155] [cursor=pointer]: "0"
+      - generic [ref=e159]:
+        - generic [ref=e161]:
+          - button "day" [ref=e163] [cursor=pointer]
+          - button "week" [ref=e167] [cursor=pointer]
+          - button "month" [ref=e171] [cursor=pointer]
+          - button "year" [ref=e175] [cursor=pointer]
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e183]:
+                - generic [ref=e186] [cursor=pointer]:
+                  - generic [ref=e187]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=e189]: Master Task Board Overview
+                  - button [ref=e190]
+                - generic [ref=e195]:
+                  - generic [ref=e196]: "0"
+                  - generic:
+                    - list
+                  - generic [ref=e208]: Completed 0
+              - generic [ref=e216]:
+                - generic [ref=e217]: Call Status
+                - img [ref=e223]:
+                  - generic [ref=e229]:
+                    - generic [ref=e230]: Calls Waiting
+                    - generic [ref=e231]: ConsultationsCompleted
+                    - generic [ref=e232]: Failed to Contact
+                    - generic [ref=e233]: active calls
+                  - generic [ref=e234]:
+                    - generic [ref=e235]: "0"
+                    - generic [ref=e236]: "60"
+                    - generic [ref=e237]: "120"
+                    - generic [ref=e238]: "180"
+                    - generic [ref=e239]: "240"
+                    - generic [ref=e240]: "300"
+            - generic [ref=e241]:
+              - generic [ref=e246]:
+                - generic [ref=e247]: Staff Status
+                - generic [ref=e250]:
+                  - list [ref=e252]:
+                    - listitem [ref=e253]: Available (75)
+                    - listitem [ref=e255]: F2F (65)
+                    - listitem [ref=e257]: Screening (50)
+                    - listitem [ref=e259]: Lunch (15)
+                    - listitem [ref=e261]: Away (50)
+                  - generic [ref=e263]: Out of a possible 132
+                - generic [ref=e292]: Coming soon
+              - generic [ref=e297]:
+                - generic [ref=e298]: Opel level
+                - generic [ref=e332]:
+                  - generic [ref=e333]: Level 2
+                  - generic [ref=e334]: Moderate Pressure
+                - generic [ref=e336]: Coming soon
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]: Staff Availability
+                - button "What do these statuses mean?" [ref=e344] [cursor=pointer]
+              - generic [ref=e348] [cursor=pointer]:
+                - generic [ref=e349]:
+                  - textbox: A - Z Last Name
+                - generic [ref=e351]: A - Z Last Name
+                - button [ref=e352]
+            - generic [ref=e355]:
+              - textbox "Search Clinicians..." [ref=e357]
+              - generic [ref=e358]:
+                - generic [ref=e359]: 2 on Rota
+                - generic [ref=e360]: Fri 18 Sept, 23:30
+            - generic [ref=e361]:
+              - button "Available (3)" [ref=e362] [cursor=pointer]
+              - button "On Leave (0)" [ref=e363] [cursor=pointer]
+            - generic [ref=e364]:
+              - generic [ref=e365]:
+                - generic [ref=e366]:
+                  - img "Logged Out · 47m" [ref=e2110]
+                  - text: DGB
+                - button "Dr Gareth Bartlett Super Admin GB Logged Out · 47m" [ref=e2111] [cursor=pointer]:
+                  - generic "Dr Gareth Bartlett" [ref=e370]
+                  - generic [ref=e371]:
+                    - generic [ref=e372]: Super Admin GB
+                    - generic [ref=e373]: Logged Out · 47m
+                - generic "Coming soon — PACOmms user messaging" [ref=e374]:
+                  - button "Send Message" [disabled]
+              - generic [ref=e375]:
+                - generic [ref=e376]:
+                  - img "TEST STATUS · 1h 28m" [ref=e1837]
+                  - text: MTF
+                - button "Miss Test Fiona Nguyen Super Admin GB TEST STATUS · 1h 28m" [ref=e1838] [cursor=pointer]:
+                  - generic "Miss Test Fiona Nguyen" [ref=e380]
+                  - generic [ref=e381]:
+                    - generic [ref=e382]: Super Admin GB
+                    - generic [ref=e383]: TEST STATUS · 1h 28m
+                - generic "Coming soon — PACOmms user messaging" [ref=e384]:
+                  - button "Send Message" [disabled]
+              - generic [ref=e385]:
+                - generic [ref=e386]:
+                  - img "Logged Out · 42m" [ref=e2112]
+                  - text: MN
+                - button "MustafaDefault Nawaz GP Logged Out · 42m" [ref=e2113] [cursor=pointer]:
+                  - generic "MustafaDefault Nawaz" [ref=e390]
+                  - generic [ref=e391]:
+                    - generic [ref=e392]: GP
+                    - generic [ref=e393]: Logged Out · 42m
+                - generic "Coming soon — PACOmms user messaging" [ref=e394]:
+                  - button "Send Message" [disabled]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: Unknown (Unknown)" [ref=e2033]':
+    - generic [ref=e1173]:
+      - generic [ref=e1177]:
+        - img "Quick Send rocket icon" [ref=e1179]
+        - generic [ref=e1181]:
+          - generic [ref=e1182]:
+            - generic [ref=e1183]: Michael Ramella
+            - generic [ref=e1184]: "|"
+            - generic [ref=e1185]:
+              - generic [ref=e1186]: "NHS Nr:"
+              - generic [ref=e1187] [cursor=pointer]: "70986"
+            - button "View Patient Details" [ref=e2034] [cursor=pointer]
+            - generic [ref=e1191]:
+              - img "sms on file" [ref=e1194]
+              - img "email on file" [ref=e1197]
+          - generic [ref=e1198]:
+            - generic [ref=e1199]:
+              - generic [ref=e1200]: "Post Code:"
+              - generic [ref=e1201] [cursor=pointer]: L61PH
+            - generic [ref=e1202]:
+              - generic [ref=e1203]: "DOB:"
+              - generic [ref=e1204] [cursor=pointer]: Unknown (Unknown)
+      - button "Close" [ref=e1205] [cursor=pointer]
+    - generic [ref=e1208]:
+      - generic [ref=e2035]:
+        - generic [ref=e2036]:
+          - button [ref=e2037] [cursor=pointer]
+          - button [aria-hidden] [ref=e2040] [cursor=pointer]
+        - generic [ref=e2042]:
+          - paragraph [ref=e2043]: Select Campaign
+          - generic [ref=e2044]:
+            - generic [ref=e2046]:
+              - img "search icon" [ref=e2047]
+              - textbox "Search..." [ref=e2048]
+            - generic [ref=e2049] [cursor=pointer]:
+              - generic [ref=e2050]:
+                - textbox: By message type
+              - generic [ref=e2052]: By message type
+              - button [ref=e2053]
+          - tree [ref=e2058]:
+            - treeitem "Favourites" [level=1] [ref=e2059]:
+              - generic [ref=e2060] [cursor=pointer]:
+                - button [ref=e2061]
+                - button "Favourites" [ref=e2064]
+            - treeitem "Booking Links & Health Forms" [level=1] [ref=e2068]:
+              - generic [ref=e2069] [cursor=pointer]:
+                - button [ref=e2070]
+                - button "Booking Links & Health Forms" [ref=e2073]
+            - treeitem "General News" [level=1] [ref=e2075]:
+              - generic [ref=e2076] [cursor=pointer]:
+                - button [ref=e2077]
+                - button "General News" [ref=e2080]
+            - treeitem "Guidance & Advice" [level=1] [ref=e2082]:
+              - generic [ref=e2083] [cursor=pointer]:
+                - button [ref=e2084]
+                - button "Guidance & Advice" [ref=e2087]
+      - generic [ref=e1209]:
+        - generic [ref=e1211]:
+          - generic [ref=e1839]:
+            - generic [ref=e1842] [cursor=pointer]: Test (updated due to duplicate name) updated 2
+            - generic [ref=e1843] [cursor=pointer]: (click to change)
+          - generic [ref=e1844]:
+            - generic [ref=e1845]: "Patient Reply:"
+            - button "Set up Patient Reply" [ref=e1846] [cursor=pointer]
+        - generic [ref=e1849]:
+          - generic [ref=e1851]:
+            - generic [ref=e1852]:
+              - generic [ref=e1853]:
+                - button "Preview" [ref=e1854] [cursor=pointer]
+                - button "Edit" [ref=e1855] [cursor=pointer]
+              - application [ref=e1856]:
+                - generic [ref=e1857]:
+                  - generic [ref=e1858]:
+                    - button "Bold" [ref=e1859] [cursor=pointer]
+                    - button "Italic" [ref=e1863] [cursor=pointer]
+                    - button "Underline" [ref=e1867] [cursor=pointer]
+                    - button "Font Size" [ref=e1871] [cursor=pointer]
+                    - option [ref=e1875] [cursor=pointer]: "8"
+                    - option [ref=e1876] [cursor=pointer]: "9"
+                    - option [ref=e1877] [cursor=pointer]: "10"
+                    - option [ref=e1878] [cursor=pointer]: "11"
+                    - option [ref=e1879] [cursor=pointer]: "12"
+                    - option [ref=e1880] [cursor=pointer]: "14"
+                    - option [ref=e1881] [cursor=pointer]: "18"
+                    - option [ref=e1882] [cursor=pointer]: "24"
+                    - option [ref=e1883] [cursor=pointer]: "30"
+                    - option [ref=e1884] [cursor=pointer]: "36"
+                    - option [ref=e1885] [cursor=pointer]: "48"
+                    - option [ref=e1886] [cursor=pointer]: "60"
+                    - option [ref=e1887] [cursor=pointer]: "72"
+                    - option [ref=e1888] [cursor=pointer]: "96"
+                    - button "Font Family" [ref=e1889] [cursor=pointer]
+                    - option [ref=e1893] [cursor=pointer]: Arial
+                    - option [ref=e1894] [cursor=pointer]: Georgia
+                    - option [ref=e1895] [cursor=pointer]: Times New Roman
+                    - option [ref=e1896] [cursor=pointer]: Verdana
+                    - option [ref=e1897] [cursor=pointer]: Roboto
+                    - option [ref=e1898] [cursor=pointer]: Open Sans
+                    - option [ref=e1899] [cursor=pointer]: Lato
+                    - option [ref=e1900] [cursor=pointer]: Montserrat
+                    - option [ref=e1901] [cursor=pointer]: Poppins
+                    - option [ref=e1902] [cursor=pointer]: Inter
+                    - button "More Text" [ref=e1903] [cursor=pointer]
+                  - generic [ref=e1907]:
+                    - generic [ref=e1908]:
+                      - button "Ordered List" [ref=e1909] [cursor=pointer]
+                      - button "Ordered List" [ref=e1913] [cursor=pointer]
+                      - option [ref=e1914] [cursor=pointer]: Default
+                      - option [ref=e1915] [cursor=pointer]: Lower Alpha
+                      - option [ref=e1916] [cursor=pointer]: Lower Greek
+                      - option [ref=e1917] [cursor=pointer]: Lower Roman
+                      - option [ref=e1918] [cursor=pointer]: Upper Alpha
+                      - option [ref=e1919] [cursor=pointer]: Upper Roman
+                    - generic [ref=e1920]:
+                      - button "Unordered List" [ref=e1921] [cursor=pointer]
+                      - button "Unordered List" [ref=e1925] [cursor=pointer]
+                      - option [ref=e1926] [cursor=pointer]: Default
+                      - option [ref=e1927] [cursor=pointer]: Circle
+                      - option [ref=e1928] [cursor=pointer]: Disc
+                      - option [ref=e1929] [cursor=pointer]: Square
+                    - button "Align Left" [ref=e1930] [cursor=pointer]
+                    - button "Align Center" [ref=e1934] [cursor=pointer]
+                    - button "Align Right" [ref=e1938] [cursor=pointer]
+                    - button "Align Justify" [ref=e1942] [cursor=pointer]
+                    - button "Undo" [disabled] [ref=e1946]
+                    - button "Redo" [disabled] [ref=e1950]
+                  - generic [ref=e1954]:
+                    - button "Insert Link" [ref=e1955] [cursor=pointer]
+                    - button "Insert Table" [ref=e1959] [cursor=pointer]
+                    - button "Insert Image" [ref=e1963] [cursor=pointer]
+                    - button "Insert Video" [ref=e1967] [cursor=pointer]
+                    - button "Fullscreen" [ref=e1971] [cursor=pointer]
+                    - button "Code View" [ref=e1975] [cursor=pointer]
+                  - button "Text Color" [ref=e1979] [cursor=pointer]
+                - generic [ref=e2119]:
+                  - generic [ref=e2120]: "{{{organisation_header}}}"
+                  - table [ref=e2121]:
+                    - rowgroup [ref=e2122]:
+                      - row [ref=e2123]:
+                        - cell "General Practice (Demo Site)" [ref=e2124]
+                  - generic [ref=e2127]:
+                    - 'heading "Reminder: Your Upcoming Mental Health Review" [level=1] [ref=e2128]'
+                    - paragraph [ref=e2129]: "Hi {{{first_name}}},"
+                    - generic [ref=e2130]:
+                      - paragraph [ref=e2131]: We hope you are well. We noticed that you missed your scheduled mental health review appointment. Your mental health is important to us, and we want to ensure you have the support you need.We understand life can be busy, but regular check-ins are vital for your wellbeing. Please consider rebooking your appointment to continue your care journey.What you need to do next:- Rebook your mental health review appointment through our online booking system.To book your appointment, please use the button below:If you have any questions or need assistance, do not hesitate to contact us. We are here to help.
+                      - link "Book Now" [ref=e2133]:
+                        - /url: "{{{scheduler_link}}}"
+                    - img "We hope you are well. We noticed that you missed your scheduled mental health review appointment. Your mental health is important to us, and we want to ensure you have the support you need." [ref=e2134] [cursor=pointer]
+                    - paragraph
+                    - paragraph [ref=e2135]:
+                      - text: Kind Regards,
+                      - generic [ref=e2136]: The General Practice (Demo Site) Team
+                  - generic [ref=e2137]:
+                    - paragraph
+                    - generic [ref=e2138]: "{{{organisation_footer}}}"
+                    - paragraph
+                    - paragraph [ref=e2139]:
+                      - generic [ref=e2140]: This email contains confidential information intended only for the named recipients. If you are not the intended recipient, please notify the sender immediately.
+                    - img "This email contains confidential information intended only for the named recipients. If you are not the intended recipient, please notify the sender immediately." [ref=e2142] [cursor=pointer]
+              - generic [ref=e1986] [cursor=pointer]:
+                - generic:
+                  - generic "PACO Assist"
+            - generic:
+              - generic:
+                - button "Generate Virtual Consult Link":
+                  - generic [ref=e1990] [cursor=pointer]:
+                    - button [ref=e1991]
+                    - menu:
+                      - menuitem "Virtual Consult Link":
+                        - menuitem "Virtual Consult Link"
+                      - menuitem "Merge Fields":
+                        - menuitem "Merge Fields"
+          - generic [ref=e1994]:
+            - generic [ref=e1995]:
+              - generic [ref=e1996]: "Send as:"
+              - button "Enable SMS" [ref=e1997] [cursor=pointer]
+              - button "Email enabled" [ref=e2000] [cursor=pointer]
+            - generic [ref=e2003]:
+              - generic [ref=e2004]: "Preview:"
+              - button "Preview SMS" [disabled] [ref=e2005]
+              - button "Preview Email" [ref=e2008] [cursor=pointer]
+            - generic [ref=e2011]:
+              - generic [ref=e2012]: "Subject:"
+              - button "Edit subject line" [ref=e2013] [cursor=pointer]
+            - button "Copy to SMS" [ref=e2017] [cursor=pointer]
+            - button "Resources" [ref=e2021] [cursor=pointer]
+            - button "Button" [ref=e2025] [cursor=pointer]
+            - button "Templates" [ref=e2029] [cursor=pointer]
+      - generic "bottom-nav" [ref=e1407]:
+        - generic [ref=e1408]:
+          - button "quick-send-action" [ref=e1440] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=e1441]
+          - generic [ref=e1410]:
+            - button "tab-Campaign" [ref=e1411] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=e1413]: Campaign
+            - button "Health Forms-badge tab-Health Forms" [ref=e1414] [cursor=pointer]:
+              - generic "Health Forms-badge" [ref=e1629]: "2"
+              - generic "tab-Health Forms" [ref=e1418]: Health Forms
+            - button "tab-Files" [ref=e1419] [cursor=pointer]:
+              - generic "tab-Files" [ref=e1421]: Files
+            - button "Booking Link-badge tab-Booking Link" [ref=e1442] [cursor=pointer]:
+              - generic "Booking Link-badge" [ref=e1443]: "1"
+              - generic "tab-Booking Link" [ref=e1437]: Booking Link
+            - button "Save" [disabled]
+  - dialog [ref=e2144]:
+    - generic [ref=e2147]:
+      - generic [ref=e2148]:
+        - heading "Healthcare Resources" [level=2] [ref=e2149]
+        - button [active] [ref=e2150] [cursor=pointer]
+      - textbox "Search resources by name or keyword..." [ref=e2154]
+      - generic [ref=e2155]:
+        - generic [ref=e2156]:
+          - heading "General" [level=3] [ref=e2157]
+          - generic [ref=e2158]:
+            - generic [ref=e2159]:
+              - generic [ref=e2160]:
+                - paragraph [ref=e2161]: NHS – Health A to Z
+                - paragraph [ref=e2162]: https://www.nhs.uk/health-a-to-z/
+              - button "Insert link" [ref=e2163] [cursor=pointer]
+              - button "Copy URL" [ref=e2166] [cursor=pointer]
+              - link "Open in new tab" [ref=e2169] [cursor=pointer]:
+                - /url: https://www.nhs.uk/health-a-to-z/
+            - generic [ref=e2172]:
+              - generic [ref=e2173]:
+                - paragraph [ref=e2174]: NHS – Conditions A to Z
+                - paragraph [ref=e2175]: https://www.nhs.uk/conditions/
+              - button "Insert link" [ref=e2176] [cursor=pointer]
+              - button "Copy URL" [ref=e2179] [cursor=pointer]
+              - link "Open in new tab" [ref=e2182] [cursor=pointer]:
+                - /url: https://www.nhs.uk/conditions/
+            - generic [ref=e2185]:
+              - generic [ref=e2186]:
+                - paragraph [ref=e2187]: NHS England
+                - paragraph [ref=e2188]: https://www.england.nhs.uk/
+              - button "Insert link" [ref=e2189] [cursor=pointer]
+              - button "Copy URL" [ref=e2192] [cursor=pointer]
+              - link "Open in new tab" [ref=e2195] [cursor=pointer]:
+                - /url: https://www.england.nhs.uk/
+        - generic [ref=e2198]:
+          - heading "Diabetes" [level=3] [ref=e2199]
+          - generic [ref=e2200]:
+            - generic [ref=e2201]:
+              - generic [ref=e2202]:
+                - paragraph [ref=e2203]: Diabetes UK
+                - paragraph [ref=e2204]: https://www.diabetes.org.uk/
+              - button "Insert link" [ref=e2205] [cursor=pointer]
+              - button "Copy URL" [ref=e2208] [cursor=pointer]
+              - link "Open in new tab" [ref=e2211] [cursor=pointer]:
+                - /url: https://www.diabetes.org.uk/
+            - generic [ref=e2214]:
+              - generic [ref=e2215]:
+                - paragraph [ref=e2216]: Diabetes UK – Support for You
+                - paragraph [ref=e2217]: https://www.diabetes.org.uk/support-for-you
+              - button "Insert link" [ref=e2218] [cursor=pointer]
+              - button "Copy URL" [ref=e2221] [cursor=pointer]
+              - link "Open in new tab" [ref=e2224] [cursor=pointer]:
+                - /url: https://www.diabetes.org.uk/support-for-you
+        - generic [ref=e2227]:
+          - heading "Heart / Cardiovascular" [level=3] [ref=e2228]
+          - generic [ref=e2229]:
+            - generic [ref=e2230]:
+              - generic [ref=e2231]:
+                - paragraph [ref=e2232]: British Heart Foundation (BHF)
+                - paragraph [ref=e2233]: https://www.bhf.org.uk/
+              - button "Insert link" [ref=e2234] [cursor=pointer]
+              - button "Copy URL" [ref=e2237] [cursor=pointer]
+              - link "Open in new tab" [ref=e2240] [cursor=pointer]:
+                - /url: https://www.bhf.org.uk/
+            - generic [ref=e2243]:
+              - generic [ref=e2244]:
+                - paragraph [ref=e2245]: BHF – Information and support
+                - paragraph [ref=e2246]: https://www.bhf.org.uk/informationsupport
+              - button "Insert link" [ref=e2247] [cursor=pointer]
+              - button "Copy URL" [ref=e2250] [cursor=pointer]
+              - link "Open in new tab" [ref=e2253] [cursor=pointer]:
+                - /url: https://www.bhf.org.uk/informationsupport
+            - generic [ref=e2256]:
+              - generic [ref=e2257]:
+                - paragraph [ref=e2258]: BHF – Heart and circulatory conditions
+                - paragraph [ref=e2259]: https://www.bhf.org.uk/informationsupport/conditions
+              - button "Insert link" [ref=e2260] [cursor=pointer]
+              - button "Copy URL" [ref=e2263] [cursor=pointer]
+              - link "Open in new tab" [ref=e2266] [cursor=pointer]:
+                - /url: https://www.bhf.org.uk/informationsupport/conditions
+        - generic [ref=e2269]:
+          - heading "Cancer" [level=3] [ref=e2270]
+          - generic [ref=e2271]:
+            - generic [ref=e2272]:
+              - generic [ref=e2273]:
+                - paragraph [ref=e2274]: Cancer Research UK – About cancer
+                - paragraph [ref=e2275]: https://www.cancerresearchuk.org/about-cancer
+              - button "Insert link" [ref=e2276] [cursor=pointer]
+              - button "Copy URL" [ref=e2279] [cursor=pointer]
+              - link "Open in new tab" [ref=e2282] [cursor=pointer]:
+                - /url: https://www.cancerresearchuk.org/about-cancer
+            - generic [ref=e2285]:
+              - generic [ref=e2286]:
+                - paragraph [ref=e2287]: Cancer Research UK – Cancer types
+                - paragraph [ref=e2288]: https://www.cancerresearchuk.org/about-cancer/type
+              - button "Insert link" [ref=e2289] [cursor=pointer]
+              - button "Copy URL" [ref=e2292] [cursor=pointer]
+              - link "Open in new tab" [ref=e2295] [cursor=pointer]:
+                - /url: https://www.cancerresearchuk.org/about-cancer/type
+            - generic [ref=e2298]:
+              - generic [ref=e2299]:
+                - paragraph [ref=e2300]: Macmillan Cancer Support
+                - paragraph [ref=e2301]: https://www.macmillan.org.uk/cancer-information-and-support
+              - button "Insert link" [ref=e2302] [cursor=pointer]
+              - button "Copy URL" [ref=e2305] [cursor=pointer]
+              - link "Open in new tab" [ref=e2308] [cursor=pointer]:
+                - /url: https://www.macmillan.org.uk/cancer-information-and-support
+        - generic [ref=e2311]:
+          - heading "Respiratory" [level=3] [ref=e2312]
+          - generic [ref=e2313]:
+            - generic [ref=e2314]:
+              - generic [ref=e2315]:
+                - paragraph [ref=e2316]: Asthma + Lung UK
+                - paragraph [ref=e2317]: https://www.asthmaandlung.org.uk/
+              - button "Insert link" [ref=e2318] [cursor=pointer]
+              - button "Copy URL" [ref=e2321] [cursor=pointer]
+              - link "Open in new tab" [ref=e2324] [cursor=pointer]:
+                - /url: https://www.asthmaandlung.org.uk/
+            - generic [ref=e2327]:
+              - generic [ref=e2328]:
+                - paragraph [ref=e2329]: Asthma + Lung UK – Conditions
+                - paragraph [ref=e2330]: https://www.asthmaandlung.org.uk/conditions
+              - button "Insert link" [ref=e2331] [cursor=pointer]
+              - button "Copy URL" [ref=e2334] [cursor=pointer]
+              - link "Open in new tab" [ref=e2337] [cursor=pointer]:
+                - /url: https://www.asthmaandlung.org.uk/conditions
+            - generic [ref=e2340]:
+              - generic [ref=e2341]:
+                - paragraph [ref=e2342]: Asthma + Lung UK – Asthma
+                - paragraph [ref=e2343]: https://www.asthmaandlung.org.uk/conditions/asthma
+              - button "Insert link" [ref=e2344] [cursor=pointer]
+              - button "Copy URL" [ref=e2347] [cursor=pointer]
+              - link "Open in new tab" [ref=e2350] [cursor=pointer]:
+                - /url: https://www.asthmaandlung.org.uk/conditions/asthma
+        - generic [ref=e2353]:
+          - heading "Mental health" [level=3] [ref=e2354]
+          - generic [ref=e2355]:
+            - generic [ref=e2356]:
+              - generic [ref=e2357]:
+                - paragraph [ref=e2358]: Mind
+                - paragraph [ref=e2359]: https://www.mind.org.uk/
+              - button "Insert link" [ref=e2360] [cursor=pointer]
+              - button "Copy URL" [ref=e2363] [cursor=pointer]
+              - link "Open in new tab" [ref=e2366] [cursor=pointer]:
+                - /url: https://www.mind.org.uk/
+            - generic [ref=e2369]:
+              - generic [ref=e2370]:
+                - paragraph [ref=e2371]: Mind – Information and support
+                - paragraph [ref=e2372]: https://www.mind.org.uk/information-support/
+              - button "Insert link" [ref=e2373] [cursor=pointer]
+              - button "Copy URL" [ref=e2376] [cursor=pointer]
+              - link "Open in new tab" [ref=e2379] [cursor=pointer]:
+                - /url: https://www.mind.org.uk/information-support/
+        - generic [ref=e2382]:
+          - heading "Musculoskeletal / Arthritis" [level=3] [ref=e2383]
+          - generic [ref=e2384]:
+            - generic [ref=e2385]:
+              - generic [ref=e2386]:
+                - paragraph [ref=e2387]: Versus Arthritis
+                - paragraph [ref=e2388]: https://versusarthritis.org/
+              - button "Insert link" [ref=e2389] [cursor=pointer]
+              - button "Copy URL" [ref=e2392] [cursor=pointer]
+              - link "Open in new tab" [ref=e2395] [cursor=pointer]:
+                - /url: https://versusarthritis.org/
+            - generic [ref=e2398]:
+              - generic [ref=e2399]:
+                - paragraph [ref=e2400]: Versus Arthritis – Conditions
+                - paragraph [ref=e2401]: https://www.versusarthritis.org/about-arthritis/conditions/
+              - button "Insert link" [ref=e2402] [cursor=pointer]
+              - button "Copy URL" [ref=e2405] [cursor=pointer]
+              - link "Open in new tab" [ref=e2408] [cursor=pointer]:
+                - /url: https://www.versusarthritis.org/about-arthritis/conditions/
+        - generic [ref=e2411]:
+          - heading "Dementia / Older people" [level=3] [ref=e2412]
+          - generic [ref=e2413]:
+            - generic [ref=e2414]:
+              - generic [ref=e2415]:
+                - paragraph [ref=e2416]: Alzheimer's Society
+                - paragraph [ref=e2417]: https://www.alzheimers.org.uk/
+              - button "Insert link" [ref=e2418] [cursor=pointer]
+              - button "Copy URL" [ref=e2421] [cursor=pointer]
+              - link "Open in new tab" [ref=e2424] [cursor=pointer]:
+                - /url: https://www.alzheimers.org.uk/
+            - generic [ref=e2427]:
+              - generic [ref=e2428]:
+                - paragraph [ref=e2429]: Alzheimer's Society – Get support
+                - paragraph [ref=e2430]: https://www.alzheimers.org.uk/get-support
+              - button "Insert link" [ref=e2431] [cursor=pointer]
+              - button "Copy URL" [ref=e2434] [cursor=pointer]
+              - link "Open in new tab" [ref=e2437] [cursor=pointer]:
+                - /url: https://www.alzheimers.org.uk/get-support
+            - generic [ref=e2440]:
+              - generic [ref=e2441]:
+                - paragraph [ref=e2442]: Alzheimer's Society – Find support near you
+                - paragraph [ref=e2443]: https://www.alzheimers.org.uk/find-support-near-you
+              - button "Insert link" [ref=e2444] [cursor=pointer]
+              - button "Copy URL" [ref=e2447] [cursor=pointer]
+              - link "Open in new tab" [ref=e2450] [cursor=pointer]:
+                - /url: https://www.alzheimers.org.uk/find-support-near-you
+        - generic [ref=e2453]:
+          - heading "Kidney / Renal" [level=3] [ref=e2454]
+          - generic [ref=e2455]:
+            - generic [ref=e2456]:
+              - generic [ref=e2457]:
+                - paragraph [ref=e2458]: Kidney Care UK
+                - paragraph [ref=e2459]: https://kidneycareuk.org/
+              - button "Insert link" [ref=e2460] [cursor=pointer]
+              - button "Copy URL" [ref=e2463] [cursor=pointer]
+              - link "Open in new tab" [ref=e2466] [cursor=pointer]:
+                - /url: https://kidneycareuk.org/
+            - generic [ref=e2469]:
+              - generic [ref=e2470]:
+                - paragraph [ref=e2471]: Kidney Care UK – Help and support
+                - paragraph [ref=e2472]: https://kidneycareuk.org/get-support/
+              - button "Insert link" [ref=e2473] [cursor=pointer]
+              - button "Copy URL" [ref=e2476] [cursor=pointer]
+              - link "Open in new tab" [ref=e2479] [cursor=pointer]:
+                - /url: https://kidneycareuk.org/get-support/
+            - generic [ref=e2482]:
+              - generic [ref=e2483]:
+                - paragraph [ref=e2484]: Kidney Care UK – Patient information booklets
+                - paragraph [ref=e2485]: https://kidneycareuk.org/get-support/free-resources/patient-information-booklets/
+              - button "Insert link" [ref=e2486] [cursor=pointer]
+              - button "Copy URL" [ref=e2489] [cursor=pointer]
+              - link "Open in new tab" [ref=e2492] [cursor=pointer]:
+                - /url: https://kidneycareuk.org/get-support/free-resources/patient-information-booklets/
+        - generic [ref=e2495]:
+          - heading "End of life / Palliative care" [level=3] [ref=e2496]
+          - generic [ref=e2497]:
+            - generic [ref=e2498]:
+              - generic [ref=e2499]:
+                - paragraph [ref=e2500]: Marie Curie
+                - paragraph [ref=e2501]: https://www.mariecurie.org.uk/
+              - button "Insert link" [ref=e2502] [cursor=pointer]
+              - button "Copy URL" [ref=e2505] [cursor=pointer]
+              - link "Open in new tab" [ref=e2508] [cursor=pointer]:
+                - /url: https://www.mariecurie.org.uk/
+            - generic [ref=e2511]:
+              - generic [ref=e2512]:
+                - paragraph [ref=e2513]: Marie Curie – Living with a terminal illness
+                - paragraph [ref=e2514]: https://www.mariecurie.org.uk/patient
+              - button "Insert link" [ref=e2515] [cursor=pointer]
+              - button "Copy URL" [ref=e2518] [cursor=pointer]
+              - link "Open in new tab" [ref=e2521] [cursor=pointer]:
+                - /url: https://www.mariecurie.org.uk/patient
+            - generic [ref=e2524]:
+              - generic [ref=e2525]:
+                - paragraph [ref=e2526]: Marie Curie – Booklets and resources
+                - paragraph [ref=e2527]: https://www.mariecurie.org.uk/help/support/publications
+              - button "Insert link" [ref=e2528] [cursor=pointer]
+              - button "Copy URL" [ref=e2531] [cursor=pointer]
+              - link "Open in new tab" [ref=e2534] [cursor=pointer]:
+                - /url: https://www.mariecurie.org.uk/help/support/publications
+        - generic [ref=e2537]:
+          - heading "Women's health" [level=3] [ref=e2538]
+          - generic [ref=e2539]:
+            - generic [ref=e2540]:
+              - generic [ref=e2541]:
+                - paragraph [ref=e2542]: Women's Health Concern
+                - paragraph [ref=e2543]: https://www.womens-health-concern.org/
+              - button "Insert link" [ref=e2544] [cursor=pointer]
+              - button "Copy URL" [ref=e2547] [cursor=pointer]
+              - link "Open in new tab" [ref=e2550] [cursor=pointer]:
+                - /url: https://www.womens-health-concern.org/
+            - generic [ref=e2553]:
+              - generic [ref=e2554]:
+                - paragraph [ref=e2555]: WHC – Help and advice / factsheets
+                - paragraph [ref=e2556]: https://www.womens-health-concern.org/help-and-advice/
+              - button "Insert link" [ref=e2557] [cursor=pointer]
+              - button "Copy URL" [ref=e2560] [cursor=pointer]
+              - link "Open in new tab" [ref=e2563] [cursor=pointer]:
+                - /url: https://www.womens-health-concern.org/help-and-advice/
+            - generic [ref=e2566]:
+              - generic [ref=e2567]:
+                - paragraph [ref=e2568]: WHC – Factsheets
+                - paragraph [ref=e2569]: https://www.womens-health-concern.org/help-and-advice/factsheets/
+              - button "Insert link" [ref=e2570] [cursor=pointer]
+              - button "Copy URL" [ref=e2573] [cursor=pointer]
+              - link "Open in new tab" [ref=e2576] [cursor=pointer]:
+                - /url: https://www.womens-health-concern.org/help-and-advice/factsheets/
+        - generic [ref=e2579]:
+          - heading "Bladder / bowel" [level=3] [ref=e2580]
+          - generic [ref=e2581]:
+            - generic [ref=e2582]:
+              - generic [ref=e2583]:
+                - paragraph [ref=e2584]: Bladder & Bowel Community
+                - paragraph [ref=e2585]: https://www.bladderandbowel.org/
+              - button "Insert link" [ref=e2586] [cursor=pointer]
+              - button "Copy URL" [ref=e2589] [cursor=pointer]
+              - link "Open in new tab" [ref=e2592] [cursor=pointer]:
+                - /url: https://www.bladderandbowel.org/
+            - generic [ref=e2595]:
+              - generic [ref=e2596]:
+                - paragraph [ref=e2597]: Bladder & Bowel Community – Help & Information
+                - paragraph [ref=e2598]: https://www.bladderandbowel.org/help-information/
+              - button "Insert link" [ref=e2599] [cursor=pointer]
+              - button "Copy URL" [ref=e2602] [cursor=pointer]
+              - link "Open in new tab" [ref=e2605] [cursor=pointer]:
+                - /url: https://www.bladderandbowel.org/help-information/
+            - generic [ref=e2608]:
+              - generic [ref=e2609]:
+                - paragraph [ref=e2610]: Bladder & Bowel Community – Practical advice
+                - paragraph [ref=e2611]: https://www.bladderandbowel.org/help-information/practical-advice/
+              - button "Insert link" [ref=e2612] [cursor=pointer]
+              - button "Copy URL" [ref=e2615] [cursor=pointer]
+              - link "Open in new tab" [ref=e2618] [cursor=pointer]:
+                - /url: https://www.bladderandbowel.org/help-information/practical-advice/
+        - generic [ref=e2621]:
+          - heading "Urgent advice" [level=3] [ref=e2622]
+          - generic [ref=e2624]:
+            - generic [ref=e2625]:
+              - paragraph [ref=e2626]: NHS 111
+              - paragraph [ref=e2627]: https://111.nhs.uk/
+            - button "Insert link" [ref=e2628] [cursor=pointer]
+            - button "Copy URL" [ref=e2631] [cursor=pointer]
+            - link "Open in new tab" [ref=e2634] [cursor=pointer]:
+              - /url: https://111.nhs.uk/

@@ -11,6 +11,14 @@ input_snapshot:
   generated_at: ""
   files: []
 
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: pending
+  unresolved_blockers: 0
+  automation_decision: null
+  mutation_ledger: null
+  durable_evidence: []
+
 workflow:
   status: pending
   current_phase: DISCOVER

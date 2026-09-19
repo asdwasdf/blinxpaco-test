@@ -7,7 +7,7 @@ for file in "${files[@]}"; do
 done
 
 grep -q '^playwright/.auth/$' .gitignore || { echo "FAIL: .auth not in .gitignore"; exit 1; }
-grep -q 'Blocked: Authentication state not found' playwright/fixtures/auth-fixtures.ts || { echo "FAIL: missing auth Blocked handling"; exit 1; }
+grep -q 'Blocked: Login browser not running' playwright/fixtures/auth-fixtures.ts || { echo "FAIL: missing auth Blocked handling"; exit 1; }
 grep -q 'Blocked: Authentication expired' playwright/fixtures/auth-fixtures.ts || { echo "FAIL: missing expiry Blocked handling"; exit 1; }
 
 echo "PASS: Playwright scaffold complete"

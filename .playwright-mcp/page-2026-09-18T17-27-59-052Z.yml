@@ -1,0 +1,466 @@
+- generic [active] [ref=f12e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f12e3] [cursor=pointer]
+  - generic [ref=f12e8]:
+    - generic [ref=f12e9]:
+      - button "Expand sidebar" [ref=f12e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f12e11]
+      - generic [ref=f12e13]:
+        - img "Dashboards" [ref=f12e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f12e23] [cursor=pointer]
+        - img "Quick Send" [ref=f12e28] [cursor=pointer]
+        - img "Health Forms" [ref=f12e33] [cursor=pointer]
+        - img "Patient Search" [ref=f12e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f12e43] [cursor=pointer]
+        - img "case load management" [ref=f12e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f12e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f12e58] [cursor=pointer]
+        - img "Users" [ref=f12e63] [cursor=pointer]
+        - img "Configuration" [ref=f12e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f12e73] [cursor=pointer]
+        - generic [ref=f12e75] [cursor=pointer]
+      - button [ref=f12e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f12e84]
+    - generic [ref=f12e85]:
+      - generic [ref=f12e86]:
+        - generic [ref=f12e87]: 12m
+        - generic [ref=f12e92]:
+          - generic [ref=f12e95]:
+            - generic [ref=f12e96] [cursor=pointer]: TFN
+            - generic [ref=f12e98]:
+              - generic [ref=f12e99]: Test Fiona Nguyen
+              - generic [ref=f12e100]: Super Admin GB
+              - generic [ref=f12e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f12e107]
+          - generic [ref=f12e108]:
+            - button "More options" [ref=f12e110] [cursor=pointer]
+            - generic [ref=f12e114] [cursor=pointer]: "0"
+      - generic [ref=f12e120]:
+        - generic [ref=f12e122]:
+          - generic [ref=f12e123]: MR
+          - generic [ref=f12e126]:
+            - img "Male" [ref=f12e129] [cursor=pointer]
+            - button "Michael Ramella" [ref=f12e132] [cursor=pointer]
+            - 'button "NHS No: 70986" [ref=f12e134] [cursor=pointer]':
+              - generic [ref=f12e135]: "NHS No:"
+              - generic [ref=f12e136]: "70986"
+            - button "15/03/2024 (2 yo)" [ref=f12e138] [cursor=pointer]:
+              - generic [ref=f12e141]:
+                - generic [ref=f12e142]: 15/03/2024
+                - generic [ref=f12e143]: (2 yo)
+            - button "07379060817" [ref=f12e145] [cursor=pointer]
+            - button "L61PH" [ref=f12e150] [cursor=pointer]
+          - generic [ref=f12e154]:
+            - generic "Patient record has not been synced with PDS in the last 24 hours" [ref=f12e155]: PDS Not Synced
+            - button "4 case flags" [ref=f12e159] [cursor=pointer]:
+              - generic [ref=f12e160]: "4"
+            - button "Patient actions" [ref=f12e166] [cursor=pointer]
+        - generic [ref=f12e171]:
+          - generic [ref=f12e172]:
+            - tablist [ref=f12e175]:
+              - tab "Dashboard" [selected] [ref=f12e176] [cursor=pointer]
+              - tab "Timeline" [ref=f12e178] [cursor=pointer]
+              - tab "Coding" [ref=f12e179] [cursor=pointer]
+              - tab "Consultations & Admin" [ref=f12e180] [cursor=pointer]
+              - tab "Medication" [ref=f12e181] [cursor=pointer]
+              - tab "Patient Comms" [ref=f12e182] [cursor=pointer]
+              - tab "Shared Records" [ref=f12e183] [cursor=pointer]
+              - tab "Investigations" [ref=f12e184] [cursor=pointer]
+              - tab "Appointments" [ref=f12e185] [cursor=pointer]
+              - tab "Documents" [ref=f12e186] [cursor=pointer]
+              - tab "Payments" [ref=f12e187] [cursor=pointer]
+              - tab "Tasks" [ref=f12e188] [cursor=pointer]
+            - tabpanel [ref=f12e190]:
+              - generic [ref=f12e194]:
+                - generic [ref=f12e197]:
+                  - button "Customise Dashboard 13 Selected" [ref=f12e199] [cursor=pointer]:
+                    - generic [ref=f12e200]: Customise Dashboard
+                    - generic [ref=f12e201]: 13 Selected
+                  - generic [ref=f12e202]:
+                    - button "View all trends" [ref=f12e203] [cursor=pointer]:
+                      - generic [ref=f12e206]: Trends
+                    - button "Generate Digital Health Report" [ref=f12e207] [cursor=pointer]:
+                      - generic [ref=f12e210]: Health Report
+                - generic [ref=f12e211]:
+                  - generic [ref=f12e212]:
+                    - generic [ref=f12e216]:
+                      - generic [ref=f12e217]: Conditions
+                      - generic [ref=f12e221]:
+                        - generic [ref=f12e222]:
+                          - generic [ref=f12e223]: Active Conditions
+                          - generic [ref=f12e224]: "19"
+                        - generic [ref=f12e225]:
+                          - generic [ref=f12e226]:
+                            - generic [ref=f12e227]: Severe
+                            - generic [ref=f12e228]: "10"
+                          - generic [ref=f12e229]:
+                            - generic [ref=f12e230]: Moderate
+                            - generic [ref=f12e231]: "1"
+                          - generic [ref=f12e232]:
+                            - generic [ref=f12e233]: Minor
+                            - generic [ref=f12e234]: "8"
+                        - generic [ref=f12e236]:
+                          - generic [ref=f12e237]:
+                            - generic [ref=f12e238]: Severe
+                            - generic [ref=f12e239]:
+                              - generic [ref=f12e240]: • Asthma
+                              - generic [ref=f12e241]: "Diagnosed: 31/07/2026"
+                            - generic [ref=f12e242]:
+                              - generic [ref=f12e243]: • Pleural plaque
+                              - generic [ref=f12e244]: "Diagnosed: 03/07/2026"
+                            - generic [ref=f12e245]:
+                              - generic [ref=f12e246]: • Migraine with typical aura
+                              - generic [ref=f12e247]: "Diagnosed: 03/07/2026"
+                            - generic [ref=f12e248]:
+                              - generic [ref=f12e249]: • Stevens-Johnson syndrome
+                              - generic [ref=f12e250]: "Diagnosed: 03/07/2026"
+                            - generic [ref=f12e251]:
+                              - generic [ref=f12e252]: • Cluster headache
+                              - generic [ref=f12e253]: "Diagnosed: 03/07/2026"
+                            - generic [ref=f12e254]:
+                              - generic [ref=f12e255]: • Primary open angle glaucoma
+                              - generic [ref=f12e256]: "Diagnosed: 18/06/2026"
+                            - generic [ref=f12e257]:
+                              - generic [ref=f12e258]: • Histrionic personality disorder
+                              - generic [ref=f12e259]: "Diagnosed: 18/05/2026"
+                            - generic [ref=f12e260]:
+                              - generic [ref=f12e261]: • Lichen sclerosus
+                              - generic [ref=f12e262]: "Diagnosed: 13/05/2026"
+                            - generic [ref=f12e263]:
+                              - generic [ref=f12e264]: • Low back pain
+                              - generic [ref=f12e265]: "Diagnosed: 07/04/2026"
+                            - generic [ref=f12e266]:
+                              - generic [ref=f12e267]: • Anxiety
+                              - generic [ref=f12e268]: "Diagnosed: 24/03/2026"
+                          - generic [ref=f12e269]:
+                            - generic [ref=f12e270]: Moderate
+                            - generic [ref=f12e271]:
+                              - generic [ref=f12e272]: • Cough
+                              - generic [ref=f12e273]: "Diagnosed: 31/08/2026"
+                          - generic [ref=f12e274]:
+                            - generic [ref=f12e275]: Minor
+                            - generic [ref=f12e276]:
+                              - generic [ref=f12e277]: • Deep venous thrombosis
+                              - generic [ref=f12e278]: "Diagnosed: 19/06/2026"
+                            - generic [ref=f12e279]:
+                              - generic [ref=f12e280]: • North American origin
+                              - generic [ref=f12e281]: "Diagnosed: 24/03/2026"
+                            - generic [ref=f12e282]:
+                              - generic [ref=f12e283]: • Standard chest X-ray normal
+                              - generic [ref=f12e284]: "Diagnosed: 13/03/2026"
+                            - generic [ref=f12e285]:
+                              - generic [ref=f12e286]: • Main spoken language Swedish
+                              - generic [ref=f12e287]: "Diagnosed: 13/03/2026"
+                            - generic [ref=f12e288]:
+                              - generic [ref=f12e289]: • Asthma annual review
+                              - generic [ref=f12e290]: "Diagnosed: 13/03/2026"
+                            - generic [ref=f12e291]:
+                              - generic [ref=f12e292]: • Patient mobile telephone number
+                              - generic [ref=f12e293]: "Diagnosed: 14/08/2023"
+                            - generic [ref=f12e294]:
+                              - generic [ref=f12e295]: • Atheist
+                              - generic [ref=f12e296]: "Diagnosed: 14/08/2023"
+                            - generic [ref=f12e297]:
+                              - generic [ref=f12e298]: • Main spoken language Finnish
+                              - generic [ref=f12e299]: "Diagnosed: 14/08/2023"
+                      - generic [ref=f12e300]:
+                        - generic [ref=f12e301]: Past Conditions
+                        - generic [ref=f12e302]: "27"
+                    - generic [ref=f12e306]:
+                      - button [disabled]
+                      - generic [ref=f12e307]: Registers
+                      - generic [ref=f12e308]:
+                        - generic [ref=f12e309]: "0"
+                        - generic [ref=f12e310]: Patient isn’t currently on any registers
+                    - generic [ref=f12e316]:
+                      - generic [ref=f12e317]:
+                        - generic [ref=f12e318]:
+                          - generic [ref=f12e319]: Nominated Pharmacy
+                          - button "Edit pharmacy" [ref=f12e320] [cursor=pointer]
+                        - generic [ref=f12e325]: Pharmacy
+                        - generic [ref=f12e326]: No nominated pharmacy to display
+                      - img "Pharmacy" [ref=f12e328]
+                    - generic [ref=f12e331]:
+                      - generic [ref=f12e332]:
+                        - generic [ref=f12e333]: Pending Documents
+                        - generic [ref=f12e337]: "2"
+                      - generic [ref=f12e340]:
+                        - generic [ref=f12e341] [cursor=pointer]:
+                          - generic [ref=f12e342]:
+                            - generic [ref=f12e343]: 17/09/2026
+                            - generic [ref=f12e344]: 15:52
+                          - img "document image" [ref=f12e346]
+                          - generic [ref=f12e347]:
+                            - generic [ref=f12e348]: Laura Mercer
+                            - generic [ref=f12e350]:
+                              - generic [ref=f12e351]: Super Admin (Dev Acc
+                              - generic [ref=f12e352]: ...
+                            - generic [ref=f12e353]:
+                              - generic [ref=f12e354]: General Practice (Bl
+                              - generic [ref=f12e355]: ...
+                            - generic [ref=f12e356]: Period Calendar.pdf
+                        - generic [ref=f12e358] [cursor=pointer]:
+                          - generic [ref=f12e359]:
+                            - generic [ref=f12e360]: 17/09/2026
+                            - generic [ref=f12e361]: 04:25
+                          - img "document image" [ref=f12e363]
+                          - generic [ref=f12e364]:
+                            - generic [ref=f12e365]: CTO Michael Ramella
+                            - generic [ref=f12e367]: Super Admin GB
+                            - generic [ref=f12e369]:
+                              - generic [ref=f12e370]: General Practice (Bl
+                              - generic [ref=f12e371]: ...
+                            - generic [ref=f12e372]: image.jpg
+                    - generic [ref=f12e377]:
+                      - generic [ref=f12e378]: Pending Investigations
+                      - generic [ref=f12e383]:
+                        - generic:
+                          - heading [level=2]
+                          - heading [level=3]
+                    - generic [ref=f12e386]:
+                      - generic [ref=f12e387]: Last 3 Consultations
+                      - generic [ref=f12e391]:
+                        - button [ref=f12e397] [cursor=pointer]:
+                          - generic [ref=f12e402]:
+                            - generic "Laura Mercer" [ref=f12e403]
+                            - generic [ref=f12e404]:
+                              - generic [ref=f12e405]: 17/09/2026 15:52
+                              - generic [ref=f12e406]: "|"
+                              - generic "PACO Health Form" [ref=f12e407]
+                            - generic [ref=f12e408]:
+                              - generic "notes" [ref=f12e409]
+                              - generic [ref=f12e411]
+                        - button [ref=f12e419] [cursor=pointer]:
+                          - generic [ref=f12e424]:
+                            - generic "CTO Michael Ramella" [ref=f12e425]
+                            - generic [ref=f12e426]:
+                              - generic [ref=f12e427]: 17/09/2026 04:25
+                              - generic [ref=f12e428]: "|"
+                              - generic "PACO Health Form" [ref=f12e429]
+                            - generic [ref=f12e430]:
+                              - generic "notes" [ref=f12e431]
+                              - generic [ref=f12e433]
+                        - button [ref=f12e441] [cursor=pointer]:
+                          - generic [ref=f12e446]:
+                            - generic "CTO Michael Ramella" [ref=f12e447]
+                            - generic [ref=f12e448]:
+                              - generic [ref=f12e449]: 16/09/2026 13:53
+                              - generic [ref=f12e450]: "|"
+                              - generic "PACO Health Form" [ref=f12e451]
+                            - generic [ref=f12e452]:
+                              - generic "notes" [ref=f12e453]
+                              - generic [ref=f12e455]
+                  - generic [ref=f12e457]:
+                    - generic [ref=f12e461]:
+                      - generic [ref=f12e462]: Medications
+                      - generic [ref=f12e466]:
+                        - generic [ref=f12e467]: Total Active
+                        - generic [ref=f12e468]: "0"
+                        - generic [ref=f12e469]: medications actively prescribed
+                      - generic [ref=f12e470]:
+                        - generic [ref=f12e471]:
+                          - generic [ref=f12e472]: Acute
+                          - generic [ref=f12e473]: "0"
+                        - generic [ref=f12e474]:
+                          - generic [ref=f12e475]: Repeats
+                          - generic [ref=f12e476]: "0"
+                      - generic [ref=f12e478]:
+                        - generic [ref=f12e479]:
+                          - generic [ref=f12e480]: • Diazepam 2mg tablets
+                          - generic [ref=f12e481]: "Prescribed: 7/17/2026"
+                        - generic [ref=f12e482]:
+                          - generic [ref=f12e483]: • Nizoral 2% shampoo (Thornton & Ross Ltd)
+                          - generic [ref=f12e484]: "Prescribed: 7/17/2026"
+                        - generic [ref=f12e485]:
+                          - generic [ref=f12e486]: • Sertraline 50mg tablets
+                          - generic [ref=f12e487]: "Prescribed: 7/17/2026"
+                      - generic [ref=f12e488]:
+                        - generic [ref=f12e489]: ⚠️ Prescription Renewals Required
+                        - generic [ref=f12e490]: All prescriptions are valid for >14 days
+                    - generic [ref=f12e494]:
+                      - generic [ref=f12e496]:
+                        - generic [ref=f12e499]: Observations
+                        - generic [ref=f12e500]: "3"
+                      - generic [ref=f12e501]:
+                        - generic [ref=f12e502]:
+                          - heading "Items" [level=2] [ref=f12e503]
+                          - heading "Blood Pressure" [level=3] [ref=f12e504]
+                        - generic [ref=f12e507]:
+                          - generic [ref=f12e509]:
+                            - generic [ref=f12e510]:
+                              - generic [ref=f12e511]: 27/03/2026 00:37
+                              - generic [ref=f12e512]: Recorded
+                            - generic [ref=f12e513]:
+                              - generic [ref=f12e514]:
+                                - generic [ref=f12e515]: "0"
+                                - generic [ref=f12e516]: SYS (mmHg)
+                              - generic [ref=f12e517]:
+                                - generic [ref=f12e518]: "0"
+                                - generic [ref=f12e519]: DIA (mmHg)
+                          - generic [ref=f12e521]:
+                            - generic [ref=f12e522]:
+                              - generic [ref=f12e523]: 27/03/2026
+                              - generic [ref=f12e524]: 00:44
+                            - generic [ref=f12e526]:
+                              - img [ref=f12e527]:
+                                - generic [ref=f12e530]: "0"
+                              - generic [ref=f12e531]:
+                                - generic [ref=f12e532]: 0bpm
+                                - generic [ref=f12e533]: Avg. > 90%
+                          - img [ref=f12e539]:
+                            - generic [ref=f12e555]:
+                              - generic [ref=f12e556]: 5d ago
+                              - generic [ref=f12e557]: 4d ago
+                              - generic [ref=f12e558]: 3d ago
+                              - generic [ref=f12e559]: 2d ago
+                              - generic [ref=f12e560]: 1d ago
+                            - generic [ref=f12e561]:
+                              - generic [ref=f12e562]: "0"
+                              - generic [ref=f12e563]: "10"
+                              - generic [ref=f12e564]: "20"
+                              - generic [ref=f12e565]: "30"
+                              - generic [ref=f12e566]: "40"
+                          - generic [ref=f12e568]:
+                            - generic [ref=f12e569]:
+                              - generic [ref=f12e570]: 19/06/2026
+                              - generic [ref=f12e571]: 21:34
+                            - generic [ref=f12e572]:
+                              - generic [ref=f12e573]:
+                                - generic [ref=f12e574]: "Weight: 0 kg"
+                                - generic [ref=f12e575]: "Height: 0 cm"
+                              - generic [ref=f12e576]: BMI
+                              - generic [ref=f12e577]: "28"
+                            - generic [ref=f12e580]: "Recommended BMI Range: 18.5 - 24.9"
+                        - generic [ref=f12e582]:
+                          - generic [ref=f12e583] [cursor=pointer]
+                          - generic [ref=f12e584] [cursor=pointer]
+                          - generic [ref=f12e585] [cursor=pointer]
+                          - generic [ref=f12e586] [cursor=pointer]
+                  - generic [ref=f12e587]:
+                    - generic [ref=f12e591]:
+                      - generic [ref=f12e592]: Risk Stratification
+                      - generic [ref=f12e593]:
+                        - generic [ref=f12e596] [cursor=pointer]:
+                          - generic [ref=f12e597]:
+                            - combobox: Comprehensive Risk Stratification
+                          - generic [ref=f12e598]: 1 models selected
+                        - button "View risk score trend chart" [disabled]
+                      - generic:
+                        - generic [aria-hidden]:
+                          - generic:
+                            - generic:
+                              - progressbar
+                              - generic: Loading risk factors...
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: Total Score
+                                - generic: "0"
+                              - generic: High-Risk Conditions (0)
+                              - generic: Additional Risk Factors (0)
+                    - generic [ref=f12e606]:
+                      - generic [ref=f12e607]: Appointments
+                      - generic [ref=f12e611]:
+                        - generic [ref=f12e612]: Latest Appointment
+                        - generic [ref=f12e613]:
+                          - generic [ref=f12e624]:
+                            - generic [ref=f12e625]: Next Appointment
+                            - generic [ref=f12e626] [cursor=pointer]: Quick Book - Mr Michael Ramella with Dr Gareth Bartlett - 18/09/2026 | 18:40
+                            - generic [ref=f12e627]: Dr Bartlett Gareth | |
+                          - generic [ref=f12e628]: "1"
+                        - generic [ref=f12e630]:
+                          - generic [ref=f12e641]:
+                            - generic [ref=f12e642]: Past Appointment
+                            - generic [ref=f12e643] [cursor=pointer]: Quick Book - Mr Michael Ramella with mike2 3,Mickey Mouse2 - 15/09/2026 | 08:40
+                            - generic [ref=f12e644]: 3 mike2 | |
+                          - generic [ref=f12e645]: "68"
+                    - generic [ref=f12e647]: Timeline
+                    - generic [ref=f12e651]:
+                      - generic [ref=f12e655] [cursor=pointer]:
+                        - generic [ref=f12e656]: Active Tasks
+                        - generic [ref=f12e657]:
+                          - generic [ref=f12e658]:
+                            - generic [ref=f12e659]: Total Tasks
+                            - generic [ref=f12e660]: "14"
+                          - generic [ref=f12e661]: tasks requiring attention
+                      - generic [ref=f12e663]:
+                        - generic [ref=f12e664]:
+                          - generic "Safeguarding concern (child)" [ref=f12e666]
+                          - button [ref=f12e670] [cursor=pointer]
+                        - generic [ref=f12e675]:
+                          - generic [ref=f12e676]: MR
+                          - generic [ref=f12e678]:
+                            - generic [ref=f12e679]: Michael Ramella
+                            - generic [ref=f12e681]: "NHS Number: 70986"
+                        - generic [ref=f12e683] [cursor=pointer]:
+                          - generic "Safeguarding concern (child)" [ref=f12e685]
+                          - generic [ref=f12e686]:
+                            - generic [ref=f12e687]: Description
+                            - generic "Example description" [ref=f12e688]
+                          - generic [ref=f12e689]:
+                            - generic [ref=f12e690]: Assigned to
+                            - paragraph [ref=f12e694]: Unassigned
+                          - generic [ref=f12e695]:
+                            - generic [ref=f12e696]: Author
+                            - generic [ref=f12e697]:
+                              - img "avatar" [ref=f12e700]
+                              - paragraph [ref=f12e701]:
+                                - generic [ref=f12e702]: Gareth
+                          - generic [ref=f12e703]:
+                            - generic [ref=f12e704]: Reviewer
+                            - paragraph [ref=f12e708]: No Reviewer
+                          - generic [ref=f12e709]:
+                            - generic [ref=f12e710]: Organisation
+                            - generic "General Practice (Blinx Demo Site)" [ref=f12e711]
+                          - generic [ref=f12e712]:
+                            - generic [ref=f12e713]: Column
+                            - generic [ref=f12e714]: Outpatient Clinic
+                          - generic [ref=f12e715]: Priority
+                          - generic [ref=f12e720]:
+                            - generic [ref=f12e721]: Status
+                            - generic [ref=f12e722]: None
+                          - generic [ref=f12e724]:
+                            - generic [ref=f12e725]:
+                              - generic [ref=f12e726]: Date Created
+                              - generic [ref=f12e727]: 10/07/2026 16:33
+                            - generic [ref=f12e728]:
+                              - generic [ref=f12e729]: Due Date
+                              - generic [ref=f12e730]: 17/07/2026 06:00
+                        - generic [ref=f12e731]:
+                          - button [ref=f12e732] [cursor=pointer]
+                          - button [ref=f12e737] [cursor=pointer]
+                  - generic [ref=f12e742]:
+                    - generic [ref=f12e745]:
+                      - generic:
+                        - generic [aria-hidden]:
+                          - generic:
+                            - generic:
+                              - progressbar
+                              - generic: Loading risk factors...
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: Total Score
+                                - generic: "0"
+                              - generic: High-Risk Conditions (0)
+                              - generic: Additional Risk Factors (0)
+                    - generic [ref=f12e750]:
+                      - generic [ref=f12e751]: Patient Communications
+                      - generic [ref=f12e752]:
+                        - generic [ref=f12e753]:
+                          - generic [ref=f12e754]: Total Communications
+                          - generic [ref=f12e755]: 2,528
+                        - generic [ref=f12e756]:
+                          - generic [ref=f12e757]: "Email: 172"
+                          - generic [ref=f12e760]: "SMS: 2,099"
+                      - generic [ref=f12e763]:
+                        - generic [ref=f12e764]:
+                          - generic [ref=f12e765]: Health Forms
+                          - generic [ref=f12e766]: 2,447
+                        - generic [ref=f12e767]:
+                          - generic [ref=f12e768]: "Completed: 1"
+                          - generic [ref=f12e771]: "Incomplete: 2,446"
+          - button "Scroll tabs left"
+          - button "Scroll tabs right" [ref=f12e774] [cursor=pointer]

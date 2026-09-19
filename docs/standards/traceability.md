@@ -34,7 +34,7 @@ Mỗi test result phải trả lời:
 
 ## Evidence Requirements
 
-- Screenshot/trace file path hoặc reference
+- Screenshot/trace file path hoặc reference; từ REPORT trở đi phải dùng durable path dưới `docs/tickets/<ticket-folder>/evidence/`, không dùng `test-results/`
 - Timestamp và environment
 - Role/permission context nếu liên quan
 - Test case ID và expected vs actual result

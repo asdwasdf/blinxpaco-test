@@ -1,0 +1,905 @@
+- generic [active] [ref=f6e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f6e3] [cursor=pointer]
+  - generic [ref=f6e8]:
+    - generic [ref=f6e9]:
+      - button "Expand sidebar" [ref=f6e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f6e11]
+      - generic [ref=f6e13]:
+        - img "Dashboards" [ref=f6e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f6e23] [cursor=pointer]
+        - img "Quick Send" [ref=f6e28] [cursor=pointer]
+        - img "Health Forms" [ref=f6e33] [cursor=pointer]
+        - img "Patient Search" [ref=f6e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f6e43] [cursor=pointer]
+        - img "case load management" [ref=f6e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f6e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f6e58] [cursor=pointer]
+        - img "Users" [ref=f6e63] [cursor=pointer]
+        - img "Configuration" [ref=f6e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f6e73] [cursor=pointer]
+        - generic [ref=f6e75] [cursor=pointer]
+      - button [ref=f6e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f6e84]
+    - generic [ref=f6e85]:
+      - generic [ref=f6e86]:
+        - generic [ref=f6e87]: 35m
+        - generic [ref=f6e92]:
+          - generic [ref=f6e95]:
+            - generic [ref=f6e96] [cursor=pointer]: TFN
+            - generic [ref=f6e98]:
+              - generic [ref=f6e99]: Test Fiona Nguyen
+              - generic [ref=f6e100]: Super Admin GB
+              - generic [ref=f6e102]: General Practice (Blinx Demo Site)
+          - generic [ref=f6e104]:
+            - generic [ref=f6e106]:
+              - textbox "Search patients by name or NHS number" [ref=f6e107]: Michael Ramella
+              - button "Clear search" [ref=f6e342] [cursor=pointer]
+            - generic [ref=f6e4305]:
+              - generic [ref=f6e4306]:
+                - generic [ref=f6e4307]: Results (2)
+                - generic [ref=f6e4308]: Consent & Actions
+              - generic [ref=f6e4309]:
+                - generic [ref=f6e4311] [cursor=pointer]:
+                  - generic [ref=f6e4313]:
+                    - generic [ref=f6e4314]: MR
+                    - generic [ref=f6e4317]:
+                      - generic [ref=f6e4318]:
+                        - generic [ref=f6e4324]:
+                          - generic [ref=f6e4325]: Michael Ramella
+                          - generic [ref=f6e4326]: "NHS No: 709 86"
+                        - generic [ref=f6e4327]: More Info
+                      - generic [ref=f6e4332]:
+                        - generic [ref=f6e4333]: 15/03/2024 (2 yo)
+                        - generic [ref=f6e4338]: "07379060817"
+                  - button "Patient actions menu" [ref=f6e4472]
+                - generic [ref=f6e4361] [cursor=pointer]:
+                  - generic [ref=f6e4363]:
+                    - generic [ref=f6e4364]: MR
+                    - generic [ref=f6e4367]:
+                      - generic [ref=f6e4368]:
+                        - generic [ref=f6e4373]:
+                          - generic [ref=f6e4374]: Michael Ramella
+                          - generic [ref=f6e4375]: "NHS No: 100 001 9932"
+                        - generic [ref=f6e4376]: More Info
+                      - generic [ref=f6e4381]: 01/01/1900 (126 yo)
+                  - button "Patient actions menu" [ref=f6e4477]
+              - generic [ref=f6e4404]:
+                - checkbox "Include deleted patients" [ref=f6e4406] [cursor=pointer]
+                - generic [ref=f6e4408] [cursor=pointer]: Include deleted patients
+          - generic [ref=f6e108]:
+            - button "More options" [ref=f6e110] [cursor=pointer]
+            - generic [ref=f6e114] [cursor=pointer]: "0"
+      - generic [ref=f6e118]:
+        - generic [ref=f6e120]:
+          - button "day" [ref=f6e122] [cursor=pointer]
+          - button "week" [ref=f6e126] [cursor=pointer]
+          - button "month" [ref=f6e130] [cursor=pointer]
+          - button "year" [ref=f6e134] [cursor=pointer]
+        - generic [ref=f6e135]:
+          - generic [ref=f6e136]:
+            - generic [ref=f6e137]:
+              - generic [ref=f6e142]:
+                - generic [ref=f6e145] [cursor=pointer]:
+                  - generic [ref=f6e146]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=f6e452]: Master Task Board Overview
+                  - button [ref=f6e148]
+                - generic [ref=f6e153]:
+                  - generic [ref=f6e455]: "0"
+                  - generic:
+                    - list
+                  - generic [ref=f6e155]: Completed 0
+              - generic [ref=f6e163]:
+                - generic [ref=f6e164]: Call Status
+                - img [ref=f6e170]:
+                  - generic [ref=f6e469]:
+                    - generic [ref=f6e470]: Calls Waiting
+                    - generic [ref=f6e471]: ConsultationsCompleted
+                    - generic [ref=f6e472]: Failed to Contact
+                    - generic [ref=f6e473]: active calls
+                  - generic [ref=f6e474]:
+                    - generic [ref=f6e475]: "0"
+                    - generic [ref=f6e476]: "60"
+                    - generic [ref=f6e477]: "120"
+                    - generic [ref=f6e478]: "180"
+                    - generic [ref=f6e479]: "240"
+                    - generic [ref=f6e480]: "300"
+            - generic [ref=f6e188]:
+              - generic [ref=f6e193]:
+                - generic [ref=f6e194]: Staff Status
+                - generic [ref=f6e197]:
+                  - list [ref=f6e199]:
+                    - listitem [ref=f6e200]: Available (75)
+                    - listitem [ref=f6e202]: F2F (65)
+                    - listitem [ref=f6e204]: Screening (50)
+                    - listitem [ref=f6e206]: Lunch (15)
+                    - listitem [ref=f6e208]: Away (50)
+                  - generic [ref=f6e210]: Out of a possible 132
+                - generic [ref=f6e239]: Coming soon
+              - generic [ref=f6e244]:
+                - generic [ref=f6e245]: Opel level
+                - generic [ref=f6e279]:
+                  - generic [ref=f6e280]: Level 2
+                  - generic [ref=f6e281]: Moderate Pressure
+                - generic [ref=f6e283]: Coming soon
+          - generic [ref=f6e287]:
+            - generic [ref=f6e288]:
+              - generic [ref=f6e289]:
+                - generic [ref=f6e290]: Staff Availability
+                - button "What do these statuses mean?" [ref=f6e291] [cursor=pointer]
+              - generic [ref=f6e295] [cursor=pointer]:
+                - generic [ref=f6e296]:
+                  - textbox: A - Z Last Name
+                - generic [ref=f6e298]: A - Z Last Name
+                - button [ref=f6e299]
+            - generic [ref=f6e302]:
+              - textbox "Search Clinicians..." [ref=f6e304]
+              - generic [ref=f6e305]:
+                - generic [ref=f6e306]: 1 on Rota
+                - generic [ref=f6e307]: Sat 19 Sept, 00:01
+            - generic [ref=f6e308]:
+              - button "Available (2)" [ref=f6e502] [cursor=pointer]
+              - button "On Leave (0)" [ref=f6e310] [cursor=pointer]
+            - generic [ref=f6e311]:
+              - generic [ref=f6e322]:
+                - generic [ref=f6e323]:
+                  - img "TEST STATUS · 2h 0m" [ref=f6e4975]
+                  - text: MTF
+                - button "Miss Test Fiona Nguyen Super Admin GB TEST STATUS · 2h 0m" [ref=f6e4976] [cursor=pointer]:
+                  - generic "Miss Test Fiona Nguyen" [ref=f6e327]
+                  - generic [ref=f6e328]:
+                    - generic [ref=f6e329]: Super Admin GB
+                    - generic [ref=f6e330]: TEST STATUS · 2h 0m
+                - generic "Coming soon — PACOmms user messaging" [ref=f6e331]:
+                  - button "Send Message" [disabled]
+              - generic [ref=f6e332]:
+                - generic [ref=f6e333]:
+                  - img "Logged Out · 20m" [ref=f6e4685]
+                  - text: MN
+                - button "MustafaDefault Nawaz GP Logged Out · 20m" [ref=f6e4686] [cursor=pointer]:
+                  - generic "MustafaDefault Nawaz" [ref=f6e337]
+                  - generic [ref=f6e338]:
+                    - generic [ref=f6e339]: GP
+                    - generic [ref=f6e340]: Logged Out · 20m
+                - generic "Coming soon — PACOmms user messaging" [ref=f6e341]:
+                  - button "Send Message" [disabled]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: Unknown (Unknown)" [ref=f6e4700]':
+    - generic [ref=f6e4702]:
+      - generic [ref=f6e4706]:
+        - img "Quick Send rocket icon" [ref=f6e4708]
+        - generic [ref=f6e4710]:
+          - generic [ref=f6e4711]:
+            - generic [ref=f6e4712]: Michael Ramella
+            - generic [ref=f6e4713]: "|"
+            - generic [ref=f6e4714]:
+              - generic [ref=f6e4715]: "NHS Nr:"
+              - generic [ref=f6e4716] [cursor=pointer]: "70986"
+            - button "View Patient Details" [ref=f6e4717] [cursor=pointer]
+            - generic [ref=f6e4720]:
+              - img "sms on file" [ref=f6e4723]
+              - img "email on file" [ref=f6e4726]
+          - generic [ref=f6e4727]:
+            - generic [ref=f6e4728]:
+              - generic [ref=f6e4729]: "Post Code:"
+              - generic [ref=f6e4730] [cursor=pointer]: L61PH
+            - generic [ref=f6e4731]:
+              - generic [ref=f6e4732]: "DOB:"
+              - generic [ref=f6e4733] [cursor=pointer]: Unknown (Unknown)
+      - button "Close" [ref=f6e4734] [cursor=pointer]
+    - generic [ref=f6e4737]:
+      - generic [ref=f6e4977]:
+        - generic [ref=f6e4978]:
+          - button [ref=f6e4979] [cursor=pointer]
+          - button [aria-hidden] [ref=f6e4982] [cursor=pointer]
+        - generic [ref=f6e4984]:
+          - paragraph [ref=f6e4985]: Select Campaign
+          - generic [ref=f6e4986]:
+            - generic [ref=f6e4988]:
+              - img "search icon" [ref=f6e4989]
+              - textbox "Search..." [ref=f6e4990]
+            - generic [ref=f6e4991] [cursor=pointer]:
+              - generic [ref=f6e4992]:
+                - textbox: By message type
+              - generic [ref=f6e4994]: A - Z
+              - button [ref=f6e4995]
+          - tree [ref=f6e5000]:
+            - treeitem "PAC1-6244 SMS SenderID to be \"NHSNoReply\"" [level=1] [ref=f6e5001]:
+              - generic [ref=f6e5005] [cursor=pointer]:
+                - generic [ref=f6e5006]: PAC1-6244 SMS SenderID to be "NHSNoReply"
+                - button "set favorite" [ref=f6e5008]
+            - treeitem "1377 G&A" [level=1] [ref=f6e5016]:
+              - generic [ref=f6e5020] [cursor=pointer]:
+                - generic [ref=f6e5021]: 1377 G&A
+                - button "set favorite" [ref=f6e5023]
+            - treeitem "1377 G&A - Test 2" [level=1] [ref=f6e5031]:
+              - generic [ref=f6e5035] [cursor=pointer]:
+                - generic [ref=f6e5036]: 1377 G&A - Test 2
+                - button "set favorite" [ref=f6e5038]
+            - treeitem "1377 G&A WITH HF" [level=1] [ref=f6e5046]:
+              - generic [ref=f6e5050] [cursor=pointer]:
+                - generic [ref=f6e5051]: 1377 G&A WITH HF
+                - button "set favorite" [ref=f6e5053]
+            - treeitem "1377 G&A WITH HF - HF Test 1" [level=1] [ref=f6e5061]:
+              - generic [ref=f6e5065] [cursor=pointer]:
+                - generic [ref=f6e5066]: 1377 G&A WITH HF - HF Test 1
+                - button "set favorite" [ref=f6e5068]
+            - treeitem "1428 25TH June QS" [level=1] [ref=f6e5076]:
+              - generic [ref=f6e5080] [cursor=pointer]:
+                - generic [ref=f6e5081]: 1428 25TH June QS
+                - button "set favorite" [ref=f6e5083]
+            - treeitem "1428 test 2 25th" [level=1] [ref=f6e5091]:
+              - generic [ref=f6e5095] [cursor=pointer]:
+                - generic [ref=f6e5096]: 1428 test 2 25th
+                - button "set favorite" [ref=f6e5098]
+            - treeitem "2295 - MAR - Guidance & Advice" [level=1] [ref=f6e5106]:
+              - generic [ref=f6e5110] [cursor=pointer]:
+                - generic [ref=f6e5111]: 2295 - MAR - Guidance & Advice
+                - button "set favorite" [ref=f6e5113]
+            - treeitem "27th 1377" [level=1] [ref=f6e5121]:
+              - generic [ref=f6e5125] [cursor=pointer]:
+                - generic [ref=f6e5126]: 27th 1377
+                - button "set favorite" [ref=f6e5128]
+            - treeitem "27th 1377 - G&A Body" [level=1] [ref=f6e5136]:
+              - generic [ref=f6e5140] [cursor=pointer]:
+                - generic [ref=f6e5141]: 27th 1377 - G&A Body
+                - button "set favorite" [ref=f6e5143]
+            - treeitem "6 July - Test Case 1" [level=1] [ref=f6e5151]:
+              - generic [ref=f6e5155] [cursor=pointer]:
+                - generic [ref=f6e5156]: 6 July - Test Case 1
+                - button "set favorite" [ref=f6e5158]
+            - treeitem "6 July - Test Case 1 - JD 2668 Guidance 3" [level=1] [ref=f6e5166]:
+              - generic [ref=f6e5170] [cursor=pointer]:
+                - generic [ref=f6e5171]: 6 July - Test Case 1 - JD 2668 Guidance 3
+                - button "set favorite" [ref=f6e5173]
+            - treeitem "6 July - Test Case 1 new" [level=1] [ref=f6e5181]:
+              - generic [ref=f6e5185] [cursor=pointer]:
+                - generic [ref=f6e5186]: 6 July - Test Case 1 new
+                - button "set favorite" [ref=f6e5188]
+            - treeitem "6 July - Test Case 3" [level=1] [ref=f6e5196]:
+              - generic [ref=f6e5200] [cursor=pointer]:
+                - generic [ref=f6e5201]: 6 July - Test Case 3
+                - button "set favorite" [ref=f6e5203]
+            - treeitem "6903 No Form First" [level=1] [ref=f6e5211]:
+              - generic [ref=f6e5215] [cursor=pointer]:
+                - generic [ref=f6e5216]: 6903 No Form First
+                - button "set favorite" [ref=f6e5218]
+            - treeitem "7-feb-general-camp" [level=1] [ref=f6e5226]:
+              - generic [ref=f6e5230] [cursor=pointer]:
+                - generic [ref=f6e5231]: 7-feb-general-camp
+                - button "set favorite" [ref=f6e5233]
+            - treeitem "AAAAAAAAAAAAAAAAAAAAAAAA" [level=1] [ref=f6e5241]:
+              - generic [ref=f6e5245] [cursor=pointer]:
+                - generic [ref=f6e5246]: AAAAAAAAAAAAAAAAAAAAAAAA
+                - button "set favorite" [ref=f6e5248]
+            - treeitem "Access kp" [level=1] [ref=f6e5256]:
+              - generic [ref=f6e5260] [cursor=pointer]:
+                - generic [ref=f6e5261]: Access kp
+                - button "set favorite" [ref=f6e5263]
+            - treeitem "All dynamic fields - 15/03" [level=1] [ref=f6e5271]:
+              - generic [ref=f6e5275] [cursor=pointer]:
+                - generic [ref=f6e5276]: All dynamic fields - 15/03
+                - button "set favorite" [ref=f6e5278]
+            - treeitem "An Appointment Has Been Made For You" [level=1] [ref=f6e5286]:
+              - generic [ref=f6e5290] [cursor=pointer]:
+                - generic [ref=f6e5291]: An Appointment Has Been Made For You
+                - button "set favorite" [ref=f6e5293]
+            - treeitem "AP 1377 26 June - Changed Footer - Testing the reverse" [level=1] [ref=f6e5301]:
+              - generic [ref=f6e5305] [cursor=pointer]:
+                - generic [ref=f6e5306]: AP 1377 26 June - Changed Footer - Testing the reverse
+                - button "set favorite" [ref=f6e5308]
+            - treeitem "AP 1377 26 June - Changed Footer - Testing the reverse" [level=1] [ref=f6e5316]:
+              - generic [ref=f6e5320] [cursor=pointer]:
+                - generic [ref=f6e5321]: AP 1377 26 June - Changed Footer - Testing the reverse
+                - button "set favorite" [ref=f6e5323]
+            - treeitem "AP 1377 26 June - Changed Footer - Testing the reverse" [level=1] [ref=f6e5331]:
+              - generic [ref=f6e5335] [cursor=pointer]:
+                - generic [ref=f6e5336]: AP 1377 26 June - Changed Footer - Testing the reverse
+                - button "set favorite" [ref=f6e5338]
+            - treeitem "ASTHMA FORM ABBI Test 09/06" [level=1] [ref=f6e5346]:
+              - generic [ref=f6e5350] [cursor=pointer]:
+                - generic [ref=f6e5351]: ASTHMA FORM ABBI Test 09/06
+                - button "set favorite" [ref=f6e5353]
+            - treeitem "at" [level=1] [ref=f6e5361]:
+              - generic [ref=f6e5365] [cursor=pointer]:
+                - generic [ref=f6e5366]: at
+                - button "set favorite" [ref=f6e5368]
+            - treeitem "att" [level=1] [ref=f6e5376]:
+              - generic [ref=f6e5380] [cursor=pointer]:
+                - generic [ref=f6e5381]: att
+                - button "set favorite" [ref=f6e5383]
+            - treeitem "BH-37920 Updated Version" [level=1] [ref=f6e5391]:
+              - generic [ref=f6e5395] [cursor=pointer]:
+                - generic [ref=f6e5396]: BH-37920 Updated Version
+                - button "set favorite" [ref=f6e5398]
+            - treeitem "Blank Canvas - Webinar TEST" [level=1] [ref=f6e5406]:
+              - generic [ref=f6e5410] [cursor=pointer]:
+                - generic [ref=f6e5411]: Blank Canvas - Webinar TEST
+                - button "set favorite" [ref=f6e5413]
+            - treeitem "Blinx Advice" [level=1] [ref=f6e5421]:
+              - generic [ref=f6e5425] [cursor=pointer]:
+                - generic [ref=f6e5426]: Blinx Advice
+                - button "set favorite" [ref=f6e5428]
+            - treeitem "Blood Test- day 2" [level=1] [ref=f6e5436]:
+              - generic [ref=f6e5440] [cursor=pointer]:
+                - generic [ref=f6e5441]: Blood Test- day 2
+                - button "set favorite" [ref=f6e5443]
+            - treeitem "Body Weight Quick Send" [level=1] [ref=f6e5451]:
+              - generic [ref=f6e5455] [cursor=pointer]:
+                - generic [ref=f6e5456]: Body Weight Quick Send
+                - button "set favorite" [ref=f6e5458]
+            - treeitem "Book Camp" [level=1] [ref=f6e5466]:
+              - generic [ref=f6e5470] [cursor=pointer]:
+                - generic [ref=f6e5471]: Book Camp
+                - button "set favorite" [ref=f6e5473]
+            - treeitem "Campaign Sharing Test" [level=1] [ref=f6e5481]:
+              - generic [ref=f6e5485] [cursor=pointer]:
+                - generic [ref=f6e5486]: Campaign Sharing Test
+                - button "set favorite" [ref=f6e5488]
+            - treeitem "cephas 579 shared" [level=1] [ref=f6e5496]:
+              - generic [ref=f6e5500] [cursor=pointer]:
+                - generic [ref=f6e5501]: cephas 579 shared
+                - button "set favorite" [ref=f6e5503]
+            - treeitem "charaterlimittest" [level=1] [ref=f6e5511]:
+              - generic [ref=f6e5515] [cursor=pointer]:
+                - generic [ref=f6e5516]: charaterlimittest
+                - button "set favorite" [ref=f6e5518]
+            - treeitem "Date change" [level=1] [ref=f6e5526]:
+              - generic [ref=f6e5530] [cursor=pointer]:
+                - generic [ref=f6e5531]: Date change
+                - button "set favorite" [ref=f6e5533]
+            - treeitem "Delete message template test video" [level=1] [ref=f6e5541]:
+              - generic [ref=f6e5545] [cursor=pointer]:
+                - generic [ref=f6e5546]: Delete message template test video
+                - button "set favorite" [ref=f6e5548]
+            - treeitem "Demo of edit 30/06" [level=1] [ref=f6e5556]:
+              - generic [ref=f6e5560] [cursor=pointer]:
+                - generic [ref=f6e5561]: Demo of edit 30/06
+                - button "set favorite" [ref=f6e5563]
+            - treeitem "DF - New QS testing template" [level=1] [ref=f6e5571]:
+              - generic [ref=f6e5575] [cursor=pointer]:
+                - generic [ref=f6e5576]: DF - New QS testing template
+                - button "set favorite" [ref=f6e5578]
+            - treeitem "DF fit note - example" [level=1] [ref=f6e5586]:
+              - generic [ref=f6e5590] [cursor=pointer]:
+                - generic [ref=f6e5591]: DF fit note - example
+                - button "set favorite" [ref=f6e5593]
+            - treeitem "DF tag inclusion exclusion test" [level=1] [ref=f6e5601]:
+              - generic [ref=f6e5605] [cursor=pointer]:
+                - generic [ref=f6e5606]: DF tag inclusion exclusion test
+                - button "set favorite" [ref=f6e5608]
+            - treeitem "Disco party" [level=1] [ref=f6e5616]:
+              - generic [ref=f6e5620] [cursor=pointer]:
+                - generic [ref=f6e5621]: Disco party
+                - button "set favorite" [ref=f6e5623]
+            - treeitem "Failed message 1" [level=1] [ref=f6e5631]:
+              - generic [ref=f6e5635] [cursor=pointer]:
+                - generic [ref=f6e5636]: Failed message 1
+                - button "set favorite" [ref=f6e5638]
+            - treeitem "Free Text (English)" [level=1] [ref=f6e5646]:
+              - generic [ref=f6e5650] [cursor=pointer]:
+                - generic [ref=f6e5651]: Free Text (English)
+                - button "set favorite" [ref=f6e5653]
+            - treeitem "Free Text (English) - Copy" [level=1] [ref=f6e5661]:
+              - generic [ref=f6e5665] [cursor=pointer]:
+                - generic [ref=f6e5666]: Free Text (English) - Copy
+                - button "set favorite" [ref=f6e5668]
+            - treeitem "Free Text (English) - Copy2" [level=1] [ref=f6e5676]:
+              - generic [ref=f6e5680] [cursor=pointer]:
+                - generic [ref=f6e5681]: Free Text (English) - Copy2
+                - button "set favorite" [ref=f6e5683]
+            - treeitem "Free Text (English) - with HF Jamal Test" [level=1] [ref=f6e5691]:
+              - generic [ref=f6e5695] [cursor=pointer]:
+                - generic [ref=f6e5696]: Free Text (English) - with HF Jamal Test
+                - button "set favorite" [ref=f6e5698]
+            - treeitem "Free Text (English) - with HF Jamal Test - Copy" [level=1] [ref=f6e5706]:
+              - generic [ref=f6e5710] [cursor=pointer]:
+                - generic [ref=f6e5711]: Free Text (English) - with HF Jamal Test - Copy
+                - button "set favorite" [ref=f6e5713]
+            - treeitem "Free Text No Invite" [level=1] [ref=f6e5721]:
+              - generic [ref=f6e5725] [cursor=pointer]:
+                - generic [ref=f6e5726]: Free Text No Invite
+                - button "set favorite" [ref=f6e5728]
+            - treeitem "Free text SMS" [level=1] [ref=f6e5736]:
+              - generic [ref=f6e5740] [cursor=pointer]:
+                - generic [ref=f6e5741]: Free text SMS
+                - button "set favorite" [ref=f6e5743]
+            - treeitem "Free text SMS - 5931 - BL - No availability" [level=1] [ref=f6e5751]:
+              - generic [ref=f6e5755] [cursor=pointer]:
+                - generic [ref=f6e5756]: Free text SMS - 5931 - BL - No availability
+                - button "set favorite" [ref=f6e5758]
+            - treeitem "Free text SMS - FJ" [level=1] [ref=f6e5766]:
+              - generic [ref=f6e5770] [cursor=pointer]:
+                - generic [ref=f6e5771]: Free text SMS - FJ
+                - button "set favorite" [ref=f6e5773]
+            - treeitem "Free text SMS - PAC1-5931 - BL" [level=1] [ref=f6e5781]:
+              - generic [ref=f6e5785] [cursor=pointer]:
+                - generic [ref=f6e5786]: Free text SMS - PAC1-5931 - BL
+                - button "set favorite" [ref=f6e5788]
+            - treeitem "Free text SMS - PAC1-5931 - BL NO AVAIL" [level=1] [ref=f6e5796]:
+              - generic [ref=f6e5800] [cursor=pointer]:
+                - generic [ref=f6e5801]: Free text SMS - PAC1-5931 - BL NO AVAIL
+                - button "set favorite" [ref=f6e5803]
+            - treeitem "Free text SMS - Really Long Message" [level=1] [ref=f6e5811]:
+              - generic [ref=f6e5815] [cursor=pointer]:
+                - generic [ref=f6e5816]: Free text SMS - Really Long Message
+                - button "set favorite" [ref=f6e5818]
+            - treeitem "GB MJ Single Send Campaign" [level=1] [ref=f6e5826]:
+              - generic [ref=f6e5830] [cursor=pointer]:
+                - generic [ref=f6e5831]: GB MJ Single Send Campaign
+                - button "set favorite" [ref=f6e5833]
+            - treeitem "General Health Questionnaire" [level=1] [ref=f6e5841]:
+              - generic [ref=f6e5845] [cursor=pointer]:
+                - generic [ref=f6e5846]: General Health Questionnaire
+                - button "set favorite" [ref=f6e5848]
+            - treeitem "Give your template the name you wish" [level=1] [ref=f6e5856]:
+              - generic [ref=f6e5860] [cursor=pointer]:
+                - generic [ref=f6e5861]: Give your template the name you wish
+                - button "set favorite" [ref=f6e5863]
+            - treeitem "GMSMC - First Recall template" [level=1] [ref=f6e5871]:
+              - generic [ref=f6e5875] [cursor=pointer]:
+                - generic [ref=f6e5876]: GMSMC - First Recall template
+                - button "set favorite" [ref=f6e5878]
+            - treeitem "GP Requested Appointment" [level=1] [ref=f6e5886]:
+              - generic [ref=f6e5890] [cursor=pointer]:
+                - generic [ref=f6e5891]: GP Requested Appointment
+                - button "set favorite" [ref=f6e5893]
+            - treeitem "GP Requested Appointment" [level=1] [ref=f6e5901]:
+              - generic [ref=f6e5905] [cursor=pointer]:
+                - generic [ref=f6e5906]: GP Requested Appointment
+                - button "set favorite" [ref=f6e5908]
+            - treeitem "Grande Fromage" [level=1] [ref=f6e5916]:
+              - generic [ref=f6e5920] [cursor=pointer]:
+                - generic [ref=f6e5921]: Grande Fromage
+                - button "set favorite" [ref=f6e5923]
+            - treeitem "hello" [level=1] [ref=f6e5931]:
+              - generic [ref=f6e5935] [cursor=pointer]:
+                - generic [ref=f6e5936]: hello
+                - button "set favorite" [ref=f6e5938]
+            - treeitem "How do i set up an quick send message (no appointment)" [level=1] [ref=f6e5946]:
+              - generic [ref=f6e5950] [cursor=pointer]:
+                - generic [ref=f6e5951]: How do i set up an quick send message (no appointment)
+                - button "set favorite" [ref=f6e5953]
+            - treeitem "Jamal - Demo to Manasa" [level=1] [ref=f6e5961]:
+              - generic [ref=f6e5965] [cursor=pointer]:
+                - generic [ref=f6e5966]: Jamal - Demo to Manasa
+                - button "set favorite" [ref=f6e5968]
+            - treeitem "Jamal - PAC1-5931 BL" [level=1] [ref=f6e5976]:
+              - generic [ref=f6e5980] [cursor=pointer]:
+                - generic [ref=f6e5981]: Jamal - PAC1-5931 BL
+                - button "set favorite" [ref=f6e5983]
+            - treeitem "Jamal - PAC1-5931 new" [level=1] [ref=f6e5991]:
+              - generic [ref=f6e5995] [cursor=pointer]:
+                - generic [ref=f6e5996]: Jamal - PAC1-5931 new
+                - button "set favorite" [ref=f6e5998]
+            - treeitem "Jamal - PAC1-5944" [level=1] [ref=f6e6006]:
+              - generic [ref=f6e6010] [cursor=pointer]:
+                - generic [ref=f6e6011]: Jamal - PAC1-5944
+                - button "set favorite" [ref=f6e6013]
+            - treeitem "Jamal - test" [level=1] [ref=f6e6021]:
+              - generic [ref=f6e6025] [cursor=pointer]:
+                - generic [ref=f6e6026]: Jamal - test
+                - button "set favorite" [ref=f6e6028]
+            - treeitem "Jamal Test (EMAIL AND SMS)" [level=1] [ref=f6e6036]:
+              - generic [ref=f6e6040] [cursor=pointer]:
+                - generic [ref=f6e6041]: Jamal Test (EMAIL AND SMS)
+                - button "set favorite" [ref=f6e6043]
+            - treeitem "JD 1265" [level=1] [ref=f6e6051]:
+              - generic [ref=f6e6055] [cursor=pointer]:
+                - generic [ref=f6e6056]: JD 1265
+                - button "set favorite" [ref=f6e6058]
+            - treeitem "JD 1724 Scheduled, QS + SMS + Email + HF - No Invite" [level=1] [ref=f6e6066]:
+              - generic [ref=f6e6070] [cursor=pointer]:
+                - generic [ref=f6e6071]: JD 1724 Scheduled, QS + SMS + Email + HF - No Invite
+                - button "set favorite" [ref=f6e6073]
+            - treeitem "Jersey - CCS - Normal Result" [level=1] [ref=f6e6081]:
+              - generic [ref=f6e6085] [cursor=pointer]:
+                - generic [ref=f6e6086]: Jersey - CCS - Normal Result
+                - button "set favorite" [ref=f6e6088]
+            - treeitem "Jersey - CCS - Normal Result - Copy" [level=1] [ref=f6e6096]:
+              - generic [ref=f6e6100] [cursor=pointer]:
+                - generic [ref=f6e6101]: Jersey - CCS - Normal Result - Copy
+                - button "set favorite" [ref=f6e6103]
+            - treeitem "Jersey - CCS - Normal Result - Copy123" [level=1] [ref=f6e6111]:
+              - generic [ref=f6e6115] [cursor=pointer]:
+                - generic [ref=f6e6116]: Jersey - CCS - Normal Result - Copy123
+                - button "set favorite" [ref=f6e6118]
+            - treeitem "Jersey - CCS - Normal Result - Copy1234" [level=1] [ref=f6e6126]:
+              - generic [ref=f6e6130] [cursor=pointer]:
+                - generic [ref=f6e6131]: Jersey - CCS - Normal Result - Copy1234
+                - button "set favorite" [ref=f6e6133]
+            - treeitem "Jersey - CCS - Normal Result - Copy12345" [level=1] [ref=f6e6141]:
+              - generic [ref=f6e6145] [cursor=pointer]:
+                - generic [ref=f6e6146]: Jersey - CCS - Normal Result - Copy12345
+                - button "set favorite" [ref=f6e6148]
+            - treeitem "Jersey - CCS - Normal Result -PAC2-2593" [level=1] [ref=f6e6156]:
+              - generic [ref=f6e6160] [cursor=pointer]:
+                - generic [ref=f6e6161]: Jersey - CCS - Normal Result -PAC2-2593
+                - button "set favorite" [ref=f6e6163]
+            - treeitem "JS 11/06" [level=1] [ref=f6e6171]:
+              - generic [ref=f6e6175] [cursor=pointer]:
+                - generic [ref=f6e6176]: JS 11/06
+                - button "set favorite" [ref=f6e6178]
+            - treeitem "JS test 09/06 2" [level=1] [ref=f6e6186]:
+              - generic [ref=f6e6190] [cursor=pointer]:
+                - generic [ref=f6e6191]: JS test 09/06 2
+                - button "set favorite" [ref=f6e6193]
+            - treeitem "JS2309 test" [level=1] [ref=f6e6201]:
+              - generic [ref=f6e6205] [cursor=pointer]:
+                - generic [ref=f6e6206]: JS2309 test
+                - button "set favorite" [ref=f6e6208]
+            - treeitem "Language variant" [level=1] [ref=f6e6216]:
+              - generic [ref=f6e6220] [cursor=pointer]:
+                - generic [ref=f6e6221]: Language variant
+                - button "set favorite" [ref=f6e6223]
+            - treeitem "last communication date test" [level=1] [ref=f6e6231]:
+              - generic [ref=f6e6235] [cursor=pointer]:
+                - generic [ref=f6e6236]: last communication date test
+                - button "set favorite" [ref=f6e6238]
+            - treeitem "LFT Blood Test Results - Standard" [level=1] [ref=f6e6246]:
+              - generic [ref=f6e6250] [cursor=pointer]:
+                - generic [ref=f6e6251]: LFT Blood Test Results - Standard
+                - button "set favorite" [ref=f6e6253]
+            - treeitem "Low Folate" [level=1] [ref=f6e6261]:
+              - generic [ref=f6e6265] [cursor=pointer]:
+                - generic [ref=f6e6266]: Low Folate
+                - button "set favorite" [ref=f6e6268]
+            - treeitem "Low on Vitamin D" [level=1] [ref=f6e6276]:
+              - generic [ref=f6e6280] [cursor=pointer]:
+                - generic [ref=f6e6281]: Low on Vitamin D
+                - button "set favorite" [ref=f6e6283]
+            - treeitem "Low vitamin D demo" [level=1] [ref=f6e6291]:
+              - generic [ref=f6e6295] [cursor=pointer]:
+                - generic [ref=f6e6296]: Low vitamin D demo
+                - button "set favorite" [ref=f6e6298]
+            - treeitem "MAX 3 TEST 4" [level=1] [ref=f6e6306]:
+              - generic [ref=f6e6310] [cursor=pointer]:
+                - generic [ref=f6e6311]: MAX 3 TEST 4
+                - button "set favorite" [ref=f6e6313]
+            - treeitem "MJ RH MR QS Test" [level=1] [ref=f6e6321]:
+              - generic [ref=f6e6325] [cursor=pointer]:
+                - generic [ref=f6e6326]: MJ RH MR QS Test
+                - button "set favorite" [ref=f6e6328]
+            - treeitem "mw campaign" [level=1] [ref=f6e6336]:
+              - generic [ref=f6e6340] [cursor=pointer]:
+                - generic [ref=f6e6341]: mw campaign
+                - button "set favorite" [ref=f6e6343]
+            - treeitem "New template - 03/12" [level=1] [ref=f6e6351]:
+              - generic [ref=f6e6355] [cursor=pointer]:
+                - generic [ref=f6e6356]: New template - 03/12
+                - button "set favorite" [ref=f6e6358]
+            - treeitem "NHSNoReply" [level=1] [ref=f6e6366]:
+              - generic [ref=f6e6370] [cursor=pointer]:
+                - generic [ref=f6e6371]: NHSNoReply
+                - button "set favorite" [ref=f6e6373]
+            - treeitem "NHSNoReply Tsst" [level=1] [ref=f6e6381]:
+              - generic [ref=f6e6385] [cursor=pointer]:
+                - generic [ref=f6e6386]: NHSNoReply Tsst
+                - button "set favorite" [ref=f6e6388]
+            - treeitem "No preivew" [level=1] [ref=f6e6396]:
+              - generic [ref=f6e6400] [cursor=pointer]:
+                - generic [ref=f6e6401]: No preivew
+                - button "set favorite" [ref=f6e6403]
+            - treeitem "OHS TEST" [level=1] [ref=f6e6411]:
+              - generic [ref=f6e6415] [cursor=pointer]:
+                - generic [ref=f6e6416]: OHS TEST
+                - button "set favorite" [ref=f6e6418]
+            - treeitem "Org Dynamic Test - 1" [level=1] [ref=f6e6426]:
+              - generic [ref=f6e6430] [cursor=pointer]:
+                - generic [ref=f6e6431]: Org Dynamic Test - 1
+                - button "set favorite" [ref=f6e6433]
+            - treeitem "Org Dynamic Test - 2" [level=1] [ref=f6e6441]:
+              - generic [ref=f6e6445] [cursor=pointer]:
+                - generic [ref=f6e6446]: Org Dynamic Test - 2
+                - button "set favorite" [ref=f6e6448]
+            - treeitem "Org Dynamic Test - Mike" [level=1] [ref=f6e6456]:
+              - generic [ref=f6e6460] [cursor=pointer]:
+                - generic [ref=f6e6461]: Org Dynamic Test - Mike
+                - button "set favorite" [ref=f6e6463]
+            - treeitem "PAC1-5931" [level=1] [ref=f6e6471]:
+              - generic [ref=f6e6475] [cursor=pointer]:
+                - generic [ref=f6e6476]: PAC1-5931
+                - button "set favorite" [ref=f6e6478]
+            - treeitem "PAC1-5931 - Invite with no availability" [level=1] [ref=f6e6486]:
+              - generic [ref=f6e6490] [cursor=pointer]:
+                - generic [ref=f6e6491]: PAC1-5931 - Invite with no availability
+                - button "set favorite" [ref=f6e6493]
+            - treeitem "PAC1-5931 - Jamal - test - A&G" [level=1] [ref=f6e6501]:
+              - generic [ref=f6e6505] [cursor=pointer]:
+                - generic [ref=f6e6506]: PAC1-5931 - Jamal - test - A&G
+                - button "set favorite" [ref=f6e6508]
+            - treeitem "PAC2-1769 - QS - G&A" [level=1] [ref=f6e6516]:
+              - generic [ref=f6e6520] [cursor=pointer]:
+                - generic [ref=f6e6521]: PAC2-1769 - QS - G&A
+                - button "set favorite" [ref=f6e6523]
+            - treeitem "PAC2-1769 QS - v1.2" [level=1] [ref=f6e6531]:
+              - generic [ref=f6e6535] [cursor=pointer]:
+                - generic [ref=f6e6536]: PAC2-1769 QS - v1.2
+                - button "set favorite" [ref=f6e6538]
+            - treeitem "PAC2-2419 EMAIL ONLY - v2" [level=1] [ref=f6e6546]:
+              - generic [ref=f6e6550] [cursor=pointer]:
+                - generic [ref=f6e6551]: PAC2-2419 EMAIL ONLY - v2
+                - button "set favorite" [ref=f6e6553]
+            - treeitem "PAC2-2593 Test 1" [level=1] [ref=f6e6561]:
+              - generic [ref=f6e6565] [cursor=pointer]:
+                - generic [ref=f6e6566]: PAC2-2593 Test 1
+                - button "set favorite" [ref=f6e6568]
+            - treeitem "PAC2-2593 Test 3" [level=1] [ref=f6e6576]:
+              - generic [ref=f6e6580] [cursor=pointer]:
+                - generic [ref=f6e6581]: PAC2-2593 Test 3
+                - button "set favorite" [ref=f6e6583]
+            - treeitem "PAC2-3510 (Guidance & Advice) (No Tag) (No invite or HF)" [level=1] [ref=f6e6591]:
+              - generic [ref=f6e6595] [cursor=pointer]:
+                - generic [ref=f6e6596]: PAC2-3510 (Guidance & Advice) (No Tag) (No invite or HF)
+                - button "set favorite" [ref=f6e6598]
+            - treeitem "PAC2-373" [level=1] [ref=f6e6606]:
+              - generic [ref=f6e6610] [cursor=pointer]:
+                - generic [ref=f6e6611]: PAC2-373
+                - button "set favorite" [ref=f6e6613]
+            - treeitem "PAC2-4683" [level=1] [ref=f6e6621]:
+              - generic [ref=f6e6625] [cursor=pointer]:
+                - generic [ref=f6e6626]: PAC2-4683
+                - button "set favorite" [ref=f6e6628]
+            - treeitem "PAC2-4683 Blank Canvas" [level=1] [ref=f6e6636]:
+              - generic [ref=f6e6640] [cursor=pointer]:
+                - generic [ref=f6e6641]: PAC2-4683 Blank Canvas
+                - button "set favorite" [ref=f6e6643]
+            - 'treeitem "PAC2-4683: Weight Management (Gateway Family Services)" [level=1] [ref=f6e6651]':
+              - generic [ref=f6e6655] [cursor=pointer]:
+                - generic [ref=f6e6656]: "PAC2-4683: Weight Management (Gateway Family Services)"
+                - button "set favorite" [ref=f6e6658]
+            - treeitem "PAC2-874 Test" [level=1] [ref=f6e6666]:
+              - generic [ref=f6e6670] [cursor=pointer]:
+                - generic [ref=f6e6671]: PAC2-874 Test
+                - button "set favorite" [ref=f6e6673]
+            - treeitem "PAC2-993 - Reminder Test" [level=1] [ref=f6e6681]:
+              - generic [ref=f6e6685] [cursor=pointer]:
+                - generic [ref=f6e6686]: PAC2-993 - Reminder Test
+                - button "set favorite" [ref=f6e6688]
+            - treeitem "Patient Reply 2" [level=1] [ref=f6e6696]:
+              - generic [ref=f6e6700] [cursor=pointer]:
+                - generic [ref=f6e6701]: Patient Reply 2
+                - button "set favorite" [ref=f6e6703]
+            - treeitem "PG Test for Performance" [level=1] [ref=f6e6711]:
+              - generic [ref=f6e6715] [cursor=pointer]:
+                - generic [ref=f6e6716]: PG Test for Performance
+                - button "set favorite" [ref=f6e6718]
+            - treeitem "pRACTICE CLOSURE 12" [level=1] [ref=f6e6726]:
+              - generic [ref=f6e6730] [cursor=pointer]:
+                - generic [ref=f6e6731]: pRACTICE CLOSURE 12
+                - button "set favorite" [ref=f6e6733]
+            - treeitem "QA-PAC2-4700-20260919-0001" [level=1] [ref=f6e6741]:
+              - generic [ref=f6e6745] [cursor=pointer]:
+                - generic [ref=f6e6746]: QA-PAC2-4700-20260919-0001
+                - button "set favorite" [ref=f6e6748]
+            - treeitem "QS QS" [level=1] [ref=f6e6756]:
+              - generic [ref=f6e6760] [cursor=pointer]:
+                - generic [ref=f6e6761]: QS QS
+                - button "set favorite" [ref=f6e6763]
+            - treeitem "QS Test" [level=1] [ref=f6e6771]:
+              - generic [ref=f6e6775] [cursor=pointer]:
+                - generic [ref=f6e6776]: QS Test
+                - button "set favorite" [ref=f6e6778]
+            - treeitem "Quick Send Message test GB 2" [level=1] [ref=f6e6786]:
+              - generic [ref=f6e6790] [cursor=pointer]:
+                - generic [ref=f6e6791]: Quick Send Message test GB 2
+                - button "set favorite" [ref=f6e6793]
+            - treeitem "Quick Send Template GB1" [level=1] [ref=f6e6801]:
+              - generic [ref=f6e6805] [cursor=pointer]:
+                - generic [ref=f6e6806]: Quick Send Template GB1
+                - button "set favorite" [ref=f6e6808]
+            - treeitem "Quick Send Template GB1" [level=1] [ref=f6e6816]:
+              - generic [ref=f6e6820] [cursor=pointer]:
+                - generic [ref=f6e6821]: Quick Send Template GB1
+                - button "set favorite" [ref=f6e6823]
+            - treeitem "Quick Send Test GB3" [level=1] [ref=f6e6831]:
+              - generic [ref=f6e6835] [cursor=pointer]:
+                - generic [ref=f6e6836]: Quick Send Test GB3
+                - button "set favorite" [ref=f6e6838]
+            - treeitem "Random Campaign Test With HF" [level=1] [ref=f6e6846]:
+              - generic [ref=f6e6850] [cursor=pointer]:
+                - generic [ref=f6e6851]: Random Campaign Test With HF
+                - button "set favorite" [ref=f6e6853]
+            - treeitem "reminder by mw" [level=1] [ref=f6e6861]:
+              - generic [ref=f6e6865] [cursor=pointer]:
+                - generic [ref=f6e6866]: reminder by mw
+                - button "set favorite" [ref=f6e6868]
+            - treeitem "RH QS Test 0510" [level=1] [ref=f6e6876]:
+              - generic [ref=f6e6880] [cursor=pointer]:
+                - generic [ref=f6e6881]: RH QS Test 0510
+                - button "set favorite" [ref=f6e6883]
+            - treeitem "RH Test Time QS" [level=1] [ref=f6e6891]:
+              - generic [ref=f6e6895] [cursor=pointer]:
+                - generic [ref=f6e6896]: RH Test Time QS
+                - button "set favorite" [ref=f6e6898]
+            - treeitem "Sadaf - Test Template" [level=1] [ref=f6e6906]:
+              - generic [ref=f6e6910] [cursor=pointer]:
+                - generic [ref=f6e6911]: Sadaf - Test Template
+                - button "set favorite" [ref=f6e6913]
+            - treeitem "Save new campaign - Testing" [level=1] [ref=f6e6921]:
+              - generic [ref=f6e6925] [cursor=pointer]:
+                - generic [ref=f6e6926]: Save new campaign - Testing
+                - button "set favorite" [ref=f6e6928]
+            - treeitem "Save new campaign - Testing - with HF" [level=1] [ref=f6e6936]:
+              - generic [ref=f6e6940] [cursor=pointer]:
+                - generic [ref=f6e6941]: Save new campaign - Testing - with HF
+                - button "set favorite" [ref=f6e6943]
+            - treeitem "Scheduled 3" [level=1] [ref=f6e6951]:
+              - generic [ref=f6e6955] [cursor=pointer]:
+                - generic [ref=f6e6956]: Scheduled 3
+                - button "set favorite" [ref=f6e6958]
+            - treeitem "SendingID Test" [level=1] [ref=f6e6966]:
+              - generic [ref=f6e6970] [cursor=pointer]:
+                - generic [ref=f6e6971]: SendingID Test
+                - button "set favorite" [ref=f6e6973]
+            - treeitem "Show 1505 more..." [level=1] [ref=f6e6981]
+            - treeitem "Show 85 more..." [level=1] [ref=f6e6985]
+            - treeitem "Side Effects of Allopurinol" [level=1] [ref=f6e6989]:
+              - generic [ref=f6e6993] [cursor=pointer]:
+                - generic [ref=f6e6994]: Side Effects of Allopurinol
+                - button "set favorite" [ref=f6e6996]
+            - treeitem "Side effects of Paracetamol" [level=1] [ref=f6e7004]:
+              - generic [ref=f6e7008] [cursor=pointer]:
+                - generic [ref=f6e7009]: Side effects of Paracetamol
+                - button "set favorite" [ref=f6e7011]
+            - treeitem "Smoking test" [level=1] [ref=f6e7019]:
+              - generic [ref=f6e7023] [cursor=pointer]:
+                - generic [ref=f6e7024]: Smoking test
+                - button "set favorite" [ref=f6e7026]
+            - treeitem "SNOMED CONSULT TEST 1" [level=1] [ref=f6e7034]:
+              - generic [ref=f6e7038] [cursor=pointer]:
+                - generic [ref=f6e7039]: SNOMED CONSULT TEST 1
+                - button "set favorite" [ref=f6e7041]
+            - treeitem "SNOMED CONSULT TEST 3" [level=1] [ref=f6e7049]:
+              - generic [ref=f6e7053] [cursor=pointer]:
+                - generic [ref=f6e7054]: SNOMED CONSULT TEST 3
+                - button "set favorite" [ref=f6e7056]
+            - treeitem "Start Date Test" [level=1] [ref=f6e7064]:
+              - generic [ref=f6e7068] [cursor=pointer]:
+                - generic [ref=f6e7069]: Start Date Test
+                - button "set favorite" [ref=f6e7071]
+            - treeitem "Tag - no codes" [level=1] [ref=f6e7079]:
+              - generic [ref=f6e7083] [cursor=pointer]:
+                - generic [ref=f6e7084]: Tag - no codes
+                - button "set favorite" [ref=f6e7086]
+            - treeitem "Test (updated due to duplicate name) updated 2" [level=1] [ref=f6e7094]:
+              - generic [ref=f6e7098] [cursor=pointer]:
+                - generic [ref=f6e7099]: Test (updated due to duplicate name) updated 2
+                - button "set favorite" [ref=f6e7101]
+            - treeitem "Test 04/02" [level=1] [ref=f6e7109]:
+              - generic [ref=f6e7113] [cursor=pointer]:
+                - generic [ref=f6e7114]: Test 04/02
+                - button "set favorite" [ref=f6e7116]
+            - treeitem "Test aaaa" [level=1] [ref=f6e7124]:
+              - generic [ref=f6e7128] [cursor=pointer]:
+                - generic [ref=f6e7129]: Test aaaa
+                - button "set favorite" [ref=f6e7131]
+            - treeitem "Test FHJ 201224" [level=1] [ref=f6e7139]:
+              - generic [ref=f6e7143] [cursor=pointer]:
+                - generic [ref=f6e7144]: Test FHJ 201224
+                - button "set favorite" [ref=f6e7146]
+            - treeitem "Test initial inv save to clin" [level=1] [ref=f6e7154]:
+              - generic [ref=f6e7158] [cursor=pointer]:
+                - generic [ref=f6e7159]: Test initial inv save to clin
+                - button "set favorite" [ref=f6e7161]
+            - treeitem "Test Results Video Explainer" [level=1] [ref=f6e7169]:
+              - generic [ref=f6e7173] [cursor=pointer]:
+                - generic [ref=f6e7174]: Test Results Video Explainer
+                - button "set favorite" [ref=f6e7176]
+            - treeitem "Test wording on modal" [level=1] [ref=f6e7184]:
+              - generic [ref=f6e7188] [cursor=pointer]:
+                - generic [ref=f6e7189]: Test wording on modal
+                - button "set favorite" [ref=f6e7191]
+            - treeitem "Test-JS-15-03" [level=1] [ref=f6e7199]:
+              - generic [ref=f6e7203] [cursor=pointer]:
+                - generic [ref=f6e7204]: Test-JS-15-03
+                - button "set favorite" [ref=f6e7206]
+            - treeitem "TEst12122025" [level=1] [ref=f6e7214]:
+              - generic [ref=f6e7218] [cursor=pointer]:
+                - generic [ref=f6e7219]: TEst12122025
+                - button "set favorite" [ref=f6e7221]
+            - treeitem "Test19609" [level=1] [ref=f6e7229]:
+              - generic [ref=f6e7233] [cursor=pointer]:
+                - generic [ref=f6e7234]: Test19609
+                - button "set favorite" [ref=f6e7236]
+            - treeitem "Test19609Test19609" [level=1] [ref=f6e7244]:
+              - generic [ref=f6e7248] [cursor=pointer]:
+                - generic [ref=f6e7249]: Test19609Test19609
+                - button "set favorite" [ref=f6e7251]
+            - treeitem "Testing 02/06" [level=1] [ref=f6e7259]:
+              - generic [ref=f6e7263] [cursor=pointer]:
+                - generic [ref=f6e7264]: Testing 02/06
+                - button "set favorite" [ref=f6e7266]
+            - treeitem "testing 18781" [level=1] [ref=f6e7274]:
+              - generic [ref=f6e7278] [cursor=pointer]:
+                - generic [ref=f6e7279]: testing 18781
+                - button "set favorite" [ref=f6e7281]
+            - treeitem "Tower House Practice - New Online Booking!" [level=1] [ref=f6e7289]:
+              - generic [ref=f6e7293] [cursor=pointer]:
+                - generic [ref=f6e7294]: Tower House Practice - New Online Booking!
+                - button "set favorite" [ref=f6e7296]
+            - treeitem "TR Logo - KS Test" [level=1] [ref=f6e7304]:
+              - generic [ref=f6e7308] [cursor=pointer]:
+                - generic [ref=f6e7309]: TR Logo - KS Test
+                - button "set favorite" [ref=f6e7311]
+            - treeitem "Translation Test Email" [level=1] [ref=f6e7319]:
+              - generic [ref=f6e7323] [cursor=pointer]:
+                - generic [ref=f6e7324]: Translation Test Email
+                - button "set favorite" [ref=f6e7326]
+            - treeitem "Vitamin D" [level=1] [ref=f6e7334]:
+              - generic [ref=f6e7338] [cursor=pointer]:
+                - generic [ref=f6e7339]: Vitamin D
+                - button "set favorite" [ref=f6e7341]
+            - treeitem "Vitamin D 123" [level=1] [ref=f6e7349]:
+              - generic [ref=f6e7353] [cursor=pointer]:
+                - generic [ref=f6e7354]: Vitamin D 123
+                - button "set favorite" [ref=f6e7356]
+            - treeitem "Vitamin D Message" [level=1] [ref=f6e7364]:
+              - generic [ref=f6e7368] [cursor=pointer]:
+                - generic [ref=f6e7369]: Vitamin D Message
+                - button "set favorite" [ref=f6e7371]
+            - treeitem "yoga reminder mar 6 6" [level=1] [ref=f6e7379]:
+              - generic [ref=f6e7383] [cursor=pointer]:
+                - generic [ref=f6e7384]: yoga reminder mar 6 6
+                - button "set favorite" [ref=f6e7386]
+            - treeitem "[Bootcamp] Generic Free Text With Name" [level=1] [ref=f6e7394]:
+              - generic [ref=f6e7398] [cursor=pointer]:
+                - generic [ref=f6e7399]: "[Bootcamp] Generic Free Text With Name"
+                - button "set favorite" [ref=f6e7401]
+            - treeitem "[Bootcamp] Generic Free Text With Name - Copy" [level=1] [ref=f6e7409]:
+              - generic [ref=f6e7413] [cursor=pointer]:
+                - generic [ref=f6e7414]: "[Bootcamp] Generic Free Text With Name - Copy"
+                - button "set favorite" [ref=f6e7416]
+      - generic [ref=f6e4738]:
+        - generic [ref=f6e4740]:
+          - generic [ref=f6e4741]:
+            - generic [ref=f6e4744] [cursor=pointer]: QA-PAC2-4700-20260919-0001
+            - generic [ref=f6e4745] [cursor=pointer]: (click to change)
+          - generic [ref=f6e4746]:
+            - generic [ref=f6e4747]: "Patient Reply:"
+            - button "Set up Patient Reply" [ref=f6e4748] [cursor=pointer]
+        - generic [ref=f6e4752]:
+          - generic [ref=f6e4754]:
+            - generic [ref=f6e4955]:
+              - generic [ref=f6e4956]:
+                - button "Preview" [ref=f6e4957] [cursor=pointer]
+                - button "Edit" [ref=f6e4958] [cursor=pointer]
+              - generic [ref=f6e4959]: "ADHD TEST Michael, complete your Health Form via the link below. Thanks, THE CORRECT PRACTICE {{{scheduler_link}}} QA-PAC2-4700-20260919-0001"
+              - generic [ref=f6e4962] [cursor=pointer]:
+                - generic:
+                  - generic "PACO Assist"
+            - generic:
+              - generic:
+                - button "Generate Virtual Consult Link":
+                  - generic [ref=f6e4966] [cursor=pointer]:
+                    - button [ref=f6e4967]
+                    - menu:
+                      - menuitem "Virtual Consult Link":
+                        - menuitem "Virtual Consult Link"
+                      - menuitem "Merge Fields":
+                        - menuitem "Merge Fields"
+          - generic [ref=f6e4886]:
+            - generic [ref=f6e4887]:
+              - generic [ref=f6e4888]: "Send as:"
+              - button "SMS enabled" [disabled] [ref=f6e4970]
+              - button "Enable Email" [ref=f6e4892] [cursor=pointer]
+            - generic [ref=f6e4895]:
+              - generic [ref=f6e4896]: "Preview:"
+              - button "Preview SMS" [ref=f6e4897] [cursor=pointer]
+              - button "Preview Email" [disabled] [ref=f6e4900]
+            - button "Copy to Email" [ref=f6e4971] [cursor=pointer]
+            - button "Resources" [ref=f6e4913] [cursor=pointer]
+      - generic "bottom-nav" [ref=f6e4925]:
+        - generic [ref=f6e4926]:
+          - button "quick-send-action" [ref=f6e4928] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=f6e4929]
+          - generic [ref=f6e4930]:
+            - button "tab-Campaign" [ref=f6e4931] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=f6e4933]: Campaign
+            - button "tab-Health Forms" [ref=f6e4934] [cursor=pointer]:
+              - generic "tab-Health Forms" [ref=f6e4936]: Health Forms
+            - button "tab-Files" [ref=f6e4937] [cursor=pointer]:
+              - generic "tab-Files" [ref=f6e4939]: Files
+            - button "tab-Booking Link" [ref=f6e4940] [cursor=pointer]:
+              - generic "tab-Booking Link" [ref=f6e4942]: Booking Link
+            - button "Save" [disabled]

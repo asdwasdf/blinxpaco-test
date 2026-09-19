@@ -71,7 +71,13 @@ test('rejects duplicate external key and symlink source', async () => {
   if (!result.ok) assert.equal(result.code, 'DUPLICATE_TICKET_KEY');
 
   const root2 = await project();
-  await symlink('/tmp', path.join(root2, 'ticket', 'PAC9-101-valid-ticket', 'attachments', 'link'));
+  const outsideTicket = path.join(root2, 'test-fixtures', 'outside-ticket');
+  await mkdir(outsideTicket, { recursive: true });
+  await symlink(
+    outsideTicket,
+    path.join(root2, 'ticket', 'PAC9-101-valid-ticket', 'attachments', 'link'),
+    process.platform === 'win32' ? 'junction' : 'dir',
+  );
   const linked = await discoverTicket(request(root2));
   assert.equal(linked.ok, false);
   if (!linked.ok) assert.equal(linked.code, 'UNSUPPORTED_SOURCE_ENTRY');

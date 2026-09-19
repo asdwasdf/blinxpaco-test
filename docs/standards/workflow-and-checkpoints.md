@@ -39,6 +39,8 @@ DISCOVER → INGEST → ANALYZE → LOCATE → EXPLORE → TEST_DESIGN
 
 `LOCATE` bắt buộc mặc định. Chỉ skip case không phụ thuộc UI và phải ghi lý do cụ thể.
 
+Không có timebox cứng để đổi correctness lấy tốc độ. Budget/ceiling chỉ chống runaway và tạo resume checkpoint. Khi thiếu role, test data, domain rule, expected result, auth, video rõ ràng hoặc baseline, dùng **Ask QA early**: nêu blocker, observation, evidence/timestamp, decision cần xác nhận, concrete choices và affected test cases.
+
 ## Idempotency Rules
 
 - Không cấp ID mới cho knowledge tương đương

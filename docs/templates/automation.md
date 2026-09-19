@@ -14,7 +14,12 @@
 
 | Test Case | Decision | Reason | Mutation | Approval |
 |---|---|---|---|---|
-| [TC-ID] | [Yes/Later/No/Blocked] | [reason] | [class] | [status] |
+| [TC-ID] | [Worth automating/Not worth automating/Later/Blocked] | [reason] | [class] | [status] |
+
+## Plugin-first Execution
+
+**Direct execution result:** [Pass/Fail/Blocked/Not Run/Inconclusive]
+**Why code is/is not valuable:** [reason]
 
 ## Automated Tests
 

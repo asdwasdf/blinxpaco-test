@@ -15,10 +15,10 @@ Write only `test-cases.md`; preserve final `## Tester notes`.
 1. Map stable case IDs to requirement IDs and expected-result basis.
 2. Assign relevant coverage, `Critical`/`High`/`Medium`/`Low` risk, and suggested priority.
 3. Record environment, role, preconditions, test data, steps, observable expected results, postconditions, and cleanup. For UI-dependent cases, optionally use matching `docs/product/workflows/*.md` for setup, data-state, route, safe-step, branch-coverage and mutation-boundary hints; keep expected results tied to requirement basis, never survey observation.
-4. Classify mutation `None`, `Temporary`, `Persistent`, `Destructive`, or `Unknown`; non-`None` requires approval.
+4. Classify mutation `None`, `Temporary`, `Persistent`, `Destructive`, or `Unknown`; trên configured dev host, non-`None` chạy trong approved scope với hostname guard và mutation ledger. Production luôn bị chặn.
 5. For UI-dependent cases record location status, ordered entry path, required context, environment, role, test-data category, mutation class and expected-result basis.
 6. Missing/stale/non-`Confirmed` location keeps the case `Preliminary` and automation `Blocked`; never add a guessed locator.
-7. Mark preliminary automation candidate; unknown rule becomes open question, never fabricated expected result.
+7. Mark preliminary automation candidate; unknown rule becomes open question, never fabricated expected result. Ask QA early với blocker, observation, evidence/timestamp, concrete choices và affected cases.
 8. If exploration is absent, mark maturity `Preliminary`.
 
 ## Direct invocation, stop, outcome

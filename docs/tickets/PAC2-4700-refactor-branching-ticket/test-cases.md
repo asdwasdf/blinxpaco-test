@@ -554,6 +554,213 @@
 **Evidence:** `test-results/PAC2-4700/execute/20260918-quicksend-base-vs-branch/summary.json`
 **Execution History:** 2026-09-18 — PASS trên base (chưa test branch)
 
+## Standard Cross-App Parity Suite
+
+Bộ này là execution contract chuẩn cho PAC2-4700. Mỗi case dùng cùng test data, action order và observable assertion trên mọi target có surface tương ứng. Không chuyển một assertion sang app khác nếu control không tồn tại.
+
+### Target matrix
+
+| Target | URL | App/surface | Vai trò trong so sánh |
+|---|---|---|---|
+| BASE-OS | `https://blinx.dev.blinxpaco-np.com/paco/dashboard` | PACO OS Quick Send | Baseline |
+| BRANCH-OS | `https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard` | PACO OS Quick Send | Branch parity |
+| BRANCH-CONNECT | `https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/` | PACO Connect | Cross-app parity khi có cùng surface |
+| BRANCH-GP | `https://pac2-4700-qs-only.dev.blinxpaco-np.com/` | GP `Scheduler Configuration` | Template parity subset |
+
+**Role:** `Super Admin GB`  
+**Shared patient:** patient test có tên `Michael Ramella`, phân biệt bằng NHS hiển thị kết thúc `709 86`; không ghi contact/clinical content vào evidence công khai.  
+**Prohibited on every target:** không click `Send Now`, không click `Schedule`.  
+**Mutation rule:** mỗi mutation dùng unique prefix `QA-PAC2-4700-<timestamp>`, ghi initial state, cleanup trong cùng run, reload/reopen để verify server-side. Cleanup fail phải dừng suite và ghi leftover identifier.
+
+### Applicability
+
+| Standard case | BASE-OS | BRANCH-OS | BRANCH-CONNECT | BRANCH-GP |
+|---|---:|---:|---:|---:|
+| STD-01 Route/header | Yes | Yes | Conditional: cùng patient Quick Send route | No |
+| STD-02 Campaign picker/search/sort | Yes | Yes | Yes khi campaign selector hiện diện | Yes, template selector variant |
+| STD-03 Compose/editor controls | Yes | Yes | Yes khi compose hiện diện | Yes, template open/render subset |
+| STD-04 Patient Information | Yes | Yes | Yes khi patient context hiện diện | N/A |
+| STD-05 Contact mutation + cleanup | Yes | Yes | Yes khi contact editor hiện diện | N/A |
+| STD-06 Health Forms add/remove | Yes | Yes | Yes khi tab hiện diện | N/A |
+| STD-07 Files/Attachments | Yes | Yes | Yes khi tab hiện diện | N/A |
+| STD-08 Booking Link config draft | Yes | Yes | Yes khi surface hiện diện | Scheduler/template subset only |
+| STD-09 Save validation/cleanup | Yes | Yes | Yes khi Save hiện diện | Template open only; không map sang campaign Save |
+| STD-10 Forbidden action guard | Yes | Yes | Yes | Yes |
+
+`Conditional` không được tự đổi thành `Fail`: nếu route/control khác app không tồn tại, ghi `Not Run` cùng exact location gap. Chỉ dùng `Fail` khi surface được xác nhận tồn tại và actual result sai expected basis.
+
+### PAC2-4700-STD-01 — Route, patient selection và header
+
+**Basis:** Observed route + REQ-PAC2-4700-001  
+**Mutation:** None
+
+1. Mở target URL và xác minh đúng app/branch landmark.
+2. Với patient app, search `Michael Ramella`; chọn result có NHS hiển thị kết thúc `709 86`.
+3. Mở `Patient actions menu` → `Quick Send`.
+4. Assert dialog visible, đúng patient, contact-channel indicators và postcode.
+5. Ghi DOB qua 3 lần mở mới; expected patient DOB phải ổn định, không `Unknown (Unknown)`.
+6. Đóng dialog giữa các sample; không save/send.
+
+**Result contract:** ghi từng sample, không chỉ majority. `Unknown (Unknown)` là `Fail` khi patient result đã có DOB xác định.
+
+### PAC2-4700-STD-02 — Campaign/template picker, search và sort
+
+**Basis:** REQ-PAC2-4700-001, REQ-PAC2-4700-007; sort options Observed  
+**Mutation:** Temporary UI state
+
+1. Mở campaign/template selector.
+2. Assert search control và current sort/default state.
+3. Mở sort dropdown; assert đủ option `By date (descending)`, `By date (ascending)`, `By message type`, `A - Z`, `Z - A` trên Quick Send surfaces.
+4. Chọn `A - Z`; capture toàn bộ visible item names, normalize trim/case, assert non-decreasing locale order.
+5. Search một campaign chung được chọn trước run; assert matching result.
+6. Chọn result, xác minh selected label/rendered content; không save.
+7. GP variant: chọn cùng email/SMS template family nếu tồn tại, click `Open` chỉ khi action không persist; compare rendered template type/content landmarks.
+8. Cleanup: đóng selector/dialog; reload target.
+
+### PAC2-4700-STD-03 — Compose/editor controls và local draft
+
+**Basis:** REQ-PAC2-4700-001, REQ-PAC2-4700-005  
+**Mutation:** Temporary draft
+
+1. Assert `Preview`, `Edit`, SMS/email toggle, subject, copy action, `Resources`, `Button`, `Templates`, merge-fields/virtual-consult control.
+2. Mở rồi đóng `Resources`, `Button`, `Templates`, merge fields; assert dialog/menu names và required fields.
+3. Click `Edit`; enable SMS nếu cần.
+4. Append marker `QA-PAC2-4700-<timestamp>` vào draft.
+5. Assert `Save` chuyển enabled chỉ sau content change.
+6. Remove marker; đóng dialog không save; reopen same campaign và assert marker không tồn tại.
+
+**Cleanup:** bắt buộc verify marker absent sau reopen. Không `Send Now`/`Schedule`.
+
+### PAC2-4700-STD-04 — Patient Information và search
+
+**Basis:** REQ-PAC2-4700-001, REQ-PAC2-4700-009  
+**Mutation:** None
+
+1. Click `View Patient Details`.
+2. Assert `Number`, `Email`, consent states và `Search all tabs...`.
+3. Assert 10 sections: `Personal Info`, `Significant Info`, `Allergies`, `Active Medications`, `Past Medications`, `Appointments`, `Active Problems`, `Significant Past Problems`, `Test Results`, `Attachments`.
+4. Search `blood`; record section count before/after, highlight count và auto-expanded state.
+5. Open each section and assert loading resolves to content or explicit empty state, không blank indefinite state.
+6. Close Patient Details.
+
+**Expected gap:** business behavior của `Search all tabs...` còn OQ-10; ghi actual `Pass/Fail` chỉ sau product-basis confirmation, trước đó `Inconclusive`.
+
+### PAC2-4700-STD-05 — Add/delete contact với cleanup
+
+**Basis:** Contact CRUD Observed; parity validation  
+**Mutation:** Persistent, approved for this run
+
+1. Record initial selected phone/email and full option identifiers needed for cleanup.
+2. Add unique phone test; save; assert success and option present after reopen.
+3. Restore original selected phone; delete only unique phone test; reopen/reload and assert absent.
+4. Add unique email test; save; assert success and option present after reopen.
+5. Restore original selected email; delete only unique email test; reopen/reload and assert absent.
+6. Compare validation, modal fields, toast and final state across applicable targets.
+
+**Stop rule:** không delete pre-existing contact. Nếu unique item không thể xác định chắc chắn, dừng cleanup và báo leftover; không đoán.
+
+### PAC2-4700-STD-06 — Health Forms add/remove
+
+**Basis:** REQ-PAC2-4700-002, REQ-PAC2-4700-009  
+**Mutation:** Temporary/Persistent depending backend; approved only with deterministic remove
+
+1. Record initial badge và added-form IDs/names.
+2. Open `Health Forms`; assert selector, `Add Health Form(s)` và current list.
+3. Chọn một designated QA form chưa added; add once.
+4. Assert badge/list increment đúng một và preview có content hoặc explicit empty state.
+5. Remove đúng designated QA form.
+6. Reload/reopen; assert badge/list bằng initial state.
+
+**Stop rule:** không dùng form đang tồn tại ban đầu; không tiếp tục nếu remove/cleanup action không rõ.
+
+### PAC2-4700-STD-07 — Files và patient attachments
+
+**Basis:** REQ-PAC2-4700-002, REQ-PAC2-4700-009  
+**Mutation:** None mặc định; upload ngoài suite chuẩn
+
+1. Open `Files`; assert `Add files from patient record`, `Select Attachment`, drag/drop area và `Browse or record video`.
+2. Open patient-record selector; inspect selectable attachment metadata without exposing patient content.
+3. Select preview-only item nếu selection không attach/persist; otherwise record `Not Run` at mutation boundary.
+4. Open `Attachments` under Patient Information; assert each item resolves to preview, download affordance hoặc explicit error.
+5. Close any new tab and return to modal.
+
+**Excluded:** upload/record video; chỉ thêm khi có sanitized fixture và deterministic delete.
+
+### PAC2-4700-STD-08 — Booking Link surface và draft configuration
+
+**Basis:** REQ-PAC2-4700-002, REQ-PAC2-4700-013  
+**Mutation:** Temporary draft; persistent only if `Save` is clicked
+
+1. Open `Booking Link`.
+2. Assert `Date & Time` hiển thị date range và time range hợp lệ.
+3. Assert `Refresh Availability` visible và enabled; không click nếu refresh có thể gọi external booking integration ngoài test scope.
+4. Assert đủ bốn group: `Face to Face Slot Type(s)`, `Phone Slot Type(s)`, `Video Slot Type(s)`, `Web Chat Slot Type(s)`.
+5. Assert `Select Clinician(s)` và `Select Location(s)` render selected values hoặc explicit empty state; mặc định chấp nhận `All Clinicians Included` và `All Locations Included`.
+6. Assert `Booking Notes (optional)` và `Confirmation/Reminder Message` render.
+7. Record initial selections và badge. Nhập unique booking-note marker `QA-PAC2-4700-BOOKING-<timestamp>` nếu field editable.
+8. Switch sang tab khác rồi quay lại; assert marker/selections giữ đúng local draft behavior, không unexpected reset.
+9. Clear marker, revert mọi selection về initial state; close/reopen và assert marker absent.
+10. Không click `Save`, `Send Now` hoặc `Schedule` trong parity probe.
+
+**Result contract:**
+- `Pass`: toàn bộ control bắt buộc ở steps 2–6 render đúng; draft behavior và cleanup ở steps 7–9 đúng khi field editable.
+- `Fail`: thiếu một trong bốn slot-type group, clinician/location hoặc notes/message control trên surface đã Confirmed; hoặc cleanup không khôi phục initial state.
+- `Blocked`: surface loading không kết thúc hoặc deterministic cleanup không rõ trước mutation.
+- Không còn assertion riêng cho `EMIS`; kiểm theo observable `Booking Link` controls trên cùng surface.
+
+### PAC2-4700-STD-09 — Save validation, update/new and cleanup
+
+**Basis:** REQ-PAC2-4700-001, REQ-PAC2-4700-004; duplicate validation Observed  
+**Mutation:** Persistent, approved for this run
+
+1. Make unique local content change; assert `Save` enabled.
+2. Open Save flow; record available modes (`Update existing`, `Save as New`) and required fields.
+3. Duplicate-name subcase: use known existing QA name; assert duplicate validation and no new record.
+4. New-record subcase: create `QA-PAC2-4700-<timestamp>` with matching patient-facing name.
+5. Reopen selector and assert exactly one new record with expected type/content.
+6. Delete the unique record using explicit delete action.
+7. Reload/reopen selector and assert record absent.
+
+**Stop rule:** nếu UI không có deterministic delete, không thực hiện step 4; result `Blocked`, không để persistent campaign.
+
+### PAC2-4700-STD-10 — Forbidden action guard và final cleanup
+
+**Basis:** tester scope  
+**Mutation:** None
+
+1. Throughout run, never invoke `quick-send-action` if it exposes `Send Now`/`Schedule`, except read-only inspection that cannot trigger either action.
+2. Assert no success toast/network state indicating message send or scheduling occurred.
+3. Reopen patient and all mutated surfaces.
+4. Verify every unique test marker absent and initial badge/contact/campaign state restored.
+5. Record leftover identifiers; any leftover makes run `Blocked` or `Fail` per observed cleanup failure, never `Pass`.
+
+### Standard execution record
+
+Mỗi target/case phải ghi:
+
+| Field | Required value |
+|---|---|
+| Target | BASE-OS / BRANCH-OS / BRANCH-CONNECT / BRANCH-GP |
+| URL | Exact final URL sau redirect |
+| Timestamp | ISO-8601 |
+| Role | Exact visible role |
+| Initial state | Counts/selections before action |
+| Test data | Unique marker hoặc designated fixture |
+| Actual | Observable UI result |
+| Result | `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive` |
+| Mutation | None/Temporary/Persistent/Destructive/Unknown |
+| Cleanup | Action + reload/reopen verification |
+| Leftover | Exact test identifier hoặc `None` |
+| Evidence | Screenshot/log path đã redacted |
+
+### Execution order
+
+1. BASE-OS chạy STD-01..10 để tạo baseline.
+2. BRANCH-OS chạy cùng data contract và order.
+3. BRANCH-CONNECT chạy applicable cases; gap ghi `Not Run`, không thay bằng case khác.
+4. BRANCH-GP chạy STD-02/03/08 subset theo template/scheduler surface; các patient-only cases `Not Run`.
+5. So sánh normalized result theo case ID; khác biệt phải ghi baseline actual, branch actual và provenance.
+
 ## Open Questions and Blockers
 
 | ID | Question | Blocker | Owner |

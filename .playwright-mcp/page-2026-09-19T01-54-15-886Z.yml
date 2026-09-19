@@ -1,0 +1,191 @@
+- generic [ref=f40e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f40e8] [cursor=pointer]
+  - generic [ref=f40e11]:
+    - generic [ref=f40e12]:
+      - generic [ref=f40e13]:
+        - button "Expand sidebar" [ref=f40e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f40e15]
+        - generic [ref=f40e17]:
+          - img "Dashboards" [ref=f40e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f40e27] [cursor=pointer]
+          - img "Quick Send" [ref=f40e32] [cursor=pointer]
+          - img "Health Forms" [ref=f40e37] [cursor=pointer]
+          - img "Patient Search" [ref=f40e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f40e47] [cursor=pointer]
+          - img "case load management" [ref=f40e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f40e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f40e62] [cursor=pointer]
+          - img "Users" [ref=f40e67] [cursor=pointer]
+          - img "Configuration" [ref=f40e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f40e77] [cursor=pointer]
+          - generic [ref=f40e79] [cursor=pointer]
+        - button [ref=f40e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f40e88]
+      - generic [ref=f40e93]:
+        - paragraph [ref=f40e96]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f40e97]:
+          - generic [ref=f40e98]: Analytics
+          - generic [ref=f40e103]: Comms Hub
+          - generic [ref=f40e108]: Web Chat & Video
+          - generic [ref=f40e113]: Patient Search
+          - generic [ref=f40e118]: Health Forms
+          - generic [ref=f40e123]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f40e128]:
+      - generic [ref=f40e130]:
+        - generic [ref=f40e133]:
+          - generic [ref=f40e134]: TFN
+          - generic [ref=f40e136]:
+            - generic [ref=f40e137]: Test Fiona Nguyen
+            - generic [ref=f40e138]: Super Admin GB
+            - generic [ref=f40e140]: General Practice (Blinx Demo Site)
+        - generic [ref=f40e142]:
+          - generic [ref=f40e144]:
+            - textbox "Search..." [ref=f40e145]: Michael Ramella
+            - button "Clear search" [ref=f40e158] [cursor=pointer]
+          - generic [ref=f40e169]:
+            - generic [ref=f40e170]:
+              - generic [ref=f40e171]: Results (2)
+              - generic [ref=f40e172]: Consent & Actions
+            - generic [ref=f40e173]:
+              - generic [ref=f40e175] [cursor=pointer]:
+                - generic [ref=f40e177]:
+                  - generic [ref=f40e178]: MR
+                  - generic [ref=f40e181]:
+                    - generic [ref=f40e182]:
+                      - generic [ref=f40e188]:
+                        - generic [ref=f40e189]: Michael Ramella
+                        - generic [ref=f40e190]: "NHS No: 709 86"
+                      - generic [ref=f40e191]: More Info
+                    - generic [ref=f40e196]:
+                      - generic [ref=f40e197]: 15/03/2024 (2 yo)
+                      - generic [ref=f40e202]: "07379060817"
+                - button "Patient actions menu" [ref=f40e283]
+              - generic [ref=f40e225] [cursor=pointer]:
+                - generic [ref=f40e227]:
+                  - generic [ref=f40e228]: MR
+                  - generic [ref=f40e231]:
+                    - generic [ref=f40e232]:
+                      - generic [ref=f40e237]:
+                        - generic [ref=f40e238]: Michael Ramella
+                        - generic [ref=f40e239]: "NHS No: 100 001 9932"
+                      - generic [ref=f40e240]: More Info
+                    - generic [ref=f40e245]: 01/01/1900 (126 yo)
+                - button "Patient actions menu" [ref=f40e288]
+            - generic [ref=f40e267]:
+              - generic [ref=f40e268]:
+                - checkbox "Include deleted patients" [ref=f40e270] [cursor=pointer]
+                - generic [ref=f40e272] [cursor=pointer]: Include deleted patients
+              - generic [ref=f40e273]:
+                - generic [ref=f40e274]: PACO Patient(s)
+                - checkbox [ref=f40e276]:
+                  - switch [ref=f40e277] [cursor=pointer]
+                - generic [ref=f40e278]: Sync From Other EPR
+        - generic [ref=f40e146]:
+          - button "More options" [ref=f40e148] [cursor=pointer]
+          - generic [ref=f40e154] [cursor=pointer]
+          - generic [ref=f40e155] [cursor=pointer]: "0"
+  - alert [ref=f40e6]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: 15/03/2024 (2 years old)" [ref=f40e290]':
+    - generic [ref=f40e291]:
+      - generic [ref=f40e295]:
+        - img "Quick Send rocket icon" [ref=f40e297]
+        - generic [ref=f40e299]:
+          - generic [ref=f40e300]:
+            - generic [ref=f40e301]: Michael Ramella
+            - generic [ref=f40e302]: "|"
+            - generic [ref=f40e303]:
+              - generic [ref=f40e304]: "NHS Nr:"
+              - generic [ref=f40e305] [cursor=pointer]: "70986"
+            - button "View Patient Details" [active] [ref=f40e306] [cursor=pointer]
+            - generic [ref=f40e309]:
+              - img "sms on file" [ref=f40e312]
+              - img "email on file" [ref=f40e315]
+          - generic [ref=f40e316]:
+            - generic [ref=f40e317]:
+              - generic [ref=f40e318]: "Post Code:"
+              - generic [ref=f40e319] [cursor=pointer]: L61PH
+            - generic [ref=f40e320]:
+              - generic [ref=f40e321]: "DOB:"
+              - generic [ref=f40e322] [cursor=pointer]: 15/03/2024 (2 years old)
+      - button "Close" [ref=f40e323] [cursor=pointer]
+    - generic [ref=f40e326]:
+      - generic [ref=f40e429]:
+        - heading "Booking Link" [level=2] [ref=f40e430]
+        - generic [ref=f40e432]:
+          - button "Date & Time 19/09/2026 - 19/09/2026 | 08:53 - 23:59" [ref=f40e435] [cursor=pointer]:
+            - generic [ref=f40e436]:
+              - generic [ref=f40e440]: Date & Time
+              - generic [ref=f40e441]:
+                - generic [ref=f40e451]: 19/09/2026 - 19/09/2026
+                - text: "|"
+                - generic [ref=f40e452]: 08:53 - 23:59
+          - button "Refresh Availability" [ref=f40e455] [cursor=pointer]
+        - generic [ref=f40e460]:
+          - generic [ref=f40e461]:
+            - button [ref=f40e462] [cursor=pointer]:
+              - img "face to face" [ref=f40e464]
+            - generic [ref=f40e466]:
+              - status "Loading" [ref=f40e468]
+              - generic:
+                - generic:
+                  - combobox [disabled]
+                - generic: Face to Face Slot Type(s)
+          - generic [ref=f40e478]:
+            - button [ref=f40e479] [cursor=pointer]:
+              - img "video" [ref=f40e481]
+            - generic [ref=f40e483]:
+              - status "Loading" [ref=f40e485]
+              - generic:
+                - generic:
+                  - combobox [disabled]
+                - generic: Phone Slot Type(s)
+          - generic [ref=f40e495]:
+            - button [ref=f40e496] [cursor=pointer]:
+              - img "video" [ref=f40e498]
+            - generic [ref=f40e500]:
+              - status "Loading" [ref=f40e502]
+              - generic:
+                - generic:
+                  - combobox [disabled]
+                - generic: Video Slot Type(s)
+          - generic [ref=f40e512]:
+            - button [ref=f40e513] [cursor=pointer]:
+              - img "web chat" [ref=f40e515]
+            - generic [ref=f40e517]:
+              - status "Loading" [ref=f40e519]
+              - generic:
+                - generic:
+                  - combobox [disabled]
+                - generic: Web Chat Slot Type(s)
+        - generic "clinician-locations" [ref=f40e529]:
+          - generic [ref=f40e530]:
+            - generic [ref=f40e531]: Select Clinician(s)
+            - generic [ref=f40e532] [cursor=pointer]:
+              - generic:
+                - combobox
+              - generic [ref=f40e533]: All Clinicians Included
+          - generic [ref=f40e539]:
+            - generic [ref=f40e540]: Select Location(s)
+            - generic [ref=f40e541] [cursor=pointer]:
+              - generic:
+                - combobox
+              - generic [ref=f40e542]: All Locations Included
+        - generic [ref=f40e548]:
+          - generic [ref=f40e549]: Booking Notes (optional)
+          - textbox "Type Your Booking Notes here..." [ref=f40e550]
+        - button "Confirmation/Reminder Message" [ref=f40e556] [cursor=pointer]
+      - generic "bottom-nav" [ref=f40e399]:
+        - generic [ref=f40e400]:
+          - button "quick-send-action" [ref=f40e402] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=f40e403]
+          - generic [ref=f40e404]:
+            - button "tab-Campaign" [ref=f40e405] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=f40e407]: Campaign
+            - button "tab-Health Forms" [ref=f40e560] [cursor=pointer]:
+              - generic "tab-Health Forms" [ref=f40e421]: Health Forms
+            - button "tab-Files" [ref=f40e422] [cursor=pointer]:
+              - generic "tab-Files" [ref=f40e424]: Files
+            - button "tab-Booking Link" [ref=f40e425] [cursor=pointer]:
+              - generic "tab-Booking Link" [ref=f40e427]: Booking Link
+            - button "Save" [disabled]

@@ -1,0 +1,166 @@
+- generic [ref=f10e5]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f10e2] [cursor=pointer]
+  - generic [ref=f10e8]:
+    - generic [ref=f10e9]:
+      - button "Expand sidebar" [ref=f10e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f10e11]
+      - generic [ref=f10e13]:
+        - img "Dashboards" [ref=f10e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f10e23] [cursor=pointer]
+        - img "Quick Send" [ref=f10e28] [cursor=pointer]
+        - img "Health Forms" [ref=f10e33] [cursor=pointer]
+        - img "Patient Search" [ref=f10e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f10e43] [cursor=pointer]
+        - img "case load management" [ref=f10e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f10e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f10e58] [cursor=pointer]
+        - img "Users" [ref=f10e63] [cursor=pointer]
+        - img "Configuration" [ref=f10e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f10e73] [cursor=pointer]
+        - generic [ref=f10e75] [cursor=pointer]
+      - button [ref=f10e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f10e84]
+    - generic [ref=f10e85]:
+      - generic [ref=f10e86]:
+        - generic [ref=f10e87]: 0m
+        - generic [ref=f10e92]:
+          - generic [ref=f10e95]:
+            - generic [ref=f10e96] [cursor=pointer]: TFN
+            - generic [ref=f10e98]:
+              - generic [ref=f10e99]: Test Fiona Nguyen
+              - generic [ref=f10e100]: Super Admin GB
+              - generic [ref=f10e102]: General Practice (Blinx Demo Site)
+          - generic [ref=f10e104]:
+            - generic [ref=f10e106]:
+              - textbox "Search patients by name or NHS number" [active] [ref=f10e107]: Michael Ramella
+              - button "Clear search" [ref=f10e309] [cursor=pointer]
+            - generic [ref=f10e382]:
+              - generic [ref=f10e383]:
+                - generic [ref=f10e384]: Results (2)
+                - generic [ref=f10e385]: Consent & Actions
+              - generic [ref=f10e386]:
+                - generic [ref=f10e388] [cursor=pointer]:
+                  - generic [ref=f10e390]:
+                    - generic [ref=f10e391]: MR
+                    - generic [ref=f10e394]:
+                      - generic [ref=f10e395]:
+                        - generic [ref=f10e401]:
+                          - generic [ref=f10e402]: Michael Ramella
+                          - generic [ref=f10e403]: "NHS No: 709 86"
+                        - generic [ref=f10e404]: More Info
+                      - generic [ref=f10e409]:
+                        - generic [ref=f10e410]: 15/03/2024 (2 yo)
+                        - generic [ref=f10e415]: "07379060817"
+                  - button "Patient actions menu" [ref=f10e435]
+                - generic [ref=f10e438] [cursor=pointer]:
+                  - generic [ref=f10e440]:
+                    - generic [ref=f10e441]: MR
+                    - generic [ref=f10e444]:
+                      - generic [ref=f10e445]:
+                        - generic [ref=f10e450]:
+                          - generic [ref=f10e451]: Michael Ramella
+                          - generic [ref=f10e452]: "NHS No: 100 001 9932"
+                        - generic [ref=f10e453]: More Info
+                      - generic [ref=f10e458]: 01/01/1900 (126 yo)
+                  - button "Patient actions menu" [ref=f10e479]
+              - generic [ref=f10e481]:
+                - checkbox "Include deleted patients" [ref=f10e483] [cursor=pointer]
+                - generic [ref=f10e485] [cursor=pointer]: Include deleted patients
+          - generic [ref=f10e108]:
+            - button "More options" [ref=f10e110] [cursor=pointer]
+            - generic [ref=f10e114] [cursor=pointer]: "0"
+      - generic [ref=f10e118]:
+        - generic [ref=f10e120]:
+          - button "day" [ref=f10e122] [cursor=pointer]
+          - button "week" [ref=f10e126] [cursor=pointer]
+          - button "month" [ref=f10e130] [cursor=pointer]
+          - button "year" [ref=f10e134] [cursor=pointer]
+        - generic [ref=f10e135]:
+          - generic [ref=f10e136]:
+            - generic [ref=f10e137]:
+              - generic [ref=f10e142]:
+                - generic [ref=f10e145] [cursor=pointer]:
+                  - generic [ref=f10e146]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=f10e320]: Master Task Board Overview
+                  - button [ref=f10e148]
+                - generic [ref=f10e153]:
+                  - generic [ref=f10e486]: "0"
+                  - generic:
+                    - list
+                  - generic [ref=f10e155]: Completed 0
+              - generic [ref=f10e163]:
+                - generic [ref=f10e164]: Call Status
+                - img [ref=f10e170]:
+                  - generic [ref=f10e326]:
+                    - generic [ref=f10e327]: Calls Waiting
+                    - generic [ref=f10e328]: ConsultationsCompleted
+                    - generic [ref=f10e329]: Failed to Contact
+                    - generic [ref=f10e330]: active calls
+                  - generic [ref=f10e331]:
+                    - generic [ref=f10e332]: "0"
+                    - generic [ref=f10e333]: "60"
+                    - generic [ref=f10e334]: "120"
+                    - generic [ref=f10e335]: "180"
+                    - generic [ref=f10e336]: "240"
+                    - generic [ref=f10e337]: "300"
+            - generic [ref=f10e188]:
+              - generic [ref=f10e193]:
+                - generic [ref=f10e194]: Staff Status
+                - generic [ref=f10e197]:
+                  - list [ref=f10e199]:
+                    - listitem [ref=f10e200]: Available (75)
+                    - listitem [ref=f10e202]: F2F (65)
+                    - listitem [ref=f10e204]: Screening (50)
+                    - listitem [ref=f10e206]: Lunch (15)
+                    - listitem [ref=f10e208]: Away (50)
+                  - generic [ref=f10e210]: Out of a possible 132
+                - generic [ref=f10e239]: Coming soon
+              - generic [ref=f10e244]:
+                - generic [ref=f10e245]: Opel level
+                - generic [ref=f10e279]:
+                  - generic [ref=f10e280]: Level 2
+                  - generic [ref=f10e281]: Moderate Pressure
+                - generic [ref=f10e283]: Coming soon
+          - generic [ref=f10e287]:
+            - generic [ref=f10e288]:
+              - generic [ref=f10e289]:
+                - generic [ref=f10e290]: Staff Availability
+                - button "What do these statuses mean?" [ref=f10e291] [cursor=pointer]
+              - generic [ref=f10e295] [cursor=pointer]:
+                - generic [ref=f10e296]:
+                  - textbox: A - Z Last Name
+                - generic [ref=f10e298]: A - Z Last Name
+                - button [ref=f10e299]
+            - generic [ref=f10e302]:
+              - textbox "Search Clinicians..." [ref=f10e304]
+              - generic [ref=f10e305]:
+                - generic [ref=f10e306]: 1 on Rota
+                - generic [ref=f10e307]: Sat 19 Sept, 00:15
+            - generic [ref=f10e359]:
+              - button "Available (2)" [ref=f10e360] [cursor=pointer]
+              - button "On Leave (0)" [ref=f10e361] [cursor=pointer]
+            - generic [ref=f10e308]:
+              - generic [ref=f10e362]:
+                - generic [ref=f10e363]:
+                  - img "TEST STATUS · 2h 13m" [ref=f10e364]
+                  - text: MTF
+                - button "Miss Test Fiona Nguyen Super Admin GB TEST STATUS · 2h 13m" [ref=f10e366] [cursor=pointer]:
+                  - generic "Miss Test Fiona Nguyen" [ref=f10e367]
+                  - generic [ref=f10e368]:
+                    - generic [ref=f10e369]: Super Admin GB
+                    - generic [ref=f10e370]: TEST STATUS · 2h 13m
+                - generic "Coming soon — PACOmms user messaging" [ref=f10e371]:
+                  - button "Send Message" [disabled]
+              - generic [ref=f10e372]:
+                - generic [ref=f10e373]:
+                  - img "Logged Out · 34m" [ref=f10e374]
+                  - text: MN
+                - button "MustafaDefault Nawaz GP Logged Out · 34m" [ref=f10e376] [cursor=pointer]:
+                  - generic "MustafaDefault Nawaz" [ref=f10e377]
+                  - generic [ref=f10e378]:
+                    - generic [ref=f10e379]: GP
+                    - generic [ref=f10e380]: Logged Out · 34m
+                - generic "Coming soon — PACOmms user messaging" [ref=f10e381]:
+                  - button "Send Message" [disabled]

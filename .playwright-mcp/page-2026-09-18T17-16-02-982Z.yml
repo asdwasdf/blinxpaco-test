@@ -1,0 +1,74 @@
+- generic [active] [ref=f10e5]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f10e2] [cursor=pointer]
+  - generic [ref=f10e500]:
+    - generic [ref=f10e501]:
+      - button "Expand sidebar" [ref=f10e502] [cursor=pointer]:
+        - img "Paco Logo" [ref=f10e503]
+      - generic [ref=f10e505]:
+        - img "Dashboards" [ref=f10e510] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f10e515] [cursor=pointer]
+        - img "Quick Send" [ref=f10e520] [cursor=pointer]
+        - img "Health Forms" [ref=f10e525] [cursor=pointer]
+        - img "Patient Search" [ref=f10e530] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f10e535] [cursor=pointer]
+        - img "case load management" [ref=f10e540] [cursor=pointer]
+        - img "Appointment Book" [ref=f10e545] [cursor=pointer]
+        - img "Quick Pay" [ref=f10e550] [cursor=pointer]
+        - img "Users" [ref=f10e555] [cursor=pointer]
+        - img "Configuration" [ref=f10e560] [cursor=pointer]
+        - img "Rocket Bar" [ref=f10e565] [cursor=pointer]
+        - generic [ref=f10e567] [cursor=pointer]
+      - button [ref=f10e575] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f10e576]
+    - generic [ref=f10e577]:
+      - generic [ref=f10e578]:
+        - generic [ref=f10e579]: 0m
+        - generic [ref=f10e584]:
+          - generic [ref=f10e587]:
+            - generic [ref=f10e588] [cursor=pointer]: TFN
+            - generic [ref=f10e590]:
+              - generic [ref=f10e591]: Test Fiona Nguyen
+              - generic [ref=f10e592]: Super Admin GB
+              - generic [ref=f10e594]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f10e599]
+          - generic [ref=f10e600]:
+            - button "More options" [ref=f10e602] [cursor=pointer]
+            - generic [ref=f10e606] [cursor=pointer]: "0"
+      - generic [ref=f10e612]:
+        - generic [ref=f10e614]:
+          - generic [ref=f10e615]: MR
+          - generic [ref=f10e618]:
+            - img "Male" [ref=f10e621] [cursor=pointer]
+            - button "Michael Ramella" [ref=f10e624] [cursor=pointer]
+            - 'button "NHS No: 70986" [ref=f10e626] [cursor=pointer]':
+              - generic [ref=f10e627]: "NHS No:"
+              - generic [ref=f10e628]: "70986"
+            - button "15/03/2024 (2 yo)" [ref=f10e630] [cursor=pointer]:
+              - generic [ref=f10e633]:
+                - generic [ref=f10e634]: 15/03/2024
+                - generic [ref=f10e635]: (2 yo)
+            - button "07379060817" [ref=f10e637] [cursor=pointer]
+            - button "L61PH" [ref=f10e642] [cursor=pointer]
+          - generic [ref=f10e646]:
+            - generic "Patient record has not been synced with PDS in the last 24 hours" [ref=f10e647]: PDS Not Synced
+            - button "Patient actions" [ref=f10e652] [cursor=pointer]
+        - generic [ref=f10e657]:
+          - generic [ref=f10e658]:
+            - tablist [ref=f10e661]:
+              - tab "Dashboard" [selected] [ref=f10e662] [cursor=pointer]
+              - tab "Timeline" [ref=f10e664] [cursor=pointer]
+              - tab "Coding" [ref=f10e665] [cursor=pointer]
+              - tab "Consultations & Admin" [ref=f10e666] [cursor=pointer]
+              - tab "Medication" [ref=f10e667] [cursor=pointer]
+              - tab "Patient Comms" [ref=f10e668] [cursor=pointer]
+              - tab "Shared Records" [ref=f10e669] [cursor=pointer]
+              - tab "Investigations" [ref=f10e670] [cursor=pointer]
+              - tab "Appointments" [ref=f10e671] [cursor=pointer]
+              - tab "Documents" [ref=f10e672] [cursor=pointer]
+              - tab "Payments" [ref=f10e673] [cursor=pointer]
+              - tab "Tasks" [ref=f10e674] [cursor=pointer]
+            - tabpanel [ref=f10e676]:
+              - progressbar [ref=f10e682]
+          - button "Scroll tabs left"
+          - button "Scroll tabs right" [ref=f10e685] [cursor=pointer]

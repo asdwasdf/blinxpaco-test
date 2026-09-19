@@ -1,0 +1,314 @@
+- generic [ref=f42e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f42e3] [cursor=pointer]
+  - generic [ref=f42e18]:
+    - generic [ref=f42e19]:
+      - button "Expand sidebar" [ref=f42e20] [cursor=pointer]:
+        - img "Paco Logo" [ref=f42e21]
+      - generic [ref=f42e23]:
+        - img "Dashboards" [ref=f42e28] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f42e33] [cursor=pointer]
+        - img "Quick Send" [ref=f42e38] [cursor=pointer]
+        - img "Health Forms" [ref=f42e43] [cursor=pointer]
+        - img "Patient Search" [ref=f42e48] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f42e53] [cursor=pointer]
+        - img "case load management" [ref=f42e58] [cursor=pointer]
+        - img "Appointment Book" [ref=f42e63] [cursor=pointer]
+        - img "Quick Pay" [ref=f42e68] [cursor=pointer]
+        - img "Users" [ref=f42e73] [cursor=pointer]
+        - img "Configuration" [ref=f42e78] [cursor=pointer]
+        - img "Rocket Bar" [ref=f42e83] [cursor=pointer]
+        - generic [ref=f42e85] [cursor=pointer]
+      - button [ref=f42e93] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f42e94]
+    - generic [ref=f42e95]:
+      - generic [ref=f42e97]:
+        - generic [ref=f42e100]:
+          - generic [ref=f42e101]: TFN
+          - generic [ref=f42e103]:
+            - generic [ref=f42e104]: Test Fiona Nguyen
+            - generic [ref=f42e105]: Super Admin GB
+            - generic [ref=f42e107]: General Practice (Blinx Demo Site)
+        - generic [ref=f42e109]:
+          - generic [ref=f42e111]:
+            - textbox "Search..." [active] [ref=f42e112]: Michael Ramella
+            - button "Clear search" [ref=f42e488] [cursor=pointer]
+          - generic [ref=f42e499]:
+            - generic [ref=f42e500]:
+              - generic [ref=f42e501]: Results (2)
+              - generic [ref=f42e502]: Consent & Actions
+            - generic [ref=f42e503]:
+              - generic [ref=f42e505] [cursor=pointer]:
+                - generic [ref=f42e507]:
+                  - generic [ref=f42e508]: MR
+                  - generic [ref=f42e511]:
+                    - generic [ref=f42e512]:
+                      - generic [ref=f42e518]:
+                        - generic [ref=f42e519]: Michael Ramella
+                        - generic [ref=f42e520]: "NHS No: 709 86"
+                      - generic [ref=f42e521]: More Info
+                    - generic [ref=f42e526]:
+                      - generic [ref=f42e527]: 15/03/2024 (2 yo)
+                      - generic [ref=f42e532]: "07379060817"
+                - button "Patient actions menu" [ref=f42e552]
+              - generic [ref=f42e555] [cursor=pointer]:
+                - generic [ref=f42e557]:
+                  - generic [ref=f42e558]: MR
+                  - generic [ref=f42e561]:
+                    - generic [ref=f42e562]:
+                      - generic [ref=f42e567]:
+                        - generic [ref=f42e568]: Michael Ramella
+                        - generic [ref=f42e569]: "NHS No: 100 001 9932"
+                      - generic [ref=f42e570]: More Info
+                    - generic [ref=f42e575]: 01/01/1900 (126 yo)
+                - button "Patient actions menu" [ref=f42e596]
+            - generic [ref=f42e597]:
+              - generic [ref=f42e598]:
+                - checkbox "Include deleted patients" [ref=f42e600] [cursor=pointer]
+                - generic [ref=f42e602] [cursor=pointer]: Include deleted patients
+              - generic [ref=f42e603]:
+                - generic [ref=f42e604]: PACO Patient(s)
+                - checkbox [ref=f42e606]:
+                  - switch [ref=f42e607]
+                - generic [ref=f42e608]: Sync From Other EPR
+        - generic [ref=f42e113]:
+          - button "More options" [ref=f42e115] [cursor=pointer]
+          - generic [ref=f42e121] [cursor=pointer]
+          - generic [ref=f42e122] [cursor=pointer]: "0"
+      - generic [ref=f42e126]:
+        - generic [ref=f42e127]:
+          - generic [ref=f42e129]:
+            - button "Dashboard" [ref=f42e130] [cursor=pointer]
+            - button "Appointment Book" [ref=f42e132] [cursor=pointer]
+          - generic [ref=f42e134]:
+            - button "Date 19 Sep 2026" [ref=f42e135] [cursor=pointer]:
+              - generic [ref=f42e138]: Date
+              - generic [ref=f42e139]: 19 Sep 2026
+            - button "Appt. Book 11 oct -2 -21" [ref=f42e142] [cursor=pointer]:
+              - generic [ref=f42e145]: Appt. Book
+              - generic [ref=f42e146]: 11 oct -2 -21
+            - button "Export PDF" [ref=f42e149] [cursor=pointer]
+        - generic [ref=f42e155]:
+          - generic [ref=f42e160]:
+            - generic [ref=f42e161]: "215"
+            - generic [ref=f42e162]: Total Capacity
+            - generic [ref=f42e163]: 214 bookable
+          - generic [ref=f42e168]:
+            - generic [ref=f42e169]: 1%
+            - generic [ref=f42e170]: Utilisation
+            - generic [ref=f42e171]: 2 of 214 slots
+          - generic [ref=f42e176]:
+            - generic [ref=f42e177]: "0"
+            - generic [ref=f42e178]: Patients Seen
+            - generic [ref=f42e179]: of 2 appts
+          - generic [ref=f42e184]:
+            - generic [ref=f42e185]: 0%
+            - generic [ref=f42e186]: DNA Rate
+            - generic [ref=f42e187]: 0 did not attend
+          - generic [ref=f42e192]:
+            - generic [ref=f42e193]: "0"
+            - generic [ref=f42e194]: Cancelled
+            - generic [ref=f42e195]: 0 patient / 0 team
+        - generic [ref=f42e196]:
+          - generic [ref=f42e197]:
+            - heading [level=3] [ref=f42e198]:
+              - text: Capacity Breakdown
+              - button "Export capacity breakdown to CSV" [ref=f42e199] [cursor=pointer]:
+                - generic [ref=f42e202]: CSV
+            - generic [ref=f42e205]:
+              - generic [ref=f42e206]: 1%
+              - generic [ref=f42e207]: Utilised
+            - generic [ref=f42e208]:
+              - generic [ref=f42e209]: Booked (2)
+              - generic [ref=f42e211]: Available (212)
+              - generic [ref=f42e213]: Non-bookable (1)
+          - generic [ref=f42e215]:
+            - heading [level=3] [ref=f42e216]:
+              - text: By Slot Type
+              - button "Export slot types to CSV" [ref=f42e217] [cursor=pointer]:
+                - generic [ref=f42e220]: CSV
+            - generic [ref=f42e223]:
+              - generic [ref=f42e224]: Booked
+              - generic [ref=f42e226]: Available
+              - generic [ref=f42e228]: Non-bookable
+        - generic [ref=f42e231]:
+          - heading [level=3] [ref=f42e232]:
+            - text: Demand by Hour
+            - button "Export demand by hour to CSV" [ref=f42e233] [cursor=pointer]:
+              - generic [ref=f42e236]: CSV
+          - generic [ref=f42e239]:
+            - generic [ref=f42e240]: Booked
+            - generic [ref=f42e242]: Unbooked
+        - generic [ref=f42e245]:
+          - heading [level=3] [ref=f42e246]:
+            - text: Demand by Day of Week
+            - button "Export demand by day of week to CSV" [ref=f42e247] [cursor=pointer]:
+              - generic [ref=f42e250]: CSV
+          - generic [ref=f42e253]:
+            - generic [ref=f42e254]: Booked
+            - generic [ref=f42e256]: Unbooked
+        - generic [ref=f42e258]:
+          - generic [ref=f42e259]:
+            - heading [level=3] [ref=f42e260]:
+              - text: By Clinician / Role
+              - button "Export clinicians to CSV" [ref=f42e263] [cursor=pointer]:
+                - generic [ref=f42e266]: CSV
+            - table [ref=f42e268]:
+              - rowgroup [ref=f42e269]:
+                - row [ref=f42e270]:
+                  - columnheader "Clinician" [ref=f42e271]
+                  - columnheader "Slots" [ref=f42e272]
+                  - columnheader "Booked" [ref=f42e273]
+                  - columnheader "Seen" [ref=f42e274]
+                  - columnheader "DNA" [ref=f42e275]
+                  - columnheader "Util." [ref=f42e276]
+              - rowgroup [ref=f42e277]:
+                - row [ref=f42e278]:
+                  - cell "Mickey Mouse" [ref=f42e279]
+                  - cell "48" [ref=f42e280]
+                  - cell "1" [ref=f42e281]
+                  - cell "0" [ref=f42e282]
+                  - cell "0" [ref=f42e283]
+                  - cell "2%" [ref=f42e284]
+                - row [ref=f42e289]:
+                  - cell "Dr Gareth Bartlett" [ref=f42e290]
+                  - cell "48" [ref=f42e291]
+                  - cell "0" [ref=f42e292]
+                  - cell "0" [ref=f42e293]
+                  - cell "0" [ref=f42e294]
+                  - cell "0%" [ref=f42e295]
+                - row [ref=f42e299]:
+                  - cell "Dr Gareth Bartlett" [ref=f42e300]
+                  - cell "48" [ref=f42e301]
+                  - cell "0" [ref=f42e302]
+                  - cell "0" [ref=f42e303]
+                  - cell "0" [ref=f42e304]
+                  - cell "0%" [ref=f42e305]
+                - row [ref=f42e309]:
+                  - cell "Mickey Mouse2" [ref=f42e310]
+                  - cell "47" [ref=f42e311]
+                  - cell "1" [ref=f42e312]
+                  - cell "0" [ref=f42e313]
+                  - cell "0" [ref=f42e314]
+                  - cell "2%" [ref=f42e315]
+                - row [ref=f42e320]:
+                  - cell "Alex Paul" [ref=f42e321]
+                  - cell "24" [ref=f42e322]
+                  - cell "0" [ref=f42e323]
+                  - cell "0" [ref=f42e324]
+                  - cell "0" [ref=f42e325]
+                  - cell "0%" [ref=f42e326]
+          - generic [ref=f42e330]:
+            - heading [level=3] [ref=f42e331]:
+              - text: Most Frequent Patients
+              - button "Export frequent patients to CSV" [ref=f42e334] [cursor=pointer]:
+                - generic [ref=f42e337]: CSV
+            - table [ref=f42e339]:
+              - rowgroup [ref=f42e340]:
+                - row [ref=f42e341]:
+                  - columnheader "#" [ref=f42e342]
+                  - columnheader "Patient" [ref=f42e343]
+                  - columnheader "NHS No." [ref=f42e344]
+                  - columnheader "Appointments" [ref=f42e345]
+              - rowgroup [ref=f42e346]:
+                - row [ref=f42e347]:
+                  - cell "1" [ref=f42e348]
+                  - cell "test Jones26th" [ref=f42e349]
+                  - cell "—" [ref=f42e350]
+                  - cell "1" [ref=f42e351]
+                - row [ref=f42e353]:
+                  - cell "2" [ref=f42e354]
+                  - cell "Mr Test QA User" [ref=f42e355]
+                  - cell "—" [ref=f42e356]
+                  - cell "1" [ref=f42e357]
+        - generic [ref=f42e359]:
+          - generic [ref=f42e360]:
+            - heading [level=3] [ref=f42e361]:
+              - text: Cancellation Split
+              - button "Export cancellation split to CSV" [ref=f42e362] [cursor=pointer]:
+                - generic [ref=f42e365]: CSV
+            - generic [ref=f42e366]:
+              - generic [ref=f42e367]:
+                - generic [ref=f42e368]: "0"
+                - generic [ref=f42e369]: By Patient
+              - generic [ref=f42e371]:
+                - generic [ref=f42e372]: "0"
+                - generic [ref=f42e373]: By Team
+          - generic [ref=f42e375]:
+            - heading [level=3] [ref=f42e376]:
+              - text: Appointment Status Flow
+              - button "Export appointment status flow to CSV" [ref=f42e377] [cursor=pointer]:
+                - generic [ref=f42e380]: CSV
+            - generic [ref=f42e381]:
+              - generic [ref=f42e382]:
+                - generic [ref=f42e384]: Booked
+                - generic [ref=f42e385]: "2"
+              - generic [ref=f42e386]:
+                - generic [ref=f42e388]: Arrived
+                - generic [ref=f42e389]: "0"
+              - generic [ref=f42e390]:
+                - generic [ref=f42e392]: In Progress
+                - generic [ref=f42e393]: "0"
+              - generic [ref=f42e394]:
+                - generic [ref=f42e396]: Completed
+                - generic [ref=f42e397]: "0"
+              - generic [ref=f42e398]:
+                - generic [ref=f42e400]: DNA
+                - generic [ref=f42e401]: "0"
+        - generic [ref=f42e403]:
+          - heading [level=3] [ref=f42e404]:
+            - text: Slot Type Detail
+            - button "Export slot type detail to CSV" [ref=f42e405] [cursor=pointer]:
+              - generic [ref=f42e408]: CSV
+          - table [ref=f42e410]:
+            - rowgroup [ref=f42e411]:
+              - row [ref=f42e412]:
+                - columnheader "Slot Type" [ref=f42e413]
+                - columnheader "Total" [ref=f42e414]
+                - columnheader "Booked" [ref=f42e415]
+                - columnheader "Available" [ref=f42e416]
+                - columnheader "Non-bookable" [ref=f42e417]
+                - columnheader "Utilisation" [ref=f42e418]
+            - rowgroup [ref=f42e419]:
+              - row [ref=f42e420]:
+                - cell "test by handsome mike 4 Jul 1" [ref=f42e421]
+                - cell "92" [ref=f42e423]
+                - cell "0" [ref=f42e424]
+                - cell "91" [ref=f42e425]
+                - cell "1" [ref=f42e426]
+                - cell "0%" [ref=f42e427]
+              - row [ref=f42e431]:
+                - cell "18 mw demo site" [ref=f42e432]
+                - cell "49" [ref=f42e434]
+                - cell "1" [ref=f42e435]
+                - cell "48" [ref=f42e436]
+                - cell "0" [ref=f42e437]
+                - cell "2%" [ref=f42e438]
+              - row [ref=f42e443]:
+                - cell "Phlebotomy Service" [ref=f42e444]
+                - cell "48" [ref=f42e446]
+                - cell "0" [ref=f42e447]
+                - cell "48" [ref=f42e448]
+                - cell "0" [ref=f42e449]
+                - cell "0%" [ref=f42e450]
+              - row [ref=f42e454]:
+                - cell "Hillingdon Extended Access (Nurse V1)" [ref=f42e455]
+                - cell "24" [ref=f42e457]
+                - cell "0" [ref=f42e458]
+                - cell "24" [ref=f42e459]
+                - cell "0" [ref=f42e460]
+                - cell "0%" [ref=f42e461]
+              - row [ref=f42e465]:
+                - cell "Unknown" [ref=f42e466]
+                - cell "1" [ref=f42e468]
+                - cell "0" [ref=f42e469]
+                - cell "1" [ref=f42e470]
+                - cell "0" [ref=f42e471]
+                - cell "0%" [ref=f42e472]
+              - row [ref=f42e476]:
+                - cell "3rd test Cephas" [ref=f42e477]
+                - cell "1" [ref=f42e479]
+                - cell "1" [ref=f42e480]
+                - cell "0" [ref=f42e481]
+                - cell "0" [ref=f42e482]
+                - cell "100%" [ref=f42e483]

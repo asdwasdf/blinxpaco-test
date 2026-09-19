@@ -7,7 +7,7 @@ description: Use when locating or observing selected Paco scope, or surveying Pa
 
 ## Scope and dependencies
 
-Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`SURVEY`), environment, valid local browser auth and role. `locate` and `observe` also require selected ticket and valid requirements; `survey` does not. Read feature-location/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. If auth is missing/expired, return `Blocked: Authentication expired` with `npm run auth:login`; never request credentials. Do not crawl without the mode's bound, mutate, probe private APIs, infer intent, design suites or orchestrate phases.
+Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`SURVEY`), environment, valid local browser auth and role. `locate` and `observe` also require selected ticket and valid requirements; `survey` does not. Read feature-location/product-survey/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. If auth is missing/expired, return `Blocked: Authentication expired` with `npm run auth:login`; never request credentials. Dùng Claude Playwright plugin-first; không probe private APIs, infer intent, design suites hoặc orchestrate phases.
 
 ## Ownership
 
@@ -32,12 +32,12 @@ Mode `locate` writes only `feature-location.md`; mode `observe` writes only `exp
 
 ## Mode `survey`
 
-1. Require `environment`, role, auth and read-only mode; ticket and requirements are optional and must not bound product discovery.
-2. Start from dashboard and resume the recorded checkpoint. Prefer understanding one useful business flow deeply over touching many landing pages. Stop at 12 meaningful states or 15 minutes per run; never turn the bound into permission for an unbounded crawl.
+1. Require `environment`, role và auth; ticket and requirements are optional and must not bound product discovery. Crawl current role only; role switch is manual và uses separate checkpoint.
+2. Start from dashboard and resume `survey-checkpoint.yaml`. Traverse breadth-first using fingerprint `role + normalized URL + page heading + dialog/tab state`. View/action ceiling chống runaway; đạt ceiling thì checkpoint/resume, không kết luận coverage đủ.
 3. For each selected feature record visible business purpose, actor/role, required context, starting data state, entities/statuses, ordered read-only actions, state transitions, decision branches, end/error/empty/loading states, cross-feature handoffs and exact mutation boundary. Do not infer intent from labels alone.
 4. Count only a new state that adds workflow knowledge: page/module/menu/dialog/drawer/search-result, a changed filter/sort/page state, or a read-only detail transition. Retry, reload and same-state screenshot do not count.
-5. Allow navigate/view/search/filter/sort/paginate and known read-only detail/menu/dialog. Stop before mutation, send/upload/import, draft/template changes, external-system action or unknown persistence. Do not probe private APIs.
-6. Keep `docs/product/paco-overview.md` concise: index coverage, workflow link, gaps and exact resume checkpoint. Write reusable detail to `docs/product/workflows/<feature>.md` using `docs/templates/workflow.md`; merge new observations without erasing prior role/data variants. Keep raw evidence under `test-results/product-survey/<run-id>/`.
+5. Full mutation, upload/import/download và relevant external dev flow được phép khi hostname-aware `evaluateMutationGate()` pass. Ghi mutation ledger đã redact; không lặp cùng mutation fingerprint. Production/unknown host luôn bị chặn. Thiếu domain rule/test recipient/test data thì Ask QA early, không đoán.
+6. Ghi structured view vào `docs/product/survey/views/`, role coverage/checkpoint vào `docs/product/survey/roles/`, rồi chạy `npm run graph:generate`. Keep `docs/product/paco-overview.md` concise và reusable narrative trong `docs/product/workflows/<feature>.md`. Raw evidence ở `test-results/product-survey/<run-id>/`; chỉ reviewed/redacted evidence vào docs.
 7. Include two reusable guidance blocks: `Execution guidance` with manual setup, safe steps, approval stop and evidence to capture; `Automation guidance` with stable labels/landmarks, waits, data dependency and assertions that lack a trusted basis.
 8. Classify every claim as `Observed`, `Inferred` or `Open Question`; observation never becomes `Confirmed` without a trusted source. Survey knowledge may guide location, setup, data choice, risk and coverage, but must not create ticket requirements or expected results.
 9. Preserve final `## Tester notes`; stop and report conflict rather than overwrite protected content.

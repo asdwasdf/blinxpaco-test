@@ -4,7 +4,7 @@
 
 - **Screenshot:** PNG/JPG, annotated nếu cần
 - **Trace:** Playwright trace files
-- **Video:** chỉ khi cần thiết (không mặc định)
+- **Video:** ticket source được ingest bằng `npm run video:ingest` thành scene frames, contact sheet và timeline; browser run video chỉ khi cần thiết
 - **Network observation:** redacted request/response (loại bỏ token/cookie/personal data)
 - **Console log:** relevant errors/warnings only
 
@@ -12,8 +12,10 @@
 
 - Large/raw artifacts: `test-results/` (local, Git ignored)
 - Raw `LOCATE`: `test-results/<ticket-key>/locate/<run-id>/`
-- Referenced in docs: link hoặc tóm tắt, không embed full artifact
+- Raw artifact chỉ dùng trong run; REPORT/COMPLETE không được phụ thuộc path tạm
 - Evidence đã review/redact per ticket: `docs/tickets/<ticket-folder>/evidence/`
+- Video timeline/contact sheet: `docs/tickets/<ticket-folder>/video/`
+- Promote evidence bền trước REPORT; giữ provenance về raw run nhưng không commit PII
 
 ## Security Requirements
 

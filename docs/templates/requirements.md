@@ -8,6 +8,13 @@
 
 [Tóm tắt ticket bằng tiếng Việt]
 
+## Video Coverage
+
+**Timeline:** [docs/tickets/<ticket-folder>/video/timeline.md hoặc N/A]
+**Contact Sheet:** [path hoặc N/A]
+
+[Map behavior/frame timestamp tới requirement hoặc Open Question]
+
 ## Atomic Requirements
 
 ### REQ-[TICKET]-001

@@ -25,6 +25,18 @@
 
 [Missing auth/role/evidence/expected behavior]
 
+## Video Coverage
+
+[Behavior/frame đã map tới requirement/test/open question]
+
+## Mutation Ledger and Durable Evidence
+
+[Ledger ref; curated evidence under docs/tickets/<ticket-folder>/evidence/]
+
+## Automation Decision
+
+[Worth automating/Not worth automating với lý do]
+
 ## Regression Recommendations
 
 [Proposal with provenance; no automatic promotion]

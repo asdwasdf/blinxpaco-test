@@ -5,17 +5,30 @@
 **Input Revision:** [revision]
 **Recorded:** [timestamp]
 
-## Question
+## Blocker
 
-[One answerable question]
+[Đang bị chặn ở đâu]
 
-## Why It Matters
+## Observation
 
-[Impact on requirement/test/conclusion]
+[Điều đã quan sát]
 
 ## Known Evidence
 
-[Classification, source location, environment/role/timestamp]
+[Classification, source location hoặc video frame/timestamp, environment/role/timestamp]
+
+## Decision Needed
+
+[One answerable question]
+
+## Concrete Choices
+
+- [Option A]
+- [Option B]
+
+## Affected Test Cases
+
+[Test IDs và impact]
 
 ## Conflicting Claims
 

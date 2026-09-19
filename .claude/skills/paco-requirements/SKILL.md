@@ -12,7 +12,7 @@ description: Use when analyzing selected Paco ticket sources into atomic require
 Write only `requirements.md`; `ticket/**` is read-only. Preserve final `## Tester notes` or stop.
 
 ## Workflow
-1. Read primary and relevant supporting source.
+1. Read primary and relevant supporting source. Khi ticket có `.mp4`/`.webm`, chạy `npm run video:ingest -- <input> <docs/tickets/<ticket>/video>`, review contact sheet/timeline theo frame và coi video là requirement source; không bỏ qua vì model không phát video trực tiếp.
 2. Summarize in Vietnamese; keep UI terms in backticks.
 3. Split observable claims into stable atomic IDs.
 4. Classify `Confirmed`, `Observed`, or `Inferred`; track missing knowledge as `Open Question`.

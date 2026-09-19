@@ -1,0 +1,180 @@
+- generic [ref=f11e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f11e8] [cursor=pointer]
+  - generic [ref=f11e11]:
+    - generic [ref=f11e12]:
+      - generic [ref=f11e13]:
+        - button "Expand sidebar" [ref=f11e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f11e15]
+        - generic [ref=f11e17]:
+          - img "Dashboards" [ref=f11e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f11e27] [cursor=pointer]
+          - img "Quick Send" [ref=f11e32] [cursor=pointer]
+          - img "Health Forms" [ref=f11e37] [cursor=pointer]
+          - img "Patient Search" [ref=f11e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f11e47] [cursor=pointer]
+          - img "case load management" [ref=f11e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f11e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f11e62] [cursor=pointer]
+          - img "Users" [ref=f11e67] [cursor=pointer]
+          - img "Configuration" [ref=f11e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f11e77] [cursor=pointer]
+          - generic [ref=f11e79] [cursor=pointer]
+        - button [ref=f11e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f11e88]
+      - generic [ref=f11e93]:
+        - paragraph [ref=f11e96]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f11e97]:
+          - generic [ref=f11e98]: Analytics
+          - generic [ref=f11e103]: Comms Hub
+          - generic [ref=f11e108]: Web Chat & Video
+          - generic [ref=f11e113]: Patient Search
+          - generic [ref=f11e118]: Health Forms
+          - generic [ref=f11e123]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f11e128]:
+      - generic [ref=f11e130]:
+        - generic [ref=f11e133]:
+          - generic [ref=f11e134]: TFN
+          - generic [ref=f11e136]:
+            - generic [ref=f11e137]: Test Fiona Nguyen
+            - generic [ref=f11e138]: Super Admin GB
+            - generic [ref=f11e140]: General Practice (Blinx Demo Site)
+        - generic [ref=f11e142]:
+          - generic [ref=f11e144]:
+            - textbox "Search..." [ref=f11e145]: Michael Ramella
+            - button "Clear search" [ref=f11e168] [cursor=pointer]
+          - generic [ref=f11e174]:
+            - generic [ref=f11e175]:
+              - generic [ref=f11e176]: Results (2)
+              - generic [ref=f11e177]: Consent & Actions
+            - generic [ref=f11e178]:
+              - generic [ref=f11e180] [cursor=pointer]:
+                - generic [ref=f11e182]:
+                  - generic [ref=f11e183]: MR
+                  - generic [ref=f11e186]:
+                    - generic [ref=f11e187]:
+                      - generic [ref=f11e193]:
+                        - generic [ref=f11e194]: Michael Ramella
+                        - generic [ref=f11e195]: "NHS No: 709 86"
+                      - generic [ref=f11e196]: More Info
+                    - generic [ref=f11e201]:
+                      - generic [ref=f11e202]: 15/03/2024 (2 yo)
+                      - generic [ref=f11e207]: "07379060817"
+                - button "Patient actions menu" [ref=f11e345]
+              - generic [ref=f11e230] [cursor=pointer]:
+                - generic [ref=f11e232]:
+                  - generic [ref=f11e233]: MR
+                  - generic [ref=f11e236]:
+                    - generic [ref=f11e237]:
+                      - generic [ref=f11e242]:
+                        - generic [ref=f11e243]: Michael Ramella
+                        - generic [ref=f11e244]: "NHS No: 100 001 9932"
+                      - generic [ref=f11e245]: More Info
+                    - generic [ref=f11e250]: 01/01/1900 (126 yo)
+                - button "Patient actions menu" [ref=f11e350]
+            - generic [ref=f11e272]:
+              - generic [ref=f11e273]:
+                - checkbox "Include deleted patients" [ref=f11e275] [cursor=pointer]
+                - generic [ref=f11e277] [cursor=pointer]: Include deleted patients
+              - generic [ref=f11e278]:
+                - generic [ref=f11e279]: PACO Patient(s)
+                - checkbox [ref=f11e281]:
+                  - switch [ref=f11e282] [cursor=pointer]
+                - generic [ref=f11e283]: Sync From Other EPR
+        - generic [ref=f11e146]:
+          - button "More options" [ref=f11e148] [cursor=pointer]
+          - generic [ref=f11e154] [cursor=pointer]
+          - generic [ref=f11e155] [cursor=pointer]: "0"
+  - alert [ref=f11e6]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: 15/03/2024 (2 years old)" [ref=f11e3077]':
+    - generic [ref=f11e365]:
+      - generic [ref=f11e369]:
+        - img "Quick Send rocket icon" [ref=f11e371]
+        - generic [ref=f11e373]:
+          - generic [ref=f11e374]:
+            - generic [ref=f11e375]: Michael Ramella
+            - generic [ref=f11e376]: "|"
+            - generic [ref=f11e377]:
+              - generic [ref=f11e378]: "NHS Nr:"
+              - generic [ref=f11e379] [cursor=pointer]: "70986"
+            - button "View Patient Details" [ref=f11e3078] [cursor=pointer]
+            - generic [ref=f11e383]:
+              - img "sms on file" [ref=f11e386]
+              - img "email on file" [ref=f11e389]
+          - generic [ref=f11e390]:
+            - generic [ref=f11e391]:
+              - generic [ref=f11e392]: "Post Code:"
+              - generic [ref=f11e393] [cursor=pointer]: L61PH
+            - generic [ref=f11e394]:
+              - generic [ref=f11e395]: "DOB:"
+              - generic [ref=f11e396] [cursor=pointer]: 15/03/2024 (2 years old)
+      - button "Close" [ref=f11e397] [cursor=pointer]
+    - generic [ref=f11e400]:
+      - generic [ref=f11e3482]:
+        - heading "Health Forms" [level=2] [ref=f11e3483]
+        - generic [ref=f11e3484]: Add Health Form(s)
+        - generic [ref=f11e3485] [cursor=pointer]: Select Health Form
+      - generic "bottom-nav" [ref=f11e606]:
+        - generic [ref=f11e607]:
+          - button "quick-send-action" [ref=f11e609] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=f11e610]
+          - generic [ref=f11e611]:
+            - button "tab-Campaign" [ref=f11e612] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=f11e614]: Campaign
+            - button "tab-Health Forms" [ref=f11e1174] [cursor=pointer]:
+              - generic "tab-Health Forms" [ref=f11e619]: Health Forms
+            - button "tab-Files" [ref=f11e620] [cursor=pointer]:
+              - generic "tab-Files" [ref=f11e622]: Files
+            - button "tab-Booking Link" [ref=f11e1175] [cursor=pointer]:
+              - generic "tab-Booking Link" [ref=f11e627]: Booking Link
+            - button "Save" [ref=f11e3477] [cursor=pointer]
+  - generic [ref=f11e3494]:
+    - generic [ref=f11e3495]:
+      - textbox "Search..." [active] [ref=f11e3500]
+      - generic [ref=f11e3501] [cursor=pointer]:
+        - generic:
+          - textbox: A - Z
+        - generic:
+          - combobox:
+            - option "A - Z" [selected]
+        - generic [ref=f11e3502]: A - Z
+        - button [ref=f11e3503]
+    - generic [ref=f11e3507]:
+      - listitem [ref=f11e3508] [cursor=pointer]:
+        - generic [ref=f11e3509]: 17 jul test by mw
+      - listitem [ref=f11e3518] [cursor=pointer]:
+        - generic [ref=f11e3519]: Copy (4/21/2023, 2:58:57 PM)
+      - listitem [ref=f11e3528] [cursor=pointer]:
+        - generic [ref=f11e3529]: 0 range alert
+      - listitem [ref=f11e3538] [cursor=pointer]:
+        - generic [ref=f11e3539]: 1 cot2
+      - listitem [ref=f11e3548] [cursor=pointer]:
+        - generic [ref=f11e3549]: 1 Jun - Alarm Test
+      - listitem [ref=f11e3558] [cursor=pointer]:
+        - generic [ref=f11e3559]: 1 Jun Save Test
+      - listitem [ref=f11e3568] [cursor=pointer]:
+        - generic [ref=f11e3569]: 1. auto 2 manual -2
+      - listitem [ref=f11e3578] [cursor=pointer]:
+        - generic [ref=f11e3579]: 10 April - Number Limit Validation
+      - listitem [ref=f11e3588] [cursor=pointer]:
+        - generic [ref=f11e3589]: 11 Oct demo site HF
+      - listitem [ref=f11e3598] [cursor=pointer]:
+        - generic [ref=f11e3599]: 12 Jul alert test by mw
+      - listitem [ref=f11e3608] [cursor=pointer]:
+        - generic [ref=f11e3609]: 12 Jun - MAR
+      - listitem [ref=f11e3618] [cursor=pointer]:
+        - generic [ref=f11e3619]: 12 Jun Dynamic test by mike
+      - listitem [ref=f11e3628] [cursor=pointer]:
+        - generic [ref=f11e3629]: 123 Share test namte
+      - listitem [ref=f11e3638] [cursor=pointer]:
+        - generic [ref=f11e3639]: 123test
+      - listitem [ref=f11e3648] [cursor=pointer]:
+        - generic [ref=f11e3649]: "1311"
+      - listitem [ref=f11e3658] [cursor=pointer]:
+        - generic [ref=f11e3659]: 1315 - All3 inputs
+      - listitem [ref=f11e3668] [cursor=pointer]:
+        - generic [ref=f11e3669]: 1315 - Test Post to EMIS
+      - listitem [ref=f11e3678] [cursor=pointer]:
+        - generic [ref=f11e3679]: 1315 - Video Recording Test
+      - listitem [ref=f11e3688] [cursor=pointer]:
+        - generic [ref=f11e3689]: 1328 Blank Attachment

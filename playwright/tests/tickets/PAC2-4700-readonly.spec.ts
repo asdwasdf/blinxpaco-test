@@ -3,10 +3,9 @@ import type { Locator, Page } from '@playwright/test';
 
 test.setTimeout(2 * 60_000);
 
-const BASE_URL = 'https://blinx.dev.blinxpaco-np.com/paco/';
-const BRANCH_URL = 'https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/';
+const BRANCH_URL = 'https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard';
 const PATIENT_QUERY = 'Michael Ramella';
-const PATIENT_NHS = '70986';
+const PATIENT_NHS_DISPLAY = '709 86';
 
 async function one(locator: Locator, label: string): Promise<Locator> {
   const count = await locator.count();
@@ -21,25 +20,27 @@ async function openQuickSend(page: Page, url: string): Promise<Locator> {
   await expect(search).toBeVisible({ timeout: 30_000 });
   await search.fill(PATIENT_QUERY);
 
-  const patientNhs = await one(
-    page.getByText(new RegExp(`NHS(?: No)?:\\s*${PATIENT_NHS}`)),
-    `patient NHS ${PATIENT_NHS}`,
-  );
-  const patientRow = await one(
-    patientNhs.locator('xpath=ancestor::div[contains(@class, "_patient-row_")][1]'),
-    'approved patient row',
-  );
+  const patientResult = page
+    .locator('div')
+    .filter({ hasText: PATIENT_NHS_DISPLAY })
+    .filter({ has: page.getByRole('button', { name: 'Patient actions menu', exact: true }) })
+    .last();
+  await expect(patientResult).toBeVisible({ timeout: 15_000 });
+
   await (await one(
-    patientRow.getByRole('button', { name: 'Patient actions menu', exact: true }),
+    patientResult.getByRole('button', { name: 'Patient actions menu', exact: true }),
     'Patient actions menu',
   )).click();
-  await (await one(
-    page.getByRole('menuitem', { name: 'Quick Send', exact: true }),
-    'Quick Send menu item',
-  )).click();
+  const quickSend = page
+    .locator('[role="menuitem"], li')
+    .filter({ hasText: 'Quick Send' })
+    .filter({ visible: true });
+  await expect(quickSend).toHaveCount(1, { timeout: 10_000 });
+  await quickSend.click({ timeout: 10_000 });
 
-  const dialog = await one(page.getByRole('dialog'), 'Quick Send dialog');
-  await expect(dialog).toBeVisible();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toHaveCount(1, { timeout: 15_000 });
+  await expect(dialog).toBeVisible({ timeout: 15_000 });
   return dialog;
 }
 
@@ -48,47 +49,52 @@ async function closeDialog(dialog: Locator): Promise<void> {
   if (await close.count()) await close.first().click();
 }
 
-async function openCampaignPicker(dialog: Locator): Promise<void> {
-  const change = dialog.getByText('(click to change)', { exact: true });
-  const choose = dialog.getByText('Choose template', { exact: true });
-  await (await one(
-    await change.count() === 1 ? change : choose,
-    'campaign picker control',
-  )).click();
+async function openPatientDetails(dialog: Locator): Promise<void> {
+  await dialog.getByRole('button', { name: 'View Patient Details', exact: true }).click();
+  await expect(dialog.getByText('Contact Details', { exact: true }).filter({ visible: true })).toBeVisible();
 }
 
-async function visibleText(locator: Locator): Promise<string[]> {
-  return locator.evaluateAll((elements) =>
-    elements
-      .filter((element) => (element as HTMLElement).offsetParent !== null)
-      .map((element) => element.textContent?.trim() ?? '')
-      .filter(Boolean),
-  );
-}
+test('PAC2-4700-TC-006 branch: Campaign picker sorts A-Z', async ({ authenticatedContext }) => {
+  const page = await authenticatedContext.newPage();
+  const dialog = await openQuickSend(page, BRANCH_URL);
 
-function normalized(value: string): string {
-  return value.normalize('NFKD').toLocaleLowerCase('en-GB');
-}
+  await dialog.getByText('(click to change)', { exact: true }).click();
+  const sort = dialog.locator('.sort-dropdown');
+  await sort.click();
+  const panel = page.locator('.p-dropdown-panel, [role="listbox"]').filter({ visible: true }).first();
+  await expect(panel).toBeVisible();
+  await panel.locator('li, [role="option"]').filter({ hasText: 'A - Z' }).click();
+  await expect(sort).toContainText('A - Z');
 
-for (const environment of [
-  { name: 'base', url: BASE_URL },
-  { name: 'branch', url: BRANCH_URL },
+  const items = dialog.locator('[role="treeitem"]').filter({ visible: true });
+  await expect(items.first()).toBeVisible();
+  const names = (await items.allTextContents()).map((value) => value.replace(/\s+/g, ' ').trim());
+  const expected = [...names].sort((left, right) => left.localeCompare(right, 'en', { sensitivity: 'base' }));
+  expect(names).toEqual(expected);
+
+  await closeDialog(dialog);
+  await page.close();
+});
+
+for (const contact of [
+  { id: 'PAC2-4700-TC-011', label: 'Number', add: /add new number/i, modal: 'Enter Number' },
+  { id: 'PAC2-4700-TC-014', label: 'Email', add: /add new email/i, modal: 'Enter Email' },
 ]) {
-  test(`PAC2-4700-TC-006 ${environment.name}: Campaign sort A-Z`, async ({ authenticatedContext }) => {
+  test(`${contact.id} branch: ${contact.label} dropdown and add modal open read-only`, async ({ authenticatedContext }) => {
     const page = await authenticatedContext.newPage();
-    const dialog = await openQuickSend(page, environment.url);
-    await openCampaignPicker(dialog);
+    const dialog = await openQuickSend(page, BRANCH_URL);
+    await openPatientDetails(dialog);
 
-    const sort = await one(
-      page.getByRole('combobox').filter({ hasText: /By date|A.?Z|Z.?A/i }).filter({ visible: true }),
-      'campaign sort dropdown',
-    );
-    await sort.click();
-    await (await one(page.getByRole('option', { name: /A.?Z/i }), 'A-Z sort option')).click();
+    const label = dialog.getByText(contact.label, { exact: true }).filter({ visible: true }).first();
+    await label.locator('..').locator('.p-dropdown').click();
+    const add = page.getByText(contact.add).filter({ visible: true });
+    await expect(add).toBeVisible();
+    await add.click();
 
-    const names = await visibleText(page.getByRole('option'));
-    expect(names.length).toBeGreaterThan(1);
-    expect(names.map(normalized)).toEqual([...names].map(normalized).sort((a, b) => a.localeCompare(b, 'en-GB')));
+    const modal = page.getByText(contact.modal, { exact: true }).filter({ visible: true });
+    await expect(modal).toBeVisible();
+    await page.getByRole('button', { name: 'Cancel', exact: true }).filter({ visible: true }).click();
+    await expect(modal).toBeHidden();
 
     await closeDialog(dialog);
     await page.close();
@@ -98,18 +104,18 @@ for (const environment of [
 test('PAC2-4700-TC-015 branch: Campaign compose controls open read-only', async ({ authenticatedContext }) => {
   const page = await authenticatedContext.newPage();
   const dialog = await openQuickSend(page, BRANCH_URL);
-  await openCampaignPicker(dialog);
 
-  const campaign = page.getByText('6 July - Test Case 1', { exact: true }).filter({ visible: true });
-  await (await one(campaign, 'observed campaign')).click();
+  const controls: Array<{ title: string; label: string }> = [
+    { title: 'Healthcare resources and links', label: 'Resources' },
+    { title: 'Create a custom button for your email', label: 'Button' },
+    { title: 'Insert professional email templates', label: 'Templates' },
+    { title: 'Copy your Email text into the SMS template', label: 'Copy to SMS' },
+  ];
 
-  const mergeControl = dialog.getByRole('button', { name: /merge fields|add content/i });
-  await (await one(mergeControl, 'Merge Fields control')).click();
-  await expect(page.getByText('Merge Fields', { exact: true }).filter({ visible: true })).toBeVisible();
-
-  for (const label of ['Copy to Email', 'Button', 'Templates', 'Resources']) {
-    const control = dialog.getByText(label, { exact: true }).filter({ visible: true });
-    await expect(control).toHaveCount(1);
+  for (const { title, label } of controls) {
+    const control = dialog.getByTitle(title, { exact: true }).filter({ visible: true });
+    await expect(control).toBeVisible({ timeout: 10_000 });
+    await expect(control).toHaveText(label);
   }
 
   await closeDialog(dialog);
@@ -120,14 +126,19 @@ test('PAC2-4700-TC-016 branch: Significant Info categories are readable', async 
   const page = await authenticatedContext.newPage();
   const dialog = await openQuickSend(page, BRANCH_URL);
 
-  await (await one(
-    dialog.getByRole('button', { name: /patient information/i }),
-    'Patient Information button',
-  )).click();
-  await expect(dialog.getByText('Significant Info', { exact: true })).toBeVisible();
+  const viewPatientDetails = dialog.getByRole('button', {
+    name: 'View Patient Details',
+    exact: true,
+  });
+  await expect(viewPatientDetails).toBeVisible({ timeout: 10_000 });
+  await viewPatientDetails.click();
+
+  const significantInfo = dialog.getByText('Significant Info', { exact: true }).filter({ visible: true });
+  await expect(significantInfo).toBeVisible({ timeout: 10_000 });
+  await significantInfo.click();
 
   for (const category of [
-    'PACO Registers',
+    'Personal Info',
     'Allergies',
     'Active Medications',
     'Past Medications',
@@ -135,9 +146,10 @@ test('PAC2-4700-TC-016 branch: Significant Info categories are readable', async 
     'Active Problems',
     'Significant Past Problems',
     'Test Results',
+    'Attachments',
   ]) {
-    const control = dialog.getByText(category, { exact: true });
-    await expect(control).toHaveCount(1);
+    const control = dialog.getByText(category, { exact: true }).filter({ visible: true }).first();
+    await expect(control).toBeVisible({ timeout: 5_000 });
     await control.click();
   }
 

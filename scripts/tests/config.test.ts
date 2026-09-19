@@ -19,6 +19,10 @@ paths:
 ticket:
   sourcePattern: "^[A-Z][A-Z0-9]*-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*$"
   primarySourceFile: ticket.md
+safety:
+  mutationEnabledEnvironments: [dev]
+  allowedHosts: [example.test]
+  externalDevHosts: []
 defaults:
   readOnly: true
   language: vi
@@ -45,6 +49,18 @@ test('loads and resolves valid config', async () => {
     dashboardPath: '/paco/dashboard',
   });
   assert.deepEqual({ minutes: config.defaults.locateMaxMinutes, views: config.defaults.locateMaxViews, reuse: config.defaults.reusableRouteMaxViews }, { minutes: 15, views: 12, reuse: 3 });
+  assert.deepEqual(config.safety, {
+    mutationEnabledEnvironments: ['dev'],
+    allowedHosts: ['example.test'],
+    externalDevHosts: [],
+  });
+});
+
+test('rejects missing and URL-shaped allowed hosts', async () => {
+  const empty = await configFile(validConfig.replace('  allowedHosts: [example.test]\n', '  allowedHosts: []\n'));
+  const url = await configFile(validConfig.replace('  allowedHosts: [example.test]\n', '  allowedHosts: [https://example.test]\n'));
+  assert.throws(() => loadConfig(empty), /safety\.allowedHosts/);
+  assert.throws(() => loadConfig(url), /safety\.allowedHosts/);
 });
 
 test('rejects invalid LOCATE limits', async () => {

@@ -2,6 +2,8 @@
 
 Index các feature của Paco và coverage status.
 
+Structured survey nằm tại `docs/product/survey/`. Search `graph.json` trước khi locate ticket; Markdown trong `survey/views/` là nguồn chuẩn. Regenerate bằng `npm run graph:generate`.
+
 ## Format
 
 Mỗi feature entry:

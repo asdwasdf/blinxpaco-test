@@ -1,0 +1,131 @@
+- generic [ref=f3e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f3e3] [cursor=pointer]
+  - generic [ref=f3e7]:
+    - generic [ref=f3e8]:
+      - generic [ref=f3e9]:
+        - button "Expand sidebar" [ref=f3e10] [cursor=pointer]:
+          - img "Paco Logo" [ref=f3e11]
+        - generic [ref=f3e13]:
+          - img "Dashboards" [ref=f3e18] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f3e23] [cursor=pointer]
+          - img "Quick Send" [ref=f3e28] [cursor=pointer]
+          - img "Health Forms" [ref=f3e33] [cursor=pointer]
+          - img "Patient Search" [ref=f3e38] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f3e43] [cursor=pointer]
+          - img "case load management" [ref=f3e48] [cursor=pointer]
+          - img "Appointment Book" [ref=f3e53] [cursor=pointer]
+          - img "Quick Pay" [ref=f3e58] [cursor=pointer]
+          - img "Users" [ref=f3e63] [cursor=pointer]
+          - img "Configuration" [ref=f3e68] [cursor=pointer]
+          - img "Rocket Bar" [ref=f3e73] [cursor=pointer]
+          - generic [ref=f3e75] [cursor=pointer]
+        - button [ref=f3e83] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f3e84]
+      - generic [ref=f3e89]:
+        - paragraph [ref=f3e92]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f3e93]:
+          - generic [ref=f3e94]: Analytics
+          - generic [ref=f3e99]: Comms Hub
+          - generic [ref=f3e104]: Web Chat & Video
+          - generic [ref=f3e109]: Patient Search
+          - generic [ref=f3e114]: Health Forms
+          - generic [ref=f3e119]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f3e124]:
+      - generic [ref=f3e126]:
+        - generic [ref=f3e129]:
+          - generic [ref=f3e130]: TFN
+          - generic [ref=f3e132]:
+            - generic [ref=f3e133]: Test Fiona Nguyen
+            - generic [ref=f3e134]: Super Admin GB
+            - generic [ref=f3e136]: General Practice (Blinx Demo Site)
+        - generic [ref=f3e140]:
+          - textbox "Search..." [ref=f3e141]: Michael Ramella
+          - button "Clear search" [ref=f3e155] [cursor=pointer]
+        - generic [ref=f3e142]:
+          - button "More options" [ref=f3e144] [cursor=pointer]
+          - generic [ref=f3e150] [cursor=pointer]
+          - generic [ref=f3e151] [cursor=pointer]: "0"
+  - alert [ref=f3e154]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: 15/03/2024 (2 years old)" [ref=f3e339]':
+    - generic [ref=f3e340]:
+      - generic [ref=f3e344]:
+        - img "Quick Send rocket icon" [ref=f3e346]
+        - generic [ref=f3e348]:
+          - generic [ref=f3e349]:
+            - generic [ref=f3e350]: Michael Ramella
+            - generic [ref=f3e351]: "|"
+            - generic [ref=f3e352]:
+              - generic [ref=f3e353]: "NHS Nr:"
+              - generic [ref=f3e354] [cursor=pointer]: "70986"
+            - button "View Patient Details" [ref=f3e355] [cursor=pointer]
+            - generic [ref=f3e358]:
+              - img "sms on file" [ref=f3e361]
+              - img "email on file" [ref=f3e364]
+          - generic [ref=f3e365]:
+            - generic [ref=f3e366]:
+              - generic [ref=f3e367]: "Post Code:"
+              - generic [ref=f3e368] [cursor=pointer]: L61PH
+            - generic [ref=f3e369]:
+              - generic [ref=f3e370]: "DOB:"
+              - generic [ref=f3e371] [cursor=pointer]: 15/03/2024 (2 years old)
+      - button "Close" [ref=f3e372] [cursor=pointer]
+    - generic [ref=f3e375]:
+      - generic [ref=f3e386]:
+        - generic [ref=f3e388]:
+          - generic [ref=f3e808]:
+            - generic [ref=f3e811] [cursor=pointer]: 6 July - Test Case 1
+            - generic [ref=f3e812] [cursor=pointer]: (click to change)
+          - generic [ref=f3e813]:
+            - generic [ref=f3e814]: "Patient Reply:"
+            - button "Set up Patient Reply" [ref=f3e815] [cursor=pointer]
+        - generic [ref=f3e818]:
+          - generic [ref=f3e820]:
+            - generic [ref=f3e821]:
+              - generic [ref=f3e822]:
+                - button "Preview" [ref=f3e823] [cursor=pointer]
+                - button "Edit" [ref=f3e824] [cursor=pointer]
+              - generic [ref=f3e825]: "ADHD TEST Michael, complete your Health Form via the link below. Thanks, THE CORRECT PRACTICE {{{scheduler_link}}}"
+              - generic [ref=f3e827]:
+                - generic [ref=f3e828]: 114 characters
+                - generic [ref=f3e829]: •
+                - generic [ref=f3e830]: 1 SMS fragment
+                - generic [ref=f3e831]: •
+                - generic [ref=f3e832]: Est. £0.03
+              - generic "PACO Assist" [ref=f3e836] [cursor=pointer]
+            - button "Generate Virtual Consult Link" [ref=f3e841] [cursor=pointer]:
+              - generic [ref=f3e843]:
+                - button [ref=f3e844]
+                - menu:
+                  - menuitem "Virtual Consult Link":
+                    - menuitem "Virtual Consult Link"
+                  - menuitem "Merge Fields":
+                    - menuitem "Merge Fields"
+          - generic [ref=f3e847]:
+            - generic [ref=f3e848]:
+              - generic [ref=f3e849]: "Send as:"
+              - button "SMS enabled" [disabled] [ref=f3e850]
+              - button "Email enabled" [active] [ref=f3e888] [cursor=pointer]
+            - generic [ref=f3e856]:
+              - generic [ref=f3e857]: "To:"
+              - generic "qa.pac2.4700.fixed@example.com (Home), 07379060817" [ref=f3e889]
+            - generic [ref=f3e859]:
+              - generic [ref=f3e860]: "Preview:"
+              - button "Preview SMS" [ref=f3e861] [cursor=pointer]
+              - button "Preview Email" [ref=f3e864] [cursor=pointer]
+            - button "Copy to Email" [ref=f3e868] [cursor=pointer]
+            - button "Resources" [ref=f3e872] [cursor=pointer]
+      - generic "bottom-nav" [ref=f3e589]:
+        - generic [ref=f3e590]:
+          - button "quick-send-action" [ref=f3e592] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=f3e593]
+          - generic [ref=f3e594]:
+            - button "tab-Campaign" [ref=f3e595] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=f3e597]: Campaign
+            - button "tab-Health Forms" [ref=f3e648] [cursor=pointer]:
+              - generic "tab-Health Forms" [ref=f3e611]: Health Forms
+            - button "tab-Files" [ref=f3e612] [cursor=pointer]:
+              - generic "tab-Files" [ref=f3e614]: Files
+            - button "tab-Booking Link" [ref=f3e615] [cursor=pointer]:
+              - generic "tab-Booking Link" [ref=f3e617]: Booking Link
+            - button "Save" [ref=f3e890] [cursor=pointer]

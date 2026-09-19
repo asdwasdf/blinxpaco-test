@@ -236,3 +236,87 @@ test('PAC2-4700-TC-015 base: Campaign compose controls open read-only', async ({
   await closeDialog(dialog);
   await page.close();
 });
+
+test('PAC2-4700 base walkthrough: complete read-only Quick Send flow', async ({ authenticatedContext }) => {
+  test.setTimeout(5 * 60_000);
+  const page = await authenticatedContext.newPage();
+
+  await test.step('Open Quick Send for the confirmed patient', async () => {
+    await page.goto(BASE_URL, { waitUntil: 'domcontentloaded', timeout: 30_000 });
+  });
+  const dialog = await openQuickSend(page);
+
+  await test.step('Review Campaign compose controls', async () => {
+    for (const title of [
+      'Healthcare resources and links',
+      'Create a custom button for your email',
+      'Insert professional email templates',
+      'Copy your Email text into the SMS template',
+    ]) {
+      await expect(dialog.getByTitle(title, { exact: true }).filter({ visible: true })).toBeVisible();
+    }
+  });
+
+  await test.step('Review Campaign sorting', async () => {
+    await openCampaignPicker(dialog);
+    const sortDropdown = dialog.locator('.sort-dropdown');
+    await expect(sortDropdown).toBeVisible();
+    await sortDropdown.click();
+    const panel = page.locator('.p-dropdown-panel, .p-dropdown-items-wrapper, [role="listbox"]').filter({ visible: true }).first();
+    await expect(panel).toBeVisible();
+    await panel.locator('li, [role="option"]').filter({ hasText: 'A - Z' }).click();
+    await expect(sortDropdown).toContainText('A - Z');
+    await dialog.getByText('(click to change)', { exact: true }).click();
+  });
+
+  await test.step('Review Contact Details without adding or deleting data', async () => {
+    await dialog.getByRole('button', { name: 'View Patient Details', exact: true }).click();
+    await expect(dialog.getByText('Contact Details', { exact: true }).filter({ visible: true })).toBeVisible();
+    for (const labelText of ['Number', 'Email']) {
+      const label = dialog.getByText(labelText, { exact: true }).filter({ visible: true }).first();
+      const dropdown = label.locator('..').locator('.p-dropdown');
+      await dropdown.click();
+      const panel = page.locator('.p-dropdown-panel').filter({ visible: true });
+      await expect(panel).toBeVisible();
+      await dropdown.click();
+      await expect(panel).toBeHidden();
+    }
+  });
+
+  await test.step('Review Patient Information search and Significant Info categories', async () => {
+    const viewPatientDetails = dialog.getByRole('button', { name: 'View Patient Details', exact: true });
+    if (await viewPatientDetails.isVisible()) await viewPatientDetails.click();
+    const searchAllTabs = dialog.getByPlaceholder(/search all tabs/i);
+    await expect(searchAllTabs).toBeVisible();
+    await searchAllTabs.fill('blood');
+    await searchAllTabs.clear();
+
+    const significantInfo = dialog.getByText('Significant Info', { exact: true }).filter({ visible: true });
+    await significantInfo.click();
+    for (const category of [
+      'Allergies',
+      'Active Medications',
+      'Past Medications',
+      'Appointments',
+      'Active Problems',
+      'Significant Past Problems',
+      'Test Results',
+      'Attachments',
+    ]) {
+      const control = dialog.getByText(category, { exact: true }).filter({ visible: true }).first();
+      await expect(control).toBeVisible();
+      await control.click();
+    }
+  });
+
+  await test.step('Review Files and Booking Link surfaces', async () => {
+    await dialog.getByRole('button', { name: 'tab-Files', exact: true }).click();
+    await expect(dialog.getByText('Add files from patient record', { exact: true })).toBeVisible();
+
+    await dialog.getByRole('button', { name: 'tab-Booking Link', exact: true }).click();
+    await expect(dialog.getByText('Booking Link', { exact: true }).filter({ visible: true }).first()).toBeVisible();
+  });
+
+  await closeDialog(dialog);
+  await page.close();
+});

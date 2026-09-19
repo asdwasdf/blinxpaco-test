@@ -1,0 +1,396 @@
+- generic [ref=e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=e3] [cursor=pointer]
+  - generic [ref=e49]:
+    - generic [ref=e50]:
+      - button "Expand sidebar" [ref=e51] [cursor=pointer]:
+        - img "Paco Logo" [ref=e52]
+      - generic [ref=e54]:
+        - img "Dashboards" [ref=e59] [cursor=pointer]
+        - img "Analytics & Reports" [ref=e64] [cursor=pointer]
+        - img "Quick Send" [ref=e69] [cursor=pointer]
+        - img "Health Forms" [ref=e74] [cursor=pointer]
+        - img "Patient Search" [ref=e79] [cursor=pointer]
+        - img "Web Chat & Video" [ref=e84] [cursor=pointer]
+        - img "case load management" [ref=e89] [cursor=pointer]
+        - img "Appointment Book" [ref=e94] [cursor=pointer]
+        - img "Quick Pay" [ref=e99] [cursor=pointer]
+        - img "Users" [ref=e104] [cursor=pointer]
+        - img "Configuration" [ref=e109] [cursor=pointer]
+        - img "Rocket Bar" [ref=e114] [cursor=pointer]
+        - generic [ref=e116] [cursor=pointer]
+      - button [ref=e124] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=e125]
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - generic [ref=e128]: 8m
+        - generic [ref=e133]:
+          - generic [ref=e136]:
+            - generic [ref=e137] [cursor=pointer]: TFN
+            - generic [ref=e139]:
+              - generic [ref=e140]: Test Fiona Nguyen
+              - generic [ref=e141]: Super Admin GB
+              - generic [ref=e143]: General Practice (Blinx Demo Site)
+          - generic [ref=e145]:
+            - generic [ref=e147]:
+              - textbox "Search patients by name or NHS number" [ref=e148]: Michael Ramella
+              - button "Clear search" [ref=e395] [cursor=pointer]
+            - generic [ref=e401]:
+              - generic [ref=e402]:
+                - generic [ref=e403]: Results (2)
+                - generic [ref=e404]: Consent & Actions
+              - generic [ref=e405]:
+                - generic [ref=e407] [cursor=pointer]:
+                  - generic [ref=e409]:
+                    - generic [ref=e410]: MR
+                    - generic [ref=e413]:
+                      - generic [ref=e414]:
+                        - generic [ref=e420]:
+                          - generic [ref=e421]: Michael Ramella
+                          - generic [ref=e422]: "NHS No: 709 86"
+                        - generic [ref=e423]: More Info
+                      - generic [ref=e428]:
+                        - generic [ref=e429]: 15/03/2024 (2 yo)
+                        - generic [ref=e434]: "07379060817"
+                  - button "Patient actions menu" [ref=e1164]
+                - generic [ref=e457] [cursor=pointer]:
+                  - generic [ref=e459]:
+                    - generic [ref=e460]: MR
+                    - generic [ref=e463]:
+                      - generic [ref=e464]:
+                        - generic [ref=e469]:
+                          - generic [ref=e470]: Michael Ramella
+                          - generic [ref=e471]: "NHS No: 100 001 9932"
+                        - generic [ref=e472]: More Info
+                      - generic [ref=e477]: 01/01/1900 (126 yo)
+                  - button "Patient actions menu" [ref=e1169]
+              - generic [ref=e500]:
+                - checkbox "Include deleted patients" [ref=e502] [cursor=pointer]
+                - generic [ref=e504] [cursor=pointer]: Include deleted patients
+          - generic [ref=e149]:
+            - button "More options" [ref=e151] [cursor=pointer]
+            - generic [ref=e155] [cursor=pointer]: "0"
+      - generic [ref=e159]:
+        - generic [ref=e161]:
+          - button "day" [ref=e163] [cursor=pointer]
+          - button "week" [ref=e167] [cursor=pointer]
+          - button "month" [ref=e171] [cursor=pointer]
+          - button "year" [ref=e175] [cursor=pointer]
+        - generic [ref=e176]:
+          - generic [ref=e177]:
+            - generic [ref=e178]:
+              - generic [ref=e183]:
+                - generic [ref=e186] [cursor=pointer]:
+                  - generic [ref=e187]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=e189]: Master Task Board Overview
+                  - button [ref=e190]
+                - generic [ref=e195]:
+                  - generic [ref=e196]: "0"
+                  - generic:
+                    - list
+                  - generic [ref=e208]: Completed 0
+              - generic [ref=e216]:
+                - generic [ref=e217]: Call Status
+                - img [ref=e223]:
+                  - generic [ref=e229]:
+                    - generic [ref=e230]: Calls Waiting
+                    - generic [ref=e231]: ConsultationsCompleted
+                    - generic [ref=e232]: Failed to Contact
+                    - generic [ref=e233]: active calls
+                  - generic [ref=e234]:
+                    - generic [ref=e235]: "0"
+                    - generic [ref=e236]: "60"
+                    - generic [ref=e237]: "120"
+                    - generic [ref=e238]: "180"
+                    - generic [ref=e239]: "240"
+                    - generic [ref=e240]: "300"
+            - generic [ref=e241]:
+              - generic [ref=e246]:
+                - generic [ref=e247]: Staff Status
+                - generic [ref=e250]:
+                  - list [ref=e252]:
+                    - listitem [ref=e253]: Available (75)
+                    - listitem [ref=e255]: F2F (65)
+                    - listitem [ref=e257]: Screening (50)
+                    - listitem [ref=e259]: Lunch (15)
+                    - listitem [ref=e261]: Away (50)
+                  - generic [ref=e263]: Out of a possible 132
+                - generic [ref=e292]: Coming soon
+              - generic [ref=e297]:
+                - generic [ref=e298]: Opel level
+                - generic [ref=e332]:
+                  - generic [ref=e333]: Level 2
+                  - generic [ref=e334]: Moderate Pressure
+                - generic [ref=e336]: Coming soon
+          - generic [ref=e340]:
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]: Staff Availability
+                - button "What do these statuses mean?" [ref=e344] [cursor=pointer]
+              - generic [ref=e348] [cursor=pointer]:
+                - generic [ref=e349]:
+                  - textbox: A - Z Last Name
+                - generic [ref=e351]: A - Z Last Name
+                - button [ref=e352]
+            - generic [ref=e355]:
+              - textbox "Search Clinicians..." [ref=e357]
+              - generic [ref=e358]:
+                - generic [ref=e359]: 2 on Rota
+                - generic [ref=e360]: Fri 18 Sept, 23:29
+            - generic [ref=e361]:
+              - button "Available (3)" [ref=e362] [cursor=pointer]
+              - button "On Leave (0)" [ref=e363] [cursor=pointer]
+            - generic [ref=e364]:
+              - generic [ref=e365]:
+                - generic [ref=e366]:
+                  - img "Logged Out · 46m" [ref=e1631]
+                  - text: DGB
+                - button "Dr Gareth Bartlett Super Admin GB Logged Out · 46m" [ref=e1632] [cursor=pointer]:
+                  - generic "Dr Gareth Bartlett" [ref=e370]
+                  - generic [ref=e371]:
+                    - generic [ref=e372]: Super Admin GB
+                    - generic [ref=e373]: Logged Out · 46m
+                - generic "Coming soon — PACOmms user messaging" [ref=e374]:
+                  - button "Send Message" [disabled]
+              - generic [ref=e375]:
+                - generic [ref=e376]:
+                  - img "TEST STATUS · 1h 28m" [ref=e1837]
+                  - text: MTF
+                - button "Miss Test Fiona Nguyen Super Admin GB TEST STATUS · 1h 28m" [ref=e1838] [cursor=pointer]:
+                  - generic "Miss Test Fiona Nguyen" [ref=e380]
+                  - generic [ref=e381]:
+                    - generic [ref=e382]: Super Admin GB
+                    - generic [ref=e383]: TEST STATUS · 1h 28m
+                - generic "Coming soon — PACOmms user messaging" [ref=e384]:
+                  - button "Send Message" [disabled]
+              - generic [ref=e385]:
+                - generic [ref=e386]:
+                  - img "Logged Out · 41m" [ref=e1633]
+                  - text: MN
+                - button "MustafaDefault Nawaz GP Logged Out · 41m" [ref=e1634] [cursor=pointer]:
+                  - generic "MustafaDefault Nawaz" [ref=e390]
+                  - generic [ref=e391]:
+                    - generic [ref=e392]: GP
+                    - generic [ref=e393]: Logged Out · 41m
+                - generic "Coming soon — PACOmms user messaging" [ref=e394]:
+                  - button "Send Message" [disabled]
+  - 'dialog "Quick Send rocket icon Michael Ramella | NHS Nr: 70986 View Patient Details sms on file email on file Post Code: L61PH DOB: Unknown (Unknown)" [ref=e2033]':
+    - generic [ref=e1173]:
+      - generic [ref=e1177]:
+        - img "Quick Send rocket icon" [ref=e1179]
+        - generic [ref=e1181]:
+          - generic [ref=e1182]:
+            - generic [ref=e1183]: Michael Ramella
+            - generic [ref=e1184]: "|"
+            - generic [ref=e1185]:
+              - generic [ref=e1186]: "NHS Nr:"
+              - generic [ref=e1187] [cursor=pointer]: "70986"
+            - button "View Patient Details" [ref=e2034] [cursor=pointer]
+            - generic [ref=e1191]:
+              - img "sms on file" [ref=e1194]
+              - img "email on file" [ref=e1197]
+          - generic [ref=e1198]:
+            - generic [ref=e1199]:
+              - generic [ref=e1200]: "Post Code:"
+              - generic [ref=e1201] [cursor=pointer]: L61PH
+            - generic [ref=e1202]:
+              - generic [ref=e1203]: "DOB:"
+              - generic [ref=e1204] [cursor=pointer]: Unknown (Unknown)
+      - button "Close" [ref=e1205] [cursor=pointer]
+    - generic [ref=e1208]:
+      - generic [ref=e2035]:
+        - generic [ref=e2036]:
+          - button [ref=e2037] [cursor=pointer]
+          - button [aria-hidden] [ref=e2040] [cursor=pointer]
+        - generic [ref=e2042]:
+          - paragraph [ref=e2043]: Select Campaign
+          - generic [ref=e2044]:
+            - generic [ref=e2046]:
+              - img "search icon" [ref=e2047]
+              - textbox "Search..." [ref=e2048]
+            - generic [ref=e2049] [cursor=pointer]:
+              - generic [ref=e2050]:
+                - textbox [active]: By message type
+              - generic [ref=e2052]: By message type
+              - button [expanded] [ref=e2053]
+          - tree [ref=e2058]:
+            - treeitem "Favourites" [level=1] [ref=e2059]:
+              - generic [ref=e2060] [cursor=pointer]:
+                - button [ref=e2061]
+                - button "Favourites" [ref=e2064]
+            - treeitem "Booking Links & Health Forms" [level=1] [ref=e2068]:
+              - generic [ref=e2069] [cursor=pointer]:
+                - button [ref=e2070]
+                - button "Booking Links & Health Forms" [ref=e2073]
+            - treeitem "General News" [level=1] [ref=e2075]:
+              - generic [ref=e2076] [cursor=pointer]:
+                - button [ref=e2077]
+                - button "General News" [ref=e2080]
+            - treeitem "Guidance & Advice" [level=1] [ref=e2082]:
+              - generic [ref=e2083] [cursor=pointer]:
+                - button [ref=e2084]
+                - button "Guidance & Advice" [ref=e2087]
+      - generic [ref=e1209]:
+        - generic [ref=e1211]:
+          - generic [ref=e1839]:
+            - generic [ref=e1842] [cursor=pointer]: Test (updated due to duplicate name) updated 2
+            - generic [ref=e1843] [cursor=pointer]: (click to change)
+          - generic [ref=e1844]:
+            - generic [ref=e1845]: "Patient Reply:"
+            - button "Set up Patient Reply" [ref=e1846] [cursor=pointer]
+        - generic [ref=e1849]:
+          - generic [ref=e1851]:
+            - generic [ref=e1852]:
+              - generic [ref=e1853]:
+                - button "Preview" [ref=e1854] [cursor=pointer]
+                - button "Edit" [ref=e1855] [cursor=pointer]
+              - application [ref=e1856]:
+                - generic [ref=e1857]:
+                  - generic [ref=e1858]:
+                    - button "Bold" [ref=e1859] [cursor=pointer]
+                    - button "Italic" [ref=e1863] [cursor=pointer]
+                    - button "Underline" [ref=e1867] [cursor=pointer]
+                    - button "Font Size" [ref=e1871] [cursor=pointer]
+                    - option [ref=e1875] [cursor=pointer]: "8"
+                    - option [ref=e1876] [cursor=pointer]: "9"
+                    - option [ref=e1877] [cursor=pointer]: "10"
+                    - option [ref=e1878] [cursor=pointer]: "11"
+                    - option [ref=e1879] [cursor=pointer]: "12"
+                    - option [ref=e1880] [cursor=pointer]: "14"
+                    - option [ref=e1881] [cursor=pointer]: "18"
+                    - option [ref=e1882] [cursor=pointer]: "24"
+                    - option [ref=e1883] [cursor=pointer]: "30"
+                    - option [ref=e1884] [cursor=pointer]: "36"
+                    - option [ref=e1885] [cursor=pointer]: "48"
+                    - option [ref=e1886] [cursor=pointer]: "60"
+                    - option [ref=e1887] [cursor=pointer]: "72"
+                    - option [ref=e1888] [cursor=pointer]: "96"
+                    - button "Font Family" [ref=e1889] [cursor=pointer]
+                    - option [ref=e1893] [cursor=pointer]: Arial
+                    - option [ref=e1894] [cursor=pointer]: Georgia
+                    - option [ref=e1895] [cursor=pointer]: Times New Roman
+                    - option [ref=e1896] [cursor=pointer]: Verdana
+                    - option [ref=e1897] [cursor=pointer]: Roboto
+                    - option [ref=e1898] [cursor=pointer]: Open Sans
+                    - option [ref=e1899] [cursor=pointer]: Lato
+                    - option [ref=e1900] [cursor=pointer]: Montserrat
+                    - option [ref=e1901] [cursor=pointer]: Poppins
+                    - option [ref=e1902] [cursor=pointer]: Inter
+                    - button "More Text" [ref=e1903] [cursor=pointer]
+                  - generic [ref=e1907]:
+                    - generic [ref=e1908]:
+                      - button "Ordered List" [ref=e1909] [cursor=pointer]
+                      - button "Ordered List" [ref=e1913] [cursor=pointer]
+                      - option [ref=e1914] [cursor=pointer]: Default
+                      - option [ref=e1915] [cursor=pointer]: Lower Alpha
+                      - option [ref=e1916] [cursor=pointer]: Lower Greek
+                      - option [ref=e1917] [cursor=pointer]: Lower Roman
+                      - option [ref=e1918] [cursor=pointer]: Upper Alpha
+                      - option [ref=e1919] [cursor=pointer]: Upper Roman
+                    - generic [ref=e1920]:
+                      - button "Unordered List" [ref=e1921] [cursor=pointer]
+                      - button "Unordered List" [ref=e1925] [cursor=pointer]
+                      - option [ref=e1926] [cursor=pointer]: Default
+                      - option [ref=e1927] [cursor=pointer]: Circle
+                      - option [ref=e1928] [cursor=pointer]: Disc
+                      - option [ref=e1929] [cursor=pointer]: Square
+                    - button "Align Left" [ref=e1930] [cursor=pointer]
+                    - button "Align Center" [ref=e1934] [cursor=pointer]
+                    - button "Align Right" [ref=e1938] [cursor=pointer]
+                    - button "Align Justify" [ref=e1942] [cursor=pointer]
+                    - button "Undo" [disabled] [ref=e1946]
+                    - button "Redo" [disabled] [ref=e1950]
+                  - generic [ref=e1954]:
+                    - button "Insert Link" [ref=e1955] [cursor=pointer]
+                    - button "Insert Table" [ref=e1959] [cursor=pointer]
+                    - button "Insert Image" [ref=e1963] [cursor=pointer]
+                    - button "Insert Video" [ref=e1967] [cursor=pointer]
+                    - button "Fullscreen" [ref=e1971] [cursor=pointer]
+                    - button "Code View" [ref=e1975] [cursor=pointer]
+                  - button "Text Color" [ref=e1979] [cursor=pointer]
+                - generic [ref=e1983]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - paragraph
+                      - table:
+                        - rowgroup:
+                          - row "General Practice (Demo Site)":
+                            - cell "General Practice (Demo Site)"
+                      - generic:
+                        - 'heading "Reminder: Your Upcoming Mental Health Review" [level=1]'
+                        - paragraph: Hi Michael,
+                        - generic:
+                          - paragraph: We hope you are well. We noticed that you missed your scheduled mental health review appointment. Your mental health is important to us, and we want to ensure you have the support you need.We understand life can be busy, but regular check-ins are vital for your wellbeing. Please consider rebooking your appointment to continue your care journey.What you need to do next:- Rebook your mental health review appointment through our online booking system.To book your appointment, please use the button below:If you have any questions or need assistance, do not hesitate to contact us. We are here to help.
+                          - generic:
+                            - link "Book Now":
+                              - /url: "{{{scheduler_link}}}"
+                        - img "We hope you are well. We noticed that you missed your scheduled mental health review appointment. Your mental health is important to us, and we want to ensure you have the support you need."
+                        - paragraph
+                        - paragraph:
+                          - text: Kind Regards,
+                          - generic: The General Practice (Demo Site) Team
+                      - generic:
+                        - paragraph
+                        - generic:
+                          - paragraph: General Practice (Blinx Demo Site)
+                          - paragraph: https://www.blinxhealthcare.com/
+                          - paragraph: "+441925552266"
+                          - paragraph: Warrington, Halton 5, WA4 4AB
+                        - paragraph
+                        - paragraph:
+                          - generic: This email contains confidential information intended only for the named recipients. If you are not the intended recipient, please notify the sender immediately.
+                        - generic:
+                          - img "This email contains confidential information intended only for the named recipients. If you are not the intended recipient, please notify the sender immediately."
+              - generic [ref=e1986] [cursor=pointer]:
+                - generic:
+                  - generic "PACO Assist"
+            - generic:
+              - generic:
+                - button "Generate Virtual Consult Link":
+                  - generic [ref=e1990] [cursor=pointer]:
+                    - button [ref=e1991]
+                    - menu:
+                      - menuitem "Virtual Consult Link":
+                        - menuitem "Virtual Consult Link"
+                      - menuitem "Merge Fields":
+                        - menuitem "Merge Fields"
+          - generic [ref=e1994]:
+            - generic [ref=e1995]:
+              - generic [ref=e1996]: "Send as:"
+              - button "Enable SMS" [ref=e1997] [cursor=pointer]
+              - button "Email enabled" [ref=e2000] [cursor=pointer]
+            - generic [ref=e2003]:
+              - generic [ref=e2004]: "Preview:"
+              - button "Preview SMS" [disabled] [ref=e2005]
+              - button "Preview Email" [ref=e2008] [cursor=pointer]
+            - generic [ref=e2011]:
+              - generic [ref=e2012]: "Subject:"
+              - button "Edit subject line" [ref=e2013] [cursor=pointer]
+            - button "Copy to SMS" [ref=e2017] [cursor=pointer]
+            - button "Resources" [ref=e2021] [cursor=pointer]
+            - button "Button" [ref=e2025] [cursor=pointer]
+            - button "Templates" [ref=e2029] [cursor=pointer]
+      - generic "bottom-nav" [ref=e1407]:
+        - generic [ref=e1408]:
+          - button "quick-send-action" [ref=e1440] [cursor=pointer]:
+            - img "send, schedule or patient sequence context button" [ref=e1441]
+          - generic [ref=e1410]:
+            - button "tab-Campaign" [ref=e1411] [cursor=pointer]:
+              - generic "tab-Campaign" [ref=e1413]: Campaign
+            - button "Health Forms-badge tab-Health Forms" [ref=e1414] [cursor=pointer]:
+              - generic "Health Forms-badge" [ref=e1629]: "2"
+              - generic "tab-Health Forms" [ref=e1418]: Health Forms
+            - button "tab-Files" [ref=e1419] [cursor=pointer]:
+              - generic "tab-Files" [ref=e1421]: Files
+            - button "Booking Link-badge tab-Booking Link" [ref=e1442] [cursor=pointer]:
+              - generic "Booking Link-badge" [ref=e1443]: "1"
+              - generic "tab-Booking Link" [ref=e1437]: Booking Link
+            - button "Save" [disabled]
+  - listbox [ref=e2098]:
+    - option "By date (descending)" [ref=e2099] [cursor=pointer]
+    - option "By date (ascending)" [ref=e2101] [cursor=pointer]
+    - option "By message type" [selected] [ref=e2103] [cursor=pointer]
+    - option "A - Z" [ref=e2105] [cursor=pointer]
+    - option "Z - A" [ref=e2107] [cursor=pointer]

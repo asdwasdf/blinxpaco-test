@@ -1,0 +1,177 @@
+- generic [active] [ref=f3e1]:
+  - paragraph [ref=f3e6]: Gathering data...
+  - banner [ref=f3e8]:
+    - generic [ref=f3e10]:
+      - generic [ref=f3e11]:
+        - generic [ref=f3e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f3e16]
+        - heading "Communications Hub" [level=1] [ref=f3e17]
+      - generic [ref=f3e18]:              
+      - generic [ref=f3e19]:
+        - generic:
+          - list: 
+        - generic [ref=f3e20]: 
+  - navigation [ref=f3e24]:
+    - generic [ref=f3e25]:
+      - img "Blinx Company Logo" [ref=f3e27]
+      - generic [ref=f3e28] [cursor=pointer]
+    - generic [ref=f3e29]:
+      - list [ref=f3e32]:
+        - listitem [ref=f3e33]:
+          - link "Home" [ref=f3e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f3e36]:
+          - generic [ref=f3e37] [cursor=pointer]:
+            - link "Analytics" [ref=f3e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f3e39]: 
+        - listitem [ref=f3e40]:
+          - generic [ref=f3e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f3e42]:
+              - /url: /commshub/
+            - generic [ref=f3e43]: 
+        - listitem [ref=f3e44]:
+          - generic [ref=f3e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f3e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f3e47]: 
+        - listitem [ref=f3e48]:
+          - link "Patient Search" [ref=f3e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f3e51]:
+          - generic [ref=f3e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f3e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f3e54]: 
+        - listitem [ref=f3e55]:
+          - link "Care Navigator" [ref=f3e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f3e58]:
+          - link "Configuration" [ref=f3e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f3e61]:
+        - listitem [ref=f3e62]:
+          - link "Dashboard" [ref=f3e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f3e65]:
+          - link "Appointment Book" [ref=f3e67] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book
+        - listitem [ref=f3e68]:
+          - link "Settings" [ref=f3e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f3e71]:
+        - listitem [ref=f3e72]:
+          - link "User Management" [ref=f3e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f3e75]:
+          - generic [ref=f3e76] [cursor=pointer]: Log Out
+        - listitem [ref=f3e78]:
+          - generic [ref=f3e79]: Version 1.0
+  - generic [ref=f3e83]:
+    - generic [ref=f3e84]:
+      - generic [ref=f3e85]: Notifications
+      - generic [ref=f3e86] [cursor=pointer]:
+        - generic [ref=f3e87]: Clear All
+        - generic [ref=f3e88]: 
+    - generic [ref=f3e90]:
+      - generic [ref=f3e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f3e92]: "0"
+      - generic [ref=f3e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f3e94]: "0"
+      - generic [ref=f3e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f3e96]: "0"
+  - generic [ref=f3e100]:
+    - generic [ref=f3e101]:
+      - generic [ref=f3e102]:
+        - link "" [ref=f3e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f3e105]: •
+        - link "Comms Hub" [ref=f3e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f3e107]: •
+        - generic [ref=f3e108]: Campaign Manager
+      - generic [ref=f3e109]:
+        - button " Create Campaign" [ref=f3e110] [cursor=pointer]:
+          - generic [ref=f3e111]: 
+          - generic [ref=f3e112]: Create Campaign
+        - button " Campaign Outbox" [ref=f3e113] [cursor=pointer]:
+          - generic [ref=f3e114]: 
+          - generic [ref=f3e115]: Campaign Outbox
+    - generic [ref=f3e119]:
+      - generic [ref=f3e120]:
+        - generic [ref=f3e121]: Filter Campaigns
+        - generic [ref=f3e122]:
+          - generic [ref=f3e123]: Campaign Statuses
+          - list [ref=f3e124]:
+            - listitem [ref=f3e125] [cursor=pointer]:
+              - generic [ref=f3e126]: All Statuses
+            - listitem [ref=f3e127] [cursor=pointer]:
+              - generic [ref=f3e128]: 
+              - generic [ref=f3e131]: Draft
+            - listitem [ref=f3e132] [cursor=pointer]:
+              - generic [ref=f3e133]: 
+              - generic [ref=f3e136]: Inactive
+            - listitem [ref=f3e137] [cursor=pointer]:
+              - generic [ref=f3e138]: 
+              - generic [ref=f3e141]: Queued
+            - listitem [ref=f3e142] [cursor=pointer]:
+              - generic [ref=f3e143]: 
+              - generic [ref=f3e146]: In Progress
+            - listitem [ref=f3e147] [cursor=pointer]:
+              - generic [ref=f3e148]: 
+              - generic [ref=f3e151]: Sent
+            - listitem [ref=f3e152] [cursor=pointer]:
+              - generic [ref=f3e153]: 
+              - generic [ref=f3e156]: Failed
+            - listitem [ref=f3e157] [cursor=pointer]:
+              - generic [ref=f3e158]: 
+              - generic [ref=f3e161]: Paused
+            - listitem [ref=f3e162] [cursor=pointer]:
+              - generic [ref=f3e163]: 
+              - generic [ref=f3e166]: Deleted
+            - listitem [ref=f3e167] [cursor=pointer]:
+              - generic [ref=f3e168]: 
+              - generic [ref=f3e171]: Available Quick Send
+            - listitem [ref=f3e172] [cursor=pointer]:
+              - generic [ref=f3e173]: 
+              - generic [ref=f3e176]: Available Patient-Initiated
+          - generic [ref=f3e177]: Campaign Types
+          - list [ref=f3e178]:
+            - listitem [ref=f3e179] [cursor=pointer]:
+              - generic [ref=f3e181]:
+                - generic [ref=f3e182]: Sc
+                - generic [ref=f3e184]: QS
+                - generic [ref=f3e186]: PI
+                - generic [ref=f3e188]: All Types
+            - listitem [ref=f3e189] [cursor=pointer]:
+              - generic [ref=f3e191]:
+                - generic [ref=f3e192]: Sc
+                - generic [ref=f3e194]: Scheduled
+            - listitem [ref=f3e195] [cursor=pointer]:
+              - generic [ref=f3e197]:
+                - generic [ref=f3e198]: QS
+                - generic [ref=f3e200]: Quick Send
+            - listitem [ref=f3e201] [cursor=pointer]:
+              - generic [ref=f3e203]:
+                - generic [ref=f3e204]: PI
+                - generic [ref=f3e206]: Patient-initiated
+      - generic [ref=f3e210]:
+        - generic [ref=f3e212]:
+          - textbox "Search campaigns" [ref=f3e213]
+          - generic [ref=f3e214]: 
+        - generic [ref=f3e216]:
+          - text:   
+          - button " Reset Column Widths" [ref=f3e218] [cursor=pointer]:
+            - generic [ref=f3e219]: 
+            - text: Reset Column Widths
+          - button " Show All Columns" [ref=f3e221] [cursor=pointer]:
+            - generic [ref=f3e222]: 
+            - text: Show All Columns
+          - button " Clear Filters" [ref=f3e224] [cursor=pointer]:
+            - generic [ref=f3e225]: 
+            - text: Clear Filters
+          - text: 
+  - text:                                        
