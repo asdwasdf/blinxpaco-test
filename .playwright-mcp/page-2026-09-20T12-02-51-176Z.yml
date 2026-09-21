@@ -1,0 +1,98 @@
+- generic [active] [ref=f12e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f12e3] [cursor=pointer]
+  - generic [ref=f12e8]:
+    - generic [ref=f12e9]:
+      - button "Expand sidebar" [ref=f12e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f12e11]
+      - generic [ref=f12e13]:
+        - img "Dashboards" [ref=f12e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f12e23] [cursor=pointer]
+        - img "Quick Send" [ref=f12e28] [cursor=pointer]
+        - img "Health Forms" [ref=f12e33] [cursor=pointer]
+        - img "Patient Search" [ref=f12e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f12e43] [cursor=pointer]
+        - img "case load management" [ref=f12e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f12e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f12e58] [cursor=pointer]
+        - img "Users" [ref=f12e63] [cursor=pointer]
+        - img "Configuration" [ref=f12e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f12e73] [cursor=pointer]
+        - generic [ref=f12e75] [cursor=pointer]
+      - button [ref=f12e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f12e84]
+    - generic [ref=f12e85]:
+      - generic [ref=f12e86]:
+        - generic [ref=f12e87]: 6m
+        - generic [ref=f12e92]:
+          - generic [ref=f12e95]:
+            - generic [ref=f12e96] [cursor=pointer]: TFN
+            - generic [ref=f12e98]:
+              - generic [ref=f12e99]: Test Fiona Nguyen
+              - generic [ref=f12e100]: Super Admin GB
+              - generic [ref=f12e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f12e107]
+          - generic [ref=f12e108]:
+            - button "More options" [ref=f12e110] [cursor=pointer]
+            - generic [ref=f12e114] [cursor=pointer]: "0"
+      - generic [ref=f12e118]:
+        - heading "Health Form Templates" [level=1] [ref=f12e121]
+        - generic [ref=f12e122]:
+          - generic [ref=f12e123]:
+            - textbox "Search Templates..." [ref=f12e126]
+            - button "Filters" [ref=f12e127] [cursor=pointer]
+          - generic [ref=f12e129]:
+            - button [ref=f12e130] [cursor=pointer]
+            - menu:
+              - menuitem "Create new SPN":
+                - link "Create new SPN":
+                  - /url: /paco/health-forms/create-spn-form
+              - menuitem "Create new health forms":
+                - link "Create new health forms":
+                  - /url: /paco/health-forms/create-health-form-template
+              - menuitem "Create new consultation":
+                - link "Create new consultation":
+                  - /url: /paco/health-forms/create-consultation-template
+              - menuitem "Create new case form":
+                - link "Create new case form":
+                  - /url: /paco/health-forms/create-case-form
+        - generic [ref=f12e137]:
+          - text:  
+          - grid [ref=f12e138]:
+            - rowgroup [ref=f12e139]:
+              - row [ref=f12e140]:
+                - columnheader "Archived" [ref=f12e141] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e142]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Name" [ref=f12e144] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e145]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Type" [ref=f12e147] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e148]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Created date" [ref=f12e150] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e151]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Created by" [ref=f12e153] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e154]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Updated date" [ref=f12e156] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e157]: 
+                  - text: 
+                  - generic [ref=f12e159]:
+                    - text: 
+                    - generic [aria-hidden] [ref=f12e160]: 
+                    - text:  
+                - columnheader "Updated by" [ref=f12e161] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f12e162]: 
+                  - text: 
+                  - generic:    
+            - row [ref=f12e164]:
+              - columnheader "Actions" [ref=f12e165] [cursor=pointer]
+            - progressbar [ref=f12e173]
+          - text:    

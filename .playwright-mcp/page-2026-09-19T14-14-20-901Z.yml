@@ -1,0 +1,70 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e540]:
+    - generic [ref=f4e541]:
+      - button "Expand sidebar" [ref=f4e542] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e543]
+      - generic [ref=f4e545]:
+        - img "Dashboards" [ref=f4e550] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e555] [cursor=pointer]
+        - img "Quick Send" [ref=f4e560] [cursor=pointer]
+        - img "Health Forms" [ref=f4e565] [cursor=pointer]
+        - img "Patient Search" [ref=f4e570] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e575] [cursor=pointer]
+        - img "case load management" [ref=f4e580] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e585] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e590] [cursor=pointer]
+        - img "Users" [ref=f4e595] [cursor=pointer]
+        - img "Configuration" [ref=f4e600] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e605] [cursor=pointer]
+        - generic [ref=f4e607] [cursor=pointer]
+      - button [ref=f4e610] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e611]
+    - generic [ref=f4e612]:
+      - generic [ref=f4e613]:
+        - generic [ref=f4e614]: 2h 14m
+        - generic [ref=f4e619]:
+          - generic [ref=f4e622]:
+            - generic [ref=f4e623] [cursor=pointer]: TFN
+            - generic [ref=f4e625]:
+              - generic [ref=f4e626]: Test Fiona Nguyen
+              - generic [ref=f4e627]: Super Admin GB
+              - generic [ref=f4e629]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e634]
+          - generic [ref=f4e635]:
+            - button "More options" [ref=f4e637] [cursor=pointer]
+            - generic [ref=f4e638] [cursor=pointer]: "0"
+      - generic [ref=f4e643]:
+        - generic [ref=f4e646]:
+          - generic [ref=f4e647]:
+            - heading "Configuration" [level=1] [ref=f4e649]
+            - generic [ref=f4e652]:
+              - button "Organisation" [ref=f4e654] [cursor=pointer]:
+                - link "Organisation" [ref=f4e656]:
+                  - /url: "#"
+              - button "Patient" [ref=f4e661] [cursor=pointer]:
+                - link "Patient" [ref=f4e663]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f4e668] [cursor=pointer]:
+                - link "Appointment Books" [ref=f4e670]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f4e675] [cursor=pointer]:
+                - link "Quick Pay" [ref=f4e677]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f4e682] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f4e684]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f4e689] [cursor=pointer]:
+                - link "Users & Staff" [ref=f4e691]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f4e696] [cursor=pointer]:
+                - link "Clinical Config" [ref=f4e698]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f4e703] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f4e705]:
+                  - /url: "#"
+          - generic [ref=f4e707] [cursor=pointer]
+        - generic [ref=f4e711]:
+          - heading "Sharing Agreements" [level=1] [ref=f4e712]
+          - heading "Organisations you share data with" [level=1] [ref=f4e715]

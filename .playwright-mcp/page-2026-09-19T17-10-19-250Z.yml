@@ -1,0 +1,153 @@
+- generic [active] [ref=f129e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f129e8] [cursor=pointer]
+  - generic [ref=f129e11]:
+    - generic [ref=f129e12]:
+      - generic [ref=f129e13]:
+        - button "Expand sidebar" [ref=f129e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f129e15]
+        - generic [ref=f129e17]:
+          - img "Dashboards" [ref=f129e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f129e27] [cursor=pointer]
+          - img "Quick Send" [ref=f129e32] [cursor=pointer]
+          - img "Health Forms" [ref=f129e37] [cursor=pointer]
+          - img "Patient Search" [ref=f129e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f129e47] [cursor=pointer]
+          - img "case load management" [ref=f129e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f129e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f129e62] [cursor=pointer]
+          - img "Users" [ref=f129e67] [cursor=pointer]
+          - img "Configuration" [ref=f129e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f129e77] [cursor=pointer]
+          - generic [ref=f129e79] [cursor=pointer]
+        - button [ref=f129e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f129e88]
+      - generic [ref=f129e89]:
+        - generic [ref=f129e91]:
+          - generic [ref=f129e93]:
+            - img [aria-hidden] [ref=f129e95] [cursor=pointer]
+            - generic [ref=f129e97]:
+              - text: •
+              - button [ref=f129e98] [cursor=pointer]:
+                - link "Analytics" [ref=f129e99]:
+                  - /url: /analytics-home/
+            - generic [ref=f129e100]: •Patient & Medication Analyser
+          - generic [ref=f129e101]:
+            - button "1 Selected" [ref=f129e103] [cursor=pointer]
+            - generic [ref=f129e268] [cursor=pointer]:
+              - paragraph [ref=f129e269]: Date Range
+              - paragraph [ref=f129e270]: All Time
+        - generic [ref=f129e109]:
+          - generic [ref=f129e275]:
+            - generic [ref=f129e277]:
+              - paragraph [ref=f129e279]: Reports
+              - generic [ref=f129e281] [cursor=pointer]
+            - textbox "Search..." [ref=f129e288]
+            - list [ref=f129e289]:
+              - listitem [ref=f129e290]:
+                - generic [ref=f129e291]:
+                  - button [ref=f129e292] [cursor=pointer]
+                  - generic [ref=f129e295]: Blinx Report
+              - listitem [ref=f129e296]:
+                - generic [ref=f129e297]:
+                  - button [ref=f129e298] [cursor=pointer]
+                  - generic [ref=f129e301]: Practice Report
+                  - button [ref=f129e303] [cursor=pointer]
+          - generic [ref=f129e306]:
+            - generic [ref=f129e307]:
+              - tablist [ref=f129e312]:
+                - tab "Patient Analyser" [ref=f129e313] [cursor=pointer]
+                - tab "Medication Analyser" [selected] [ref=f129e314] [cursor=pointer]
+                - tab "QOF Registers" [ref=f129e315] [cursor=pointer]
+                - tab "Patient Details" [ref=f129e316] [cursor=pointer]
+              - generic [ref=f129e318]:
+                - generic [ref=f129e321]:
+                  - textbox "Search..." [ref=f129e322]
+                  - button [ref=f129e324] [cursor=pointer]
+                - button [ref=f129e328] [cursor=pointer]
+                - button "Save Report" [ref=f129e331] [cursor=pointer]
+            - generic [ref=f129e336]:
+              - generic [ref=f129e337]:
+                - button "Advanced Search 0" [ref=f129e338] [cursor=pointer]:
+                  - text: Advanced Search
+                  - generic [ref=f129e339]: "0"
+                - generic [ref=f129e340]:
+                  - paragraph [ref=f129e341]: "Prescriptions:"
+                  - paragraph [ref=f129e346]: "|"
+                  - paragraph [ref=f129e347]: "Patients:"
+              - generic [ref=f129e352]:
+                - button "Reset View" [ref=f129e353] [cursor=pointer]
+                - button "Expand All" [ref=f129e356] [cursor=pointer]
+                - button "Collapse All" [ref=f129e357] [cursor=pointer]
+            - generic [ref=f129e359]:
+              - generic [ref=f129e364]:
+                - generic:  
+                - generic [ref=f129e365]:
+                  - grid [ref=f129e366]:
+                    - row [ref=f129e367]:
+                      - columnheader [ref=f129e368] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f129e369]: 
+                        - text:    
+                    - rowgroup [ref=f129e370]:
+                      - row [ref=f129e371]:
+                        - columnheader "Latest Recorded" [ref=f129e372] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e373]: 
+                          - text:    
+                        - columnheader "Age (Current)" [ref=f129e375] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e376]: 
+                          - text:    
+                        - columnheader "Days Left" [ref=f129e378] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e379]: 
+                          - text:    
+                        - columnheader "Drug Record Prescription Type" [ref=f129e381] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e382]: 
+                          - text:    
+                        - columnheader "Full Name" [ref=f129e384] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e385]: 
+                          - text:    
+                    - row [ref=f129e387]:
+                      - columnheader "Actions" [ref=f129e388]:  
+                    - rowgroup [ref=f129e390]
+                    - row "Press SPACE to select this row." [ref=f129e391]:
+                      - generic [ref=f129e392]:
+                        - generic [ref=f129e393]: 
+                        - text: Fetching your report...
+                  - generic [ref=f129e399]:
+                    - tablist [ref=f129e400]:
+                      - tab "Columns" [ref=f129e401] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f129e402]: 
+                      - tab "Filters" [ref=f129e404] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f129e405]: 
+                    - text:                                                    
+                - text:    
+              - paragraph [ref=f129e408]: 50 / 78,547 Rows Loaded
+              - generic [ref=f129e409]:
+                - generic [ref=f129e410]:
+                  - text: "-"
+                  - generic [ref=f129e413]: "> 15 Days"
+                - generic [ref=f129e414]:
+                  - text: "-"
+                  - generic [ref=f129e417]: 1 - 14 Days
+                - generic [ref=f129e418]:
+                  - text: "-"
+                  - generic [ref=f129e421]: < 0 Days
+    - generic "one-paco-top-bar" [ref=f129e238]:
+      - generic [ref=f129e240]:
+        - generic [ref=f129e243]:
+          - generic [ref=f129e244]: TFN
+          - generic [ref=f129e246]:
+            - generic [ref=f129e247]: Test Fiona Nguyen
+            - generic [ref=f129e248]: Super Admin GB
+            - generic [ref=f129e250]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f129e255]
+        - generic [ref=f129e256]:
+          - button "More options" [ref=f129e258] [cursor=pointer]
+          - generic [ref=f129e264] [cursor=pointer]
+          - generic [ref=f129e265] [cursor=pointer]: "0"
+  - alert [ref=f129e6]

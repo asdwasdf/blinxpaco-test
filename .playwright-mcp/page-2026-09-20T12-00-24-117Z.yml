@@ -1,0 +1,38 @@
+- generic [ref=f10e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f10e3] [cursor=pointer]
+  - generic [ref=f10e9]:
+    - generic [ref=f10e11]:
+      - paragraph [ref=f10e12]: Welcome
+      - paragraph [ref=f10e15]:
+        - generic [ref=f10e16]: Powered By
+    - generic [ref=f10e17]:
+      - img "Paco-24-icon" [ref=f10e19]
+      - generic [ref=f10e20]:
+        - status [ref=f10e21]: You were signed out due to inactivity. Please sign in again.
+        - generic [ref=f10e22]:
+          - generic [ref=f10e23]: Log in
+          - generic [ref=f10e24]:
+            - generic [ref=f10e25]:
+              - generic [ref=f10e26]:
+                - generic [ref=f10e27]: User Name
+                - textbox "User Name" [ref=f10e28]:
+                  - /placeholder: Username
+                  - text: blinx_daophuongnguyen28022003+2
+              - generic [ref=f10e29]:
+                - generic [ref=f10e30]: Password
+                - textbox "Password" [ref=f10e31]: Nguyen28022003@
+            - button "Log in" [active] [ref=f10e34] [cursor=pointer]
+        - generic [ref=f10e36]:
+          - generic [ref=f10e37]: OR
+          - button "Single Sign On" [ref=f10e39] [cursor=pointer]
+          - generic [ref=f10e41]: OR
+          - button "Log in with my Care Identity" [ref=f10e43] [cursor=pointer]:
+            - generic [ref=f10e45]: Log in with my
+            - text: Care Identity
+        - generic [ref=f10e47]:
+          - link "Forgot Password" [ref=f10e48] [cursor=pointer]:
+            - /url: "#"
+          - text: "|"
+          - link "Privacy Policy" [ref=f10e49] [cursor=pointer]:
+            - /url: "#"

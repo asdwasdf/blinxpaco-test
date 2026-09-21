@@ -1,0 +1,267 @@
+- generic [active] [ref=f17e1]:
+  - banner [ref=f17e8]:
+    - generic [ref=f17e10]:
+      - generic [ref=f17e11]:
+        - generic [ref=f17e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f17e16]
+        - heading "Communications Hub" [level=1] [ref=f17e17]
+      - generic [ref=f17e18]:
+        - generic [ref=f17e146]:
+          - generic [ref=f17e147]: 
+          - textbox "Search Patients..." [ref=f17e149]
+          - text: 
+        - text:            
+      - generic [ref=f17e19]:
+        - generic:
+          - list: 
+        - generic [ref=f17e151] [cursor=pointer]:
+          - generic [ref=f17e152]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f17e153]: 
+          - generic [ref=f17e154]: "Your Home Organisation:"
+        - generic [ref=f17e20]: 
+  - navigation [ref=f17e24]:
+    - generic [ref=f17e25]:
+      - img "Blinx Company Logo" [ref=f17e27]
+      - generic [ref=f17e28] [cursor=pointer]
+    - generic [ref=f17e29]:
+      - list [ref=f17e32]:
+        - listitem [ref=f17e33]:
+          - link "Home" [ref=f17e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f17e36]:
+          - generic [ref=f17e37] [cursor=pointer]:
+            - link "Analytics" [ref=f17e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f17e39]: 
+        - listitem [ref=f17e40]:
+          - generic [ref=f17e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f17e42]:
+              - /url: /commshub/
+            - generic [ref=f17e43]: 
+        - listitem [ref=f17e44]:
+          - generic [ref=f17e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f17e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f17e47]: 
+        - listitem [ref=f17e48]:
+          - link "Patient Search" [ref=f17e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f17e51]:
+          - generic [ref=f17e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f17e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f17e54]: 
+        - listitem [ref=f17e55]:
+          - link "Care Navigator" [ref=f17e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f17e58]:
+          - link "Configuration" [ref=f17e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f17e61]:
+        - listitem [ref=f17e62]:
+          - link "Dashboard" [ref=f17e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f17e68]:
+          - link "Settings" [ref=f17e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f17e71]:
+        - listitem [ref=f17e72]:
+          - link "User Management" [ref=f17e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f17e75]:
+          - generic [ref=f17e76] [cursor=pointer]: Log Out
+        - listitem [ref=f17e78]:
+          - generic [ref=f17e79]: Version 1.0
+  - generic [ref=f17e83]:
+    - generic [ref=f17e84]:
+      - generic [ref=f17e85]: Notifications
+      - generic [ref=f17e86] [cursor=pointer]:
+        - generic [ref=f17e87]: Clear All
+        - generic [ref=f17e88]: 
+    - generic [ref=f17e90]:
+      - generic [ref=f17e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f17e92]: "0"
+      - generic [ref=f17e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f17e94]: "0"
+      - generic [ref=f17e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f17e96]: "0"
+    - generic [ref=f17e157]:
+      - generic [ref=f17e158]: You are up to date
+      - generic [ref=f17e159]: You currently have no notifcations to review
+  - text:  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  
+  - generic [ref=f17e99]:
+    - generic [ref=f17e100]:
+      - generic [ref=f17e103]:
+        - link "" [ref=f17e104] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - text: •
+        - link "Comms Hub" [ref=f17e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - text: •
+        - link "Template Manager" [ref=f17e107] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder
+        - text: • New Email
+      - button " Save" [disabled] [ref=f17e110]:
+        - generic [ref=f17e111]: 
+        - text: Save
+    - generic [ref=f17e116]:
+      - tablist [ref=f17e118]:
+        - generic [ref=f17e121]:
+          - generic [ref=f17e122]: From Address
+          - generic [ref=f17e123]: no-reply@dev.blinxhealthcare.com
+        - generic [ref=f17e124]:
+          - generic [ref=f17e125]: Language Selection
+          - generic "Language Selection" [ref=f17e128]:
+            - generic [ref=f17e161]:
+              - text: English
+              - generic [ref=f17e162]: 
+        - generic [ref=f17e133]:
+          - generic [ref=f17e134]: Subject line *
+          - textbox "Subject line *" [ref=f17e135]:
+            - /placeholder: Subject Line
+          - generic [ref=f17e136]: Email Text *
+          - paragraph [ref=f17e137]: The text body of the email. Recipients whose email clients don't display HTML email see this version of the email. This value may contain dynamic fields.
+          - textbox "Email Text *" [ref=f17e138]:
+            - /placeholder: Email Text
+        - generic [ref=f17e139]:
+          - generic [ref=f17e140]: Dynamic fields
+          - generic "Dynamic fields" [ref=f17e143]:
+            - generic [ref=f17e164]:
+              - generic [ref=f17e166]:
+                - text: first_name
+                - generic [ref=f17e167]: 
+              - generic [ref=f17e169]:
+                - text: last_name
+                - generic [ref=f17e170]: 
+              - generic [ref=f17e172]:
+                - text: date_of_birth
+                - generic [ref=f17e173]: 
+              - generic [ref=f17e175]:
+                - text: mobile_number
+                - generic [ref=f17e176]: 
+              - generic [ref=f17e178]:
+                - text: address_one
+                - generic [ref=f17e179]: 
+              - generic [ref=f17e181]:
+                - text: city
+                - generic [ref=f17e182]: 
+              - generic [ref=f17e184]:
+                - text: state_province
+                - generic [ref=f17e185]: 
+              - generic [ref=f17e187]:
+                - text: postal_code
+                - generic [ref=f17e188]: 
+              - generic [ref=f17e190]:
+                - text: last_communication_date
+                - generic [ref=f17e191]: 
+              - generic [ref=f17e193]:
+                - text: scheduler_link
+                - generic [ref=f17e194]: 
+              - generic [ref=f17e196]:
+                - text: appointment_start_date
+                - generic [ref=f17e197]: 
+              - generic [ref=f17e199]:
+                - text: appointment_start_time
+                - generic [ref=f17e200]: 
+              - generic [ref=f17e202]:
+                - text: appointment_end_date
+                - generic [ref=f17e203]: 
+              - generic [ref=f17e205]:
+                - text: appointment_end_time
+                - generic [ref=f17e206]: 
+              - generic [ref=f17e208]:
+                - text: location_name
+                - generic [ref=f17e209]: 
+              - generic [ref=f17e211]:
+                - text: clinician_full_name
+                - generic [ref=f17e212]: 
+              - generic [ref=f17e214]:
+                - text: web_video_link
+                - generic [ref=f17e215]: 
+              - generic [ref=f17e217]:
+                - text: campaign_description
+                - generic [ref=f17e218]: 
+              - generic [ref=f17e220]:
+                - text: appointment_details
+                - generic [ref=f17e221]: 
+              - generic [ref=f17e223]:
+                - text: sending_user
+                - generic [ref=f17e224]: 
+              - generic [ref=f17e226]:
+                - text: nhs_number
+                - generic [ref=f17e227]: 
+              - generic [ref=f17e229]:
+                - text: organisation_logo
+                - generic [ref=f17e230]: 
+              - generic [ref=f17e232]:
+                - text: organisation_website
+                - generic [ref=f17e233]: 
+              - generic [ref=f17e235]:
+                - text: organisation_email_address
+                - generic [ref=f17e236]: 
+              - generic [ref=f17e238]:
+                - text: organisation_phone_number
+                - generic [ref=f17e239]: 
+              - generic [ref=f17e241]:
+                - text: organisation_address
+                - generic [ref=f17e242]: 
+              - generic [ref=f17e244]:
+                - text: organisation_header
+                - generic [ref=f17e245]: 
+              - generic [ref=f17e247]:
+                - text: organisation_footer
+                - generic [ref=f17e248]: 
+              - generic [ref=f17e250]:
+                - text: organisation_name
+                - generic [ref=f17e251]: 
+              - generic [ref=f17e253]:
+                - text: dfd_otp_code
+                - generic [ref=f17e254]: 
+              - generic [ref=f17e256]:
+                - text: reminder_appointment_location
+                - generic [ref=f17e257]: 
+              - generic [ref=f17e259]:
+                - text: portal_username
+                - generic [ref=f17e260]: 
+              - generic [ref=f17e262]:
+                - text: portal_password
+                - generic [ref=f17e263]: 
+              - generic [ref=f17e265]:
+                - text: portal_url
+                - generic [ref=f17e266]: 
+              - generic [ref=f17e268]:
+                - text: generic_info_1
+                - generic [ref=f17e269]: 
+              - generic [ref=f17e271]:
+                - text: generic_info_2
+                - generic [ref=f17e272]: 
+              - generic [ref=f17e274]:
+                - text: generic_info_3
+                - generic [ref=f17e275]: 
+              - generic [ref=f17e277]:
+                - text: contact_tel_no
+                - generic [ref=f17e278]: 
+              - generic [ref=f17e280]:
+                - text: portal_self_registration_url
+                - generic [ref=f17e281]: 
+              - generic [ref=f17e283]:
+                - text: child_first_name
+                - generic [ref=f17e284]: 
+        - generic [ref=f17e287]:
+          - generic [ref=f17e288]: Media Library
+          - button "Media Library" [ref=f17e289] [cursor=pointer]
+        - text: 
+      - generic [ref=f17e291]:
+        - generic [ref=f17e292]:
+          - iframe [ref=f17e296]
+          - generic:     
+        - generic:                     
+        - generic [ref=f17e347] [cursor=pointer]: 
+  - text:    
+  - generic:
+    - generic:
+      - generic [ref=f17e341]: General Practice (Blinx Demo Site) (YGMQJ)
+      - generic [ref=f17e344]: PC24 Urgent Care (Y05825)

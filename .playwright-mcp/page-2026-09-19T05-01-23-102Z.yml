@@ -1,0 +1,101 @@
+- generic [active] [ref=f26e1]:
+  - paragraph [ref=f26e6]: Gathering data...
+  - banner [ref=f26e8]:
+    - generic [ref=f26e10]:
+      - generic [ref=f26e11]:
+        - generic [ref=f26e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f26e16]
+        - heading "Communications Hub" [level=1] [ref=f26e17]
+      - generic [ref=f26e18]:              
+      - generic [ref=f26e19]:
+        - generic:
+          - list: 
+        - generic [ref=f26e20]: 
+  - navigation [ref=f26e24]:
+    - generic [ref=f26e25]:
+      - img "Blinx Company Logo" [ref=f26e27]
+      - generic [ref=f26e28] [cursor=pointer]
+    - generic [ref=f26e29]:
+      - list [ref=f26e32]:
+        - listitem [ref=f26e33]:
+          - link "Home" [ref=f26e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f26e36]:
+          - generic [ref=f26e37] [cursor=pointer]:
+            - link "Analytics" [ref=f26e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f26e39]: 
+        - listitem [ref=f26e40]:
+          - generic [ref=f26e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f26e42]:
+              - /url: /commshub/
+            - generic [ref=f26e43]: 
+        - listitem [ref=f26e44]:
+          - generic [ref=f26e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f26e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f26e47]: 
+        - listitem [ref=f26e48]:
+          - link "Patient Search" [ref=f26e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f26e51]:
+          - generic [ref=f26e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f26e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f26e54]: 
+        - listitem [ref=f26e55]:
+          - link "Care Navigator" [ref=f26e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f26e58]:
+          - link "Configuration" [ref=f26e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f26e61]:
+        - listitem [ref=f26e62]:
+          - link "Dashboard" [ref=f26e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f26e65]:
+          - link "Appointment Book" [ref=f26e67] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book
+        - listitem [ref=f26e68]:
+          - link "Settings" [ref=f26e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f26e71]:
+        - listitem [ref=f26e72]:
+          - link "User Management" [ref=f26e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f26e75]:
+          - generic [ref=f26e76] [cursor=pointer]: Log Out
+        - listitem [ref=f26e78]:
+          - generic [ref=f26e79]: Version 1.0
+  - generic [ref=f26e83]:
+    - generic [ref=f26e84]:
+      - generic [ref=f26e85]: Notifications
+      - generic [ref=f26e86] [cursor=pointer]:
+        - generic [ref=f26e87]: Clear All
+        - generic [ref=f26e88]: 
+    - generic [ref=f26e90]:
+      - generic [ref=f26e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f26e92]: "0"
+      - generic [ref=f26e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f26e94]: "0"
+      - generic [ref=f26e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f26e96]: "0"
+  - generic [ref=f26e99]:  
+  - generic [ref=f26e105]:
+    - heading [level=2] [ref=f26e107]:
+      - strong [ref=f26e108]: Home
+      - text: ", Hi"
+    - link "Template Manager" [ref=f26e111] [cursor=pointer]:
+      - /url: /commshub/commshub/template-builder
+    - link "Patient Manager" [ref=f26e120] [cursor=pointer]:
+      - /url: /commshub/commshub/patient-management
+    - link "Campaign Manager" [ref=f26e129] [cursor=pointer]:
+      - /url: /commshub/commshub/campaign-manager
+    - link "Analytics" [ref=f26e138] [cursor=pointer]:
+      - /url: /commshub/commshub/analytics
+    - link "Configuration" [ref=f26e147] [cursor=pointer]:
+      - /url: /commshub/commshub/configuration
+  - text:    

@@ -1,0 +1,240 @@
+- generic [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e7]:
+    - generic [ref=f28e20716]:
+      - generic [ref=f28e20717]:
+        - button "Expand sidebar" [ref=f28e20718] [cursor=pointer]:
+          - img "Paco Logo" [ref=f28e20719]
+        - generic [ref=f28e20721]:
+          - img "Dashboards" [ref=f28e20726] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f28e20731] [cursor=pointer]
+          - img "Quick Send" [ref=f28e20736] [cursor=pointer]
+          - img "Health Forms" [ref=f28e20741] [cursor=pointer]
+          - img "Patient Search" [ref=f28e20746] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f28e20751] [cursor=pointer]
+          - img "case load management" [ref=f28e20756] [cursor=pointer]
+          - img "Appointment Book" [ref=f28e20761] [cursor=pointer]
+          - img "Quick Pay" [ref=f28e20766] [cursor=pointer]
+          - img "Users" [ref=f28e20771] [cursor=pointer]
+          - img "Configuration" [ref=f28e20776] [cursor=pointer]
+          - img "Rocket Bar" [ref=f28e20781] [cursor=pointer]
+          - generic [ref=f28e20783] [cursor=pointer]
+        - button [ref=f28e20791] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f28e20792]
+      - generic [ref=f28e20793]:
+        - generic [ref=f28e20794]:
+          - generic [ref=f28e20795]: 4h 8m
+          - generic [ref=f28e20800]:
+            - generic [ref=f28e20803]:
+              - generic [ref=f28e20804] [cursor=pointer]: TFN
+              - generic [ref=f28e20806]:
+                - generic [ref=f28e20807]: Test Fiona Nguyen
+                - generic [ref=f28e20808]: Super Admin GB
+                - generic [ref=f28e20810]: General Practice (Blinx Demo Site)
+            - textbox "Search patients by name or NHS number" [ref=f28e20815]
+            - generic [ref=f28e20816]:
+              - button "More options" [ref=f28e20818] [cursor=pointer]
+              - generic [ref=f28e20822] [cursor=pointer]: "0"
+        - generic [ref=f28e20827]:
+          - generic [ref=f28e20828]:
+            - generic [ref=f28e20829]:
+              - generic [ref=f28e20830]:
+                - link "Back to Dashboard" [ref=f28e20834] [cursor=pointer]:
+                  - /url: /paco/dashboard
+                - heading "Work Boards" [level=1] [ref=f28e20835]
+              - generic [ref=f28e20836]:
+                - generic [ref=f28e20837]:
+                  - generic [ref=f28e20838] [cursor=pointer]:
+                    - checkbox "View My Tasks Only" [ref=f28e20841]
+                    - generic [ref=f28e20844]: View My Tasks Only
+                  - generic [ref=f28e20845] [cursor=pointer]:
+                    - checkbox "View My Cases Only" [ref=f28e20848]
+                    - generic [ref=f28e20851]: View My Cases Only
+                - generic [ref=f28e20852]: Search all boards
+                - generic [ref=f28e20853]:
+                  - button "Board" [ref=f28e20854] [cursor=pointer]
+                  - button "Case ID" [ref=f28e20856] [cursor=pointer]
+                  - button "Patient" [ref=f28e20858] [cursor=pointer]
+                - textbox "Board name" [ref=f28e20861]
+                - generic [ref=f28e20862]:
+                  - button "Tasks (874)" [ref=f28e20884] [cursor=pointer]
+                  - button "Cases (28)" [ref=f28e20885] [cursor=pointer]
+                - generic [ref=f28e20866]:
+                  - generic [ref=f28e20888] [cursor=pointer]:
+                    - button [ref=f28e20889]
+                    - generic [ref=f28e20892]: Master Case Board
+                    - generic [ref=f28e20893]: (13)
+                  - generic [ref=f28e20896] [cursor=pointer]:
+                    - button [ref=f28e20897]
+                    - generic [ref=f28e20900]: Master Home Visit Board
+                    - generic [ref=f28e20901]: (0)
+                  - generic [ref=f28e20904] [cursor=pointer]:
+                    - button [ref=f28e20905]
+                    - generic [ref=f28e20908]: Test Case Board
+                    - generic [ref=f28e20909]: (19)
+                  - generic [ref=f28e20912] [cursor=pointer]:
+                    - button [ref=f28e20913]
+                    - generic [ref=f28e20916]: Epsom PCN Demo - Care Home VIsts
+                    - generic [ref=f28e20917]: (0)
+                  - generic [ref=f28e20920] [cursor=pointer]:
+                    - button [ref=f28e20921]
+                    - generic [ref=f28e20924]: Paul's Physio
+                    - generic [ref=f28e20925]: (0)
+                  - generic [ref=f28e20928] [cursor=pointer]:
+                    - button [ref=f28e20929]
+                    - generic [ref=f28e20932]: Urgent Healthcare UK 2025
+                    - generic [ref=f28e20933]: (1)
+                  - generic [ref=f28e20936] [cursor=pointer]:
+                    - button [ref=f28e20937]
+                    - generic [ref=f28e20940]: test
+                    - generic [ref=f28e20941]: (0)
+                  - generic [ref=f28e20944] [cursor=pointer]:
+                    - button [ref=f28e20945]
+                    - generic [ref=f28e20948]: test board
+                    - generic [ref=f28e20949]: (2)
+                  - generic [ref=f28e20952] [cursor=pointer]:
+                    - button [ref=f28e20953]
+                    - generic [ref=f28e20956]: waiting list
+                    - generic [ref=f28e20957]: (8)
+                  - generic [ref=f28e20960] [cursor=pointer]:
+                    - button [ref=f28e20961]
+                    - generic [ref=f28e20964]: North Shropshire PCN Neighbourhood team
+                    - generic [ref=f28e20965]: (0)
+                  - generic [ref=f28e20968] [cursor=pointer]:
+                    - button [ref=f28e20969]
+                    - generic [ref=f28e20972]: TEST FOR pac2-4688
+                    - generic [ref=f28e20973]: (0)
+                  - generic [ref=f28e20976] [cursor=pointer]:
+                    - button [ref=f28e20977]
+                    - generic [ref=f28e20980]: Frailty Management Caseload
+                    - generic [ref=f28e20981]: (0)
+                  - generic [ref=f28e20984] [cursor=pointer]:
+                    - button [ref=f28e20985]
+                    - generic [ref=f28e20988]: Mustafa Task Workboard
+                    - generic [ref=f28e20989]: (0)
+                  - generic [ref=f28e20992] [cursor=pointer]:
+                    - button [ref=f28e20993]
+                    - generic [ref=f28e20996]: Board 1
+                    - generic [ref=f28e20997]: (2)
+                  - generic [ref=f28e21000] [cursor=pointer]:
+                    - button [ref=f28e21001]
+                    - generic [ref=f28e21004]: Board 3
+                    - generic [ref=f28e21005]: (0)
+                  - generic [ref=f28e21008] [cursor=pointer]:
+                    - button [ref=f28e21009]
+                    - generic [ref=f28e21012]: Test board
+                    - generic [ref=f28e21013]: (0)
+                  - generic [ref=f28e21016] [cursor=pointer]:
+                    - button [ref=f28e21017]
+                    - generic [ref=f28e21020]: Test Create Board 20260324_200800_614
+                    - generic [ref=f28e21021]: (0)
+                  - generic [ref=f28e21024] [cursor=pointer]:
+                    - button [ref=f28e21025]
+                    - generic [ref=f28e21028]: Test Create Board 20260324_205052_742
+                    - generic [ref=f28e21029]: (0)
+                  - generic [ref=f28e21032] [cursor=pointer]:
+                    - button [ref=f28e21033]
+                    - generic [ref=f28e21036]: Test Create Board 20260324_205640_381
+                    - generic [ref=f28e21037]: (0)
+                  - generic [ref=f28e21040] [cursor=pointer]:
+                    - button [ref=f28e21041]
+                    - generic [ref=f28e21044]: Test Create Board 20260325_092737_405
+                    - generic [ref=f28e21045]: (0)
+                  - generic [ref=f28e21048] [cursor=pointer]:
+                    - button [ref=f28e21049]
+                    - generic [ref=f28e21052]: Test Create Board 20260330_165045_976
+                    - generic [ref=f28e21053]: (0)
+                  - generic [ref=f28e21056] [cursor=pointer]:
+                    - button [ref=f28e21057]
+                    - generic [ref=f28e21060]: Test Create Board 20260330_170255_969
+                    - generic [ref=f28e21061]: (0)
+                  - generic [ref=f28e21064] [cursor=pointer]:
+                    - button [ref=f28e21065]
+                    - generic [ref=f28e21068]: Test Create Board 20260330_170526_295
+                    - generic [ref=f28e21069]: (0)
+                  - generic [ref=f28e21072] [cursor=pointer]:
+                    - button [ref=f28e21073]
+                    - generic [ref=f28e21076]: Test Create Board 20260330_170745_692
+                    - generic [ref=f28e21077]: (0)
+                  - generic [ref=f28e21080] [cursor=pointer]:
+                    - button [ref=f28e21081]
+                    - generic [ref=f28e21084]: War Room Proxy Access
+                    - generic [ref=f28e21085]: (2)
+                  - generic [ref=f28e21088] [cursor=pointer]:
+                    - button [ref=f28e21089]
+                    - generic [ref=f28e21092]: Call Queue
+                    - generic [ref=f28e21093]: (14)
+                  - generic [ref=f28e21096] [cursor=pointer]:
+                    - button [ref=f28e21097]
+                    - generic [ref=f28e21100]: Syed Test Board
+                    - generic [ref=f28e21101]: (0)
+                  - generic [ref=f28e21104] [cursor=pointer]:
+                    - button [ref=f28e21105]
+                    - generic [ref=f28e21108]: Neighbourhood DEMO
+                    - generic [ref=f28e21109]: (0)
+                - button "Create new board" [ref=f28e20875] [cursor=pointer]
+            - button [ref=f28e20879] [cursor=pointer]
+          - generic [ref=f28e21110]:
+            - generic [ref=f28e21111]:
+              - generic [ref=f28e21113]:
+                - heading "workboardName" [level=2] [ref=f28e21114]: Master Case Board
+                - generic [ref=f28e21116]:
+                  - generic [ref=f28e21117]:
+                    - button "List view" [ref=f28e21118] [cursor=pointer]
+                    - button "Card view" [ref=f28e21120] [cursor=pointer]
+                  - generic [ref=f28e21127] [cursor=pointer]
+              - generic [ref=f28e21131]:
+                - textbox "Search this board" [ref=f28e21134]
+                - generic [ref=f28e21135]:
+                  - generic [ref=f28e21136] [cursor=pointer]:
+                    - generic [ref=f28e21137]:
+                      - textbox: Breaching (high to low)
+                    - generic [ref=f28e21139]: Breaching (high to low)
+                    - button [ref=f28e21140]
+                  - button "Filters" [ref=f28e21145] [cursor=pointer]
+              - generic [ref=f28e21148]:
+                - button "All (13)" [ref=f28e21149] [cursor=pointer]
+                - button "Mid Priority (1)" [ref=f28e21150] [cursor=pointer]
+                - button "High Priority (1)" [active] [ref=f28e21151] [cursor=pointer]
+                - button "Low Priority (1)" [ref=f28e21152] [cursor=pointer]
+                - button "Emergency (3)" [ref=f28e21153] [cursor=pointer]
+                - button "Other (7)" [ref=f28e21154] [cursor=pointer]
+            - generic "case-card" [ref=f28e23599]:
+              - generic [ref=f28e23600]:
+                - generic [ref=f28e23601]:
+                  - generic [ref=f28e23602]:
+                    - generic "Drag to move task" [ref=f28e23603]
+                    - generic [ref=f28e23606]: 20 mins OOH
+                    - generic [ref=f28e23607]:
+                      - generic [ref=f28e23608]: "Received:"
+                      - generic [ref=f28e23609]: 28/05/2026 16:27
+                  - button [ref=f28e23612] [cursor=pointer]
+                - generic [ref=f28e23615] [cursor=pointer]:
+                  - generic [ref=f28e23616]: Blogg demo
+                  - generic [ref=f28e23627]:
+                    - generic [ref=f28e23628]: "Age:"
+                    - generic [ref=f28e23629]: "37"
+                  - generic [ref=f28e23634]:
+                    - generic [ref=f28e23635]: "Gender:"
+                    - generic [ref=f28e23636]: male
+                  - generic [ref=f28e23641]:
+                    - generic [ref=f28e23642]: "Active Time:"
+                    - generic [ref=f28e23643]: 2763 hours, 52 mins, 04 secs
+                  - generic [ref=f28e23647]:
+                    - generic [ref=f28e23648]: "Time to breach:"
+                    - generic [ref=f28e23649]: "- 114 d, 03 h, 32 m, 04 s"
+                  - generic [ref=f28e23656]:
+                    - generic [ref=f28e23657]: "Assignee:"
+                    - generic [ref=f28e23658]: Mr Tony Do
+                  - generic [ref=f28e23659]: "-"
+                  - generic [ref=f28e23665]: Pathway
+                  - generic [ref=f28e23675]:
+                    - generic [ref=f28e23676]: Case Summary
+                    - generic [ref=f28e23677]: "Patient has a insect bite. Disposition: Go to the nearest Emergency Department within 4 hours. Selected care service: Dx009 Pathways Assessment: An injury or other health problem was described. The individual was described as breathing and conscious. Loss of at least a mugful of blood in the last 30 minutes was not described. An illness or other health problem was described. - Insect Bite Fighting for breath was not described. A heart attack, chest/upper back pain, recent probable stroke, recent fit/seizure or suicide attempt was not described as the main call reason. New confusion, a diabetic hypo, a probable allergic reaction or successful resuscitation was not described as being the main call reason. The individual was described as being warm to touch. An insect or spider bite or sting was described. - Tick Bite A sting/bite occurring within the last hour was not described. 10 or more stings were not described. Nausea or vomiting since the sting was not described. A sting involving the eyes or mouth was not described. A fever was not described. An insect still attached to the skin was described. A tick bite was described. Advice given: Remove any jewellery or tight clothing from the area. Antihistamine medication and creams help reduce swelling and itching. They can be bought from pharmacies. Talk to the pharmacist for advice. Follow the instructions in the pack. Unless advised not to, or they have already been given, paracetamol or ibuprofen can be used to relieve pain. Follow the instructions in the pack. If in doubt ask a pharmacist."
+                - generic [ref=f28e23678]:
+                  - generic [ref=f28e23679]: "Case ID:"
+                  - generic [ref=f28e23680]:
+                    - button "send–quick-send-button" [ref=f28e23681] [cursor=pointer]
+                    - button "Call Patient" [ref=f28e23684] [cursor=pointer]
+    - status [ref=f28e20883]

@@ -1,0 +1,282 @@
+- generic [ref=f24e1]:
+  - banner [ref=f24e8]:
+    - generic [ref=f24e10]:
+      - generic [ref=f24e11]:
+        - generic [ref=f24e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f24e16]
+        - heading "Communications Hub" [level=1] [ref=f24e17]
+      - generic [ref=f24e18]:
+        - generic [ref=f24e144]:
+          - generic [ref=f24e145]: 
+          - textbox "Search Patients..." [ref=f24e147]
+          - text: 
+        - text:            
+      - generic [ref=f24e19]:
+        - generic:
+          - list: 
+        - generic [ref=f24e149] [cursor=pointer]:
+          - generic [ref=f24e150]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f24e151]: 
+          - generic [ref=f24e152]: "Your Home Organisation:"
+        - generic [ref=f24e20]: 
+  - navigation [ref=f24e24]:
+    - generic [ref=f24e25]:
+      - img "Blinx Company Logo" [ref=f24e27]
+      - generic [ref=f24e28] [cursor=pointer]
+    - generic [ref=f24e29]:
+      - list [ref=f24e32]:
+        - listitem [ref=f24e33]:
+          - link "Home" [ref=f24e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f24e36]:
+          - generic [ref=f24e37] [cursor=pointer]:
+            - link "Analytics" [ref=f24e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f24e39]: 
+        - listitem [ref=f24e40]:
+          - generic [ref=f24e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f24e42]:
+              - /url: /commshub/
+            - generic [ref=f24e43]: 
+        - listitem [ref=f24e44]:
+          - generic [ref=f24e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f24e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f24e47]: 
+        - listitem [ref=f24e48]:
+          - link "Patient Search" [ref=f24e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f24e51]:
+          - generic [ref=f24e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f24e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f24e54]: 
+        - listitem [ref=f24e55]:
+          - link "Care Navigator" [ref=f24e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f24e58]:
+          - link "Configuration" [ref=f24e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f24e61]:
+        - listitem [ref=f24e62]:
+          - link "Dashboard" [ref=f24e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f24e68]:
+          - link "Settings" [ref=f24e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f24e71]:
+        - listitem [ref=f24e72]:
+          - link "User Management" [ref=f24e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f24e75]:
+          - generic [ref=f24e76] [cursor=pointer]: Log Out
+        - listitem [ref=f24e78]:
+          - generic [ref=f24e79]: Version 1.0
+  - generic [ref=f24e83]:
+    - generic [ref=f24e84]:
+      - generic [ref=f24e85]: Notifications
+      - generic [ref=f24e86] [cursor=pointer]:
+        - generic [ref=f24e87]: Clear All
+        - generic [ref=f24e88]: 
+    - generic [ref=f24e90]:
+      - generic [ref=f24e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f24e92]: "0"
+      - generic [ref=f24e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f24e94]: "0"
+      - generic [ref=f24e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f24e96]: "0"
+    - generic [ref=f24e155]:
+      - generic [ref=f24e156]: You are up to date
+      - generic [ref=f24e157]: You currently have no notifcations to review
+  - generic [ref=f24e99]:  
+  - generic [ref=f24e100]:
+    - generic [ref=f24e101]:
+      - generic [ref=f24e102]:
+        - link "" [ref=f24e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f24e105]: •
+        - link "Comms Hub" [ref=f24e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f24e107]: •
+        - generic [ref=f24e108]: Template Manager
+      - generic [ref=f24e109]:
+        - button " Show Org. Default Templates" [ref=f24e110] [cursor=pointer]:
+          - generic [ref=f24e111]: 
+          - generic [ref=f24e112]: Show Org. Default Templates
+        - button " Create New Email" [active] [ref=f24e113] [cursor=pointer]:
+          - generic [ref=f24e114]: 
+          - generic [ref=f24e115]: Create New Email
+        - link [ref=f24e116] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder/sms/create
+          - button " Create New SMS" [ref=f24e117]:
+            - generic [ref=f24e118]: 
+            - generic [ref=f24e119]: Create New SMS
+        - generic [ref=f24e159] [cursor=pointer]:
+          - generic [ref=f24e160]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f24e161]: 
+          - generic [ref=f24e162]: "Viewing data for:"
+          - generic:
+            - generic:
+              - generic [ref=f24e163]:
+                - generic [ref=f24e164]: 
+                - generic [ref=f24e165]: Select All (2)
+              - generic [ref=f24e167]:
+                - generic [ref=f24e168]: 
+                - generic [ref=f24e170]: General Practice (Blinx Demo Site) (YGMQJ)
+              - generic [ref=f24e172]:
+                - generic [ref=f24e173]: 
+                - generic [ref=f24e174]: PC24 Urgent Care (Y05825)
+            - generic [ref=f24e175]: Apply
+    - generic [ref=f24e124]:
+      - generic [ref=f24e125]:
+        - generic [ref=f24e127]:
+          - textbox "Search Templates" [ref=f24e128]
+          - generic [ref=f24e129]: 
+        - generic [ref=f24e131]:
+          - button " Set Org. Defaults" [ref=f24e179] [cursor=pointer]:
+            - generic [ref=f24e180]: 
+            - text: Set Org. Defaults
+          - text:   
+          - button " Reset Column Widths" [ref=f24e133] [cursor=pointer]:
+            - generic [ref=f24e134]: 
+            - text: Reset Column Widths
+          - button " Show All Columns" [ref=f24e136] [cursor=pointer]:
+            - generic [ref=f24e137]: 
+            - text: Show All Columns
+          - button " Clear Filters" [ref=f24e139] [cursor=pointer]:
+            - generic [ref=f24e140]: 
+            - text: Clear Filters
+          - text: 
+      - generic [ref=f24e181]:
+        - generic:    
+        - generic [ref=f24e182]:
+          - grid [ref=f24e183]:
+            - rowgroup [ref=f24e184]:
+              - row [ref=f24e185]:
+                - text: 
+                - generic [ref=f24e187] [cursor=pointer]: 
+                - columnheader "Shared Campaign?" [ref=f24e188] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e190] [cursor=pointer]: 
+                - columnheader "Name" [ref=f24e191] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e193] [cursor=pointer]: 
+                - columnheader "Type" [ref=f24e194] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e196] [cursor=pointer]: 
+                - columnheader "Communication Type" [ref=f24e197] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e199] [cursor=pointer]: 
+                - columnheader "Created By Organisation" [ref=f24e200] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e202] [cursor=pointer]: 
+                - columnheader "Shared To Orgs" [ref=f24e203] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e205] [cursor=pointer]: 
+                - columnheader "Created Date" [ref=f24e206] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e208] [cursor=pointer]: 
+                - columnheader "Updated Date" [ref=f24e209] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e211] [cursor=pointer]: 
+                - columnheader "Status" [ref=f24e212] [cursor=pointer]
+                - text:     
+                - generic [ref=f24e214] [cursor=pointer]: 
+                - columnheader "Default Template?" [ref=f24e215] [cursor=pointer]
+                - text:    
+            - row [ref=f24e216]:
+              - text: 
+              - generic [ref=f24e218] [cursor=pointer]: 
+              - columnheader "Actions" [ref=f24e219] [cursor=pointer]
+              - text:    
+            - rowgroup [ref=f24e220]:
+              - row [ref=f24e221]:
+                - gridcell [ref=f24e222]
+                - gridcell " Non-Shared Templates (2212)" [ref=f24e224]:
+                  - generic [ref=f24e225]:
+                    - text: 
+                    - generic [ref=f24e226]: 
+                    - generic [ref=f24e228]: Non-Shared Templates
+                    - generic [ref=f24e229]: (2212)
+                - gridcell [ref=f24e230]
+                - gridcell [ref=f24e231]
+                - gridcell [ref=f24e232]
+                - gridcell [ref=f24e233]
+                - gridcell [ref=f24e237]
+                - gridcell [ref=f24e241]
+                - gridcell [ref=f24e242]
+                - gridcell [ref=f24e243]
+              - row [ref=f24e244]:
+                - gridcell [ref=f24e245]
+                - gridcell " Shared Templates (409)" [ref=f24e247]:
+                  - generic [ref=f24e248]:
+                    - text: 
+                    - generic [ref=f24e249]: 
+                    - generic [ref=f24e251]: Shared Templates
+                    - generic [ref=f24e252]: (409)
+                - gridcell [ref=f24e253]
+                - gridcell [ref=f24e254]
+                - gridcell [ref=f24e255]
+                - gridcell [ref=f24e256]
+                - gridcell [ref=f24e260]
+                - gridcell [ref=f24e264]
+                - gridcell [ref=f24e265]
+                - gridcell [ref=f24e266]
+            - row [ref=f24e267]:
+              - gridcell [ref=f24e268]
+            - row [ref=f24e270]:
+              - gridcell [ref=f24e271]
+          - generic [ref=f24e273]:
+            - generic [ref=f24e274]:
+              - button "≣ Columns" [ref=f24e276] [cursor=pointer]:
+                - generic [ref=f24e277]: ≣
+                - generic [ref=f24e279]: Columns
+              - button " Filters" [ref=f24e281] [cursor=pointer]:
+                - generic [ref=f24e282]: 
+                - generic [ref=f24e284]: Filters
+            - text:                                                                                                       
+        - generic [ref=f24e286]:
+          - generic [ref=f24e287]:
+            - generic [ref=f24e288]: "1"
+            - text: to
+            - generic [ref=f24e289]: "2"
+            - text: of
+            - generic [ref=f24e290]: "2"
+          - generic [ref=f24e291]:
+            - generic:
+              - generic: 
+              - button "First"
+            - generic:
+              - generic: 
+              - button "Previous"
+            - text: Page
+            - generic [ref=f24e292]: "1"
+            - text: of
+            - generic [ref=f24e293]: "1"
+            - generic:
+              - generic: 
+              - button "Next"
+            - generic:
+              - generic: 
+              - button "Last"
+  - generic [ref=f24e301]:
+    - generic [ref=f24e302]: 
+    - generic [ref=f24e304]: How would you like to create your email?
+    - generic [ref=f24e305]:
+      - generic [ref=f24e306]:
+        - link "" [ref=f24e307] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder/email/create
+        - heading "Create a custom build" [level=3] [ref=f24e309]
+        - generic [ref=f24e310]: Start from scratch and create your bespoke email using our template editor.
+      - generic [ref=f24e311]:
+        - generic [ref=f24e312] [cursor=pointer]
+        - heading "Use a pre-built template" [level=3] [ref=f24e313]
+        - generic [ref=f24e314]: Send an email to your patients using pre-built templates, such as appointment reminders.
+  - text:    
+  - generic:
+    - generic:
+      - generic [ref=f24e294]: General Practice (Blinx Demo Site) (YGMQJ)
+      - generic [ref=f24e297]: PC24 Urgent Care (Y05825)

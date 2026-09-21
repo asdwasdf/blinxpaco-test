@@ -1,0 +1,79 @@
+- generic [ref=f48e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f48e3] [cursor=pointer]
+  - generic [ref=f48e8]:
+    - generic [ref=f48e9]:
+      - button "Expand sidebar" [ref=f48e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f48e11]
+      - generic [ref=f48e13]:
+        - img "Dashboards" [ref=f48e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f48e23] [cursor=pointer]
+        - img "Quick Send" [ref=f48e28] [cursor=pointer]
+        - img "Health Forms" [ref=f48e33] [cursor=pointer]
+        - img "Patient Search" [ref=f48e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f48e43] [cursor=pointer]
+        - img "case load management" [ref=f48e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f48e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f48e58] [cursor=pointer]
+        - img "Users" [ref=f48e63] [cursor=pointer]
+        - img "Configuration" [ref=f48e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f48e73] [cursor=pointer]
+        - generic [ref=f48e75] [cursor=pointer]
+      - button [ref=f48e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f48e84]
+    - generic [ref=f48e85]:
+      - generic [ref=f48e86]:
+        - generic [ref=f48e87]: 1h 59m
+        - generic [ref=f48e92]:
+          - generic [ref=f48e95]:
+            - generic [ref=f48e96] [cursor=pointer]: TFN
+            - generic [ref=f48e98]:
+              - generic [ref=f48e99]: Test Fiona Nguyen
+              - generic [ref=f48e100]: Super Admin GB
+              - generic [ref=f48e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f48e107]
+          - generic [ref=f48e108]:
+            - button "More options" [ref=f48e110] [cursor=pointer]
+            - generic [ref=f48e114] [cursor=pointer]: "0"
+      - generic [ref=f48e119]:
+        - generic [ref=f48e122]:
+          - generic [ref=f48e123]:
+            - heading "Configuration" [level=1] [ref=f48e125]
+            - generic [ref=f48e128]:
+              - button "Organisation" [ref=f48e130] [cursor=pointer]:
+                - link "Organisation" [ref=f48e132]:
+                  - /url: "#"
+              - button "Patient" [ref=f48e137] [cursor=pointer]:
+                - link "Patient" [ref=f48e139]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f48e144] [cursor=pointer]:
+                - link "Appointment Books" [ref=f48e146]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f48e151] [cursor=pointer]:
+                - link "Quick Pay" [ref=f48e153]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f48e158] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f48e160]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f48e165] [cursor=pointer]:
+                - link "Users & Staff" [ref=f48e167]:
+                  - /url: "#"
+              - generic [ref=f48e171]:
+                - button "Clinical Config" [expanded] [ref=f48e172] [cursor=pointer]:
+                  - link "Clinical Config" [active] [ref=f48e174]:
+                    - /url: "#"
+                - region "Clinical Config" [ref=f48e194]:
+                  - tree [ref=f48e196]:
+                    - treeitem "Risk Strat Builder" [level=1] [ref=f48e197]:
+                      - link [aria-hidden] [ref=f48e199] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f48e200]: Risk Strat Builder
+                    - treeitem "Template Library" [level=1] [ref=f48e201]:
+                      - link [aria-hidden] [ref=f48e203] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f48e206]: Template Library
+              - button "Case Prioritisation" [ref=f48e179] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f48e181]:
+                  - /url: "#"
+          - generic [ref=f48e183] [cursor=pointer]
+        - generic [ref=f48e186]: Please select a menu item

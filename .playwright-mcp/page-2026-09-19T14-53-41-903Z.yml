@@ -1,0 +1,327 @@
+- generic [active] [ref=f41e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f41e3] [cursor=pointer]
+  - generic [ref=f41e19177]:
+    - generic [ref=f41e19178]:
+      - button "Expand sidebar" [ref=f41e19179] [cursor=pointer]:
+        - img "Paco Logo" [ref=f41e19180]
+      - generic [ref=f41e19182]:
+        - img "Dashboards" [ref=f41e19187] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f41e19192] [cursor=pointer]
+        - img "Quick Send" [ref=f41e19197] [cursor=pointer]
+        - img "Health Forms" [ref=f41e19202] [cursor=pointer]
+        - img "Patient Search" [ref=f41e19207] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f41e19212] [cursor=pointer]
+        - img "case load management" [ref=f41e19217] [cursor=pointer]
+        - img "Appointment Book" [ref=f41e19222] [cursor=pointer]
+        - img "Quick Pay" [ref=f41e19227] [cursor=pointer]
+        - img "Users" [ref=f41e19232] [cursor=pointer]
+        - img "Configuration" [ref=f41e19237] [cursor=pointer]
+        - img "Rocket Bar" [ref=f41e19242] [cursor=pointer]
+        - generic [ref=f41e19244] [cursor=pointer]
+      - button [ref=f41e19252] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f41e19253]
+    - generic [ref=f41e19254]:
+      - generic [ref=f41e19255]:
+        - generic [ref=f41e19256]: 2h 46m
+        - generic [ref=f41e19261]:
+          - generic [ref=f41e19264]:
+            - generic [ref=f41e19265] [cursor=pointer]: TFN
+            - generic [ref=f41e19267]:
+              - generic [ref=f41e19268]: Test Fiona Nguyen
+              - generic [ref=f41e19269]: Super Admin GB
+              - generic [ref=f41e19271]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f41e19276]
+          - generic [ref=f41e19277]:
+            - button "More options" [ref=f41e19279] [cursor=pointer]
+            - generic [ref=f41e19283] [cursor=pointer]: "0"
+      - generic [ref=f41e19288]:
+        - generic [ref=f41e19291]:
+          - generic [ref=f41e19292]:
+            - heading "Configuration" [level=1] [ref=f41e19294]
+            - generic [ref=f41e19297]:
+              - button "Organisation" [ref=f41e19299] [cursor=pointer]:
+                - link "Organisation" [ref=f41e19301]:
+                  - /url: "#"
+              - button "Patient" [ref=f41e19306] [cursor=pointer]:
+                - link "Patient" [ref=f41e19308]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f41e19313] [cursor=pointer]:
+                - link "Appointment Books" [ref=f41e19315]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f41e19320] [cursor=pointer]:
+                - link "Quick Pay" [ref=f41e19322]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f41e19327] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f41e19329]:
+                  - /url: "#"
+              - generic [ref=f41e19333]:
+                - button "Users & Staff" [expanded] [ref=f41e19334] [cursor=pointer]:
+                  - link "Users & Staff" [ref=f41e19336]:
+                    - /url: "#"
+                - region "Users & Staff" [ref=f41e19340]:
+                  - tree [ref=f41e19342]:
+                    - treeitem "Staff Profiles" [level=1] [ref=f41e19343]:
+                      - link [aria-hidden] [ref=f41e19345] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e19346]: Staff Profiles
+                    - treeitem "Role Groups" [level=1] [ref=f41e19347]:
+                      - link [aria-hidden] [ref=f41e19349] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e19350]: Role Groups
+                    - treeitem "Teams" [level=1] [ref=f41e19351]:
+                      - link [aria-hidden] [ref=f41e19353] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e19354]: Teams
+              - button "Clinical Config" [ref=f41e19356] [cursor=pointer]:
+                - link "Clinical Config" [ref=f41e19358]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f41e19363] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f41e19365]:
+                  - /url: "#"
+          - generic [ref=f41e19367] [cursor=pointer]
+        - generic [ref=f41e19371]:
+          - generic [ref=f41e19373]:
+            - heading "Teams" [level=1] [ref=f41e19374]
+            - textbox "Search Teams..." [ref=f41e19377]
+          - generic [ref=f41e19378]:
+            - generic [ref=f41e19381]:
+              - generic [ref=f41e19382]:
+                - generic [ref=f41e19384]:
+                  - button "Add New Add New" [ref=f41e19385] [cursor=pointer]:
+                    - img "Add New" [ref=f41e19387]
+                    - generic [ref=f41e19388]: Add New
+                  - generic [ref=f41e19389]:
+                    - button [ref=f41e19390] [cursor=pointer]:
+                      - img "Delete" [ref=f41e19392]
+                    - generic [ref=f41e19393]:
+                      - text: Team Name
+                      - textbox [ref=f41e19395]: Integrated Response HUB
+                - generic [ref=f41e19397]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19399] [cursor=pointer]:
+                    - generic [ref=f41e19400]:
+                      - combobox: Alex Biberovic, Gareth Bartlett, Paul Foster, Mike Ramella
+                    - generic [ref=f41e19401]: Alex Biberovic, Gareth Bartlett, Paul Foster, Mike Ramella
+              - generic [ref=f41e19406]:
+                - generic [ref=f41e19409]:
+                  - button [ref=f41e19410] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19412]
+                  - generic [ref=f41e19413]:
+                    - text: Team Name
+                    - textbox [ref=f41e19415]: Integrated Response HUB
+                - generic [ref=f41e19417]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19419] [cursor=pointer]:
+                    - generic [ref=f41e19420]:
+                      - combobox: Alex Biberovic, Gareth Bartlett, Paul Foster, Mike Ramella
+                    - generic [ref=f41e19421]: Alex Biberovic, Gareth Bartlett, Paul Foster, Mike Ramella
+              - generic [ref=f41e19426]:
+                - generic [ref=f41e19429]:
+                  - button [ref=f41e19430] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19432]
+                  - generic [ref=f41e19433]:
+                    - text: Team Name
+                    - textbox [ref=f41e19435]: Frailty Coordinators
+                - generic [ref=f41e19437]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19439] [cursor=pointer]:
+                    - generic [ref=f41e19440]:
+                      - combobox: Gareth Bartlett, Paul Foster, , mike ___, NHS Test User 1, Tom Nguyen, Tom Nguyen, Tom Nguyen, Tom Nguyen,
+                    - generic [ref=f41e19441]: Gareth Bartlett, Paul Foster, null, mike ___, NHS Test User 1, Tom Nguyen, Tom Nguyen, Tom Nguyen, Tom Nguyen, null
+              - generic [ref=f41e19446]:
+                - generic [ref=f41e19449]:
+                  - button [ref=f41e19450] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19452]
+                  - generic [ref=f41e19453]:
+                    - text: Team Name
+                    - textbox [ref=f41e19455]: Frailty Coordinators
+                - generic [ref=f41e19457]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19459] [cursor=pointer]:
+                    - generic [ref=f41e19460]:
+                      - combobox: Alex Biberovic, Gareth Bartlett, Paul Foster, jhbjhb hjj hj
+                    - generic [ref=f41e19461]: Alex Biberovic, Gareth Bartlett, Paul Foster, jhbjhb hjj hj
+              - generic [ref=f41e19466]:
+                - generic [ref=f41e19469]:
+                  - button [ref=f41e19470] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19472]
+                  - generic [ref=f41e19473]:
+                    - text: Team Name
+                    - textbox [ref=f41e19475]: Anaesthetists
+                - generic [ref=f41e19477]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19479] [cursor=pointer]:
+                    - generic [ref=f41e19480]:
+                      - combobox: Michael Ramella
+                    - generic [ref=f41e19481]: Michael Ramella
+              - generic [ref=f41e19486]:
+                - generic [ref=f41e19489]:
+                  - button [ref=f41e19490] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19492]
+                  - generic [ref=f41e19493]:
+                    - text: Team Name
+                    - textbox [ref=f41e19495]: Surgeons
+                - generic [ref=f41e19497]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19499] [cursor=pointer]:
+                    - generic [ref=f41e19500]:
+                      - combobox: Roland Partridge, , MustafaDefault Nawaz, Tony Do
+                    - generic [ref=f41e19501]: Roland Partridge, null, MustafaDefault Nawaz, Tony Do
+              - generic [ref=f41e19506]:
+                - generic [ref=f41e19509]:
+                  - button [ref=f41e19510] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19512]
+                  - generic [ref=f41e19513]:
+                    - text: Team Name
+                    - textbox [ref=f41e19515]: Check-in Team
+                - generic [ref=f41e19517]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19519] [cursor=pointer]:
+                    - generic [ref=f41e19520]:
+                      - combobox: Rick Sanchez
+                    - generic [ref=f41e19521]: Rick Sanchez
+              - generic [ref=f41e19526]:
+                - generic [ref=f41e19529]:
+                  - button [ref=f41e19530] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19532]
+                  - generic [ref=f41e19533]:
+                    - text: Team Name
+                    - textbox [ref=f41e19535]: ODA (Operating Department Assistant)
+                - generic [ref=f41e19537]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19539] [cursor=pointer]:
+                    - generic [ref=f41e19540]:
+                      - combobox: Derek Pearce, Jane Jones
+                    - generic [ref=f41e19541]: Derek Pearce, Jane Jones
+              - generic [ref=f41e19546]:
+                - generic [ref=f41e19549]:
+                  - button [ref=f41e19550] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19552]
+                  - generic [ref=f41e19553]:
+                    - text: Team Name
+                    - textbox [ref=f41e19555]: Recovery Nursing Team
+                - generic [ref=f41e19557]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19559] [cursor=pointer]:
+                    - generic [ref=f41e19560]:
+                      - combobox: Tayla Wilson, Phoebe Pearce, Alex Paul
+                    - generic [ref=f41e19561]: Tayla Wilson, Phoebe Pearce, Alex Paul
+              - generic [ref=f41e19566]:
+                - generic [ref=f41e19569]:
+                  - button [ref=f41e19570] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19572]
+                  - generic [ref=f41e19573]:
+                    - text: Team Name
+                    - textbox [ref=f41e19575]: Discharge Team
+                - generic [ref=f41e19577]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19579] [cursor=pointer]:
+                    - generic [ref=f41e19580]:
+                      - combobox: Samantha Walker, Sarah Smith, Santhosh Ragavan
+                    - generic [ref=f41e19581]: Samantha Walker, Sarah Smith, Santhosh Ragavan
+              - generic [ref=f41e19586]:
+                - generic [ref=f41e19589]:
+                  - button [ref=f41e19590] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19592]
+                  - generic [ref=f41e19593]:
+                    - text: Team Name
+                    - textbox [ref=f41e19595]: Neighbourhood Urgent Care Team
+                - generic [ref=f41e19597]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19599] [cursor=pointer]:
+                    - generic [ref=f41e19600]:
+                      - combobox: Samantha Walker,
+                    - generic [ref=f41e19601]: Samantha Walker, null
+              - generic [ref=f41e19606]:
+                - generic [ref=f41e19609]:
+                  - button [ref=f41e19610] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19612]
+                  - generic [ref=f41e19613]:
+                    - text: Team Name
+                    - textbox [ref=f41e19615]: Neighbourhood Community Team
+                - generic [ref=f41e19617]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19619] [cursor=pointer]:
+                    - generic [ref=f41e19620]:
+                      - combobox: Johnny (2255) Bravo, Michael Finaltest,
+                    - generic [ref=f41e19621]: Johnny (2255) Bravo, Michael Finaltest, null
+              - generic [ref=f41e19626]:
+                - generic [ref=f41e19629]:
+                  - button [ref=f41e19630] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19632]
+                  - generic [ref=f41e19633]:
+                    - text: Team Name
+                    - textbox [ref=f41e19635]: Neighbourhood Hospital Team
+                - generic [ref=f41e19637]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19639] [cursor=pointer]:
+                    - generic [ref=f41e19640]:
+                      - combobox: John Smith,
+                    - generic [ref=f41e19641]: John Smith, null
+              - generic [ref=f41e19646]:
+                - generic [ref=f41e19649]:
+                  - button [ref=f41e19650] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19652]
+                  - generic [ref=f41e19653]:
+                    - text: Team Name
+                    - textbox [ref=f41e19655]: Neighbourhood Physio Team
+                - generic [ref=f41e19657]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19659] [cursor=pointer]:
+                    - generic [ref=f41e19660]:
+                      - combobox: Sarah Smith
+                    - generic [ref=f41e19661]: Sarah Smith
+              - generic [ref=f41e19666]:
+                - generic [ref=f41e19669]:
+                  - button [ref=f41e19670] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19672]
+                  - generic [ref=f41e19673]:
+                    - text: Team Name
+                    - textbox [ref=f41e19675]: Neighbourhood Pharmacy Team
+                - generic [ref=f41e19677]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19679] [cursor=pointer]:
+                    - generic [ref=f41e19680]:
+                      - combobox: Tayla Wilson
+                    - generic [ref=f41e19681]: Tayla Wilson
+              - generic [ref=f41e19686]:
+                - generic [ref=f41e19689]:
+                  - button [ref=f41e19690] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19692]
+                  - generic [ref=f41e19693]:
+                    - text: Team Name
+                    - textbox [ref=f41e19695]: Neighbourhood Optometry Team
+                - generic [ref=f41e19697]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19699] [cursor=pointer]:
+                    - generic [ref=f41e19700]:
+                      - combobox: Alex Paul
+                    - generic [ref=f41e19701]: Alex Paul
+              - generic [ref=f41e19706]:
+                - generic [ref=f41e19709]:
+                  - button [ref=f41e19710] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19712]
+                  - generic [ref=f41e19713]:
+                    - text: Team Name
+                    - textbox [ref=f41e19715]: Neighbourhood Dental Team
+                - generic [ref=f41e19717]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19719] [cursor=pointer]:
+                    - generic [ref=f41e19720]:
+                      - combobox: Rick Sanchez, Ammar Hashad
+                    - generic [ref=f41e19721]: Rick Sanchez, Ammar Hashad
+              - generic [ref=f41e19726]:
+                - generic [ref=f41e19729]:
+                  - button [ref=f41e19730] [cursor=pointer]:
+                    - img "Delete" [ref=f41e19732]
+                  - generic [ref=f41e19733]:
+                    - text: Team Name
+                    - textbox [ref=f41e19735]: Neighbourhood GP Team
+                - generic [ref=f41e19737]:
+                  - text: Assign Staff
+                  - generic [ref=f41e19739] [cursor=pointer]:
+                    - generic [ref=f41e19740]:
+                      - combobox: Andy Parkin, Josh Coogan, Michael Ramella 1804 15 Sept SSO Test 1, Simon Bowers,
+                    - generic [ref=f41e19741]: Andy Parkin, Josh Coogan, Michael Ramella 1804 15 Sept SSO Test 1, Simon Bowers, null
+            - button "Save" [ref=f41e19747] [cursor=pointer]

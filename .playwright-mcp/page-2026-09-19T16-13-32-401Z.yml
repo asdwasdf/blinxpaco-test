@@ -1,0 +1,21 @@
+- generic [active] [ref=f87e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f87e3] [cursor=pointer]
+  - generic [ref=f87e8]:
+    - generic [ref=f87e11]:
+      - img "Blinx Logo" [ref=f87e13]
+      - generic [ref=f87e14]:
+        - heading "Welcome Back" [level=2] [ref=f87e15]
+        - paragraph [ref=f87e16]: Welcome back to Patient and Care Optimiser.
+        - button "Single Sign On" [ref=f87e17] [cursor=pointer]
+        - button "Username and Password -->" [ref=f87e18] [cursor=pointer]
+        - generic [ref=f87e20]:
+          - link "Terms & Conditions" [ref=f87e21] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=f87e22]: "|"
+          - link "Privacy Policy" [ref=f87e23] [cursor=pointer]:
+            - /url: /privacy-policy/
+    - contentinfo [ref=f87e24]:
+      - text: Powered By
+      - img "Blinx Logo" [ref=f87e25]
+  - alert [ref=f87e26]

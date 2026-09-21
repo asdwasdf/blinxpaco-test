@@ -1,0 +1,365 @@
+- generic [active] [ref=f129e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f129e8] [cursor=pointer]
+  - generic [ref=f129e11]:
+    - generic [ref=f129e12]:
+      - generic [ref=f129e13]:
+        - button "Expand sidebar" [ref=f129e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f129e15]
+        - generic [ref=f129e17]:
+          - img "Dashboards" [ref=f129e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f129e27] [cursor=pointer]
+          - img "Quick Send" [ref=f129e32] [cursor=pointer]
+          - img "Health Forms" [ref=f129e37] [cursor=pointer]
+          - img "Patient Search" [ref=f129e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f129e47] [cursor=pointer]
+          - img "case load management" [ref=f129e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f129e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f129e62] [cursor=pointer]
+          - img "Users" [ref=f129e67] [cursor=pointer]
+          - img "Configuration" [ref=f129e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f129e77] [cursor=pointer]
+          - generic [ref=f129e79] [cursor=pointer]
+        - button [ref=f129e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f129e88]
+      - generic [ref=f129e89]:
+        - generic [ref=f129e91]:
+          - generic [ref=f129e93]:
+            - img [aria-hidden] [ref=f129e95] [cursor=pointer]
+            - generic [ref=f129e97]:
+              - text: •
+              - button [ref=f129e98] [cursor=pointer]:
+                - link "Analytics" [ref=f129e99]:
+                  - /url: /analytics-home/
+            - generic [ref=f129e100]: •Patient & Medication Analyser
+          - generic [ref=f129e101]:
+            - button "1 Selected" [ref=f129e103] [cursor=pointer]
+            - generic [ref=f129e268] [cursor=pointer]:
+              - paragraph [ref=f129e269]: Date Range
+              - paragraph [ref=f129e270]: All Time
+        - generic [ref=f129e109]:
+          - generic [ref=f129e424]:
+            - generic [ref=f129e426]:
+              - paragraph [ref=f129e428]: Reports
+              - generic [ref=f129e430] [cursor=pointer]
+            - textbox "Search..." [ref=f129e437]
+            - list [ref=f129e438]:
+              - listitem [ref=f129e439]:
+                - generic [ref=f129e440]:
+                  - button [ref=f129e441] [cursor=pointer]
+                  - generic [ref=f129e444]: Practice Report
+                  - button [ref=f129e446] [cursor=pointer]
+          - generic [ref=f129e449]:
+            - generic [ref=f129e450]:
+              - tablist [ref=f129e455]:
+                - tab "Patient Analyser" [ref=f129e456] [cursor=pointer]
+                - tab "Medication Analyser" [ref=f129e457] [cursor=pointer]
+                - tab "QOF Registers" [selected] [ref=f129e458] [cursor=pointer]
+                - tab "Patient Details" [ref=f129e459] [cursor=pointer]
+              - generic [ref=f129e461]:
+                - generic [ref=f129e464]:
+                  - textbox "Search..." [ref=f129e465]
+                  - button [ref=f129e467] [cursor=pointer]
+                - button [ref=f129e471] [cursor=pointer]
+                - button "Save Report" [ref=f129e474] [cursor=pointer]
+            - generic [ref=f129e479]:
+              - generic [ref=f129e480]:
+                - button "Advanced Search 0" [ref=f129e481] [cursor=pointer]:
+                  - text: Advanced Search
+                  - generic [ref=f129e482]: "0"
+                - paragraph [ref=f129e484]: "Patients: 11"
+              - generic [ref=f129e487]:
+                - button "Reset View" [ref=f129e488] [cursor=pointer]
+                - button "Expand All" [ref=f129e491] [cursor=pointer]
+                - button "Collapse All" [ref=f129e492] [cursor=pointer]
+              - generic [ref=f129e493]:
+                - generic [ref=f129e497]:
+                  - generic [ref=f129e498]: Register/Indicator
+                  - generic [ref=f129e499]:
+                    - combobox "Register/Indicator" [ref=f129e500]: Please Select...
+                    - button "Open" [ref=f129e502] [cursor=pointer]
+                - generic [ref=f129e508]:
+                  - generic [ref=f129e509]: Report Type
+                  - generic [ref=f129e510]:
+                    - combobox "Report Type" [ref=f129e511]: Please Select...
+                    - button "Open" [ref=f129e513] [cursor=pointer]
+                - button "Run" [ref=f129e516] [cursor=pointer]
+            - generic [ref=f129e518]:
+              - generic [ref=f129e523]:
+                - generic:  
+                - generic [ref=f129e524]:
+                  - grid [ref=f129e525]:
+                    - row [ref=f129e526]:
+                      - columnheader [ref=f129e527] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f129e528]: 
+                        - text:    
+                    - rowgroup [ref=f129e529]:
+                      - row [ref=f129e530]:
+                        - columnheader "Patient Full Name" [ref=f129e531] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e532]: 
+                          - text:    
+                        - columnheader "Date of Birth" [ref=f129e534] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e535]: 
+                          - text:    
+                        - columnheader "Current Age" [ref=f129e537] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e538]: 
+                          - text:    
+                        - columnheader "Gender" [ref=f129e540] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e541]: 
+                          - text:    
+                        - columnheader "Patient Email Address" [ref=f129e543] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e544]: 
+                          - text:    
+                    - row [ref=f129e546]:
+                      - columnheader "Actions" [ref=f129e547]:  
+                    - row "Press SPACE to select this row." [ref=f129e549]:
+                      - gridcell [ref=f129e550]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e551]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e552]:
+                      - gridcell [ref=f129e553]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e554]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e555]:
+                      - gridcell [ref=f129e556]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e557]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e558]:
+                      - gridcell [ref=f129e559]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e560]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e561]:
+                      - gridcell [ref=f129e562]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e563]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e564]:
+                      - gridcell [ref=f129e565]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e566]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e567]:
+                      - gridcell [ref=f129e568]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e569]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e570]:
+                      - gridcell [ref=f129e571]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e572]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e573]:
+                      - gridcell [ref=f129e574]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e575]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e576]:
+                      - gridcell [ref=f129e577]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e578]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e579]:
+                      - gridcell [ref=f129e580]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e581]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e582]:
+                      - gridcell [ref=f129e583]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e584]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e585]:
+                      - gridcell [ref=f129e586]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e587]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e588]:
+                      - gridcell [ref=f129e589]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e590]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e591]:
+                      - gridcell [ref=f129e592]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e593]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e594]:
+                      - gridcell [ref=f129e595]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e596]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f129e597]:
+                      - gridcell [ref=f129e598]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f129e599]
+                        - text: 
+                    - rowgroup [ref=f129e600]:
+                      - row "Press SPACE to select this row." [ref=f129e601]:
+                        - gridcell "Emmanuel Mbole" [ref=f129e602]
+                        - gridcell "12/10/1990" [ref=f129e603]
+                        - gridcell "35" [ref=f129e604]
+                        - gridcell "M" [ref=f129e605]
+                        - gridcell "emmanuel.mbole@blinxsolutions.com" [ref=f129e606]
+                      - row "Press SPACE to select this row." [ref=f129e607]:
+                        - gridcell "Michael Ramella" [ref=f129e608]
+                        - gridcell "15/03/2024" [ref=f129e609]
+                        - gridcell "86" [ref=f129e610]
+                        - gridcell "M" [ref=f129e611]
+                        - gridcell "alex.paul@blinxsolutions.com" [ref=f129e612]
+                      - row "Press SPACE to select this row." [ref=f129e613]:
+                        - gridcell "Dan Joyce" [ref=f129e614]
+                        - gridcell "23/01/1975" [ref=f129e615]
+                        - gridcell "49" [ref=f129e616]
+                        - gridcell "M" [ref=f129e617]
+                        - gridcell "D.Joyce@liverpool.ac.uk" [ref=f129e618]
+                      - row "Press SPACE to select this row." [ref=f129e619]:
+                        - gridcell "Michael Ramella" [ref=f129e620]
+                        - gridcell "15/03/2024" [ref=f129e621]
+                        - gridcell "86" [ref=f129e622]
+                        - gridcell "M" [ref=f129e623]
+                        - gridcell "alex.paul@blinxsolutions.com" [ref=f129e624]
+                      - row "Press SPACE to select this row." [ref=f129e625]:
+                        - gridcell "Paul Foster" [ref=f129e626]
+                        - gridcell "29/09/1978" [ref=f129e627]
+                        - gridcell "45" [ref=f129e628]
+                        - gridcell "F" [ref=f129e629]
+                        - gridcell "paul.foster@blinxsolutions.com" [ref=f129e630]
+                      - row "Press SPACE to select this row." [ref=f129e631]:
+                        - gridcell "Ellie Bartlett" [ref=f129e632]
+                        - gridcell "15/07/1964" [ref=f129e633]
+                        - gridcell "60" [ref=f129e634]
+                        - gridcell "F" [ref=f129e635]
+                        - gridcell "egittins@doctors.org.uk" [ref=f129e636]
+                      - row "Press SPACE to select this row." [ref=f129e637]:
+                        - gridcell "Taylor Lewis" [ref=f129e638]
+                        - gridcell "17/09/1952" [ref=f129e639]
+                        - gridcell "71" [ref=f129e640]
+                        - gridcell "F" [ref=f129e641]
+                        - gridcell "Taylor.Lewis@blinxsolutions.com" [ref=f129e642]
+                      - row "Press SPACE to select this row." [ref=f129e643]:
+                        - gridcell "Ellie Bartlett" [ref=f129e644]
+                        - gridcell "15/07/1964" [ref=f129e645]
+                        - gridcell "60" [ref=f129e646]
+                        - gridcell "F" [ref=f129e647]
+                        - gridcell "egittins@doctors.org.uk" [ref=f129e648]
+                      - row "Press SPACE to select this row." [ref=f129e649]:
+                        - gridcell "Corinne Pegrum" [ref=f129e650]
+                        - gridcell "12/10/1990" [ref=f129e651]
+                        - gridcell "50" [ref=f129e652]
+                        - gridcell "F" [ref=f129e653]
+                        - gridcell "Corinne.pegrum@blinxsolutions.com" [ref=f129e654]
+                      - row "Press SPACE to select this row." [ref=f129e655]:
+                        - gridcell "Dan Joyce" [ref=f129e656]
+                        - gridcell "23/01/1975" [ref=f129e657]
+                        - gridcell "49" [ref=f129e658]
+                        - gridcell "M" [ref=f129e659]
+                        - gridcell "D.Joyce@liverpool.ac.uk" [ref=f129e660]
+                      - row "Press SPACE to select this row." [ref=f129e661]:
+                        - gridcell "Taylor Lewis" [ref=f129e662]
+                        - gridcell "17/09/1952" [ref=f129e663]
+                        - gridcell "71" [ref=f129e664]
+                        - gridcell "F" [ref=f129e665]
+                        - gridcell "Taylor.Lewis@blinxsolutions.com" [ref=f129e666]
+                      - row "Press SPACE to select this row." [ref=f129e667]:
+                        - gridcell "Paul Foster" [ref=f129e668]
+                        - gridcell "29/09/1978" [ref=f129e669]
+                        - gridcell "45" [ref=f129e670]
+                        - gridcell "F" [ref=f129e671]
+                        - gridcell "paul.foster@blinxsolutions.com" [ref=f129e672]
+                      - row "Press SPACE to select this row." [ref=f129e673]:
+                        - gridcell "Corinne Pegrum" [ref=f129e674]
+                        - gridcell "12/10/1990" [ref=f129e675]
+                        - gridcell "50" [ref=f129e676]
+                        - gridcell "F" [ref=f129e677]
+                        - gridcell "Corinne.pegrum@blinxsolutions.com" [ref=f129e678]
+                      - row "Press SPACE to select this row." [ref=f129e679]:
+                        - gridcell "Paul Foster" [ref=f129e680]
+                        - gridcell "29/09/1978" [ref=f129e681]
+                        - gridcell "45" [ref=f129e682]
+                        - gridcell "F" [ref=f129e683]
+                        - gridcell "paul.foster@blinxsolutions.com" [ref=f129e684]
+                      - row "Press SPACE to select this row." [ref=f129e685]:
+                        - gridcell "Taylor Lewis" [ref=f129e686]
+                        - gridcell "17/09/1952" [ref=f129e687]
+                        - gridcell "71" [ref=f129e688]
+                        - gridcell "F" [ref=f129e689]
+                        - gridcell "Taylor.Lewis@blinxsolutions.com" [ref=f129e690]
+                      - row "Press SPACE to select this row." [ref=f129e691]:
+                        - gridcell "Johnathan Dyer" [ref=f129e692]
+                        - gridcell "24/04/1947" [ref=f129e693]
+                        - gridcell "77" [ref=f129e694]
+                        - gridcell "F" [ref=f129e695]
+                        - gridcell "johnathan.dyer@blinxsolutions.com" [ref=f129e696]
+                      - row "Press SPACE to select this row." [ref=f129e697]:
+                        - gridcell "Michael Ramella" [ref=f129e698]
+                        - gridcell "15/03/2024" [ref=f129e699]
+                        - gridcell "86" [ref=f129e700]
+                        - gridcell "M" [ref=f129e701]
+                        - gridcell "alex.paul@blinxsolutions.com" [ref=f129e702]
+                    - row "Press SPACE to select this row." [ref=f129e703]:
+                      - gridcell [ref=f129e704]:
+                        - button [ref=f129e707] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e710]:
+                      - gridcell [ref=f129e711]:
+                        - button [ref=f129e714] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e717]:
+                      - gridcell [ref=f129e718]:
+                        - button [ref=f129e721] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e724]:
+                      - gridcell [ref=f129e725]:
+                        - button [ref=f129e728] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e731]:
+                      - gridcell [ref=f129e732]:
+                        - button [ref=f129e735] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e738]:
+                      - gridcell [ref=f129e739]:
+                        - button [ref=f129e742] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e745]:
+                      - gridcell [ref=f129e746]:
+                        - button [ref=f129e749] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e752]:
+                      - gridcell [ref=f129e753]:
+                        - button [ref=f129e756] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e759]:
+                      - gridcell [ref=f129e760]:
+                        - button [ref=f129e763] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e766]:
+                      - gridcell [ref=f129e767]:
+                        - button [ref=f129e770] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e773]:
+                      - gridcell [ref=f129e774]:
+                        - button [ref=f129e777] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e780]:
+                      - gridcell [ref=f129e781]:
+                        - button [ref=f129e784] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e787]:
+                      - gridcell [ref=f129e788]:
+                        - button [ref=f129e791] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e794]:
+                      - gridcell [ref=f129e795]:
+                        - button [ref=f129e798] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e801]:
+                      - gridcell [ref=f129e802]:
+                        - button [ref=f129e805] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e808]:
+                      - gridcell [ref=f129e809]:
+                        - button [ref=f129e812] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f129e815]:
+                      - gridcell [ref=f129e816]:
+                        - button [ref=f129e819] [cursor=pointer]
+                  - generic [ref=f129e827]:
+                    - tablist [ref=f129e828]:
+                      - tab "Columns" [ref=f129e829] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f129e830]: 
+                      - tab "Filters" [ref=f129e832] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f129e833]: 
+                    - text:                
+                - text:    
+              - paragraph [ref=f129e836]: 50 / 222 Rows Loaded
+    - generic "one-paco-top-bar" [ref=f129e238]:
+      - generic [ref=f129e240]:
+        - generic [ref=f129e243]:
+          - generic [ref=f129e244]: TFN
+          - generic [ref=f129e246]:
+            - generic [ref=f129e247]: Test Fiona Nguyen
+            - generic [ref=f129e248]: Super Admin GB
+            - generic [ref=f129e250]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f129e255]
+        - generic [ref=f129e256]:
+          - button "More options" [ref=f129e258] [cursor=pointer]
+          - generic [ref=f129e264] [cursor=pointer]
+          - generic [ref=f129e265] [cursor=pointer]: "0"
+  - alert [ref=f129e6]

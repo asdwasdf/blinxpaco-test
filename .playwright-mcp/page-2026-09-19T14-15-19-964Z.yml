@@ -1,0 +1,151 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e2634]:
+    - generic [ref=f4e2635]:
+      - button "Expand sidebar" [ref=f4e2636] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e2637]
+      - generic [ref=f4e2639]:
+        - img "Dashboards" [ref=f4e2644] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e2649] [cursor=pointer]
+        - img "Quick Send" [ref=f4e2654] [cursor=pointer]
+        - img "Health Forms" [ref=f4e2659] [cursor=pointer]
+        - img "Patient Search" [ref=f4e2664] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e2669] [cursor=pointer]
+        - img "case load management" [ref=f4e2674] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e2679] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e2684] [cursor=pointer]
+        - img "Users" [ref=f4e2689] [cursor=pointer]
+        - img "Configuration" [ref=f4e2694] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e2699] [cursor=pointer]
+        - generic [ref=f4e2701] [cursor=pointer]
+      - button [ref=f4e2709] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e2710]
+    - generic [ref=f4e2711]:
+      - generic [ref=f4e2712]:
+        - generic [ref=f4e2713]: 2h 15m
+        - generic [ref=f4e2718]:
+          - generic [ref=f4e2721]:
+            - generic [ref=f4e2722] [cursor=pointer]: TFN
+            - generic [ref=f4e2724]:
+              - generic [ref=f4e2725]: Test Fiona Nguyen
+              - generic [ref=f4e2726]: Super Admin GB
+              - generic [ref=f4e2728]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e2733]
+          - generic [ref=f4e2734]:
+            - button "More options" [ref=f4e2736] [cursor=pointer]
+            - generic [ref=f4e2740] [cursor=pointer]: "0"
+      - generic [ref=f4e2745]:
+        - generic [ref=f4e2748]:
+          - generic [ref=f4e2749]:
+            - heading "Configuration" [level=1] [ref=f4e2751]
+            - generic [ref=f4e2754]:
+              - generic [ref=f4e2755]:
+                - button "Organisation" [expanded] [ref=f4e2756] [cursor=pointer]:
+                  - link "Organisation" [ref=f4e2758]:
+                    - /url: "#"
+                - region "Organisation" [ref=f4e2762]:
+                  - tree [ref=f4e2764]:
+                    - treeitem "General" [level=1] [ref=f4e2765]:
+                      - link [aria-hidden] [ref=f4e2767] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2768]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f4e2769]:
+                      - link [aria-hidden] [ref=f4e2771] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2772]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f4e2773]:
+                      - link [aria-hidden] [ref=f4e2775] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2776]: Locations
+                    - treeitem "Skills" [level=1] [ref=f4e2777]:
+                      - link [aria-hidden] [ref=f4e2779] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2780]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f4e2781]:
+                      - link [aria-hidden] [ref=f4e2783] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2784]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f4e2785]:
+                      - link [aria-hidden] [ref=f4e2787] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2788]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f4e2789]:
+                      - link [aria-hidden] [ref=f4e2791] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2792]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f4e2793]:
+                      - link [aria-hidden] [ref=f4e2795] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2796]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f4e2797]:
+                      - link [aria-hidden] [ref=f4e2799] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2800]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f4e2801]:
+                      - link [aria-hidden] [ref=f4e2803] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2804]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f4e2805]:
+                      - link [aria-hidden] [ref=f4e2807] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2808]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f4e2809]:
+                      - link [aria-hidden] [ref=f4e2811] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2812]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f4e2813]:
+                      - link [aria-hidden] [ref=f4e2815] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e2816]: Integrations
+              - button "Patient" [ref=f4e2818] [cursor=pointer]:
+                - link "Patient" [ref=f4e2820]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f4e2825] [cursor=pointer]:
+                - link "Appointment Books" [ref=f4e2827]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f4e2832] [cursor=pointer]:
+                - link "Quick Pay" [ref=f4e2834]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f4e2839] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f4e2841]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f4e2846] [cursor=pointer]:
+                - link "Users & Staff" [ref=f4e2848]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f4e2853] [cursor=pointer]:
+                - link "Clinical Config" [ref=f4e2855]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f4e2860] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f4e2862]:
+                  - /url: "#"
+          - generic [ref=f4e2864] [cursor=pointer]
+        - generic [ref=f4e2868]:
+          - generic [ref=f4e2871]:
+            - heading "Org Priorities" [level=2] [ref=f4e2872]
+            - textbox "Search Org Priority..." [ref=f4e2875]
+          - table [ref=f4e2879]:
+            - rowgroup [ref=f4e2880]:
+              - row [ref=f4e2881]:
+                - columnheader [ref=f4e2882]:
+                  - generic [ref=f4e2883]:
+                    - paragraph [ref=f4e2884]: Priorities
+                    - button "Add new" [ref=f4e2891] [cursor=pointer]
+                - columnheader [ref=f4e2892]:
+                  - generic [ref=f4e2893]:
+                    - paragraph [ref=f4e2894]: Priority Grouping
+                    - button "Edit" [ref=f4e2895] [cursor=pointer]
+                - columnheader [ref=f4e2896]:
+                  - paragraph [ref=f4e2898]: Total Time
+                - columnheader [ref=f4e2899]:
+                  - paragraph [ref=f4e2901]: Breaching Red
+                - columnheader [ref=f4e2902]:
+                  - paragraph [ref=f4e2904]: Breaching Amber
+                - columnheader [ref=f4e2905]:
+                  - paragraph [ref=f4e2907]: Breaching Green
+                - columnheader [ref=f4e2908]:
+                  - paragraph [ref=f4e2910]: Case Ranking
+                - columnheader [ref=f4e2911]:
+                  - paragraph [ref=f4e2913]: Default
+            - rowgroup
+          - button "Save" [ref=f4e2917] [cursor=pointer]

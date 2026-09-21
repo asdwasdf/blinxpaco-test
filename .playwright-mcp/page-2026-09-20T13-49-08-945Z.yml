@@ -1,0 +1,202 @@
+- generic [ref=f50e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f50e3] [cursor=pointer]
+  - generic [ref=f50e7]:
+    - generic [ref=f50e8]:
+      - generic [ref=f50e9]:
+        - button "Expand sidebar" [ref=f50e10] [cursor=pointer]:
+          - img "Paco Logo" [ref=f50e11]
+        - generic [ref=f50e13]:
+          - img "Dashboards" [ref=f50e18] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f50e23] [cursor=pointer]
+          - img "Quick Send" [ref=f50e28] [cursor=pointer]
+          - img "Health Forms" [ref=f50e33] [cursor=pointer]
+          - img "Patient Search" [ref=f50e38] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f50e43] [cursor=pointer]
+          - img "case load management" [ref=f50e48] [cursor=pointer]
+          - img "Appointment Book" [ref=f50e53] [cursor=pointer]
+          - img "Quick Pay" [ref=f50e58] [cursor=pointer]
+          - img "Users" [ref=f50e63] [cursor=pointer]
+          - img "Configuration" [ref=f50e68] [cursor=pointer]
+          - img "Rocket Bar" [ref=f50e73] [cursor=pointer]
+          - generic [ref=f50e75] [cursor=pointer]
+        - button [ref=f50e83] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f50e84]
+      - generic [ref=f50e85]:
+        - generic [ref=f50e86]:
+          - generic [ref=f50e87]: 4h 28m
+          - generic [ref=f50e92]:
+            - generic [ref=f50e95]:
+              - generic [ref=f50e96] [cursor=pointer]: TFN
+              - generic [ref=f50e98]:
+                - generic [ref=f50e99]: Test Fiona Nguyen
+                - generic [ref=f50e100]: Super Admin GB
+                - generic [ref=f50e102]: General Practice (Blinx Demo Site)
+            - textbox "Search patients by name or NHS number" [ref=f50e107]
+            - generic [ref=f50e108]:
+              - button "More options" [ref=f50e110] [cursor=pointer]
+              - generic [ref=f50e114] [cursor=pointer]: "0"
+        - generic [ref=f50e119]:
+          - generic [ref=f50e120]:
+            - generic [ref=f50e121]:
+              - generic [ref=f50e122]:
+                - link "Back to Dashboard" [ref=f50e126] [cursor=pointer]:
+                  - /url: /paco/dashboard
+                - heading "Work Boards" [level=1] [ref=f50e127]
+              - generic [ref=f50e128]:
+                - generic [ref=f50e129]:
+                  - generic [ref=f50e130] [cursor=pointer]:
+                    - checkbox "View My Tasks Only" [ref=f50e133]
+                    - generic [ref=f50e136]: View My Tasks Only
+                  - generic [ref=f50e137] [cursor=pointer]:
+                    - checkbox "View My Cases Only" [ref=f50e140]
+                    - generic [ref=f50e143]: View My Cases Only
+                - generic [ref=f50e144]: Search all boards
+                - generic [ref=f50e145]:
+                  - button "Board" [ref=f50e146] [cursor=pointer]
+                  - button "Case ID" [ref=f50e148] [cursor=pointer]
+                  - button "Patient" [ref=f50e150] [cursor=pointer]
+                - textbox "Board name" [ref=f50e153]
+                - generic [ref=f50e154]:
+                  - button "Tasks (874)" [ref=f50e7218] [cursor=pointer]
+                  - button "Cases (28)" [active] [ref=f50e7219] [cursor=pointer]
+                - generic [ref=f50e158]:
+                  - generic [ref=f50e15090] [cursor=pointer]:
+                    - button [ref=f50e15091]
+                    - generic [ref=f50e15094]: Master Case Board
+                    - generic [ref=f50e15095]: (13)
+                  - generic [ref=f50e15098] [cursor=pointer]:
+                    - button [ref=f50e15099]
+                    - generic [ref=f50e15102]: Master Home Visit Board
+                    - generic [ref=f50e15103]: (0)
+                  - generic [ref=f50e15106] [cursor=pointer]:
+                    - button [ref=f50e15107]
+                    - generic [ref=f50e15110]: Test Case Board
+                    - generic [ref=f50e15111]: (19)
+                  - generic [ref=f50e15114] [cursor=pointer]:
+                    - button [ref=f50e15115]
+                    - generic [ref=f50e15118]: Epsom PCN Demo - Care Home VIsts
+                    - generic [ref=f50e15119]: (0)
+                  - generic [ref=f50e15122] [cursor=pointer]:
+                    - button [ref=f50e15123]
+                    - generic [ref=f50e15126]: Paul's Physio
+                    - generic [ref=f50e15127]: (0)
+                  - generic [ref=f50e15130] [cursor=pointer]:
+                    - button [ref=f50e15131]
+                    - generic [ref=f50e15134]: Urgent Healthcare UK 2025
+                    - generic [ref=f50e15135]: (1)
+                  - generic [ref=f50e15138] [cursor=pointer]:
+                    - button [ref=f50e15139]
+                    - generic [ref=f50e15142]: test
+                    - generic [ref=f50e15143]: (0)
+                  - generic [ref=f50e15146] [cursor=pointer]:
+                    - button [ref=f50e15147]
+                    - generic [ref=f50e15150]: test board
+                    - generic [ref=f50e15151]: (2)
+                  - generic [ref=f50e15154] [cursor=pointer]:
+                    - button [ref=f50e15155]
+                    - generic [ref=f50e15158]: waiting list
+                    - generic [ref=f50e15159]: (8)
+                  - generic [ref=f50e15162] [cursor=pointer]:
+                    - button [ref=f50e15163]
+                    - generic [ref=f50e15166]: North Shropshire PCN Neighbourhood team
+                    - generic [ref=f50e15167]: (0)
+                  - generic [ref=f50e15170] [cursor=pointer]:
+                    - button [ref=f50e15171]
+                    - generic [ref=f50e15174]: TEST FOR pac2-4688
+                    - generic [ref=f50e15175]: (0)
+                  - generic [ref=f50e15178] [cursor=pointer]:
+                    - button [ref=f50e15179]
+                    - generic [ref=f50e15182]: Frailty Management Caseload
+                    - generic [ref=f50e15183]: (0)
+                  - generic [ref=f50e15186] [cursor=pointer]:
+                    - button [ref=f50e15187]
+                    - generic [ref=f50e15190]: Mustafa Task Workboard
+                    - generic [ref=f50e15191]: (0)
+                  - generic [ref=f50e15194] [cursor=pointer]:
+                    - button [ref=f50e15195]
+                    - generic [ref=f50e15198]: Board 1
+                    - generic [ref=f50e15199]: (2)
+                  - generic [ref=f50e15202] [cursor=pointer]:
+                    - button [ref=f50e15203]
+                    - generic [ref=f50e15206]: Board 3
+                    - generic [ref=f50e15207]: (0)
+                  - generic [ref=f50e15210] [cursor=pointer]:
+                    - button [ref=f50e15211]
+                    - generic [ref=f50e15214]: Test board
+                    - generic [ref=f50e15215]: (0)
+                  - generic [ref=f50e15218] [cursor=pointer]:
+                    - button [ref=f50e15219]
+                    - generic [ref=f50e15222]: Test Create Board 20260324_200800_614
+                    - generic [ref=f50e15223]: (0)
+                  - generic [ref=f50e15226] [cursor=pointer]:
+                    - button [ref=f50e15227]
+                    - generic [ref=f50e15230]: Test Create Board 20260324_205052_742
+                    - generic [ref=f50e15231]: (0)
+                  - generic [ref=f50e15234] [cursor=pointer]:
+                    - button [ref=f50e15235]
+                    - generic [ref=f50e15238]: Test Create Board 20260324_205640_381
+                    - generic [ref=f50e15239]: (0)
+                  - generic [ref=f50e15242] [cursor=pointer]:
+                    - button [ref=f50e15243]
+                    - generic [ref=f50e15246]: Test Create Board 20260325_092737_405
+                    - generic [ref=f50e15247]: (0)
+                  - generic [ref=f50e15250] [cursor=pointer]:
+                    - button [ref=f50e15251]
+                    - generic [ref=f50e15254]: Test Create Board 20260330_165045_976
+                    - generic [ref=f50e15255]: (0)
+                  - generic [ref=f50e15258] [cursor=pointer]:
+                    - button [ref=f50e15259]
+                    - generic [ref=f50e15262]: Test Create Board 20260330_170255_969
+                    - generic [ref=f50e15263]: (0)
+                  - generic [ref=f50e15266] [cursor=pointer]:
+                    - button [ref=f50e15267]
+                    - generic [ref=f50e15270]: Test Create Board 20260330_170526_295
+                    - generic [ref=f50e15271]: (0)
+                  - generic [ref=f50e15274] [cursor=pointer]:
+                    - button [ref=f50e15275]
+                    - generic [ref=f50e15278]: Test Create Board 20260330_170745_692
+                    - generic [ref=f50e15279]: (0)
+                  - generic [ref=f50e15282] [cursor=pointer]:
+                    - button [ref=f50e15283]
+                    - generic [ref=f50e15286]: War Room Proxy Access
+                    - generic [ref=f50e15287]: (2)
+                  - generic [ref=f50e15290] [cursor=pointer]:
+                    - button [ref=f50e15291]
+                    - generic [ref=f50e15294]: Call Queue
+                    - generic [ref=f50e15295]: (14)
+                  - generic [ref=f50e15298] [cursor=pointer]:
+                    - button [ref=f50e15299]
+                    - generic [ref=f50e15302]: Syed Test Board
+                    - generic [ref=f50e15303]: (0)
+                  - generic [ref=f50e15306] [cursor=pointer]:
+                    - button [ref=f50e15307]
+                    - generic [ref=f50e15310]: Neighbourhood DEMO
+                    - generic [ref=f50e15311]: (0)
+                - button "Create new board" [ref=f50e167] [cursor=pointer]
+            - button [ref=f50e171] [cursor=pointer]
+          - generic [ref=f50e15313]:
+            - generic [ref=f50e15315]:
+              - heading "workboardName" [level=2] [ref=f50e15316]: Master Case Board
+              - generic [ref=f50e15318]:
+                - generic [ref=f50e15319]:
+                  - button "List view" [ref=f50e15320] [cursor=pointer]
+                  - button "Card view" [ref=f50e15322] [cursor=pointer]
+                - generic [ref=f50e15329] [cursor=pointer]
+            - generic [ref=f50e15333]:
+              - textbox "Search this board" [ref=f50e15336]
+              - generic [ref=f50e15337]:
+                - generic [ref=f50e15338] [cursor=pointer]:
+                  - generic [ref=f50e15339]:
+                    - textbox: Breaching (high to low)
+                  - generic [ref=f50e15341]: Breaching (high to low)
+                  - button [ref=f50e15342]
+                - button "Filters" [ref=f50e15347] [cursor=pointer]
+            - generic [ref=f50e15350]:
+              - button "All (13)" [ref=f50e15351] [cursor=pointer]
+              - button "Mid Priority (1)" [ref=f50e15352] [cursor=pointer]
+              - button "High Priority (1)" [ref=f50e15353] [cursor=pointer]
+              - button "Low Priority (1)" [ref=f50e15354] [cursor=pointer]
+              - button "Emergency (3)" [ref=f50e15355] [cursor=pointer]
+              - button "Other (7)" [ref=f50e15356] [cursor=pointer]
+    - status [ref=f50e218]

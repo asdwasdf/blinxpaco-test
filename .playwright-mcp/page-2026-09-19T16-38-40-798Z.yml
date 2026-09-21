@@ -1,0 +1,36 @@
+- generic [active] [ref=f117e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f117e8] [cursor=pointer]
+  - generic [ref=f117e11]:
+    - generic [ref=f117e12]:
+      - generic [ref=f117e13]:
+        - button "Expand sidebar" [ref=f117e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f117e15]
+        - generic [ref=f117e17]:
+          - img "Dashboards" [ref=f117e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f117e27] [cursor=pointer]
+          - img "Quick Send" [ref=f117e32] [cursor=pointer]
+          - img "Health Forms" [ref=f117e37] [cursor=pointer]
+          - img "Patient Search" [ref=f117e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f117e47] [cursor=pointer]
+          - img "case load management" [ref=f117e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f117e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f117e62] [cursor=pointer]
+          - img "Users" [ref=f117e67] [cursor=pointer]
+          - img "Configuration" [ref=f117e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f117e77] [cursor=pointer]
+          - generic [ref=f117e79] [cursor=pointer]
+        - button [ref=f117e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f117e88]
+      - generic [ref=f117e89]: Care Navigation Config
+    - generic "one-paco-top-bar" [ref=f117e100]:
+      - generic [ref=f117e102]:
+        - generic [ref=f117e103]:
+          - img "Mobile burger menu" [ref=f117e104] [cursor=pointer]
+          - generic [ref=f117e105]: TFN
+        - generic [ref=f117e109]:
+          - generic [ref=f117e110] [cursor=pointer]
+          - button "More options" [ref=f117e112] [cursor=pointer]
+          - generic [ref=f117e118] [cursor=pointer]
+          - generic [ref=f117e119] [cursor=pointer]: "0"
+  - alert [ref=f117e6]

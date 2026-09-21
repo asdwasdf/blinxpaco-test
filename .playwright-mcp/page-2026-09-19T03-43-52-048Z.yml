@@ -1,0 +1,182 @@
+- generic [ref=f14e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f14e166] [cursor=pointer]
+  - generic [ref=f14e7]:
+    - generic [ref=f14e8]:
+      - generic [ref=f14e169]:
+        - button "Collapse sidebar" [ref=f14e548] [cursor=pointer]:
+          - img "Paco Logo" [ref=f14e171]
+        - textbox "Search menu..." [ref=f14e550]
+        - generic [ref=f14e173]:
+          - generic [ref=f14e175] [cursor=pointer]:
+            - img "Dashboards" [ref=f14e178]
+            - generic [ref=f14e551]: Dashboards
+          - generic [ref=f14e179]:
+            - generic [ref=f14e180] [cursor=pointer]:
+              - img "Analytics & Reports" [ref=f14e183]
+              - generic [ref=f14e554]: Analytics & Reports
+            - generic [ref=f14e582]:
+              - button "Capacity & Demand" [ref=f14e584] [cursor=pointer]
+              - button "Patient Analyser" [ref=f14e587] [cursor=pointer]
+              - button "Medication Analyser" [ref=f14e590] [cursor=pointer]
+              - button "QOF Registers" [ref=f14e593] [cursor=pointer]
+              - button "Patient Details" [active] [ref=f14e596] [cursor=pointer]
+              - button "Comms Analytics" [ref=f14e599] [cursor=pointer]
+              - button "Reports" [ref=f14e602] [cursor=pointer]
+          - generic [ref=f14e185] [cursor=pointer]:
+            - img "Quick Send" [ref=f14e188]
+            - generic [ref=f14e557]: Comms Hub
+          - generic [ref=f14e190] [cursor=pointer]:
+            - img "Health Forms" [ref=f14e193]
+            - generic [ref=f14e560]: Health Forms
+          - generic [ref=f14e195] [cursor=pointer]:
+            - img "Patient Search" [ref=f14e198]
+            - generic [ref=f14e563]: Patients
+          - generic [ref=f14e200] [cursor=pointer]:
+            - img "Web Chat & Video" [ref=f14e203]
+            - generic [ref=f14e566]: Web Chat & Video
+          - generic [ref=f14e205] [cursor=pointer]:
+            - img "case load management" [ref=f14e208]
+            - generic [ref=f14e569]: Case Load Management
+          - generic [ref=f14e210] [cursor=pointer]:
+            - img "Appointment Book" [ref=f14e213]
+            - generic [ref=f14e572]: Appointment Book
+          - generic [ref=f14e215] [cursor=pointer]:
+            - img "Quick Pay" [ref=f14e218]
+            - generic [ref=f14e575]: Quick Pay
+          - generic [ref=f14e220] [cursor=pointer]:
+            - img "Users" [ref=f14e223]
+            - generic [ref=f14e576]: User Portal
+          - generic [ref=f14e225] [cursor=pointer]:
+            - img "Configuration" [ref=f14e228]
+            - generic [ref=f14e577]: Configuration
+          - generic [ref=f14e230] [cursor=pointer]:
+            - img "Rocket Bar" [ref=f14e233]
+            - generic [ref=f14e578]: Rocket Bar
+          - generic [ref=f14e234]: Sign Out
+        - button [ref=f14e243] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f14e244]
+      - generic [ref=f14e9]:
+        - generic [ref=f14e11]:
+          - generic [ref=f14e13]:
+            - img [aria-hidden] [ref=f14e15] [cursor=pointer]
+            - generic [ref=f14e17]:
+              - text: •
+              - button [ref=f14e18] [cursor=pointer]:
+                - link "Analytics" [ref=f14e19]:
+                  - /url: /analytics-home/
+            - generic [ref=f14e20]: •Patient & Medication Analyser
+          - button "1 Selected" [ref=f14e23] [cursor=pointer]
+        - generic [ref=f14e34]:
+          - generic [ref=f14e1486]:
+            - generic [ref=f14e1488]:
+              - paragraph [ref=f14e1490]: Reports
+              - generic [ref=f14e1492] [cursor=pointer]
+            - textbox "Search..." [ref=f14e1499]
+            - list [ref=f14e1500]:
+              - listitem [ref=f14e1501]:
+                - generic [ref=f14e1502]:
+                  - button [ref=f14e1503] [cursor=pointer]
+                  - generic [ref=f14e1506]: Blinx Report
+              - listitem [ref=f14e1507]:
+                - generic [ref=f14e1508]:
+                  - button [ref=f14e1509] [cursor=pointer]
+                  - generic [ref=f14e1512]: Practice Report
+                  - button [ref=f14e1514] [cursor=pointer]
+          - generic [ref=f14e1517]:
+            - generic [ref=f14e1518]:
+              - tablist [ref=f14e1523]:
+                - tab "Patient Analyser" [ref=f14e1524] [cursor=pointer]
+                - tab "Medication Analyser" [ref=f14e1525] [cursor=pointer]
+                - tab "QOF Registers" [ref=f14e1526] [cursor=pointer]
+                - tab "Patient Details" [selected] [ref=f14e1527] [cursor=pointer]
+              - generic [ref=f14e1529]:
+                - generic [ref=f14e1532]:
+                  - textbox "Search..." [ref=f14e1533]
+                  - button [ref=f14e1535] [cursor=pointer]
+                - button [ref=f14e1539] [cursor=pointer]
+                - button "Save Report" [ref=f14e1542] [cursor=pointer]
+            - generic [ref=f14e1547]:
+              - generic [ref=f14e1548]:
+                - button "Advanced Search 0" [ref=f14e1549] [cursor=pointer]:
+                  - text: Advanced Search
+                  - generic [ref=f14e1550]: "0"
+                - paragraph [ref=f14e1552]: "Patients:"
+              - generic [ref=f14e1557]:
+                - button "Reset View" [ref=f14e1558] [cursor=pointer]
+                - button "Expand All" [ref=f14e1561] [cursor=pointer]
+                - button "Collapse All" [ref=f14e1562] [cursor=pointer]
+            - generic [ref=f14e1564]:
+              - generic [ref=f14e1569]:
+                - generic:  
+                - generic [ref=f14e1570]:
+                  - grid [ref=f14e1571]:
+                    - row [ref=f14e1572]:
+                      - columnheader [ref=f14e1573] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e1574]: 
+                        - text:    
+                    - rowgroup [ref=f14e1575]:
+                      - row [ref=f14e1576]:
+                        - columnheader "NHS Number" [ref=f14e1577] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1578]: 
+                          - text:    
+                        - columnheader "Patient ID" [ref=f14e1580] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1581]: 
+                          - text:    
+                        - columnheader "Title" [ref=f14e1583] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1584]: 
+                          - text:    
+                        - columnheader "Full Name" [ref=f14e1586] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1587]: 
+                          - text:    
+                        - columnheader "Gender" [ref=f14e1589] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1590]: 
+                          - text:    
+                        - columnheader "Date of Birth" [ref=f14e1592] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1593]: 
+                          - text:    
+                        - columnheader "Age" [ref=f14e1595] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1596]: 
+                          - text:    
+                        - columnheader "Mobile" [ref=f14e1598] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e1599]: 
+                          - text:    
+                    - row [ref=f14e1601]:
+                      - columnheader "Actions" [ref=f14e1602]:  
+                    - rowgroup [ref=f14e1604]
+                    - row "Press SPACE to select this row." [ref=f14e1605]:
+                      - generic [ref=f14e1606]:
+                        - generic [ref=f14e1607]: 
+                        - text: Fetching your report...
+                  - generic [ref=f14e1613]:
+                    - tablist [ref=f14e1614]:
+                      - tab "Columns" [ref=f14e1615] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f14e1616]: 
+                      - tab "Filters" [ref=f14e1618] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f14e1619]: 
+                    - text:                                                          
+                - text:    
+              - paragraph [ref=f14e1622]: 50 / 222 Rows Loaded
+    - generic "one-paco-top-bar" [ref=f14e163]:
+      - generic [ref=f14e518]:
+        - generic [ref=f14e521]:
+          - generic [ref=f14e522]: TFN
+          - generic [ref=f14e524]:
+            - generic [ref=f14e525]: Test Fiona Nguyen
+            - generic [ref=f14e526]: Super Admin GB
+            - generic [ref=f14e528]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f14e533]
+        - generic [ref=f14e534]:
+          - button "More options" [ref=f14e536] [cursor=pointer]
+          - generic [ref=f14e542] [cursor=pointer]
+          - generic [ref=f14e543] [cursor=pointer]: "0"
+  - alert [ref=f14e6]

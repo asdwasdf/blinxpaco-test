@@ -1,0 +1,45 @@
+- generic [active] [ref=f125e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f125e3] [cursor=pointer]
+  - generic [ref=f125e8]:
+    - generic [ref=f125e9]:
+      - button "Expand sidebar" [ref=f125e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f125e11]
+      - generic [ref=f125e13]:
+        - img "Dashboards" [ref=f125e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f125e23] [cursor=pointer]
+        - img "Quick Send" [ref=f125e28] [cursor=pointer]
+        - img "Health Forms" [ref=f125e33] [cursor=pointer]
+        - img "Patient Search" [ref=f125e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f125e43] [cursor=pointer]
+        - img "case load management" [ref=f125e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f125e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f125e58] [cursor=pointer]
+        - img "Users" [ref=f125e63] [cursor=pointer]
+        - img "Configuration" [ref=f125e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f125e73] [cursor=pointer]
+        - generic [ref=f125e75] [cursor=pointer]
+      - button [ref=f125e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f125e84]
+    - generic [ref=f125e85]:
+      - generic [ref=f125e86]:
+        - generic [ref=f125e87]: 3h 54m
+        - generic [ref=f125e92]:
+          - generic [ref=f125e95]:
+            - generic [ref=f125e96] [cursor=pointer]: TFN
+            - generic [ref=f125e98]:
+              - generic [ref=f125e99]: Test Fiona Nguyen
+              - generic [ref=f125e100]: Super Admin GB
+              - generic [ref=f125e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f125e107]
+          - generic [ref=f125e108]:
+            - button "More options" [ref=f125e110] [cursor=pointer]
+            - generic [ref=f125e114] [cursor=pointer]: "0"
+      - generic [ref=f125e1329]:
+        - tablist [ref=f125e1332]:
+          - tab "Mi Tasks" [ref=f125e1333] [cursor=pointer]
+          - tab "Mi Time" [ref=f125e1334] [cursor=pointer]
+          - tab "Mi Stats" [ref=f125e1335] [cursor=pointer]
+          - tab "Mi Patients" [selected] [ref=f125e1336] [cursor=pointer]
+        - tabpanel [ref=f125e1339]:
+          - generic [ref=f125e1340]: Loading patients and risk scores...

@@ -1,0 +1,67 @@
+- generic [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e172]:
+    - generic [ref=f28e173]:
+      - button "Expand sidebar" [ref=f28e174] [cursor=pointer]:
+        - img "Paco Logo" [ref=f28e175]
+      - generic [ref=f28e177]:
+        - img "Dashboards" [ref=f28e182] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f28e187] [cursor=pointer]
+        - img "Quick Send" [ref=f28e192] [cursor=pointer]
+        - img "Health Forms" [ref=f28e197] [cursor=pointer]
+        - img "Patient Search" [ref=f28e202] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f28e207] [cursor=pointer]
+        - img "case load management" [ref=f28e212] [cursor=pointer]
+        - img "Appointment Book" [ref=f28e217] [cursor=pointer]
+        - img "Quick Pay" [ref=f28e222] [cursor=pointer]
+        - img "Users" [ref=f28e227] [cursor=pointer]
+        - img "Configuration" [ref=f28e232] [cursor=pointer]
+        - img "Rocket Bar" [ref=f28e237] [cursor=pointer]
+        - generic [ref=f28e239] [cursor=pointer]
+      - button [ref=f28e247] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f28e248]
+    - generic [ref=f28e249]:
+      - generic [ref=f28e250]:
+        - generic [ref=f28e251]: 3h 59m
+        - generic [ref=f28e256]:
+          - generic [ref=f28e259]:
+            - generic [ref=f28e260] [cursor=pointer]: TFN
+            - generic [ref=f28e262]:
+              - generic [ref=f28e263]: Test Fiona Nguyen
+              - generic [ref=f28e264]: Super Admin GB
+              - generic [ref=f28e266]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f28e271]
+          - generic [ref=f28e272]:
+            - button "More options" [ref=f28e274] [cursor=pointer]
+            - generic [ref=f28e278] [cursor=pointer]: "0"
+      - generic [ref=f28e283]:
+        - generic [ref=f28e285]:
+          - link "Back to Dashboard" [ref=f28e289] [cursor=pointer]:
+            - /url: /paco/dashboard
+          - generic [ref=f28e290]:
+            - heading "workboardName" [level=2] [ref=f28e293]: Unallocated (639)
+            - generic [ref=f28e295]:
+              - generic [ref=f28e297]:
+                - textbox "Search this board" [active] [ref=f28e298]: __qa_no_match_20260920__
+                - button "Clear search" [ref=f28e4056] [cursor=pointer]
+              - generic [ref=f28e299]:
+                - button "List View" [ref=f28e300] [cursor=pointer]
+                - button "Create new case" [ref=f28e306] [cursor=pointer]
+                - generic [ref=f28e310] [cursor=pointer]:
+                  - generic [ref=f28e311]:
+                    - textbox: Breaching (high to low)
+                  - generic [ref=f28e313]: Breaching (high to low)
+                  - button [ref=f28e314]
+                - button "Filters" [ref=f28e319] [cursor=pointer]
+            - generic [ref=f28e322]:
+              - button "All (639)" [ref=f28e323] [cursor=pointer]
+              - button "Mid Priority (530)" [ref=f28e324] [cursor=pointer]
+              - button "High Priority (17)" [ref=f28e325] [cursor=pointer]
+              - button "Low Priority (23)" [ref=f28e326] [cursor=pointer]
+              - button "white (1)" [ref=f28e327] [cursor=pointer]
+              - button "Emergency (68)" [ref=f28e328] [cursor=pointer]
+        - generic [ref=f28e4043]:
+          - generic [ref=f28e4044]: PDS Validated
+          - generic [ref=f28e4048]: PDS Validation Pending
+          - generic [ref=f28e4052]: PDS Not Matched

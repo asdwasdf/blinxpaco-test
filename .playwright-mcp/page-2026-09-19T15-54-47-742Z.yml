@@ -1,0 +1,151 @@
+- generic [active] [ref=f66e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f66e3] [cursor=pointer]
+  - generic [ref=f66e8]:
+    - generic [ref=f66e9]:
+      - button "Expand sidebar" [ref=f66e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f66e11]
+      - generic [ref=f66e13]:
+        - img "Dashboards" [ref=f66e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f66e23] [cursor=pointer]
+        - img "Quick Send" [ref=f66e28] [cursor=pointer]
+        - img "Health Forms" [ref=f66e33] [cursor=pointer]
+        - img "Patient Search" [ref=f66e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f66e43] [cursor=pointer]
+        - img "case load management" [ref=f66e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f66e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f66e58] [cursor=pointer]
+        - img "Users" [ref=f66e63] [cursor=pointer]
+        - img "Configuration" [ref=f66e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f66e73] [cursor=pointer]
+        - generic [ref=f66e75] [cursor=pointer]
+      - button [ref=f66e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f66e84]
+    - generic [ref=f66e85]:
+      - generic [ref=f66e86]:
+        - generic [ref=f66e87]: 3h 8m
+        - generic [ref=f66e92]:
+          - generic [ref=f66e93]:
+            - img "Mobile burger menu" [ref=f66e94] [cursor=pointer]
+            - generic [ref=f66e95]: TFN
+          - generic [ref=f66e99]:
+            - generic [ref=f66e100] [cursor=pointer]
+            - button "More options" [ref=f66e102] [cursor=pointer]
+            - generic [ref=f66e106] [cursor=pointer]: "0"
+      - generic [ref=f66e111]:
+        - generic [ref=f66e114]:
+          - generic [ref=f66e115]:
+            - heading "Configuration" [level=1] [ref=f66e117]
+            - generic [ref=f66e120]:
+              - generic [ref=f66e121]:
+                - button "Organisation" [expanded] [ref=f66e122] [cursor=pointer]:
+                  - link "Organisation" [ref=f66e124]:
+                    - /url: "#"
+                - region "Organisation" [ref=f66e128]:
+                  - tree [ref=f66e130]:
+                    - treeitem "General" [level=1] [ref=f66e131]:
+                      - link [aria-hidden] [ref=f66e133] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e134]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f66e135]:
+                      - link [aria-hidden] [ref=f66e137] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e138]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f66e139]:
+                      - link [aria-hidden] [ref=f66e141] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e142]: Locations
+                    - treeitem "Skills" [level=1] [ref=f66e143]:
+                      - link [aria-hidden] [ref=f66e145] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e146]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f66e147]:
+                      - link [aria-hidden] [ref=f66e149] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e150]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f66e151]:
+                      - link [aria-hidden] [ref=f66e153] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e154]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f66e155]:
+                      - link [aria-hidden] [ref=f66e157] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e158]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f66e159]:
+                      - link [aria-hidden] [ref=f66e161] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e162]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f66e163]:
+                      - link [aria-hidden] [ref=f66e165] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e166]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f66e167]:
+                      - link [aria-hidden] [ref=f66e169] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e170]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f66e171]:
+                      - link [aria-hidden] [ref=f66e173] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e174]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f66e175]:
+                      - link [aria-hidden] [ref=f66e177] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e178]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f66e179]:
+                      - link [aria-hidden] [ref=f66e181] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f66e182]: Integrations
+              - button "Patient" [ref=f66e184] [cursor=pointer]:
+                - link "Patient" [ref=f66e186]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f66e191] [cursor=pointer]:
+                - link "Appointment Books" [ref=f66e193]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f66e198] [cursor=pointer]:
+                - link "Quick Pay" [ref=f66e200]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f66e205] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f66e207]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f66e212] [cursor=pointer]:
+                - link "Users & Staff" [ref=f66e214]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f66e219] [cursor=pointer]:
+                - link "Clinical Config" [ref=f66e221]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f66e226] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f66e228]:
+                  - /url: "#"
+          - generic [ref=f66e230] [cursor=pointer]
+        - generic [ref=f66e234]:
+          - progressbar [ref=f66e237]
+          - generic [ref=f66e241]:
+            - heading "Locations" [level=1] [ref=f66e242]
+            - textbox "Search Locations..." [ref=f66e245]
+            - generic [ref=f66e247]:
+              - button [ref=f66e248] [cursor=pointer]
+              - menu:
+                - menuitem "Add":
+                  - menuitem "Add":
+                    - paragraph: Add Location
+          - generic [ref=f66e256]:
+            - text:  
+            - grid [ref=f66e257]:
+              - rowgroup [ref=f66e258]:
+                - row [ref=f66e259]:
+                  - columnheader [ref=f66e260] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f66e261]: 
+                    - generic [ref=f66e262]: Name
+                    - text:     
+                  - columnheader [ref=f66e263] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f66e264]: 
+                    - generic [ref=f66e265]: Address
+                    - text:     
+                  - columnheader [ref=f66e266] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f66e267]: 
+                    - generic [ref=f66e268]: Contact Number
+                    - text:     
+              - row [ref=f66e269]:
+                - columnheader [ref=f66e270] [cursor=pointer]:
+                  - generic [ref=f66e271]: Actions
+            - text:    

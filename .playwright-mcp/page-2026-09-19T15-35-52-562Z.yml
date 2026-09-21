@@ -1,0 +1,37 @@
+- generic [active] [ref=f52e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f52e3] [cursor=pointer]
+  - generic [ref=f52e167]:
+    - generic "one-paco-top-bar" [ref=f52e168]:
+      - generic [ref=f52e170]:
+        - generic [ref=f52e173]:
+          - generic [ref=f52e174]: TFN
+          - generic [ref=f52e176]:
+            - generic [ref=f52e177]: Test Fiona Nguyen
+            - generic [ref=f52e178]: Super Admin GB
+            - generic [ref=f52e180]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f52e185]
+        - generic [ref=f52e186]:
+          - button "More options" [ref=f52e188] [cursor=pointer]
+          - generic [ref=f52e194] [cursor=pointer]
+          - generic [ref=f52e195] [cursor=pointer]: "0"
+    - generic [ref=f52e198]:
+      - button "Expand sidebar" [ref=f52e199] [cursor=pointer]:
+        - img "Paco Logo" [ref=f52e200]
+      - generic [ref=f52e202]:
+        - img "Dashboards" [ref=f52e207] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f52e212] [cursor=pointer]
+        - img "Quick Send" [ref=f52e217] [cursor=pointer]
+        - img "Health Forms" [ref=f52e222] [cursor=pointer]
+        - img "Patient Search" [ref=f52e227] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f52e232] [cursor=pointer]
+        - img "case load management" [ref=f52e237] [cursor=pointer]
+        - img "Appointment Book" [ref=f52e242] [cursor=pointer]
+        - img "Quick Pay" [ref=f52e247] [cursor=pointer]
+        - img "Users" [ref=f52e252] [cursor=pointer]
+        - img "Configuration" [ref=f52e257] [cursor=pointer]
+        - img "Rocket Bar" [ref=f52e262] [cursor=pointer]
+        - generic [ref=f52e264] [cursor=pointer]
+      - button [ref=f52e272] [cursor=pointer]:
+        - img "Switch to light theme" [ref=f52e273]
+  - alert [ref=f52e154]: /web-chat/review/

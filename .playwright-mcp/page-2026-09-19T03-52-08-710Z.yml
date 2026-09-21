@@ -1,0 +1,43 @@
+- generic [active] [ref=f5e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f5e346] [cursor=pointer]
+  - generic [ref=f5e349]:
+    - generic [ref=f5e350]:
+      - generic [ref=f5e351]:
+        - button "Expand sidebar" [ref=f5e352] [cursor=pointer]:
+          - img "Paco Logo" [ref=f5e353]
+        - generic [ref=f5e355]:
+          - img "Dashboards" [ref=f5e360] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f5e365] [cursor=pointer]
+          - img "Quick Send" [ref=f5e370] [cursor=pointer]
+          - img "Health Forms" [ref=f5e375] [cursor=pointer]
+          - img "Patient Search" [ref=f5e380] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f5e385] [cursor=pointer]
+          - img "case load management" [ref=f5e390] [cursor=pointer]
+          - img "Appointment Book" [ref=f5e395] [cursor=pointer]
+          - img "Quick Pay" [ref=f5e400] [cursor=pointer]
+          - img "Users" [ref=f5e405] [cursor=pointer]
+          - img "Configuration" [ref=f5e410] [cursor=pointer]
+          - img "Rocket Bar" [ref=f5e415] [cursor=pointer]
+          - generic [ref=f5e417] [cursor=pointer]
+        - button [ref=f5e425] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f5e426]
+      - generic [ref=f5e431]:
+        - paragraph [ref=f5e434]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f5e435]:
+          - generic [ref=f5e436]: Health Form Designer
+          - generic [ref=f5e440]: Health Form Inbox
+    - generic "one-paco-top-bar" [ref=f5e444]:
+      - generic [ref=f5e446]:
+        - generic [ref=f5e449]:
+          - generic [ref=f5e450]: TFN
+          - generic [ref=f5e452]:
+            - generic [ref=f5e453]: Test Fiona Nguyen
+            - generic [ref=f5e454]: Super Admin GB
+            - generic [ref=f5e456]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f5e461]
+        - generic [ref=f5e462]:
+          - button "More options" [ref=f5e464] [cursor=pointer]
+          - generic [ref=f5e470] [cursor=pointer]
+          - generic [ref=f5e471] [cursor=pointer]: "0"
+  - alert [ref=f5e6]: /health-forms/

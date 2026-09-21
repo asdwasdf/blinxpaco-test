@@ -1,0 +1,940 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e1188]:
+    - generic [ref=f4e1189]:
+      - button "Expand sidebar" [ref=f4e1190] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e1191]
+      - generic [ref=f4e1193]:
+        - img "Dashboards" [ref=f4e1198] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e1203] [cursor=pointer]
+        - img "Quick Send" [ref=f4e1208] [cursor=pointer]
+        - img "Health Forms" [ref=f4e1213] [cursor=pointer]
+        - img "Patient Search" [ref=f4e1218] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e1223] [cursor=pointer]
+        - img "case load management" [ref=f4e1228] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e1233] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e1238] [cursor=pointer]
+        - img "Users" [ref=f4e1243] [cursor=pointer]
+        - img "Configuration" [ref=f4e1248] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e1253] [cursor=pointer]
+        - generic [ref=f4e1255] [cursor=pointer]
+      - button [ref=f4e1263] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e1264]
+    - generic [ref=f4e1265]:
+      - generic [ref=f4e1266]:
+        - generic [ref=f4e1267]: 2h 14m
+        - generic [ref=f4e1272]:
+          - generic [ref=f4e1275]:
+            - generic [ref=f4e1276] [cursor=pointer]: TFN
+            - generic [ref=f4e1278]:
+              - generic [ref=f4e1279]: Test Fiona Nguyen
+              - generic [ref=f4e1280]: Super Admin GB
+              - generic [ref=f4e1282]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e1287]
+          - generic [ref=f4e1288]:
+            - button "More options" [ref=f4e1290] [cursor=pointer]
+            - generic [ref=f4e1294] [cursor=pointer]: "0"
+      - generic [ref=f4e1299]:
+        - generic [ref=f4e1302]:
+          - generic [ref=f4e1303]:
+            - heading "Configuration" [level=1] [ref=f4e1305]
+            - generic [ref=f4e1308]:
+              - generic [ref=f4e1309]:
+                - button "Organisation" [expanded] [ref=f4e1310] [cursor=pointer]:
+                  - link "Organisation" [ref=f4e1312]:
+                    - /url: "#"
+                - region "Organisation" [ref=f4e1316]:
+                  - tree [ref=f4e1318]:
+                    - treeitem "General" [level=1] [ref=f4e1319]:
+                      - link [aria-hidden] [ref=f4e1321] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1322]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f4e1323]:
+                      - link [aria-hidden] [ref=f4e1325] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1326]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f4e1327]:
+                      - link [aria-hidden] [ref=f4e1329] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1330]: Locations
+                    - treeitem "Skills" [level=1] [ref=f4e1331]:
+                      - link [aria-hidden] [ref=f4e1333] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1334]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f4e1335]:
+                      - link [aria-hidden] [ref=f4e1337] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1338]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f4e1339]:
+                      - link [aria-hidden] [ref=f4e1341] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1342]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f4e1343]:
+                      - link [aria-hidden] [ref=f4e1345] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1346]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f4e1347]:
+                      - link [aria-hidden] [ref=f4e1349] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1350]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f4e1351]:
+                      - link [aria-hidden] [ref=f4e1353] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1354]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f4e1355]:
+                      - link [aria-hidden] [ref=f4e1357] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1358]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f4e1359]:
+                      - link [aria-hidden] [ref=f4e1361] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1362]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f4e1363]:
+                      - link [aria-hidden] [ref=f4e1365] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1366]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f4e1367]:
+                      - link [aria-hidden] [ref=f4e1369] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1370]: Integrations
+              - button "Patient" [ref=f4e1372] [cursor=pointer]:
+                - link "Patient" [ref=f4e1374]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f4e1379] [cursor=pointer]:
+                - link "Appointment Books" [ref=f4e1381]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f4e1386] [cursor=pointer]:
+                - link "Quick Pay" [ref=f4e1388]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f4e1393] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f4e1395]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f4e1400] [cursor=pointer]:
+                - link "Users & Staff" [ref=f4e1402]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f4e1407] [cursor=pointer]:
+                - link "Clinical Config" [ref=f4e1409]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f4e1414] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f4e1416]:
+                  - /url: "#"
+          - generic [ref=f4e1418] [cursor=pointer]
+        - generic [ref=f4e1422]:
+          - generic [ref=f4e1424]:
+            - heading "DX Priorities" [level=1] [ref=f4e1425]
+            - textbox "Search Priorities..." [ref=f4e1428]
+          - generic [ref=f4e1429]:
+            - generic [ref=f4e1431]:
+              - generic [ref=f4e1432]:
+                - generic [ref=f4e1434]:
+                  - generic [ref=f4e1435]: Disposition Code
+                  - textbox [disabled]: Dx05
+                - generic [ref=f4e1437]:
+                  - generic [ref=f4e1438]: Disposition Text
+                  - textbox [disabled]: To contact a local service within 2 hours
+                - generic [ref=f4e1439]:
+                  - generic [ref=f4e1440]:
+                    - generic [ref=f4e1441]:
+                      - generic [ref=f4e1442]: Service
+                      - generic [ref=f4e1444] [cursor=pointer]:
+                        - generic [ref=f4e1445]:
+                          - textbox
+                        - generic [ref=f4e1447]: Select a service
+                        - button "Select a service" [ref=f4e1448]
+                    - generic [ref=f4e1451]:
+                      - generic [ref=f4e1452]: Priority
+                      - generic [ref=f4e1454] [cursor=pointer]:
+                        - generic [ref=f4e1455]:
+                          - textbox
+                        - generic [ref=f4e1457]: Select a priority
+                        - button "Select a priority" [ref=f4e1458]
+                    - button "Remove pair" [ref=f4e1461] [cursor=pointer]
+                  - generic [ref=f4e1464]:
+                    - generic [ref=f4e1465]:
+                      - generic [ref=f4e1466]: Service
+                      - generic [ref=f4e1468] [cursor=pointer]:
+                        - generic [ref=f4e1469]:
+                          - textbox
+                        - generic [ref=f4e1471]: Select a service
+                        - button "Select a service" [ref=f4e1472]
+                    - generic [ref=f4e1475]:
+                      - generic [ref=f4e1476]: Priority
+                      - generic [ref=f4e1478] [cursor=pointer]:
+                        - generic [ref=f4e1479]:
+                          - textbox
+                        - generic [ref=f4e1481]: Select a priority
+                        - button "Select a priority" [ref=f4e1482]
+                    - button "Remove pair" [ref=f4e1485] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1488] [cursor=pointer]
+              - generic [ref=f4e1492]:
+                - generic [ref=f4e1494]:
+                  - generic [ref=f4e1495]: Disposition Code
+                  - textbox [disabled]: Dx92
+                - generic [ref=f4e1497]:
+                  - generic [ref=f4e1498]: Disposition Text
+                  - textbox [disabled]: Refer to Mental Health/Crisis Service within 4 hours
+                - generic [ref=f4e1499]:
+                  - generic [ref=f4e1500]:
+                    - generic [ref=f4e1501]:
+                      - generic [ref=f4e1502]: Service
+                      - generic [ref=f4e1504] [cursor=pointer]:
+                        - generic [ref=f4e1505]:
+                          - textbox
+                        - generic [ref=f4e1507]: Select a service
+                        - button "Select a service" [ref=f4e1508]
+                    - generic [ref=f4e1511]:
+                      - generic [ref=f4e1512]: Priority
+                      - generic [ref=f4e1514] [cursor=pointer]:
+                        - generic [ref=f4e1515]:
+                          - textbox
+                        - generic [ref=f4e1517]: Select a priority
+                        - button "Select a priority" [ref=f4e1518]
+                    - button "Remove pair" [ref=f4e1521] [cursor=pointer]
+                  - generic [ref=f4e1524]:
+                    - generic [ref=f4e1525]:
+                      - generic [ref=f4e1526]: Service
+                      - generic [ref=f4e1528] [cursor=pointer]:
+                        - generic [ref=f4e1529]:
+                          - textbox
+                        - generic [ref=f4e1531]: Select a service
+                        - button "Select a service" [ref=f4e1532]
+                    - generic [ref=f4e1535]:
+                      - generic [ref=f4e1536]: Priority
+                      - generic [ref=f4e1538] [cursor=pointer]:
+                        - generic [ref=f4e1539]:
+                          - textbox
+                        - generic [ref=f4e1541]: Select a priority
+                        - button "Select a priority" [ref=f4e1542]
+                    - button "Remove pair" [ref=f4e1545] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1548] [cursor=pointer]
+              - generic [ref=f4e1552]:
+                - generic [ref=f4e1554]:
+                  - generic [ref=f4e1555]: Disposition Code
+                  - textbox [disabled]: Dx009
+                - generic [ref=f4e1557]:
+                  - generic [ref=f4e1558]: Disposition Text
+                  - textbox [disabled]: Go to the nearest Emergency Department within 4 hours.
+                - generic [ref=f4e1559]:
+                  - generic [ref=f4e1560]:
+                    - generic [ref=f4e1561]:
+                      - generic [ref=f4e1562]: Service
+                      - generic [ref=f4e1564] [cursor=pointer]:
+                        - generic [ref=f4e1565]:
+                          - textbox
+                        - generic [ref=f4e1567]: Select a service
+                        - button "Select a service" [ref=f4e1568]
+                    - generic [ref=f4e1571]:
+                      - generic [ref=f4e1572]: Priority
+                      - generic [ref=f4e1574] [cursor=pointer]:
+                        - generic [ref=f4e1575]:
+                          - textbox
+                        - generic [ref=f4e1577]: Select a priority
+                        - button "Select a priority" [ref=f4e1578]
+                    - button "Remove pair" [ref=f4e1581] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1584] [cursor=pointer]
+              - generic [ref=f4e1588]:
+                - generic [ref=f4e1590]:
+                  - generic [ref=f4e1591]: Disposition Code
+                  - textbox [disabled]: Dx02
+                - generic [ref=f4e1593]:
+                  - generic [ref=f4e1594]: Disposition Text
+                  - textbox [disabled]: Attend a Treatment Centre within 1 hour
+                - generic [ref=f4e1595]:
+                  - generic [ref=f4e1596]:
+                    - generic [ref=f4e1597]:
+                      - generic [ref=f4e1598]: Service
+                      - generic [ref=f4e1600] [cursor=pointer]:
+                        - generic [ref=f4e1601]:
+                          - textbox
+                        - generic [ref=f4e1603]: Select a service
+                        - button "Select a service" [ref=f4e1604]
+                    - generic [ref=f4e1607]:
+                      - generic [ref=f4e1608]: Priority
+                      - generic [ref=f4e1610] [cursor=pointer]:
+                        - generic [ref=f4e1611]:
+                          - textbox
+                        - generic [ref=f4e1613]: Select a priority
+                        - button "Select a priority" [ref=f4e1614]
+                    - button "Remove pair" [ref=f4e1617] [cursor=pointer]
+                  - generic [ref=f4e1620]:
+                    - generic [ref=f4e1621]:
+                      - generic [ref=f4e1622]: Service
+                      - generic [ref=f4e1624] [cursor=pointer]:
+                        - generic [ref=f4e1625]:
+                          - textbox
+                        - generic [ref=f4e1627]: Select a service
+                        - button "Select a service" [ref=f4e1628]
+                    - generic [ref=f4e1631]:
+                      - generic [ref=f4e1632]: Priority
+                      - generic [ref=f4e1634] [cursor=pointer]:
+                        - generic [ref=f4e1635]:
+                          - textbox
+                        - generic [ref=f4e1637]: Select a priority
+                        - button "Select a priority" [ref=f4e1638]
+                    - button "Remove pair" [ref=f4e1641] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1644] [cursor=pointer]
+              - generic [ref=f4e1648]:
+                - generic [ref=f4e1650]:
+                  - generic [ref=f4e1651]: Disposition Code
+                  - textbox [disabled]: DX1001
+                - generic [ref=f4e1653]:
+                  - generic [ref=f4e1654]: Disposition Text
+                  - textbox [disabled]: New Disposition
+                - generic [ref=f4e1655]:
+                  - generic [ref=f4e1656]:
+                    - generic [ref=f4e1657]:
+                      - generic [ref=f4e1658]: Service
+                      - generic [ref=f4e1660] [cursor=pointer]:
+                        - generic [ref=f4e1661]:
+                          - textbox
+                        - generic [ref=f4e1663]: Select a service
+                        - button "Select a service" [ref=f4e1664]
+                    - generic [ref=f4e1667]:
+                      - generic [ref=f4e1668]: Priority
+                      - generic [ref=f4e1670] [cursor=pointer]:
+                        - generic [ref=f4e1671]:
+                          - textbox
+                        - generic [ref=f4e1673]: Select a priority
+                        - button "Select a priority" [ref=f4e1674]
+                    - button "Remove pair" [ref=f4e1677] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1680] [cursor=pointer]
+              - generic [ref=f4e1684]:
+                - generic [ref=f4e1686]:
+                  - generic [ref=f4e1687]: Disposition Code
+                  - textbox [disabled]: Dx06
+                - generic [ref=f4e1689]:
+                  - generic [ref=f4e1690]: Disposition Text
+                  - textbox [disabled]: To contact a local service within 6 hours
+                - generic [ref=f4e1691]:
+                  - generic [ref=f4e1692]:
+                    - generic [ref=f4e1693]:
+                      - generic [ref=f4e1694]: Service
+                      - generic [ref=f4e1696] [cursor=pointer]:
+                        - generic [ref=f4e1697]:
+                          - textbox
+                        - generic [ref=f4e1699]: Select a service
+                        - button "Select a service" [ref=f4e1700]
+                    - generic [ref=f4e1703]:
+                      - generic [ref=f4e1704]: Priority
+                      - generic [ref=f4e1706] [cursor=pointer]:
+                        - generic [ref=f4e1707]:
+                          - textbox
+                        - generic [ref=f4e1709]: Select a priority
+                        - button "Select a priority" [ref=f4e1710]
+                    - button "Remove pair" [ref=f4e1713] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1716] [cursor=pointer]
+              - generic [ref=f4e1720]:
+                - generic [ref=f4e1722]:
+                  - generic [ref=f4e1723]: Disposition Code
+                  - textbox [disabled]: "2"
+                - generic [ref=f4e1725]:
+                  - generic [ref=f4e1726]: Disposition Text
+                  - textbox [disabled]: new disposition
+                - button "Add Service & Priority" [ref=f4e1728] [cursor=pointer]
+              - generic [ref=f4e1732]:
+                - generic [ref=f4e1734]:
+                  - generic [ref=f4e1735]: Disposition Code
+                  - textbox [disabled]: "3"
+                - generic [ref=f4e1737]:
+                  - generic [ref=f4e1738]: Disposition Text
+                  - textbox [disabled]: NEW priority
+                - button "Add Service & Priority" [ref=f4e1740] [cursor=pointer]
+              - generic [ref=f4e1744]:
+                - generic [ref=f4e1746]:
+                  - generic [ref=f4e1747]: Disposition Code
+                  - textbox [disabled]: DX1002
+                - generic [ref=f4e1749]:
+                  - generic [ref=f4e1750]: Disposition Text
+                  - textbox [disabled]: Test
+                - button "Add Service & Priority" [ref=f4e1752] [cursor=pointer]
+              - generic [ref=f4e1756]:
+                - generic [ref=f4e1758]:
+                  - generic [ref=f4e1759]: Disposition Code
+                  - textbox [disabled]: DX101
+                - generic [ref=f4e1761]:
+                  - generic [ref=f4e1762]: Disposition Text
+                  - textbox [disabled]: new disposition priority
+                - button "Add Service & Priority" [ref=f4e1764] [cursor=pointer]
+              - generic [ref=f4e1768]:
+                - generic [ref=f4e1770]:
+                  - generic [ref=f4e1771]: Disposition Code
+                  - textbox [disabled]: DX200222
+                - generic [ref=f4e1773]:
+                  - generic [ref=f4e1774]: Disposition Text
+                  - textbox [disabled]: testing
+                - button "Add Service & Priority" [ref=f4e1776] [cursor=pointer]
+              - generic [ref=f4e1780]:
+                - generic [ref=f4e1782]:
+                  - generic [ref=f4e1783]: Disposition Code
+                  - textbox [disabled]: New
+                - generic [ref=f4e1785]:
+                  - generic [ref=f4e1786]: Disposition Text
+                  - textbox [disabled]: modified
+                - button "Add Service & Priority" [ref=f4e1788] [cursor=pointer]
+              - generic [ref=f4e1792]:
+                - generic [ref=f4e1794]:
+                  - generic [ref=f4e1795]: Disposition Code
+                  - textbox [disabled]: DX10001
+                - generic [ref=f4e1797]:
+                  - generic [ref=f4e1798]: Disposition Text
+                  - textbox [disabled]: TEST
+                - button "Add Service & Priority" [ref=f4e1800] [cursor=pointer]
+              - generic [ref=f4e1804]:
+                - generic [ref=f4e1806]:
+                  - generic [ref=f4e1807]: Disposition Code
+                  - textbox [disabled]: DX10011
+                - generic [ref=f4e1809]:
+                  - generic [ref=f4e1810]: Disposition Text
+                  - textbox [disabled]: TESt
+                - button "Add Service & Priority" [ref=f4e1812] [cursor=pointer]
+              - generic [ref=f4e1816]:
+                - generic [ref=f4e1818]:
+                  - generic [ref=f4e1819]: Disposition Code
+                  - textbox [disabled]: "34"
+                - generic [ref=f4e1821]:
+                  - generic [ref=f4e1822]: Disposition Text
+                  - textbox [disabled]: TEST
+                - button "Add Service & Priority" [ref=f4e1824] [cursor=pointer]
+              - generic [ref=f4e1828]:
+                - generic [ref=f4e1830]:
+                  - generic [ref=f4e1831]: Disposition Code
+                  - textbox [disabled]: DX2002
+                - generic [ref=f4e1833]:
+                  - generic [ref=f4e1834]: Disposition Text
+                  - textbox [disabled]: new DX priority
+                - button "Add Service & Priority" [ref=f4e1836] [cursor=pointer]
+              - generic [ref=f4e1840]:
+                - generic [ref=f4e1842]:
+                  - generic [ref=f4e1843]: Disposition Code
+                  - textbox [disabled]: DX1221
+                - generic [ref=f4e1845]:
+                  - generic [ref=f4e1846]: Disposition Text
+                  - textbox [disabled]: a
+                - button "Add Service & Priority" [ref=f4e1848] [cursor=pointer]
+              - generic [ref=f4e1852]:
+                - generic [ref=f4e1854]:
+                  - generic [ref=f4e1855]: Disposition Code
+                  - textbox [disabled]: DX10200
+                - generic [ref=f4e1857]:
+                  - generic [ref=f4e1858]: Disposition Text
+                  - textbox [disabled]: EL3
+                - button "Add Service & Priority" [ref=f4e1860] [cursor=pointer]
+              - generic [ref=f4e1864]:
+                - generic [ref=f4e1866]:
+                  - generic [ref=f4e1867]: Disposition Code
+                  - textbox [disabled]: DX333333
+                - generic [ref=f4e1869]:
+                  - generic [ref=f4e1870]: Disposition Text
+                  - textbox [disabled]: test
+                - button "Add Service & Priority" [ref=f4e1872] [cursor=pointer]
+              - generic [ref=f4e1876]:
+                - generic [ref=f4e1878]:
+                  - generic [ref=f4e1879]: Disposition Code
+                  - textbox [disabled]: "1"
+                - generic [ref=f4e1881]:
+                  - generic [ref=f4e1882]: Disposition Text
+                  - textbox [disabled]: new dx priority
+                - generic [ref=f4e1883]:
+                  - generic [ref=f4e1884]:
+                    - generic [ref=f4e1885]:
+                      - generic [ref=f4e1886]: Service
+                      - generic [ref=f4e1888] [cursor=pointer]:
+                        - generic [ref=f4e1889]:
+                          - textbox
+                        - generic [ref=f4e1891]: Select a service
+                        - button "Select a service" [ref=f4e1892]
+                    - generic [ref=f4e1895]:
+                      - generic [ref=f4e1896]: Priority
+                      - generic [ref=f4e1898] [cursor=pointer]:
+                        - generic [ref=f4e1899]:
+                          - textbox
+                        - generic [ref=f4e1901]: Select a priority
+                        - button "Select a priority" [ref=f4e1902]
+                    - button "Remove pair" [ref=f4e1905] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1908] [cursor=pointer]
+              - generic [ref=f4e1912]:
+                - generic [ref=f4e1914]:
+                  - generic [ref=f4e1915]: Disposition Code
+                  - textbox [disabled]: Dx012
+                - generic [ref=f4e1917]:
+                  - generic [ref=f4e1918]: Disposition Text
+                  - textbox [disabled]: Dispatch 19 minute ambulance
+                - generic [ref=f4e1919]:
+                  - generic [ref=f4e1920]:
+                    - generic [ref=f4e1921]:
+                      - generic [ref=f4e1922]: Service
+                      - generic [ref=f4e1924] [cursor=pointer]:
+                        - generic [ref=f4e1925]:
+                          - textbox
+                        - generic [ref=f4e1927]: Select a service
+                        - button "Select a service" [ref=f4e1928]
+                    - generic [ref=f4e1931]:
+                      - generic [ref=f4e1932]: Priority
+                      - generic [ref=f4e1934] [cursor=pointer]:
+                        - generic [ref=f4e1935]:
+                          - textbox
+                        - generic [ref=f4e1937]: Select a priority
+                        - button "Select a priority" [ref=f4e1938]
+                    - button "Remove pair" [ref=f4e1941] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1944] [cursor=pointer]
+              - generic [ref=f4e1948]:
+                - generic [ref=f4e1950]:
+                  - generic [ref=f4e1951]: Disposition Code
+                  - textbox [disabled]: DX02
+                - generic [ref=f4e1953]:
+                  - generic [ref=f4e1954]: Disposition Text
+                  - textbox [disabled]: Refer to Treatment Centre within 1 hour
+                - button "Add Service & Priority" [ref=f4e1956] [cursor=pointer]
+              - generic [ref=f4e1960]:
+                - generic [ref=f4e1962]:
+                  - generic [ref=f4e1963]: Disposition Code
+                  - textbox [disabled]: DX03
+                - generic [ref=f4e1965]:
+                  - generic [ref=f4e1966]: Disposition Text
+                  - textbox [disabled]: Refer to Treatment Centre within 4 hours
+                - generic [ref=f4e1967]:
+                  - generic [ref=f4e1968]:
+                    - generic [ref=f4e1969]:
+                      - generic [ref=f4e1970]: Service
+                      - generic [ref=f4e1972] [cursor=pointer]:
+                        - generic [ref=f4e1973]:
+                          - textbox
+                        - generic [ref=f4e1975]: Select a service
+                        - button "Select a service" [ref=f4e1976]
+                    - generic [ref=f4e1979]:
+                      - generic [ref=f4e1980]: Priority
+                      - generic [ref=f4e1982] [cursor=pointer]:
+                        - generic [ref=f4e1983]:
+                          - textbox
+                        - generic [ref=f4e1985]: Select a priority
+                        - button "Select a priority" [ref=f4e1986]
+                    - button "Remove pair" [ref=f4e1989] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e1992] [cursor=pointer]
+              - generic [ref=f4e1996]:
+                - generic [ref=f4e1998]:
+                  - generic [ref=f4e1999]: Disposition Code
+                  - textbox [disabled]: DX05
+                - generic [ref=f4e2001]:
+                  - generic [ref=f4e2002]: Disposition Text
+                  - textbox [disabled]: To contact a Primary Care Service within 2 hours
+                - generic [ref=f4e2003]:
+                  - generic [ref=f4e2004]:
+                    - generic [ref=f4e2005]:
+                      - generic [ref=f4e2006]: Service
+                      - generic [ref=f4e2008] [cursor=pointer]:
+                        - generic [ref=f4e2009]:
+                          - textbox
+                        - generic [ref=f4e2011]: Select a service
+                        - button "Select a service" [ref=f4e2012]
+                    - generic [ref=f4e2015]:
+                      - generic [ref=f4e2016]: Priority
+                      - generic [ref=f4e2018] [cursor=pointer]:
+                        - generic [ref=f4e2019]:
+                          - textbox
+                        - generic [ref=f4e2021]: Select a priority
+                        - button "Select a priority" [ref=f4e2022]
+                    - button "Remove pair" [ref=f4e2025] [cursor=pointer]
+                  - generic [ref=f4e2028]:
+                    - generic [ref=f4e2029]:
+                      - generic [ref=f4e2030]: Service
+                      - generic [ref=f4e2032] [cursor=pointer]:
+                        - generic [ref=f4e2033]:
+                          - textbox
+                        - generic [ref=f4e2035]: Select a service
+                        - button "Select a service" [ref=f4e2036]
+                    - generic [ref=f4e2039]:
+                      - generic [ref=f4e2040]: Priority
+                      - generic [ref=f4e2042] [cursor=pointer]:
+                        - generic [ref=f4e2043]:
+                          - textbox
+                        - generic [ref=f4e2045]: Select a priority
+                        - button "Select a priority" [ref=f4e2046]
+                    - button "Remove pair" [ref=f4e2049] [cursor=pointer]
+                  - button "Add Service & Priority" [ref=f4e2052] [cursor=pointer]
+              - generic [ref=f4e2056]:
+                - generic [ref=f4e2058]:
+                  - generic [ref=f4e2059]: Disposition Code
+                  - textbox [disabled]: DX06
+                - generic [ref=f4e2061]:
+                  - generic [ref=f4e2062]: Disposition Text
+                  - textbox [disabled]: To contact a Primary Care Service within 6 hours
+                - button "Add Service & Priority" [ref=f4e2064] [cursor=pointer]
+              - generic [ref=f4e2068]:
+                - generic [ref=f4e2070]:
+                  - generic [ref=f4e2071]: Disposition Code
+                  - textbox [disabled]: DX07
+                - generic [ref=f4e2073]:
+                  - generic [ref=f4e2074]: Disposition Text
+                  - textbox [disabled]: To contact a Primary Care Service within 12 hours
+                - button "Add Service & Priority" [ref=f4e2076] [cursor=pointer]
+              - generic [ref=f4e2080]:
+                - generic [ref=f4e2082]:
+                  - generic [ref=f4e2083]: Disposition Code
+                  - textbox [disabled]: DX08
+                - generic [ref=f4e2085]:
+                  - generic [ref=f4e2086]: Disposition Text
+                  - textbox [disabled]: To contact a Primary Care Service within 24 hours
+                - button "Add Service & Priority" [ref=f4e2088] [cursor=pointer]
+              - generic [ref=f4e2092]:
+                - generic [ref=f4e2094]:
+                  - generic [ref=f4e2095]: Disposition Code
+                  - textbox [disabled]: DX11
+                - generic [ref=f4e2097]:
+                  - generic [ref=f4e2098]: Disposition Text
+                  - textbox [disabled]: Speak to a Primary Care Service within 1 hour
+                - button "Add Service & Priority" [ref=f4e2100] [cursor=pointer]
+              - generic [ref=f4e2104]:
+                - generic [ref=f4e2106]:
+                  - generic [ref=f4e2107]: Disposition Code
+                  - textbox [disabled]: DX12
+                - generic [ref=f4e2109]:
+                  - generic [ref=f4e2110]: Disposition Text
+                  - textbox [disabled]: Speak to a Primary Care Service within 2 hours
+                - button "Add Service & Priority" [ref=f4e2112] [cursor=pointer]
+              - generic [ref=f4e2116]:
+                - generic [ref=f4e2118]:
+                  - generic [ref=f4e2119]: Disposition Code
+                  - textbox [disabled]: DX13
+                - generic [ref=f4e2121]:
+                  - generic [ref=f4e2122]: Disposition Text
+                  - textbox [disabled]: Speak to a Primary Care Service within 6 hours
+                - button "Add Service & Priority" [ref=f4e2124] [cursor=pointer]
+              - generic [ref=f4e2128]:
+                - generic [ref=f4e2130]:
+                  - generic [ref=f4e2131]: Disposition Code
+                  - textbox [disabled]: DX14
+                - generic [ref=f4e2133]:
+                  - generic [ref=f4e2134]: Disposition Text
+                  - textbox [disabled]: Speak to a Primary Care Service within 12 hours
+                - button "Add Service & Priority" [ref=f4e2136] [cursor=pointer]
+              - generic [ref=f4e2140]:
+                - generic [ref=f4e2142]:
+                  - generic [ref=f4e2143]: Disposition Code
+                  - textbox [disabled]: DX15
+                - generic [ref=f4e2145]:
+                  - generic [ref=f4e2146]: Disposition Text
+                  - textbox [disabled]: Speak to a Primary Care Service within 24 hours
+                - button "Add Service & Priority" [ref=f4e2148] [cursor=pointer]
+              - generic [ref=f4e2152]:
+                - generic [ref=f4e2154]:
+                  - generic [ref=f4e2155]: Disposition Code
+                  - textbox [disabled]: DX022
+                - generic [ref=f4e2157]:
+                  - generic [ref=f4e2158]: Disposition Text
+                  - textbox [disabled]: Refer to Emergency Ambulatory Care within 1 hour
+                - button "Add Service & Priority" [ref=f4e2160] [cursor=pointer]
+              - generic [ref=f4e2164]:
+                - generic [ref=f4e2166]:
+                  - generic [ref=f4e2167]: Disposition Code
+                  - textbox [disabled]: DX45
+                - generic [ref=f4e2169]:
+                  - generic [ref=f4e2170]: Disposition Text
+                  - textbox [disabled]: Service Location Information
+                - button "Add Service & Priority" [ref=f4e2172] [cursor=pointer]
+              - generic [ref=f4e2176]:
+                - generic [ref=f4e2178]:
+                  - generic [ref=f4e2179]: Disposition Code
+                  - textbox [disabled]: DX46
+                - generic [ref=f4e2181]:
+                  - generic [ref=f4e2182]: Disposition Text
+                  - textbox [disabled]: Refer to Health information within 24 hours
+                - button "Add Service & Priority" [ref=f4e2184] [cursor=pointer]
+              - generic [ref=f4e2188]:
+                - generic [ref=f4e2190]:
+                  - generic [ref=f4e2191]: Disposition Code
+                  - textbox [disabled]: DX47
+                - generic [ref=f4e2193]:
+                  - generic [ref=f4e2194]: Disposition Text
+                  - textbox [disabled]: Refer to Community Healthcare Professional
+                - button "Add Service & Priority" [ref=f4e2196] [cursor=pointer]
+              - generic [ref=f4e2200]:
+                - generic [ref=f4e2202]:
+                  - generic [ref=f4e2203]: Disposition Code
+                  - textbox [disabled]: DX64
+                - generic [ref=f4e2205]:
+                  - generic [ref=f4e2206]: Disposition Text
+                  - textbox [disabled]: Speak to the Primary Care Service 2 hours for antiviral assessment
+                - button "Add Service & Priority" [ref=f4e2208] [cursor=pointer]
+              - generic [ref=f4e2212]:
+                - generic [ref=f4e2214]:
+                  - generic [ref=f4e2215]: Disposition Code
+                  - textbox [disabled]: DX65
+                - generic [ref=f4e2217]:
+                  - generic [ref=f4e2218]: Disposition Text
+                  - textbox [disabled]: Attend Flu Treatment Centre and Contact Primary Care within 2hrs
+                - button "Add Service & Priority" [ref=f4e2220] [cursor=pointer]
+              - generic [ref=f4e2224]:
+                - generic [ref=f4e2226]:
+                  - generic [ref=f4e2227]: Disposition Code
+                  - textbox [disabled]: DX66
+                - generic [ref=f4e2229]:
+                  - generic [ref=f4e2230]: Disposition Text
+                  - textbox [disabled]: Attend Flu Treatment Centre and Contact Primary Care within 6hrs
+                - button "Add Service & Priority" [ref=f4e2232] [cursor=pointer]
+              - generic [ref=f4e2236]:
+                - generic [ref=f4e2238]:
+                  - generic [ref=f4e2239]: Disposition Code
+                  - textbox [disabled]: DX67
+                - generic [ref=f4e2241]:
+                  - generic [ref=f4e2242]: Disposition Text
+                  - textbox [disabled]: Attend Flu Treatment Centre and Contact Primary Care within 24hrs
+                - button "Add Service & Priority" [ref=f4e2244] [cursor=pointer]
+              - generic [ref=f4e2248]:
+                - generic [ref=f4e2250]:
+                  - generic [ref=f4e2251]: Disposition Code
+                  - textbox [disabled]: DX68
+                - generic [ref=f4e2253]:
+                  - generic [ref=f4e2254]: Disposition Text
+                  - textbox [disabled]: Attend Flu treatment centre
+                - button "Add Service & Priority" [ref=f4e2256] [cursor=pointer]
+              - generic [ref=f4e2260]:
+                - generic [ref=f4e2262]:
+                  - generic [ref=f4e2263]: Disposition Code
+                  - textbox [disabled]: DX69
+                - generic [ref=f4e2265]:
+                  - generic [ref=f4e2266]: Disposition Text
+                  - textbox [disabled]: Speak to GP Practice within 2hrs before obtaining anti virals from FTC
+                - button "Add Service & Priority" [ref=f4e2268] [cursor=pointer]
+              - generic [ref=f4e2272]:
+                - generic [ref=f4e2274]:
+                  - generic [ref=f4e2275]: Disposition Code
+                  - textbox [disabled]: DX76
+                - generic [ref=f4e2277]:
+                  - generic [ref=f4e2278]: Disposition Text
+                  - textbox [disabled]: Callback by Healthcare Professional within 30 minutes
+                - button "Add Service & Priority" [ref=f4e2280] [cursor=pointer]
+              - generic [ref=f4e2284]:
+                - generic [ref=f4e2286]:
+                  - generic [ref=f4e2287]: Disposition Code
+                  - textbox [disabled]: DX77
+                - generic [ref=f4e2289]:
+                  - generic [ref=f4e2290]: Disposition Text
+                  - textbox [disabled]: Callback by Healthcare Professional within 60 minutes
+                - button "Add Service & Priority" [ref=f4e2292] [cursor=pointer]
+              - generic [ref=f4e2296]:
+                - generic [ref=f4e2298]:
+                  - generic [ref=f4e2299]: Disposition Code
+                  - textbox [disabled]: DX78
+                - generic [ref=f4e2301]:
+                  - generic [ref=f4e2302]: Disposition Text
+                  - textbox [disabled]: Receive report of results or tests from laboratory
+                - button "Add Service & Priority" [ref=f4e2304] [cursor=pointer]
+              - generic [ref=f4e2308]:
+                - generic [ref=f4e2310]:
+                  - generic [ref=f4e2311]: Disposition Code
+                  - textbox [disabled]: DX80
+                - generic [ref=f4e2313]:
+                  - generic [ref=f4e2314]: Disposition Text
+                  - textbox [disabled]: Repeat prescription required within 6 hours
+                - button "Add Service & Priority" [ref=f4e2316] [cursor=pointer]
+              - generic [ref=f4e2320]:
+                - generic [ref=f4e2322]:
+                  - generic [ref=f4e2323]: Disposition Code
+                  - textbox [disabled]: DX82
+                - generic [ref=f4e2325]:
+                  - generic [ref=f4e2326]: Disposition Text
+                  - textbox [disabled]: Medication Enquiry
+                - button "Add Service & Priority" [ref=f4e2328] [cursor=pointer]
+              - generic [ref=f4e2332]:
+                - generic [ref=f4e2334]:
+                  - generic [ref=f4e2335]: Disposition Code
+                  - textbox [disabled]: DX85
+                - generic [ref=f4e2337]:
+                  - generic [ref=f4e2338]: Disposition Text
+                  - textbox [disabled]: Repeat prescription required within 2 hours
+                - button "Add Service & Priority" [ref=f4e2340] [cursor=pointer]
+              - generic [ref=f4e2344]:
+                - generic [ref=f4e2346]:
+                  - generic [ref=f4e2347]: Disposition Code
+                  - textbox [disabled]: DX86
+                - generic [ref=f4e2349]:
+                  - generic [ref=f4e2350]: Disposition Text
+                  - textbox [disabled]: Repeat prescription required within 12 hours
+                - button "Add Service & Priority" [ref=f4e2352] [cursor=pointer]
+              - generic [ref=f4e2356]:
+                - generic [ref=f4e2358]:
+                  - generic [ref=f4e2359]: Disposition Code
+                  - textbox [disabled]: DX87
+                - generic [ref=f4e2361]:
+                  - generic [ref=f4e2362]: Disposition Text
+                  - textbox [disabled]: Repeat prescription required within 24 hours
+                - button "Add Service & Priority" [ref=f4e2364] [cursor=pointer]
+              - generic [ref=f4e2368]:
+                - generic [ref=f4e2370]:
+                  - generic [ref=f4e2371]: Disposition Code
+                  - textbox [disabled]: DX89
+                - generic [ref=f4e2373]:
+                  - generic [ref=f4e2374]: Disposition Text
+                  - textbox [disabled]: Refer to Treatment Centre within 12 hours
+                - button "Add Service & Priority" [ref=f4e2376] [cursor=pointer]
+              - generic [ref=f4e2380]:
+                - generic [ref=f4e2382]:
+                  - generic [ref=f4e2383]: Disposition Code
+                  - textbox [disabled]: DX91
+                - generic [ref=f4e2385]:
+                  - generic [ref=f4e2386]: Disposition Text
+                  - textbox [disabled]: Unexpected death
+                - button "Add Service & Priority" [ref=f4e2388] [cursor=pointer]
+              - generic [ref=f4e2392]:
+                - generic [ref=f4e2394]:
+                  - generic [ref=f4e2395]: Disposition Code
+                  - textbox [disabled]: DX93
+                - generic [ref=f4e2397]:
+                  - generic [ref=f4e2398]: Disposition Text
+                  - textbox [disabled]: Speak to the GP Practice within 1 hour (3 calls within 4 days)
+                - button "Add Service & Priority" [ref=f4e2400] [cursor=pointer]
+              - generic [ref=f4e2404]:
+                - generic [ref=f4e2406]:
+                  - generic [ref=f4e2407]: Disposition Code
+                  - textbox [disabled]: DX96
+                - generic [ref=f4e2409]:
+                  - generic [ref=f4e2410]: Disposition Text
+                  - textbox [disabled]: Refer to Health Information within 12 hours
+                - button "Add Service & Priority" [ref=f4e2412] [cursor=pointer]
+              - generic [ref=f4e2416]:
+                - generic [ref=f4e2418]:
+                  - generic [ref=f4e2419]: Disposition Code
+                  - textbox [disabled]: DX97
+                - generic [ref=f4e2421]:
+                  - generic [ref=f4e2422]: Disposition Text
+                  - textbox [disabled]: Emergency Contraception within 2 hours
+                - button "Add Service & Priority" [ref=f4e2424] [cursor=pointer]
+              - generic [ref=f4e2428]:
+                - generic [ref=f4e2430]:
+                  - generic [ref=f4e2431]: Disposition Code
+                  - textbox [disabled]: DX98
+                - generic [ref=f4e2433]:
+                  - generic [ref=f4e2434]: Disposition Text
+                  - textbox [disabled]: Emergency Contraception within 12 hours
+                - button "Add Service & Priority" [ref=f4e2436] [cursor=pointer]
+              - generic [ref=f4e2440]:
+                - generic [ref=f4e2442]:
+                  - generic [ref=f4e2443]: Disposition Code
+                  - textbox [disabled]: DX116
+                - generic [ref=f4e2445]:
+                  - generic [ref=f4e2446]: Disposition Text
+                  - textbox [disabled]: Speak to the Primary Care Service within 6 hours for Expected Death
+                - button "Add Service & Priority" [ref=f4e2448] [cursor=pointer]
+              - generic [ref=f4e2452]:
+                - generic [ref=f4e2454]:
+                  - generic [ref=f4e2455]: Disposition Code
+                  - textbox [disabled]: DX117
+                - generic [ref=f4e2457]:
+                  - generic [ref=f4e2458]: Disposition Text
+                  - textbox [disabled]: Speak to a Primary Care Service within 1 hour for Palliative Care services
+                - button "Add Service & Priority" [ref=f4e2460] [cursor=pointer]
+              - generic [ref=f4e2464]:
+                - generic [ref=f4e2466]:
+                  - generic [ref=f4e2467]: Disposition Code
+                  - textbox [disabled]: DX119
+                - generic [ref=f4e2469]:
+                  - generic [ref=f4e2470]: Disposition Text
+                  - textbox [disabled]: Callback by Healthcare Professional within 2 hours
+                - button "Add Service & Priority" [ref=f4e2472] [cursor=pointer]
+              - generic [ref=f4e2476]:
+                - generic [ref=f4e2478]:
+                  - generic [ref=f4e2479]: Disposition Code
+                  - textbox [disabled]: DX120
+                - generic [ref=f4e2481]:
+                  - generic [ref=f4e2482]: Disposition Text
+                  - textbox [disabled]: Callback by Healthcare Professional within 4 hours
+                - button "Add Service & Priority" [ref=f4e2484] [cursor=pointer]
+              - generic [ref=f4e2488]:
+                - generic [ref=f4e2490]:
+                  - generic [ref=f4e2491]: Disposition Code
+                  - textbox [disabled]: DX122
+                - generic [ref=f4e2493]:
+                  - generic [ref=f4e2494]: Disposition Text
+                  - textbox [disabled]: Contact for a possible home visit within 6 hours
+                - button "Add Service & Priority" [ref=f4e2496] [cursor=pointer]
+              - generic [ref=f4e2500]:
+                - generic [ref=f4e2502]:
+                  - generic [ref=f4e2503]: Disposition Code
+                  - textbox [disabled]: DX123
+                - generic [ref=f4e2505]:
+                  - generic [ref=f4e2506]: Disposition Text
+                  - textbox [disabled]: Contact for a possible home visit within 2 hours
+                - button "Add Service & Priority" [ref=f4e2508] [cursor=pointer]
+              - generic [ref=f4e2512]:
+                - generic [ref=f4e2514]:
+                  - generic [ref=f4e2515]: Disposition Code
+                  - textbox [disabled]: DX333
+                - generic [ref=f4e2517]:
+                  - generic [ref=f4e2518]: Disposition Text
+                  - textbox [disabled]: Speak to a Clinician from our service immediately - Ambulance Validation
+                - button "Add Service & Priority" [ref=f4e2520] [cursor=pointer]
+              - generic [ref=f4e2524]:
+                - generic [ref=f4e2526]:
+                  - generic [ref=f4e2527]: Disposition Code
+                  - textbox [disabled]: DX334
+                - generic [ref=f4e2529]:
+                  - generic [ref=f4e2530]: Disposition Text
+                  - textbox [disabled]: Speak to a Clinician from our service Immediately - Emergency Treatment Centre Within 1 Hour Validation
+                - button "Add Service & Priority" [ref=f4e2532] [cursor=pointer]
+              - generic [ref=f4e2536]:
+                - generic [ref=f4e2538]:
+                  - generic [ref=f4e2539]: Disposition Code
+                  - textbox [disabled]: DX336
+                - generic [ref=f4e2541]:
+                  - generic [ref=f4e2542]: Disposition Text
+                  - textbox [disabled]: Paramedic requesting call back from Healthcare Professional within 30 mins
+                - button "Add Service & Priority" [ref=f4e2544] [cursor=pointer]
+              - generic [ref=f4e2548]:
+                - generic [ref=f4e2550]:
+                  - generic [ref=f4e2551]: Disposition Code
+                  - textbox [disabled]: DX337
+                - generic [ref=f4e2553]:
+                  - generic [ref=f4e2554]: Disposition Text
+                  - textbox [disabled]: Speak to a Clinician from our service Immediately - Emergency Treatment Centre Within 4 Hour Validation
+                - button "Add Service & Priority" [ref=f4e2556] [cursor=pointer]
+              - generic [ref=f4e2560]:
+                - generic [ref=f4e2562]:
+                  - generic [ref=f4e2563]: Disposition Code
+                  - textbox [disabled]: DX338
+                - generic [ref=f4e2565]:
+                  - generic [ref=f4e2566]: Disposition Text
+                  - textbox [disabled]: Speak to a Clinician from our service Immediately - Emergency Treatment Centre Within 12 Hour Validation
+                - button "Add Service & Priority" [ref=f4e2568] [cursor=pointer]
+              - generic [ref=f4e2572]:
+                - generic [ref=f4e2574]:
+                  - generic [ref=f4e2575]: Disposition Code
+                  - textbox [disabled]: DX1112
+                - generic [ref=f4e2577]:
+                  - generic [ref=f4e2578]: Disposition Text
+                  - textbox [disabled]: COVID risk Clinical Assessment service 1 hour
+                - button "Add Service & Priority" [ref=f4e2580] [cursor=pointer]
+              - generic [ref=f4e2584]:
+                - generic [ref=f4e2586]:
+                  - generic [ref=f4e2587]: Disposition Code
+                  - textbox [disabled]: DX1113
+                - generic [ref=f4e2589]:
+                  - generic [ref=f4e2590]: Disposition Text
+                  - textbox [disabled]: COVID risk Clinical Assessment service 2 hours
+                - button "Add Service & Priority" [ref=f4e2592] [cursor=pointer]
+              - generic [ref=f4e2596]:
+                - generic [ref=f4e2598]:
+                  - generic [ref=f4e2599]: Disposition Code
+                  - textbox [disabled]: DX1114
+                - generic [ref=f4e2601]:
+                  - generic [ref=f4e2602]: Disposition Text
+                  - textbox [disabled]: COVID risk Clinical Assessment service 4 hours
+                - button "Add Service & Priority" [ref=f4e2604] [cursor=pointer]
+              - generic [ref=f4e2608]:
+                - generic [ref=f4e2610]:
+                  - generic [ref=f4e2611]: Disposition Code
+                  - textbox [disabled]: DX1115
+                - generic [ref=f4e2613]:
+                  - generic [ref=f4e2614]: Disposition Text
+                  - textbox [disabled]: COVID risk Clinical Assessment service 6 hours
+                - button "Add Service & Priority" [ref=f4e2616] [cursor=pointer]
+              - generic [ref=f4e2620]:
+                - generic [ref=f4e2622]:
+                  - generic [ref=f4e2623]: Disposition Code
+                  - textbox [disabled]: DX1116
+                - generic [ref=f4e2625]:
+                  - generic [ref=f4e2626]: Disposition Text
+                  - textbox [disabled]: COVID risk Clinical Assessment service 12 hours
+                - button "Add Service & Priority" [ref=f4e2628] [cursor=pointer]
+            - generic [ref=f4e2633]:
+              - button "Save" [disabled]

@@ -1,0 +1,290 @@
+- generic [active] [ref=f121e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f121e3] [cursor=pointer]
+  - generic [ref=f121e8]:
+    - generic [ref=f121e9]:
+      - button "Expand sidebar" [ref=f121e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f121e11]
+      - generic [ref=f121e13]:
+        - img "Dashboards" [ref=f121e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f121e23] [cursor=pointer]
+        - img "Quick Send" [ref=f121e28] [cursor=pointer]
+        - img "Health Forms" [ref=f121e33] [cursor=pointer]
+        - img "Patient Search" [ref=f121e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f121e43] [cursor=pointer]
+        - img "case load management" [ref=f121e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f121e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f121e58] [cursor=pointer]
+        - img "Users" [ref=f121e63] [cursor=pointer]
+        - img "Configuration" [ref=f121e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f121e73] [cursor=pointer]
+        - generic [ref=f121e75] [cursor=pointer]
+      - button [ref=f121e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f121e84]
+    - generic [ref=f121e85]:
+      - generic [ref=f121e86]:
+        - generic [ref=f121e87]: 3h 38m
+        - generic [ref=f121e92]:
+          - generic [ref=f121e96]:
+            - generic [ref=f121e97] [cursor=pointer]: TFN
+            - generic [ref=f121e355]:
+              - generic [ref=f121e356]: Test Fiona Nguyen
+              - generic [ref=f121e357]: Super Admin GB
+              - generic [ref=f121e359]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f121e364]
+          - generic [ref=f121e99]:
+            - button "More options" [ref=f121e102] [cursor=pointer]
+            - generic [ref=f121e106] [cursor=pointer]: "0"
+      - generic [ref=f121e365]:
+        - generic [ref=f121e366]:
+          - tablist [ref=f121e369]:
+            - tab "Org Tasks" [ref=f121e370] [cursor=pointer]
+            - tab "Staff Performance" [selected] [ref=f121e371] [cursor=pointer]
+            - tab "Org Stats" [ref=f121e373] [cursor=pointer]
+            - tab "All Patients" [ref=f121e374] [cursor=pointer]
+            - tab "CQC Readiness" [ref=f121e375] [cursor=pointer]
+            - tab "Message Outbox" [ref=f121e376] [cursor=pointer]
+            - tab "Comms Analytics" [ref=f121e377] [cursor=pointer]
+          - tabpanel [ref=f121e379]:
+            - generic [ref=f121e381]:
+              - generic [ref=f121e383]:
+                - heading "Staff Performance" [level=1] [ref=f121e384]
+                - paragraph [ref=f121e385]: Real-time view of all clinician time plans and daily progress
+              - generic [ref=f121e386]:
+                - button "On Track 3" [ref=f121e387] [cursor=pointer]:
+                  - generic [ref=f121e389]: On Track
+                  - generic [ref=f121e390]: "3"
+                - button "Ahead 1" [ref=f121e391] [cursor=pointer]:
+                  - generic [ref=f121e393]: Ahead
+                  - generic [ref=f121e394]: "1"
+                - button "Behind 1" [ref=f121e395] [cursor=pointer]:
+                  - generic [ref=f121e397]: Behind
+                  - generic [ref=f121e398]: "1"
+                - button "Off Shift 1" [ref=f121e399] [cursor=pointer]:
+                  - generic [ref=f121e401]: Off Shift
+                  - generic [ref=f121e402]: "1"
+              - textbox "Search clinicians..." [ref=f121e407]
+              - generic [ref=f121e408]:
+                - generic [ref=f121e409]:
+                  - generic [ref=f121e410]: Clinician
+                  - generic [ref=f121e411]:
+                    - generic [ref=f121e412]: 07:00
+                    - generic [ref=f121e413]: 08:00
+                    - generic [ref=f121e414]: 09:00
+                    - generic [ref=f121e415]: 10:00
+                    - generic [ref=f121e416]: 11:00
+                    - generic [ref=f121e417]: 12:00
+                    - generic [ref=f121e418]: 13:00
+                    - generic [ref=f121e419]: 14:00
+                    - generic [ref=f121e420]: 15:00
+                    - generic [ref=f121e421]: 16:00
+                    - generic [ref=f121e422]: 17:00
+                    - generic [ref=f121e423]: 18:00
+                    - generic [ref=f121e424]: 19:00
+                    - generic [ref=f121e425]: 20:00
+                    - generic [ref=f121e426]: 21:00
+                    - generic [ref=f121e427]: 22:00
+                  - generic [ref=f121e428]: Progress
+                  - generic [ref=f121e429]:
+                    - generic [ref=f121e430]: PACO Activity
+                    - generic [ref=f121e431]:
+                      - generic [ref=f121e432]: Active
+                      - generic [ref=f121e434]: On Call
+                      - generic [ref=f121e436]: Inactive
+                - generic [ref=f121e438] [cursor=pointer]:
+                  - generic [ref=f121e439]:
+                    - generic [ref=f121e440]: SJ
+                    - generic [ref=f121e442]:
+                      - generic [ref=f121e443]: Dr. Sarah Jones
+                      - generic [ref=f121e444]: General Practitioner
+                      - generic [ref=f121e445]: 08:00 - 18:00
+                  - generic [ref=f121e446]:
+                    - generic "Admin (08:00-09:00) 5/5" [ref=f121e463]: 5/5
+                    - generic "Clinic Appointments (09:00-12:00) 6/10" [ref=f121e465]:
+                      - generic [ref=f121e466]: Clinic Appointments
+                      - generic [ref=f121e467]: 6/10
+                    - generic "Lunch (12:00-13:00) 0/0" [ref=f121e468]
+                    - generic "Phone Consultations (13:00-15:00) 0/6" [ref=f121e469]:
+                      - generic [ref=f121e470]: Phone Consultations
+                      - generic [ref=f121e471]: 0/6
+                    - generic "Results Review (15:00-16:00) 0/8" [ref=f121e472]: 0/8
+                    - generic "Prescriptions (16:00-18:00) 3/12" [ref=f121e474]:
+                      - generic [ref=f121e475]: Prescriptions
+                      - generic [ref=f121e476]: 3/12
+                  - generic [ref=f121e477]:
+                    - generic [ref=f121e480]:
+                      - generic [ref=f121e481]: 64%
+                      - generic [ref=f121e482]: 14/22
+                    - generic [ref=f121e483]: On Track
+                  - generic [ref=f121e484]:
+                    - generic [ref=f121e486]:
+                      - 'generic "Active: 185m" [ref=f121e487]'
+                      - 'generic "On Call: 12m" [ref=f121e488]'
+                      - 'generic "Inactive: 18m" [ref=f121e489]'
+                    - generic [ref=f121e490]:
+                      - generic [ref=f121e491]: 86%
+                      - generic [ref=f121e493]: 6%
+                      - generic [ref=f121e495]: 8%
+                - generic [ref=f121e497] [cursor=pointer]:
+                  - generic [ref=f121e498]:
+                    - generic [ref=f121e499]: MC
+                    - generic [ref=f121e501]:
+                      - generic [ref=f121e502]: Dr. Michael Chen
+                      - generic [ref=f121e503]: General Practitioner
+                      - generic [ref=f121e504]: 08:00 - 17:00
+                  - generic [ref=f121e505]:
+                    - generic "Clinic Appointments (08:00-11:00) 6/8" [ref=f121e522]:
+                      - generic [ref=f121e523]: Clinic Appointments
+                      - generic [ref=f121e524]: 6/8
+                    - generic "Admin (11:00-12:00) 2/5" [ref=f121e525]: 2/5
+                    - generic "Lunch (12:00-13:00) 0/0" [ref=f121e527]
+                    - generic "Phone Consultations (13:00-15:00) 0/8" [ref=f121e528]:
+                      - generic [ref=f121e529]: Phone Consultations
+                      - generic [ref=f121e530]: 0/8
+                    - generic "Letters & Referrals (15:00-17:00) 0/6" [ref=f121e531]:
+                      - generic [ref=f121e532]: Letters & Referrals
+                      - generic [ref=f121e533]: 0/6
+                  - generic [ref=f121e534]:
+                    - generic [ref=f121e537]:
+                      - generic [ref=f121e538]: 40%
+                      - generic [ref=f121e539]: 8/20
+                    - generic [ref=f121e540]: Behind
+                  - generic [ref=f121e541]:
+                    - generic [ref=f121e543]:
+                      - 'generic "Active: 142m" [ref=f121e544]'
+                      - 'generic "On Call: 8m" [ref=f121e545]'
+                      - 'generic "Inactive: 52m" [ref=f121e546]'
+                    - generic [ref=f121e547]:
+                      - generic [ref=f121e548]: 70%
+                      - generic [ref=f121e550]: 4%
+                      - generic [ref=f121e552]: 26%
+                - generic [ref=f121e554] [cursor=pointer]:
+                  - generic [ref=f121e555]:
+                    - generic [ref=f121e556]: KS
+                    - generic [ref=f121e558]:
+                      - generic [ref=f121e559]: Nurse Katie Sparrow
+                      - generic [ref=f121e560]: Practice Nurse
+                      - generic [ref=f121e561]: 07:30 - 16:00
+                  - generic [ref=f121e562]:
+                    - generic "Clinic Appointments (07:30-10:30) 8/8" [ref=f121e579]:
+                      - generic [ref=f121e580]: Clinic Appointments
+                      - generic [ref=f121e581]: 8/8
+                    - generic "Phone Triage (10:30-12:00) 6/6" [ref=f121e582]:
+                      - generic [ref=f121e583]: Phone Triage
+                      - generic [ref=f121e584]: 6/6
+                    - generic "Lunch (12:00-12:30) 0/0" [ref=f121e585]
+                    - generic "Results Review (12:30-14:00) 4/5" [ref=f121e586]:
+                      - generic [ref=f121e587]: Results Review
+                      - generic [ref=f121e588]: 4/5
+                    - generic "Admin & Wrap Up (14:00-16:00) 0/4" [ref=f121e589]:
+                      - generic [ref=f121e590]: Admin & Wrap Up
+                      - generic [ref=f121e591]: 0/4
+                  - generic [ref=f121e592]:
+                    - generic [ref=f121e595]:
+                      - generic [ref=f121e596]: 95%
+                      - generic [ref=f121e597]: 18/19
+                    - generic [ref=f121e598]: Ahead
+                  - generic [ref=f121e599]:
+                    - generic [ref=f121e601]:
+                      - 'generic "Active: 228m" [ref=f121e602]'
+                      - 'generic "On Call: 22m" [ref=f121e603]'
+                      - 'generic "Inactive: 6m" [ref=f121e604]'
+                    - generic [ref=f121e605]:
+                      - generic [ref=f121e606]: 89%
+                      - generic [ref=f121e608]: 9%
+                      - generic [ref=f121e610]: 2%
+                - generic [ref=f121e612] [cursor=pointer]:
+                  - generic [ref=f121e613]:
+                    - generic [ref=f121e614]: JW
+                    - generic [ref=f121e616]:
+                      - generic [ref=f121e617]: Dr. Jane Wilson
+                      - generic [ref=f121e618]: General Practitioner
+                      - generic [ref=f121e619]: 09:00 - 17:30
+                  - generic [ref=f121e620]:
+                    - generic "Morning Admin (09:00-09:30) 3/3" [ref=f121e637]
+                    - generic "Clinic Appointments (09:30-12:30) 9/9" [ref=f121e638]:
+                      - generic [ref=f121e639]: Clinic Appointments
+                      - generic [ref=f121e640]: 9/9
+                    - generic "Lunch (12:30-13:30) 0/0" [ref=f121e641]
+                    - generic "Phone Consultations (13:30-15:30) 0/6" [ref=f121e642]:
+                      - generic [ref=f121e643]: Phone Consultations
+                      - generic [ref=f121e644]: 0/6
+                    - generic "Prescriptions (15:30-17:30) 0/10" [ref=f121e645]:
+                      - generic [ref=f121e646]: Prescriptions
+                      - generic [ref=f121e647]: 0/10
+                  - generic [ref=f121e648]:
+                    - generic [ref=f121e651]:
+                      - generic [ref=f121e652]: 67%
+                      - generic [ref=f121e653]: 12/18
+                    - generic [ref=f121e654]: On Track
+                  - generic [ref=f121e655]:
+                    - generic [ref=f121e657]:
+                      - 'generic "Active: 120m" [ref=f121e658]'
+                      - 'generic "On Call: 45m" [ref=f121e659]'
+                      - 'generic "Inactive: 24m" [ref=f121e660]'
+                    - generic [ref=f121e661]:
+                      - generic [ref=f121e662]: 63%
+                      - generic [ref=f121e664]: 24%
+                      - generic [ref=f121e666]: 13%
+                - generic [ref=f121e668] [cursor=pointer]:
+                  - generic [ref=f121e669]:
+                    - generic [ref=f121e670]: TH
+                    - generic [ref=f121e672]:
+                      - generic [ref=f121e673]: Nurse Tom Harris
+                      - generic [ref=f121e674]: Practice Nurse
+                      - generic [ref=f121e675]: 13:00 - 21:00
+                  - generic [ref=f121e676]:
+                    - generic "Clinic Appointments (13:00-16:00) 0/8" [ref=f121e693]:
+                      - generic [ref=f121e694]: Clinic Appointments
+                      - generic [ref=f121e695]: 0/8
+                    - generic "Break (16:00-16:30) 0/0" [ref=f121e696]
+                    - generic "Phone Triage (16:30-19:00) 0/6" [ref=f121e697]:
+                      - generic [ref=f121e698]: Phone Triage
+                      - generic [ref=f121e699]: 0/6
+                    - generic "Admin (19:00-21:00) 0/2" [ref=f121e700]:
+                      - generic [ref=f121e701]: Admin
+                      - generic [ref=f121e702]: 0/2
+                  - generic [ref=f121e703]:
+                    - generic [ref=f121e705]:
+                      - generic [ref=f121e706]: 0%
+                      - generic [ref=f121e707]: 0/16
+                    - generic [ref=f121e708]: Off Shift
+                  - generic [ref=f121e709]: Not started
+                - generic [ref=f121e711] [cursor=pointer]:
+                  - generic [ref=f121e712]:
+                    - generic [ref=f121e713]: PP
+                    - generic [ref=f121e715]:
+                      - generic [ref=f121e716]: Dr. Priya Patel
+                      - generic [ref=f121e717]: General Practitioner
+                      - generic [ref=f121e718]: 08:00 - 16:30
+                  - generic [ref=f121e719]:
+                    - generic "Clinic Appointments (08:00-11:00) 9/9" [ref=f121e736]:
+                      - generic [ref=f121e737]: Clinic Appointments
+                      - generic [ref=f121e738]: 9/9
+                    - generic "Break (11:00-11:30) 0/0" [ref=f121e739]
+                    - generic "Phone Consultations (11:30-13:00) 5/5" [ref=f121e740]:
+                      - generic [ref=f121e741]: Phone Consultations
+                      - generic [ref=f121e742]: 5/5
+                    - generic "Lunch (13:00-13:30) 0/0" [ref=f121e743]
+                    - generic "Letters & Referrals (13:30-15:00) 2/4" [ref=f121e744]:
+                      - generic [ref=f121e745]: Letters & Referrals
+                      - generic [ref=f121e746]: 2/4
+                    - generic "Results Review (15:00-16:30) 0/3" [ref=f121e747]:
+                      - generic [ref=f121e748]: Results Review
+                      - generic [ref=f121e749]: 0/3
+                  - generic [ref=f121e750]:
+                    - generic [ref=f121e753]:
+                      - generic [ref=f121e754]: 76%
+                      - generic [ref=f121e755]: 16/21
+                    - generic [ref=f121e756]: On Track
+                  - generic [ref=f121e757]:
+                    - generic [ref=f121e759]:
+                      - 'generic "Active: 195m" [ref=f121e760]'
+                      - 'generic "On Call: 15m" [ref=f121e761]'
+                      - 'generic "Inactive: 32m" [ref=f121e762]'
+                    - generic [ref=f121e763]:
+                      - generic [ref=f121e764]: 81%
+                      - generic [ref=f121e766]: 6%
+                      - generic [ref=f121e768]: 13%
+        - button "Scroll tabs left"
+        - button "Scroll tabs right" [ref=f121e770] [cursor=pointer]

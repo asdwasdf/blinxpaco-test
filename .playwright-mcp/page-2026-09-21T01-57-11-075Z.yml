@@ -1,0 +1,229 @@
+- generic [active] [ref=f3e1]:
+  - paragraph [ref=f3e6]: Gathering data...
+  - banner [ref=f3e8]:
+    - generic [ref=f3e10]:
+      - generic [ref=f3e11]:
+        - generic [ref=f3e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f3e16]
+        - heading "Communications Hub" [level=1] [ref=f3e17]
+      - generic [ref=f3e18]:              
+      - generic [ref=f3e19]:
+        - list [ref=f3e21]:
+          - listitem [ref=f3e22]:
+            - generic [ref=f3e23]: 
+        - generic [ref=f3e24]: 
+  - navigation [ref=f3e28]:
+    - generic [ref=f3e29]:
+      - img "Blinx Company Logo" [ref=f3e31]
+      - generic [ref=f3e32] [cursor=pointer]
+    - generic [ref=f3e33]:
+      - list [ref=f3e36]:
+        - listitem [ref=f3e37]:
+          - link "Home" [ref=f3e39] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f3e40]:
+          - generic [ref=f3e41] [cursor=pointer]:
+            - link "Analytics" [ref=f3e42]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f3e43]: 
+        - listitem [ref=f3e44]:
+          - generic [ref=f3e45] [cursor=pointer]:
+            - link "Comms Hub" [ref=f3e46]:
+              - /url: /commshub/
+            - generic [ref=f3e47]: 
+        - listitem [ref=f3e48]:
+          - generic [ref=f3e49] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f3e50]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f3e51]: 
+        - listitem [ref=f3e52]:
+          - link "Patient Search" [ref=f3e54] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f3e55]:
+          - generic [ref=f3e56] [cursor=pointer]:
+            - link "Health Forms" [ref=f3e57]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f3e58]: 
+        - listitem [ref=f3e59]:
+          - link "Care Navigator" [ref=f3e61] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f3e62]:
+          - link "Configuration" [ref=f3e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f3e65]:
+        - listitem [ref=f3e66]:
+          - link "Dashboard" [ref=f3e68] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f3e69]:
+          - link "Appointment Book" [ref=f3e71] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book
+        - listitem [ref=f3e72]:
+          - link "Settings" [ref=f3e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f3e75]:
+        - listitem [ref=f3e76]:
+          - link "User Management" [ref=f3e78] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f3e79]:
+          - generic [ref=f3e80] [cursor=pointer]: Log Out
+        - listitem [ref=f3e82]:
+          - generic [ref=f3e83]: Version 1.0
+  - generic [ref=f3e87]:
+    - generic [ref=f3e88]:
+      - generic [ref=f3e89]: Notifications
+      - generic [ref=f3e90] [cursor=pointer]:
+        - generic [ref=f3e91]: Clear All
+        - generic [ref=f3e92]: 
+    - generic [ref=f3e94]:
+      - generic [ref=f3e95] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f3e96]: "0"
+      - generic [ref=f3e97] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f3e98]: "0"
+      - generic [ref=f3e99] [cursor=pointer]:
+        - text: All
+        - generic [ref=f3e100]: "0"
+  - generic [ref=f3e105]:
+    - generic [ref=f3e110]:
+      - generic [ref=f3e111]: 
+      - combobox [ref=f3e113]
+    - generic [ref=f3e117]:
+      - textbox "Search by Patient..." [ref=f3e118]
+      - generic [ref=f3e119]: 
+    - generic [ref=f3e122]:
+      - button "Reset" [ref=f3e125] [cursor=pointer]
+      - button "Filter" [ref=f3e128] [cursor=pointer]
+  - generic [ref=f3e131]:
+    - generic [ref=f3e132]:
+      - generic [ref=f3e133]:
+        - link "" [ref=f3e134] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f3e136]: •
+        - link "Comms Hub" [ref=f3e137] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f3e138]: •
+        - generic [ref=f3e139]: Analytics
+      - generic [ref=f3e142] [cursor=pointer]:
+        - generic [ref=f3e143]: 
+        - textbox [ref=f3e145]: 01/09/2026 - 21/09/2026
+        - generic [ref=f3e146]: 
+    - generic [ref=f3e148]: Analytics update every 5 minutes for accuracy and performance — recent changes may not be visible yet.
+    - generic [ref=f3e150]:
+      - generic [ref=f3e156]:
+        - generic [ref=f3e158]:
+          - generic [ref=f3e161]:
+            - generic [ref=f3e162]: 
+            - text: Email
+          - generic [ref=f3e164]:
+            - generic [ref=f3e165]:
+              - generic [ref=f3e166]: Total Sent
+              - generic [ref=f3e169]: "0"
+            - generic [ref=f3e172]:
+              - generic [ref=f3e173]: Delivered
+              - generic [ref=f3e176]: "0"
+            - generic [ref=f3e179]:
+              - generic [ref=f3e180]: Not Delivered
+              - generic [ref=f3e183]: "0"
+            - generic [ref=f3e186]:
+              - generic [ref=f3e187]: Booking Links & Health Forms
+              - generic [ref=f3e190]: "0"
+            - generic [ref=f3e193]:
+              - generic [ref=f3e194]: Confirmations
+              - generic [ref=f3e197]: "0"
+            - generic [ref=f3e200]:
+              - generic [ref=f3e201]: Reminders
+              - generic [ref=f3e204]: "0"
+            - generic [ref=f3e207]:
+              - generic [ref=f3e208]: General news
+              - generic [ref=f3e211]: "0"
+            - generic [ref=f3e214]:
+              - generic [ref=f3e215]: Guidance & Advice
+              - generic [ref=f3e218]: "0"
+        - generic [ref=f3e222]:
+          - generic [ref=f3e225]:
+            - generic [ref=f3e226]: 
+            - text: SMS
+          - generic [ref=f3e228]:
+            - generic [ref=f3e229]:
+              - generic [ref=f3e230]: Total Sent
+              - generic [ref=f3e233]: "0"
+            - generic [ref=f3e236]:
+              - generic [ref=f3e237]: Delivered
+              - generic [ref=f3e240]: "0"
+            - generic [ref=f3e243]:
+              - generic [ref=f3e244]: Not Delivered
+              - generic [ref=f3e247]: "0"
+            - generic [ref=f3e250]:
+              - generic [ref=f3e251]: Booking Links & Health Forms
+              - generic [ref=f3e254]: "0"
+            - generic [ref=f3e257]:
+              - generic [ref=f3e258]: Confirmations
+              - generic [ref=f3e261]: "0"
+            - generic [ref=f3e264]:
+              - generic [ref=f3e265]: Reminders
+              - generic [ref=f3e268]: "0"
+            - generic [ref=f3e271]:
+              - generic [ref=f3e272]: General news
+              - generic [ref=f3e275]: "0"
+            - generic [ref=f3e278]:
+              - generic [ref=f3e279]: Guidance & Advice
+              - generic [ref=f3e282]: "0"
+      - generic [ref=f3e292]:
+        - generic [ref=f3e295]:
+          - generic [ref=f3e296]: 
+          - text: Conversion
+        - generic [ref=f3e298]:
+          - generic [ref=f3e299]:
+            - generic [ref=f3e301]:
+              - generic [ref=f3e302]: 
+              - generic [ref=f3e303]: Patients Engaged
+            - generic [ref=f3e304]: "0"
+          - generic [ref=f3e307]:
+            - generic [ref=f3e309]:
+              - generic [ref=f3e310]: 
+              - generic [ref=f3e311]: Invite Sends
+            - generic [ref=f3e312]: "0"
+          - generic [ref=f3e315]:
+            - generic [ref=f3e317]:
+              - generic [ref=f3e318]: 
+              - generic [ref=f3e319]: Email Invites Sent
+            - generic [ref=f3e320]: "0"
+          - generic [ref=f3e323]:
+            - generic [ref=f3e325]:
+              - generic [ref=f3e326]: 
+              - generic [ref=f3e327]: SMS Invites Sent
+            - generic [ref=f3e328]: "0"
+          - generic [ref=f3e331]:
+            - generic [ref=f3e333]:
+              - generic [ref=f3e334]: 
+              - generic [ref=f3e335]: Appointments Booked
+            - generic [ref=f3e336]: "0"
+          - generic [ref=f3e339]:
+            - generic [ref=f3e341]:
+              - generic [ref=f3e342]: 
+              - generic [ref=f3e343]: Campaign Conversion Rate
+            - generic [ref=f3e344]: "0"
+    - generic [ref=f3e350]:
+      - generic:
+        - generic:     
+        - text:  
+      - generic [ref=f3e353]:
+        - generic [ref=f3e355]:
+          - textbox "Search any data in the table" [ref=f3e356]
+          - generic [ref=f3e357]: 
+        - generic [ref=f3e359]:
+          - text:   
+          - button " Reset Column Widths" [ref=f3e361] [cursor=pointer]:
+            - generic [ref=f3e362]: 
+            - text: Reset Column Widths
+          - button " Show All Columns" [ref=f3e364] [cursor=pointer]:
+            - generic [ref=f3e365]: 
+            - text: Show All Columns
+          - button " Clear Filters" [ref=f3e367] [cursor=pointer]:
+            - generic [ref=f3e368]: 
+            - text: Clear Filters
+          - button " Export to CSV" [ref=f3e370] [cursor=pointer]:
+            - generic [ref=f3e371]: 
+            - text: Export to CSV
+  - text:    

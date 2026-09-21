@@ -1,0 +1,157 @@
+- generic [active] [ref=f121e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f121e3] [cursor=pointer]
+  - generic [ref=f121e8]:
+    - generic [ref=f121e9]:
+      - button "Expand sidebar" [ref=f121e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f121e11]
+      - generic [ref=f121e13]:
+        - img "Dashboards" [ref=f121e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f121e23] [cursor=pointer]
+        - img "Quick Send" [ref=f121e28] [cursor=pointer]
+        - img "Health Forms" [ref=f121e33] [cursor=pointer]
+        - img "Patient Search" [ref=f121e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f121e43] [cursor=pointer]
+        - img "case load management" [ref=f121e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f121e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f121e58] [cursor=pointer]
+        - img "Users" [ref=f121e63] [cursor=pointer]
+        - img "Configuration" [ref=f121e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f121e73] [cursor=pointer]
+        - generic [ref=f121e75] [cursor=pointer]
+      - button [ref=f121e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f121e84]
+    - generic [ref=f121e85]:
+      - generic [ref=f121e86]:
+        - generic [ref=f121e87]: 3h 40m
+        - generic [ref=f121e92]:
+          - generic [ref=f121e96]:
+            - generic [ref=f121e97] [cursor=pointer]: TFN
+            - generic [ref=f121e355]:
+              - generic [ref=f121e356]: Test Fiona Nguyen
+              - generic [ref=f121e357]: Super Admin GB
+              - generic [ref=f121e359]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f121e364]
+          - generic [ref=f121e99]:
+            - button "More options" [ref=f121e102] [cursor=pointer]
+            - generic [ref=f121e106] [cursor=pointer]: "0"
+      - generic [ref=f121e771]:
+        - generic [ref=f121e772]:
+          - tablist [ref=f121e775]:
+            - tab "Org Tasks" [ref=f121e776] [cursor=pointer]
+            - tab "Staff Performance" [ref=f121e777] [cursor=pointer]
+            - tab "Org Stats" [selected] [ref=f121e778] [cursor=pointer]
+            - tab "All Patients" [ref=f121e780] [cursor=pointer]
+            - tab "CQC Readiness" [ref=f121e781] [cursor=pointer]
+            - tab "Message Outbox" [ref=f121e782] [cursor=pointer]
+            - tab "Comms Analytics" [ref=f121e783] [cursor=pointer]
+          - tabpanel [ref=f121e785]:
+            - generic [ref=f121e787]:
+              - generic [ref=f121e788]:
+                - generic [ref=f121e789]:
+                  - heading "Organisation Statistics" [level=1] [ref=f121e790]
+                  - paragraph [ref=f121e791]: Aggregated performance metrics across the organisation
+                - generic [ref=f121e792]:
+                  - button "Today" [ref=f121e793] [cursor=pointer]
+                  - button "This Week" [ref=f121e794] [cursor=pointer]
+                  - button "This Month" [ref=f121e795] [cursor=pointer]
+                  - button "3 Months" [ref=f121e796] [cursor=pointer]
+                  - button "6 Months" [ref=f121e797] [cursor=pointer]
+                  - button "12 Months" [ref=f121e798] [cursor=pointer]
+              - generic [ref=f121e799]:
+                - generic [ref=f121e800] [cursor=pointer]:
+                  - generic [ref=f121e801]: Total Consultations
+                  - generic [ref=f121e802]: 2,890
+                - generic [ref=f121e803] [cursor=pointer]:
+                  - generic [ref=f121e804]: Patients Seen
+                  - generic [ref=f121e805]: 2,140
+                - generic [ref=f121e806]:
+                  - generic [ref=f121e807]: Avg Consultation Time
+                  - generic [ref=f121e808]: 25 min
+                - generic [ref=f121e809] [cursor=pointer]:
+                  - generic [ref=f121e810]: Prescriptions
+                  - generic [ref=f121e811]: 1,240
+                - generic [ref=f121e812] [cursor=pointer]:
+                  - generic [ref=f121e813]: Referrals
+                  - generic [ref=f121e814]: "342"
+                - generic [ref=f121e815] [cursor=pointer]:
+                  - generic [ref=f121e816]: Breaches
+                  - generic [ref=f121e817]: "41"
+              - generic [ref=f121e818]:
+                - generic [ref=f121e819]:
+                  - heading "Contact Channels" [level=2] [ref=f121e820]
+                  - generic [ref=f121e821]:
+                    - generic [ref=f121e822] [cursor=pointer]:
+                      - generic [ref=f121e823]: Digital
+                      - generic [ref=f121e826]: 3,820
+                    - generic [ref=f121e827] [cursor=pointer]:
+                      - generic [ref=f121e828]: Face to Face
+                      - generic [ref=f121e831]: 1,456
+                - generic [ref=f121e832]:
+                  - heading "Consultation Types" [level=2] [ref=f121e833]
+                  - generic [ref=f121e834]:
+                    - generic [ref=f121e835] [cursor=pointer]:
+                      - generic [ref=f121e836]: Phone
+                      - generic [ref=f121e839]: 1,214
+                    - generic [ref=f121e840] [cursor=pointer]:
+                      - generic [ref=f121e841]: Face to Face
+                      - generic [ref=f121e844]: "809"
+                    - generic [ref=f121e845] [cursor=pointer]:
+                      - generic [ref=f121e846]: Video
+                      - generic [ref=f121e849]: "520"
+                    - generic [ref=f121e850] [cursor=pointer]:
+                      - generic [ref=f121e851]: Home Visit
+                      - generic [ref=f121e854]: "347"
+                - generic [ref=f121e855]:
+                  - heading "Tasks Overview" [level=2] [ref=f121e856]
+                  - generic [ref=f121e857]:
+                    - generic [ref=f121e858] [cursor=pointer]:
+                      - generic [ref=f121e859]: Created
+                      - generic [ref=f121e860]: 2,100
+                    - generic [ref=f121e861] [cursor=pointer]:
+                      - generic [ref=f121e862]: Completed
+                      - generic [ref=f121e863]: 1,920
+                    - generic [ref=f121e864]:
+                      - generic [ref=f121e865]: Completion Rate
+                      - generic [ref=f121e866]: 91%
+                    - generic [ref=f121e868] [cursor=pointer]:
+                      - generic [ref=f121e869]: Cases Opened
+                      - generic [ref=f121e870]: "520"
+                    - generic [ref=f121e871] [cursor=pointer]:
+                      - generic [ref=f121e872]: Cases Closed
+                      - generic [ref=f121e873]: "478"
+                - generic [ref=f121e874]:
+                  - heading "Clinician Activity" [level=2] [ref=f121e875]
+                  - generic [ref=f121e876]:
+                    - generic [ref=f121e877] [cursor=pointer]:
+                      - generic [ref=f121e878]: "1"
+                      - generic [ref=f121e879]: Dr. Sarah Jones
+                      - generic [ref=f121e882]: 520 consultations
+                      - generic [ref=f121e883]: 384 tasks
+                    - generic [ref=f121e884] [cursor=pointer]:
+                      - generic [ref=f121e885]: "2"
+                      - generic [ref=f121e886]: Nurse Katie Sparrow
+                      - generic [ref=f121e889]: 462 consultations
+                      - generic [ref=f121e890]: 365 tasks
+                    - generic [ref=f121e891] [cursor=pointer]:
+                      - generic [ref=f121e892]: "3"
+                      - generic [ref=f121e893]: Dr. Michael Chen
+                      - generic [ref=f121e896]: 434 consultations
+                      - generic [ref=f121e897]: 288 tasks
+                    - generic [ref=f121e898] [cursor=pointer]:
+                      - generic [ref=f121e899]: "4"
+                      - generic [ref=f121e900]: Dr. Jane Wilson
+                      - generic [ref=f121e903]: 405 consultations
+                      - generic [ref=f121e904]: 269 tasks
+                    - generic [ref=f121e905] [cursor=pointer]:
+                      - generic [ref=f121e906]: "5"
+                      - generic [ref=f121e907]: Dr. Priya Patel
+                      - generic [ref=f121e910]: 376 consultations
+                      - generic [ref=f121e911]: 250 tasks
+                    - generic [ref=f121e912] [cursor=pointer]:
+                      - generic [ref=f121e913]: "6"
+                      - generic [ref=f121e914]: Nurse Tom Harris
+                      - generic [ref=f121e917]: 347 consultations
+                      - generic [ref=f121e918]: 192 tasks
+        - button "Scroll tabs left"
+        - button "Scroll tabs right" [ref=f121e919] [cursor=pointer]

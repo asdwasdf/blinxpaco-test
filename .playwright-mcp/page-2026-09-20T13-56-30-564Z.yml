@@ -1,0 +1,83 @@
+- generic [active] [ref=f52e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f52e3] [cursor=pointer]
+  - generic [ref=f52e7]:
+    - generic [ref=f52e8]:
+      - generic [ref=f52e9]:
+        - button "Expand sidebar" [ref=f52e10] [cursor=pointer]:
+          - img "Paco Logo" [ref=f52e11]
+        - generic [ref=f52e13]:
+          - img "Dashboards" [ref=f52e18] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f52e23] [cursor=pointer]
+          - img "Quick Send" [ref=f52e28] [cursor=pointer]
+          - img "Health Forms" [ref=f52e33] [cursor=pointer]
+          - img "Patient Search" [ref=f52e38] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f52e43] [cursor=pointer]
+          - img "case load management" [ref=f52e48] [cursor=pointer]
+          - img "Appointment Book" [ref=f52e53] [cursor=pointer]
+          - img "Quick Pay" [ref=f52e58] [cursor=pointer]
+          - img "Users" [ref=f52e63] [cursor=pointer]
+          - img "Configuration" [ref=f52e68] [cursor=pointer]
+          - img "Rocket Bar" [ref=f52e73] [cursor=pointer]
+          - generic [ref=f52e75] [cursor=pointer]
+        - button [ref=f52e83] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f52e84]
+      - generic [ref=f52e85]:
+        - generic [ref=f52e86]:
+          - generic [ref=f52e87]: 4h 30m
+          - generic [ref=f52e92]:
+            - generic [ref=f52e95]:
+              - generic [ref=f52e96] [cursor=pointer]: TFN
+              - generic [ref=f52e98]:
+                - generic [ref=f52e99]: Test Fiona Nguyen
+                - generic [ref=f52e100]: Super Admin GB
+                - generic [ref=f52e102]: General Practice (Blinx Demo Site)
+            - textbox "Search patients by name or NHS number" [ref=f52e107]
+            - generic [ref=f52e108]:
+              - button "More options" [ref=f52e110] [cursor=pointer]
+              - generic [ref=f52e114] [cursor=pointer]: "0"
+        - generic [ref=f52e119]:
+          - generic [ref=f52e120]:
+            - generic [ref=f52e121]:
+              - generic [ref=f52e122]:
+                - link "Back to Dashboard" [ref=f52e126] [cursor=pointer]:
+                  - /url: /paco/dashboard
+                - heading "Work Boards" [level=1] [ref=f52e127]
+              - generic [ref=f52e128]:
+                - generic [ref=f52e129]:
+                  - generic [ref=f52e130] [cursor=pointer]:
+                    - checkbox "View My Tasks Only" [ref=f52e133]
+                    - generic [ref=f52e136]: View My Tasks Only
+                  - generic [ref=f52e137] [cursor=pointer]:
+                    - checkbox "View My Cases Only" [ref=f52e140]
+                    - generic [ref=f52e143]: View My Cases Only
+                - generic [ref=f52e144]: Search all boards
+                - generic [ref=f52e145]:
+                  - button "Board" [ref=f52e146] [cursor=pointer]
+                  - button "Case ID" [ref=f52e148] [cursor=pointer]
+                  - button "Patient" [ref=f52e150] [cursor=pointer]
+                - textbox "Board name" [ref=f52e153]
+                - generic [ref=f52e154]:
+                  - button "Tasks (0)" [ref=f52e155] [cursor=pointer]
+                  - button "Cases (0)" [ref=f52e157] [cursor=pointer]
+                - button "Create new board" [ref=f52e167] [cursor=pointer]
+            - button [ref=f52e171] [cursor=pointer]
+          - generic [ref=f52e175]:
+            - generic [ref=f52e178]:
+              - heading "workboardName" [level=2] [ref=f52e179]: Master Task Board
+              - generic [ref=f52e180]:
+                - generic [ref=f52e181]:
+                  - button "List view" [ref=f52e182] [cursor=pointer]
+                  - button "Card view" [ref=f52e184] [cursor=pointer]
+                - generic [ref=f52e191] [cursor=pointer]
+            - generic [ref=f52e194]:
+              - textbox "Search this board" [ref=f52e198]
+              - generic [ref=f52e200]:
+                - button "Create New Task" [ref=f52e201] [cursor=pointer]
+                - generic [ref=f52e206] [cursor=pointer]:
+                  - generic [ref=f52e207]:
+                    - textbox: Time on Board (newest to oldest)
+                  - generic [ref=f52e209]: Time on Board (newest to oldest)
+                  - button [ref=f52e210]
+                - button "Filters" [ref=f52e215] [cursor=pointer]
+    - status [ref=f52e218]

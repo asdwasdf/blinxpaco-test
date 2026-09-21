@@ -1,0 +1,193 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e826]:
+    - generic [ref=f4e827]:
+      - button "Expand sidebar" [ref=f4e828] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e829]
+      - generic [ref=f4e831]:
+        - img "Dashboards" [ref=f4e836] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e841] [cursor=pointer]
+        - img "Quick Send" [ref=f4e846] [cursor=pointer]
+        - img "Health Forms" [ref=f4e851] [cursor=pointer]
+        - img "Patient Search" [ref=f4e856] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e861] [cursor=pointer]
+        - img "case load management" [ref=f4e866] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e871] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e876] [cursor=pointer]
+        - img "Users" [ref=f4e881] [cursor=pointer]
+        - img "Configuration" [ref=f4e886] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e891] [cursor=pointer]
+        - generic [ref=f4e893] [cursor=pointer]
+      - button [ref=f4e901] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e902]
+    - generic [ref=f4e903]:
+      - generic [ref=f4e904]:
+        - generic [ref=f4e905]: 2h 14m
+        - generic [ref=f4e910]:
+          - generic [ref=f4e913]:
+            - generic [ref=f4e914] [cursor=pointer]: TFN
+            - generic [ref=f4e916]:
+              - generic [ref=f4e917]: Test Fiona Nguyen
+              - generic [ref=f4e918]: Super Admin GB
+              - generic [ref=f4e920]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e925]
+          - generic [ref=f4e926]:
+            - button "More options" [ref=f4e928] [cursor=pointer]
+            - generic [ref=f4e932] [cursor=pointer]: "0"
+      - generic [ref=f4e937]:
+        - generic [ref=f4e940]:
+          - generic [ref=f4e941]:
+            - heading "Configuration" [level=1] [ref=f4e943]
+            - generic [ref=f4e946]:
+              - generic [ref=f4e947]:
+                - button "Organisation" [expanded] [ref=f4e948] [cursor=pointer]:
+                  - link "Organisation" [ref=f4e950]:
+                    - /url: "#"
+                - region "Organisation" [ref=f4e954]:
+                  - tree [ref=f4e956]:
+                    - treeitem "General" [level=1] [ref=f4e957]:
+                      - link [aria-hidden] [ref=f4e959] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e960]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f4e961]:
+                      - link [aria-hidden] [ref=f4e963] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e964]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f4e965]:
+                      - link [aria-hidden] [ref=f4e967] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e968]: Locations
+                    - treeitem "Skills" [level=1] [ref=f4e969]:
+                      - link [aria-hidden] [ref=f4e971] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e972]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f4e973]:
+                      - link [aria-hidden] [ref=f4e975] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e976]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f4e977]:
+                      - link [aria-hidden] [ref=f4e979] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e980]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f4e981]:
+                      - link [aria-hidden] [ref=f4e983] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e984]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f4e985]:
+                      - link [aria-hidden] [ref=f4e987] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e988]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f4e989]:
+                      - link [aria-hidden] [ref=f4e991] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e992]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f4e993]:
+                      - link [aria-hidden] [ref=f4e995] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e996]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f4e997]:
+                      - link [aria-hidden] [ref=f4e999] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1000]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f4e1001]:
+                      - link [aria-hidden] [ref=f4e1003] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1004]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f4e1005]:
+                      - link [aria-hidden] [ref=f4e1007] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e1008]: Integrations
+              - button "Patient" [ref=f4e1010] [cursor=pointer]:
+                - link "Patient" [ref=f4e1012]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f4e1017] [cursor=pointer]:
+                - link "Appointment Books" [ref=f4e1019]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f4e1024] [cursor=pointer]:
+                - link "Quick Pay" [ref=f4e1026]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f4e1031] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f4e1033]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f4e1038] [cursor=pointer]:
+                - link "Users & Staff" [ref=f4e1040]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f4e1045] [cursor=pointer]:
+                - link "Clinical Config" [ref=f4e1047]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f4e1052] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f4e1054]:
+                  - /url: "#"
+          - generic [ref=f4e1056] [cursor=pointer]
+        - generic [ref=f4e1060]:
+          - generic [ref=f4e1063]:
+            - heading "Services" [level=2] [ref=f4e1064]
+            - textbox "Search Services..." [ref=f4e1067]
+          - generic [ref=f4e1070]:
+            - generic [ref=f4e1072]:
+              - button "Remove service" [ref=f4e1073] [cursor=pointer]
+              - generic [ref=f4e1076]:
+                - generic [ref=f4e1077]:
+                  - generic [ref=f4e1078]: Service ID
+                  - textbox "Service ID" [ref=f4e1080]: "111004"
+                - generic [ref=f4e1081]:
+                  - generic [ref=f4e1082]: Service Name
+                  - textbox "Service Name" [ref=f4e1084]: Demo 111 Service
+                - generic [ref=f4e1085]:
+                  - generic [ref=f4e1086]: Case Type
+                  - generic [ref=f4e1088] [cursor=pointer]:
+                    - generic [ref=f4e1089]:
+                      - textbox "Case Type": "111"
+                    - generic [ref=f4e1091]: "111"
+                    - button "Not set" [ref=f4e1094]
+            - generic [ref=f4e1099]:
+              - button "Remove service" [ref=f4e1100] [cursor=pointer]
+              - generic [ref=f4e1103]:
+                - generic [ref=f4e1104]:
+                  - generic [ref=f4e1105]: Service ID
+                  - textbox "Service ID" [ref=f4e1107]: "111001"
+                - generic [ref=f4e1108]:
+                  - generic [ref=f4e1109]: Service Name
+                  - textbox "Service Name" [ref=f4e1111]: Demo OOH Service
+                - generic [ref=f4e1112]:
+                  - generic [ref=f4e1113]: Case Type
+                  - generic [ref=f4e1115] [cursor=pointer]:
+                    - generic [ref=f4e1116]:
+                      - textbox "Case Type": OOH / IUC
+                    - generic [ref=f4e1118]: OOH / IUC
+                    - button "Not set" [ref=f4e1121]
+            - generic [ref=f4e1126]:
+              - button "Remove service" [ref=f4e1127] [cursor=pointer]
+              - generic [ref=f4e1130]:
+                - generic [ref=f4e1131]:
+                  - generic [ref=f4e1132]: Service ID
+                  - textbox "Service ID" [ref=f4e1134]: "111002"
+                - generic [ref=f4e1135]:
+                  - generic [ref=f4e1136]: Service Name
+                  - textbox "Service Name" [ref=f4e1138]: Demo CAS Service
+                - generic [ref=f4e1139]:
+                  - generic [ref=f4e1140]: Case Type
+                  - generic [ref=f4e1142] [cursor=pointer]:
+                    - generic [ref=f4e1143]:
+                      - textbox "Case Type": CAS
+                    - generic [ref=f4e1145]: CAS
+                    - button "Not set" [ref=f4e1148]
+            - generic [ref=f4e1153]:
+              - button "Remove service" [ref=f4e1154] [cursor=pointer]
+              - generic [ref=f4e1157]:
+                - generic [ref=f4e1158]:
+                  - generic [ref=f4e1159]: Service ID
+                  - textbox "Service ID" [ref=f4e1161]: "111003"
+                - generic [ref=f4e1162]:
+                  - generic [ref=f4e1163]: Service Name
+                  - textbox "Service Name" [ref=f4e1165]: Demo PCAS Service
+                - generic [ref=f4e1166]:
+                  - generic [ref=f4e1167]: Case Type
+                  - generic [ref=f4e1169] [cursor=pointer]:
+                    - generic [ref=f4e1170]:
+                      - textbox "Case Type": PCAS
+                    - generic [ref=f4e1172]: PCAS
+                    - button "Not set" [ref=f4e1175]
+            - button "Add Another" [ref=f4e1180] [cursor=pointer]
+          - button "Save" [ref=f4e1187] [cursor=pointer]

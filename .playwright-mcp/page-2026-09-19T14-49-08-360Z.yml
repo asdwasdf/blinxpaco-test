@@ -1,0 +1,374 @@
+- generic [active] [ref=f41e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f41e3] [cursor=pointer]
+  - generic [ref=f41e329]:
+    - generic [ref=f41e330]:
+      - button "Expand sidebar" [ref=f41e331] [cursor=pointer]:
+        - img "Paco Logo" [ref=f41e332]
+      - generic [ref=f41e334]:
+        - img "Dashboards" [ref=f41e339] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f41e344] [cursor=pointer]
+        - img "Quick Send" [ref=f41e349] [cursor=pointer]
+        - img "Health Forms" [ref=f41e354] [cursor=pointer]
+        - img "Patient Search" [ref=f41e359] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f41e364] [cursor=pointer]
+        - img "case load management" [ref=f41e369] [cursor=pointer]
+        - img "Appointment Book" [ref=f41e374] [cursor=pointer]
+        - img "Quick Pay" [ref=f41e379] [cursor=pointer]
+        - img "Users" [ref=f41e384] [cursor=pointer]
+        - img "Configuration" [ref=f41e389] [cursor=pointer]
+        - img "Rocket Bar" [ref=f41e394] [cursor=pointer]
+        - generic [ref=f41e396] [cursor=pointer]
+      - button [ref=f41e404] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f41e405]
+    - generic [ref=f41e406]:
+      - generic [ref=f41e407]:
+        - generic [ref=f41e408]: 2h 41m
+        - generic [ref=f41e413]:
+          - generic [ref=f41e416]:
+            - generic [ref=f41e417] [cursor=pointer]: TFN
+            - generic [ref=f41e419]:
+              - generic [ref=f41e420]: Test Fiona Nguyen
+              - generic [ref=f41e421]: Super Admin GB
+              - generic [ref=f41e423]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f41e428]
+          - generic [ref=f41e429]:
+            - button "More options" [ref=f41e431] [cursor=pointer]
+            - generic [ref=f41e435] [cursor=pointer]: "0"
+      - generic [ref=f41e440]:
+        - generic [ref=f41e443]:
+          - generic [ref=f41e444]:
+            - heading "Configuration" [level=1] [ref=f41e446]
+            - generic [ref=f41e449]:
+              - generic [ref=f41e450]:
+                - button "Organisation" [expanded] [ref=f41e451] [cursor=pointer]:
+                  - link "Organisation" [ref=f41e453]:
+                    - /url: "#"
+                - region "Organisation" [ref=f41e457]:
+                  - tree [ref=f41e459]:
+                    - treeitem "General" [level=1] [ref=f41e460]:
+                      - link [aria-hidden] [ref=f41e462] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e463]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f41e464]:
+                      - link [aria-hidden] [ref=f41e466] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e467]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f41e468]:
+                      - link [aria-hidden] [ref=f41e470] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e471]: Locations
+                    - treeitem "Skills" [level=1] [ref=f41e472]:
+                      - link [aria-hidden] [ref=f41e474] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e475]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f41e476]:
+                      - link [aria-hidden] [ref=f41e478] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e479]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f41e480]:
+                      - link [aria-hidden] [ref=f41e482] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e483]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f41e484]:
+                      - link [aria-hidden] [ref=f41e486] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e487]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f41e488]:
+                      - link [aria-hidden] [ref=f41e490] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e491]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f41e492]:
+                      - link [aria-hidden] [ref=f41e494] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e495]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f41e496]:
+                      - link [aria-hidden] [ref=f41e498] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e499]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f41e500]:
+                      - link [aria-hidden] [ref=f41e502] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e503]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f41e504]:
+                      - link [aria-hidden] [ref=f41e506] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e507]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f41e508]:
+                      - link [aria-hidden] [ref=f41e510] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f41e511]: Integrations
+              - button "Patient" [ref=f41e513] [cursor=pointer]:
+                - link "Patient" [ref=f41e515]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f41e520] [cursor=pointer]:
+                - link "Appointment Books" [ref=f41e522]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f41e527] [cursor=pointer]:
+                - link "Quick Pay" [ref=f41e529]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f41e534] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f41e536]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f41e541] [cursor=pointer]:
+                - link "Users & Staff" [ref=f41e543]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f41e548] [cursor=pointer]:
+                - link "Clinical Config" [ref=f41e550]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f41e555] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f41e557]:
+                  - /url: "#"
+          - generic [ref=f41e559] [cursor=pointer]
+        - generic [ref=f41e564]:
+          - heading "General" [level=1] [ref=f41e567]
+          - paragraph [ref=f41e568]: No Main care site found for this organisation. Please add a care site to manage address and contact info.
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - heading "Basic Information" [level=2]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - button "Choose File" [disabled]
+                          - button "Upload Photo" [disabled]
+                        - button "Remove Photo" [disabled]
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic: Organisation Name
+                        - generic:
+                          - textbox "Organisation Name" [disabled]
+                    - generic:
+                      - generic:
+                        - generic: Organisation Type *
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - textbox [disabled]
+                              - generic: Select Organisation Type
+                              - button "Select Organisation Type" [disabled]:
+                                - img [aria-hidden] [ref=f41e569] [cursor=pointer]
+                    - generic:
+                      - generic:
+                        - generic: ODS code
+                        - generic:
+                          - textbox [disabled]
+              - generic:
+                - generic:
+                  - heading "Location & Contact Information" [level=2]
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Address
+                    - textbox [disabled]
+                    - link "Edit Address" [disabled]:
+                      - /url: "#"
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Contact Number
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - combobox "Country selector" [disabled]
+                          - textbox "-" [disabled]: "+44"
+                - generic:
+                  - generic:
+                    - generic: Email Address
+                    - generic:
+                      - textbox "Email Address" [disabled]
+                - generic:
+                  - generic:
+                    - generic: Website URL
+                    - generic:
+                      - textbox "Website URL" [disabled]
+              - generic:
+                - generic:
+                  - heading "Opening Hours" [level=2]
+              - generic:
+                - generic:
+                  - generic:
+                    - heading "Regular Opening Hours" [level=2]
+                  - generic: From
+                  - generic: To
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - heading "Special Opening Hours" [level=3]
+                  - generic:
+                    - generic:
+                      - button "+ Add Special Opening Hours" [disabled]
+              - generic:
+                - generic:
+                  - heading "Communications" [level=2]
+              - generic:
+                - generic:
+                  - heading "Standard Header" [level=2]
+                  - generic:
+                    - application [disabled]:
+                      - generic:
+                        - generic:
+                          - button "Bold" [disabled]
+                          - button "Italic" [disabled]
+                          - button "Underline" [disabled]
+                          - button "Font Size" [disabled]
+                          - option [disabled]: "8"
+                          - option [disabled]: "9"
+                          - option [disabled]: "10"
+                          - option [disabled]: "11"
+                          - option [disabled]: "12"
+                          - option [disabled]: "14"
+                          - option [disabled]: "18"
+                          - option [disabled]: "24"
+                          - option [disabled]: "30"
+                          - option [disabled]: "36"
+                          - option [disabled]: "48"
+                          - option [disabled]: "60"
+                          - option [disabled]: "72"
+                          - option [disabled]: "96"
+                          - button "More Text" [disabled]
+                        - generic:
+                          - generic:
+                            - button "Ordered List" [disabled]
+                            - button "Ordered List" [disabled]
+                            - option [disabled]: Default
+                            - option [disabled]: Lower Alpha
+                            - option [disabled]: Lower Greek
+                            - option [disabled]: Lower Roman
+                            - option [disabled]: Upper Alpha
+                            - option [disabled]: Upper Roman
+                          - generic:
+                            - button "Unordered List" [disabled]
+                            - button "Unordered List" [disabled]
+                            - option [disabled]: Default
+                            - option [disabled]: Circle
+                            - option [disabled]: Disc
+                            - option [disabled]: Square
+                          - button "Align Left" [disabled]
+                          - button "Align Center" [disabled]
+                          - button "Align Right" [disabled]
+                          - button "Align Justify" [disabled]
+                          - button "Undo" [disabled]
+                          - button "Redo" [disabled]
+                        - generic:
+                          - button "Insert Link" [disabled]
+                          - button "Insert Table" [disabled]
+                          - button "Fullscreen" [disabled]
+                          - button "Code View" [disabled]
+                        - generic:
+                          - button "Dynamic Fields Dynamic Fields" [disabled]:
+                            - text: Dynamic Fields
+                            - generic: Dynamic Fields
+                          - option [disabled]: Practice Name
+                          - option [disabled]: Practice Webpage
+                          - option [disabled]: Practice Email
+                          - option [disabled]: Practice Phone Number
+                          - option [disabled]: Practice Address
+                        - generic:
+                          - button "Practice Logo Practice Logo" [disabled]:
+                            - text: Practice Logo
+                            - generic: Practice Logo
+                        - generic:
+                          - button "Font Family" [disabled]
+                          - option [disabled]: Arial
+                          - option [disabled]: Georgia
+                          - option [disabled]: Impact
+                          - option [disabled]: Tahoma
+                          - option [disabled]: Times New Roman
+                          - option [disabled]: Verdana
+                          - button "Text Color" [disabled]
+                      - generic:
+                        - generic:
+                          - paragraph
+                        - generic: No content...
+                      - generic: "Words : 0"
+                  - heading "Standard Footer" [level=2]
+                  - generic:
+                    - application [disabled]:
+                      - generic:
+                        - generic:
+                          - button "Bold" [disabled]
+                          - button "Italic" [disabled]
+                          - button "Underline" [disabled]
+                          - button "Font Size" [disabled]
+                          - option [disabled]: "8"
+                          - option [disabled]: "9"
+                          - option [disabled]: "10"
+                          - option [disabled]: "11"
+                          - option [disabled]: "12"
+                          - option [disabled]: "14"
+                          - option [disabled]: "18"
+                          - option [disabled]: "24"
+                          - option [disabled]: "30"
+                          - option [disabled]: "36"
+                          - option [disabled]: "48"
+                          - option [disabled]: "60"
+                          - option [disabled]: "72"
+                          - option [disabled]: "96"
+                          - button "More Text" [disabled]
+                        - generic:
+                          - generic:
+                            - button "Ordered List" [disabled]
+                            - button "Ordered List" [disabled]
+                            - option [disabled]: Default
+                            - option [disabled]: Lower Alpha
+                            - option [disabled]: Lower Greek
+                            - option [disabled]: Lower Roman
+                            - option [disabled]: Upper Alpha
+                            - option [disabled]: Upper Roman
+                          - generic:
+                            - button "Unordered List" [disabled]
+                            - button "Unordered List" [disabled]
+                            - option [disabled]: Default
+                            - option [disabled]: Circle
+                            - option [disabled]: Disc
+                            - option [disabled]: Square
+                          - button "Align Left" [disabled]
+                          - button "Align Center" [disabled]
+                          - button "Align Right" [disabled]
+                          - button "Align Justify" [disabled]
+                          - button "Undo" [disabled]
+                          - button "Redo" [disabled]
+                        - generic:
+                          - button "Insert Link" [disabled]
+                          - button "Insert Table" [disabled]
+                          - button "Fullscreen" [disabled]
+                          - button "Code View" [disabled]
+                        - generic:
+                          - button "Dynamic Fields Dynamic Fields" [disabled]:
+                            - text: Dynamic Fields
+                            - generic: Dynamic Fields
+                          - option [disabled]: Practice Name
+                          - option [disabled]: Practice Webpage
+                          - option [disabled]: Practice Email
+                          - option [disabled]: Practice Phone Number
+                          - option [disabled]: Practice Address
+                        - generic:
+                          - button "Practice Logo Practice Logo" [disabled]:
+                            - text: Practice Logo
+                            - generic: Practice Logo
+                        - generic:
+                          - button "Font Family" [disabled]
+                          - option [disabled]: Arial
+                          - option [disabled]: Georgia
+                          - option [disabled]: Impact
+                          - option [disabled]: Tahoma
+                          - option [disabled]: Times New Roman
+                          - option [disabled]: Verdana
+                          - button "Text Color" [disabled]
+                      - generic:
+                        - generic:
+                          - paragraph
+                        - generic: No content...
+                      - generic: "Words : 0"
+          - generic [ref=f41e572]:
+            - button "Save" [disabled]

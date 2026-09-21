@@ -1,0 +1,368 @@
+- generic [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e7]:
+    - generic [ref=f28e20716]:
+      - generic [ref=f28e20717]:
+        - button "Expand sidebar" [ref=f28e20718] [cursor=pointer]:
+          - img "Paco Logo" [ref=f28e20719]
+        - generic [ref=f28e20721]:
+          - img "Dashboards" [ref=f28e20726] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f28e20731] [cursor=pointer]
+          - img "Quick Send" [ref=f28e20736] [cursor=pointer]
+          - img "Health Forms" [ref=f28e20741] [cursor=pointer]
+          - img "Patient Search" [ref=f28e20746] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f28e20751] [cursor=pointer]
+          - img "case load management" [ref=f28e20756] [cursor=pointer]
+          - img "Appointment Book" [ref=f28e20761] [cursor=pointer]
+          - img "Quick Pay" [ref=f28e20766] [cursor=pointer]
+          - img "Users" [ref=f28e20771] [cursor=pointer]
+          - img "Configuration" [ref=f28e20776] [cursor=pointer]
+          - img "Rocket Bar" [ref=f28e20781] [cursor=pointer]
+          - generic [ref=f28e20783] [cursor=pointer]
+        - button [ref=f28e20791] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f28e20792]
+      - generic [ref=f28e20793]:
+        - generic [ref=f28e20794]:
+          - generic [ref=f28e20795]: 4h 8m
+          - generic [ref=f28e20800]:
+            - generic [ref=f28e20803]:
+              - generic [ref=f28e20804] [cursor=pointer]: TFN
+              - generic [ref=f28e20806]:
+                - generic [ref=f28e20807]: Test Fiona Nguyen
+                - generic [ref=f28e20808]: Super Admin GB
+                - generic [ref=f28e20810]: General Practice (Blinx Demo Site)
+            - textbox "Search patients by name or NHS number" [ref=f28e20815]
+            - generic [ref=f28e20816]:
+              - button "More options" [ref=f28e20818] [cursor=pointer]
+              - generic [ref=f28e20822] [cursor=pointer]: "0"
+        - generic [ref=f28e20827]:
+          - generic [ref=f28e20828]:
+            - generic [ref=f28e20829]:
+              - generic [ref=f28e20830]:
+                - link "Back to Dashboard" [ref=f28e20834] [cursor=pointer]:
+                  - /url: /paco/dashboard
+                - heading "Work Boards" [level=1] [ref=f28e20835]
+              - generic [ref=f28e20836]:
+                - generic [ref=f28e20837]:
+                  - generic [ref=f28e20838] [cursor=pointer]:
+                    - checkbox "View My Tasks Only" [ref=f28e20841]
+                    - generic [ref=f28e20844]: View My Tasks Only
+                  - generic [ref=f28e20845] [cursor=pointer]:
+                    - checkbox "View My Cases Only" [ref=f28e20848]
+                    - generic [ref=f28e20851]: View My Cases Only
+                - generic [ref=f28e20852]: Search all boards
+                - generic [ref=f28e20853]:
+                  - button "Board" [ref=f28e20854] [cursor=pointer]
+                  - button "Case ID" [ref=f28e20856] [cursor=pointer]
+                  - button "Patient" [ref=f28e20858] [cursor=pointer]
+                - textbox "Board name" [ref=f28e20861]
+                - generic [ref=f28e20862]:
+                  - button "Tasks (874)" [ref=f28e20884] [cursor=pointer]
+                  - button "Cases (28)" [ref=f28e20885] [cursor=pointer]
+                - generic [ref=f28e20866]:
+                  - generic [ref=f28e20888] [cursor=pointer]:
+                    - button [ref=f28e20889]
+                    - generic [ref=f28e20892]: Master Case Board
+                    - generic [ref=f28e20893]: (13)
+                  - generic [ref=f28e20896] [cursor=pointer]:
+                    - button [ref=f28e20897]
+                    - generic [ref=f28e20900]: Master Home Visit Board
+                    - generic [ref=f28e20901]: (0)
+                  - generic [ref=f28e20904] [cursor=pointer]:
+                    - button [ref=f28e20905]
+                    - generic [ref=f28e20908]: Test Case Board
+                    - generic [ref=f28e20909]: (19)
+                  - generic [ref=f28e20912] [cursor=pointer]:
+                    - button [ref=f28e20913]
+                    - generic [ref=f28e20916]: Epsom PCN Demo - Care Home VIsts
+                    - generic [ref=f28e20917]: (0)
+                  - generic [ref=f28e20920] [cursor=pointer]:
+                    - button [ref=f28e20921]
+                    - generic [ref=f28e20924]: Paul's Physio
+                    - generic [ref=f28e20925]: (0)
+                  - generic [ref=f28e20928] [cursor=pointer]:
+                    - button [ref=f28e20929]
+                    - generic [ref=f28e20932]: Urgent Healthcare UK 2025
+                    - generic [ref=f28e20933]: (1)
+                  - generic [ref=f28e20936] [cursor=pointer]:
+                    - button [ref=f28e20937]
+                    - generic [ref=f28e20940]: test
+                    - generic [ref=f28e20941]: (0)
+                  - generic [ref=f28e20944] [cursor=pointer]:
+                    - button [ref=f28e20945]
+                    - generic [ref=f28e20948]: test board
+                    - generic [ref=f28e20949]: (2)
+                  - generic [ref=f28e20952] [cursor=pointer]:
+                    - button [ref=f28e20953]
+                    - generic [ref=f28e20956]: waiting list
+                    - generic [ref=f28e20957]: (8)
+                  - generic [ref=f28e20960] [cursor=pointer]:
+                    - button [ref=f28e20961]
+                    - generic [ref=f28e20964]: North Shropshire PCN Neighbourhood team
+                    - generic [ref=f28e20965]: (0)
+                  - generic [ref=f28e20968] [cursor=pointer]:
+                    - button [ref=f28e20969]
+                    - generic [ref=f28e20972]: TEST FOR pac2-4688
+                    - generic [ref=f28e20973]: (0)
+                  - generic [ref=f28e20976] [cursor=pointer]:
+                    - button [ref=f28e20977]
+                    - generic [ref=f28e20980]: Frailty Management Caseload
+                    - generic [ref=f28e20981]: (0)
+                  - generic [ref=f28e20984] [cursor=pointer]:
+                    - button [ref=f28e20985]
+                    - generic [ref=f28e20988]: Mustafa Task Workboard
+                    - generic [ref=f28e20989]: (0)
+                  - generic [ref=f28e20992] [cursor=pointer]:
+                    - button [ref=f28e20993]
+                    - generic [ref=f28e20996]: Board 1
+                    - generic [ref=f28e20997]: (2)
+                  - generic [ref=f28e21000] [cursor=pointer]:
+                    - button [ref=f28e21001]
+                    - generic [ref=f28e21004]: Board 3
+                    - generic [ref=f28e21005]: (0)
+                  - generic [ref=f28e21008] [cursor=pointer]:
+                    - button [ref=f28e21009]
+                    - generic [ref=f28e21012]: Test board
+                    - generic [ref=f28e21013]: (0)
+                  - generic [ref=f28e21016] [cursor=pointer]:
+                    - button [ref=f28e21017]
+                    - generic [ref=f28e21020]: Test Create Board 20260324_200800_614
+                    - generic [ref=f28e21021]: (0)
+                  - generic [ref=f28e21024] [cursor=pointer]:
+                    - button [ref=f28e21025]
+                    - generic [ref=f28e21028]: Test Create Board 20260324_205052_742
+                    - generic [ref=f28e21029]: (0)
+                  - generic [ref=f28e21032] [cursor=pointer]:
+                    - button [ref=f28e21033]
+                    - generic [ref=f28e21036]: Test Create Board 20260324_205640_381
+                    - generic [ref=f28e21037]: (0)
+                  - generic [ref=f28e21040] [cursor=pointer]:
+                    - button [ref=f28e21041]
+                    - generic [ref=f28e21044]: Test Create Board 20260325_092737_405
+                    - generic [ref=f28e21045]: (0)
+                  - generic [ref=f28e21048] [cursor=pointer]:
+                    - button [ref=f28e21049]
+                    - generic [ref=f28e21052]: Test Create Board 20260330_165045_976
+                    - generic [ref=f28e21053]: (0)
+                  - generic [ref=f28e21056] [cursor=pointer]:
+                    - button [ref=f28e21057]
+                    - generic [ref=f28e21060]: Test Create Board 20260330_170255_969
+                    - generic [ref=f28e21061]: (0)
+                  - generic [ref=f28e21064] [cursor=pointer]:
+                    - button [ref=f28e21065]
+                    - generic [ref=f28e21068]: Test Create Board 20260330_170526_295
+                    - generic [ref=f28e21069]: (0)
+                  - generic [ref=f28e21072] [cursor=pointer]:
+                    - button [ref=f28e21073]
+                    - generic [ref=f28e21076]: Test Create Board 20260330_170745_692
+                    - generic [ref=f28e21077]: (0)
+                  - generic [ref=f28e21080] [cursor=pointer]:
+                    - button [ref=f28e21081]
+                    - generic [ref=f28e21084]: War Room Proxy Access
+                    - generic [ref=f28e21085]: (2)
+                  - generic [ref=f28e21088] [cursor=pointer]:
+                    - button [ref=f28e21089]
+                    - generic [ref=f28e21092]: Call Queue
+                    - generic [ref=f28e21093]: (14)
+                  - generic [ref=f28e21096] [cursor=pointer]:
+                    - button [ref=f28e21097]
+                    - generic [ref=f28e21100]: Syed Test Board
+                    - generic [ref=f28e21101]: (0)
+                  - generic [ref=f28e21104] [cursor=pointer]:
+                    - button [ref=f28e21105]
+                    - generic [ref=f28e21108]: Neighbourhood DEMO
+                    - generic [ref=f28e21109]: (0)
+                - button "Create new board" [ref=f28e20875] [cursor=pointer]
+            - button [ref=f28e20879] [cursor=pointer]
+          - generic [ref=f28e21110]:
+            - generic [ref=f28e21111]:
+              - generic [ref=f28e21113]:
+                - heading "workboardName" [level=2] [ref=f28e21114]: Master Case Board
+                - generic [ref=f28e21116]:
+                  - generic [ref=f28e21117]:
+                    - button "List view" [active] [ref=f28e21118] [cursor=pointer]
+                    - button "Card view" [ref=f28e21120] [cursor=pointer]
+                  - generic [ref=f28e21127] [cursor=pointer]
+              - generic [ref=f28e21131]:
+                - textbox "Search this board" [ref=f28e21134]
+                - generic [ref=f28e21135]:
+                  - generic [ref=f28e21136] [cursor=pointer]:
+                    - generic [ref=f28e21137]:
+                      - textbox: Breaching (high to low)
+                    - generic [ref=f28e21139]: Breaching (high to low)
+                    - button [ref=f28e21140]
+                  - button "Filters" [ref=f28e21145] [cursor=pointer]
+              - generic [ref=f28e21148]:
+                - button "All (13)" [ref=f28e21149] [cursor=pointer]
+                - button "Mid Priority (1)" [ref=f28e21150] [cursor=pointer]
+                - button "High Priority (1)" [ref=f28e21151] [cursor=pointer]
+                - button "Low Priority (1)" [ref=f28e21152] [cursor=pointer]
+                - button "Emergency (3)" [ref=f28e21153] [cursor=pointer]
+                - button "Other (7)" [ref=f28e21154] [cursor=pointer]
+            - generic [ref=f28e25136]:
+              - generic [ref=f28e25137]:
+                - generic [ref=f28e25138]: "Group by:"
+                - button "By Priority" [ref=f28e25139] [cursor=pointer]
+                - button "By Pathway" [ref=f28e25140] [cursor=pointer]
+                - button "By Incoming Service" [ref=f28e25141] [cursor=pointer]
+                - button "By PDS Status" [ref=f28e25142] [cursor=pointer]
+                - button "By Age Range" [ref=f28e25143] [cursor=pointer]
+                - button "By Case Status" [ref=f28e25144] [cursor=pointer]
+              - generic [ref=f28e25148]:
+                - text:  
+                - grid [ref=f28e25149]:
+                  - rowgroup [ref=f28e25150]:
+                    - row [ref=f28e25151]:
+                      - columnheader "Indicators" [ref=f28e25152]:
+                        - generic [aria-hidden] [ref=f28e25153]: 
+                        - text: 
+                        - generic: 
+                      - columnheader "Date" [ref=f28e25155] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f28e25156]: 
+                        - text: 
+                        - generic:    
+                      - columnheader "Case Status" [ref=f28e25158] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f28e25159]: 
+                        - text: 
+                        - generic:    
+                      - columnheader "Priority" [ref=f28e25161] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f28e25162]: 
+                        - text: 
+                        - generic:    
+                      - columnheader "Case Score" [ref=f28e25164] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f28e25165]: 
+                        - text: 
+                        - generic:    
+                      - columnheader "Case ID" [ref=f28e25167] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f28e25168]: 
+                        - text: 
+                        - generic:    
+                      - columnheader "Viewer" [ref=f28e25170]:
+                        - generic [aria-hidden] [ref=f28e25171]: 
+                        - text: 
+                        - generic: 
+                  - row [ref=f28e25173]:
+                    - columnheader "Actions" [ref=f28e25174]:
+                      - generic [aria-hidden] [ref=f28e25175]: 
+                      - text: 
+                      - generic: 
+                  - rowgroup [ref=f28e25177]:
+                    - row [ref=f28e25178] [cursor=pointer]:
+                      - gridcell "01/07/2026" [ref=f28e25179]
+                      - gridcell [ref=f28e25180]
+                      - gridcell "Open — Johnny (2255) Bravo" [ref=f28e25181]:
+                        - generic [ref=f28e25182]:
+                          - generic [ref=f28e25186]: Open
+                          - generic [ref=f28e25187]: — Johnny (2255) Bravo
+                      - gridcell "20 mins CAS" [ref=f28e25188]
+                      - gridcell "-" [ref=f28e25189]
+                      - gridcell [ref=f28e25190]:
+                        - button "48" [ref=f28e25191]
+                      - gridcell [ref=f28e25193]
+                    - row [ref=f28e25194] [cursor=pointer]:
+                      - gridcell "28/05/2026" [ref=f28e25195]
+                      - gridcell [ref=f28e25196]
+                      - gridcell "Open — Mike real Wong" [ref=f28e25197]:
+                        - generic [ref=f28e25198]:
+                          - generic [ref=f28e25202]: Open
+                          - generic [ref=f28e25203]: — Mike real Wong
+                      - gridcell "20 mins OOH" [ref=f28e25204]
+                      - gridcell "-" [ref=f28e25205]
+                      - gridcell [ref=f28e25206]:
+                        - button
+                      - gridcell [ref=f28e25207]
+                    - row [ref=f28e25208] [cursor=pointer]:
+                      - gridcell "24/04/2026" [ref=f28e25209]
+                      - gridcell [ref=f28e25210]
+                      - gridcell "Open — Katie SparrowTest" [ref=f28e25211]:
+                        - generic [ref=f28e25212]:
+                          - generic [ref=f28e25216]: Open
+                          - generic [ref=f28e25217]: — Katie SparrowTest
+                      - gridcell "20 mins CAS" [ref=f28e25218]
+                      - gridcell "-" [ref=f28e25219]
+                      - gridcell [ref=f28e25220]:
+                        - button
+                      - gridcell [ref=f28e25221]
+                    - row [ref=f28e25222] [cursor=pointer]:
+                      - gridcell "23/04/2026" [ref=f28e25223]
+                      - gridcell [ref=f28e25224]
+                      - gridcell "Open — Johnny (2255) Bravo" [ref=f28e25229]:
+                        - generic [ref=f28e25230]:
+                          - generic [ref=f28e25234]: Open
+                          - generic [ref=f28e25235]: — Johnny (2255) Bravo
+                      - gridcell "20 mins CAS" [ref=f28e25236]
+                      - gridcell "-" [ref=f28e25237]
+                      - gridcell [ref=f28e25238]:
+                        - button
+                      - gridcell [ref=f28e25239]
+                    - row [ref=f28e25240] [cursor=pointer]:
+                      - gridcell "17/04/2026" [ref=f28e25241]
+                      - gridcell [ref=f28e25242]
+                      - gridcell "Open — Johnny (2255) Bravo" [ref=f28e25243]:
+                        - generic [ref=f28e25244]:
+                          - generic [ref=f28e25248]: Open
+                          - generic [ref=f28e25249]: — Johnny (2255) Bravo
+                      - gridcell "12 Hours OOH" [ref=f28e25250]
+                      - gridcell "-" [ref=f28e25251]
+                      - gridcell [ref=f28e25252]:
+                        - button
+                      - gridcell [ref=f28e25253]
+                  - rowgroup [ref=f28e25254]:
+                    - row [ref=f28e25255] [cursor=pointer]:
+                      - gridcell [ref=f28e25256]:
+                        - button [ref=f28e25257]
+                    - row [ref=f28e25260] [cursor=pointer]:
+                      - gridcell [ref=f28e25261]:
+                        - button [ref=f28e25262]
+                    - row [ref=f28e25265] [cursor=pointer]:
+                      - gridcell [ref=f28e25266]:
+                        - button [ref=f28e25267]
+                    - row [ref=f28e25270] [cursor=pointer]:
+                      - gridcell [ref=f28e25271]:
+                        - button [ref=f28e25272]
+                    - row [ref=f28e25275] [cursor=pointer]:
+                      - gridcell [ref=f28e25276]:
+                        - button [ref=f28e25277]
+                  - rowgroup:
+                    - row " Loading" [ref=f28e25280] [cursor=pointer]:
+                      - generic [ref=f28e25281]:
+                        - generic [ref=f28e25282]: 
+                        - generic [ref=f28e25283]: Loading
+                    - row " Loading" [ref=f28e25284] [cursor=pointer]:
+                      - generic [ref=f28e25285]:
+                        - generic [ref=f28e25286]: 
+                        - generic [ref=f28e25287]: Loading
+                    - row " Loading" [ref=f28e25288] [cursor=pointer]:
+                      - generic [ref=f28e25289]:
+                        - generic [ref=f28e25290]: 
+                        - generic [ref=f28e25291]: Loading
+                    - row " Loading" [ref=f28e25292] [cursor=pointer]:
+                      - generic [ref=f28e25293]:
+                        - generic [ref=f28e25294]: 
+                        - generic [ref=f28e25295]: Loading
+                    - row " Loading" [ref=f28e25296] [cursor=pointer]:
+                      - generic [ref=f28e25297]:
+                        - generic [ref=f28e25298]: 
+                        - generic [ref=f28e25299]: Loading
+                    - row " Loading" [ref=f28e25300] [cursor=pointer]:
+                      - generic [ref=f28e25301]:
+                        - generic [ref=f28e25302]: 
+                        - generic [ref=f28e25303]: Loading
+                    - row " Loading" [ref=f28e25304] [cursor=pointer]:
+                      - generic [ref=f28e25305]:
+                        - generic [ref=f28e25306]: 
+                        - generic [ref=f28e25307]: Loading
+                    - row " Loading" [ref=f28e25308] [cursor=pointer]:
+                      - generic [ref=f28e25309]:
+                        - generic [ref=f28e25310]: 
+                        - generic [ref=f28e25311]: Loading
+                - generic [ref=f28e25315]:
+                  - tablist [ref=f28e25316]:
+                    - tab "Columns" [ref=f28e25317] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f28e25318]: 
+                    - tab "Filters" [ref=f28e25320] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f28e25321]: 
+                  - text:                                                                                                          
+                - text:    
+    - status [ref=f28e20883]

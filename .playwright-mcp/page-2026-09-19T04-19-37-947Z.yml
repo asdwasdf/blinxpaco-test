@@ -1,0 +1,65 @@
+- generic [ref=f15e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f15e15] [cursor=pointer]
+  - generic [ref=f15e205]:
+    - generic "one-paco-top-bar" [ref=f15e206]:
+      - generic [ref=f15e208]:
+        - generic [ref=f15e211]:
+          - generic [ref=f15e212]: TFN
+          - generic [ref=f15e214]:
+            - generic [ref=f15e215]: Test Fiona Nguyen
+            - generic [ref=f15e216]: Super Admin GB
+            - generic [ref=f15e218]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f15e223]
+        - generic [ref=f15e224]:
+          - button "More options" [ref=f15e226] [cursor=pointer]
+          - generic [ref=f15e232] [cursor=pointer]
+          - generic [ref=f15e233] [cursor=pointer]: "0"
+    - generic [ref=f15e236]:
+      - button "Collapse sidebar" [active] [ref=f15e320] [cursor=pointer]:
+        - img "Paco Logo" [ref=f15e238]
+      - textbox "Search menu..." [ref=f15e322]
+      - generic [ref=f15e240]:
+        - generic [ref=f15e242] [cursor=pointer]:
+          - img "Dashboards" [ref=f15e245]
+          - generic [ref=f15e323]: Dashboards
+        - generic [ref=f15e247] [cursor=pointer]:
+          - img "Analytics & Reports" [ref=f15e250]
+          - generic [ref=f15e326]: Analytics & Reports
+        - generic [ref=f15e252] [cursor=pointer]:
+          - img "Quick Send" [ref=f15e255]
+          - generic [ref=f15e329]: Comms Hub
+        - generic [ref=f15e257] [cursor=pointer]:
+          - img "Health Forms" [ref=f15e260]
+          - generic [ref=f15e332]: Health Forms
+        - generic [ref=f15e262] [cursor=pointer]:
+          - img "Patient Search" [ref=f15e265]
+          - generic [ref=f15e335]: Patients
+        - generic [ref=f15e267] [cursor=pointer]:
+          - img "Web Chat & Video" [ref=f15e270]
+          - generic [ref=f15e338]: Web Chat & Video
+        - generic [ref=f15e272] [cursor=pointer]:
+          - img "case load management" [ref=f15e275]
+          - generic [ref=f15e341]: Case Load Management
+        - generic [ref=f15e277] [cursor=pointer]:
+          - img "Appointment Book" [ref=f15e280]
+          - generic [ref=f15e344]: Appointment Book
+        - generic [ref=f15e282] [cursor=pointer]:
+          - img "Quick Pay" [ref=f15e285]
+          - generic [ref=f15e347]: Quick Pay
+        - generic [ref=f15e287] [cursor=pointer]:
+          - img "Users" [ref=f15e290]
+          - generic [ref=f15e348]: User Portal
+        - generic [ref=f15e292] [cursor=pointer]:
+          - img "Configuration" [ref=f15e295]
+          - generic [ref=f15e349]: Configuration
+        - generic [ref=f15e297] [cursor=pointer]:
+          - img "Rocket Bar" [ref=f15e300]
+          - generic [ref=f15e350]: Rocket Bar
+        - generic [ref=f15e301]: Sign Out
+      - button [ref=f15e310] [cursor=pointer]:
+        - img "Switch to light theme" [ref=f15e311]
+    - img "loading" [ref=f15e355]
+  - alert [ref=f15e6]: /web-chat/appointments/
+  - tooltip [aria-hidden]:
+    - generic: Close menu sidebar

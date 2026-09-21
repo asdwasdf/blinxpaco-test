@@ -1,0 +1,148 @@
+- generic [active] [ref=f8e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f8e3] [cursor=pointer]
+  - generic [ref=f8e8]:
+    - generic [ref=f8e9]:
+      - button "Collapse sidebar" [ref=f8e303] [cursor=pointer]:
+        - img "Paco Logo" [ref=f8e11]
+      - textbox "Search menu..." [ref=f8e305]
+      - generic [ref=f8e13]:
+        - generic [ref=f8e14]:
+          - generic [ref=f8e15] [cursor=pointer]:
+            - img "Dashboards" [ref=f8e18]
+            - generic [ref=f8e306]: Dashboards
+          - generic [ref=f8e395]:
+            - button "Dashboard" [ref=f8e397] [cursor=pointer]
+            - button "Manager" [ref=f8e400] [cursor=pointer]
+            - button "Connect" [ref=f8e403] [cursor=pointer]
+            - button "Clinician" [ref=f8e406] [cursor=pointer]
+        - generic [ref=f8e20] [cursor=pointer]:
+          - img "Analytics & Reports" [ref=f8e23]
+          - generic [ref=f8e309]: Analytics & Reports
+        - generic [ref=f8e25] [cursor=pointer]:
+          - img "Quick Send" [ref=f8e28]
+          - generic [ref=f8e312]: Comms Hub
+        - generic [ref=f8e30] [cursor=pointer]:
+          - img "Health Forms" [ref=f8e33]
+          - generic [ref=f8e315]: Health Forms
+        - generic [ref=f8e35] [cursor=pointer]:
+          - img "Patient Search" [ref=f8e38]
+          - generic [ref=f8e318]: Patients
+        - generic [ref=f8e40] [cursor=pointer]:
+          - img "Web Chat & Video" [ref=f8e43]
+          - generic [ref=f8e321]: Web Chat & Video
+        - generic [ref=f8e45] [cursor=pointer]:
+          - img "case load management" [ref=f8e48]
+          - generic [ref=f8e324]: Case Load Management
+        - generic [ref=f8e50] [cursor=pointer]:
+          - img "Appointment Book" [ref=f8e53]
+          - generic [ref=f8e327]: Appointment Book
+        - generic [ref=f8e55] [cursor=pointer]:
+          - img "Quick Pay" [ref=f8e58]
+          - generic [ref=f8e330]: Quick Pay
+        - generic [ref=f8e60] [cursor=pointer]:
+          - img "Users" [ref=f8e63]
+          - generic [ref=f8e331]: User Portal
+        - generic [ref=f8e65] [cursor=pointer]:
+          - img "Configuration" [ref=f8e68]
+          - generic [ref=f8e332]: Configuration
+        - generic [ref=f8e70] [cursor=pointer]:
+          - img "Rocket Bar" [ref=f8e73]
+          - generic [ref=f8e333]: Rocket Bar
+        - generic [ref=f8e74]: Sign Out
+      - button [ref=f8e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f8e84]
+    - generic [ref=f8e85]:
+      - generic [ref=f8e86]:
+        - generic [ref=f8e87]: 1h 5m
+        - generic [ref=f8e92]:
+          - generic [ref=f8e95]:
+            - generic [ref=f8e96] [cursor=pointer]: TFN
+            - generic [ref=f8e337]:
+              - generic [ref=f8e338]: Test Fiona Nguyen
+              - generic [ref=f8e339]: Super Admin GB
+              - generic [ref=f8e341]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f8e101]
+          - generic [ref=f8e102]:
+            - button "More options" [ref=f8e104] [cursor=pointer]
+            - generic [ref=f8e108] [cursor=pointer]: "0"
+      - generic [ref=f8e112]:
+        - generic [ref=f8e114]:
+          - button "day" [ref=f8e116] [cursor=pointer]
+          - button "week" [ref=f8e120] [cursor=pointer]
+          - button "month" [ref=f8e124] [cursor=pointer]
+          - button "year" [ref=f8e128] [cursor=pointer]
+        - generic [ref=f8e129]:
+          - generic [ref=f8e130]:
+            - generic [ref=f8e131]:
+              - generic [ref=f8e136]:
+                - generic [ref=f8e139] [cursor=pointer]:
+                  - generic [ref=f8e140]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=f8e343]: Master Task Board Overview
+                  - button [ref=f8e142]
+                - generic [ref=f8e147]:
+                  - paragraph [ref=f8e346]: Loading ...
+                  - generic [ref=f8e149]: Completed 0
+              - generic [ref=f8e157]:
+                - generic [ref=f8e158]: Call Status
+                - img [ref=f8e164]:
+                  - generic [ref=f8e349]:
+                    - generic [ref=f8e350]: Calls Waiting
+                    - generic [ref=f8e351]: ConsultationsCompleted
+                    - generic [ref=f8e352]: Failed to Contact
+                    - generic [ref=f8e353]: active calls
+                  - generic [ref=f8e354]:
+                    - generic [ref=f8e355]: "0"
+                    - generic [ref=f8e356]: "60"
+                    - generic [ref=f8e357]: "120"
+                    - generic [ref=f8e358]: "180"
+                    - generic [ref=f8e359]: "240"
+                    - generic [ref=f8e360]: "300"
+            - generic [ref=f8e182]:
+              - generic [ref=f8e187]:
+                - generic [ref=f8e188]: Staff Status
+                - generic [ref=f8e191]:
+                  - list [ref=f8e193]:
+                    - listitem [ref=f8e194]: Available (75)
+                    - listitem [ref=f8e196]: F2F (65)
+                    - listitem [ref=f8e198]: Screening (50)
+                    - listitem [ref=f8e200]: Lunch (15)
+                    - listitem [ref=f8e202]: Away (50)
+                  - generic [ref=f8e204]: Out of a possible 132
+                - generic [ref=f8e233]: Coming soon
+              - generic [ref=f8e238]:
+                - generic [ref=f8e239]: Opel level
+                - generic [ref=f8e273]:
+                  - generic [ref=f8e274]: Level 2
+                  - generic [ref=f8e275]: Moderate Pressure
+                - generic [ref=f8e277]: Coming soon
+          - generic [ref=f8e281]:
+            - generic [ref=f8e282]:
+              - generic [ref=f8e283]:
+                - generic [ref=f8e284]: Staff Availability
+                - button "What do these statuses mean?" [ref=f8e285] [cursor=pointer]
+              - generic [ref=f8e289] [cursor=pointer]:
+                - generic [ref=f8e290]:
+                  - textbox: A - Z Last Name
+                - generic [ref=f8e292]: A - Z Last Name
+                - button [ref=f8e293]
+            - generic [ref=f8e296]:
+              - textbox "Search Clinicians..." [ref=f8e298]
+              - generic [ref=f8e299]:
+                - generic [ref=f8e300]: 1 on Rota
+                - generic [ref=f8e301]: Sat 19 Sept, 10:32
+            - generic [ref=f8e382]:
+              - button "Available (1)" [ref=f8e383] [cursor=pointer]
+              - button "On Leave (0)" [ref=f8e384] [cursor=pointer]
+            - generic [ref=f8e385]:
+              - generic [ref=f8e386]:
+                - img "Admin · 8m" [ref=f8e387]
+                - text: MTF
+              - button "Miss Test Fiona Nguyen Super Admin GB Admin · 8m" [ref=f8e389] [cursor=pointer]:
+                - generic "Miss Test Fiona Nguyen" [ref=f8e390]
+                - generic [ref=f8e391]:
+                  - generic [ref=f8e392]: Super Admin GB
+                  - generic [ref=f8e393]: Admin · 8m
+              - generic "Coming soon — PACOmms user messaging" [ref=f8e394]:
+                - button "Send Message" [disabled]

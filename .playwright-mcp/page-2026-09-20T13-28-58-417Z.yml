@@ -1,0 +1,156 @@
+- generic [active] [ref=f32e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f32e3] [cursor=pointer]
+  - generic [ref=f32e8]:
+    - generic [ref=f32e9]:
+      - button "Expand sidebar" [ref=f32e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f32e11]
+      - generic [ref=f32e13]:
+        - img "Dashboards" [ref=f32e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f32e23] [cursor=pointer]
+        - img "Quick Send" [ref=f32e28] [cursor=pointer]
+        - img "Health Forms" [ref=f32e33] [cursor=pointer]
+        - img "Patient Search" [ref=f32e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f32e43] [cursor=pointer]
+        - img "case load management" [ref=f32e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f32e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f32e58] [cursor=pointer]
+        - img "Users" [ref=f32e63] [cursor=pointer]
+        - img "Configuration" [ref=f32e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f32e73] [cursor=pointer]
+        - generic [ref=f32e75] [cursor=pointer]
+      - button [ref=f32e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f32e84]
+    - generic [ref=f32e85]:
+      - generic [ref=f32e86]:
+        - generic [ref=f32e87]: 4h 17m
+        - generic [ref=f32e92]:
+          - generic [ref=f32e95]:
+            - generic [ref=f32e96] [cursor=pointer]: TFN
+            - generic [ref=f32e98]:
+              - generic [ref=f32e99]: Test Fiona Nguyen
+              - generic [ref=f32e100]: Super Admin GB
+              - generic [ref=f32e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f32e107]
+          - generic [ref=f32e108]:
+            - button "More options" [ref=f32e110] [cursor=pointer]
+            - generic [ref=f32e114] [cursor=pointer]: "0"
+      - generic [ref=f32e118]:
+        - generic [ref=f32e120]:
+          - button "day" [ref=f32e122] [cursor=pointer]
+          - button "week" [ref=f32e126] [cursor=pointer]
+          - button "month" [ref=f32e130] [cursor=pointer]
+          - button "year" [ref=f32e134] [cursor=pointer]
+        - generic [ref=f32e135]:
+          - generic [ref=f32e136]:
+            - generic [ref=f32e137]:
+              - generic [ref=f32e142]:
+                - generic [ref=f32e145] [cursor=pointer]:
+                  - generic [ref=f32e146]:
+                    - textbox: Master Task Board Overview
+                  - generic [ref=f32e377]: Master Task Board Overview
+                  - button [ref=f32e148]
+                - generic [ref=f32e153]:
+                  - paragraph [ref=f32e380]: Loading ...
+                  - generic [ref=f32e155]: Completed 0
+              - generic [ref=f32e163]:
+                - generic [ref=f32e164]: Call Status
+                - img [ref=f32e170]:
+                  - generic [ref=f32e383]:
+                    - generic [ref=f32e384]: Calls Waiting
+                    - generic [ref=f32e385]: ConsultationsCompleted
+                    - generic [ref=f32e386]: Failed toContact
+                    - generic [ref=f32e387]: active calls
+                  - generic [ref=f32e388]:
+                    - generic [ref=f32e389]: "0"
+                    - generic [ref=f32e390]: "60"
+                    - generic [ref=f32e391]: "120"
+                    - generic [ref=f32e392]: "180"
+                    - generic [ref=f32e393]: "240"
+                    - generic [ref=f32e394]: "300"
+            - generic [ref=f32e188]:
+              - generic [ref=f32e193]:
+                - generic [ref=f32e194]: Staff Status
+                - generic [ref=f32e197]:
+                  - list [ref=f32e199]:
+                    - listitem [ref=f32e200]: Available (75)
+                    - listitem [ref=f32e202]: F2F (65)
+                    - listitem [ref=f32e204]: Screening (50)
+                    - listitem [ref=f32e206]: Lunch (15)
+                    - listitem [ref=f32e208]: Away (50)
+                  - generic [ref=f32e210]: Out of a possible 132
+                - generic [ref=f32e239]: Coming soon
+              - generic [ref=f32e244]:
+                - generic [ref=f32e245]: Opel level
+                - generic [ref=f32e274]:
+                  - generic [ref=f32e275]: Level 2
+                  - generic [ref=f32e276]: Moderate Pressure
+                - generic [ref=f32e278]: Coming soon
+          - generic [ref=f32e282]:
+            - generic [ref=f32e283]:
+              - generic [ref=f32e284]:
+                - generic [ref=f32e285]: Staff Availability
+                - button "What do these statuses mean?" [ref=f32e286] [cursor=pointer]
+              - generic [ref=f32e290] [cursor=pointer]:
+                - generic [ref=f32e291]:
+                  - textbox: A - Z Last Name
+                - generic [ref=f32e293]: A - Z Last Name
+                - button [ref=f32e294]
+            - generic [ref=f32e297]:
+              - textbox "Search Clinicians..." [ref=f32e299]
+              - generic [ref=f32e300]:
+                - generic [ref=f32e301]: 2 on Rota
+                - generic [ref=f32e302]: Sun 20 Sept, 20:28
+            - generic [ref=f32e303]:
+              - button "Available (4)" [ref=f32e304] [cursor=pointer]
+              - button "On Leave (0)" [ref=f32e305] [cursor=pointer]
+            - generic [ref=f32e306]:
+              - generic [ref=f32e307]:
+                - generic [ref=f32e308]:
+                  - img "Logged Out · 1m" [ref=f32e309]
+                  - text: DGB
+                - button "Dr Gareth Bartlett Super Admin GB Logged Out · 1m" [ref=f32e311] [cursor=pointer]:
+                  - generic "Dr Gareth Bartlett" [ref=f32e312]
+                  - generic [ref=f32e313]:
+                    - generic [ref=f32e314]: Super Admin GB
+                    - generic [ref=f32e315]: Logged Out · 1m
+                - generic "Coming soon — PACOmms user messaging" [ref=f32e316]:
+                  - button "Send Message" [disabled]
+              - generic [ref=f32e317]:
+                - generic [ref=f32e318]:
+                  - img "Away from Desk · 4m" [ref=f32e319]
+                  - text: JB
+                - button "Johnny (2255) Bravo Blinx Deployment Away from Desk · 4m" [ref=f32e321] [cursor=pointer]:
+                  - generic "Johnny (2255) Bravo" [ref=f32e322]
+                  - generic [ref=f32e323]:
+                    - generic [ref=f32e324]: Blinx Deployment
+                    - generic [ref=f32e325]: Away from Desk · 4m
+                - generic "Coming soon — PACOmms user messaging" [ref=f32e326]:
+                  - button "Send Message" [disabled]
+              - generic [ref=f32e327]:
+                - generic [ref=f32e328]:
+                  - img "Admin · 24m" [ref=f32e329]
+                  - text: MTF
+                - button "Miss Test Fiona Nguyen Super Admin GB Admin · 24m" [ref=f32e331] [cursor=pointer]:
+                  - generic "Miss Test Fiona Nguyen" [ref=f32e332]
+                  - generic [ref=f32e333]:
+                    - generic [ref=f32e334]: Super Admin GB
+                    - generic [ref=f32e335]: Admin · 24m
+                - generic "Coming soon — PACOmms user messaging" [ref=f32e336]:
+                  - button "Send Message" [disabled]
+              - generic [ref=f32e337]:
+                - generic [ref=f32e338]:
+                  - img "Logged Out · 24m" [ref=f32e339]
+                  - text: MN
+                - button "MustafaDefault Nawaz GP Logged Out · 24m" [ref=f32e341] [cursor=pointer]:
+                  - generic "MustafaDefault Nawaz" [ref=f32e342]
+                  - generic [ref=f32e343]:
+                    - generic [ref=f32e344]: GP
+                    - generic [ref=f32e345]: Logged Out · 24m
+                - generic "Coming soon — PACOmms user messaging" [ref=f32e346]:
+                  - button "Send Message" [disabled]
+  - generic [ref=f32e411]:
+    - button "Appointment Book" [ref=f32e413] [cursor=pointer]
+    - button "Appointment Settings" [ref=f32e416] [cursor=pointer]
+  - tooltip [aria-hidden]:
+    - generic: Appointment Book

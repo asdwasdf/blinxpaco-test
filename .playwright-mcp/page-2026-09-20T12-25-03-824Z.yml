@@ -1,0 +1,444 @@
+- generic [active] [ref=f14e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f14e8] [cursor=pointer]
+  - generic [ref=f14e11]:
+    - generic [ref=f14e12]:
+      - generic [ref=f14e13]:
+        - button "Expand sidebar" [ref=f14e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f14e15]
+        - generic [ref=f14e17]:
+          - img "Dashboards" [ref=f14e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f14e27] [cursor=pointer]
+          - img "Quick Send" [ref=f14e32] [cursor=pointer]
+          - img "Health Forms" [ref=f14e37] [cursor=pointer]
+          - img "Patient Search" [ref=f14e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f14e47] [cursor=pointer]
+          - img "case load management" [ref=f14e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f14e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f14e62] [cursor=pointer]
+          - img "Users" [ref=f14e67] [cursor=pointer]
+          - img "Configuration" [ref=f14e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f14e77] [cursor=pointer]
+          - generic [ref=f14e79] [cursor=pointer]
+        - button [ref=f14e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f14e88]
+      - generic [ref=f14e89]:
+        - generic [ref=f14e91]:
+          - generic [ref=f14e93]:
+            - img [aria-hidden] [ref=f14e95] [cursor=pointer]
+            - generic [ref=f14e97]:
+              - text: •
+              - button [ref=f14e98] [cursor=pointer]:
+                - link "Health Forms" [ref=f14e99]:
+                  - /url: /health-forms/
+            - generic [ref=f14e100]: •Health Form Inbox
+          - generic [ref=f14e101]:
+            - button [ref=f14e4391] [cursor=pointer]
+            - button "1 Selected" [ref=f14e105] [cursor=pointer]
+            - generic [ref=f14e4394]:
+              - button "Filters" [ref=f14e4395] [cursor=pointer]
+              - generic [ref=f14e4397]: "1"
+        - generic [ref=f14e113]:
+          - generic "statistic-panel" [ref=f14e114]:
+            - generic [ref=f14e116] [cursor=pointer]:
+              - paragraph [ref=f14e117]: Total Sent to Patient
+              - paragraph [ref=f14e118]: 57,912
+            - generic [ref=f14e123] [cursor=pointer]:
+              - paragraph [ref=f14e124]: Incomplete
+              - paragraph [ref=f14e125]: 47,259
+            - generic [ref=f14e130] [cursor=pointer]:
+              - paragraph [ref=f14e131]: Overdue from Patient
+              - paragraph [ref=f14e132]: 11,641
+            - generic [ref=f14e137] [cursor=pointer]:
+              - paragraph [ref=f14e138]: Completed by Patient
+              - progressbar [ref=f14e139]
+              - paragraph [ref=f14e141]: 10,653 of 57,912
+            - generic [ref=f14e142]:
+              - generic [ref=f14e143] [cursor=pointer]
+              - generic [ref=f14e146] [cursor=pointer]:
+                - generic [ref=f14e147]:
+                  - paragraph [ref=f14e148]: Awaiting Review
+                  - generic [ref=f14e149]:
+                    - generic [ref=f14e150]: •
+                    - generic [ref=f14e151]: Awaiting Review
+                  - generic [ref=f14e152]:
+                    - generic [ref=f14e153]: •
+                    - generic [ref=f14e154]: Completed
+                - generic [ref=f14e156]:
+                  - generic [ref=f14e157]:
+                    - progressbar [ref=f14e158]
+                    - progressbar [ref=f14e161]
+                  - generic [ref=f14e164]: 15510,653
+            - generic [ref=f14e167] [cursor=pointer]:
+              - generic [ref=f14e168]:
+                - paragraph [ref=f14e169]: Reviewed
+                - generic [ref=f14e170]:
+                  - generic [ref=f14e171]: •
+                  - generic [ref=f14e172]: Reviewed (synced)
+                - generic [ref=f14e173]:
+                  - generic [ref=f14e174]: •
+                  - generic [ref=f14e175]: Reviewed (not synced)
+                - generic [ref=f14e176]:
+                  - generic [ref=f14e177]: •
+                  - generic [ref=f14e178]: Completed
+              - generic [ref=f14e180]:
+                - generic [ref=f14e181]:
+                  - progressbar [ref=f14e182]
+                  - progressbar [ref=f14e185]
+                  - progressbar [ref=f14e4398]
+                - generic [ref=f14e192]:
+                  - generic [ref=f14e193]: 4,816
+                  - generic [ref=f14e194]: 6,196
+                  - generic [ref=f14e195]: 10,653
+          - generic [ref=f14e196]:
+            - heading "Completed By Patient - Alarm Triggered" [level=4] [ref=f14e201]
+            - heading "Completed By Patient - No Alarm Triggered" [level=4] [ref=f14e210]
+        - generic [ref=f14e213]:
+          - generic [ref=f14e214]:
+            - heading "All Health Forms" [level=4] [ref=f14e216]
+            - generic [ref=f14e217]:
+              - paragraph [ref=f14e223] [cursor=pointer]: All (57,912)
+              - paragraph [ref=f14e229] [cursor=pointer]: Incomplete (47,259)
+              - paragraph [ref=f14e235] [cursor=pointer]: Overdue (11,641)
+              - paragraph [ref=f14e241] [cursor=pointer]: Completed (10,653)
+              - paragraph [ref=f14e247] [cursor=pointer]: Awaiting Review (155)
+              - generic [ref=f14e252] [cursor=pointer]:
+                - paragraph [ref=f14e253]: Reviewed (10,498)
+                - list [ref=f14e254]:
+                  - button "Synced to PR (4,816)" [ref=f14e255]
+                  - button "Not Synced to PR (6,196)" [ref=f14e256]
+          - generic [ref=f14e257]:
+            - generic [ref=f14e258]:
+              - generic [ref=f14e259]:
+                - textbox "Search..." [ref=f14e260]
+                - img [aria-hidden] [ref=f14e261] [cursor=pointer]
+              - generic [ref=f14e265]:
+                - button [disabled]
+              - generic [ref=f14e266]:
+                - button "Expand All" [ref=f14e267] [cursor=pointer]
+                - button "Collapse All" [ref=f14e268] [cursor=pointer]
+              - generic [ref=f14e269]:
+                - button "View By Patient" [ref=f14e270] [cursor=pointer]
+                - button "View By Health Form" [ref=f14e271] [cursor=pointer]
+              - button [ref=f14e273] [cursor=pointer]
+            - generic [ref=f14e280]:
+              - generic:          
+              - generic [ref=f14e281]:
+                - grid [ref=f14e282]:
+                  - row [ref=f14e283]:
+                    - columnheader [ref=f14e284] [cursor=pointer]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f14e285]: 
+                      - text:    
+                  - rowgroup [ref=f14e286]:
+                    - row [ref=f14e287]:
+                      - columnheader "Patient Email Address" [ref=f14e288] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e289]: 
+                        - text:    
+                      - columnheader "Patient Mobile Number" [ref=f14e291] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e292]: 
+                        - text:    
+                      - columnheader "Patient Name" [ref=f14e294] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e295]: 
+                        - text:    
+                      - columnheader "Health Form Name" [ref=f14e297] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e298]: 
+                        - text:    
+                      - columnheader "Patient ID" [ref=f14e300] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e301]: 
+                        - text:    
+                  - row [ref=f14e303]:
+                    - columnheader "Action" [ref=f14e304]:  
+                    - columnheader [ref=f14e306]:
+                      - text: 
+                      - generic [ref=f14e307]:
+                        - text: Synced
+                        - button "Synced to Primary Care Patient Record" [ref=f14e308] [cursor=pointer]
+                    - columnheader [ref=f14e311] [cursor=pointer]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f14e312]: 
+                      - text:    
+                  - row "Press SPACE to select this row." [ref=f14e4401]:
+                    - gridcell [ref=f14e4402]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4403]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4404]:
+                    - gridcell [ref=f14e4405]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4406]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4407]:
+                    - gridcell [ref=f14e4408]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4409]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4410]:
+                    - gridcell [ref=f14e4411]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4412]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4413]:
+                    - gridcell [ref=f14e4414]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4415]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4416]:
+                    - gridcell [ref=f14e4417]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4418]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4419]:
+                    - gridcell [ref=f14e4420]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4421]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4422]:
+                    - gridcell [ref=f14e4423]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4424]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4425]:
+                    - gridcell [ref=f14e4426]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4427]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4428]:
+                    - gridcell [ref=f14e4429]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4430]
+                      - text: 
+                  - row "Press SPACE to select this row." [ref=f14e4431]:
+                    - gridcell [ref=f14e4432]:
+                      - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e4433]
+                      - text: 
+                  - rowgroup [ref=f14e346]:
+                    - row "Press SPACE to select this row." [ref=f14e4434]:
+                      - gridcell " Mike Meakin (17)" [ref=f14e4435]:
+                        - generic [ref=f14e4436]:
+                          - text: 
+                          - generic [ref=f14e4437] [cursor=pointer]: 
+                          - generic [ref=f14e4438]: Mike Meakin
+                          - generic [ref=f14e4439]: (17)
+                      - gridcell [ref=f14e4440]
+                      - gridcell [ref=f14e4442]
+                      - gridcell [ref=f14e4444]
+                      - gridcell [ref=f14e4445]
+                    - row "Press SPACE to select this row." [ref=f14e4446]:
+                      - gridcell " BAXTER CROUCH (6)" [ref=f14e4447]:
+                        - generic [ref=f14e4448]:
+                          - text: 
+                          - generic [ref=f14e4449] [cursor=pointer]: 
+                          - generic [ref=f14e4450]: BAXTER CROUCH
+                          - generic [ref=f14e4451]: (6)
+                      - gridcell [ref=f14e4452]
+                      - gridcell [ref=f14e4454]
+                      - gridcell [ref=f14e4456]
+                      - gridcell [ref=f14e4457]
+                    - row "Press SPACE to select this row." [ref=f14e4458]:
+                      - gridcell " Ciara Mooney (3)" [ref=f14e4459]:
+                        - generic [ref=f14e4460]:
+                          - text: 
+                          - generic [ref=f14e4461] [cursor=pointer]: 
+                          - generic [ref=f14e4462]: Ciara Mooney
+                          - generic [ref=f14e4463]: (3)
+                      - gridcell [ref=f14e4464]
+                      - gridcell [ref=f14e4466]
+                      - gridcell [ref=f14e4468]
+                      - gridcell [ref=f14e4469]
+                    - row "Press SPACE to select this row." [ref=f14e4470]:
+                      - gridcell " Sean Huynh (1)" [ref=f14e4471]:
+                        - generic [ref=f14e4472]:
+                          - text: 
+                          - generic [ref=f14e4473] [cursor=pointer]: 
+                          - generic [ref=f14e4474]: Sean Huynh
+                          - generic [ref=f14e4475]: (1)
+                      - gridcell [ref=f14e4476]
+                      - gridcell [ref=f14e4478]
+                      - gridcell [ref=f14e4480]
+                      - gridcell [ref=f14e4481]
+                    - row "Press SPACE to select this row." [ref=f14e4482]:
+                      - gridcell " Hannah Murphy (2)" [ref=f14e4483]:
+                        - generic [ref=f14e4484]:
+                          - text: 
+                          - generic [ref=f14e4485] [cursor=pointer]: 
+                          - generic [ref=f14e4486]: Hannah Murphy
+                          - generic [ref=f14e4487]: (2)
+                      - gridcell [ref=f14e4488]
+                      - gridcell [ref=f14e4490]
+                      - gridcell [ref=f14e4492]
+                      - gridcell [ref=f14e4493]
+                    - row "Press SPACE to select this row." [ref=f14e4494]:
+                      - gridcell " Hubert KELSO-CID (4)" [ref=f14e4495]:
+                        - generic [ref=f14e4496]:
+                          - text: 
+                          - generic [ref=f14e4497] [cursor=pointer]: 
+                          - generic [ref=f14e4498]: Hubert KELSO-CID
+                          - generic [ref=f14e4499]: (4)
+                      - gridcell [ref=f14e4500]
+                      - gridcell [ref=f14e4502]
+                      - gridcell [ref=f14e4504]
+                      - gridcell [ref=f14e4505]
+                    - row "Press SPACE to select this row." [ref=f14e4506]:
+                      - gridcell " Mona MILLAR (2)" [ref=f14e4507]:
+                        - generic [ref=f14e4508]:
+                          - text: 
+                          - generic [ref=f14e4509] [cursor=pointer]: 
+                          - generic [ref=f14e4510]: Mona MILLAR
+                          - generic [ref=f14e4511]: (2)
+                      - gridcell [ref=f14e4512]
+                      - gridcell [ref=f14e4514]
+                      - gridcell [ref=f14e4516]
+                      - gridcell [ref=f14e4517]
+                    - row "Press SPACE to select this row." [ref=f14e4518]:
+                      - gridcell " Michael Ramella (1)" [ref=f14e4519]:
+                        - generic [ref=f14e4520]:
+                          - text: 
+                          - generic [ref=f14e4521] [cursor=pointer]: 
+                          - generic [ref=f14e4522]: Michael Ramella
+                          - generic [ref=f14e4523]: (1)
+                      - gridcell [ref=f14e4524]
+                      - gridcell [ref=f14e4526]
+                      - gridcell [ref=f14e4528]
+                      - gridcell [ref=f14e4529]
+                    - row "Press SPACE to select this row." [ref=f14e4530]:
+                      - gridcell " Gareth Bartlett (10280)" [ref=f14e4531]:
+                        - generic [ref=f14e4532]:
+                          - text: 
+                          - generic [ref=f14e4533] [cursor=pointer]: 
+                          - generic [ref=f14e4534]: Gareth Bartlett
+                          - generic [ref=f14e4535]: (10280)
+                      - gridcell [ref=f14e4536]
+                      - gridcell [ref=f14e4538]
+                      - gridcell [ref=f14e4540]
+                      - gridcell [ref=f14e4541]
+                    - row "Press SPACE to select this row." [ref=f14e4542]:
+                      - gridcell " Paul Foster (987)" [ref=f14e4543]:
+                        - generic [ref=f14e4544]:
+                          - text: 
+                          - generic [ref=f14e4545] [cursor=pointer]: 
+                          - generic [ref=f14e4546]: Paul Foster
+                          - generic [ref=f14e4547]: (987)
+                      - gridcell [ref=f14e4548]
+                      - gridcell [ref=f14e4550]
+                      - gridcell [ref=f14e4552]
+                      - gridcell [ref=f14e4553]
+                    - row "Press SPACE to select this row." [ref=f14e4554]:
+                      - 'gridcell " {\"patient_derived_fullname\":null,\"patient_patientguid\":null,\"count\":\"342\",\"agg--response_actual_date\":\"2026-09-18T08:36:01.751Z\"} (342)" [ref=f14e4555]':
+                        - generic [ref=f14e4556]:
+                          - text: 
+                          - generic [ref=f14e4557] [cursor=pointer]: 
+                          - generic [ref=f14e4558]: "{\"patient_derived_fullname\":null,\"patient_patientguid\":null,\"count\":\"342\",\"agg--response_actual_date\":\"2026-09-18T08:36:01.751Z\"}"
+                          - generic [ref=f14e4559]: (342)
+                      - gridcell [ref=f14e4560]
+                      - gridcell [ref=f14e4562]
+                      - gridcell [ref=f14e4564]
+                      - gridcell [ref=f14e4565]
+                  - row "Press SPACE to select this row." [ref=f14e4566]:
+                    - gridcell [ref=f14e4567]
+                    - gridcell [ref=f14e4568]
+                    - gridcell [ref=f14e4569]
+                  - row "Press SPACE to select this row." [ref=f14e4570]:
+                    - gridcell [ref=f14e4571]
+                    - gridcell [ref=f14e4572]
+                    - gridcell [ref=f14e4573]
+                  - row "Press SPACE to select this row." [ref=f14e4574]:
+                    - gridcell [ref=f14e4575]
+                    - gridcell [ref=f14e4576]
+                    - gridcell [ref=f14e4577]
+                  - row "Press SPACE to select this row." [ref=f14e4578]:
+                    - gridcell [ref=f14e4579]
+                    - gridcell [ref=f14e4580]
+                    - gridcell [ref=f14e4581]
+                  - row "Press SPACE to select this row." [ref=f14e4582]:
+                    - gridcell [ref=f14e4583]
+                    - gridcell [ref=f14e4584]
+                    - gridcell [ref=f14e4585]
+                  - row "Press SPACE to select this row." [ref=f14e4586]:
+                    - gridcell [ref=f14e4587]
+                    - gridcell [ref=f14e4588]
+                    - gridcell [ref=f14e4589]
+                  - row "Press SPACE to select this row." [ref=f14e4590]:
+                    - gridcell [ref=f14e4591]
+                    - gridcell [ref=f14e4592]
+                    - gridcell [ref=f14e4593]
+                  - row "Press SPACE to select this row." [ref=f14e4594]:
+                    - gridcell [ref=f14e4595]
+                    - gridcell [ref=f14e4596]
+                    - gridcell [ref=f14e4597]
+                  - row "Press SPACE to select this row." [ref=f14e4598]:
+                    - gridcell [ref=f14e4599]
+                    - gridcell [ref=f14e4600]
+                    - gridcell [ref=f14e4601]
+                  - row "Press SPACE to select this row." [ref=f14e4602]:
+                    - gridcell [ref=f14e4603]
+                    - gridcell [ref=f14e4604]
+                    - gridcell [ref=f14e4605]
+                  - row "Press SPACE to select this row." [ref=f14e4606]:
+                    - gridcell [ref=f14e4607]
+                    - gridcell [ref=f14e4608]
+                    - gridcell [ref=f14e4609]
+                - generic [ref=f14e538]:
+                  - tablist [ref=f14e539]:
+                    - tab "Columns" [ref=f14e540] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f14e541]: 
+                    - tab "Filters" [ref=f14e543] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f14e544]: 
+                  - text:                                                                                                                                                                                                                                          
+              - text:    
+    - generic "one-paco-top-bar" [ref=f14e546]:
+      - generic [ref=f14e548]:
+        - generic [ref=f14e551]:
+          - generic [ref=f14e552]: TFN
+          - generic [ref=f14e554]:
+            - generic [ref=f14e555]: Test Fiona Nguyen
+            - generic [ref=f14e556]: Super Admin GB
+            - generic [ref=f14e558]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f14e563]
+        - generic [ref=f14e564]:
+          - button "More options" [ref=f14e566] [cursor=pointer]
+          - generic [ref=f14e572] [cursor=pointer]
+          - generic [ref=f14e573] [cursor=pointer]: "0"
+  - alert [ref=f14e6]
+  - complementary [ref=f14e4320]:
+    - button "Close" [ref=f14e4323] [cursor=pointer]
+    - generic [ref=f14e4326]:
+      - heading "Inbox Filters" [level=2] [ref=f14e4327]
+      - generic [ref=f14e4328]:
+        - generic [ref=f14e4329]:
+          - generic [ref=f14e4330]:
+            - generic [ref=f14e4331]: Date Range
+            - generic [ref=f14e4332] [cursor=pointer]:
+              - paragraph [ref=f14e4333]: Date Range
+              - paragraph [ref=f14e4334]: All Time
+          - button "All time" [ref=f14e4337] [cursor=pointer]
+        - generic [ref=f14e4339]:
+          - generic [ref=f14e4340]: Health Form
+          - generic [ref=f14e4341] [cursor=pointer]:
+            - generic:
+              - combobox
+            - generic [ref=f14e4342]: "-"
+        - generic [ref=f14e4348]:
+          - generic [ref=f14e4349]: Reviewers
+          - generic [ref=f14e4350] [cursor=pointer]:
+            - generic:
+              - combobox
+            - generic [ref=f14e4351]: "-"
+        - generic [ref=f14e4357]:
+          - generic [ref=f14e4358]: Tags
+          - generic [ref=f14e4360] [cursor=pointer]:
+            - generic:
+              - listbox
+            - generic [ref=f14e4361]: View Tag List
+            - button [ref=f14e4363]
+        - generic [ref=f14e4367]:
+          - generic [ref=f14e4368]: Patient(s) Search
+          - generic [ref=f14e4370] [cursor=pointer]:
+            - generic:
+              - combobox
+            - generic [ref=f14e4371]: "-"
+        - generic [ref=f14e4377]:
+          - generic [ref=f14e4378]: Alert Status
+          - generic [ref=f14e4610]:
+            - generic [ref=f14e4611] [cursor=pointer]:
+              - checkbox "Alarm Triggered" [ref=f14e4613]
+              - text: Alarm Triggered
+            - generic [ref=f14e4616] [cursor=pointer]:
+              - checkbox "No Alarm Triggered" [checked] [ref=f14e4618]
+              - text: No Alarm Triggered
+      - button "Clear All" [ref=f14e4390] [cursor=pointer]

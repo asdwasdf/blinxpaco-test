@@ -1,0 +1,279 @@
+- generic [ref=f56e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f56e3] [cursor=pointer]
+  - generic [ref=f56e207]:
+    - generic [ref=f56e208]:
+      - button "Expand sidebar" [ref=f56e209] [cursor=pointer]:
+        - img "Paco Logo" [ref=f56e210]
+      - generic [ref=f56e212]:
+        - img "Dashboards" [ref=f56e217] [cursor=pointer]
+        - img "Quick Send" [ref=f56e222] [cursor=pointer]
+        - img "Patient Search" [ref=f56e227] [cursor=pointer]
+        - img "case load management" [ref=f56e232] [cursor=pointer]
+        - img "Appointment Book" [ref=f56e237] [cursor=pointer]
+        - img "Users" [ref=f56e242] [cursor=pointer]
+        - img "Configuration" [ref=f56e247] [cursor=pointer]
+        - img "Rocket Bar" [ref=f56e252] [cursor=pointer]
+        - generic [ref=f56e254] [cursor=pointer]
+      - button [ref=f56e262] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f56e263]
+    - generic [ref=f56e264]:
+      - generic [ref=f56e265]:
+        - generic [ref=f56e266]: 3h 18m
+        - generic [ref=f56e271]:
+          - generic [ref=f56e274]:
+            - generic [ref=f56e275] [cursor=pointer]: FN
+            - generic [ref=f56e277]:
+              - generic [ref=f56e278]: Fiona Nguyen
+              - generic [ref=f56e279]: Super User
+              - generic [ref=f56e281]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f56e286]
+          - generic [ref=f56e287]:
+            - button "More options" [ref=f56e289] [cursor=pointer]
+            - generic [ref=f56e293] [cursor=pointer]: "0"
+      - generic [ref=f56e298]:
+        - generic [ref=f56e301]:
+          - generic [ref=f56e302]:
+            - heading "Configuration" [level=1] [ref=f56e304]
+            - generic [ref=f56e307]:
+              - button "Organisation" [ref=f56e309] [cursor=pointer]:
+                - link "Organisation" [ref=f56e311]:
+                  - /url: "#"
+              - button "Patient" [ref=f56e316] [cursor=pointer]:
+                - link "Patient" [ref=f56e318]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f56e323] [cursor=pointer]:
+                - link "Appointment Books" [ref=f56e325]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f56e330] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f56e332]:
+                  - /url: "#"
+              - generic [ref=f56e336]:
+                - button "Users & Staff" [expanded] [ref=f56e337] [cursor=pointer]:
+                  - link "Users & Staff" [ref=f56e339]:
+                    - /url: "#"
+                - region "Users & Staff" [ref=f56e343]:
+                  - tree [ref=f56e345]:
+                    - treeitem "Staff Profiles" [level=1] [ref=f56e346]:
+                      - link [aria-hidden] [ref=f56e348] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f56e349]: Staff Profiles
+                    - treeitem "Role Groups" [level=1] [ref=f56e350]:
+                      - link [aria-hidden] [ref=f56e352] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f56e353]: Role Groups
+          - generic [ref=f56e354] [cursor=pointer]
+        - generic [ref=f56e357]:
+          - generic [ref=f56e359]:
+            - generic [ref=f56e360]:
+              - button [ref=f56e361] [cursor=pointer]
+              - button [ref=f56e364] [cursor=pointer]
+            - generic [ref=f56e367]:
+              - heading "Staff Profiles" [level=1] [ref=f56e368]
+              - group "Filter staff by status" [ref=f56e369]:
+                - button "Active" [active] [pressed] [ref=f56e370] [cursor=pointer]
+                - button "Archived" [ref=f56e371] [cursor=pointer]
+            - textbox "Search..." [ref=f56e375]
+            - button "My Profile" [ref=f56e376] [cursor=pointer]
+            - generic [ref=f56e381]:
+              - button [ref=f56e382] [cursor=pointer]
+              - menu:
+                - menuitem "Add":
+                  - menuitem "Add":
+                    - paragraph: Add Care Professional
+          - generic [ref=f56e390]:
+            - text:  
+            - grid [ref=f56e391]:
+              - rowgroup [ref=f56e392]:
+                - row [ref=f56e393]:
+                  - columnheader "First Name" [ref=f56e394] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e395]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Last Name" [ref=f56e397] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e398]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Gender" [ref=f56e400] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e401]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Email" [ref=f56e403] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e404]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Roles" [ref=f56e406] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e407]: 
+                    - text: 
+                    - generic:    
+              - row [ref=f56e409]:
+                - columnheader "Actions" [ref=f56e1176] [cursor=pointer]
+              - rowgroup [ref=f56e412]:
+                - row "Press SPACE to select this row." [ref=f56e1178]:
+                  - gridcell [ref=f56e1179]:
+                    - button "Michael Ramella" [ref=f56e1180] [cursor=pointer]
+                  - gridcell "1804 15 Sept non-SSO Test" [ref=f56e1181]
+                  - gridcell [ref=f56e1182]
+                  - gridcell "michaelramella+nonsso@gmail.com" [ref=f56e1183]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1184]'
+                - row "Press SPACE to select this row." [ref=f56e1185]:
+                  - gridcell [ref=f56e1186]:
+                    - button "Michael Ramella" [ref=f56e1187] [cursor=pointer]
+                  - gridcell "1804 15 Sept SSO Test 1" [ref=f56e1188]
+                  - gridcell [ref=f56e1189]
+                  - gridcell "paco.sso.test2@blinxsolutions.com-old" [ref=f56e1190]
+                  - 'gridcell "[SYSTEM] PACO GP #b49e47d6" [ref=f56e1191]'
+                - row "Press SPACE to select this row." [ref=f56e1192]:
+                  - gridcell [ref=f56e1193]:
+                    - button "Michael Ramella" [ref=f56e1194] [cursor=pointer]
+                  - gridcell "1804 15 Sept Test 2" [ref=f56e1195]
+                  - gridcell [ref=f56e1196]
+                  - gridcell "michaelramella+test2@gmail.com" [ref=f56e1197]
+                  - 'gridcell "[SYSTEM] PACO GP #b49e47d6" [ref=f56e1198]'
+                - row "Press SPACE to select this row." [ref=f56e1199]:
+                  - gridcell [ref=f56e1200]:
+                    - button "PAC2" [ref=f56e1201] [cursor=pointer]
+                  - gridcell "191.3" [ref=f56e1202]
+                  - gridcell [ref=f56e1203]
+                  - gridcell "pac2-1913@blinxsolutions.com" [ref=f56e1204]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1205]'
+                - row "Press SPACE to select this row." [ref=f56e1206]:
+                  - gridcell [ref=f56e1207]:
+                    - button "b" [ref=f56e1208] [cursor=pointer]
+                  - gridcell "2" [ref=f56e1209]
+                  - gridcell [ref=f56e1210]
+                  - gridcell "asdsa@asda2.com" [ref=f56e1211]
+                  - 'gridcell "[SYSTEM] PACO GP #f457c545" [ref=f56e1212]'
+                - row "Press SPACE to select this row." [ref=f56e1213]:
+                  - gridcell [ref=f56e1214]:
+                    - button "b" [ref=f56e1215] [cursor=pointer]
+                  - gridcell "2" [ref=f56e1216]
+                  - gridcell [ref=f56e1217]
+                  - gridcell "asdsa@asda2+1.com" [ref=f56e1218]
+                  - 'gridcell "[SYSTEM] PACO GP #f457c545" [ref=f56e1219]'
+                - row "Press SPACE to select this row." [ref=f56e1220]:
+                  - gridcell [ref=f56e1221]:
+                    - button "b2" [ref=f56e1222] [cursor=pointer]
+                  - gridcell "2" [ref=f56e1223]
+                  - gridcell [ref=f56e1224]
+                  - gridcell "asdsa@asda.com" [ref=f56e1225]
+                  - 'gridcell "[SYSTEM] PACO GP #f457c545" [ref=f56e1226]'
+                - row "Press SPACE to select this row." [ref=f56e1227]:
+                  - gridcell [ref=f56e1228]:
+                    - button "Test" [ref=f56e1229] [cursor=pointer]
+                  - gridcell "3" [ref=f56e1230]
+                  - gridcell [ref=f56e1231]
+                  - gridcell "pac2191.test3@blinxsolutions.com" [ref=f56e1232]
+                  - 'gridcell "[SYSTEM] PACO GP #518a420d" [ref=f56e1233]'
+                - row "Press SPACE to select this row." [ref=f56e1234]:
+                  - gridcell [ref=f56e1235]:
+                    - button "4263" [ref=f56e1236] [cursor=pointer]
+                  - gridcell "4263" [ref=f56e1237]
+                  - gridcell [ref=f56e1238]
+                  - gridcell "4263@gmail.com" [ref=f56e1239]
+                  - 'gridcell "[SYSTEM] PACO GP #40008b9a" [ref=f56e1240]'
+                - row "Press SPACE to select this row." [ref=f56e1241]:
+                  - gridcell [ref=f56e1242]:
+                    - button "test" [ref=f56e1243] [cursor=pointer]
+                  - gridcell "6603" [ref=f56e1244]
+                  - gridcell "male" [ref=f56e1245]
+                  - gridcell "test6603@me.com" [ref=f56e1246]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1247]'
+                - row "Press SPACE to select this row." [ref=f56e1248]:
+                  - gridcell [ref=f56e1249]:
+                    - button "test" [ref=f56e1250] [cursor=pointer]
+                  - gridcell "6603" [ref=f56e1251]
+                  - gridcell "male" [ref=f56e1252]
+                  - gridcell "test@6603.com" [ref=f56e1253]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1254]'
+                - row "Press SPACE to select this row." [ref=f56e1255]:
+                  - gridcell [ref=f56e1256]:
+                    - button "test1" [ref=f56e1257] [cursor=pointer]
+                  - gridcell "6603-1" [ref=f56e1258]
+                  - gridcell "unknown" [ref=f56e1259]
+                  - gridcell "test@6603-1.com" [ref=f56e1260]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1261]'
+                - row "Press SPACE to select this row." [ref=f56e1262]:
+                  - gridcell [ref=f56e1263]:
+                    - button "test11" [ref=f56e1264] [cursor=pointer]
+                  - gridcell "6603-111" [ref=f56e1265]
+                  - gridcell "unknown" [ref=f56e1266]
+                  - gridcell "test@6603-11.com" [ref=f56e1267]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1268]'
+                - row "Press SPACE to select this row." [ref=f56e1269]:
+                  - gridcell [ref=f56e1270]:
+                    - button "test2" [ref=f56e1271] [cursor=pointer]
+                  - gridcell "6603-2" [ref=f56e1272]
+                  - gridcell "unknown" [ref=f56e1273]
+                  - gridcell "test@6603-2.com" [ref=f56e1274]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1275]'
+                - row "Press SPACE to select this row." [ref=f56e1276]:
+                  - gridcell [ref=f56e1277]:
+                    - button "test3" [ref=f56e1278] [cursor=pointer]
+                  - gridcell "6603-3" [ref=f56e1279]
+                  - gridcell "unknown" [ref=f56e1280]
+                  - gridcell "test@6603-3.com" [ref=f56e1281]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1282]'
+                - row "Press SPACE to select this row." [ref=f56e1283]:
+                  - gridcell [ref=f56e1284]:
+                    - button "9dec1" [ref=f56e1285] [cursor=pointer]
+                  - gridcell "9dec1" [ref=f56e1286]
+                  - gridcell [ref=f56e1287]
+                  - gridcell "9dec1@gmail.com" [ref=f56e1288]
+                  - 'gridcell "[SYSTEM] PACO GP #6c8349cc" [ref=f56e1289]'
+              - rowgroup [ref=f56e522]:
+                - row "Press SPACE to select this row." [ref=f56e1290]:
+                  - gridcell [ref=f56e1291]:
+                    - button [ref=f56e1293] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1296]:
+                  - gridcell [ref=f56e1297]:
+                    - button [ref=f56e1299] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1302]:
+                  - gridcell [ref=f56e1303]:
+                    - button [ref=f56e1305] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1308]:
+                  - gridcell [ref=f56e1309]:
+                    - button [ref=f56e1311] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1314]:
+                  - gridcell [ref=f56e1315]:
+                    - button [ref=f56e1317] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1320]:
+                  - gridcell [ref=f56e1321]:
+                    - button [ref=f56e1323] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1326]:
+                  - gridcell [ref=f56e1327]:
+                    - button [ref=f56e1329] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1332]:
+                  - gridcell [ref=f56e1333]:
+                    - button [ref=f56e1335] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1338]:
+                  - gridcell [ref=f56e1339]:
+                    - button [ref=f56e1341] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1344]:
+                  - gridcell [ref=f56e1345]:
+                    - button [ref=f56e1347] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1350]:
+                  - gridcell [ref=f56e1351]:
+                    - button [ref=f56e1353] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1356]:
+                  - gridcell [ref=f56e1357]:
+                    - button [ref=f56e1359] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1362]:
+                  - gridcell [ref=f56e1363]:
+                    - button [ref=f56e1365] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1368]:
+                  - gridcell [ref=f56e1369]:
+                    - button [ref=f56e1371] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1374]:
+                  - gridcell [ref=f56e1375]:
+                    - button [ref=f56e1377] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=f56e1380]:
+                  - gridcell [ref=f56e1381]:
+                    - button [ref=f56e1383] [cursor=pointer]
+            - text:    
+          - generic [ref=f56e622]:
+            - paragraph [ref=f56e623]: Showing 26–50 of 587
+            - generic [ref=f56e1386]:
+              - button "Previous" [ref=f56e1387] [cursor=pointer]
+              - generic [ref=f56e1388]: Page 2 of 24
+              - button "Next" [ref=f56e1389] [cursor=pointer]

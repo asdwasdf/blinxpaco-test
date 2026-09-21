@@ -1,0 +1,38 @@
+- generic [ref=f26e5]:
+  - generic [ref=f26e7]:
+    - paragraph [ref=f26e8]: Welcome
+    - paragraph [ref=f26e11]:
+      - generic [ref=f26e12]: Powered By
+  - generic [ref=f26e13]:
+    - img "Paco-24-icon" [ref=f26e15]
+    - generic [ref=f26e16]:
+      - alert [ref=f26e17]:
+        - text: PACO sign-in failed. Please try again and make sure you select the correct account.
+        - generic [ref=f26e18]: "Error code: SSO-AUTH"
+      - status [ref=f26e19]: We couldn't confirm your session was still active, so you were signed out for security. Please sign in again.
+      - generic [ref=f26e20]:
+        - generic [ref=f26e21]: Log in
+        - generic [ref=f26e22]:
+          - generic [ref=f26e23]:
+            - generic [ref=f26e24]:
+              - generic [ref=f26e25]: User Name
+              - textbox "User Name" [ref=f26e26]:
+                - /placeholder: Username
+                - text: blinx_daophuongnguyen28022003+2
+            - generic [ref=f26e27]:
+              - generic [ref=f26e28]: Password
+              - textbox "Password" [ref=f26e29]: Nguyen28022003@
+          - button "Log in" [ref=f26e32] [cursor=pointer]
+      - generic [ref=f26e34]:
+        - generic [ref=f26e35]: OR
+        - button "Single Sign On" [ref=f26e37] [cursor=pointer]
+        - generic [ref=f26e39]: OR
+        - button "Log in with my Care Identity" [ref=f26e41] [cursor=pointer]:
+          - generic [ref=f26e42]: Log in with my
+          - text: Care Identity
+      - generic [ref=f26e44]:
+        - link "Forgot Password" [ref=f26e45] [cursor=pointer]:
+          - /url: "#"
+        - text: "|"
+        - link "Privacy Policy" [ref=f26e46] [cursor=pointer]:
+          - /url: "#"

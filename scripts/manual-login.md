@@ -1,39 +1,27 @@
 # Manual Browser Login Guide
 
-Playwright mở browser; tester tự nhập credential trong trang đăng nhập. Credential không đi qua prompt, skill, environment variable, docs hoặc test code.
+Claude Playwright plugin mở và điều khiển browser tab; tester tự nhập credential trong trang đăng nhập. Credential không đi qua prompt, skill, environment variable, docs hoặc test code.
 
-## Tạo local state
+## Đăng nhập trong plugin browser
 
-1. Cài Google Chrome trên máy rồi chạy headed browser; không cần tải Playwright Chromium:
-
-```bash
-npm run auth:login
-```
-
-2. Script mở `https://blinx.dev.blinxpaco-np.com/paco/login`; trong browser, tự nhập credentials và hoàn thành SSO/MFA.
-3. Chờ redirect tới `/paco/dashboard`. Script giữ Chrome profile test và browser đang đăng nhập mở để Playwright kết nối qua CDP local tại `127.0.0.1`.
-4. Giữ browser mở; chạy Playwright trong PowerShell khác. Tự đóng browser sau khi test xong.
-5. Script dừng với `Blocked` nếu dashboard chưa tải trong 5 phút.
-6. Chỉ tạo role-specific profile khi role thật đã được xác định.
+1. Dùng Claude Playwright plugin mở tab hiện tại tới `https://blinx.dev.blinxpaco-np.com/paco/login`.
+2. Tester tự nhập credentials và hoàn thành SSO/MFA trong tab đó.
+3. Chờ redirect tới `/paco/dashboard` hoặc một trang Paco đã authenticated, rồi báo cho skill tiếp tục.
+4. Skill kiểm tra URL và UI landmark của trang authenticated trước khi resume checkpoint.
+5. Giữ tab plugin mở trong suốt lần explore. Role switch vẫn do tester thực hiện thủ công và dùng checkpoint riêng.
 
 ## Security
 
-- `playwright/.auth/` Git ignored và local-only; Chrome profile test nằm tại `playwright/.auth/chrome-profile/`.
-- CDP chỉ bind `127.0.0.1`; không dùng profile Chrome cá nhân.
-- Không đọc nội dung profile/state vào prompt.
-- Không copy state, token, cookie hoặc header vào report/evidence/defect.
-- Không commit hoặc chia sẻ state file.
+- Không nhập credentials vào prompt, skill, environment variable, docs hoặc test code.
+- Skill không đọc, copy, persist hoặc report cookie, token, header hay browser auth state.
+- Không lưu auth state từ plugin browser vào `playwright/.auth/`.
+- Không chụp hoặc đưa credential/SSO form vào evidence.
+- Không dùng profile Chrome cá nhân ngoài tab do Claude Playwright plugin quản lý.
 
 ## Expiration
 
-Nếu browser login không chạy, fixture trả `Blocked: Login browser not running.`. Redirect về login trả `Blocked: Authentication expired`; đây không phải product failure. Chạy lại quy trình thủ công trên.
+Nếu plugin browser chưa có tab authenticated hoặc redirect về `/paco/login`, trả `Blocked: Authentication expired`; đây không phải product failure. Điều hướng tab hiện tại tới trang login, để tester đăng nhập thủ công, rồi verify lại trước khi tiếp tục.
 
 ## Read-only smoke
 
-Liệt kê test mà không mở Paco:
-
-```bash
-rtk npx playwright test --list
-```
-
-Chỉ chạy smoke sau authorization riêng. Test dashboard không click mutation control, fill, submit, upload, import hoặc probe private API.
+Sau khi auth hợp lệ, chỉ điều hướng, xem, search, filter, sort và paginate trong scope đã duyệt. Không click mutation control, fill business form, submit, upload, import, download hoặc probe private API nếu chưa có approval riêng.

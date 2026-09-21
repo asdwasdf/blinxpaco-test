@@ -1,0 +1,60 @@
+- generic [active] [ref=f40e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f40e3] [cursor=pointer]
+  - generic [ref=f40e349]:
+    - generic [ref=f40e350]:
+      - button "Expand sidebar" [ref=f40e351] [cursor=pointer]:
+        - img "Paco Logo" [ref=f40e352]
+      - generic [ref=f40e354]:
+        - img "Dashboards" [ref=f40e359] [cursor=pointer]
+        - img "Quick Send" [ref=f40e364] [cursor=pointer]
+        - img "Patient Search" [ref=f40e369] [cursor=pointer]
+        - img "case load management" [ref=f40e374] [cursor=pointer]
+        - img "Appointment Book" [ref=f40e379] [cursor=pointer]
+        - img "Users" [ref=f40e384] [cursor=pointer]
+        - img "Configuration" [ref=f40e389] [cursor=pointer]
+        - img "Rocket Bar" [ref=f40e394] [cursor=pointer]
+        - generic [ref=f40e396] [cursor=pointer]
+      - button [ref=f40e404] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f40e405]
+    - generic [ref=f40e406]:
+      - generic [ref=f40e407]:
+        - generic [ref=f40e408]: 1h 54m
+        - generic [ref=f40e413]:
+          - generic [ref=f40e416]:
+            - generic [ref=f40e417] [cursor=pointer]: FN
+            - generic [ref=f40e419]:
+              - generic [ref=f40e420]: Fiona Nguyen
+              - generic [ref=f40e421]: Super User
+              - generic [ref=f40e423]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f40e428]
+          - generic [ref=f40e429]:
+            - button "More options" [ref=f40e431] [cursor=pointer]
+            - generic [ref=f40e435] [cursor=pointer]: "0"
+      - generic [ref=f40e440]:
+        - generic [ref=f40e443]:
+          - generic [ref=f40e444]:
+            - heading "Configuration" [level=1] [ref=f40e446]
+            - generic [ref=f40e449]:
+              - button "Organisation" [ref=f40e451] [cursor=pointer]:
+                - link "Organisation" [ref=f40e453]:
+                  - /url: "#"
+              - button "Patient" [ref=f40e458] [cursor=pointer]:
+                - link "Patient" [ref=f40e460]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f40e465] [cursor=pointer]:
+                - link "Appointment Books" [ref=f40e467]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f40e472] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f40e474]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f40e479] [cursor=pointer]:
+                - link "Users & Staff" [ref=f40e481]:
+                  - /url: "#"
+          - generic [ref=f40e485] [cursor=pointer]
+        - generic [ref=f40e488]: Please select a menu item
+  - generic [ref=f40e494]:
+    - button "Launch Rocket Bar" [ref=f40e496] [cursor=pointer]
+    - button "Download Rocket Bar" [ref=f40e499] [cursor=pointer]
+  - tooltip [aria-hidden]:
+    - generic: Rocket Bar

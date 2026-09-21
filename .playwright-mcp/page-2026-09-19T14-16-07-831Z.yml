@@ -1,0 +1,149 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e3325]:
+    - generic [ref=f4e3326]:
+      - button "Expand sidebar" [ref=f4e3327] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e3328]
+      - generic [ref=f4e3330]:
+        - img "Dashboards" [ref=f4e3335] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e3340] [cursor=pointer]
+        - img "Quick Send" [ref=f4e3345] [cursor=pointer]
+        - img "Health Forms" [ref=f4e3350] [cursor=pointer]
+        - img "Patient Search" [ref=f4e3355] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e3360] [cursor=pointer]
+        - img "case load management" [ref=f4e3365] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e3370] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e3375] [cursor=pointer]
+        - img "Users" [ref=f4e3380] [cursor=pointer]
+        - img "Configuration" [ref=f4e3385] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e3390] [cursor=pointer]
+        - generic [ref=f4e3392] [cursor=pointer]
+      - button [ref=f4e3400] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e3401]
+    - generic [ref=f4e3402]:
+      - generic [ref=f4e3403]:
+        - generic [ref=f4e3404]: 2h 16m
+        - generic [ref=f4e3409]:
+          - generic [ref=f4e3412]:
+            - generic [ref=f4e3413] [cursor=pointer]: TFN
+            - generic [ref=f4e3415]:
+              - generic [ref=f4e3416]: Test Fiona Nguyen
+              - generic [ref=f4e3417]: Super Admin GB
+              - generic [ref=f4e3419]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e3424]
+          - generic [ref=f4e3425]:
+            - button "More options" [ref=f4e3427] [cursor=pointer]
+            - generic [ref=f4e3431] [cursor=pointer]: "0"
+      - generic [ref=f4e3436]:
+        - generic [ref=f4e3439]:
+          - generic [ref=f4e3440]:
+            - heading "Configuration" [level=1] [ref=f4e3442]
+            - generic [ref=f4e3445]:
+              - generic [ref=f4e3446]:
+                - button "Organisation" [expanded] [ref=f4e3447] [cursor=pointer]:
+                  - link "Organisation" [ref=f4e3449]:
+                    - /url: "#"
+                - region "Organisation" [ref=f4e3453]:
+                  - tree [ref=f4e3455]:
+                    - treeitem "General" [level=1] [ref=f4e3456]:
+                      - link [aria-hidden] [ref=f4e3458] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3459]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f4e3460]:
+                      - link [aria-hidden] [ref=f4e3462] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3463]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f4e3464]:
+                      - link [aria-hidden] [ref=f4e3466] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3467]: Locations
+                    - treeitem "Skills" [level=1] [ref=f4e3468]:
+                      - link [aria-hidden] [ref=f4e3470] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3471]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f4e3472]:
+                      - link [aria-hidden] [ref=f4e3474] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3475]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f4e3476]:
+                      - link [aria-hidden] [ref=f4e3478] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3479]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f4e3480]:
+                      - link [aria-hidden] [ref=f4e3482] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3483]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f4e3484]:
+                      - link [aria-hidden] [ref=f4e3486] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3487]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f4e3488]:
+                      - link [aria-hidden] [ref=f4e3490] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3491]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f4e3492]:
+                      - link [aria-hidden] [ref=f4e3494] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3495]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f4e3496]:
+                      - link [aria-hidden] [ref=f4e3498] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3499]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f4e3500]:
+                      - link [aria-hidden] [ref=f4e3502] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3503]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f4e3504]:
+                      - link [aria-hidden] [ref=f4e3506] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3507]: Integrations
+              - button "Patient" [ref=f4e3509] [cursor=pointer]:
+                - link "Patient" [ref=f4e3511]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f4e3516] [cursor=pointer]:
+                - link "Appointment Books" [ref=f4e3518]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f4e3523] [cursor=pointer]:
+                - link "Quick Pay" [ref=f4e3525]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f4e3530] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f4e3532]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f4e3537] [cursor=pointer]:
+                - link "Users & Staff" [ref=f4e3539]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f4e3544] [cursor=pointer]:
+                - link "Clinical Config" [ref=f4e3546]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f4e3551] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f4e3553]:
+                  - /url: "#"
+          - generic [ref=f4e3555] [cursor=pointer]
+        - generic [ref=f4e3560]:
+          - heading "Announcements" [level=1] [ref=f4e3563]
+          - generic [ref=f4e3567]:
+            - generic [ref=f4e3568]:
+              - button "Welcome Message" [expanded] [ref=f4e3570] [cursor=pointer]
+              - region "Welcome Message" [ref=f4e3574]:
+                - generic [ref=f4e3575]:
+                  - generic [ref=f4e3582]:
+                    - generic [ref=f4e3583]:
+                      - generic [ref=f4e3584]: Apply to locations
+                      - generic [ref=f4e3586] [cursor=pointer]:
+                        - generic [ref=f4e3587]:
+                          - combobox: Blinx Solutions
+                        - generic [ref=f4e3588]: 1 items selected
+                    - generic [ref=f4e3593]:
+                      - button "Add another" [ref=f4e3594] [cursor=pointer]
+                      - button "Delete" [ref=f4e3596] [cursor=pointer]
+                  - generic [ref=f4e3604]:
+                    - generic [ref=f4e3605]:
+                      - generic [ref=f4e3606]: Apply to locations
+                      - generic [ref=f4e3608] [cursor=pointer]:
+                        - generic [ref=f4e3609]:
+                          - combobox: test again - old location
+                        - generic [ref=f4e3610]: 1 items selected
+                    - button "Delete" [ref=f4e3616] [cursor=pointer]
+            - button "Service Updates" [ref=f4e3620] [cursor=pointer]
+          - button "Save" [ref=f4e3626] [cursor=pointer]

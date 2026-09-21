@@ -1,0 +1,351 @@
+- generic [ref=f2e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f2e3] [cursor=pointer]
+  - generic [ref=f2e8]:
+    - generic [ref=f2e9]:
+      - button "Expand sidebar" [ref=f2e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f2e11]
+      - generic [ref=f2e13]:
+        - img "Dashboards" [ref=f2e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f2e23] [cursor=pointer]
+        - img "Quick Send" [ref=f2e28] [cursor=pointer]
+        - img "Health Forms" [ref=f2e33] [cursor=pointer]
+        - img "Patient Search" [ref=f2e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f2e43] [cursor=pointer]
+        - img "case load management" [ref=f2e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f2e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f2e58] [cursor=pointer]
+        - img "Users" [ref=f2e63] [cursor=pointer]
+        - img "Configuration" [ref=f2e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f2e73] [cursor=pointer]
+        - generic [ref=f2e75] [cursor=pointer]
+      - button [ref=f2e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f2e84]
+    - generic [ref=f2e85]:
+      - generic [ref=f2e86]:
+        - generic [ref=f2e87]: 4m
+        - generic [ref=f2e92]:
+          - generic [ref=f2e95]:
+            - generic [ref=f2e96] [cursor=pointer]: TFN
+            - generic [ref=f2e98]:
+              - generic [ref=f2e99]: Test Fiona Nguyen
+              - generic [ref=f2e100]: Super Admin GB
+              - generic [ref=f2e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f2e107]
+          - generic [ref=f2e108]:
+            - button "More options" [ref=f2e110] [cursor=pointer]
+            - generic [ref=f2e114] [cursor=pointer]: "0"
+      - generic [ref=f2e118]:
+        - heading "Health Form Templates" [level=1] [ref=f2e121]
+        - generic [ref=f2e122]:
+          - generic [ref=f2e123]:
+            - textbox "Search Templates..." [ref=f2e126]
+            - button "Filters" [active] [ref=f2e127] [cursor=pointer]
+          - generic [ref=f2e129]:
+            - button [ref=f2e130] [cursor=pointer]
+            - menu:
+              - menuitem "Create new SPN":
+                - link "Create new SPN":
+                  - /url: /paco/health-forms/create-spn-form
+              - menuitem "Create new health forms":
+                - link "Create new health forms":
+                  - /url: /paco/health-forms/create-health-form-template
+              - menuitem "Create new consultation":
+                - link "Create new consultation":
+                  - /url: /paco/health-forms/create-consultation-template
+              - menuitem "Create new case form":
+                - link "Create new case form":
+                  - /url: /paco/health-forms/create-case-form
+        - generic [ref=f2e137]:
+          - text:  
+          - grid [ref=f2e138]:
+            - rowgroup [ref=f2e139]:
+              - row [ref=f2e176]:
+                - columnheader "Archived" [ref=f2e141] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e142]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Name" [ref=f2e144] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e145]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Type" [ref=f2e147] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e148]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Created date" [ref=f2e150] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e151]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Created by" [ref=f2e153] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e154]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Updated date" [ref=f2e156] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e157]: 
+                  - text: 
+                  - generic [ref=f2e159]:
+                    - text: 
+                    - generic [aria-hidden] [ref=f2e160]: 
+                    - text:  
+                - columnheader "Updated by" [ref=f2e161] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e162]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Editable" [ref=f2e177] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e178]: 
+                  - text: 
+                  - generic:    
+                - columnheader "Archived date" [ref=f2e180] [cursor=pointer]:
+                  - generic [aria-hidden] [ref=f2e181]: 
+                  - text: 
+                  - generic:    
+            - row [ref=f2e164]:
+              - columnheader "Actions" [ref=f2e165] [cursor=pointer]
+            - rowgroup [ref=f2e183]:
+              - row "Press SPACE to select this row." [ref=f2e184]:
+                - gridcell [ref=f2e185]:
+                  - button "Date Range Filter 180926054402" [ref=f2e186] [cursor=pointer]
+                - gridcell "Case Form" [ref=f2e187]
+                - gridcell "18/09/2026" [ref=f2e188]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e189]
+                - gridcell "18/09/2026" [ref=f2e190]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e191]
+                - gridcell "No" [ref=f2e192]
+                - gridcell [ref=f2e193]
+                - gridcell "Yes" [ref=f2e194]
+              - row "Press SPACE to select this row." [ref=f2e195]:
+                - gridcell [ref=f2e196]:
+                  - button "AutoTest Consultation Form" [ref=f2e197] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e198]
+                - gridcell "18/09/2026" [ref=f2e199]
+                - gridcell [ref=f2e200]
+                - gridcell "18/09/2026" [ref=f2e201]
+                - gridcell [ref=f2e202]
+                - gridcell "Yes" [ref=f2e203]
+                - gridcell "18/09/2026" [ref=f2e204]
+                - gridcell "Yes" [ref=f2e205]
+              - row "Press SPACE to select this row." [ref=f2e206]:
+                - gridcell [ref=f2e207]:
+                  - button "AutoTest Consultation Form" [ref=f2e208] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e209]
+                - gridcell "17/09/2026" [ref=f2e210]
+                - gridcell [ref=f2e211]
+                - gridcell "17/09/2026" [ref=f2e212]
+                - gridcell [ref=f2e213]
+                - gridcell "Yes" [ref=f2e214]
+                - gridcell "17/09/2026" [ref=f2e215]
+                - gridcell "Yes" [ref=f2e216]
+              - row "Press SPACE to select this row." [ref=f2e217]:
+                - gridcell [ref=f2e218]:
+                  - button "Date Range Filter 170926053809" [ref=f2e219] [cursor=pointer]
+                - gridcell "Case Form" [ref=f2e220]
+                - gridcell "17/09/2026" [ref=f2e221]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e222]
+                - gridcell "17/09/2026" [ref=f2e223]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e224]
+                - gridcell "No" [ref=f2e225]
+                - gridcell [ref=f2e226]
+                - gridcell "Yes" [ref=f2e227]
+              - row "Press SPACE to select this row." [ref=f2e228]:
+                - gridcell [ref=f2e229]:
+                  - button "AutoTest Consultation Form" [ref=f2e230] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e231]
+                - gridcell "17/09/2026" [ref=f2e232]
+                - gridcell [ref=f2e233]
+                - gridcell "17/09/2026" [ref=f2e234]
+                - gridcell [ref=f2e235]
+                - gridcell "Yes" [ref=f2e236]
+                - gridcell "17/09/2026" [ref=f2e237]
+                - gridcell "Yes" [ref=f2e238]
+              - row "Press SPACE to select this row." [ref=f2e239]:
+                - gridcell [ref=f2e240]:
+                  - button "AutoTest Consultation Form" [ref=f2e241] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e242]
+                - gridcell "08/09/2026" [ref=f2e243]
+                - gridcell [ref=f2e244]
+                - gridcell "16/09/2026" [ref=f2e245]
+                - gridcell [ref=f2e246]
+                - gridcell "Yes" [ref=f2e247]
+                - gridcell "16/09/2026" [ref=f2e248]
+                - gridcell "Yes" [ref=f2e249]
+              - row "Press SPACE to select this row." [ref=f2e250]:
+                - gridcell [ref=f2e251]:
+                  - button "AutoTest Consultation Form" [ref=f2e252] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e253]
+                - gridcell "16/09/2026" [ref=f2e254]
+                - gridcell [ref=f2e255]
+                - gridcell "16/09/2026" [ref=f2e256]
+                - gridcell [ref=f2e257]
+                - gridcell "No" [ref=f2e258]
+                - gridcell [ref=f2e259]
+                - gridcell "Yes" [ref=f2e260]
+              - row "Press SPACE to select this row." [ref=f2e261]:
+                - gridcell [ref=f2e262]:
+                  - button "AutoTest Consultation Form" [ref=f2e263] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e264]
+                - gridcell "14/09/2026" [ref=f2e265]
+                - gridcell [ref=f2e266]
+                - gridcell "14/09/2026" [ref=f2e267]
+                - gridcell [ref=f2e268]
+                - gridcell "Yes" [ref=f2e269]
+                - gridcell "14/09/2026" [ref=f2e270]
+                - gridcell "Yes" [ref=f2e271]
+              - row "Press SPACE to select this row." [ref=f2e272]:
+                - gridcell [ref=f2e273]:
+                  - button "Date Range Filter 140926055433" [ref=f2e274] [cursor=pointer]
+                - gridcell "Case Form" [ref=f2e275]
+                - gridcell "14/09/2026" [ref=f2e276]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e277]
+                - gridcell "14/09/2026" [ref=f2e278]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e279]
+                - gridcell "No" [ref=f2e280]
+                - gridcell [ref=f2e281]
+                - gridcell "Yes" [ref=f2e282]
+              - row "Press SPACE to select this row." [ref=f2e283]:
+                - gridcell [ref=f2e284]:
+                  - button "AutoTest Consultation Form" [ref=f2e285] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e286]
+                - gridcell "14/09/2026" [ref=f2e287]
+                - gridcell [ref=f2e288]
+                - gridcell "14/09/2026" [ref=f2e289]
+                - gridcell [ref=f2e290]
+                - gridcell "Yes" [ref=f2e291]
+                - gridcell "14/09/2026" [ref=f2e292]
+                - gridcell "Yes" [ref=f2e293]
+              - row "Press SPACE to select this row." [ref=f2e294]:
+                - gridcell [ref=f2e295]:
+                  - button "Dodgy Blood Pressure Test" [ref=f2e296] [cursor=pointer]
+                - gridcell "Health Form" [ref=f2e297]
+                - gridcell "11/09/2026" [ref=f2e298]
+                - gridcell "Beth Green" [ref=f2e299]
+                - gridcell "11/09/2026" [ref=f2e300]
+                - gridcell "Beth Green" [ref=f2e301]
+                - gridcell "No" [ref=f2e302]
+                - gridcell [ref=f2e303]
+                - gridcell "Yes" [ref=f2e304]
+              - row "Press SPACE to select this row." [ref=f2e305]:
+                - gridcell [ref=f2e306]:
+                  - button "AutoTest Consultation Form" [ref=f2e307] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e308]
+                - gridcell "11/09/2026" [ref=f2e309]
+                - gridcell [ref=f2e310]
+                - gridcell "11/09/2026" [ref=f2e311]
+                - gridcell [ref=f2e312]
+                - gridcell "Yes" [ref=f2e313]
+                - gridcell "11/09/2026" [ref=f2e314]
+                - gridcell "Yes" [ref=f2e315]
+              - row "Press SPACE to select this row." [ref=f2e316]:
+                - gridcell [ref=f2e317]:
+                  - button "AutoTest Consultation Form" [ref=f2e318] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e319]
+                - gridcell "11/09/2026" [ref=f2e320]
+                - gridcell [ref=f2e321]
+                - gridcell "11/09/2026" [ref=f2e322]
+                - gridcell [ref=f2e323]
+                - gridcell "No" [ref=f2e324]
+                - gridcell [ref=f2e325]
+                - gridcell "Yes" [ref=f2e326]
+              - row "Press SPACE to select this row." [ref=f2e327]:
+                - gridcell [ref=f2e328]:
+                  - button "Date Range Filter 110926052134" [ref=f2e329] [cursor=pointer]
+                - gridcell "Case Form" [ref=f2e330]
+                - gridcell "11/09/2026" [ref=f2e331]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e332]
+                - gridcell "11/09/2026" [ref=f2e333]
+                - gridcell "Johnny (2255) Bravo" [ref=f2e334]
+                - gridcell "No" [ref=f2e335]
+                - gridcell [ref=f2e336]
+                - gridcell "Yes" [ref=f2e337]
+              - row "Press SPACE to select this row." [ref=f2e338]:
+                - gridcell [ref=f2e339]:
+                  - button "AutoTest Consultation Form" [ref=f2e340] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e341]
+                - gridcell "08/09/2026" [ref=f2e342]
+                - gridcell [ref=f2e343]
+                - gridcell "11/09/2026" [ref=f2e344]
+                - gridcell [ref=f2e345]
+                - gridcell "Yes" [ref=f2e346]
+                - gridcell "11/09/2026" [ref=f2e347]
+                - gridcell "Yes" [ref=f2e348]
+              - row "Press SPACE to select this row." [ref=f2e349]:
+                - gridcell [ref=f2e350]:
+                  - button "AutoTest Consultation Form" [ref=f2e351] [cursor=pointer]
+                - gridcell "Consultation" [ref=f2e352]
+                - gridcell "10/09/2026" [ref=f2e353]
+                - gridcell [ref=f2e354]
+                - gridcell "10/09/2026" [ref=f2e355]
+                - gridcell [ref=f2e356]
+                - gridcell "Yes" [ref=f2e357]
+                - gridcell "10/09/2026" [ref=f2e358]
+                - gridcell "Yes" [ref=f2e359]
+            - rowgroup [ref=f2e360]:
+              - row "Press SPACE to select this row." [ref=f2e361]:
+                - gridcell [ref=f2e362]:
+                  - button [ref=f2e364] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e367]:
+                - gridcell [ref=f2e368]:
+                  - button [ref=f2e370] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e373]:
+                - gridcell [ref=f2e374]:
+                  - button [ref=f2e376] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e379]:
+                - gridcell [ref=f2e380]:
+                  - button [ref=f2e382] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e385]:
+                - gridcell [ref=f2e386]:
+                  - button [ref=f2e388] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e391]:
+                - gridcell [ref=f2e392]:
+                  - button [ref=f2e394] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e397]:
+                - gridcell [ref=f2e398]:
+                  - button [ref=f2e400] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e403]:
+                - gridcell [ref=f2e404]:
+                  - button [ref=f2e406] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e409]:
+                - gridcell [ref=f2e410]:
+                  - button [ref=f2e412] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e415]:
+                - gridcell [ref=f2e416]:
+                  - button [ref=f2e418] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e421]:
+                - gridcell [ref=f2e422]:
+                  - button [ref=f2e424] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e427]:
+                - gridcell [ref=f2e428]:
+                  - button [ref=f2e430] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e433]:
+                - gridcell [ref=f2e434]:
+                  - button [ref=f2e436] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e439]:
+                - gridcell [ref=f2e440]:
+                  - button [ref=f2e442] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e445]:
+                - gridcell [ref=f2e446]:
+                  - button [ref=f2e448] [cursor=pointer]
+              - row "Press SPACE to select this row." [ref=f2e451]:
+                - gridcell [ref=f2e452]:
+                  - button [ref=f2e454] [cursor=pointer]
+          - text:    
+  - complementary [ref=f2e458]:
+    - generic [ref=f2e460]:
+      - generic [ref=f2e461]:
+        - heading "Filters" [level=2] [ref=f2e462]
+        - button "Clear all" [ref=f2e463] [cursor=pointer]
+      - generic [ref=f2e464]:
+        - generic [ref=f2e465]: Date Range
+        - generic [ref=f2e468] [cursor=pointer]:
+          - textbox [ref=f2e469]
+          - img "calendar" [ref=f2e471]
+      - generic [ref=f2e472]:
+        - generic [ref=f2e473]: Type
+        - generic [ref=f2e476] [cursor=pointer]:
+          - generic [ref=f2e477]:
+            - textbox
+          - generic [ref=f2e479]: "-"
+          - button "-" [ref=f2e480]
+      - generic [ref=f2e483]:
+        - button "Cancel" [ref=f2e484] [cursor=pointer]
+        - button "Save" [ref=f2e485] [cursor=pointer]

@@ -1,0 +1,640 @@
+- generic [active] [ref=f206e1]:
+  - banner [ref=f206e8]:
+    - generic [ref=f206e10]:
+      - generic [ref=f206e11]:
+        - generic [ref=f206e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f206e16]
+        - heading "Communications Hub" [level=1] [ref=f206e17]
+      - generic [ref=f206e18]:
+        - generic [ref=f206e375]:
+          - generic [ref=f206e376]: 
+          - textbox "Search Patients..." [ref=f206e378]
+          - text: 
+        - text:            
+      - generic [ref=f206e19]:
+        - list [ref=f206e21]:
+          - listitem [ref=f206e22]:
+            - generic [ref=f206e23]: 
+        - generic [ref=f206e380] [cursor=pointer]:
+          - generic [ref=f206e381]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f206e382]: 
+          - generic [ref=f206e383]: "Your Home Organisation:"
+        - generic [ref=f206e24]: 
+  - navigation [ref=f206e28]:
+    - generic [ref=f206e29]:
+      - img "Blinx Company Logo" [ref=f206e31]
+      - generic [ref=f206e32] [cursor=pointer]
+    - generic [ref=f206e33]:
+      - list [ref=f206e36]:
+        - listitem [ref=f206e37]:
+          - link "Home" [ref=f206e39] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f206e40]:
+          - generic [ref=f206e41] [cursor=pointer]:
+            - link "Analytics" [ref=f206e42]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f206e43]: 
+        - listitem [ref=f206e44]:
+          - generic [ref=f206e45] [cursor=pointer]:
+            - link "Comms Hub" [ref=f206e46]:
+              - /url: /commshub/
+            - generic [ref=f206e47]: 
+        - listitem [ref=f206e48]:
+          - generic [ref=f206e49] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f206e50]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f206e51]: 
+        - listitem [ref=f206e52]:
+          - link "Patient Search" [ref=f206e54] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f206e55]:
+          - generic [ref=f206e56] [cursor=pointer]:
+            - link "Health Forms" [ref=f206e57]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f206e58]: 
+        - listitem [ref=f206e59]:
+          - link "Care Navigator" [ref=f206e61] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f206e62]:
+          - link "Configuration" [ref=f206e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f206e65]:
+        - listitem [ref=f206e66]:
+          - link "Dashboard" [ref=f206e68] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f206e72]:
+          - link "Settings" [ref=f206e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f206e75]:
+        - listitem [ref=f206e76]:
+          - link "User Management" [ref=f206e78] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f206e79]:
+          - generic [ref=f206e80] [cursor=pointer]: Log Out
+        - listitem [ref=f206e82]:
+          - generic [ref=f206e83]: Version 1.0
+  - generic [ref=f206e87]:
+    - generic [ref=f206e88]:
+      - generic [ref=f206e89]: Notifications
+      - generic [ref=f206e90] [cursor=pointer]:
+        - generic [ref=f206e91]: Clear All
+        - generic [ref=f206e92]: 
+    - generic [ref=f206e94]:
+      - generic [ref=f206e95] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f206e96]: "0"
+      - generic [ref=f206e97] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f206e98]: "0"
+      - generic [ref=f206e99] [cursor=pointer]:
+        - text: All
+        - generic [ref=f206e100]: "0"
+    - generic [ref=f206e386]:
+      - generic [ref=f206e387]: You are up to date
+      - generic [ref=f206e388]: You currently have no notifcations to review
+  - generic [ref=f206e105]:
+    - generic [ref=f206e110]:
+      - generic [ref=f206e111]: 
+      - generic [ref=f206e389]:
+        - generic [ref=f206e390] [cursor=pointer]: Campaign 
+        - text: ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔
+    - generic [ref=f206e117]:
+      - textbox "Search by Patient..." [ref=f206e118]
+      - generic [ref=f206e119]: 
+    - generic [ref=f206e122]:
+      - button "Reset" [ref=f206e125] [cursor=pointer]
+      - button "Filter" [disabled] [ref=f206e128]
+  - generic [ref=f206e131]:
+    - generic [ref=f206e132]:
+      - generic [ref=f206e133]:
+        - link "" [ref=f206e134] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f206e136]: •
+        - link "Comms Hub" [ref=f206e137] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f206e138]: •
+        - generic [ref=f206e139]: Analytics
+      - generic [ref=f206e142] [cursor=pointer]:
+        - generic [ref=f206e143]: 
+        - textbox [ref=f206e145]: 01/09/2026 - 21/09/2026
+        - generic [ref=f206e146]: 
+      - generic [ref=f206e392] [cursor=pointer]:
+        - generic [ref=f206e393]: General Practice (Blinx Demo Site) (YGMQJ)
+        - generic [ref=f206e394]: 
+        - generic [ref=f206e395]: "Viewing data for:"
+        - generic [ref=f206e795]:
+          - generic [ref=f206e796]:
+            - generic [ref=f206e396]:
+              - generic [ref=f206e397]: 
+              - generic [ref=f206e398]: Select All (2)
+            - generic [ref=f206e400]:
+              - generic [ref=f206e401]: 
+              - generic [ref=f206e403]: General Practice (Blinx Demo Site) (YGMQJ)
+            - generic [ref=f206e405]:
+              - generic [ref=f206e406]: 
+              - generic [ref=f206e407]: PC24 Urgent Care (Y05825)
+          - generic [ref=f206e408]: Apply
+    - generic [ref=f206e148]: Analytics update every 5 minutes for accuracy and performance — recent changes may not be visible yet.
+    - generic [ref=f206e150]:
+      - generic [ref=f206e156]:
+        - generic [ref=f206e158]:
+          - generic [ref=f206e161]:
+            - generic [ref=f206e162]: 
+            - text: Email
+          - generic [ref=f206e164]:
+            - generic [ref=f206e165]:
+              - generic [ref=f206e166]: Total Sent
+              - generic [ref=f206e169]: "39"
+            - generic [ref=f206e172]:
+              - generic [ref=f206e173]: Delivered
+              - generic [ref=f206e176]: "24"
+            - generic [ref=f206e179]:
+              - generic [ref=f206e180]: Not Delivered
+              - generic [ref=f206e183]: "0"
+            - generic [ref=f206e186]:
+              - generic [ref=f206e187]: Booking Links & Health Forms
+              - generic [ref=f206e190]: "20"
+            - generic [ref=f206e193]:
+              - generic [ref=f206e194]: Confirmations
+              - generic [ref=f206e197]: "6"
+            - generic [ref=f206e200]:
+              - generic [ref=f206e201]: Reminders
+              - generic [ref=f206e204]: "1"
+            - generic [ref=f206e207]:
+              - generic [ref=f206e208]: General news
+              - generic [ref=f206e211]: "9"
+            - generic [ref=f206e214]:
+              - generic [ref=f206e215]: Guidance & Advice
+              - generic [ref=f206e218]: "3"
+        - generic [ref=f206e222]:
+          - generic [ref=f206e225]:
+            - generic [ref=f206e226]: 
+            - text: SMS
+          - generic [ref=f206e228]:
+            - generic [ref=f206e229]:
+              - generic [ref=f206e230]: Total Sent
+              - generic [ref=f206e233]: "84"
+            - generic [ref=f206e236]:
+              - generic [ref=f206e237]: Delivered
+              - generic [ref=f206e240]: "95"
+            - generic [ref=f206e243]:
+              - generic [ref=f206e244]: Not Delivered
+              - generic [ref=f206e247]: "0"
+            - generic [ref=f206e250]:
+              - generic [ref=f206e251]: Booking Links & Health Forms
+              - generic [ref=f206e254]: "63"
+            - generic [ref=f206e257]:
+              - generic [ref=f206e258]: Confirmations
+              - generic [ref=f206e261]: "19"
+            - generic [ref=f206e264]:
+              - generic [ref=f206e265]: Reminders
+              - generic [ref=f206e268]: "1"
+            - generic [ref=f206e271]:
+              - generic [ref=f206e272]: General news
+              - generic [ref=f206e275]: "0"
+            - generic [ref=f206e278]:
+              - generic [ref=f206e279]: Guidance & Advice
+              - generic [ref=f206e282]: "1"
+      - generic [ref=f206e292]:
+        - generic [ref=f206e295]:
+          - generic [ref=f206e296]: 
+          - text: Conversion
+        - generic [ref=f206e298]:
+          - generic [ref=f206e299]:
+            - generic [ref=f206e301]:
+              - generic [ref=f206e302]: 
+              - generic [ref=f206e303]: Patients Engaged
+            - generic [ref=f206e304]: "4"
+          - generic [ref=f206e307]:
+            - generic [ref=f206e309]:
+              - generic [ref=f206e310]: 
+              - generic [ref=f206e311]: Invite Sends
+            - generic [ref=f206e312]: "60"
+          - generic [ref=f206e315]:
+            - generic [ref=f206e317]:
+              - generic [ref=f206e318]: 
+              - generic [ref=f206e319]: Email Invites Sent
+            - generic [ref=f206e320]: "16"
+          - generic [ref=f206e323]:
+            - generic [ref=f206e325]:
+              - generic [ref=f206e326]: 
+              - generic [ref=f206e327]: SMS Invites Sent
+            - generic [ref=f206e328]: "44"
+          - generic [ref=f206e331]:
+            - generic [ref=f206e333]:
+              - generic [ref=f206e334]: 
+              - generic [ref=f206e335]: Appointments Booked
+            - generic [ref=f206e336]: "19"
+          - generic [ref=f206e339]:
+            - generic [ref=f206e341]:
+              - generic [ref=f206e342]: 
+              - generic [ref=f206e343]: Campaign Conversion Rate
+            - generic [ref=f206e344]: 31.67%
+    - generic [ref=f206e350]:
+      - generic:
+        - generic:     
+        - text:  
+      - generic [ref=f206e352]:
+        - generic [ref=f206e353]:
+          - generic [ref=f206e354]: 
+          - generic [ref=f206e359]:
+            - text:   
+            - button " Reset Column Widths" [ref=f206e361] [cursor=pointer]:
+              - generic [ref=f206e362]: 
+              - text: Reset Column Widths
+            - button " Show All Columns" [ref=f206e364] [cursor=pointer]:
+              - generic [ref=f206e365]: 
+              - text: Show All Columns
+            - button " Clear Filters" [ref=f206e367] [cursor=pointer]:
+              - generic [ref=f206e368]: 
+              - text: Clear Filters
+            - button " Export to CSV" [ref=f206e370] [cursor=pointer]:
+              - generic [ref=f206e371]: 
+              - text: Export to CSV
+        - generic [ref=f206e411]:
+          - generic:  
+          - generic [ref=f206e412]:
+            - grid [ref=f206e413]:
+              - row [ref=f206e414]:
+                - text: 
+                - generic [ref=f206e416] [cursor=pointer]: 
+                - columnheader "Campaign Name" [ref=f206e417] [cursor=pointer]
+                - text:     
+                - generic [ref=f206e419] [cursor=pointer]: 
+                - columnheader "Campaign Sent Date" [ref=f206e420] [cursor=pointer]
+                - text:    
+              - rowgroup [ref=f206e421]:
+                - row [ref=f206e422]:
+                  - text: 
+                  - generic [ref=f206e424] [cursor=pointer]: 
+                  - columnheader "Patient Engagements" [ref=f206e425] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e427] [cursor=pointer]: 
+                  - columnheader "Total Emails Sent" [ref=f206e428] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e430] [cursor=pointer]: 
+                  - columnheader "Total SMSs Sent" [ref=f206e431] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e433] [cursor=pointer]: 
+                  - columnheader "Initial Emails Sent" [ref=f206e434] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e436] [cursor=pointer]: 
+                  - columnheader "Confirmation Emails Sent" [ref=f206e437] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e439] [cursor=pointer]: 
+                  - columnheader "Reminder Emails Sent" [ref=f206e440] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e442] [cursor=pointer]: 
+                  - columnheader "Opened Emails" [ref=f206e443] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e445] [cursor=pointer]: 
+                  - columnheader "Bounced Emails" [ref=f206e446] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e448] [cursor=pointer]: 
+                  - columnheader "Initial SMS's Sent" [ref=f206e449] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e451] [cursor=pointer]: 
+                  - columnheader "Confirmation SMSs Sent" [ref=f206e452] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f206e454] [cursor=pointer]: 
+                  - columnheader "Reminder SMSs Sent" [ref=f206e455] [cursor=pointer]
+                  - text:    
+              - row [ref=f206e456]:
+                - gridcell "Testing for Blinx PACO CONNECT" [ref=f206e457] [cursor=pointer]
+                - gridcell "18/09/2026 15:05" [ref=f206e458]
+              - row [ref=f206e459]:
+                - gridcell "PAC2-7490-observationsMV" [ref=f206e460] [cursor=pointer]
+                - gridcell "18/09/2026 14:13" [ref=f206e461]
+              - row [ref=f206e462]:
+                - gridcell "PAC2-4790-Medication Analyser" [ref=f206e463] [cursor=pointer]
+                - gridcell "18/09/2026 11:22" [ref=f206e464]
+              - row [ref=f206e465]:
+                - gridcell "New Campaign Video Demo PACO 2668" [ref=f206e466] [cursor=pointer]
+                - gridcell "18/09/2026 11:07" [ref=f206e467]
+              - row [ref=f206e468]:
+                - gridcell "PF Triage Request Sept 2026" [ref=f206e469] [cursor=pointer]
+                - gridcell "16/09/2026 09:39" [ref=f206e470]
+              - row [ref=f206e471]:
+                - gridcell "PF Test QS create convert to Recurring Campaign" [ref=f206e472] [cursor=pointer]
+                - gridcell "11/09/2026 12:17" [ref=f206e473]
+              - row [ref=f206e474]:
+                - gridcell "Simple EMIS Booking - Same Day GP" [ref=f206e475] [cursor=pointer]
+                - gridcell "10/09/2026 09:36" [ref=f206e476]
+              - row [ref=f206e477]:
+                - gridcell "Health Form Quick Send" [ref=f206e478] [cursor=pointer]
+                - gridcell "09/09/2026 14:19" [ref=f206e479]
+              - row [ref=f206e480]:
+                - gridcell "Parent Child Beth 730" [ref=f206e481] [cursor=pointer]
+                - gridcell "08/09/2026 13:44" [ref=f206e482]
+              - row [ref=f206e483]:
+                - gridcell "Free text SMS" [ref=f206e484] [cursor=pointer]
+                - gridcell "08/09/2026 13:22" [ref=f206e485]
+              - row [ref=f206e486]:
+                - gridcell "DFD General Consultation" [ref=f206e487] [cursor=pointer]
+                - gridcell "08/09/2026 12:14" [ref=f206e488]
+              - row [ref=f206e489]:
+                - gridcell "Hillingdon Extended Access Hub Nurse" [ref=f206e490] [cursor=pointer]
+                - gridcell "08/09/2026 12:07" [ref=f206e491]
+              - row [ref=f206e492]:
+                - gridcell "DF pac2-7224 test" [ref=f206e493] [cursor=pointer]
+                - gridcell "07/09/2026 13:40" [ref=f206e494]
+              - row [ref=f206e495]:
+                - gridcell "e00584" [ref=f206e496] [cursor=pointer]
+                - gridcell "06/09/2026 11:41" [ref=f206e497]
+              - row [ref=f206e498]:
+                - gridcell "Connect SMS Only" [ref=f206e499] [cursor=pointer]
+                - gridcell "05/09/2026 17:41" [ref=f206e500]
+              - row [ref=f206e501]:
+                - gridcell "Pac2-7224 test" [ref=f206e502] [cursor=pointer]
+                - gridcell "04/09/2026 15:35" [ref=f206e503]
+              - row [ref=f206e504]:
+                - gridcell "Home Visit FJ" [ref=f206e505] [cursor=pointer]
+                - gridcell "04/09/2026 14:54" [ref=f206e506]
+              - row [ref=f206e507]:
+                - gridcell "Test (updated due to duplicate name) updated 2" [ref=f206e508] [cursor=pointer]
+                - gridcell "03/09/2026 10:55" [ref=f206e509]
+              - row [ref=f206e510]:
+                - gridcell "No Availability (0 Appts)" [ref=f206e511] [cursor=pointer]
+                - gridcell "18/09/2026 23:19" [ref=f206e512]
+              - rowgroup [ref=f206e513]:
+                - row [ref=f206e514]:
+                  - gridcell "1" [ref=f206e515]
+                  - gridcell "0" [ref=f206e516]
+                  - gridcell "1" [ref=f206e517]
+                  - gridcell "0" [ref=f206e518]
+                  - gridcell "0" [ref=f206e519]
+                  - gridcell "0" [ref=f206e520]
+                  - gridcell "0" [ref=f206e521]
+                  - gridcell "0" [ref=f206e522]
+                  - gridcell "1" [ref=f206e523]
+                  - gridcell "0" [ref=f206e524]
+                  - gridcell "0" [ref=f206e525]
+                - row [ref=f206e526]:
+                  - gridcell "2" [ref=f206e527]
+                  - gridcell "0" [ref=f206e528]
+                  - gridcell "0" [ref=f206e529]
+                  - gridcell "0" [ref=f206e530]
+                  - gridcell "0" [ref=f206e531]
+                  - gridcell "0" [ref=f206e532]
+                  - gridcell "0" [ref=f206e533]
+                  - gridcell "0" [ref=f206e534]
+                  - gridcell "0" [ref=f206e535]
+                  - gridcell "0" [ref=f206e536]
+                  - gridcell "0" [ref=f206e537]
+                - row [ref=f206e538]:
+                  - gridcell "16" [ref=f206e539]
+                  - gridcell "9" [ref=f206e540]
+                  - gridcell "0" [ref=f206e541]
+                  - gridcell "9" [ref=f206e542]
+                  - gridcell "0" [ref=f206e543]
+                  - gridcell "0" [ref=f206e544]
+                  - gridcell "4" [ref=f206e545]
+                  - gridcell "0" [ref=f206e546]
+                  - gridcell "0" [ref=f206e547]
+                  - gridcell "0" [ref=f206e548]
+                  - gridcell "0" [ref=f206e549]
+                - row [ref=f206e550]:
+                  - gridcell "1" [ref=f206e551]
+                  - gridcell "0" [ref=f206e552]
+                  - gridcell "0" [ref=f206e553]
+                  - gridcell "0" [ref=f206e554]
+                  - gridcell "0" [ref=f206e555]
+                  - gridcell "0" [ref=f206e556]
+                  - gridcell "1" [ref=f206e557]
+                  - gridcell "0" [ref=f206e558]
+                  - gridcell "0" [ref=f206e559]
+                  - gridcell "0" [ref=f206e560]
+                  - gridcell "0" [ref=f206e561]
+                - row [ref=f206e562]:
+                  - gridcell "1" [ref=f206e563]
+                  - gridcell "2" [ref=f206e564]
+                  - gridcell "1" [ref=f206e565]
+                  - gridcell "2" [ref=f206e566]
+                  - gridcell "0" [ref=f206e567]
+                  - gridcell "0" [ref=f206e568]
+                  - gridcell "5" [ref=f206e569]
+                  - gridcell "0" [ref=f206e570]
+                  - gridcell "1" [ref=f206e571]
+                  - gridcell "0" [ref=f206e572]
+                  - gridcell "0" [ref=f206e573]
+                - row [ref=f206e574]:
+                  - gridcell "1" [ref=f206e575]
+                  - gridcell "0" [ref=f206e576]
+                  - gridcell "1" [ref=f206e577]
+                  - gridcell "0" [ref=f206e578]
+                  - gridcell "0" [ref=f206e579]
+                  - gridcell "0" [ref=f206e580]
+                  - gridcell "0" [ref=f206e581]
+                  - gridcell "0" [ref=f206e582]
+                  - gridcell "1" [ref=f206e583]
+                  - gridcell "0" [ref=f206e584]
+                  - gridcell "0" [ref=f206e585]
+                - row [ref=f206e586]:
+                  - gridcell "1" [ref=f206e587]
+                  - gridcell "12" [ref=f206e588]
+                  - gridcell "9" [ref=f206e589]
+                  - gridcell "6" [ref=f206e590]
+                  - gridcell "6" [ref=f206e591]
+                  - gridcell "0" [ref=f206e592]
+                  - gridcell "9" [ref=f206e593]
+                  - gridcell "0" [ref=f206e594]
+                  - gridcell "0" [ref=f206e595]
+                  - gridcell "9" [ref=f206e596]
+                  - gridcell "0" [ref=f206e597]
+                - row [ref=f206e598]:
+                  - gridcell "1" [ref=f206e599]
+                  - gridcell "2" [ref=f206e600]
+                  - gridcell "3" [ref=f206e601]
+                  - gridcell "2" [ref=f206e602]
+                  - gridcell "0" [ref=f206e603]
+                  - gridcell "0" [ref=f206e604]
+                  - gridcell "1" [ref=f206e605]
+                  - gridcell "0" [ref=f206e606]
+                  - gridcell "3" [ref=f206e607]
+                  - gridcell "0" [ref=f206e608]
+                  - gridcell "0" [ref=f206e609]
+                - row [ref=f206e610]:
+                  - gridcell "1" [ref=f206e611]
+                  - gridcell "0" [ref=f206e612]
+                  - gridcell "2" [ref=f206e613]
+                  - gridcell "0" [ref=f206e614]
+                  - gridcell "0" [ref=f206e615]
+                  - gridcell "0" [ref=f206e616]
+                  - gridcell "0" [ref=f206e617]
+                  - gridcell "0" [ref=f206e618]
+                  - gridcell "2" [ref=f206e619]
+                  - gridcell "0" [ref=f206e620]
+                  - gridcell "0" [ref=f206e621]
+                - row [ref=f206e622]:
+                  - gridcell "1" [ref=f206e623]
+                  - gridcell "0" [ref=f206e624]
+                  - gridcell "1" [ref=f206e625]
+                  - gridcell "0" [ref=f206e626]
+                  - gridcell "0" [ref=f206e627]
+                  - gridcell "0" [ref=f206e628]
+                  - gridcell "0" [ref=f206e629]
+                  - gridcell "0" [ref=f206e630]
+                  - gridcell "1" [ref=f206e631]
+                  - gridcell "0" [ref=f206e632]
+                  - gridcell "0" [ref=f206e633]
+                - row [ref=f206e634]:
+                  - gridcell "2" [ref=f206e635]
+                  - gridcell "2" [ref=f206e636]
+                  - gridcell "3" [ref=f206e637]
+                  - gridcell "2" [ref=f206e638]
+                  - gridcell "0" [ref=f206e639]
+                  - gridcell "0" [ref=f206e640]
+                  - gridcell "3" [ref=f206e641]
+                  - gridcell "0" [ref=f206e642]
+                  - gridcell "3" [ref=f206e643]
+                  - gridcell "0" [ref=f206e644]
+                  - gridcell "0" [ref=f206e645]
+                - row [ref=f206e646]:
+                  - gridcell "1" [ref=f206e647]
+                  - gridcell "1" [ref=f206e648]
+                  - gridcell "2" [ref=f206e649]
+                  - gridcell "0" [ref=f206e650]
+                  - gridcell "0" [ref=f206e651]
+                  - gridcell "1" [ref=f206e652]
+                  - gridcell "1" [ref=f206e653]
+                  - gridcell "0" [ref=f206e654]
+                  - gridcell "0" [ref=f206e655]
+                  - gridcell "1" [ref=f206e656]
+                  - gridcell "1" [ref=f206e657]
+                - row [ref=f206e658]:
+                  - gridcell "2" [ref=f206e659]
+                  - gridcell "3" [ref=f206e660]
+                  - gridcell "0" [ref=f206e661]
+                  - gridcell "3" [ref=f206e662]
+                  - gridcell "0" [ref=f206e663]
+                  - gridcell "0" [ref=f206e664]
+                  - gridcell "1" [ref=f206e665]
+                  - gridcell "0" [ref=f206e666]
+                  - gridcell "0" [ref=f206e667]
+                  - gridcell "0" [ref=f206e668]
+                  - gridcell "0" [ref=f206e669]
+                - row [ref=f206e670]:
+                  - gridcell "1" [ref=f206e671]
+                  - gridcell "0" [ref=f206e672]
+                  - gridcell "2" [ref=f206e673]
+                  - gridcell "0" [ref=f206e674]
+                  - gridcell "0" [ref=f206e675]
+                  - gridcell "0" [ref=f206e676]
+                  - gridcell "0" [ref=f206e677]
+                  - gridcell "0" [ref=f206e678]
+                  - gridcell "2" [ref=f206e679]
+                  - gridcell "0" [ref=f206e680]
+                  - gridcell "0" [ref=f206e681]
+                - row [ref=f206e682]:
+                  - gridcell "1" [ref=f206e683]
+                  - gridcell "0" [ref=f206e684]
+                  - gridcell "1" [ref=f206e685]
+                  - gridcell "0" [ref=f206e686]
+                  - gridcell "0" [ref=f206e687]
+                  - gridcell "0" [ref=f206e688]
+                  - gridcell "0" [ref=f206e689]
+                  - gridcell "0" [ref=f206e690]
+                  - gridcell "0" [ref=f206e691]
+                  - gridcell "1" [ref=f206e692]
+                  - gridcell "0" [ref=f206e693]
+                - row [ref=f206e694]:
+                  - gridcell "1" [ref=f206e695]
+                  - gridcell "0" [ref=f206e696]
+                  - gridcell "0" [ref=f206e697]
+                  - gridcell "0" [ref=f206e698]
+                  - gridcell "0" [ref=f206e699]
+                  - gridcell "0" [ref=f206e700]
+                  - gridcell "0" [ref=f206e701]
+                  - gridcell "0" [ref=f206e702]
+                  - gridcell "0" [ref=f206e703]
+                  - gridcell "0" [ref=f206e704]
+                  - gridcell "0" [ref=f206e705]
+                - row [ref=f206e706]:
+                  - gridcell "2" [ref=f206e707]
+                  - gridcell "0" [ref=f206e708]
+                  - gridcell "8" [ref=f206e709]
+                  - gridcell "0" [ref=f206e710]
+                  - gridcell "0" [ref=f206e711]
+                  - gridcell "0" [ref=f206e712]
+                  - gridcell "0" [ref=f206e713]
+                  - gridcell "0" [ref=f206e714]
+                  - gridcell "4" [ref=f206e715]
+                  - gridcell "4" [ref=f206e716]
+                  - gridcell "0" [ref=f206e717]
+                - row [ref=f206e718]:
+                  - gridcell "2" [ref=f206e719]
+                  - gridcell "1" [ref=f206e720]
+                  - gridcell "1" [ref=f206e721]
+                  - gridcell "1" [ref=f206e722]
+                  - gridcell "0" [ref=f206e723]
+                  - gridcell "0" [ref=f206e724]
+                  - gridcell "1" [ref=f206e725]
+                  - gridcell "0" [ref=f206e726]
+                  - gridcell "1" [ref=f206e727]
+                  - gridcell "0" [ref=f206e728]
+                  - gridcell "0" [ref=f206e729]
+                - row [ref=f206e730]:
+                  - gridcell "1" [ref=f206e731]
+                  - gridcell "0" [ref=f206e732]
+                  - gridcell "9" [ref=f206e733]
+                  - gridcell "0" [ref=f206e734]
+                  - gridcell "0" [ref=f206e735]
+                  - gridcell "0" [ref=f206e736]
+                  - gridcell "0" [ref=f206e737]
+                  - gridcell "0" [ref=f206e738]
+                  - gridcell "9" [ref=f206e739]
+                  - gridcell "0" [ref=f206e740]
+                  - gridcell "0" [ref=f206e741]
+              - row [ref=f206e742]:
+                - gridcell "Total" [ref=f206e743] [cursor=pointer]
+                - gridcell [ref=f206e744]
+              - row [ref=f206e745]:
+                - gridcell "71" [ref=f206e746]
+                - gridcell "39" [ref=f206e747]
+                - gridcell "84" [ref=f206e748]
+                - gridcell "32" [ref=f206e749]
+                - gridcell "6" [ref=f206e750]
+                - gridcell "1" [ref=f206e751]
+                - gridcell "26" [ref=f206e752]
+                - gridcell "0" [ref=f206e753]
+                - gridcell "64" [ref=f206e754]
+                - gridcell "19" [ref=f206e755]
+                - gridcell "1" [ref=f206e756]
+            - generic [ref=f206e762]:
+              - generic [ref=f206e763]:
+                - button "≣ Columns" [ref=f206e765] [cursor=pointer]:
+                  - generic [ref=f206e766]: ≣
+                  - generic [ref=f206e768]: Columns
+                - button " Filters" [ref=f206e770] [cursor=pointer]:
+                  - generic [ref=f206e771]: 
+                  - generic [ref=f206e773]: Filters
+              - text:                                                                                                                               
+          - generic [ref=f206e775]:
+            - generic [ref=f206e776]:
+              - generic [ref=f206e777]: "1"
+              - text: to
+              - generic [ref=f206e778]: "20"
+              - text: of
+              - generic [ref=f206e779]: "44"
+            - generic [ref=f206e780]:
+              - generic:
+                - generic: 
+                - button "First"
+              - generic:
+                - generic: 
+                - button "Previous"
+              - text: Page
+              - generic [ref=f206e781]: "1"
+              - text: of
+              - generic [ref=f206e782]: "3"
+              - generic [ref=f206e783]:
+                - generic [ref=f206e784]: 
+                - button "Next" [ref=f206e785] [cursor=pointer]
+              - generic [ref=f206e786]:
+                - generic [ref=f206e787]: 
+                - button "Last" [ref=f206e788] [cursor=pointer]
+  - text:    
+  - generic:
+    - generic:
+      - generic [ref=f206e789]: General Practice (Blinx Demo Site) (YGMQJ)
+      - generic [ref=f206e792]: PC24 Urgent Care (Y05825)

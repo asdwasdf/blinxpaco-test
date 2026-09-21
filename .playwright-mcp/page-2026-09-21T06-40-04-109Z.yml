@@ -1,0 +1,282 @@
+- generic [ref=f208e1]:
+  - banner [ref=f208e8]:
+    - generic [ref=f208e10]:
+      - generic [ref=f208e11]:
+        - generic [ref=f208e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f208e16]
+        - heading "Communications Hub" [level=1] [ref=f208e17]
+      - generic [ref=f208e18]:
+        - generic [ref=f208e144]:
+          - generic [ref=f208e145]: 
+          - textbox "Search Patients..." [ref=f208e147]
+          - text: 
+        - text:            
+      - generic [ref=f208e19]:
+        - generic:
+          - list: 
+        - generic [ref=f208e149] [cursor=pointer]:
+          - generic [ref=f208e150]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f208e151]: 
+          - generic [ref=f208e152]: "Your Home Organisation:"
+        - generic [ref=f208e20]: 
+  - navigation [ref=f208e24]:
+    - generic [ref=f208e25]:
+      - img "Blinx Company Logo" [ref=f208e27]
+      - generic [ref=f208e28] [cursor=pointer]
+    - generic [ref=f208e29]:
+      - list [ref=f208e32]:
+        - listitem [ref=f208e33]:
+          - link "Home" [ref=f208e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f208e36]:
+          - generic [ref=f208e37] [cursor=pointer]:
+            - link "Analytics" [ref=f208e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f208e39]: 
+        - listitem [ref=f208e40]:
+          - generic [ref=f208e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f208e42]:
+              - /url: /commshub/
+            - generic [ref=f208e43]: 
+        - listitem [ref=f208e44]:
+          - generic [ref=f208e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f208e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f208e47]: 
+        - listitem [ref=f208e48]:
+          - link "Patient Search" [ref=f208e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f208e51]:
+          - generic [ref=f208e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f208e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f208e54]: 
+        - listitem [ref=f208e55]:
+          - link "Care Navigator" [ref=f208e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f208e58]:
+          - link "Configuration" [ref=f208e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f208e61]:
+        - listitem [ref=f208e62]:
+          - link "Dashboard" [ref=f208e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f208e68]:
+          - link "Settings" [ref=f208e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f208e71]:
+        - listitem [ref=f208e72]:
+          - link "User Management" [ref=f208e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f208e75]:
+          - generic [ref=f208e76] [cursor=pointer]: Log Out
+        - listitem [ref=f208e78]:
+          - generic [ref=f208e79]: Version 1.0
+  - generic [ref=f208e83]:
+    - generic [ref=f208e84]:
+      - generic [ref=f208e85]: Notifications
+      - generic [ref=f208e86] [cursor=pointer]:
+        - generic [ref=f208e87]: Clear All
+        - generic [ref=f208e88]: 
+    - generic [ref=f208e90]:
+      - generic [ref=f208e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f208e92]: "0"
+      - generic [ref=f208e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f208e94]: "0"
+      - generic [ref=f208e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f208e96]: "0"
+    - generic [ref=f208e155]:
+      - generic [ref=f208e156]: You are up to date
+      - generic [ref=f208e157]: You currently have no notifcations to review
+  - generic [ref=f208e99]:  
+  - generic [ref=f208e100]:
+    - generic [ref=f208e101]:
+      - generic [ref=f208e102]:
+        - link "" [ref=f208e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f208e105]: •
+        - link "Comms Hub" [ref=f208e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f208e107]: •
+        - generic [ref=f208e108]: Template Manager
+      - generic [ref=f208e109]:
+        - button " Show Org. Default Templates" [ref=f208e110] [cursor=pointer]:
+          - generic [ref=f208e111]: 
+          - generic [ref=f208e112]: Show Org. Default Templates
+        - button " Create New Email" [active] [ref=f208e113] [cursor=pointer]:
+          - generic [ref=f208e114]: 
+          - generic [ref=f208e115]: Create New Email
+        - link [ref=f208e116] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder/sms/create
+          - button " Create New SMS" [ref=f208e117]:
+            - generic [ref=f208e118]: 
+            - generic [ref=f208e119]: Create New SMS
+        - generic [ref=f208e159] [cursor=pointer]:
+          - generic [ref=f208e160]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f208e161]: 
+          - generic [ref=f208e162]: "Viewing data for:"
+          - generic:
+            - generic:
+              - generic [ref=f208e163]:
+                - generic [ref=f208e164]: 
+                - generic [ref=f208e165]: Select All (2)
+              - generic [ref=f208e167]:
+                - generic [ref=f208e168]: 
+                - generic [ref=f208e170]: General Practice (Blinx Demo Site) (YGMQJ)
+              - generic [ref=f208e172]:
+                - generic [ref=f208e173]: 
+                - generic [ref=f208e174]: PC24 Urgent Care (Y05825)
+            - generic [ref=f208e175]: Apply
+    - generic [ref=f208e124]:
+      - generic [ref=f208e125]:
+        - generic [ref=f208e127]:
+          - textbox "Search Templates" [ref=f208e128]
+          - generic [ref=f208e129]: 
+        - generic [ref=f208e131]:
+          - button " Set Org. Defaults" [ref=f208e179] [cursor=pointer]:
+            - generic [ref=f208e180]: 
+            - text: Set Org. Defaults
+          - text:   
+          - button " Reset Column Widths" [ref=f208e133] [cursor=pointer]:
+            - generic [ref=f208e134]: 
+            - text: Reset Column Widths
+          - button " Show All Columns" [ref=f208e136] [cursor=pointer]:
+            - generic [ref=f208e137]: 
+            - text: Show All Columns
+          - button " Clear Filters" [ref=f208e139] [cursor=pointer]:
+            - generic [ref=f208e140]: 
+            - text: Clear Filters
+          - text: 
+      - generic [ref=f208e181]:
+        - generic:    
+        - generic [ref=f208e182]:
+          - grid [ref=f208e183]:
+            - rowgroup [ref=f208e184]:
+              - row [ref=f208e185]:
+                - text: 
+                - generic [ref=f208e187] [cursor=pointer]: 
+                - columnheader "Shared Campaign?" [ref=f208e188] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e190] [cursor=pointer]: 
+                - columnheader "Name" [ref=f208e191] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e193] [cursor=pointer]: 
+                - columnheader "Type" [ref=f208e194] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e196] [cursor=pointer]: 
+                - columnheader "Communication Type" [ref=f208e197] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e199] [cursor=pointer]: 
+                - columnheader "Created By Organisation" [ref=f208e200] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e202] [cursor=pointer]: 
+                - columnheader "Shared To Orgs" [ref=f208e203] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e205] [cursor=pointer]: 
+                - columnheader "Created Date" [ref=f208e206] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e208] [cursor=pointer]: 
+                - columnheader "Updated Date" [ref=f208e209] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e211] [cursor=pointer]: 
+                - columnheader "Status" [ref=f208e212] [cursor=pointer]
+                - text:     
+                - generic [ref=f208e214] [cursor=pointer]: 
+                - columnheader "Default Template?" [ref=f208e215] [cursor=pointer]
+                - text:    
+            - row [ref=f208e216]:
+              - text: 
+              - generic [ref=f208e218] [cursor=pointer]: 
+              - columnheader "Actions" [ref=f208e219] [cursor=pointer]
+              - text:    
+            - rowgroup [ref=f208e220]:
+              - row [ref=f208e221]:
+                - gridcell [ref=f208e222]
+                - gridcell " Non-Shared Templates (2212)" [ref=f208e224]:
+                  - generic [ref=f208e225]:
+                    - text: 
+                    - generic [ref=f208e226]: 
+                    - generic [ref=f208e228]: Non-Shared Templates
+                    - generic [ref=f208e229]: (2212)
+                - gridcell [ref=f208e230]
+                - gridcell [ref=f208e231]
+                - gridcell [ref=f208e232]
+                - gridcell [ref=f208e233]
+                - gridcell [ref=f208e237]
+                - gridcell [ref=f208e241]
+                - gridcell [ref=f208e242]
+                - gridcell [ref=f208e243]
+              - row [ref=f208e244]:
+                - gridcell [ref=f208e245]
+                - gridcell " Shared Templates (409)" [ref=f208e247]:
+                  - generic [ref=f208e248]:
+                    - text: 
+                    - generic [ref=f208e249]: 
+                    - generic [ref=f208e251]: Shared Templates
+                    - generic [ref=f208e252]: (409)
+                - gridcell [ref=f208e253]
+                - gridcell [ref=f208e254]
+                - gridcell [ref=f208e255]
+                - gridcell [ref=f208e256]
+                - gridcell [ref=f208e260]
+                - gridcell [ref=f208e264]
+                - gridcell [ref=f208e265]
+                - gridcell [ref=f208e266]
+            - row [ref=f208e267]:
+              - gridcell [ref=f208e268]
+            - row [ref=f208e270]:
+              - gridcell [ref=f208e271]
+          - generic [ref=f208e273]:
+            - generic [ref=f208e274]:
+              - button "≣ Columns" [ref=f208e276] [cursor=pointer]:
+                - generic [ref=f208e277]: ≣
+                - generic [ref=f208e279]: Columns
+              - button " Filters" [ref=f208e281] [cursor=pointer]:
+                - generic [ref=f208e282]: 
+                - generic [ref=f208e284]: Filters
+            - text:                                                                                                       
+        - generic [ref=f208e286]:
+          - generic [ref=f208e287]:
+            - generic [ref=f208e288]: "1"
+            - text: to
+            - generic [ref=f208e289]: "2"
+            - text: of
+            - generic [ref=f208e290]: "2"
+          - generic [ref=f208e291]:
+            - generic:
+              - generic: 
+              - button "First"
+            - generic:
+              - generic: 
+              - button "Previous"
+            - text: Page
+            - generic [ref=f208e292]: "1"
+            - text: of
+            - generic [ref=f208e293]: "1"
+            - generic:
+              - generic: 
+              - button "Next"
+            - generic:
+              - generic: 
+              - button "Last"
+  - generic [ref=f208e1247]:
+    - generic [ref=f208e1248]: 
+    - generic [ref=f208e1250]: How would you like to create your email?
+    - generic [ref=f208e1251]:
+      - generic [ref=f208e1252]:
+        - link "" [ref=f208e1253] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder/email/create
+        - heading "Create a custom build" [level=3] [ref=f208e1255]
+        - generic [ref=f208e1256]: Start from scratch and create your bespoke email using our template editor.
+      - generic [ref=f208e1257]:
+        - generic [ref=f208e1258] [cursor=pointer]
+        - heading "Use a pre-built template" [level=3] [ref=f208e1259]
+        - generic [ref=f208e1260]: Send an email to your patients using pre-built templates, such as appointment reminders.
+  - text:  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔  ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔    
+  - generic:
+    - generic:
+      - generic [ref=f208e294]: General Practice (Blinx Demo Site) (YGMQJ)
+      - generic [ref=f208e297]: PC24 Urgent Care (Y05825)

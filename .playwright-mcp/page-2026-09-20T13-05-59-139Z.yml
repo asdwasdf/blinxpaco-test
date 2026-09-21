@@ -1,0 +1,71 @@
+- generic [active] [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e8]:
+    - generic [ref=f28e9]:
+      - button "Collapse sidebar" [ref=f28e125] [cursor=pointer]:
+        - img "Paco Logo" [ref=f28e11]
+      - textbox "Search menu..." [ref=f28e127]
+      - generic [ref=f28e13]:
+        - generic [ref=f28e15] [cursor=pointer]:
+          - img "Dashboards" [ref=f28e18]
+          - generic [ref=f28e128]: Dashboards
+        - generic [ref=f28e20] [cursor=pointer]:
+          - img "Analytics & Reports" [ref=f28e23]
+          - generic [ref=f28e131]: Analytics & Reports
+        - generic [ref=f28e25] [cursor=pointer]:
+          - img "Quick Send" [ref=f28e28]
+          - generic [ref=f28e134]: Comms Hub
+        - generic [ref=f28e30] [cursor=pointer]:
+          - img "Health Forms" [ref=f28e33]
+          - generic [ref=f28e137]: Health Forms
+        - generic [ref=f28e35] [cursor=pointer]:
+          - img "Patient Search" [ref=f28e38]
+          - generic [ref=f28e140]: Patients
+        - generic [ref=f28e40] [cursor=pointer]:
+          - img "Web Chat & Video" [ref=f28e43]
+          - generic [ref=f28e143]: Web Chat & Video
+        - generic [ref=f28e44]:
+          - generic [ref=f28e45] [cursor=pointer]:
+            - img "case load management" [ref=f28e48]
+            - generic [ref=f28e146]: Case Load Management
+          - generic [ref=f28e159]:
+            - button "My Case" [ref=f28e161] [cursor=pointer]
+            - button "Unallocated" [ref=f28e164] [cursor=pointer]
+            - button "Case Workboards" [ref=f28e167] [cursor=pointer]
+            - button "Task Workboards" [ref=f28e170] [cursor=pointer]
+        - generic [ref=f28e50] [cursor=pointer]:
+          - img "Appointment Book" [ref=f28e53]
+          - generic [ref=f28e149]: Appointment Book
+        - generic [ref=f28e55] [cursor=pointer]:
+          - img "Quick Pay" [ref=f28e58]
+          - generic [ref=f28e152]: Quick Pay
+        - generic [ref=f28e60] [cursor=pointer]:
+          - img "Users" [ref=f28e63]
+          - generic [ref=f28e153]: User Portal
+        - generic [ref=f28e65] [cursor=pointer]:
+          - img "Configuration" [ref=f28e68]
+          - generic [ref=f28e154]: Configuration
+        - generic [ref=f28e70] [cursor=pointer]:
+          - img "Rocket Bar" [ref=f28e73]
+          - generic [ref=f28e155]: Rocket Bar
+        - generic [ref=f28e74]: Sign Out
+      - button [ref=f28e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f28e84]
+    - generic [ref=f28e85]:
+      - generic [ref=f28e86]:
+        - generic [ref=f28e87]: 3h 58m
+        - generic [ref=f28e92]:
+          - generic [ref=f28e95]:
+            - generic [ref=f28e96] [cursor=pointer]: TFN
+            - generic [ref=f28e98]:
+              - generic [ref=f28e99]: Test Fiona Nguyen
+              - generic [ref=f28e100]: Super Admin GB
+              - generic [ref=f28e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f28e107]
+          - generic [ref=f28e108]:
+            - button "More options" [ref=f28e110] [cursor=pointer]
+            - generic [ref=f28e114] [cursor=pointer]: "0"
+      - generic [ref=f28e122]:
+        - generic [ref=f28e123]: There are no new cases
+        - generic [ref=f28e124]: You don't have any active case assigned to you

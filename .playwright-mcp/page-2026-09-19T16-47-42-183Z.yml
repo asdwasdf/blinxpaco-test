@@ -1,0 +1,51 @@
+- generic [active] [ref=f121e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f121e3] [cursor=pointer]
+  - generic [ref=f121e8]:
+    - generic [ref=f121e9]:
+      - button "Expand sidebar" [ref=f121e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f121e11]
+      - generic [ref=f121e13]:
+        - img "Dashboards" [ref=f121e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f121e23] [cursor=pointer]
+        - img "Quick Send" [ref=f121e28] [cursor=pointer]
+        - img "Health Forms" [ref=f121e33] [cursor=pointer]
+        - img "Patient Search" [ref=f121e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f121e43] [cursor=pointer]
+        - img "case load management" [ref=f121e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f121e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f121e58] [cursor=pointer]
+        - img "Users" [ref=f121e63] [cursor=pointer]
+        - img "Configuration" [ref=f121e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f121e73] [cursor=pointer]
+        - generic [ref=f121e75] [cursor=pointer]
+      - button [ref=f121e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f121e84]
+    - generic [ref=f121e85]:
+      - generic [ref=f121e86]:
+        - generic [ref=f121e87]: 3h 41m
+        - generic [ref=f121e92]:
+          - generic [ref=f121e96]:
+            - generic [ref=f121e97] [cursor=pointer]: TFN
+            - generic [ref=f121e355]:
+              - generic [ref=f121e356]: Test Fiona Nguyen
+              - generic [ref=f121e357]: Super Admin GB
+              - generic [ref=f121e359]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f121e364]
+          - generic [ref=f121e99]:
+            - button "More options" [ref=f121e102] [cursor=pointer]
+            - generic [ref=f121e106] [cursor=pointer]: "0"
+      - generic [ref=f121e920]:
+        - generic [ref=f121e921]:
+          - tablist [ref=f121e924]:
+            - tab "Org Tasks" [ref=f121e925] [cursor=pointer]
+            - tab "Staff Performance" [ref=f121e926] [cursor=pointer]
+            - tab "Org Stats" [ref=f121e927] [cursor=pointer]
+            - tab "All Patients" [selected] [ref=f121e928] [cursor=pointer]
+            - tab "CQC Readiness" [ref=f121e930] [cursor=pointer]
+            - tab "Message Outbox" [ref=f121e931] [cursor=pointer]
+            - tab "Comms Analytics" [ref=f121e932] [cursor=pointer]
+          - tabpanel [ref=f121e934]:
+            - generic [ref=f121e935]: Loading patients and risk scores...
+        - button "Scroll tabs left"
+        - button "Scroll tabs right" [ref=f121e938] [cursor=pointer]

@@ -1,0 +1,189 @@
+- generic [ref=f125e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f125e3] [cursor=pointer]
+  - generic [ref=f125e8]:
+    - generic [ref=f125e9]:
+      - button "Expand sidebar" [ref=f125e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f125e11]
+      - generic [ref=f125e13]:
+        - img "Dashboards" [ref=f125e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f125e23] [cursor=pointer]
+        - img "Quick Send" [ref=f125e28] [cursor=pointer]
+        - img "Health Forms" [ref=f125e33] [cursor=pointer]
+        - img "Patient Search" [ref=f125e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f125e43] [cursor=pointer]
+        - img "case load management" [ref=f125e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f125e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f125e58] [cursor=pointer]
+        - img "Users" [ref=f125e63] [cursor=pointer]
+        - img "Configuration" [ref=f125e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f125e73] [cursor=pointer]
+        - generic [ref=f125e75] [cursor=pointer]
+      - button [ref=f125e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f125e84]
+    - generic [ref=f125e85]:
+      - generic [ref=f125e86]:
+        - generic [ref=f125e87]: 3h 54m
+        - generic [ref=f125e92]:
+          - generic [ref=f125e95]:
+            - generic [ref=f125e96] [cursor=pointer]: TFN
+            - generic [ref=f125e98]:
+              - generic [ref=f125e99]: Test Fiona Nguyen
+              - generic [ref=f125e100]: Super Admin GB
+              - generic [ref=f125e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f125e107]
+          - generic [ref=f125e108]:
+            - button "More options" [ref=f125e110] [cursor=pointer]
+            - generic [ref=f125e114] [cursor=pointer]: "0"
+      - generic [ref=f125e1095]:
+        - tablist [ref=f125e1098]:
+          - tab "Mi Tasks" [ref=f125e1099] [cursor=pointer]
+          - tab "Mi Time" [ref=f125e1100] [cursor=pointer]
+          - tab "Mi Stats" [selected] [ref=f125e1101] [cursor=pointer]
+          - tab "Mi Patients" [ref=f125e1103] [cursor=pointer]
+        - tabpanel [ref=f125e1105]:
+          - generic [ref=f125e1107]:
+            - generic [ref=f125e1108]:
+              - generic [ref=f125e1109]:
+                - heading "Mi Stats" [level=1] [ref=f125e1110]
+                - paragraph [ref=f125e1111]: Medical Intelligence – Track your achievements and productivity
+              - generic [ref=f125e1113]:
+                - generic [ref=f125e1114]: "Period:"
+                - generic [ref=f125e1115]:
+                  - button "Week" [active] [ref=f125e1313] [cursor=pointer]
+                  - generic [ref=f125e1317]:
+                    - button "Day" [ref=f125e1318] [cursor=pointer]
+                    - button "Week" [ref=f125e1319] [cursor=pointer]
+                    - button "Month" [ref=f125e1320] [cursor=pointer]
+                    - button "3 Months" [ref=f125e1321] [cursor=pointer]
+                    - button "6 Months" [ref=f125e1322] [cursor=pointer]
+                    - button "12 Months" [ref=f125e1323] [cursor=pointer]
+            - generic [ref=f125e1120]:
+              - generic [ref=f125e1121]:
+                - generic [ref=f125e1122]:
+                  - heading "Patient Overview & Consultations" [level=3] [ref=f125e1123]
+                  - paragraph [ref=f125e1124]: Last Week
+                - generic [ref=f125e1125]:
+                  - generic [ref=f125e1126]:
+                    - heading "Patients Seen" [level=4] [ref=f125e1127]
+                    - generic [ref=f125e1128] [cursor=pointer]: "68"
+                    - generic [ref=f125e1134]:
+                      - generic [ref=f125e1135] [cursor=pointer]:
+                        - paragraph [ref=f125e1136]: Seen > Once
+                        - generic [ref=f125e1137]: "18"
+                      - generic [ref=f125e1138] [cursor=pointer]:
+                        - generic [ref=f125e1139]: Seen Once
+                        - generic [ref=f125e1140]: "50"
+                  - generic [ref=f125e1141]:
+                    - generic [ref=f125e1142]:
+                      - heading "Demographics - Age" [level=4] [ref=f125e1143]
+                      - generic [ref=f125e1144]:
+                        - generic [ref=f125e1145] [cursor=pointer]:
+                          - generic [ref=f125e1146]: 18-25
+                          - generic [ref=f125e1149]: "6"
+                        - generic [ref=f125e1150] [cursor=pointer]:
+                          - generic [ref=f125e1151]: 26-35
+                          - generic [ref=f125e1154]: "14"
+                        - generic [ref=f125e1155] [cursor=pointer]:
+                          - generic [ref=f125e1156]: 36-45
+                          - generic [ref=f125e1159]: "18"
+                        - generic [ref=f125e1160] [cursor=pointer]:
+                          - generic [ref=f125e1161]: 46-55
+                          - generic [ref=f125e1164]: "17"
+                    - generic [ref=f125e1165]:
+                      - heading "Demographics - Gender" [level=4] [ref=f125e1166]
+                      - generic [ref=f125e1167]:
+                        - generic [ref=f125e1168] [cursor=pointer]:
+                          - generic [ref=f125e1169]: Female
+                          - generic [ref=f125e1172]: "35"
+                        - generic [ref=f125e1173] [cursor=pointer]:
+                          - generic [ref=f125e1174]: Male
+                          - generic [ref=f125e1177]: "33"
+                        - generic [ref=f125e1178] [cursor=pointer]:
+                          - generic [ref=f125e1179]: Not Specified
+                          - generic [ref=f125e1181]: "0"
+                  - generic [ref=f125e1182]:
+                    - heading "Consultation Types (55)" [level=4] [ref=f125e1314]
+                    - generic [ref=f125e1184]:
+                      - generic [ref=f125e1185] [cursor=pointer]:
+                        - paragraph [ref=f125e1188]: F2F
+                        - generic [ref=f125e1191]: "32"
+                      - generic [ref=f125e1192] [cursor=pointer]:
+                        - paragraph [ref=f125e1195]: Telephone
+                        - generic [ref=f125e1198]: "12"
+                      - generic [ref=f125e1199] [cursor=pointer]:
+                        - paragraph [ref=f125e1202]: Video
+                        - generic [ref=f125e1205]: "8"
+                      - generic [ref=f125e1206] [cursor=pointer]:
+                        - paragraph [ref=f125e1209]: Online Request
+                        - generic [ref=f125e1212]: "3"
+              - generic [ref=f125e1213]:
+                - heading "Top Prescriptions (94)" [level=3] [ref=f125e1315]
+                - generic [ref=f125e1215] [cursor=pointer]:
+                  - generic [ref=f125e1216]: Amoxicillin
+                  - generic [ref=f125e1219]: "12"
+                - generic [ref=f125e1220] [cursor=pointer]:
+                  - generic [ref=f125e1221]: Lisinopril
+                  - generic [ref=f125e1224]: "11"
+                - generic [ref=f125e1225] [cursor=pointer]:
+                  - generic [ref=f125e1226]: Metformin
+                  - generic [ref=f125e1229]: "10"
+                - generic [ref=f125e1230] [cursor=pointer]:
+                  - generic [ref=f125e1231]: Atorvastatin
+                  - generic [ref=f125e1234]: "8"
+                - generic [ref=f125e1235] [cursor=pointer]:
+                  - generic [ref=f125e1236]: Omeprazole
+                  - generic [ref=f125e1239]: "9"
+              - generic [ref=f125e1240]:
+                - heading "Digital Communications" [level=3] [ref=f125e1241]
+                - generic [ref=f125e1242]:
+                  - generic [ref=f125e1243] [cursor=pointer]:
+                    - paragraph [ref=f125e1244]: Email
+                    - generic [ref=f125e1245]: "12"
+                  - generic [ref=f125e1246] [cursor=pointer]:
+                    - paragraph [ref=f125e1247]: SMS
+                    - generic [ref=f125e1248]: "8"
+              - generic [ref=f125e1249]:
+                - heading "Top Conditions (101)" [level=3] [ref=f125e1316]
+                - generic [ref=f125e1251] [cursor=pointer]:
+                  - generic [ref=f125e1252]: "1"
+                  - paragraph [ref=f125e1254]: Hypertension
+                  - generic [ref=f125e1257]: "31"
+                - generic [ref=f125e1258] [cursor=pointer]:
+                  - generic [ref=f125e1259]: "2"
+                  - paragraph [ref=f125e1261]: Type 2 Diabetes
+                  - generic [ref=f125e1264]: "24"
+                - generic [ref=f125e1265] [cursor=pointer]:
+                  - generic [ref=f125e1266]: "3"
+                  - paragraph [ref=f125e1268]: High Cholesterol
+                  - generic [ref=f125e1271]: "19"
+                - generic [ref=f125e1272] [cursor=pointer]:
+                  - generic [ref=f125e1273]: "4"
+                  - paragraph [ref=f125e1275]: GERD
+                  - generic [ref=f125e1278]: "15"
+                - generic [ref=f125e1279] [cursor=pointer]:
+                  - generic [ref=f125e1280]: "5"
+                  - paragraph [ref=f125e1282]: Asthma
+                  - generic [ref=f125e1285]: "12"
+              - generic [ref=f125e1286]:
+                - generic [ref=f125e1287]:
+                  - heading "Most Seen" [level=3] [ref=f125e1288]
+                  - paragraph [ref=f125e1289]: This period
+                - generic [ref=f125e1290]:
+                  - generic [ref=f125e1291]: "1"
+                  - generic [ref=f125e1292]:
+                    - paragraph [ref=f125e1293]: John Smith
+                    - paragraph [ref=f125e1294]: 15 visits
+                - generic [ref=f125e1295]:
+                  - generic [ref=f125e1296]: "2"
+                  - generic [ref=f125e1297]:
+                    - paragraph [ref=f125e1298]: Jane Doe
+                    - paragraph [ref=f125e1299]: 12 visits
+                - generic [ref=f125e1300]:
+                  - generic [ref=f125e1301]: 🏆
+                  - generic [ref=f125e1302]:
+                    - heading "Great Work!" [level=4] [ref=f125e1303]
+                    - paragraph [ref=f125e1304]:
+                      - text: You've seen
+                      - strong [ref=f125e1305]: 68 patients
+                      - text: this week . Keep up the excellent care!

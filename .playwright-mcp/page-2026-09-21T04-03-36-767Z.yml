@@ -1,0 +1,573 @@
+- generic [active] [ref=f196e1]:
+  - banner [ref=f196e8]:
+    - generic [ref=f196e10]:
+      - generic [ref=f196e11]:
+        - generic [ref=f196e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f196e16]
+        - heading "Communications Hub" [level=1] [ref=f196e17]
+      - generic [ref=f196e18]:
+        - generic [ref=f196e278]:
+          - generic [ref=f196e279]: 
+          - textbox "Search Patients..." [ref=f196e281]
+          - text: 
+        - text:            
+      - generic [ref=f196e19]:
+        - generic:
+          - list: 
+        - generic [ref=f196e283] [cursor=pointer]:
+          - generic [ref=f196e284]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f196e285]: 
+          - generic [ref=f196e286]: "Your Home Organisation:"
+        - generic [ref=f196e20]: 
+  - navigation [ref=f196e24]:
+    - generic [ref=f196e25]:
+      - img "Blinx Company Logo" [ref=f196e27]
+      - generic [ref=f196e28] [cursor=pointer]
+    - generic [ref=f196e29]:
+      - list [ref=f196e32]:
+        - listitem [ref=f196e33]:
+          - link "Home" [ref=f196e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f196e36]:
+          - generic [ref=f196e37] [cursor=pointer]:
+            - link "Analytics" [ref=f196e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f196e39]: 
+        - listitem [ref=f196e40]:
+          - generic [ref=f196e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f196e42]:
+              - /url: /commshub/
+            - generic [ref=f196e43]: 
+        - listitem [ref=f196e44]:
+          - generic [ref=f196e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f196e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f196e47]: 
+        - listitem [ref=f196e48]:
+          - link "Patient Search" [ref=f196e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f196e51]:
+          - generic [ref=f196e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f196e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f196e54]: 
+        - listitem [ref=f196e55]:
+          - link "Care Navigator" [ref=f196e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f196e58]:
+          - link "Configuration" [ref=f196e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f196e61]:
+        - listitem [ref=f196e62]:
+          - link "Dashboard" [ref=f196e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f196e68]:
+          - link "Settings" [ref=f196e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f196e71]:
+        - listitem [ref=f196e72]:
+          - link "User Management" [ref=f196e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f196e75]:
+          - generic [ref=f196e76] [cursor=pointer]: Log Out
+        - listitem [ref=f196e78]:
+          - generic [ref=f196e79]: Version 1.0
+  - generic [ref=f196e83]:
+    - generic [ref=f196e84]:
+      - generic [ref=f196e85]: Notifications
+      - generic [ref=f196e86] [cursor=pointer]:
+        - generic [ref=f196e87]: Clear All
+        - generic [ref=f196e88]: 
+    - generic [ref=f196e90]:
+      - generic [ref=f196e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f196e92]: "0"
+      - generic [ref=f196e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f196e94]: "0"
+      - generic [ref=f196e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f196e96]: "0"
+    - generic [ref=f196e289]:
+      - generic [ref=f196e290]: You are up to date
+      - generic [ref=f196e291]: You currently have no notifcations to review
+  - generic [ref=f196e99]:     ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔
+  - generic [ref=f196e100]:
+    - generic [ref=f196e102]:
+      - link "" [ref=f196e103] [cursor=pointer]:
+        - /url: /commshub/commshub
+      - generic [ref=f196e105]: •
+      - link "Comms Hub" [ref=f196e106] [cursor=pointer]:
+        - /url: /commshub/commshub
+      - generic [ref=f196e107]: •
+      - generic [ref=f196e108]: Configuration
+    - generic [ref=f196e112]:
+      - generic [ref=f196e113]:
+        - generic [ref=f196e114]: Configuration
+        - generic [ref=f196e115] [cursor=pointer]: 
+      - generic [ref=f196e117]:
+        - generic [ref=f196e118]:
+          - generic [ref=f196e119]: CAMPAIGN TAG CONFIG
+          - button "Clear Selections" [ref=f196e120] [cursor=pointer]
+          - button "Save" [ref=f196e121] [cursor=pointer]
+        - generic [ref=f196e122]:
+          - generic [ref=f196e123]:
+            - generic [ref=f196e124] [cursor=pointer]: 
+            - generic [ref=f196e127]:
+              - textbox "Search tags..." [ref=f196e128]
+              - generic [ref=f196e129]: 
+            - list [ref=f196e132]:
+              - listitem [ref=f196e292] [cursor=pointer]:
+                - generic [ref=f196e294]: "[Bootcamp] Email 1st, SMS 2nd"
+              - listitem [ref=f196e295] [cursor=pointer]:
+                - generic [ref=f196e297]: "[Bootcamp] Multi SNOMED Example (Cervical Smear)"
+              - listitem [ref=f196e298] [cursor=pointer]:
+                - generic [ref=f196e300]: "[Bootcamp] QOF [AST007]"
+              - listitem [ref=f196e301] [cursor=pointer]:
+                - generic [ref=f196e303]: "[Bootcamp] Single SNOMED Example (Smoking Cessation)"
+              - listitem [ref=f196e304] [cursor=pointer]:
+                - generic [ref=f196e306]: "[Bootcamp] SMS 1st, Email 2nd"
+              - listitem [ref=f196e307] [cursor=pointer]:
+                - generic [ref=f196e309]: "[Bootcamp] Stop after 1 send"
+              - listitem [ref=f196e310] [cursor=pointer]:
+                - generic [ref=f196e312]: "*QOF Validation"
+              - listitem [ref=f196e313] [cursor=pointer]:
+                - generic [ref=f196e315]: 1 Send Restriction
+              - listitem [ref=f196e316] [cursor=pointer]:
+                - generic [ref=f196e318]: 1 Sep - Thyroid No Date
+              - listitem [ref=f196e319] [cursor=pointer]:
+                - generic [ref=f196e321]: 1209 Female 18 - 35
+              - listitem [ref=f196e322] [cursor=pointer]:
+                - generic [ref=f196e324]: 1209 Male 18-35
+              - listitem [ref=f196e325] [cursor=pointer]:
+                - generic [ref=f196e327]: 1428 - MAR
+              - listitem [ref=f196e328] [cursor=pointer]:
+                - generic [ref=f196e330]: 1428 - MAR 25 June
+              - listitem [ref=f196e331] [cursor=pointer]:
+                - generic [ref=f196e333]: 1428 - MAR Quick Send
+              - listitem [ref=f196e334] [cursor=pointer]:
+                - generic [ref=f196e336]: 1428 - Scheduled Campaign
+              - listitem [ref=f196e337] [cursor=pointer]:
+                - generic [ref=f196e339]: 1428 1 SEND AP
+              - listitem [ref=f196e340] [cursor=pointer]:
+                - generic [ref=f196e342]: 1428 1 Send Max
+              - listitem [ref=f196e343] [cursor=pointer]:
+                - generic [ref=f196e345]: 1428 20th Test
+              - listitem [ref=f196e346] [cursor=pointer]:
+                - generic [ref=f196e348]: 1428 newnew
+              - listitem [ref=f196e349] [cursor=pointer]:
+                - generic [ref=f196e351]: 1428 with both
+              - listitem [ref=f196e352] [cursor=pointer]:
+                - generic [ref=f196e354]: "1471"
+              - listitem [ref=f196e355] [cursor=pointer]:
+                - generic [ref=f196e357]: 1500 New
+              - listitem [ref=f196e358] [cursor=pointer]:
+                - generic [ref=f196e360]: 1500 Test
+              - listitem [ref=f196e361] [cursor=pointer]:
+                - generic [ref=f196e363]: "18431"
+              - listitem [ref=f196e364] [cursor=pointer]:
+                - generic [ref=f196e366]: 2295 - MAR - Age
+              - listitem [ref=f196e367] [cursor=pointer]:
+                - generic [ref=f196e369]: 2295 - MAR - Contact Preference
+              - listitem [ref=f196e370] [cursor=pointer]:
+                - generic [ref=f196e372]: 2295 - MAR - Gender
+              - listitem [ref=f196e373] [cursor=pointer]:
+                - generic [ref=f196e375]: 2422 - New Tag
+              - listitem [ref=f196e376] [cursor=pointer]:
+                - generic [ref=f196e378]: 2422 Duplicate Tests
+              - listitem [ref=f196e379] [cursor=pointer]:
+                - generic [ref=f196e381]: 2422 New Test
+              - listitem [ref=f196e382] [cursor=pointer]:
+                - generic [ref=f196e384]: 2696 - Stop after 3 sends
+              - listitem [ref=f196e385] [cursor=pointer]:
+                - generic [ref=f196e387]: 2696 - Stop after booking
+              - listitem [ref=f196e388] [cursor=pointer]:
+                - generic [ref=f196e390]: 2696 - Stop after HF completed
+              - listitem [ref=f196e391] [cursor=pointer]:
+                - generic [ref=f196e393]: 28.07 Tag test Male -40
+              - listitem [ref=f196e394] [cursor=pointer]:
+                - generic [ref=f196e396]: 28.07 TAg Test Male +40
+              - listitem [ref=f196e397] [cursor=pointer]:
+                - generic [ref=f196e399]: 31.08 test
+              - listitem [ref=f196e400] [cursor=pointer]:
+                - generic [ref=f196e402]: 31.08 test 2 - asthma update
+              - listitem [ref=f196e403] [cursor=pointer]:
+                - generic [ref=f196e405]: 31.08 Test 3
+              - listitem [ref=f196e406] [cursor=pointer]:
+                - generic [ref=f196e408]: 3108 Test 4
+              - listitem [ref=f196e409] [cursor=pointer]:
+                - generic [ref=f196e411]: 3108 Test 5
+              - listitem [ref=f196e412] [cursor=pointer]:
+                - generic [ref=f196e414]: 3108 test 6
+              - listitem [ref=f196e415] [cursor=pointer]:
+                - generic [ref=f196e417]: 3108 Test 7
+              - listitem [ref=f196e418] [cursor=pointer]:
+                - generic [ref=f196e420]: "7253"
+              - listitem [ref=f196e421] [cursor=pointer]:
+                - generic [ref=f196e423]: 7253 - 2
+              - listitem [ref=f196e424] [cursor=pointer]:
+                - generic [ref=f196e426]: adfadf
+              - listitem [ref=f196e427] [cursor=pointer]:
+                - generic [ref=f196e429]: AP 2696 HF
+              - listitem [ref=f196e430] [cursor=pointer]:
+                - generic [ref=f196e432]: Asthma
+              - listitem [ref=f196e433] [cursor=pointer]:
+                - generic [ref=f196e435]: Asthma
+              - listitem [ref=f196e436] [cursor=pointer]:
+                - generic [ref=f196e438]: Asthma - QOF
+              - listitem [ref=f196e439] [cursor=pointer]:
+                - generic [ref=f196e441]: Asthma QOF
+              - listitem [ref=f196e442] [cursor=pointer]:
+                - generic [ref=f196e444]: asthma review
+              - listitem [ref=f196e445] [cursor=pointer]:
+                - generic [ref=f196e447]: BC - Asthma
+              - listitem [ref=f196e448] [cursor=pointer]:
+                - generic [ref=f196e450]: BH-18524
+              - listitem [ref=f196e451] [cursor=pointer]:
+                - generic [ref=f196e453]: BH-18524 - 200221000000105
+              - listitem [ref=f196e454] [cursor=pointer]:
+                - generic [ref=f196e456]: Blood test due boot camp 240225 - 165349007
+              - listitem [ref=f196e457] [cursor=pointer]:
+                - generic [ref=f196e459]: Blood Test Requested - Webinar TEST
+              - listitem [ref=f196e460] [cursor=pointer]:
+                - generic [ref=f196e462]: Bloods requested
+              - listitem [ref=f196e463] [cursor=pointer]:
+                - generic [ref=f196e465]: Book Your Blood Test - FHJ
+              - listitem [ref=f196e466] [cursor=pointer]:
+                - generic [ref=f196e468]: Bootcamp 08/07/25
+              - listitem [ref=f196e469] [cursor=pointer]:
+                - generic [ref=f196e471]: Campaign containing with tags - Care Nav - Complete on Behalf of patient - Owning Organisation
+              - listitem [ref=f196e472] [cursor=pointer]:
+                - generic [ref=f196e474]: CH DEV P1 TEST - ALEX
+              - listitem [ref=f196e475] [cursor=pointer]:
+                - generic [ref=f196e477]: Comms Hub E2E Test - Males Tag
+              - listitem [ref=f196e478] [cursor=pointer]:
+                - generic [ref=f196e480]: Comms Hub End 2 End Tag - Age Under 50
+              - listitem [ref=f196e481] [cursor=pointer]:
+                - generic [ref=f196e483]: Comms Hub End 2 End Test - Over 50
+              - listitem [ref=f196e484] [cursor=pointer]:
+                - generic [ref=f196e486]: Comms Hub End2End Test - Female Tag
+              - listitem [ref=f196e487] [cursor=pointer]:
+                - generic [ref=f196e489]: COPD
+              - listitem [ref=f196e490] [cursor=pointer]:
+                - generic [ref=f196e492]: COPD Invitations (AO)
+              - listitem [ref=f196e493] [cursor=pointer]:
+                - generic [ref=f196e495]: COPD PMC
+              - listitem [ref=f196e496] [cursor=pointer]:
+                - generic [ref=f196e498]: COVID 19 Booster
+              - listitem [ref=f196e499] [cursor=pointer]:
+                - generic [ref=f196e501]: Covid 2026 -
+              - listitem [ref=f196e502] [cursor=pointer]:
+                - generic [ref=f196e504]: CSP NR
+              - listitem [ref=f196e505] [cursor=pointer]:
+                - generic [ref=f196e507]: Dans COVID Booster
+              - listitem [ref=f196e508] [cursor=pointer]:
+                - generic [ref=f196e510]: DF inclusion / exclusion tag test
+              - listitem [ref=f196e511] [cursor=pointer]:
+                - generic [ref=f196e513]: Diabetes - QOF
+              - listitem [ref=f196e514] [cursor=pointer]:
+                - generic [ref=f196e516]: Dont send if health forms completed test
+              - listitem [ref=f196e517] [cursor=pointer]:
+                - generic [ref=f196e519]: EILEEN
+              - listitem [ref=f196e520] [cursor=pointer]:
+                - generic [ref=f196e522]: Email (george)
+              - listitem [ref=f196e523] [cursor=pointer]:
+                - generic [ref=f196e525]: Email & SMS optimiser
+              - listitem [ref=f196e526] [cursor=pointer]:
+                - generic [ref=f196e528]: Email 1st & 2nd
+              - listitem [ref=f196e529] [cursor=pointer]:
+                - generic [ref=f196e531]: Email 1st & no preference
+              - listitem [ref=f196e532] [cursor=pointer]:
+                - generic [ref=f196e534]: Email first and SMS 2nd
+              - listitem [ref=f196e535] [cursor=pointer]:
+                - generic [ref=f196e537]: Email first tag
+              - listitem [ref=f196e538] [cursor=pointer]:
+                - generic [ref=f196e540]: Email Preference
+              - listitem [ref=f196e541] [cursor=pointer]:
+                - generic [ref=f196e543]: eMED3 (2010) new statement issued, not fit for work
+              - listitem [ref=f196e544] [cursor=pointer]:
+                - generic [ref=f196e546]: Females between 2- 26
+              - listitem [ref=f196e547] [cursor=pointer]:
+                - generic [ref=f196e549]: FFT FJ 141125
+              - listitem [ref=f196e550] [cursor=pointer]:
+                - generic [ref=f196e552]: FFT send preference
+              - listitem [ref=f196e553] [cursor=pointer]:
+                - generic [ref=f196e555]: flu invite
+              - listitem [ref=f196e556] [cursor=pointer]:
+                - generic [ref=f196e558]: Flu Invites
+              - listitem [ref=f196e559] [cursor=pointer]:
+                - generic [ref=f196e561]: Flu jab
+              - listitem [ref=f196e562] [cursor=pointer]:
+                - generic [ref=f196e564]: Flu Vaccine - Alex
+              - listitem [ref=f196e565] [cursor=pointer]:
+                - generic [ref=f196e567]: Flu Vaccine - Jack
+              - listitem [ref=f196e568] [cursor=pointer]:
+                - generic [ref=f196e570]: Flu Vaccine - Rebecca
+              - listitem [ref=f196e571] [cursor=pointer]:
+                - generic [ref=f196e573]: Flu Vaccine - Vicky
+              - listitem [ref=f196e574] [cursor=pointer]:
+                - generic [ref=f196e576]: FLU VACCINE CLARE
+              - listitem [ref=f196e577] [cursor=pointer]:
+                - generic [ref=f196e579]: Flu vaccine Diane
+              - listitem [ref=f196e580] [cursor=pointer]:
+                - generic [ref=f196e582]: Flu Vaccine Kerry
+              - listitem [ref=f196e583] [cursor=pointer]:
+                - generic [ref=f196e585]: GB TAG TEST 1
+              - listitem [ref=f196e586] [cursor=pointer]:
+                - generic [ref=f196e588]: GP Spec Asthma - Cathie test
+              - listitem [ref=f196e589] [cursor=pointer]:
+                - generic [ref=f196e591]: Health check invite
+              - listitem [ref=f196e592] [cursor=pointer]:
+                - generic [ref=f196e594]: Health Check Invites TH
+              - listitem [ref=f196e595] [cursor=pointer]:
+                - generic [ref=f196e597]: Health Form Complete - Restriction
+              - listitem [ref=f196e598] [cursor=pointer]:
+                - generic [ref=f196e600]: HF Stop Send
+              - listitem [ref=f196e601] [cursor=pointer]:
+                - generic [ref=f196e603]: Hillingdon Webinar Diabetic Review
+              - listitem [ref=f196e604] [cursor=pointer]:
+                - generic [ref=f196e606]: HWW COVID Autumn 2024
+              - listitem [ref=f196e607] [cursor=pointer]:
+                - generic [ref=f196e609]: Influenza vaccination invitation - SMS & Email
+              - listitem [ref=f196e610] [cursor=pointer]:
+                - generic [ref=f196e612]: Influenza vaccination SMS text message invite sent - 1743451000006100
+              - listitem [ref=f196e613] [cursor=pointer]:
+                - generic [ref=f196e615]: Info Gathering
+              - listitem [ref=f196e616] [cursor=pointer]:
+                - generic [ref=f196e618]: Jamal - Spam Test
+              - listitem [ref=f196e619] [cursor=pointer]:
+                - generic [ref=f196e621]: JD 1180
+              - listitem [ref=f196e622] [cursor=pointer]:
+                - generic [ref=f196e624]: JD 2422
+              - listitem [ref=f196e625] [cursor=pointer]:
+                - generic [ref=f196e627]: JD 2422 2
+              - listitem [ref=f196e628] [cursor=pointer]:
+                - generic [ref=f196e630]: JD 955 Tag
+              - listitem [ref=f196e631] [cursor=pointer]:
+                - generic [ref=f196e633]: JD Empty Tag Test
+              - listitem [ref=f196e634] [cursor=pointer]:
+                - generic [ref=f196e636]: JD Empty Tag Test 2
+              - listitem [ref=f196e637] [cursor=pointer]:
+                - generic [ref=f196e639]: JD Test Tag
+              - listitem [ref=f196e640] [cursor=pointer]:
+                - generic [ref=f196e642]: JD Test Tag 2
+              - listitem [ref=f196e643] [cursor=pointer]:
+                - generic [ref=f196e645]: JD Test Tag Codes
+              - listitem [ref=f196e646] [cursor=pointer]:
+                - generic [ref=f196e648]: JW Flu Vaccine
+              - listitem [ref=f196e649] [cursor=pointer]:
+                - generic [ref=f196e651]: Language spoken
+              - listitem [ref=f196e652] [cursor=pointer]:
+                - generic [ref=f196e654]: Main spoken language English
+              - listitem [ref=f196e655] [cursor=pointer]:
+                - generic [ref=f196e657]: Males between 2 - 16
+              - listitem [ref=f196e658] [cursor=pointer]:
+                - generic [ref=f196e660]: MAX SENDS 3
+              - listitem [ref=f196e661] [cursor=pointer]:
+                - generic [ref=f196e663]: Message Sent
+              - listitem [ref=f196e664] [cursor=pointer]:
+                - generic [ref=f196e666]: Mike & Mike
+              - listitem [ref=f196e667] [cursor=pointer]:
+                - generic [ref=f196e669]: Mike and JD Test
+              - listitem [ref=f196e670] [cursor=pointer]:
+                - generic [ref=f196e672]: NHS Health Check
+              - listitem [ref=f196e673] [cursor=pointer]:
+                - generic [ref=f196e675]: No Codes
+              - listitem [ref=f196e676] [cursor=pointer]:
+                - generic [ref=f196e678]: No date tag
+              - listitem [ref=f196e679] [cursor=pointer]:
+                - generic [ref=f196e681]: No Dates and Codes
+              - listitem [ref=f196e682] [cursor=pointer]:
+                - generic [ref=f196e684]: No Preference
+              - listitem [ref=f196e685] [cursor=pointer]:
+                - generic [ref=f196e687]: PAC1-7671
+              - listitem [ref=f196e688] [cursor=pointer]:
+                - generic [ref=f196e690]: PAC2-1890
+              - listitem [ref=f196e691] [cursor=pointer]:
+                - generic [ref=f196e693]: PAC2-1975 Tag - Asthma monitoring call Codes
+              - listitem [ref=f196e694] [cursor=pointer]:
+                - generic [ref=f196e696]: PAC2-1975 Tag - Two Sends
+              - listitem [ref=f196e697] [cursor=pointer]:
+                - generic [ref=f196e699]: PAC2-2295 - Any then SMS
+              - listitem [ref=f196e700] [cursor=pointer]:
+                - generic [ref=f196e702]: PAC2-2295 - Email then SMS
+              - listitem [ref=f196e703] [cursor=pointer]:
+                - generic [ref=f196e705]: PAC2-2295 - MAR - Limit to 1 Send
+              - listitem [ref=f196e706] [cursor=pointer]:
+                - generic [ref=f196e708]: PAC2-2295 - SMS then Email
+              - listitem [ref=f196e709] [cursor=pointer]:
+                - generic [ref=f196e711]: PAC2-2422
+              - listitem [ref=f196e712] [cursor=pointer]:
+                - generic [ref=f196e714]: PACO-1500 MAR
+              - listitem [ref=f196e715] [cursor=pointer]:
+                - generic [ref=f196e717]: Physio
+              - listitem [ref=f196e718] [cursor=pointer]:
+                - generic [ref=f196e720]: QOF Cervical smear SSP
+              - listitem [ref=f196e721] [cursor=pointer]:
+                - generic [ref=f196e723]: QOF COVID
+              - listitem [ref=f196e724] [cursor=pointer]:
+                - generic [ref=f196e726]: QOF Diabetes
+              - listitem [ref=f196e727] [cursor=pointer]:
+                - generic [ref=f196e729]: QOF Liverpool test
+              - listitem [ref=f196e730] [cursor=pointer]:
+                - generic [ref=f196e732]: QOF PAD
+              - listitem [ref=f196e733] [cursor=pointer]:
+                - generic [ref=f196e735]: QOF Validation
+              - listitem [ref=f196e736] [cursor=pointer]:
+                - generic [ref=f196e738]: Red Appt Triage
+              - listitem [ref=f196e739] [cursor=pointer]:
+                - generic [ref=f196e741]: Santhosh Test
+              - listitem [ref=f196e742] [cursor=pointer]:
+                - generic [ref=f196e744]: Send Correct 2nd Tag
+              - listitem [ref=f196e745] [cursor=pointer]:
+                - generic [ref=f196e747]: Si Test
+              - listitem [ref=f196e748] [cursor=pointer]:
+                - generic [ref=f196e750]: Smoking cessation
+              - listitem [ref=f196e751] [cursor=pointer]:
+                - generic [ref=f196e753]: Smoking cessation
+              - listitem [ref=f196e754] [cursor=pointer]:
+                - generic [ref=f196e756]: Smoking Cessation Advice - 225323000
+              - listitem [ref=f196e757] [cursor=pointer]:
+                - generic [ref=f196e759]: Smoking Tag
+              - listitem [ref=f196e760] [cursor=pointer]:
+                - generic [ref=f196e762]: SMS 1st & SMS 2nd
+              - listitem [ref=f196e763] [cursor=pointer]:
+                - generic [ref=f196e765]: SMS and Email Dissent
+              - listitem [ref=f196e766] [cursor=pointer]:
+                - generic [ref=f196e768]: Stop when HF complete
+              - listitem [ref=f196e769] [cursor=pointer]:
+                - generic [ref=f196e771]: tag test by manasa
+              - listitem [ref=f196e772] [cursor=pointer]:
+                - generic [ref=f196e774]: Tag with everything
+              - listitem [ref=f196e775] [cursor=pointer]:
+                - generic [ref=f196e777]: Tag With Many Codes
+              - listitem [ref=f196e778] [cursor=pointer]:
+                - generic [ref=f196e780]: TEST
+              - listitem [ref=f196e781] [cursor=pointer]:
+                - generic [ref=f196e783]: Test 955 - Asthma
+              - listitem [ref=f196e784] [cursor=pointer]:
+                - generic [ref=f196e786]: test age range tag
+              - listitem [ref=f196e787] [cursor=pointer]:
+                - generic [ref=f196e789]: Test Campaign
+              - listitem [ref=f196e790] [cursor=pointer]:
+                - generic [ref=f196e792]: Test Code and Description
+              - listitem [ref=f196e793] [cursor=pointer]:
+                - generic [ref=f196e795]: Test FHJ 201224
+              - listitem [ref=f196e796] [cursor=pointer]:
+                - generic [ref=f196e798]: Test for Age
+              - listitem [ref=f196e799] [cursor=pointer]:
+                - generic [ref=f196e801]: TEST JS 0110
+              - listitem [ref=f196e802] [cursor=pointer]:
+                - generic [ref=f196e804]: Test Ro Tag
+              - listitem [ref=f196e805] [cursor=pointer]:
+                - generic [ref=f196e807]: Test tag - no codes
+              - listitem [ref=f196e808] [cursor=pointer]:
+                - generic [ref=f196e810]: test tag by manasa 1
+              - listitem [ref=f196e811] [cursor=pointer]:
+                - generic [ref=f196e813]: Test tag PAC1-7671
+              - listitem [ref=f196e814] [cursor=pointer]:
+                - generic [ref=f196e816]: test0110
+              - listitem [ref=f196e817] [cursor=pointer]:
+                - generic [ref=f196e819]: Test0210
+              - listitem [ref=f196e820] [cursor=pointer]:
+                - generic [ref=f196e822]: test021025
+              - listitem [ref=f196e823] [cursor=pointer]:
+                - generic [ref=f196e825]: testjs0110
+              - listitem [ref=f196e826] [cursor=pointer]:
+                - generic [ref=f196e828]: Travel
+              - listitem [ref=f196e829] [cursor=pointer]:
+                - generic [ref=f196e831]: Asthma 2
+              - listitem [ref=f196e832] [cursor=pointer]:
+                - generic [ref=f196e834]: Asthma QOF
+              - listitem [ref=f196e835] [cursor=pointer]:
+                - generic [ref=f196e837]: 2696 - Exclude Home Visit
+          - generic [ref=f196e135]:
+            - generic [ref=f196e136]:
+              - generic [ref=f196e137]:
+                - generic [ref=f196e138]: Tag Name
+                - textbox "Tag Name..." [ref=f196e142]
+              - generic [ref=f196e143]:
+                - generic [ref=f196e144]:
+                  - generic [ref=f196e145]: From Date
+                  - generic [ref=f196e146] [cursor=pointer]: 
+                - generic [ref=f196e151] [cursor=pointer]:
+                  - generic [ref=f196e152]: 
+                  - textbox [ref=f196e154]: Select a date
+                  - generic [ref=f196e155]: 
+              - generic [ref=f196e157]:
+                - generic [ref=f196e158]:
+                  - generic [ref=f196e159]: To Date
+                  - generic [ref=f196e160] [cursor=pointer]: 
+                - generic [ref=f196e165] [cursor=pointer]:
+                  - generic [ref=f196e166]: 
+                  - textbox [ref=f196e168]: Select a date
+                  - generic [ref=f196e169]: 
+              - generic [ref=f196e171]:
+                - generic [ref=f196e172]:
+                  - generic [ref=f196e173]: Dynamic Date Range?
+                  - generic [ref=f196e174] [cursor=pointer]: 
+                - generic [ref=f196e179]:
+                  - generic [ref=f196e180] [cursor=pointer]: Select a dynamic date range 
+                  - text: ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔
+            - generic [ref=f196e181]:
+              - generic [ref=f196e182]:
+                - generic [ref=f196e183]: Gender
+                - generic [ref=f196e188]:
+                  - generic [ref=f196e189] [cursor=pointer]: Both 
+                  - text: ✔ ✔ ✔
+              - generic [ref=f196e190]:
+                - generic [ref=f196e191]: Age Range? (Min-Max)
+                - generic [ref=f196e193]:
+                  - textbox "..." [ref=f196e195]
+                  - textbox "..." [ref=f196e197]
+              - generic [ref=f196e198]:
+                - generic [ref=f196e199]: 1st Send Contact Preference
+                - generic [ref=f196e204]:
+                  - generic [ref=f196e205] [cursor=pointer]: No Preference 
+                  - text: ✔ ✔ ✔
+                - generic [ref=f196e206]: "*Only affects Scheduled Campaigns"
+              - generic [ref=f196e207]:
+                - generic [ref=f196e208]: Additonal Send Contact Preference
+                - generic [ref=f196e213]:
+                  - generic [ref=f196e214] [cursor=pointer]: No Preference 
+                  - text: ✔ ✔ ✔
+                - generic [ref=f196e215]: "*Only affects Scheduled Campaigns"
+            - generic [ref=f196e217]:
+              - generic [ref=f196e218]:
+                - generic [ref=f196e221]:
+                  - generic [ref=f196e222]: Email Configuration
+                  - generic [ref=f196e223] [cursor=pointer]: 
+                - generic [ref=f196e229]:
+                  - generic [ref=f196e230]: SMS Configuration
+                  - generic [ref=f196e231] [cursor=pointer]: 
+              - generic [ref=f196e235]:
+                - generic [ref=f196e238]:
+                  - generic [ref=f196e239]: Email Exclusion Codes
+                  - generic [ref=f196e240] [cursor=pointer]: 
+                - generic [ref=f196e244]:
+                  - generic [ref=f196e246]:
+                    - generic [ref=f196e247]: SMS Exclusion Codes
+                    - generic [ref=f196e248] [cursor=pointer]: 
+                  - generic [ref=f196e845]:
+                    - textbox "Search snomed code..." [ref=f196e846]
+                    - generic [ref=f196e847] [cursor=pointer]: 
+              - generic [ref=f196e252]:
+                - generic [ref=f196e255]:
+                  - generic [ref=f196e256]: Email Search Codes
+                  - generic [ref=f196e257] [cursor=pointer]: 
+                - generic [ref=f196e264]:
+                  - generic [ref=f196e265]: SMS Search Codes
+                  - generic [ref=f196e266] [cursor=pointer]: 
+            - generic [ref=f196e272]:
+              - text: Stop Sending After
+              - textbox "..." [ref=f196e273]
+              - text: Messages (Optional) OR
+              - generic [ref=f196e274] [cursor=pointer]: 
+              - text: Patient has booked appointment (Scheduled only) OR
+              - generic [ref=f196e276] [cursor=pointer]: 
+              - text: Health Form completed (Scheduled only)
+  - text:       
+  - generic:
+    - generic:
+      - generic [ref=f196e838]: General Practice (Blinx Demo Site) (YGMQJ)
+      - generic [ref=f196e841]: PC24 Urgent Care (Y05825)

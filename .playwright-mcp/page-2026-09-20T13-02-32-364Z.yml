@@ -1,0 +1,48 @@
+- generic [active] [ref=f22e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f22e288] [cursor=pointer]
+  - generic [ref=f22e11]:
+    - generic [ref=f22e12]:
+      - generic [ref=f22e13]:
+        - button "Expand sidebar" [ref=f22e289] [cursor=pointer]:
+          - img "Paco Logo" [ref=f22e290]
+        - generic [ref=f22e17]:
+          - img "Dashboards" [ref=f22e291] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f22e292] [cursor=pointer]
+          - img "Quick Send" [ref=f22e293] [cursor=pointer]
+          - img "Health Forms" [ref=f22e294] [cursor=pointer]
+          - img "Patient Search" [ref=f22e295] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f22e296] [cursor=pointer]
+          - img "case load management" [ref=f22e297] [cursor=pointer]
+          - img "Appointment Book" [ref=f22e298] [cursor=pointer]
+          - img "Quick Pay" [ref=f22e299] [cursor=pointer]
+          - img "Users" [ref=f22e300] [cursor=pointer]
+          - img "Configuration" [ref=f22e301] [cursor=pointer]
+          - img "Rocket Bar" [ref=f22e302] [cursor=pointer]
+          - generic [ref=f22e79] [cursor=pointer]
+        - button [ref=f22e303] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f22e304]
+      - generic [ref=f22e89]:
+        - generic [ref=f22e94]:
+          - img [aria-hidden] [ref=f22e96] [cursor=pointer]
+          - generic [ref=f22e98]: •Patient Profile Search
+        - generic [ref=f22e310]:
+          - paragraph [ref=f22e313]: Patient Profile Search
+          - generic [ref=f22e316]:
+            - textbox "Search Patients..." [ref=f22e317]
+            - img [aria-hidden] [ref=f22e318] [cursor=pointer]
+          - generic [ref=f22e320]: A-Z Search
+    - generic "one-paco-top-bar" [ref=f22e306]:
+      - generic [ref=f22e118]:
+        - generic [ref=f22e121]:
+          - generic [ref=f22e122]: TFN
+          - generic [ref=f22e124]:
+            - generic [ref=f22e125]: Test Fiona Nguyen
+            - generic [ref=f22e126]: Super Admin GB
+            - generic [ref=f22e128]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f22e307]
+        - generic [ref=f22e134]:
+          - button "More options" [ref=f22e308] [cursor=pointer]
+          - generic [ref=f22e142] [cursor=pointer]
+          - generic [ref=f22e143] [cursor=pointer]: "0"
+  - alert [ref=f22e6]

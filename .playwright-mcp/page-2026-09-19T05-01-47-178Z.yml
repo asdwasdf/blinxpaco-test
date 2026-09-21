@@ -1,0 +1,193 @@
+- generic [active] [ref=f27e1]:
+  - paragraph [ref=f27e6]: Gathering data...
+  - banner [ref=f27e8]:
+    - generic [ref=f27e10]:
+      - generic [ref=f27e11]:
+        - generic [ref=f27e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f27e16]
+        - heading "Communications Hub" [level=1] [ref=f27e17]
+      - generic [ref=f27e18]:              
+      - generic [ref=f27e19]:
+        - generic:
+          - list: 
+        - generic [ref=f27e20]: 
+  - navigation [ref=f27e24]:
+    - generic [ref=f27e25]:
+      - img "Blinx Company Logo" [ref=f27e27]
+      - generic [ref=f27e28] [cursor=pointer]
+    - generic [ref=f27e29]:
+      - list [ref=f27e32]:
+        - listitem [ref=f27e33]:
+          - link "Home" [ref=f27e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f27e36]:
+          - generic [ref=f27e37] [cursor=pointer]:
+            - link "Analytics" [ref=f27e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f27e39]: 
+        - listitem [ref=f27e40]:
+          - generic [ref=f27e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f27e42]:
+              - /url: /commshub/
+            - generic [ref=f27e43]: 
+        - listitem [ref=f27e44]:
+          - generic [ref=f27e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f27e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f27e47]: 
+        - listitem [ref=f27e48]:
+          - link "Patient Search" [ref=f27e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f27e51]:
+          - generic [ref=f27e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f27e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f27e54]: 
+        - listitem [ref=f27e55]:
+          - link "Care Navigator" [ref=f27e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f27e58]:
+          - link "Configuration" [ref=f27e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f27e61]:
+        - listitem [ref=f27e62]:
+          - link "Dashboard" [ref=f27e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f27e65]:
+          - link "Appointment Book" [ref=f27e67] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book
+        - listitem [ref=f27e68]:
+          - link "Settings" [ref=f27e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f27e71]:
+        - listitem [ref=f27e72]:
+          - link "User Management" [ref=f27e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f27e75]:
+          - generic [ref=f27e76] [cursor=pointer]: Log Out
+        - listitem [ref=f27e78]:
+          - generic [ref=f27e79]: Version 1.0
+  - generic [ref=f27e83]:
+    - generic [ref=f27e84]:
+      - generic [ref=f27e85]: Notifications
+      - generic [ref=f27e86] [cursor=pointer]:
+        - generic [ref=f27e87]: Clear All
+        - generic [ref=f27e88]: 
+    - generic [ref=f27e90]:
+      - generic [ref=f27e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f27e92]: "0"
+      - generic [ref=f27e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f27e94]: "0"
+      - generic [ref=f27e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f27e96]: "0"
+  - generic [ref=f27e99]:   
+  - generic [ref=f27e100]:
+    - generic [ref=f27e102]:
+      - link "" [ref=f27e103] [cursor=pointer]:
+        - /url: /commshub/commshub
+      - generic [ref=f27e105]: •
+      - link "Comms Hub" [ref=f27e106] [cursor=pointer]:
+        - /url: /commshub/commshub
+      - generic [ref=f27e107]: •
+      - generic [ref=f27e108]: Configuration
+    - generic [ref=f27e112]:
+      - generic [ref=f27e113]:
+        - generic [ref=f27e114]: Configuration
+        - generic [ref=f27e115] [cursor=pointer]: 
+      - generic [ref=f27e117]:
+        - generic [ref=f27e118]:
+          - generic [ref=f27e119]: CAMPAIGN TAG CONFIG
+          - button "Clear Selections" [ref=f27e120] [cursor=pointer]
+          - button "Save" [ref=f27e121] [cursor=pointer]
+        - generic [ref=f27e122]:
+          - generic [ref=f27e123]:
+            - generic [ref=f27e124] [cursor=pointer]: 
+            - generic [ref=f27e127]:
+              - textbox "Search tags..." [ref=f27e128]
+              - generic [ref=f27e129]: 
+            - list [ref=f27e132]
+          - generic [ref=f27e135]:
+            - generic [ref=f27e136]:
+              - generic [ref=f27e137]:
+                - generic [ref=f27e138]: Tag Name
+                - textbox "Tag Name..." [ref=f27e142]
+              - generic [ref=f27e143]:
+                - generic [ref=f27e144]:
+                  - generic [ref=f27e145]: From Date
+                  - generic [ref=f27e146] [cursor=pointer]: 
+                - generic [ref=f27e151] [cursor=pointer]:
+                  - generic [ref=f27e152]: 
+                  - textbox [ref=f27e154]: 19/09/2026
+                  - generic [ref=f27e155]: 
+              - generic [ref=f27e157]:
+                - generic [ref=f27e158]:
+                  - generic [ref=f27e159]: To Date
+                  - generic [ref=f27e160] [cursor=pointer]: 
+                - generic [ref=f27e165] [cursor=pointer]:
+                  - generic [ref=f27e166]: 
+                  - textbox [ref=f27e168]: 19/09/2026
+                  - generic [ref=f27e169]: 
+              - generic [ref=f27e171]:
+                - generic [ref=f27e172]:
+                  - generic [ref=f27e173]: Dynamic Date Range?
+                  - generic [ref=f27e174] [cursor=pointer]: 
+                - generic [ref=f27e179]:
+                  - generic [ref=f27e180] [cursor=pointer]: Select a dynamic date range 
+                  - text: ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔ ✔
+            - generic [ref=f27e181]:
+              - generic [ref=f27e182]:
+                - generic [ref=f27e183]: Gender
+                - generic [ref=f27e188]:
+                  - generic [ref=f27e189] [cursor=pointer]: Both 
+                  - text: ✔ ✔ ✔
+              - generic [ref=f27e190]:
+                - generic [ref=f27e191]: Age Range? (Min-Max)
+                - generic [ref=f27e193]:
+                  - textbox "..." [ref=f27e195]
+                  - textbox "..." [ref=f27e197]
+              - generic [ref=f27e198]:
+                - generic [ref=f27e199]: 1st Send Contact Preference
+                - generic [ref=f27e204]:
+                  - generic [ref=f27e205] [cursor=pointer]: No Preference 
+                  - text: ✔ ✔ ✔
+                - generic [ref=f27e206]: "*Only affects Scheduled Campaigns"
+              - generic [ref=f27e207]:
+                - generic [ref=f27e208]: Additonal Send Contact Preference
+                - generic [ref=f27e213]:
+                  - generic [ref=f27e214] [cursor=pointer]: No Preference 
+                  - text: ✔ ✔ ✔
+                - generic [ref=f27e215]: "*Only affects Scheduled Campaigns"
+            - generic [ref=f27e217]:
+              - generic [ref=f27e218]:
+                - generic [ref=f27e221]:
+                  - generic [ref=f27e222]: Email Configuration
+                  - generic [ref=f27e223] [cursor=pointer]: 
+                - generic [ref=f27e229]:
+                  - generic [ref=f27e230]: SMS Configuration
+                  - generic [ref=f27e231] [cursor=pointer]: 
+              - generic [ref=f27e235]:
+                - generic [ref=f27e238]:
+                  - generic [ref=f27e239]: Email Exclusion Codes
+                  - generic [ref=f27e240] [cursor=pointer]: 
+                - generic [ref=f27e246]:
+                  - generic [ref=f27e247]: SMS Exclusion Codes
+                  - generic [ref=f27e248] [cursor=pointer]: 
+              - generic [ref=f27e252]:
+                - generic [ref=f27e255]:
+                  - generic [ref=f27e256]: Email Search Codes
+                  - generic [ref=f27e257] [cursor=pointer]: 
+                - generic [ref=f27e264]:
+                  - generic [ref=f27e265]: SMS Search Codes
+                  - generic [ref=f27e266] [cursor=pointer]: 
+            - generic [ref=f27e272]:
+              - text: Stop Sending After
+              - textbox "..." [ref=f27e273]
+              - text: Messages (Optional) OR
+              - generic [ref=f27e274] [cursor=pointer]: 
+              - text: Patient has booked appointment (Scheduled only) OR
+              - generic [ref=f27e276] [cursor=pointer]: 
+              - text: Health Form completed (Scheduled only)
+  - text:       

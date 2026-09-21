@@ -1,0 +1,302 @@
+- generic [active] [ref=f201e1]:
+  - banner [ref=f201e8]:
+    - generic [ref=f201e10]:
+      - generic [ref=f201e11]:
+        - generic [ref=f201e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f201e16]
+        - heading "Communications Hub" [level=1] [ref=f201e17]
+      - generic [ref=f201e18]:
+        - generic [ref=f201e229]:
+          - generic [ref=f201e230]: 
+          - textbox "Search Patients..." [ref=f201e232]
+          - text: 
+        - text:            
+      - generic [ref=f201e19]:
+        - generic:
+          - list: 
+        - generic [ref=f201e234] [cursor=pointer]:
+          - generic [ref=f201e235]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f201e236]: 
+          - generic [ref=f201e237]: "Your Home Organisation:"
+        - generic [ref=f201e20]: 
+  - navigation [ref=f201e24]:
+    - generic [ref=f201e25]:
+      - img "Blinx Company Logo" [ref=f201e27]
+      - generic [ref=f201e28] [cursor=pointer]
+    - generic [ref=f201e29]:
+      - list [ref=f201e32]:
+        - listitem [ref=f201e33]:
+          - link "Home" [ref=f201e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f201e36]:
+          - generic [ref=f201e37] [cursor=pointer]:
+            - link "Analytics" [ref=f201e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f201e39]: 
+        - listitem [ref=f201e40]:
+          - generic [ref=f201e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f201e42]:
+              - /url: /commshub/
+            - generic [ref=f201e43]: 
+        - listitem [ref=f201e44]:
+          - generic [ref=f201e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f201e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f201e47]: 
+        - listitem [ref=f201e48]:
+          - link "Patient Search" [ref=f201e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f201e51]:
+          - generic [ref=f201e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f201e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f201e54]: 
+        - listitem [ref=f201e55]:
+          - link "Care Navigator" [ref=f201e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f201e58]:
+          - link "Configuration" [ref=f201e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f201e61]:
+        - listitem [ref=f201e62]:
+          - link "Dashboard" [ref=f201e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f201e68]:
+          - link "Settings" [ref=f201e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f201e71]:
+        - listitem [ref=f201e72]:
+          - link "User Management" [ref=f201e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f201e75]:
+          - generic [ref=f201e76] [cursor=pointer]: Log Out
+        - listitem [ref=f201e78]:
+          - generic [ref=f201e79]: Version 1.0
+  - generic [ref=f201e83]:
+    - generic [ref=f201e84]:
+      - generic [ref=f201e85]: Notifications
+      - generic [ref=f201e86] [cursor=pointer]:
+        - generic [ref=f201e87]: Clear All
+        - generic [ref=f201e88]: 
+    - generic [ref=f201e90]:
+      - generic [ref=f201e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f201e92]: "0"
+      - generic [ref=f201e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f201e94]: "0"
+      - generic [ref=f201e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f201e96]: "0"
+    - generic [ref=f201e240]:
+      - generic [ref=f201e241]: You are up to date
+      - generic [ref=f201e242]: You currently have no notifcations to review
+  - generic [ref=f201e100]:
+    - generic [ref=f201e101]:
+      - generic [ref=f201e102]:
+        - link "" [ref=f201e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f201e105]: •
+        - link "Comms Hub" [ref=f201e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f201e107]: •
+        - generic [ref=f201e108]: Campaign Manager
+      - generic [ref=f201e109]:
+        - button " Create Campaign" [ref=f201e110] [cursor=pointer]:
+          - generic [ref=f201e111]: 
+          - generic [ref=f201e112]: Create Campaign
+        - button " Campaign Outbox" [ref=f201e113] [cursor=pointer]:
+          - generic [ref=f201e114]: 
+          - generic [ref=f201e115]: Campaign Outbox
+        - generic [ref=f201e244] [cursor=pointer]:
+          - generic [ref=f201e245]: General Practice (Blinx Demo Site) (YGMQJ)
+          - generic [ref=f201e246]: 
+          - generic [ref=f201e247]: "Viewing data for:"
+          - generic:
+            - generic:
+              - generic [ref=f201e248]:
+                - generic [ref=f201e249]: 
+                - generic [ref=f201e250]: Select All (2)
+              - generic [ref=f201e252]:
+                - generic [ref=f201e253]: 
+                - generic [ref=f201e255]: General Practice (Blinx Demo Site) (YGMQJ)
+              - generic [ref=f201e257]:
+                - generic [ref=f201e258]: 
+                - generic [ref=f201e259]: PC24 Urgent Care (Y05825)
+            - generic [ref=f201e260]: Apply
+    - generic [ref=f201e119]:
+      - generic [ref=f201e120]:
+        - generic [ref=f201e121]: Filter Campaigns
+        - generic [ref=f201e122]:
+          - generic [ref=f201e123]: Campaign Statuses
+          - list [ref=f201e124]:
+            - listitem [ref=f201e125] [cursor=pointer]:
+              - generic [ref=f201e126]: All Statuses
+            - listitem [ref=f201e127] [cursor=pointer]:
+              - generic [ref=f201e128]: 
+              - generic [ref=f201e131]: Draft
+            - listitem [ref=f201e132] [cursor=pointer]:
+              - generic [ref=f201e133]: 
+              - generic [ref=f201e136]: Inactive
+            - listitem [ref=f201e137] [cursor=pointer]:
+              - generic [ref=f201e138]: 
+              - generic [ref=f201e141]: Queued
+            - listitem [ref=f201e142] [cursor=pointer]:
+              - generic [ref=f201e143]: 
+              - generic [ref=f201e146]: In Progress
+            - listitem [ref=f201e147] [cursor=pointer]:
+              - generic [ref=f201e148]: 
+              - generic [ref=f201e151]: Sent
+            - listitem [ref=f201e152] [cursor=pointer]:
+              - generic [ref=f201e153]: 
+              - generic [ref=f201e156]: Failed
+            - listitem [ref=f201e157] [cursor=pointer]:
+              - generic [ref=f201e158]: 
+              - generic [ref=f201e161]: Paused
+            - listitem [ref=f201e162] [cursor=pointer]:
+              - generic [ref=f201e163]: 
+              - generic [ref=f201e166]: Deleted
+            - listitem [ref=f201e167] [cursor=pointer]:
+              - generic [ref=f201e168]: 
+              - generic [ref=f201e171]: Available Quick Send
+            - listitem [ref=f201e172] [cursor=pointer]:
+              - generic [ref=f201e173]: 
+              - generic [ref=f201e176]: Available Patient-Initiated
+          - generic [ref=f201e177]: Campaign Types
+          - list [ref=f201e178]:
+            - listitem [ref=f201e179] [cursor=pointer]:
+              - generic [ref=f201e181]:
+                - generic [ref=f201e182]: Sc
+                - generic [ref=f201e184]: QS
+                - generic [ref=f201e186]: PI
+                - generic [ref=f201e188]: All Types
+            - listitem [ref=f201e189] [cursor=pointer]:
+              - generic [ref=f201e191]:
+                - generic [ref=f201e192]: Sc
+                - generic [ref=f201e194]: Scheduled
+            - listitem [ref=f201e195] [cursor=pointer]:
+              - generic [ref=f201e197]:
+                - generic [ref=f201e198]: QS
+                - generic [ref=f201e200]: Quick Send
+            - listitem [ref=f201e201] [cursor=pointer]:
+              - generic [ref=f201e203]:
+                - generic [ref=f201e204]: PI
+                - generic [ref=f201e206]: Patient-initiated
+      - generic [ref=f201e209]:
+        - generic [ref=f201e210]:
+          - generic [ref=f201e212]:
+            - textbox "Search campaigns" [ref=f201e213]
+            - generic [ref=f201e214]: 
+          - generic [ref=f201e216]:
+            - text:   
+            - button " Reset Column Widths" [ref=f201e218] [cursor=pointer]:
+              - generic [ref=f201e219]: 
+              - text: Reset Column Widths
+            - button " Show All Columns" [ref=f201e221] [cursor=pointer]:
+              - generic [ref=f201e222]: 
+              - text: Show All Columns
+            - button " Clear Filters" [ref=f201e224] [cursor=pointer]:
+              - generic [ref=f201e225]: 
+              - text: Clear Filters
+            - text: 
+        - generic [ref=f201e263]:
+          - generic:    
+          - generic [ref=f201e264]:
+            - grid [ref=f201e265]:
+              - rowgroup [ref=f201e266]:
+                - row [ref=f201e267]:
+                  - text: 
+                  - generic [ref=f201e269] [cursor=pointer]: 
+                  - columnheader "Shared Campaign?" [ref=f201e270] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e272] [cursor=pointer]: 
+                  - columnheader "Campaign" [ref=f201e273] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e275] [cursor=pointer]: 
+                  - columnheader "Status" [ref=f201e276] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e278] [cursor=pointer]: 
+                  - columnheader "Description" [ref=f201e279] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e281] [cursor=pointer]: 
+                  - columnheader "Campaign Type" [ref=f201e282] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e284] [cursor=pointer]: 
+                  - columnheader "Email Template" [ref=f201e285] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e287] [cursor=pointer]: 
+                  - columnheader "SMS Template" [ref=f201e288] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e290] [cursor=pointer]: 
+                  - columnheader "Created By Organisation" [ref=f201e291] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e293] [cursor=pointer]: 
+                  - columnheader "Shared To Orgs" [ref=f201e294] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e296] [cursor=pointer]: 
+                  - columnheader "Created By" [ref=f201e297] [cursor=pointer]
+                  - text:     
+                  - generic [ref=f201e299] [cursor=pointer]: 
+                  - columnheader "Created Date" [ref=f201e300] [cursor=pointer]
+                  - text:  
+                  - generic [ref=f201e302] [cursor=pointer]: 
+                  - text: 
+              - row [ref=f201e303]:
+                - text: 
+                - generic [ref=f201e305] [cursor=pointer]: 
+                - columnheader
+                - text:    
+              - rowgroup [ref=f201e306]:
+                - row [ref=f201e307]:
+                  - gridcell [ref=f201e308]
+                  - gridcell "-" [ref=f201e309]
+                  - gridcell [ref=f201e310]
+                  - gridcell [ref=f201e314]
+                  - gridcell " Non-Shared Campaigns (4112)" [ref=f201e318]:
+                    - generic [ref=f201e319]:
+                      - text: 
+                      - generic [ref=f201e320]: 
+                      - generic [ref=f201e322]: Non-Shared Campaigns
+                      - generic [ref=f201e323]: (4112)
+                  - gridcell [ref=f201e324]
+                  - gridcell [ref=f201e325]
+                  - gridcell [ref=f201e329]
+                  - gridcell [ref=f201e330]
+                  - gridcell [ref=f201e332]
+                  - gridcell [ref=f201e333]
+                - row [ref=f201e334]:
+                  - gridcell [ref=f201e335]
+                  - gridcell "-" [ref=f201e336]
+                  - gridcell [ref=f201e337]
+                  - gridcell [ref=f201e341]
+                  - gridcell " Shared Campaigns (445)" [ref=f201e345]:
+                    - generic [ref=f201e346]:
+                      - text: 
+                      - generic [ref=f201e347]: 
+                      - generic [ref=f201e349]: Shared Campaigns
+                      - generic [ref=f201e350]: (445)
+                  - gridcell [ref=f201e351]
+                  - gridcell [ref=f201e352]
+                  - gridcell [ref=f201e356]
+                  - gridcell [ref=f201e357]
+                  - gridcell [ref=f201e359]
+                  - gridcell [ref=f201e360]
+              - row [ref=f201e361]:
+                - gridcell [ref=f201e362]
+              - row [ref=f201e364]:
+                - gridcell [ref=f201e365]
+            - generic [ref=f201e371]:
+              - generic [ref=f201e372]:
+                - button "≣ Columns" [ref=f201e374] [cursor=pointer]:
+                  - generic [ref=f201e375]: ≣
+                  - generic [ref=f201e377]: Columns
+                - button " Filters" [ref=f201e379] [cursor=pointer]:
+                  - generic [ref=f201e380]: 
+                  - generic [ref=f201e382]: Filters
+              - text:                                                                                                                                                               
+          - text:    
+  - text:                                        
+  - generic:
+    - generic:
+      - generic [ref=f201e384]: General Practice (Blinx Demo Site) (YGMQJ)
+      - generic [ref=f201e387]: PC24 Urgent Care (Y05825)

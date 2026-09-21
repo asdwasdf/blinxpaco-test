@@ -1,0 +1,87 @@
+- generic [active] [ref=f5e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f5e8] [cursor=pointer]
+  - generic [ref=f5e11]:
+    - generic [ref=f5e12]:
+      - generic [ref=f5e13]:
+        - button "Expand sidebar" [ref=f5e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f5e15]
+        - generic [ref=f5e17]:
+          - img "Dashboards" [ref=f5e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f5e27] [cursor=pointer]
+          - img "Quick Send" [ref=f5e32] [cursor=pointer]
+          - img "Health Forms" [ref=f5e37] [cursor=pointer]
+          - img "Patient Search" [ref=f5e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f5e47] [cursor=pointer]
+          - img "case load management" [ref=f5e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f5e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f5e62] [cursor=pointer]
+          - img "Users" [ref=f5e67] [cursor=pointer]
+          - img "Configuration" [ref=f5e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f5e77] [cursor=pointer]
+          - generic [ref=f5e79] [cursor=pointer]
+        - button [ref=f5e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f5e88]
+      - generic [ref=f5e94]:
+        - generic [ref=f5e95]: External Appt Reminders
+        - generic [ref=f5e96]:
+          - generic [ref=f5e97]: All appointments booked through PACO will follow the reminder settings configured for that campaign.
+          - generic [ref=f5e98]:
+            - generic [ref=f5e99]:
+              - generic [ref=f5e101]:
+                - generic [ref=f5e102]: Consent Test
+                - img [ref=f5e103] [cursor=pointer]
+                - img [aria-hidden] [ref=f5e104] [cursor=pointer]
+              - generic [ref=f5e106]:
+                - generic [ref=f5e107]:
+                  - generic [ref=f5e108]: Slot Type
+                  - generic [ref=f5e109]:
+                    - generic:
+                      - combobox: emis--77
+                    - generic [ref=f5e110]: emis--77
+                - generic [ref=f5e115]:
+                  - generic [ref=f5e116]: Email Template
+                  - generic [ref=f5e117] [cursor=pointer]:
+                    - generic:
+                      - textbox
+                    - generic:
+                      - combobox:
+                        - option "Select an option..." [selected]
+                    - generic [ref=f5e118]: Select an option...
+                    - button "Select an option..." [ref=f5e119]
+                - generic [ref=f5e122]:
+                  - generic [ref=f5e123]: SMS Template
+                  - generic [ref=f5e124] [cursor=pointer]:
+                    - generic:
+                      - textbox
+                    - generic:
+                      - combobox:
+                        - option "Select an option..." [selected]
+                    - generic [ref=f5e125]: Select an option...
+                    - button "Select an option..." [ref=f5e126]
+                - generic [ref=f5e129]:
+                  - generic [ref=f5e130]: Scheduling
+                  - generic [ref=f5e131]:
+                    - generic:
+                      - combobox: 1 Day
+                    - generic [ref=f5e132]: 1 Day
+                - generic [ref=f5e137]:
+                  - checkbox [ref=f5e139] [cursor=pointer]
+                  - generic [ref=f5e141]: Save to Patient Record?
+            - generic [ref=f5e142]: Add new Reminder
+          - button "Save" [ref=f5e148] [cursor=pointer]
+          - img "loading icon" [ref=f5e150]
+    - generic "one-paco-top-bar" [ref=f5e151]:
+      - generic [ref=f5e153]:
+        - generic [ref=f5e156]:
+          - generic [ref=f5e157]: TFN
+          - generic [ref=f5e159]:
+            - generic [ref=f5e160]: Test Fiona Nguyen
+            - generic [ref=f5e161]: Super Admin GB
+            - generic [ref=f5e163]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f5e168]
+        - generic [ref=f5e169]:
+          - button "More options" [ref=f5e171] [cursor=pointer]
+          - generic [ref=f5e177] [cursor=pointer]
+          - generic [ref=f5e178] [cursor=pointer]: "0"
+  - alert [ref=f5e6]

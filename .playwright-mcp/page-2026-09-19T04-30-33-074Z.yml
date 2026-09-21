@@ -1,0 +1,145 @@
+- generic [ref=f44e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f44e3] [cursor=pointer]
+  - generic [ref=f44e8]:
+    - generic [ref=f44e9]:
+      - button "Expand sidebar" [ref=f44e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f44e11]
+      - generic [ref=f44e13]:
+        - img "Dashboards" [ref=f44e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f44e23] [cursor=pointer]
+        - img "Quick Send" [ref=f44e28] [cursor=pointer]
+        - img "Health Forms" [ref=f44e33] [cursor=pointer]
+        - img "Patient Search" [ref=f44e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f44e43] [cursor=pointer]
+        - img "case load management" [ref=f44e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f44e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f44e58] [cursor=pointer]
+        - img "Users" [ref=f44e63] [cursor=pointer]
+        - img "Configuration" [ref=f44e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f44e73] [cursor=pointer]
+        - generic [ref=f44e75] [cursor=pointer]
+      - button [ref=f44e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f44e84]
+    - generic [ref=f44e85]:
+      - generic [ref=f44e86]:
+        - generic [ref=f44e87]: 1h 57m
+        - generic [ref=f44e92]:
+          - generic [ref=f44e95]:
+            - generic [ref=f44e96] [cursor=pointer]: TFN
+            - generic [ref=f44e98]:
+              - generic [ref=f44e99]: Test Fiona Nguyen
+              - generic [ref=f44e100]: Super Admin GB
+              - generic [ref=f44e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f44e107]
+          - generic [ref=f44e108]:
+            - button "More options" [ref=f44e110] [cursor=pointer]
+            - generic [ref=f44e114] [cursor=pointer]: "0"
+      - generic [ref=f44e119]:
+        - generic [ref=f44e122]:
+          - generic [ref=f44e123]:
+            - heading "Configuration" [level=1] [ref=f44e125]
+            - generic [ref=f44e128]:
+              - generic [ref=f44e129]:
+                - button "Organisation" [expanded] [ref=f44e130] [cursor=pointer]:
+                  - link "Organisation" [ref=f44e132]:
+                    - /url: "#"
+                - region "Organisation" [ref=f44e194]:
+                  - tree [ref=f44e196]:
+                    - treeitem "General" [level=1] [ref=f44e197]:
+                      - link [aria-hidden] [ref=f44e199] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e200]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f44e201]:
+                      - link [aria-hidden] [ref=f44e203] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e204]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f44e205]:
+                      - link [aria-hidden] [ref=f44e207] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e208]: Locations
+                    - treeitem "Skills" [level=1] [ref=f44e209]:
+                      - link [aria-hidden] [ref=f44e211] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e212]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f44e213]:
+                      - link [aria-hidden] [ref=f44e215] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e216]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f44e217]:
+                      - link [aria-hidden] [ref=f44e219] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e220]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f44e221]:
+                      - link [aria-hidden] [ref=f44e223] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e224]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f44e225]:
+                      - link [aria-hidden] [ref=f44e227] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e228]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f44e229]:
+                      - link [aria-hidden] [ref=f44e231] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e232]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f44e233]:
+                      - link [aria-hidden] [ref=f44e235] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e236]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f44e237]:
+                      - link [aria-hidden] [ref=f44e239] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e240]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f44e241]:
+                      - link [aria-hidden] [ref=f44e243] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e244]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f44e245]:
+                      - link [aria-hidden] [ref=f44e247] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e248]: Integrations
+              - generic [ref=f44e136]:
+                - button "Patient" [expanded] [ref=f44e137] [cursor=pointer]:
+                  - link "Patient" [active] [ref=f44e139]:
+                    - /url: "#"
+                - region "Patient" [ref=f44e264]:
+                  - tree [ref=f44e266]:
+                    - treeitem "DFD" [level=1] [ref=f44e267]:
+                      - link [aria-hidden] [ref=f44e269] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e270]: DFD
+                    - treeitem "Care Navigation" [level=1] [ref=f44e271]:
+                      - link [aria-hidden] [ref=f44e273] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e274]: Care Navigation
+              - button "Appointment Books" [ref=f44e144] [cursor=pointer]:
+                - link "Appointment Books" [ref=f44e146]:
+                  - /url: "#"
+              - generic [ref=f44e150]:
+                - button "Quick Pay" [expanded] [ref=f44e151] [cursor=pointer]:
+                  - link "Quick Pay" [ref=f44e153]:
+                    - /url: "#"
+                - region "Quick Pay" [ref=f44e251]:
+                  - tree [ref=f44e253]:
+                    - treeitem "Product Catalogue" [level=1] [ref=f44e254]:
+                      - link [aria-hidden] [ref=f44e256] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e257]: Product Catalogue
+                    - treeitem "Accounts" [level=1] [ref=f44e258]:
+                      - link [aria-hidden] [ref=f44e260] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f44e261]: Accounts
+              - button "Patients & Proxy" [ref=f44e158] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f44e160]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f44e165] [cursor=pointer]:
+                - link "Users & Staff" [ref=f44e167]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f44e172] [cursor=pointer]:
+                - link "Clinical Config" [ref=f44e174]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f44e179] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f44e181]:
+                  - /url: "#"
+          - generic [ref=f44e183] [cursor=pointer]
+        - generic [ref=f44e186]: Please select a menu item

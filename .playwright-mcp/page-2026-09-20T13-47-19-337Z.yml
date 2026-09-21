@@ -1,0 +1,240 @@
+- generic [ref=f48e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f48e3] [cursor=pointer]
+  - generic [ref=f48e7]:
+    - generic [ref=f48e8]:
+      - generic [ref=f48e9]:
+        - button "Expand sidebar" [ref=f48e10] [cursor=pointer]:
+          - img "Paco Logo" [ref=f48e11]
+        - generic [ref=f48e13]:
+          - img "Dashboards" [ref=f48e18] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f48e23] [cursor=pointer]
+          - img "Quick Send" [ref=f48e28] [cursor=pointer]
+          - img "Health Forms" [ref=f48e33] [cursor=pointer]
+          - img "Patient Search" [ref=f48e38] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f48e43] [cursor=pointer]
+          - img "case load management" [ref=f48e48] [cursor=pointer]
+          - img "Appointment Book" [ref=f48e53] [cursor=pointer]
+          - img "Quick Pay" [ref=f48e58] [cursor=pointer]
+          - img "Users" [ref=f48e63] [cursor=pointer]
+          - img "Configuration" [ref=f48e68] [cursor=pointer]
+          - img "Rocket Bar" [ref=f48e73] [cursor=pointer]
+          - generic [ref=f48e75] [cursor=pointer]
+        - button [ref=f48e83] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f48e84]
+      - generic [ref=f48e85]:
+        - generic [ref=f48e86]:
+          - generic [ref=f48e87]: 4h 27m
+          - generic [ref=f48e92]:
+            - generic [ref=f48e95]:
+              - generic [ref=f48e96] [cursor=pointer]: TFN
+              - generic [ref=f48e170]:
+                - generic [ref=f48e171]: Test Fiona Nguyen
+                - generic [ref=f48e172]: Super Admin GB
+                - generic [ref=f48e174]: General Practice (Blinx Demo Site)
+            - textbox "Search patients by name or NHS number" [ref=f48e101]
+            - generic [ref=f48e102]:
+              - button "More options" [ref=f48e104] [cursor=pointer]
+              - generic [ref=f48e108] [cursor=pointer]: "0"
+        - generic [ref=f48e113]:
+          - generic [ref=f48e114]:
+            - generic [ref=f48e115]:
+              - generic [ref=f48e116]:
+                - link "Back to Dashboard" [ref=f48e120] [cursor=pointer]:
+                  - /url: /paco/dashboard
+                - heading "Work Boards" [level=1] [ref=f48e121]
+              - generic [ref=f48e122]:
+                - generic [ref=f48e123]:
+                  - generic [ref=f48e124] [cursor=pointer]:
+                    - checkbox "View My Tasks Only" [ref=f48e127]
+                    - generic [ref=f48e130]: View My Tasks Only
+                  - generic [ref=f48e131] [cursor=pointer]:
+                    - checkbox "View My Cases Only" [ref=f48e134]
+                    - generic [ref=f48e137]: View My Cases Only
+                - generic [ref=f48e138]: Search all boards
+                - generic [ref=f48e139]:
+                  - button "Board" [ref=f48e140] [cursor=pointer]
+                  - button "Case ID" [ref=f48e142] [cursor=pointer]
+                  - button "Patient" [ref=f48e144] [cursor=pointer]
+                - textbox "Board name" [ref=f48e147]
+                - generic [ref=f48e148]:
+                  - button "Tasks (874)" [ref=f48e176] [cursor=pointer]
+                  - button "Cases (28)" [ref=f48e177] [cursor=pointer]
+                - generic [ref=f48e152]:
+                  - generic [ref=f48e180] [cursor=pointer]:
+                    - button [ref=f48e181]
+                    - generic [ref=f48e184]: Master Case Board
+                    - generic [ref=f48e185]: (13)
+                  - generic [ref=f48e188] [cursor=pointer]:
+                    - button [ref=f48e189]
+                    - generic [ref=f48e192]: Master Home Visit Board
+                    - generic [ref=f48e193]: (0)
+                  - generic [ref=f48e196] [cursor=pointer]:
+                    - button [ref=f48e197]
+                    - generic [ref=f48e200]: Test Case Board
+                    - generic [ref=f48e201]: (19)
+                  - generic [ref=f48e204] [cursor=pointer]:
+                    - button [ref=f48e205]
+                    - generic [ref=f48e208]: Epsom PCN Demo - Care Home VIsts
+                    - generic [ref=f48e209]: (0)
+                  - generic [ref=f48e212] [cursor=pointer]:
+                    - button [ref=f48e213]
+                    - generic [ref=f48e216]: Paul's Physio
+                    - generic [ref=f48e217]: (0)
+                  - generic [ref=f48e220] [cursor=pointer]:
+                    - button [ref=f48e221]
+                    - generic [ref=f48e224]: Urgent Healthcare UK 2025
+                    - generic [ref=f48e225]: (1)
+                  - generic [ref=f48e228] [cursor=pointer]:
+                    - button [ref=f48e229]
+                    - generic [ref=f48e232]: test
+                    - generic [ref=f48e233]: (0)
+                  - generic [ref=f48e236] [cursor=pointer]:
+                    - button [ref=f48e237]
+                    - generic [ref=f48e240]: test board
+                    - generic [ref=f48e241]: (2)
+                  - generic [ref=f48e244] [cursor=pointer]:
+                    - button [ref=f48e245]
+                    - generic [ref=f48e248]: waiting list
+                    - generic [ref=f48e249]: (8)
+                  - generic [ref=f48e252] [cursor=pointer]:
+                    - button [ref=f48e253]
+                    - generic [ref=f48e256]: North Shropshire PCN Neighbourhood team
+                    - generic [ref=f48e257]: (0)
+                  - generic [ref=f48e260] [cursor=pointer]:
+                    - button [ref=f48e261]
+                    - generic [ref=f48e264]: TEST FOR pac2-4688
+                    - generic [ref=f48e265]: (0)
+                  - generic [ref=f48e268] [cursor=pointer]:
+                    - button [ref=f48e269]
+                    - generic [ref=f48e272]: Frailty Management Caseload
+                    - generic [ref=f48e273]: (0)
+                  - generic [ref=f48e276] [cursor=pointer]:
+                    - button [ref=f48e277]
+                    - generic [ref=f48e280]: Mustafa Task Workboard
+                    - generic [ref=f48e281]: (0)
+                  - generic [ref=f48e284] [cursor=pointer]:
+                    - button [ref=f48e285]
+                    - generic [ref=f48e288]: Board 1
+                    - generic [ref=f48e289]: (2)
+                  - generic [ref=f48e292] [cursor=pointer]:
+                    - button [ref=f48e293]
+                    - generic [ref=f48e296]: Board 3
+                    - generic [ref=f48e297]: (0)
+                  - generic [ref=f48e300] [cursor=pointer]:
+                    - button [ref=f48e301]
+                    - generic [ref=f48e304]: Test board
+                    - generic [ref=f48e305]: (0)
+                  - generic [ref=f48e308] [cursor=pointer]:
+                    - button [ref=f48e309]
+                    - generic [ref=f48e312]: Test Create Board 20260324_200800_614
+                    - generic [ref=f48e313]: (0)
+                  - generic [ref=f48e316] [cursor=pointer]:
+                    - button [ref=f48e317]
+                    - generic [ref=f48e320]: Test Create Board 20260324_205052_742
+                    - generic [ref=f48e321]: (0)
+                  - generic [ref=f48e324] [cursor=pointer]:
+                    - button [ref=f48e325]
+                    - generic [ref=f48e328]: Test Create Board 20260324_205640_381
+                    - generic [ref=f48e329]: (0)
+                  - generic [ref=f48e332] [cursor=pointer]:
+                    - button [ref=f48e333]
+                    - generic [ref=f48e336]: Test Create Board 20260325_092737_405
+                    - generic [ref=f48e337]: (0)
+                  - generic [ref=f48e340] [cursor=pointer]:
+                    - button [ref=f48e341]
+                    - generic [ref=f48e344]: Test Create Board 20260330_165045_976
+                    - generic [ref=f48e345]: (0)
+                  - generic [ref=f48e348] [cursor=pointer]:
+                    - button [ref=f48e349]
+                    - generic [ref=f48e352]: Test Create Board 20260330_170255_969
+                    - generic [ref=f48e353]: (0)
+                  - generic [ref=f48e356] [cursor=pointer]:
+                    - button [ref=f48e357]
+                    - generic [ref=f48e360]: Test Create Board 20260330_170526_295
+                    - generic [ref=f48e361]: (0)
+                  - generic [ref=f48e364] [cursor=pointer]:
+                    - button [ref=f48e365]
+                    - generic [ref=f48e368]: Test Create Board 20260330_170745_692
+                    - generic [ref=f48e369]: (0)
+                  - generic [ref=f48e372] [cursor=pointer]:
+                    - button [ref=f48e373]
+                    - generic [ref=f48e376]: War Room Proxy Access
+                    - generic [ref=f48e377]: (2)
+                  - generic [ref=f48e380] [cursor=pointer]:
+                    - button [ref=f48e381]
+                    - generic [ref=f48e384]: Call Queue
+                    - generic [ref=f48e385]: (14)
+                  - generic [ref=f48e388] [cursor=pointer]:
+                    - button [ref=f48e389]
+                    - generic [ref=f48e392]: Syed Test Board
+                    - generic [ref=f48e393]: (0)
+                  - generic [ref=f48e396] [cursor=pointer]:
+                    - button [ref=f48e397]
+                    - generic [ref=f48e400]: Neighbourhood DEMO
+                    - generic [ref=f48e401]: (0)
+                - button "Create new board" [ref=f48e161] [cursor=pointer]
+            - button [ref=f48e165] [cursor=pointer]
+          - generic [ref=f48e402]:
+            - generic [ref=f48e403]:
+              - generic [ref=f48e405]:
+                - heading "workboardName" [level=2] [ref=f48e406]: Master Case Board
+                - generic [ref=f48e408]:
+                  - generic [ref=f48e409]:
+                    - button "List view" [ref=f48e410] [cursor=pointer]
+                    - button "Card view" [ref=f48e412] [cursor=pointer]
+                  - generic [ref=f48e419] [cursor=pointer]
+              - generic [ref=f48e423]:
+                - textbox "Search this board" [ref=f48e426]
+                - generic [ref=f48e427]:
+                  - generic [ref=f48e428] [cursor=pointer]:
+                    - generic [ref=f48e429]:
+                      - textbox: Breaching (high to low)
+                    - generic [ref=f48e431]: Breaching (high to low)
+                    - button [ref=f48e432]
+                  - button "Filters" [ref=f48e437] [cursor=pointer]
+              - generic [ref=f48e440]:
+                - button "All (13)" [ref=f48e441] [cursor=pointer]
+                - button "Mid Priority (1)" [active] [ref=f48e442] [cursor=pointer]
+                - button "High Priority (1)" [ref=f48e443] [cursor=pointer]
+                - button "Low Priority (1)" [ref=f48e444] [cursor=pointer]
+                - button "Emergency (3)" [ref=f48e445] [cursor=pointer]
+                - button "Other (7)" [ref=f48e446] [cursor=pointer]
+            - generic "case-card" [ref=f48e1629]:
+              - generic [ref=f48e1630]:
+                - generic [ref=f48e1631]:
+                  - generic [ref=f48e1632]:
+                    - generic "Drag to move task" [ref=f48e1633]
+                    - generic [ref=f48e1636]: Over 72 hour
+                    - generic [ref=f48e1637]:
+                      - generic [ref=f48e1638]: "Received:"
+                      - generic [ref=f48e1639]: 17/08/2025 20:06
+                  - button [ref=f48e1642] [cursor=pointer]
+                - generic [ref=f48e1645] [cursor=pointer]:
+                  - generic [ref=f48e1650]:
+                    - generic [ref=f48e1651]: JUNJIE U
+                    - button [ref=f48e1656]
+                  - generic [ref=f48e1665]:
+                    - generic [ref=f48e1666]: "Age:"
+                    - generic [ref=f48e1667]: "41"
+                  - generic [ref=f48e1668]: "Gender:"
+                  - generic [ref=f48e1678]:
+                    - generic [ref=f48e1679]: "Active Time:"
+                    - generic [ref=f48e1680]: 9576 hours, 40 mins, 59 secs
+                  - generic [ref=f48e1684]:
+                    - generic [ref=f48e1685]: "Time to breach:"
+                    - generic [ref=f48e1686]: "- 396 d, 00 h, 40 m, 59 s"
+                  - generic [ref=f48e1693]:
+                    - generic [ref=f48e1694]: "Assignee:"
+                    - generic [ref=f48e1695]: Unassigned
+                  - generic [ref=f48e1696]: 31 Wyken Close, ********, West Midlands, GGGGGGG
+                  - generic [ref=f48e1702]: Pathway
+                  - generic [ref=f48e1712]:
+                    - generic [ref=f48e1713]: Case Summary
+                    - generic [ref=f48e1714]: Tepidus terminatio cunae aspernatur tamdiu corporis sum absque. Conqueror pauci thesis turpis curriculum tyrannus vestrum ater suppellex vulariter. Congregatio antiquus curtus creptio temptatio aspernatur defero tenus. Arbustum utilis tyrannus spiculum. Animadverto atavus strenuus patria textilis. Cunae ait versus curvo. Tabgo molestiae amissio ocer vorax quaerat adeptio temporibus defaeco vapulus. Ver voco aptus armarium aggero tempus ventus cedo coepi. Volo adstringo demo bos abduco crastinus utrimque coerceo tristis atrocitas. Taedium demonstro reiciendis tracto quis textor. Sopor patruus sufficio illum despecto cuppedia aranea cunae vere amiculum. Eum taedium dedecor depopulo. Conduco quis toties. Vulgo creta comminor defungo argumentum administratio temptatio despecto cognomen. Ait solum depulso tepidus tenax apostolus solio earum adfero. Pariatur tribuo totus totam tot alo. Viriliter truculenter volup cubitum stella corrumpo repellat. Solitudo suadeo officiis omnis traho. Blandior ultio sufficio aureus benevolentia auditor thymum tergiversatio alias talis. Utrimque verbera chirographum. Defero antepono sulum. Consequuntur coniuratio sopor stella ut. Patruus umquam facere. Curvo quaerat ulterius abeo laborum aveho tracto acidus libero tamdiu. Vulnus ceno valde clarus molestiae subiungo advenio cognomen necessitatibus comedo. Adsuesco bardus tantum. Volaticus vis carus ademptio. Acsi sum sponte temporibus. Corroboro adnuo accusamus crepusculum. Cuius ater adipisci textilis aufero admiratio rerum deprecator. Absens synagoga tyrannus adhuc cinis audio pariatur quia ante. Peccatus abduco synagoga suadeo aranea tabernus depopulo consuasor. Voveo attollo attollo decet sint. Ocer ustulo derelinquo sursum conforto repellendus. Spargo custodia depereo autus asperiores terga auxilium bos. Attero communis copiose. Condico acervus cenaculum ver spoliatio deludo maiores civitas coruscus capillus. Patruus coepi adduco vere stips speciosus. Abeo explicabo amet stabilis defero. Decumbo vicinus voluntarius. Alius cariosus amplexus adversus. Blandior incidunt talus voluptatem maxime fugiat comedo. Solitudo ocer autem adaugeo. Sub substantia reprehenderit. Asperiores veniam derideo credo antepono testimonium tempore. Agnitio certus illum acerbitas tamisium vulticulus tristis. Ab decipio dedecor earum. Coadunatio avarus vigor patior cultellus tenus aufero aetas sed. Ulciscor vociferor sortitus velum consequuntur turbo. Arx amoveo pecco. Aeneus talis sapiente suasoria dolorem. Bis nesciunt congregatio. Est sunt suppellex aestas. Debilito apparatus arbor sponte cattus amplitudo quisquam aggredior. Amplus vomer aeger iusto voluptas truculenter tumultus adduco decens. Amita sol conduco. Qui recusandae adinventitias neque cultura adipiscor amaritudo coepi. Reprehenderit ultio vero ea talio vereor ager appono timidus peccatus. Earum chirographum caste tergeo tres vereor appello vociferor cur color. Stella solium totus caries astrum vulnus voluntarius. Combibo vesper ciminatio tonsor nobis. Calco carmen creber cena crur tamen coma terminatio. Tredecim tum campana valetudo. Universe delectus tolero super atavus amplus candidus. Tabella toties cribro. Aiunt undique confugo vinitor. Pauci apud tepesco arbor dolorem cunctatio suasoria. Ago dapifer turba cetera canis. Patruus taedium triduana cognatus considero cupio crux atrox speculum benevolentia. Tui commodo coerceo adamo desparatus denique vis. Ad sol viscus dedico torqueo. Ascisco ancilla creta. Appositus trado urbanus. Magnam deorsum alioqui suppellex patria. Apostolus curiositas cubitum maxime textus tergiversatio curiositas surculus. Cogito defessus cohors. Abeo pariatur reprehenderit sto pecto defetiscor sit cubo. Aer animadverto suffragium desolo adficio carbo rerum alii. Thymum avarus deporto varietas pecto iusto earum. Stultus celer usitas demo tenus. Statua eius apto ea tactus. Iure depereo vesica beatus cruciamentum tabula suadeo. Vinculum temptatio stultus supra. Vulgus derelinquo tolero traho correptius magnam harum conscendo. Chirographum quia perspiciatis deleo. Civitas adeptio tamdiu magni spero defluo validus vestigium. Sto solus sequi provident alter arguo vomer confero trans villa. Cupio consequatur verus tribuo validus denuo brevis. Conscendo spero perspiciatis contego utrum conforto crustulum amoveo quam. Vestrum alii acceptus ocer beatae. Nobis termes pel adhuc similique adeptio. Aureus porro textilis ut solium velociter defluo. Astrum virgo quos avarus. Capto carbo magni tondeo suscipio curatio basium natus accusantium depereo. Amplitudo pecto confero hic decens sum. Ullam astrum cervus. Talio tepesco theatrum. Cenaculum culpo enim. Rerum vis cum concedo desolo cumque tutamen aggero avaritia vobis. Bellum arma ipsum curtus.
+                - generic [ref=f48e1715]:
+                  - generic [ref=f48e1716]: "Case ID:"
+                  - generic [ref=f48e1717]:
+                    - button "send–quick-send-button" [ref=f48e1718] [cursor=pointer]
+                    - button "Call Patient" [ref=f48e1721] [cursor=pointer]
+    - status [ref=f48e169]

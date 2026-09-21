@@ -1,0 +1,144 @@
+- generic [ref=f32e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f32e3] [cursor=pointer]
+  - generic [ref=f32e8]:
+    - generic [ref=f32e9]:
+      - button "Collapse sidebar" [active] [ref=f32e283] [cursor=pointer]:
+        - img "Paco Logo" [ref=f32e11]
+      - textbox "Search menu..." [ref=f32e285]
+      - generic [ref=f32e13]:
+        - generic [ref=f32e15] [cursor=pointer]:
+          - img "Dashboards" [ref=f32e18]
+          - generic [ref=f32e286]: Dashboards
+        - generic [ref=f32e20] [cursor=pointer]:
+          - img "Quick Send" [ref=f32e23]
+          - generic [ref=f32e289]: Comms Hub
+        - generic [ref=f32e25] [cursor=pointer]:
+          - img "Patient Search" [ref=f32e28]
+          - generic [ref=f32e292]: Patients
+        - generic [ref=f32e30] [cursor=pointer]:
+          - img "case load management" [ref=f32e33]
+          - generic [ref=f32e295]: Case Load Management
+        - generic [ref=f32e35] [cursor=pointer]:
+          - img "Appointment Book" [ref=f32e38]
+          - generic [ref=f32e298]: Appointment Book
+        - generic [ref=f32e40] [cursor=pointer]:
+          - img "Users" [ref=f32e43]
+          - generic [ref=f32e301]: User Portal
+        - generic [ref=f32e45] [cursor=pointer]:
+          - img "Configuration" [ref=f32e48]
+          - generic [ref=f32e302]: Configuration
+        - generic [ref=f32e50] [cursor=pointer]:
+          - img "Rocket Bar" [ref=f32e53]
+          - generic [ref=f32e303]: Rocket Bar
+        - generic [ref=f32e54]: Sign Out
+      - button [ref=f32e63] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f32e64]
+    - generic [ref=f32e65]:
+      - generic [ref=f32e66]:
+        - generic [ref=f32e67]: 1h 18m
+        - generic [ref=f32e72]:
+          - generic [ref=f32e75]:
+            - generic [ref=f32e76] [cursor=pointer]: FN
+            - generic [ref=f32e307]:
+              - generic [ref=f32e308]: Fiona Nguyen
+              - generic [ref=f32e309]: Super User
+              - generic [ref=f32e311]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f32e81]
+          - generic [ref=f32e82]:
+            - button "More options" [ref=f32e84] [cursor=pointer]
+            - generic [ref=f32e88] [cursor=pointer]: "0"
+      - generic [ref=f32e92]:
+        - generic [ref=f32e94]:
+          - button "day" [ref=f32e96] [cursor=pointer]
+          - button "week" [ref=f32e100] [cursor=pointer]
+          - button "month" [ref=f32e104] [cursor=pointer]
+          - button "year" [ref=f32e108] [cursor=pointer]
+        - generic [ref=f32e109]:
+          - generic [ref=f32e110]:
+            - generic [ref=f32e111]:
+              - generic [ref=f32e116]:
+                - generic [ref=f32e119] [cursor=pointer]:
+                  - generic [ref=f32e120]:
+                    - textbox: Brent Integrated Neighbourhood Care Overview
+                  - generic [ref=f32e313]: Brent Integrated Neighbourhood Care Overview
+                  - button [ref=f32e122]
+                - generic [ref=f32e127]:
+                  - paragraph [ref=f32e316]: Loading ...
+                  - generic [ref=f32e129]: Completed 0
+              - generic [ref=f32e137]:
+                - generic [ref=f32e138]: Call Status
+                - img [ref=f32e144]:
+                  - generic [ref=f32e319]:
+                    - generic [ref=f32e320]: Calls Waiting
+                    - generic [ref=f32e321]: ConsultationsCompleted
+                    - generic [ref=f32e322]: Failed to Contact
+                    - generic [ref=f32e323]: active calls
+                  - generic [ref=f32e324]:
+                    - generic [ref=f32e325]: "0"
+                    - generic [ref=f32e326]: "60"
+                    - generic [ref=f32e327]: "120"
+                    - generic [ref=f32e328]: "180"
+                    - generic [ref=f32e329]: "240"
+                    - generic [ref=f32e330]: "300"
+            - generic [ref=f32e162]:
+              - generic [ref=f32e167]:
+                - generic [ref=f32e168]: Staff Status
+                - generic [ref=f32e171]:
+                  - list [ref=f32e173]:
+                    - listitem [ref=f32e174]: Available (75)
+                    - listitem [ref=f32e176]: F2F (65)
+                    - listitem [ref=f32e178]: Screening (50)
+                    - listitem [ref=f32e180]: Lunch (15)
+                    - listitem [ref=f32e182]: Away (50)
+                  - generic [ref=f32e184]: Out of a possible 132
+                - generic [ref=f32e213]: Coming soon
+              - generic [ref=f32e218]:
+                - generic [ref=f32e219]: Opel level
+                - generic [ref=f32e253]:
+                  - generic [ref=f32e254]: Level 2
+                  - generic [ref=f32e255]: Moderate Pressure
+                - generic [ref=f32e257]: Coming soon
+          - generic [ref=f32e261]:
+            - generic [ref=f32e262]:
+              - generic [ref=f32e263]:
+                - generic [ref=f32e264]: Staff Availability
+                - button "What do these statuses mean?" [ref=f32e265] [cursor=pointer]
+              - generic [ref=f32e269] [cursor=pointer]:
+                - generic [ref=f32e270]:
+                  - textbox: A - Z Last Name
+                - generic [ref=f32e272]: A - Z Last Name
+                - button [ref=f32e273]
+            - generic [ref=f32e276]:
+              - textbox "Search Clinicians..." [ref=f32e278]
+              - generic [ref=f32e279]:
+                - generic [ref=f32e280]: 2 on Rota
+                - generic [ref=f32e281]: Sat 19 Sept, 11:25
+            - generic [ref=f32e352]:
+              - button "Available (2)" [ref=f32e353] [cursor=pointer]
+              - button "On Leave (0)" [ref=f32e354] [cursor=pointer]
+            - generic [ref=f32e282]:
+              - generic [ref=f32e355]:
+                - generic [ref=f32e356]:
+                  - img "Logged Out · 13m" [ref=f32e357]
+                  - text: MTF
+                - button "Miss Test Fiona Nguyen Super Admin GB Logged Out · 13m" [ref=f32e359] [cursor=pointer]:
+                  - generic "Miss Test Fiona Nguyen" [ref=f32e360]
+                  - generic [ref=f32e361]:
+                    - generic [ref=f32e362]: Super Admin GB
+                    - generic [ref=f32e363]: Logged Out · 13m
+                - generic "Coming soon — PACOmms user messaging" [ref=f32e364]:
+                  - button "Send Message" [disabled]
+              - generic [ref=f32e365]:
+                - generic [ref=f32e366]:
+                  - img "Admin · 3m" [ref=f32e367]
+                  - text: FN
+                - button "Fiona Nguyen Super User Admin · 3m" [ref=f32e369] [cursor=pointer]:
+                  - generic "Fiona Nguyen" [ref=f32e370]
+                  - generic [ref=f32e371]:
+                    - generic [ref=f32e372]: Super User
+                    - generic [ref=f32e373]: Admin · 3m
+                - generic "Coming soon — PACOmms user messaging" [ref=f32e374]:
+                  - button "Send Message" [disabled]
+  - tooltip [aria-hidden]:
+    - generic: Close menu sidebar

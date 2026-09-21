@@ -1,0 +1,318 @@
+- generic [active] [ref=f125e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f125e3] [cursor=pointer]
+  - generic [ref=f125e8]:
+    - generic [ref=f125e9]:
+      - button "Expand sidebar" [ref=f125e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f125e11]
+      - generic [ref=f125e13]:
+        - img "Dashboards" [ref=f125e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f125e23] [cursor=pointer]
+        - img "Quick Send" [ref=f125e28] [cursor=pointer]
+        - img "Health Forms" [ref=f125e33] [cursor=pointer]
+        - img "Patient Search" [ref=f125e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f125e43] [cursor=pointer]
+        - img "case load management" [ref=f125e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f125e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f125e58] [cursor=pointer]
+        - img "Users" [ref=f125e63] [cursor=pointer]
+        - img "Configuration" [ref=f125e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f125e73] [cursor=pointer]
+        - generic [ref=f125e75] [cursor=pointer]
+      - button [ref=f125e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f125e84]
+    - generic [ref=f125e85]:
+      - generic [ref=f125e86]:
+        - generic [ref=f125e87]: 3h 56m
+        - generic [ref=f125e92]:
+          - generic [ref=f125e95]:
+            - generic [ref=f125e96] [cursor=pointer]: TFN
+            - generic [ref=f125e98]:
+              - generic [ref=f125e99]: Test Fiona Nguyen
+              - generic [ref=f125e100]: Super Admin GB
+              - generic [ref=f125e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f125e107]
+          - generic [ref=f125e108]:
+            - button "More options" [ref=f125e110] [cursor=pointer]
+            - generic [ref=f125e114] [cursor=pointer]: "0"
+      - generic [ref=f125e1344]:
+        - tablist [ref=f125e1347]:
+          - tab "Mi Tasks" [selected] [ref=f125e1348] [cursor=pointer]
+          - tab "Mi Time" [ref=f125e1350] [cursor=pointer]
+          - tab "Mi Stats" [ref=f125e1351] [cursor=pointer]
+          - tab "Mi Patients" [ref=f125e1352] [cursor=pointer]
+        - tabpanel [ref=f125e1354]:
+          - generic [ref=f125e1356]:
+            - generic [ref=f125e1357]:
+              - generic [ref=f125e1358]:
+                - heading "Mi Tasks" [level=1] [ref=f125e1359]
+                - paragraph [ref=f125e1360]: Medical Intelligence - A view of all clinical and admin tasks assigned to you
+              - generic [ref=f125e1361]:
+                - button "Up Next" [ref=f125e1362] [cursor=pointer]
+                - button "Customise Dashboard 14 Selected" [ref=f125e1368] [cursor=pointer]:
+                  - generic [ref=f125e1369]: Customise Dashboard
+                  - generic [ref=f125e1370]: 14 Selected
+            - generic [ref=f125e1371]:
+              - generic [ref=f125e1373]:
+                - generic [ref=f125e1374]:
+                  - heading "Upcoming Appts (0)" [level=2] [ref=f125e1375]
+                  - link "Go to Appt Book >" [ref=f125e1376] [cursor=pointer]:
+                    - /url: "#"
+                - textbox "Select date" [ref=f125e1380] [cursor=pointer]: 9/20/2026
+                - generic [ref=f125e1383]: No appointments scheduled for 20 Sep 2026
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1385]'
+              - generic [ref=f125e1387]:
+                - heading "Prescriptions" [level=2] [ref=f125e1389]
+                - progressbar [ref=f125e1393]
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1396]'
+              - generic [ref=f125e1398]:
+                - generic [ref=f125e1399]:
+                  - heading "Tasks (0)" [level=2] [ref=f125e1400]
+                  - link "Go to Workboards >" [ref=f125e1401] [cursor=pointer]:
+                    - /url: "#"
+                - generic [ref=f125e1402]: No active tasks
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1404]'
+              - generic [ref=f125e1406]:
+                - heading "Test Results (0)" [level=2] [ref=f125e1408]
+                - generic [ref=f125e1409]: No pending test results to review
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1411]'
+              - generic [ref=f125e1413]:
+                - heading "Documents (20)" [level=2] [ref=f125e1415]
+                - generic [ref=f125e1416]:
+                  - generic [ref=f125e1422]:
+                    - heading "17897406875813398792402631917350.jpg" [level=3] [ref=f125e1423] [cursor=pointer]
+                    - generic [ref=f125e1424]:
+                      - link "Gareth Bartlett" [ref=f125e1425] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1426]: "NHS No: 14604"
+                    - generic [ref=f125e1427]: 18/09/2026 21:28
+                  - generic [ref=f125e1433]:
+                    - heading "Bootcamp Medication Query.pdf" [level=3] [ref=f125e1434] [cursor=pointer]
+                    - generic [ref=f125e1435]:
+                      - link "Gareth Bartlett" [ref=f125e1436] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1437]: "NHS No: 14604"
+                    - generic [ref=f125e1438]: 18/09/2026 21:28
+                  - generic [ref=f125e1444]:
+                    - heading "Bootcamp Routine Appt Request.pdf" [level=3] [ref=f125e1445] [cursor=pointer]
+                    - generic [ref=f125e1446]:
+                      - link "Gareth Bartlett" [ref=f125e1447] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1448]: "NHS No: 14604"
+                    - generic [ref=f125e1449]: 18/09/2026 21:28
+                  - generic [ref=f125e1455]:
+                    - heading "Patient_Summary_2026-09-18.pdf" [level=3] [ref=f125e1456] [cursor=pointer]
+                    - generic [ref=f125e1457]:
+                      - link "Gareth Bartlett" [ref=f125e1458] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1459]: "NHS No: 14604"
+                    - generic [ref=f125e1460]: 18/09/2026 20:23
+                  - generic [ref=f125e1466]:
+                    - heading "Prescription_Letter_2026-09-18.pdf" [level=3] [ref=f125e1467] [cursor=pointer]
+                    - generic [ref=f125e1468]:
+                      - link "Gareth Bartlett" [ref=f125e1469] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1470]: "NHS No: 14604"
+                    - generic [ref=f125e1471]: 18/09/2026 20:23
+                  - generic [ref=f125e1477]:
+                    - heading "Referral_Letter_2026-09-18.pdf" [level=3] [ref=f125e1478] [cursor=pointer]
+                    - generic [ref=f125e1479]:
+                      - link "Gareth Bartlett" [ref=f125e1480] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1481]: "NHS No: 14604"
+                    - generic [ref=f125e1482]: 18/09/2026 20:23
+                  - generic [ref=f125e1488]:
+                    - heading "Fit_Note_2026-09-18.pdf" [level=3] [ref=f125e1489] [cursor=pointer]
+                    - generic [ref=f125e1490]:
+                      - link "Gareth Bartlett" [ref=f125e1491] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1492]: "NHS No: 14604"
+                    - generic [ref=f125e1493]: 18/09/2026 20:23
+                  - generic [ref=f125e1499]:
+                    - heading "Favorite Food.pdf" [level=3] [ref=f125e1500] [cursor=pointer]
+                    - generic [ref=f125e1501]:
+                      - link "Paul Foster" [ref=f125e1502] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1503]: "NHS No: 77124"
+                    - generic [ref=f125e1504]: 18/09/2026 17:40
+                  - generic [ref=f125e1510]:
+                    - heading "Blinx Same Day Triage Form FJ.pdf" [level=3] [ref=f125e1511] [cursor=pointer]
+                    - generic [ref=f125e1512]:
+                      - link "Paul Foster" [ref=f125e1513] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1514]: "NHS No: 77124"
+                    - generic [ref=f125e1515]: 18/09/2026 17:40
+                  - generic [ref=f125e1521]:
+                    - heading "New Document_547948.pdf" [level=3] [ref=f125e1522] [cursor=pointer]
+                    - generic [ref=f125e1523]:
+                      - link "PHOEBE SMITHAM" [ref=f125e1524] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1525]: "NHS No: 9449307539"
+                    - generic [ref=f125e1526]: 18/09/2026 15:19
+                  - generic [ref=f125e1532]:
+                    - heading "New Document_391374.pdf" [level=3] [ref=f125e1533] [cursor=pointer]
+                    - generic [ref=f125e1534]:
+                      - link "PHOEBE SMITHAM" [ref=f125e1535] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1536]: "NHS No: 9449307539"
+                    - generic [ref=f125e1537]: 18/09/2026 15:16
+                  - generic [ref=f125e1543]:
+                    - heading "New Document_856348.pdf" [level=3] [ref=f125e1544] [cursor=pointer]
+                    - generic [ref=f125e1545]:
+                      - link "PHOEBE SMITHAM" [ref=f125e1546] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1547]: "NHS No: 9449307539"
+                    - generic [ref=f125e1548]: 18/09/2026 15:14
+                  - generic [ref=f125e1554]:
+                    - heading "Period Calendar.pdf" [level=3] [ref=f125e1555] [cursor=pointer]
+                    - generic [ref=f125e1556]:
+                      - link "Michael Ramella" [ref=f125e1557] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1558]: "NHS No: 70986"
+                    - generic [ref=f125e1559]: 17/09/2026 15:52
+                  - generic [ref=f125e1565]:
+                    - heading "New Document_944807.pdf" [level=3] [ref=f125e1566] [cursor=pointer]
+                    - generic [ref=f125e1567]:
+                      - link "PHOEBE SMITHAM" [ref=f125e1568] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1569]: "NHS No: 9449307539"
+                    - generic [ref=f125e1570]: 17/09/2026 15:07
+                  - generic [ref=f125e1576]:
+                    - heading "New Document_788642.pdf" [level=3] [ref=f125e1577] [cursor=pointer]
+                    - generic [ref=f125e1578]:
+                      - link "PHOEBE SMITHAM" [ref=f125e1579] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1580]: "NHS No: 9449307539"
+                    - generic [ref=f125e1581]: 17/09/2026 15:04
+                  - generic [ref=f125e1587]:
+                    - heading "New Document_274715.pdf" [level=3] [ref=f125e1588] [cursor=pointer]
+                    - generic [ref=f125e1589]:
+                      - link "PHOEBE SMITHAM" [ref=f125e1590] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1591]: "NHS No: 9449307539"
+                    - generic [ref=f125e1592]: 17/09/2026 15:02
+                  - generic [ref=f125e1598]:
+                    - heading "AP Best Practice DFD Triage.pdf" [level=3] [ref=f125e1599] [cursor=pointer]
+                    - generic [ref=f125e1600]:
+                      - link "Simon Bowers" [ref=f125e1601] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1602]: "NHS No: 13131"
+                    - generic [ref=f125e1603]: 17/09/2026 14:27
+                  - generic [ref=f125e1609]:
+                    - heading "Patient_Summary_2026-09-16.pdf" [level=3] [ref=f125e1610] [cursor=pointer]
+                    - generic [ref=f125e1611]:
+                      - link "MAJDIYYA DUAL" [ref=f125e1612] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1613]: "NHS No: 9449309981"
+                    - generic [ref=f125e1614]: 17/09/2026 05:20
+                  - generic [ref=f125e1620]:
+                    - heading "Fit_Note_2026-09-16.pdf" [level=3] [ref=f125e1621] [cursor=pointer]
+                    - generic [ref=f125e1622]:
+                      - link "MAJDIYYA DUAL" [ref=f125e1623] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1624]: "NHS No: 9449309981"
+                    - generic [ref=f125e1625]: 17/09/2026 05:20
+                  - generic [ref=f125e1631]:
+                    - heading "image.jpg" [level=3] [ref=f125e1632] [cursor=pointer]
+                    - generic [ref=f125e1633]:
+                      - link "Michael Ramella" [ref=f125e1634] [cursor=pointer]:
+                        - /url: "#"
+                      - generic [ref=f125e1635]: "NHS No: 70986"
+                    - generic [ref=f125e1636]: 17/09/2026 04:25
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1637]'
+              - generic [ref=f125e1639]:
+                - generic [ref=f125e1640]:
+                  - generic [ref=f125e1643]: Service Updates
+                  - paragraph [ref=f125e1646]: This is a service test for 3638 -changed location
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1647]'
+              - generic [ref=f125e1649]:
+                - generic [ref=f125e1652]:
+                  - heading "Breaching" [level=2] [ref=f125e1653]
+                  - generic [ref=f125e1654]: "0"
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1658]'
+              - generic [ref=f125e1660]:
+                - generic [ref=f125e1661]:
+                  - generic [ref=f125e1662]:
+                    - generic [ref=f125e1663]: Hours Breached
+                    - generic [ref=f125e1664]:
+                      - button "My Stats" [ref=f125e1665] [cursor=pointer]
+                      - generic [ref=f125e1666]: "|"
+                      - button "All Stats" [ref=f125e1667] [cursor=pointer]
+                  - img [ref=f125e1673]:
+                    - generic [ref=f125e1678]: Time Period
+                    - generic [ref=f125e1680]: Hours
+                    - generic [ref=f125e1682]:
+                      - generic [ref=f125e1683]: Day
+                      - generic [ref=f125e1684]: Week
+                      - generic [ref=f125e1685]: Month
+                      - generic [ref=f125e1686]: Year
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1687]'
+              - generic [ref=f125e1689]:
+                - generic [ref=f125e1691]:
+                  - generic [ref=f125e1692]:
+                    - heading "Health Form Inbox" [level=2] [ref=f125e1693]
+                    - paragraph [ref=f125e1694]:
+                      - text: Showing todays Health Forms, to view all
+                      - button "open rocket bar" [ref=f125e1695] [cursor=pointer]
+                  - generic [ref=f125e1696]:
+                    - textbox "Search" [ref=f125e1700]
+                    - button "Sort By" [ref=f125e1702] [cursor=pointer]
+                  - generic [ref=f125e1706]:
+                    - generic [ref=f125e1707]:
+                      - button "All (0)" [ref=f125e1708] [cursor=pointer]
+                      - button "| Awaiting Review (0)" [ref=f125e1709] [cursor=pointer]
+                      - button "| In Progress (0)" [ref=f125e1710] [cursor=pointer]
+                      - button "| Complete (0)" [ref=f125e1711] [cursor=pointer]
+                    - button "Refresh" [ref=f125e1712] [cursor=pointer]
+                  - generic [ref=f125e1716]: No health forms to review
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1718]'
+              - generic [ref=f125e1720]:
+                - generic [ref=f125e1721] [cursor=pointer]:
+                  - heading "Tagged Comments (0)" [level=2] [ref=f125e1723]
+                  - generic [ref=f125e1724]: No unseen tagged comments
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1726]'
+              - generic [ref=f125e1728]:
+                - generic [ref=f125e1730]:
+                  - generic [ref=f125e1731]:
+                    - generic [ref=f125e1732]: Avg Consultation Time
+                    - generic [ref=f125e1733]:
+                      - button "All Stats" [ref=f125e1734] [cursor=pointer]
+                      - button "My Stats" [ref=f125e1737] [cursor=pointer]
+                  - generic [ref=f125e1738]:
+                    - generic [ref=f125e1739]: Company average
+                    - generic [ref=f125e1740]:
+                      - generic [ref=f125e1741]: "0"
+                      - generic [ref=f125e1742]: "0"
+                      - generic [ref=f125e1743]: ":"
+                      - generic [ref=f125e1744]: "0"
+                      - generic [ref=f125e1745]: "0"
+                      - generic [ref=f125e1746]: ":"
+                      - generic [ref=f125e1747]: "0"
+                      - generic [ref=f125e1748]: "0"
+                    - generic [ref=f125e1749]: Organisation average
+                    - generic [ref=f125e1750]: 00:00:00
+                  - generic [ref=f125e1751]:
+                    - button "Day" [ref=f125e1752] [cursor=pointer]
+                    - button "Week" [ref=f125e1754] [cursor=pointer]
+                    - button "Month" [ref=f125e1756] [cursor=pointer]
+                    - button "Year" [ref=f125e1758] [cursor=pointer]
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1760]'
+              - generic [ref=f125e1762]:
+                - generic [ref=f125e1763]:
+                  - generic [ref=f125e1764]: Consultations Completed
+                  - generic [ref=f125e1766]:
+                    - generic [ref=f125e1767]:
+                      - button "Day" [ref=f125e1768] [cursor=pointer]
+                      - button "Week" [ref=f125e1769] [cursor=pointer]
+                      - button "Month" [ref=f125e1770] [cursor=pointer]
+                      - button "Year" [ref=f125e1771] [cursor=pointer]
+                      - button "All Time" [ref=f125e1772] [cursor=pointer]
+                    - img [ref=f125e1774]:
+                      - generic [ref=f125e1777]: "0"
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1778]'
+              - generic [ref=f125e1780]:
+                - generic [ref=f125e1781]:
+                  - generic [ref=f125e1782]: Paused Cases
+                  - generic [ref=f125e1783]: You currently have no paused cases
+                - 'generic "Current: regular (drag to resize - Regular/Large)" [ref=f125e1788]'
+            - button "Close panel" [ref=f125e1790] [cursor=pointer]

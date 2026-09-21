@@ -1,0 +1,157 @@
+- generic [ref=f70e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f70e3] [cursor=pointer]
+  - generic [ref=f70e8]:
+    - generic [ref=f70e9]:
+      - button "Expand sidebar" [ref=f70e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f70e11]
+      - generic [ref=f70e13]:
+        - img "Dashboards" [ref=f70e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f70e23] [cursor=pointer]
+        - img "Quick Send" [ref=f70e28] [cursor=pointer]
+        - img "Health Forms" [ref=f70e33] [cursor=pointer]
+        - img "Patient Search" [ref=f70e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f70e43] [cursor=pointer]
+        - img "case load management" [ref=f70e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f70e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f70e58] [cursor=pointer]
+        - img "Users" [ref=f70e63] [cursor=pointer]
+        - img "Configuration" [ref=f70e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f70e73] [cursor=pointer]
+        - generic [ref=f70e75] [cursor=pointer]
+      - button [ref=f70e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f70e84]
+    - generic [ref=f70e85]:
+      - generic [ref=f70e86]:
+        - generic [ref=f70e87]: 3h 27m
+        - generic [ref=f70e92]:
+          - generic [ref=f70e93]:
+            - img "Mobile burger menu" [ref=f70e94] [cursor=pointer]
+            - generic [ref=f70e95]: TFN
+          - generic [ref=f70e99]:
+            - generic [ref=f70e100] [cursor=pointer]
+            - button "More options" [ref=f70e102] [cursor=pointer]
+            - generic [ref=f70e106] [cursor=pointer]: "0"
+      - generic [ref=f70e111]:
+        - generic [ref=f70e114]:
+          - generic [ref=f70e115]:
+            - heading "Configuration" [level=1] [ref=f70e117]
+            - generic [ref=f70e120]:
+              - generic [ref=f70e121]:
+                - button "Organisation" [expanded] [ref=f70e122] [cursor=pointer]:
+                  - link "Organisation" [ref=f70e124]:
+                    - /url: "#"
+                - region "Organisation" [ref=f70e128]:
+                  - tree [ref=f70e130]:
+                    - treeitem "General" [level=1] [ref=f70e131]:
+                      - link [aria-hidden] [ref=f70e133] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e134]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f70e135]:
+                      - link [aria-hidden] [ref=f70e137] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e138]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f70e139]:
+                      - link [aria-hidden] [ref=f70e141] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e142]: Locations
+                    - treeitem "Skills" [level=1] [ref=f70e143]:
+                      - link [aria-hidden] [ref=f70e145] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e146]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f70e147]:
+                      - link [aria-hidden] [ref=f70e149] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e150]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f70e151]:
+                      - link [aria-hidden] [ref=f70e153] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e154]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f70e155]:
+                      - link [aria-hidden] [ref=f70e157] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e158]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f70e159]:
+                      - link [aria-hidden] [ref=f70e161] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e162]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f70e163]:
+                      - link [aria-hidden] [ref=f70e165] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e166]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f70e167]:
+                      - link [aria-hidden] [ref=f70e169] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e170]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f70e171]:
+                      - link [aria-hidden] [ref=f70e173] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e174]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f70e175]:
+                      - link [aria-hidden] [ref=f70e177] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e178]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f70e179]:
+                      - link [aria-hidden] [ref=f70e181] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f70e182]: Integrations
+              - button "Patient" [ref=f70e184] [cursor=pointer]:
+                - link "Patient" [ref=f70e186]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f70e191] [cursor=pointer]:
+                - link "Appointment Books" [ref=f70e193]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f70e198] [cursor=pointer]:
+                - link "Quick Pay" [ref=f70e200]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f70e205] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f70e207]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f70e212] [cursor=pointer]:
+                - link "Users & Staff" [ref=f70e214]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f70e219] [cursor=pointer]:
+                - link "Clinical Config" [ref=f70e221]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f70e226] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f70e228]:
+                  - /url: "#"
+          - generic [ref=f70e230] [cursor=pointer]
+        - generic [ref=f70e234]:
+          - heading "Sharing Agreements" [level=1] [ref=f70e235]
+          - generic [ref=f70e237]:
+            - heading "Organisations you share data with" [level=1] [ref=f70e238]
+            - generic [ref=f70e240]:
+              - text:  
+              - grid [ref=f70e241]:
+                - rowgroup [ref=f70e242]:
+                  - row [ref=f70e243]:
+                    - columnheader "ODS Code" [active] [ref=f70e244]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f70e245]: 
+                      - text: 
+                      - generic: 
+                    - columnheader "Name" [ref=f70e247]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f70e248]: 
+                      - text: 
+                      - generic: 
+                    - columnheader "Address" [ref=f70e250]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f70e251]: 
+                      - text: 
+                      - generic: 
+                - rowgroup [ref=f70e253]:
+                  - row [ref=f70e254]:
+                    - gridcell "Y05825" [ref=f70e255]
+                    - gridcell "PC24 Urgent Care" [ref=f70e256]
+                    - gridcell [ref=f70e257]
+                  - row [ref=f70e258]:
+                    - gridcell "QRV" [ref=f70e259]
+                    - gridcell "LUFT" [ref=f70e260]
+                    - gridcell "15 MARYLEBONE ROAD" [ref=f70e261]
+                  - row [ref=f70e262]:
+                    - gridcell "A99882" [ref=f70e263]
+                    - gridcell "OP ACUTE - BCSS INPATIENT UNIT" [ref=f70e264]
+                    - gridcell "THE MOUNT" [ref=f70e265]
+              - text:    

@@ -1,0 +1,76 @@
+- generic [active] [ref=f40e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f40e3] [cursor=pointer]
+  - generic [ref=f40e349]:
+    - generic [ref=f40e350]:
+      - button "Collapse sidebar" [ref=f40e501] [cursor=pointer]:
+        - img "Paco Logo" [ref=f40e352]
+      - textbox "Search menu..." [ref=f40e503]
+      - generic [ref=f40e354]:
+        - generic [ref=f40e356] [cursor=pointer]:
+          - img "Dashboards" [ref=f40e359]
+          - generic [ref=f40e504]: Dashboards
+        - generic [ref=f40e361] [cursor=pointer]:
+          - img "Quick Send" [ref=f40e364]
+          - generic [ref=f40e507]: Comms Hub
+        - generic [ref=f40e366] [cursor=pointer]:
+          - img "Patient Search" [ref=f40e369]
+          - generic [ref=f40e510]: Patients
+        - generic [ref=f40e371] [cursor=pointer]:
+          - img "case load management" [ref=f40e374]
+          - generic [ref=f40e513]: Case Load Management
+        - generic [ref=f40e376] [cursor=pointer]:
+          - img "Appointment Book" [ref=f40e379]
+          - generic [ref=f40e516]: Appointment Book
+        - generic [ref=f40e381] [cursor=pointer]:
+          - img "Users" [ref=f40e384]
+          - generic [ref=f40e519]: User Portal
+        - generic [ref=f40e386] [cursor=pointer]:
+          - img "Configuration" [ref=f40e389]
+          - generic [ref=f40e520]: Configuration
+        - generic [ref=f40e390]:
+          - generic [ref=f40e391] [cursor=pointer]:
+            - img "Rocket Bar" [ref=f40e394]
+            - generic [ref=f40e521]: Rocket Bar
+          - generic [ref=f40e525]:
+            - button "Launch Rocket Bar" [ref=f40e527] [cursor=pointer]
+            - button "Download Rocket Bar" [ref=f40e530] [cursor=pointer]
+        - generic [ref=f40e395]: Sign Out
+      - button [ref=f40e404] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f40e405]
+    - generic [ref=f40e406]:
+      - generic [ref=f40e407]:
+        - generic [ref=f40e408]: 1h 54m
+        - generic [ref=f40e413]:
+          - generic [ref=f40e416]:
+            - generic [ref=f40e417] [cursor=pointer]: FN
+            - generic [ref=f40e419]:
+              - generic [ref=f40e420]: Fiona Nguyen
+              - generic [ref=f40e421]: Super User
+              - generic [ref=f40e423]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f40e428]
+          - generic [ref=f40e429]:
+            - button "More options" [ref=f40e431] [cursor=pointer]
+            - generic [ref=f40e435] [cursor=pointer]: "0"
+      - generic [ref=f40e440]:
+        - generic [ref=f40e443]:
+          - generic [ref=f40e444]:
+            - heading "Configuration" [level=1] [ref=f40e446]
+            - generic [ref=f40e449]:
+              - button "Organisation" [ref=f40e451] [cursor=pointer]:
+                - link "Organisation" [ref=f40e453]:
+                  - /url: "#"
+              - button "Patient" [ref=f40e458] [cursor=pointer]:
+                - link "Patient" [ref=f40e460]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f40e465] [cursor=pointer]:
+                - link "Appointment Books" [ref=f40e467]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f40e472] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f40e474]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f40e479] [cursor=pointer]:
+                - link "Users & Staff" [ref=f40e481]:
+                  - /url: "#"
+          - generic [ref=f40e485] [cursor=pointer]
+        - generic [ref=f40e488]: Please select a menu item

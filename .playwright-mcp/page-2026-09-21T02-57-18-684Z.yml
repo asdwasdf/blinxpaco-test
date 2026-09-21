@@ -1,0 +1,136 @@
+- generic [active] [ref=f23e1]:
+  - paragraph [ref=f23e6]: Gathering data...
+  - banner [ref=f23e8]:
+    - generic [ref=f23e10]:
+      - generic [ref=f23e11]:
+        - generic [ref=f23e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f23e16]
+        - heading "Communications Hub" [level=1] [ref=f23e17]
+      - generic [ref=f23e18]:              
+      - generic [ref=f23e19]:
+        - generic:
+          - list: 
+        - generic [ref=f23e20]: 
+  - navigation [ref=f23e24]:
+    - generic [ref=f23e25]:
+      - img "Blinx Company Logo" [ref=f23e27]
+      - generic [ref=f23e28] [cursor=pointer]
+    - generic [ref=f23e29]:
+      - list [ref=f23e32]:
+        - listitem [ref=f23e33]:
+          - link "Home" [ref=f23e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f23e36]:
+          - generic [ref=f23e37] [cursor=pointer]:
+            - link "Analytics" [ref=f23e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f23e39]: 
+        - listitem [ref=f23e40]:
+          - generic [ref=f23e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f23e42]:
+              - /url: /commshub/
+            - generic [ref=f23e43]: 
+        - listitem [ref=f23e44]:
+          - generic [ref=f23e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f23e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f23e47]: 
+        - listitem [ref=f23e48]:
+          - link "Patient Search" [ref=f23e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f23e51]:
+          - generic [ref=f23e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f23e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f23e54]: 
+        - listitem [ref=f23e55]:
+          - link "Care Navigator" [ref=f23e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f23e58]:
+          - link "Configuration" [ref=f23e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f23e61]:
+        - listitem [ref=f23e62]:
+          - link "Dashboard" [ref=f23e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f23e65]:
+          - link "Appointment Book" [ref=f23e67] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book
+        - listitem [ref=f23e68]:
+          - link "Settings" [ref=f23e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f23e71]:
+        - listitem [ref=f23e72]:
+          - link "User Management" [ref=f23e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f23e75]:
+          - generic [ref=f23e76] [cursor=pointer]: Log Out
+        - listitem [ref=f23e78]:
+          - generic [ref=f23e79]: Version 1.0
+  - generic [ref=f23e83]:
+    - generic [ref=f23e84]:
+      - generic [ref=f23e85]: Notifications
+      - generic [ref=f23e86] [cursor=pointer]:
+        - generic [ref=f23e87]: Clear All
+        - generic [ref=f23e88]: 
+    - generic [ref=f23e90]:
+      - generic [ref=f23e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f23e92]: "0"
+      - generic [ref=f23e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f23e94]: "0"
+      - generic [ref=f23e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f23e96]: "0"
+  - generic [ref=f23e100]:
+    - generic [ref=f23e101]:
+      - generic [ref=f23e102]:
+        - link "" [ref=f23e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f23e105]: •
+        - link "Comms Hub" [ref=f23e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f23e107]: •
+        - generic [ref=f23e108]: Patient Manager
+      - generic [ref=f23e109]:
+        - text:  
+        - generic [ref=f23e112] [cursor=pointer]:
+          - generic [ref=f23e113]: 
+          - textbox [ref=f23e115]: 22/08/2026 - 20/09/2026
+          - generic [ref=f23e116]: 
+    - generic [ref=f23e120]:
+      - tablist [ref=f23e122]:
+        - listitem [ref=f23e123]:
+          - link " Lists" [ref=f23e124] [cursor=pointer]:
+            - /url: "#lists"
+            - generic [ref=f23e126]: 
+            - text: Lists
+        - listitem [ref=f23e127]:
+          - link " Patients" [ref=f23e128] [cursor=pointer]:
+            - /url: "#patients"
+            - generic [ref=f23e129]: 
+            - text: Patients
+      - generic [ref=f23e131]:
+        - generic [ref=f23e134]:
+          - list [ref=f23e136]:
+            - listitem [ref=f23e137] [cursor=pointer]: All Tags
+          - generic [ref=f23e141]:
+            - generic [ref=f23e143]:
+              - textbox "Search any data in the table" [ref=f23e144]
+              - generic [ref=f23e145]: 
+            - generic [ref=f23e147]:
+              - generic [ref=f23e148]: 
+              - text:   
+              - button " Reset Column Widths" [ref=f23e150] [cursor=pointer]:
+                - generic [ref=f23e151]: 
+                - text: Reset Column Widths
+              - button " Show All Columns" [ref=f23e153] [cursor=pointer]:
+                - generic [ref=f23e154]: 
+                - text: Show All Columns
+              - button " Clear Filters" [ref=f23e156] [cursor=pointer]:
+                - generic [ref=f23e157]: 
+                - text: Clear Filters
+              - text: 
+        - text:          
+  - text:   Browse       

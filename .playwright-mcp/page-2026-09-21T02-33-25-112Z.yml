@@ -1,0 +1,178 @@
+- generic [active] [ref=f13e1]:
+  - paragraph [ref=f13e6]: Gathering data...
+  - banner [ref=f13e8]:
+    - generic [ref=f13e10]:
+      - generic [ref=f13e11]:
+        - generic [ref=f13e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f13e16]
+        - heading "Communications Hub" [level=1] [ref=f13e17]
+      - generic [ref=f13e18]:              
+      - generic [ref=f13e19]:
+        - generic:
+          - list: 
+        - generic [ref=f13e20]: 
+  - navigation [ref=f13e24]:
+    - generic [ref=f13e25]:
+      - img "Blinx Company Logo" [ref=f13e27]
+      - generic [ref=f13e28] [cursor=pointer]
+    - generic [ref=f13e29]:
+      - list [ref=f13e32]:
+        - listitem [ref=f13e33]:
+          - link "Home" [ref=f13e35] [cursor=pointer]:
+            - /url: ""
+        - listitem [ref=f13e36]:
+          - generic [ref=f13e37] [cursor=pointer]:
+            - link "Analytics" [ref=f13e38]:
+              - /url: /analytics-home
+            - generic [ref=f13e39]: 
+        - listitem [ref=f13e40]:
+          - generic [ref=f13e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f13e42]:
+              - /url: /commshub/
+            - generic [ref=f13e43]: 
+        - listitem [ref=f13e44]:
+          - generic [ref=f13e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f13e46]:
+              - /url: /web-chat
+            - generic [ref=f13e47]: 
+        - listitem [ref=f13e48]:
+          - link "Patient Search" [ref=f13e50] [cursor=pointer]:
+            - /url: /patient-search
+        - listitem [ref=f13e51]:
+          - generic [ref=f13e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f13e53]:
+              - /url: /health-forms
+            - generic [ref=f13e54]: 
+        - listitem [ref=f13e55]:
+          - link "Care Navigator" [ref=f13e57] [cursor=pointer]:
+            - /url: /patient-search
+        - listitem [ref=f13e58]:
+          - link "Configuration" [ref=f13e60] [cursor=pointer]:
+            - /url: /configuration
+      - list [ref=f13e61]:
+        - listitem [ref=f13e62]:
+          - link "Dashboard" [ref=f13e64] [cursor=pointer]:
+            - /url: /paco-connect/dashboard
+        - listitem [ref=f13e65]:
+          - link "Appointment Book" [ref=f13e67] [cursor=pointer]:
+            - /url: /paco-connect/appointment-book
+        - listitem [ref=f13e68]:
+          - link "Settings" [ref=f13e70] [cursor=pointer]:
+            - /url: /paco-connect/configuration
+      - list [ref=f13e71]:
+        - listitem [ref=f13e72]:
+          - link "User Management" [ref=f13e74] [cursor=pointer]:
+            - /url: /users
+        - listitem [ref=f13e75]:
+          - generic [ref=f13e76] [cursor=pointer]: Log Out
+        - listitem [ref=f13e78]:
+          - generic [ref=f13e79]: Version 1.0
+  - generic [ref=f13e83]:
+    - generic [ref=f13e84]:
+      - generic [ref=f13e85]: Notifications
+      - generic [ref=f13e86] [cursor=pointer]:
+        - generic [ref=f13e87]: Clear All
+        - generic [ref=f13e88]: 
+    - generic [ref=f13e90]:
+      - generic [ref=f13e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f13e92]: "0"
+      - generic [ref=f13e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f13e94]: "0"
+      - generic [ref=f13e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f13e96]: "0"
+  - generic [ref=f13e100]:
+    - generic [ref=f13e101]:
+      - generic [ref=f13e102]:
+        - link "" [ref=f13e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f13e105]: •
+        - link "Comms Hub" [ref=f13e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f13e107]: •
+        - generic [ref=f13e108]: Campaign Manager
+      - generic [ref=f13e109]:
+        - button " Create Campaign" [ref=f13e110] [cursor=pointer]:
+          - generic [ref=f13e111]: 
+          - generic [ref=f13e112]: Create Campaign
+        - button " Campaign Outbox" [ref=f13e113] [cursor=pointer]:
+          - generic [ref=f13e114]: 
+          - generic [ref=f13e115]: Campaign Outbox
+    - generic [ref=f13e119]:
+      - generic [ref=f13e120]:
+        - generic [ref=f13e121]: Filter Campaigns
+        - generic [ref=f13e122]:
+          - generic [ref=f13e123]: Campaign Statuses
+          - list [ref=f13e124]:
+            - listitem [ref=f13e125] [cursor=pointer]: All Statuses
+            - listitem [ref=f13e126] [cursor=pointer]:
+              - generic [ref=f13e127]: 
+              - generic [ref=f13e130]: Draft
+            - listitem [ref=f13e131] [cursor=pointer]:
+              - generic [ref=f13e132]: 
+              - generic [ref=f13e135]: Inactive
+            - listitem [ref=f13e136] [cursor=pointer]:
+              - generic [ref=f13e137]: 
+              - generic [ref=f13e140]: Queued
+            - listitem [ref=f13e141] [cursor=pointer]:
+              - generic [ref=f13e142]: 
+              - generic [ref=f13e145]: In Progress
+            - listitem [ref=f13e146] [cursor=pointer]:
+              - generic [ref=f13e147]: 
+              - generic [ref=f13e150]: Sent
+            - listitem [ref=f13e151] [cursor=pointer]:
+              - generic [ref=f13e152]: 
+              - generic [ref=f13e155]: Failed
+            - listitem [ref=f13e156] [cursor=pointer]:
+              - generic [ref=f13e157]: 
+              - generic [ref=f13e160]: Paused
+            - listitem [ref=f13e161] [cursor=pointer]:
+              - generic [ref=f13e162]: 
+              - generic [ref=f13e165]: Deleted
+            - listitem [ref=f13e166] [cursor=pointer]:
+              - generic [ref=f13e167]: 
+              - generic [ref=f13e170]: Available Quick Send
+            - listitem [ref=f13e171] [cursor=pointer]:
+              - generic [ref=f13e172]: 
+              - generic [ref=f13e175]: Available Patient-Initiated
+          - generic [ref=f13e176]: Campaign Types
+          - list [ref=f13e177]:
+            - listitem [ref=f13e178] [cursor=pointer]:
+              - generic [ref=f13e180]:
+                - generic [ref=f13e181]: Sc
+                - generic [ref=f13e183]: QS
+                - generic [ref=f13e185]: PI
+                - generic [ref=f13e187]: All Types
+            - listitem [ref=f13e188] [cursor=pointer]:
+              - generic [ref=f13e190]:
+                - generic [ref=f13e191]: Sc
+                - generic [ref=f13e193]: Scheduled
+            - listitem [ref=f13e194] [cursor=pointer]:
+              - generic [ref=f13e196]:
+                - generic [ref=f13e197]: QS
+                - generic [ref=f13e199]: Quick Send
+            - listitem [ref=f13e200] [cursor=pointer]:
+              - generic [ref=f13e202]:
+                - generic [ref=f13e203]: PI
+                - generic [ref=f13e205]: Patient-initiated
+      - generic [ref=f13e209]:
+        - generic [ref=f13e211]:
+          - textbox "Search any data in the table" [ref=f13e212]
+          - generic [ref=f13e213]: 
+        - generic [ref=f13e215]:
+          - text:   
+          - button " Reset Column Widths" [ref=f13e217] [cursor=pointer]:
+            - generic [ref=f13e218]: 
+            - text: Reset Column Widths
+          - button " Show All Columns" [ref=f13e220] [cursor=pointer]:
+            - generic [ref=f13e221]: 
+            - text: Show All Columns
+          - button " Clear Filters" [ref=f13e223] [cursor=pointer]:
+            - generic [ref=f13e224]: 
+            - text: Clear Filters
+          - button " Export to CSV" [ref=f13e226] [cursor=pointer]:
+            - generic [ref=f13e227]: 
+            - text: Export to CSV
+  - text:                                    

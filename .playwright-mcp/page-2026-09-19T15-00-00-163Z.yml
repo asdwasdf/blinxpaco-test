@@ -1,0 +1,50 @@
+- generic [active] [ref=f47e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f47e7] [cursor=pointer]
+  - generic [ref=f47e10]:
+    - generic [ref=f47e11]:
+      - generic [ref=f47e12]:
+        - button "Expand sidebar" [ref=f47e13] [cursor=pointer]:
+          - img "Paco Logo" [ref=f47e14]
+        - generic [ref=f47e16]:
+          - img "Dashboards" [ref=f47e21] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f47e26] [cursor=pointer]
+          - img "Quick Send" [ref=f47e31] [cursor=pointer]
+          - img "Health Forms" [ref=f47e36] [cursor=pointer]
+          - img "Patient Search" [ref=f47e41] [cursor=pointer]
+          - img "case load management" [ref=f47e46] [cursor=pointer]
+          - img "Appointment Book" [ref=f47e51] [cursor=pointer]
+          - img "Quick Pay" [ref=f47e56] [cursor=pointer]
+          - img "Users" [ref=f47e61] [cursor=pointer]
+          - img "Configuration" [ref=f47e66] [cursor=pointer]
+          - img "Rocket Bar" [ref=f47e71] [cursor=pointer]
+          - generic [ref=f47e73] [cursor=pointer]
+        - button [ref=f47e81] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f47e82]
+      - generic [ref=f47e87]:
+        - paragraph [ref=f47e90]: Home, Hi Fiona Nguyen
+        - generic [ref=f47e91]:
+          - generic [ref=f47e92]: Analytics
+          - generic [ref=f47e97]: Comms Hub
+          - generic [ref=f47e102]: Patient Search
+          - generic [ref=f47e107]: Health Forms
+          - generic [ref=f47e112]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f47e117]:
+      - generic [ref=f47e119]:
+        - generic [ref=f47e122]:
+          - generic [ref=f47e123]: FN
+          - generic [ref=f47e125]:
+            - generic [ref=f47e126]: Fiona Nguyen
+            - generic [ref=f47e127]: Super User
+            - generic [ref=f47e129]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f47e134]
+        - generic [ref=f47e135]:
+          - button "More options" [ref=f47e137] [cursor=pointer]
+          - generic [ref=f47e143] [cursor=pointer]
+          - generic [ref=f47e144] [cursor=pointer]: "0"
+  - alert [ref=f47e147]
+  - generic [ref=f47e148]:
+    - button "Launch Rocket Bar" [ref=f47e150] [cursor=pointer]
+    - button "Download Rocket Bar" [ref=f47e153] [cursor=pointer]
+  - tooltip [aria-hidden]:
+    - generic: Rocket Bar

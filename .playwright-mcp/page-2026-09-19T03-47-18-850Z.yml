@@ -1,0 +1,66 @@
+- generic [active] [ref=f19e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f19e10] [cursor=pointer]
+  - generic [ref=f19e395]:
+    - generic [ref=f19e396]:
+      - button "Expand sidebar" [ref=f19e397] [cursor=pointer]:
+        - img "Paco Logo" [ref=f19e398]
+      - generic [ref=f19e400]:
+        - img "Dashboards" [ref=f19e405] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f19e410] [cursor=pointer]
+        - img "Quick Send" [ref=f19e415] [cursor=pointer]
+        - img "Health Forms" [ref=f19e420] [cursor=pointer]
+        - img "Patient Search" [ref=f19e425] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f19e430] [cursor=pointer]
+        - img "case load management" [ref=f19e435] [cursor=pointer]
+        - img "Appointment Book" [ref=f19e440] [cursor=pointer]
+        - img "Quick Pay" [ref=f19e445] [cursor=pointer]
+        - img "Users" [ref=f19e450] [cursor=pointer]
+        - img "Configuration" [ref=f19e455] [cursor=pointer]
+        - img "Rocket Bar" [ref=f19e460] [cursor=pointer]
+        - generic [ref=f19e462] [cursor=pointer]
+      - button [ref=f19e470] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f19e471]
+    - generic [ref=f19e472]:
+      - generic [ref=f19e473]:
+        - generic [ref=f19e474]: 1h 14m
+        - generic [ref=f19e479]:
+          - generic [ref=f19e482]:
+            - generic [ref=f19e483] [cursor=pointer]: TFN
+            - generic [ref=f19e485]:
+              - generic [ref=f19e486]: Test Fiona Nguyen
+              - generic [ref=f19e487]: Super Admin GB
+              - generic [ref=f19e489]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f19e494]
+          - generic [ref=f19e495]:
+            - button "More options" [ref=f19e497] [cursor=pointer]
+            - generic [ref=f19e501] [cursor=pointer]: "0"
+      - generic [ref=f19e506]:
+        - generic [ref=f19e507]:
+          - generic [ref=f19e510]:
+            - heading "Reporting" [level=2] [ref=f19e511]
+            - generic [ref=f19e512]:
+              - button "Analytics" [ref=f19e513] [cursor=pointer]
+              - button "Reports" [ref=f19e514] [cursor=pointer]
+          - tree [ref=f19e516]:
+            - treeitem "SCR" [level=1] [ref=f19e517]:
+              - link "SCR" [ref=f19e520] [cursor=pointer]:
+                - /url: /paco/analytics-reports/scr-reports
+            - treeitem "Patient Cases" [level=1] [ref=f19e521]:
+              - link "Patient Cases" [ref=f19e524] [cursor=pointer]:
+                - /url: /paco/analytics-reports/patient-cases
+            - treeitem "Prescriptions" [level=1] [ref=f19e525]:
+              - link "Prescriptions" [ref=f19e528] [cursor=pointer]:
+                - /url: /paco/analytics-reports/prescriptions
+            - treeitem "NCRS" [level=1] [ref=f19e529]:
+              - link "NCRS" [ref=f19e532] [cursor=pointer]:
+                - /url: /paco/analytics-reports/ncrs-reports
+            - treeitem "Safeguarding" [level=1] [ref=f19e533]:
+              - link "Safeguarding" [ref=f19e536] [cursor=pointer]:
+                - /url: /paco/analytics-reports/safe-guarding
+            - treeitem "Clinical Guardian" [level=1] [ref=f19e537]:
+              - link "Clinical Guardian" [ref=f19e540] [cursor=pointer]:
+                - /url: /paco/analytics-reports/clinical-guardian
+        - generic [ref=f19e543]:
+          - heading "Analytics and Reports" [level=2] [ref=f19e544]
+          - paragraph [ref=f19e546]: You are not authorized to view Summary Care Record (SCR) report.

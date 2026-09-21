@@ -1,0 +1,34 @@
+- generic [active] [ref=f109e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f109e8] [cursor=pointer]
+  - generic [ref=f109e11]:
+    - generic [ref=f109e13]:
+      - button "Expand sidebar" [ref=f109e14] [cursor=pointer]:
+        - img "Paco Logo" [ref=f109e15]
+      - generic [ref=f109e17]:
+        - img "Dashboards" [ref=f109e22] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f109e27] [cursor=pointer]
+        - img "Quick Send" [ref=f109e32] [cursor=pointer]
+        - img "Health Forms" [ref=f109e37] [cursor=pointer]
+        - img "Patient Search" [ref=f109e42] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f109e47] [cursor=pointer]
+        - img "case load management" [ref=f109e52] [cursor=pointer]
+        - img "Appointment Book" [ref=f109e57] [cursor=pointer]
+        - img "Quick Pay" [ref=f109e62] [cursor=pointer]
+        - img "Users" [ref=f109e67] [cursor=pointer]
+        - img "Configuration" [ref=f109e72] [cursor=pointer]
+        - img "Rocket Bar" [ref=f109e77] [cursor=pointer]
+        - generic [ref=f109e79] [cursor=pointer]
+      - button [ref=f109e87] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f109e88]
+    - generic "one-paco-top-bar" [ref=f109e94]:
+      - generic [ref=f109e96]:
+        - generic [ref=f109e97]:
+          - img "Mobile burger menu" [ref=f109e98] [cursor=pointer]
+          - generic [ref=f109e99]: TFN
+        - generic [ref=f109e103]:
+          - generic [ref=f109e104] [cursor=pointer]
+          - button "More options" [ref=f109e106] [cursor=pointer]
+          - generic [ref=f109e112] [cursor=pointer]
+          - generic [ref=f109e113] [cursor=pointer]: "0"
+  - alert [ref=f109e6]

@@ -1,0 +1,379 @@
+- generic [ref=f14e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f14e166] [cursor=pointer]
+  - generic [ref=f14e7]:
+    - generic [ref=f14e8]:
+      - generic [ref=f14e169]:
+        - button "Collapse sidebar" [active] [ref=f14e548] [cursor=pointer]:
+          - img "Paco Logo" [ref=f14e171]
+        - textbox "Search menu..." [ref=f14e550]
+        - generic [ref=f14e173]:
+          - generic [ref=f14e175] [cursor=pointer]:
+            - img "Dashboards" [ref=f14e178]
+            - generic [ref=f14e551]: Dashboards
+          - generic [ref=f14e180] [cursor=pointer]:
+            - img "Analytics & Reports" [ref=f14e183]
+            - generic [ref=f14e554]: Analytics & Reports
+          - generic [ref=f14e185] [cursor=pointer]:
+            - img "Quick Send" [ref=f14e188]
+            - generic [ref=f14e557]: Comms Hub
+          - generic [ref=f14e190] [cursor=pointer]:
+            - img "Health Forms" [ref=f14e193]
+            - generic [ref=f14e560]: Health Forms
+          - generic [ref=f14e195] [cursor=pointer]:
+            - img "Patient Search" [ref=f14e198]
+            - generic [ref=f14e563]: Patients
+          - generic [ref=f14e200] [cursor=pointer]:
+            - img "Web Chat & Video" [ref=f14e203]
+            - generic [ref=f14e566]: Web Chat & Video
+          - generic [ref=f14e205] [cursor=pointer]:
+            - img "case load management" [ref=f14e208]
+            - generic [ref=f14e569]: Case Load Management
+          - generic [ref=f14e210] [cursor=pointer]:
+            - img "Appointment Book" [ref=f14e213]
+            - generic [ref=f14e572]: Appointment Book
+          - generic [ref=f14e215] [cursor=pointer]:
+            - img "Quick Pay" [ref=f14e218]
+            - generic [ref=f14e575]: Quick Pay
+          - generic [ref=f14e220] [cursor=pointer]:
+            - img "Users" [ref=f14e223]
+            - generic [ref=f14e576]: User Portal
+          - generic [ref=f14e225] [cursor=pointer]:
+            - img "Configuration" [ref=f14e228]
+            - generic [ref=f14e577]: Configuration
+          - generic [ref=f14e230] [cursor=pointer]:
+            - img "Rocket Bar" [ref=f14e233]
+            - generic [ref=f14e578]: Rocket Bar
+          - generic [ref=f14e234]: Sign Out
+        - button [ref=f14e243] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f14e244]
+      - generic [ref=f14e9]:
+        - generic [ref=f14e11]:
+          - generic [ref=f14e13]:
+            - img [aria-hidden] [ref=f14e15] [cursor=pointer]
+            - generic [ref=f14e17]:
+              - text: •
+              - button [ref=f14e18] [cursor=pointer]:
+                - link "Analytics" [ref=f14e19]:
+                  - /url: /analytics-home/
+            - generic [ref=f14e20]: •Patient & Medication Analyser
+          - generic [ref=f14e21]:
+            - button "1 Selected" [ref=f14e23] [cursor=pointer]
+            - generic [ref=f14e25] [cursor=pointer]:
+              - paragraph [ref=f14e26]: Date Range
+              - paragraph [ref=f14e27]: All Time
+        - generic [ref=f14e34]:
+          - generic [ref=f14e37]:
+            - generic [ref=f14e39]:
+              - paragraph [ref=f14e41]: Reports
+              - generic [ref=f14e43] [cursor=pointer]
+            - textbox "Search..." [ref=f14e50]
+            - list [ref=f14e245]:
+              - listitem [ref=f14e246]:
+                - generic [ref=f14e247]:
+                  - button [ref=f14e248] [cursor=pointer]
+                  - generic [ref=f14e251]: Blinx Report
+              - listitem [ref=f14e252]:
+                - generic [ref=f14e253]:
+                  - button [ref=f14e254] [cursor=pointer]
+                  - generic [ref=f14e257]: Practice Report
+                  - button [ref=f14e259] [cursor=pointer]
+          - generic [ref=f14e55]:
+            - generic [ref=f14e56]:
+              - tablist [ref=f14e61]:
+                - tab "Patient Analyser" [selected] [ref=f14e62] [cursor=pointer]
+                - tab "Medication Analyser" [ref=f14e63] [cursor=pointer]
+                - tab "QOF Registers" [ref=f14e64] [cursor=pointer]
+                - tab "Patient Details" [ref=f14e65] [cursor=pointer]
+              - generic [ref=f14e67]:
+                - generic [ref=f14e70]:
+                  - textbox "Search..." [ref=f14e71]
+                  - button [ref=f14e73] [cursor=pointer]
+                - button [ref=f14e77] [cursor=pointer]
+                - button "Save Report" [ref=f14e80] [cursor=pointer]
+            - generic [ref=f14e85]:
+              - generic [ref=f14e86]:
+                - button "Advanced Search 0" [ref=f14e87] [cursor=pointer]:
+                  - text: Advanced Search
+                  - generic [ref=f14e88]: "0"
+                - generic [ref=f14e89]:
+                  - paragraph [ref=f14e90]: "Observations: 12,941"
+                  - paragraph [ref=f14e95]: "|"
+                  - paragraph [ref=f14e96]: "Patients: 13"
+              - generic [ref=f14e101]:
+                - button "Reset View" [ref=f14e102] [cursor=pointer]
+                - button "Expand All" [ref=f14e105] [cursor=pointer]
+                - button "Collapse All" [ref=f14e106] [cursor=pointer]
+            - generic [ref=f14e108]:
+              - generic [ref=f14e113]:
+                - generic:  
+                - generic [ref=f14e114]:
+                  - grid [ref=f14e115]:
+                    - row [ref=f14e116]:
+                      - columnheader [ref=f14e117] [cursor=pointer]:
+                        - text: 
+                        - checkbox [ref=f14e121]
+                    - rowgroup [ref=f14e123]:
+                      - row [ref=f14e124]:
+                        - columnheader "Full Name" [ref=f14e125] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e126]: 
+                          - text:    
+                        - columnheader "Gender" [ref=f14e128] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e129]: 
+                          - text:    
+                        - columnheader "Observation Effective Date" [ref=f14e131] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e132]: 
+                          - text:    
+                        - columnheader "Observation Term" [ref=f14e134] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e135]: 
+                          - text:    
+                        - columnheader "Observation Type" [ref=f14e137] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e138]: 
+                          - text:    
+                        - columnheader "Patient ID" [ref=f14e140] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f14e141]: 
+                          - text:    
+                    - row [ref=f14e143]:
+                      - columnheader "Actions" [ref=f14e144]:  
+                    - row "Press SPACE to select this row." [ref=f14e262]:
+                      - gridcell [ref=f14e263]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e264]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e265]:
+                      - gridcell [ref=f14e266]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e267]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e268]:
+                      - gridcell [ref=f14e269]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e270]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e271]:
+                      - gridcell [ref=f14e272]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e273]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e274]:
+                      - gridcell [ref=f14e275]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e276]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e277]:
+                      - gridcell [ref=f14e278]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e279]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e280]:
+                      - gridcell [ref=f14e281]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e282]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e283]:
+                      - gridcell [ref=f14e284]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e285]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e286]:
+                      - gridcell [ref=f14e287]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e288]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e289]:
+                      - gridcell [ref=f14e290]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e291]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e292]:
+                      - gridcell [ref=f14e293]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e294]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e295]:
+                      - gridcell [ref=f14e296]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e297]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e298]:
+                      - gridcell [ref=f14e299]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e300]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e301]:
+                      - gridcell [ref=f14e302]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e303]
+                        - text: 
+                    - row "Press SPACE to select this row." [ref=f14e304]:
+                      - gridcell [ref=f14e305]:
+                        - checkbox "Press Space to toggle row selection (unchecked)" [ref=f14e306]
+                        - text: 
+                    - rowgroup [ref=f14e146]:
+                      - row "Press SPACE to select this row." [ref=f14e307]:
+                        - gridcell "Corinne Pegrum" [ref=f14e308]
+                        - gridcell "Female" [ref=f14e309]
+                        - gridcell "30/11/2010" [ref=f14e310]
+                        - gridcell "[D]Emesis" [ref=f14e311]
+                        - gridcell "Observation" [ref=f14e312]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e313]'
+                      - row "Press SPACE to select this row." [ref=f14e314]:
+                        - gridcell "Corinne Pegrum" [ref=f14e315]
+                        - gridcell "Female" [ref=f14e316]
+                        - gridcell "22/08/2018" [ref=f14e317]
+                        - gridcell "Serum creatinine level" [ref=f14e318]
+                        - gridcell "Value" [ref=f14e319]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e320]'
+                      - row "Press SPACE to select this row." [ref=f14e321]:
+                        - gridcell "Corinne Pegrum" [ref=f14e322]
+                        - gridcell "Female" [ref=f14e323]
+                        - gridcell "26/02/2015" [ref=f14e324]
+                        - gridcell "Serum creatinine level" [ref=f14e325]
+                        - gridcell "Value" [ref=f14e326]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e327]'
+                      - row "Press SPACE to select this row." [ref=f14e328]:
+                        - gridcell "Corinne Pegrum" [ref=f14e329]
+                        - gridcell "Female" [ref=f14e330]
+                        - gridcell "27/08/2013" [ref=f14e331]
+                        - gridcell "Serum creatinine level" [ref=f14e332]
+                        - gridcell "Investigation" [ref=f14e333]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e334]'
+                      - row "Press SPACE to select this row." [ref=f14e335]:
+                        - gridcell "Corinne Pegrum" [ref=f14e336]
+                        - gridcell "Female" [ref=f14e337]
+                        - gridcell "01/12/2007" [ref=f14e338]
+                        - gridcell "Foot injury" [ref=f14e339]
+                        - gridcell "Observation" [ref=f14e340]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e341]'
+                      - row "Press SPACE to select this row." [ref=f14e342]:
+                        - gridcell "Corinne Pegrum" [ref=f14e343]
+                        - gridcell "Female" [ref=f14e344]
+                        - gridcell "04/03/2014" [ref=f14e345]
+                        - gridcell "Smoking cessation advice" [ref=f14e346]
+                        - gridcell "Observation" [ref=f14e347]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e348]'
+                      - row "Press SPACE to select this row." [ref=f14e349]:
+                        - gridcell "Corinne Pegrum" [ref=f14e350]
+                        - gridcell "Female" [ref=f14e351]
+                        - gridcell "27/04/2009" [ref=f14e352]
+                        - gridcell "Smoking cessation advice" [ref=f14e353]
+                        - gridcell "Observation" [ref=f14e354]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e355]'
+                      - row "Press SPACE to select this row." [ref=f14e356]:
+                        - gridcell "Corinne Pegrum" [ref=f14e357]
+                        - gridcell "Female" [ref=f14e358]
+                        - gridcell "02/08/2011" [ref=f14e359]
+                        - gridcell "Smoking cessation advice" [ref=f14e360]
+                        - gridcell "Observation" [ref=f14e361]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e362]'
+                      - row "Press SPACE to select this row." [ref=f14e363]:
+                        - gridcell "Corinne Pegrum" [ref=f14e364]
+                        - gridcell "Female" [ref=f14e365]
+                        - gridcell "10/03/2006" [ref=f14e366]
+                        - gridcell "Alcohol consumption" [ref=f14e367]
+                        - gridcell "Value" [ref=f14e368]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e369]'
+                      - row "Press SPACE to select this row." [ref=f14e370]:
+                        - gridcell "Corinne Pegrum" [ref=f14e371]
+                        - gridcell "Female" [ref=f14e372]
+                        - gridcell "18/03/2015" [ref=f14e373]
+                        - gridcell "Alcohol consumption" [ref=f14e374]
+                        - gridcell "Value" [ref=f14e375]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e376]'
+                      - row "Press SPACE to select this row." [ref=f14e377]:
+                        - gridcell "Corinne Pegrum" [ref=f14e378]
+                        - gridcell "Female" [ref=f14e379]
+                        - gridcell "03/06/2011" [ref=f14e380]
+                        - gridcell "Smoking cessation advice" [ref=f14e381]
+                        - gridcell "Observation" [ref=f14e382]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e383]'
+                      - row "Press SPACE to select this row." [ref=f14e384]:
+                        - gridcell "Corinne Pegrum" [ref=f14e385]
+                        - gridcell "Female" [ref=f14e386]
+                        - gridcell "13/08/2018" [ref=f14e387]
+                        - gridcell "Alcohol consumption" [ref=f14e388]
+                        - gridcell "Value" [ref=f14e389]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e390]'
+                      - row "Press SPACE to select this row." [ref=f14e391]:
+                        - gridcell "Corinne Pegrum" [ref=f14e392]
+                        - gridcell "Female" [ref=f14e393]
+                        - gridcell "22/06/2018" [ref=f14e394]
+                        - gridcell "Smoking cessation advice" [ref=f14e395]
+                        - gridcell "Observation" [ref=f14e396]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e397]'
+                      - row "Press SPACE to select this row." [ref=f14e398]:
+                        - gridcell "Corinne Pegrum" [ref=f14e399]
+                        - gridcell "Female" [ref=f14e400]
+                        - gridcell "20/08/2018" [ref=f14e401]
+                        - gridcell "Alcohol consumption" [ref=f14e402]
+                        - gridcell "Value" [ref=f14e403]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e404]'
+                      - row "Press SPACE to select this row." [ref=f14e405]:
+                        - gridcell "Corinne Pegrum" [ref=f14e406]
+                        - gridcell "Female" [ref=f14e407]
+                        - gridcell "17/09/2013" [ref=f14e408]
+                        - gridcell "Smoking cessation advice" [ref=f14e409]
+                        - gridcell "Observation" [ref=f14e410]
+                        - 'gridcell "{239D972E-445B-4092-92AD-02E6A771807F}" [ref=f14e411]'
+                    - row "Press SPACE to select this row." [ref=f14e412]:
+                      - gridcell [ref=f14e413]:
+                        - button [ref=f14e416] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e419]:
+                      - gridcell [ref=f14e420]:
+                        - button [ref=f14e423] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e426]:
+                      - gridcell [ref=f14e427]:
+                        - button [ref=f14e430] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e433]:
+                      - gridcell [ref=f14e434]:
+                        - button [ref=f14e437] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e440]:
+                      - gridcell [ref=f14e441]:
+                        - button [ref=f14e444] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e447]:
+                      - gridcell [ref=f14e448]:
+                        - button [ref=f14e451] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e454]:
+                      - gridcell [ref=f14e455]:
+                        - button [ref=f14e458] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e461]:
+                      - gridcell [ref=f14e462]:
+                        - button [ref=f14e465] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e468]:
+                      - gridcell [ref=f14e469]:
+                        - button [ref=f14e472] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e475]:
+                      - gridcell [ref=f14e476]:
+                        - button [ref=f14e479] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e482]:
+                      - gridcell [ref=f14e483]:
+                        - button [ref=f14e486] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e489]:
+                      - gridcell [ref=f14e490]:
+                        - button [ref=f14e493] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e496]:
+                      - gridcell [ref=f14e497]:
+                        - button [ref=f14e500] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e503]:
+                      - gridcell [ref=f14e504]:
+                        - button [ref=f14e507] [cursor=pointer]
+                    - row "Press SPACE to select this row." [ref=f14e510]:
+                      - gridcell [ref=f14e511]:
+                        - button [ref=f14e514] [cursor=pointer]
+                  - generic [ref=f14e155]:
+                    - tablist [ref=f14e156]:
+                      - tab "Columns" [ref=f14e157] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f14e158]: 
+                      - tab "Filters" [ref=f14e160] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f14e161]: 
+                    - text:          
+                - text:    
+              - paragraph [ref=f14e547]: 50 / 12,941 Rows Loaded
+    - generic "one-paco-top-bar" [ref=f14e163]:
+      - generic [ref=f14e518]:
+        - generic [ref=f14e521]:
+          - generic [ref=f14e522]: TFN
+          - generic [ref=f14e524]:
+            - generic [ref=f14e525]: Test Fiona Nguyen
+            - generic [ref=f14e526]: Super Admin GB
+            - generic [ref=f14e528]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f14e533]
+        - generic [ref=f14e534]:
+          - button "More options" [ref=f14e536] [cursor=pointer]
+          - generic [ref=f14e542] [cursor=pointer]
+          - generic [ref=f14e543] [cursor=pointer]: "0"
+  - alert [ref=f14e6]
+  - tooltip [aria-hidden]:
+    - generic: Close menu sidebar

@@ -1,0 +1,151 @@
+- generic [ref=f107e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f107e3] [cursor=pointer]
+  - generic [ref=f107e8]:
+    - generic [ref=f107e9]:
+      - button "Expand sidebar" [ref=f107e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f107e11]
+      - generic [ref=f107e13]:
+        - img "Dashboards" [ref=f107e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f107e23] [cursor=pointer]
+        - img "Quick Send" [ref=f107e28] [cursor=pointer]
+        - img "Health Forms" [ref=f107e33] [cursor=pointer]
+        - img "Patient Search" [ref=f107e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f107e43] [cursor=pointer]
+        - img "case load management" [ref=f107e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f107e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f107e58] [cursor=pointer]
+        - img "Users" [ref=f107e63] [cursor=pointer]
+        - img "Configuration" [ref=f107e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f107e73] [cursor=pointer]
+        - generic [ref=f107e75] [cursor=pointer]
+      - button [ref=f107e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f107e84]
+    - generic [ref=f107e85]:
+      - generic [ref=f107e86]:
+        - generic [ref=f107e87]: 3h 32m
+        - generic [ref=f107e92]:
+          - generic [ref=f107e93]:
+            - img "Mobile burger menu" [ref=f107e94] [cursor=pointer]
+            - generic [ref=f107e95]: TFN
+          - generic [ref=f107e99]:
+            - generic [ref=f107e100] [cursor=pointer]
+            - button "More options" [ref=f107e102] [cursor=pointer]
+            - generic [ref=f107e106] [cursor=pointer]: "0"
+      - generic [ref=f107e111]:
+        - generic [ref=f107e114]:
+          - generic [ref=f107e115]:
+            - heading "Configuration" [level=1] [ref=f107e117]
+            - generic [ref=f107e120]:
+              - button "Organisation" [ref=f107e122] [cursor=pointer]:
+                - link "Organisation" [ref=f107e124]:
+                  - /url: "#"
+              - button "Patient" [ref=f107e129] [cursor=pointer]:
+                - link "Patient" [ref=f107e131]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f107e136] [cursor=pointer]:
+                - link "Appointment Books" [ref=f107e138]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f107e143] [cursor=pointer]:
+                - link "Quick Pay" [ref=f107e145]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f107e150] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f107e152]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f107e157] [cursor=pointer]:
+                - link "Users & Staff" [ref=f107e159]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f107e164] [cursor=pointer]:
+                - link "Clinical Config" [ref=f107e166]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f107e171] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f107e173]:
+                  - /url: "#"
+          - generic [ref=f107e175] [cursor=pointer]
+        - generic [ref=f107e182]:
+          - generic [ref=f107e183]:
+            - button "Close panel" [active] [ref=f107e185] [cursor=pointer]
+            - generic [ref=f107e189]:
+              - heading "Models" [level=3] [ref=f107e190]
+              - generic [ref=f107e191]:
+                - generic [ref=f107e192] [cursor=pointer]:
+                  - generic [ref=f107e193]:
+                    - generic [ref=f107e194]: My BMI Risk Model
+                    - generic [ref=f107e195]: "Score: 0"
+                    - generic [ref=f107e196]: 03/22/2026, 01:36 AM
+                  - button "Delete model" [ref=f107e197]
+                - generic [ref=f107e200] [cursor=pointer]:
+                  - generic [ref=f107e201]:
+                    - generic [ref=f107e202]: PACO Risk 1
+                    - generic [ref=f107e203]: "Score: 1"
+                    - generic [ref=f107e204]: 03/13/2026, 11:37 PM
+                  - button "Delete model" [ref=f107e205]
+                - generic [ref=f107e208] [cursor=pointer]:
+                  - generic [ref=f107e209]:
+                    - generic [ref=f107e210]: Dr Bs Test
+                    - generic [ref=f107e211]: "Score: 4"
+                    - generic [ref=f107e212]: 03/17/2026, 07:05 PM
+                  - button "Delete model" [ref=f107e213]
+                - generic [ref=f107e216] [cursor=pointer]:
+                  - generic [ref=f107e217]:
+                    - generic [ref=f107e218]: test1
+                    - generic [ref=f107e219]: "Score: 2"
+                    - generic [ref=f107e220]: 04/15/2026, 04:53 PM
+                  - button "Delete model" [ref=f107e221]
+                - generic [ref=f107e224] [cursor=pointer]:
+                  - generic [ref=f107e225]:
+                    - generic [ref=f107e226]: PACO Pre-operative RAG Risk Stratification – Direct SNOMED Codes
+                    - generic [ref=f107e227]: "Score: 0"
+                    - generic [ref=f107e228]: 07/24/2026, 06:28 AM
+                  - button "Delete model" [ref=f107e229]
+                - generic [ref=f107e232] [cursor=pointer]:
+                  - generic [ref=f107e233]:
+                    - generic [ref=f107e234]: Comprehensive Risk Stratification
+                    - generic [ref=f107e235]: "Score: 38"
+                    - generic [ref=f107e236]: 03/12/2026, 11:00 PM
+                  - button "Delete model" [ref=f107e237]
+                - generic [ref=f107e240] [cursor=pointer]:
+                  - generic [ref=f107e241]:
+                    - generic [ref=f107e242]: PACO Pre-operative RAG Risk Stratification – Direct SNOMED Codes
+                    - generic [ref=f107e243]: "Score: 2"
+                    - generic [ref=f107e244]: 04/27/2026, 07:39 PM
+                  - button "Delete model" [ref=f107e245]
+            - button "New Model" [ref=f107e250] [cursor=pointer]
+          - generic [ref=f107e254]:
+            - button "☰ Models" [ref=f107e256] [cursor=pointer]
+            - generic [ref=f107e259]:
+              - generic [ref=f107e261]:
+                - generic [ref=f107e262]:
+                  - heading "My BMI Risk Model" [level=2] [ref=f107e263]
+                  - paragraph [ref=f107e264]: "Total Base: 0 • Total Max: 3"
+                - button "Model options" [ref=f107e266] [cursor=pointer]
+              - generic [ref=f107e270]:
+                - generic [ref=f107e271]:
+                  - generic [ref=f107e272]:
+                    - heading "RAG rating thresholds" [level=3] [ref=f107e273]
+                    - paragraph [ref=f107e274]: Define which total scores map to Red, Amber and Green for this model. Leave 'to' empty on the top band (e.g. 11+).
+                  - generic [ref=f107e275]:
+                    - generic [ref=f107e276]: Default model
+                    - generic "The default model is used for the RAG rating shown on patient profiles" [ref=f107e277]:
+                      - generic [ref=f107e278]: "No"
+                      - button "Toggle between No and Yes" [ref=f107e279] [cursor=pointer]
+                      - generic [ref=f107e282]: "Yes"
+                - generic [ref=f107e283]:
+                  - generic [ref=f107e284]: No RAG banding configured — patients will see a numeric score only.
+                  - button "Set up thresholds" [ref=f107e285] [cursor=pointer]
+                  - button "Save" [ref=f107e287] [cursor=pointer]
+              - generic [ref=f107e289]:
+                - generic [ref=f107e290]:
+                  - heading "Risk Factors" [level=3] [ref=f107e291]
+                  - button "Add Risk Factor" [ref=f107e292] [cursor=pointer]
+                - generic [ref=f107e297]:
+                  - generic [ref=f107e298]: "1"
+                  - generic [ref=f107e300] [cursor=pointer]:
+                    - generic [ref=f107e301]:
+                      - heading "BMI" [level=4] [ref=f107e302]
+                      - paragraph [ref=f107e303]: Clinical Codes • 1 codes
+                    - 'generic "Base: applied when no threshold matches. Max: highest possible score from base or any threshold" [ref=f107e304]':
+                      - generic [ref=f107e305]: "Base: 0"
+                      - generic [ref=f107e306]: "Max: 3"
+              - button "Delete Model" [ref=f107e308] [cursor=pointer]
+              - button "Save Model" [ref=f107e313] [cursor=pointer]

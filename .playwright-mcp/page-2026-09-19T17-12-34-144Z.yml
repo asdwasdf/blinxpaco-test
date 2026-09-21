@@ -1,0 +1,136 @@
+- generic [active] [ref=f129e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f129e8] [cursor=pointer]
+  - generic [ref=f129e11]:
+    - generic [ref=f129e12]:
+      - generic [ref=f129e13]:
+        - button "Expand sidebar" [ref=f129e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f129e15]
+        - generic [ref=f129e17]:
+          - img "Dashboards" [ref=f129e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f129e27] [cursor=pointer]
+          - img "Quick Send" [ref=f129e32] [cursor=pointer]
+          - img "Health Forms" [ref=f129e37] [cursor=pointer]
+          - img "Patient Search" [ref=f129e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f129e47] [cursor=pointer]
+          - img "case load management" [ref=f129e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f129e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f129e62] [cursor=pointer]
+          - img "Users" [ref=f129e67] [cursor=pointer]
+          - img "Configuration" [ref=f129e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f129e77] [cursor=pointer]
+          - generic [ref=f129e79] [cursor=pointer]
+        - button [ref=f129e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f129e88]
+      - generic [ref=f129e89]:
+        - generic [ref=f129e91]:
+          - generic [ref=f129e93]:
+            - img [aria-hidden] [ref=f129e95] [cursor=pointer]
+            - generic [ref=f129e97]:
+              - text: •
+              - button [ref=f129e98] [cursor=pointer]:
+                - link "Analytics" [ref=f129e99]:
+                  - /url: /analytics-home/
+            - generic [ref=f129e100]: •Patient & Medication Analyser
+          - button "1 Selected" [ref=f129e103] [cursor=pointer]
+        - generic [ref=f129e109]:
+          - generic [ref=f129e1443]:
+            - generic [ref=f129e1445]:
+              - paragraph [ref=f129e1447]: Reports
+              - generic [ref=f129e1449] [cursor=pointer]
+            - textbox "Search..." [ref=f129e1456]
+            - list [ref=f129e1457]:
+              - listitem [ref=f129e1458]:
+                - generic [ref=f129e1459]:
+                  - button [ref=f129e1460] [cursor=pointer]
+                  - generic [ref=f129e1463]: Blinx Report
+              - listitem [ref=f129e1464]:
+                - generic [ref=f129e1465]:
+                  - button [ref=f129e1466] [cursor=pointer]
+                  - generic [ref=f129e1469]: Practice Report
+                  - button [ref=f129e1471] [cursor=pointer]
+          - generic [ref=f129e1474]:
+            - generic [ref=f129e1475]:
+              - tablist [ref=f129e1480]:
+                - tab "Patient Analyser" [ref=f129e1481] [cursor=pointer]
+                - tab "Medication Analyser" [ref=f129e1482] [cursor=pointer]
+                - tab "QOF Registers" [ref=f129e1483] [cursor=pointer]
+                - tab "Patient Details" [selected] [ref=f129e1484] [cursor=pointer]
+              - generic [ref=f129e1486]:
+                - generic [ref=f129e1489]:
+                  - textbox "Search..." [ref=f129e1490]
+                  - button [ref=f129e1492] [cursor=pointer]
+                - button [ref=f129e1496] [cursor=pointer]
+                - button "Save Report" [ref=f129e1499] [cursor=pointer]
+            - generic [ref=f129e1504]:
+              - generic [ref=f129e1505]:
+                - button "Advanced Search 0" [ref=f129e1506] [cursor=pointer]:
+                  - text: Advanced Search
+                  - generic [ref=f129e1507]: "0"
+                - paragraph [ref=f129e1509]: "Patients:"
+              - generic [ref=f129e1514]:
+                - button "Reset View" [ref=f129e1515] [cursor=pointer]
+                - button "Expand All" [ref=f129e1518] [cursor=pointer]
+                - button "Collapse All" [ref=f129e1519] [cursor=pointer]
+            - generic [ref=f129e1521]:
+              - generic [ref=f129e1526]:
+                - generic:  
+                - generic [ref=f129e1527]:
+                  - grid [ref=f129e1528]:
+                    - row [ref=f129e1529]:
+                      - columnheader [ref=f129e1530] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f129e1531]: 
+                        - text:    
+                    - rowgroup [ref=f129e1532]:
+                      - row [ref=f129e1533]:
+                        - columnheader "Age" [ref=f129e1534] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e1535]: 
+                          - text:    
+                        - columnheader "Date of Birth" [ref=f129e1537] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e1538]: 
+                          - text:    
+                        - columnheader "Email Address" [ref=f129e1540] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e1541]: 
+                          - text:    
+                        - columnheader "Full Name" [ref=f129e1543] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e1544]: 
+                          - text:    
+                        - columnheader "Gender" [ref=f129e1546] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f129e1547]: 
+                          - text:    
+                    - row [ref=f129e1549]:
+                      - columnheader "Actions" [ref=f129e1550]:  
+                    - rowgroup [ref=f129e1552]
+                    - row "Press SPACE to select this row." [ref=f129e1553]:
+                      - generic [ref=f129e1554]:
+                        - generic [ref=f129e1555]: 
+                        - text: Fetching your report...
+                  - generic [ref=f129e1561]:
+                    - tablist [ref=f129e1562]:
+                      - tab "Columns" [ref=f129e1563] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f129e1564]: 
+                      - tab "Filters" [ref=f129e1566] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f129e1567]: 
+                    - text:                                                          
+                - text:    
+              - paragraph [ref=f129e1570]: 50 / 222 Rows Loaded
+    - generic "one-paco-top-bar" [ref=f129e238]:
+      - generic [ref=f129e240]:
+        - generic [ref=f129e243]:
+          - generic [ref=f129e244]: TFN
+          - generic [ref=f129e246]:
+            - generic [ref=f129e247]: Test Fiona Nguyen
+            - generic [ref=f129e248]: Super Admin GB
+            - generic [ref=f129e250]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f129e255]
+        - generic [ref=f129e256]:
+          - button "More options" [ref=f129e258] [cursor=pointer]
+          - generic [ref=f129e264] [cursor=pointer]
+          - generic [ref=f129e265] [cursor=pointer]: "0"
+  - alert [ref=f129e6]

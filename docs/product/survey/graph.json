@@ -1,6 +1,2350 @@
 {
-  "generatedAt": "empty",
-  "views": [],
-  "edges": [],
-  "danglingRoutes": []
+  "generatedAt": "2026-09-21",
+  "views": [
+    {
+      "id": "analytics-reports-scr-unauthorized",
+      "title": "Analytics and Reports — SCR Unauthorized",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Expand sidebar",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/analytics-reports-scr-unauthorized.md"
+    },
+    {
+      "id": "appointment-book-route-failure",
+      "title": "Appointment Book Route Failure",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Appointment Book",
+          "kind": "navigation"
+        },
+        {
+          "name": "Appointment Settings",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/appointment-book-route-failure.md"
+    },
+    {
+      "id": "appointment-books",
+      "title": "Appointment Books Configuration",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco-connect/configuration/#appointment-books"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/appointment-books.md"
+    },
+    {
+      "id": "appointment-books-appointments",
+      "title": "Appointment Books Appointments",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/configuration/#appointments"
+      ],
+      "controls": [
+        {
+          "name": "Fetch Latest Appointments",
+          "kind": "unknown"
+        },
+        {
+          "name": "Fetch All Slot Details",
+          "kind": "unknown"
+        },
+        {
+          "name": "Show Cancelled Bookings",
+          "kind": "read-only"
+        },
+        {
+          "name": "Search...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Columns",
+          "kind": "read-only"
+        },
+        {
+          "name": "Filters",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/appointment-books-appointments.md"
+    },
+    {
+      "id": "appointment-books-external-reminders",
+      "title": "External Appointment Reminders",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/configuration/#externalApptReminders"
+      ],
+      "controls": [
+        {
+          "name": "Slot Type",
+          "kind": "mutation"
+        },
+        {
+          "name": "Email Template",
+          "kind": "mutation"
+        },
+        {
+          "name": "SMS Template",
+          "kind": "mutation"
+        },
+        {
+          "name": "Scheduling",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save to Patient Record?",
+          "kind": "mutation"
+        },
+        {
+          "name": "Add new Reminder",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/appointment-books-external-reminders.md"
+    },
+    {
+      "id": "appointment-books-scheduler",
+      "title": "Appointment Books Scheduler Configuration",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/configuration/#scheduler-config"
+      ],
+      "controls": [
+        {
+          "name": "Select Campaign",
+          "kind": "unknown"
+        },
+        {
+          "name": "Search...",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/appointment-books-scheduler.md"
+    },
+    {
+      "id": "appointment-books-sessions",
+      "title": "Appointment Books Sessions Configuration",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco-connect/configuration/#clinics"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/appointment-books-sessions.md"
+    },
+    {
+      "id": "appointment-books-slot-types",
+      "title": "Appointment Books Slot Types Configuration",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco-connect/configuration/#service-types"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/appointment-books-slot-types.md"
+    },
+    {
+      "id": "capacity-demand",
+      "title": "Capacity & Demand",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Notifications",
+          "kind": "navigation"
+        },
+        {
+          "name": "Timestamp information",
+          "kind": "information"
+        },
+        {
+          "name": "Date Range",
+          "kind": "filter"
+        },
+        {
+          "name": "Search observation",
+          "kind": "search"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/capacity-demand.md"
+    },
+    {
+      "id": "care-navigation-patient-search",
+      "title": "Care Navigation Patient Profile Search",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "patient-search"
+      ],
+      "controls": [
+        {
+          "name": "Search Patients...",
+          "kind": "search"
+        },
+        {
+          "name": "A-Z Search",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/care-navigation-patient-search.md"
+    },
+    {
+      "id": "case-prioritisation",
+      "title": "Case Prioritisation",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "configuration"
+      ],
+      "controls": [
+        {
+          "name": "View audit",
+          "kind": "navigation"
+        },
+        {
+          "name": "Add Another",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/case-prioritisation.md"
+    },
+    {
+      "id": "clinician-dashboard",
+      "title": "Clinician Dashboard",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Mi Tasks",
+          "kind": "tab"
+        },
+        {
+          "name": "Mi Time",
+          "kind": "tab"
+        },
+        {
+          "name": "Mi Stats",
+          "kind": "tab"
+        },
+        {
+          "name": "Mi Patients",
+          "kind": "tab"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/clinician-dashboard.md"
+    },
+    {
+      "id": "comms-analytics",
+      "title": "Communications Hub Analytics",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "patient-analyser"
+      ],
+      "controls": [
+        {
+          "name": "Search Patients...",
+          "kind": "search"
+        },
+        {
+          "name": "Apply",
+          "kind": "filter"
+        },
+        {
+          "name": "Reset Column Widths",
+          "kind": "button"
+        },
+        {
+          "name": "Show All Columns",
+          "kind": "button"
+        },
+        {
+          "name": "Clear Filters",
+          "kind": "button"
+        },
+        {
+          "name": "Export to CSV",
+          "kind": "download"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-analytics.md"
+    },
+    {
+      "id": "comms-campaign-manager",
+      "title": "Communications Hub Campaign Manager",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "comms-hub-submenu"
+      ],
+      "controls": [
+        {
+          "name": "Create Campaign",
+          "kind": "mutation"
+        },
+        {
+          "name": "Campaign Outbox",
+          "kind": "navigation"
+        },
+        {
+          "name": "Search campaigns",
+          "kind": "search"
+        },
+        {
+          "name": "Clear Filters",
+          "kind": "button"
+        },
+        {
+          "name": "Columns",
+          "kind": "grid-panel"
+        },
+        {
+          "name": "Filters",
+          "kind": "grid-panel"
+        },
+        {
+          "name": "Campaign Statuses",
+          "kind": "filter"
+        },
+        {
+          "name": "Campaign Types",
+          "kind": "filter"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-campaign-manager.md"
+    },
+    {
+      "id": "comms-campaign-outbox",
+      "title": "Communications Hub Campaign Outbox",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "comms-campaign-manager"
+      ],
+      "controls": [
+        {
+          "name": "Search campaigns",
+          "kind": "search"
+        },
+        {
+          "name": "Date Range",
+          "kind": "filter"
+        },
+        {
+          "name": "Campaign selector",
+          "kind": "filter"
+        },
+        {
+          "name": "Resend",
+          "kind": "mutation"
+        },
+        {
+          "name": "Pause/Unpause",
+          "kind": "mutation"
+        },
+        {
+          "name": "Export to CSV",
+          "kind": "download"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-campaign-outbox.md"
+    },
+    {
+      "id": "comms-hub-configuration",
+      "title": "Comms Hub Configuration",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "external-dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Clear Selections",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        },
+        {
+          "name": "Search tags",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-hub-configuration.md"
+    },
+    {
+      "id": "comms-hub-submenu",
+      "title": "Comms Hub Navigation",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Template Manager",
+          "kind": "navigation"
+        },
+        {
+          "name": "Campaign Manager",
+          "kind": "navigation"
+        },
+        {
+          "name": "Patient Manager",
+          "kind": "navigation"
+        },
+        {
+          "name": "Analytics",
+          "kind": "navigation"
+        },
+        {
+          "name": "Configuration",
+          "kind": "navigation"
+        },
+        {
+          "name": "Search Patients",
+          "kind": "search"
+        },
+        {
+          "name": "Notifications",
+          "kind": "panel"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-hub-submenu.md"
+    },
+    {
+      "id": "comms-patient-manager",
+      "title": "Communications Hub Patient Manager",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "comms-hub-submenu"
+      ],
+      "controls": [
+        {
+          "name": "Lists",
+          "kind": "tab"
+        },
+        {
+          "name": "Patients",
+          "kind": "tab"
+        },
+        {
+          "name": "Date Range",
+          "kind": "filter"
+        },
+        {
+          "name": "All Tags",
+          "kind": "filter"
+        },
+        {
+          "name": "Search Patients",
+          "kind": "search"
+        },
+        {
+          "name": "Search any data in the table",
+          "kind": "search"
+        },
+        {
+          "name": "Columns",
+          "kind": "grid-panel"
+        },
+        {
+          "name": "Filters",
+          "kind": "grid-panel"
+        },
+        {
+          "name": "Create List",
+          "kind": "mutation"
+        },
+        {
+          "name": "Add to Existing List",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-patient-manager.md"
+    },
+    {
+      "id": "comms-template-manager",
+      "title": "Communications Hub Template Manager",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "comms-hub-submenu"
+      ],
+      "controls": [
+        {
+          "name": "Show Org. Default Templates",
+          "kind": "filter"
+        },
+        {
+          "name": "Create New Email",
+          "kind": "mutation"
+        },
+        {
+          "name": "Create New SMS",
+          "kind": "mutation"
+        },
+        {
+          "name": "Search Templates",
+          "kind": "search"
+        },
+        {
+          "name": "Set Org. Defaults",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/comms-template-manager.md"
+    },
+    {
+      "id": "configuration",
+      "title": "Configuration",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Organisation",
+          "kind": "navigation"
+        },
+        {
+          "name": "Patient",
+          "kind": "navigation"
+        },
+        {
+          "name": "Appointment Books",
+          "kind": "navigation"
+        },
+        {
+          "name": "Patients & Proxy",
+          "kind": "navigation"
+        },
+        {
+          "name": "Users & Staff",
+          "kind": "navigation"
+        },
+        {
+          "name": "Clinical Config",
+          "kind": "navigation"
+        },
+        {
+          "name": "Case Prioritisation",
+          "kind": "navigation"
+        },
+        {
+          "name": "Quick Pay",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/configuration.md"
+    },
+    {
+      "id": "connect-dashboard",
+      "title": "Connect Dashboard",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/connect-dashboard.md"
+    },
+    {
+      "id": "dashboard",
+      "title": "Dashboard",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [],
+      "controls": [
+        {
+          "name": "Expand sidebar",
+          "kind": "navigation"
+        },
+        {
+          "name": "Search patients by name or NHS number",
+          "kind": "search"
+        },
+        {
+          "name": "day",
+          "kind": "filter"
+        },
+        {
+          "name": "week",
+          "kind": "filter"
+        },
+        {
+          "name": "month",
+          "kind": "filter"
+        },
+        {
+          "name": "year",
+          "kind": "filter"
+        },
+        {
+          "name": "Accessibility Menu",
+          "kind": "dialog"
+        },
+        {
+          "name": "Switch to dark theme",
+          "kind": "preference"
+        },
+        {
+          "name": "What do these statuses mean?",
+          "kind": "help"
+        },
+        {
+          "name": "A - Z Last Name",
+          "kind": "sort"
+        },
+        {
+          "name": "Status",
+          "kind": "sort"
+        },
+        {
+          "name": "Available",
+          "kind": "filter"
+        },
+        {
+          "name": "On Leave",
+          "kind": "filter"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-21",
+      "source": "views/dashboard.md"
+    },
+    {
+      "id": "health-form-inbox",
+      "title": "Health Form Inbox",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "health-forms-submenu"
+      ],
+      "controls": [
+        {
+          "name": "Filters",
+          "kind": "filter"
+        },
+        {
+          "name": "All",
+          "kind": "filter"
+        },
+        {
+          "name": "Incomplete",
+          "kind": "filter"
+        },
+        {
+          "name": "Overdue",
+          "kind": "filter"
+        },
+        {
+          "name": "Completed",
+          "kind": "filter"
+        },
+        {
+          "name": "Awaiting Review",
+          "kind": "filter"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/health-form-inbox.md"
+    },
+    {
+      "id": "health-forms-designer",
+      "title": "Health Forms Designer",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "New Health Form",
+          "kind": "mutation"
+        },
+        {
+          "name": "Search",
+          "kind": "read-only"
+        },
+        {
+          "name": "Columns",
+          "kind": "read-only"
+        },
+        {
+          "name": "Filters",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/health-forms-designer.md"
+    },
+    {
+      "id": "health-forms-designer-v2",
+      "title": "Health Forms Designer V2",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Create new SPN",
+          "kind": "mutation"
+        },
+        {
+          "name": "Create new health forms",
+          "kind": "mutation"
+        },
+        {
+          "name": "Create new consultation",
+          "kind": "mutation"
+        },
+        {
+          "name": "Create new case form",
+          "kind": "mutation"
+        },
+        {
+          "name": "Search Templates",
+          "kind": "read-only"
+        },
+        {
+          "name": "Filters",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/health-forms-designer-v2.md"
+    },
+    {
+      "id": "health-forms-home",
+      "title": "Health Forms Home",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "health-form-inbox"
+      ],
+      "controls": [
+        {
+          "name": "Health Form Designer",
+          "kind": "navigation"
+        },
+        {
+          "name": "Health Form Inbox",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/health-forms-home.md"
+    },
+    {
+      "id": "health-forms-submenu",
+      "title": "Health Forms Navigation",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Inbox",
+          "kind": "navigation"
+        },
+        {
+          "name": "Designer",
+          "kind": "navigation"
+        },
+        {
+          "name": "Designer V2",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/health-forms-submenu.md"
+    },
+    {
+      "id": "manager-dashboard",
+      "title": "Manager Dashboard",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Org Tasks",
+          "kind": "tab"
+        },
+        {
+          "name": "Staff Performance",
+          "kind": "tab"
+        },
+        {
+          "name": "Org Stats",
+          "kind": "tab"
+        },
+        {
+          "name": "All Patients",
+          "kind": "tab"
+        },
+        {
+          "name": "CQC Readiness",
+          "kind": "tab"
+        },
+        {
+          "name": "Message Outbox",
+          "kind": "tab"
+        },
+        {
+          "name": "Comms Analytics",
+          "kind": "tab"
+        },
+        {
+          "name": "Search clinicians...",
+          "kind": "search"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/manager-dashboard.md"
+    },
+    {
+      "id": "master-case-board",
+      "title": "Master Case Board",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "unallocated-cases"
+      ],
+      "controls": [
+        {
+          "name": "Search this board",
+          "kind": "search"
+        },
+        {
+          "name": "List view",
+          "kind": "navigation"
+        },
+        {
+          "name": "Card view",
+          "kind": "navigation"
+        },
+        {
+          "name": "Filters",
+          "kind": "filter"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/master-case-board.md"
+    },
+    {
+      "id": "master-task-board",
+      "title": "Master Task Board",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "master-case-board"
+      ],
+      "controls": [
+        {
+          "name": "Search this board",
+          "kind": "search"
+        },
+        {
+          "name": "List view",
+          "kind": "navigation"
+        },
+        {
+          "name": "Card view",
+          "kind": "navigation"
+        },
+        {
+          "name": "Filters",
+          "kind": "filter"
+        },
+        {
+          "name": "Create New Task",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/master-task-board.md"
+    },
+    {
+      "id": "media-library",
+      "title": "Media Library",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/media-library.md"
+    },
+    {
+      "id": "medication-analyser",
+      "title": "Medication Analyser",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "patient-analyser"
+      ],
+      "controls": [
+        {
+          "name": "Reports",
+          "kind": "tab"
+        },
+        {
+          "name": "Search...",
+          "kind": "search"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/medication-analyser.md"
+    },
+    {
+      "id": "my-case",
+      "title": "My Case",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/my-case.md"
+    },
+    {
+      "id": "organisation-announcements",
+      "title": "Organisation Announcements",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/announcements"
+      ],
+      "controls": [
+        {
+          "name": "Welcome Message",
+          "kind": "navigation"
+        },
+        {
+          "name": "Service Updates",
+          "kind": "navigation"
+        },
+        {
+          "name": "Add another",
+          "kind": "mutation"
+        },
+        {
+          "name": "Delete",
+          "kind": "destructive"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-announcements.md"
+    },
+    {
+      "id": "organisation-code-rule",
+      "title": "Organisation Code Rule",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/configuration/#code-rules-config"
+      ],
+      "controls": [
+        {
+          "name": "Search Snomed Code",
+          "kind": "read-only"
+        },
+        {
+          "name": "Submit",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-code-rule.md"
+    },
+    {
+      "id": "organisation-dx-priorities",
+      "title": "Organisation DX Priorities",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/dx-priorities"
+      ],
+      "controls": [
+        {
+          "name": "Search Priorities...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Add Service & Priority",
+          "kind": "mutation"
+        },
+        {
+          "name": "Remove pair",
+          "kind": "destructive"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-dx-priorities.md"
+    },
+    {
+      "id": "organisation-general",
+      "title": "Organisation General",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "configuration"
+      ],
+      "controls": [
+        {
+          "name": "Upload Photo",
+          "kind": "mutation"
+        },
+        {
+          "name": "Remove Photo",
+          "kind": "destructive"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        },
+        {
+          "name": "Edit Address",
+          "kind": "navigation"
+        },
+        {
+          "name": "Add Special Opening Hours",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-general.md"
+    },
+    {
+      "id": "organisation-inbound-priority-flow",
+      "title": "Organisation Inbound Priority Flow",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/inbound-priority-flow"
+      ],
+      "controls": [
+        {
+          "name": "Preview walk",
+          "kind": "read-only"
+        },
+        {
+          "name": "Reset to default",
+          "kind": "destructive"
+        },
+        {
+          "name": "Add",
+          "kind": "mutation"
+        },
+        {
+          "name": "Delete",
+          "kind": "destructive"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-inbound-priority-flow.md"
+    },
+    {
+      "id": "organisation-integrations",
+      "title": "Organisation Integrations",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/integrations"
+      ],
+      "controls": [
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-integrations.md"
+    },
+    {
+      "id": "organisation-locations",
+      "title": "Organisation Locations",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/locations"
+      ],
+      "controls": [
+        {
+          "name": "Search Locations...",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-locations.md"
+    },
+    {
+      "id": "organisation-org-priorities",
+      "title": "Organisation Priorities",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/org-priorities"
+      ],
+      "controls": [
+        {
+          "name": "Search Org Priority...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Add new",
+          "kind": "mutation"
+        },
+        {
+          "name": "Edit",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-org-priorities.md"
+    },
+    {
+      "id": "organisation-services",
+      "title": "Organisation Services",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/services"
+      ],
+      "controls": [
+        {
+          "name": "Search Services...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Remove service",
+          "kind": "destructive"
+        },
+        {
+          "name": "Add Another",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-services.md"
+    },
+    {
+      "id": "organisation-sharing-agreements",
+      "title": "Organisation Sharing Agreements",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/sharing-agreements"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-sharing-agreements.md"
+    },
+    {
+      "id": "organisation-skills",
+      "title": "Organisation Skills",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/organisation/skills"
+      ],
+      "controls": [
+        {
+          "name": "Search Skills...",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/organisation-skills.md"
+    },
+    {
+      "id": "patient-analyser",
+      "title": "Patient Analyser",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Analytics",
+          "kind": "navigation"
+        },
+        {
+          "name": "Date Range",
+          "kind": "filter"
+        },
+        {
+          "name": "Reports",
+          "kind": "tab"
+        },
+        {
+          "name": "Search...",
+          "kind": "search"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/patient-analyser.md"
+    },
+    {
+      "id": "patient-care-navigation",
+      "title": "Patient Care Navigation",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/configuration/#care-navigation-config"
+      ],
+      "controls": [
+        {
+          "name": "Item Settings",
+          "kind": "mutation"
+        },
+        {
+          "name": "+",
+          "kind": "mutation"
+        },
+        {
+          "name": "Delete",
+          "kind": "destructive"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/patient-care-navigation.md"
+    },
+    {
+      "id": "patient-details-report",
+      "title": "Patient Details Report",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "patient-analyser"
+      ],
+      "controls": [
+        {
+          "name": "Reports",
+          "kind": "tab"
+        },
+        {
+          "name": "Search...",
+          "kind": "search"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/patient-details-report.md"
+    },
+    {
+      "id": "patient-dfd-route-failure",
+      "title": "Patient DFD Route Failure",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "configuration"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/patient-dfd-route-failure.md"
+    },
+    {
+      "id": "patient-search",
+      "title": "Patient Search",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Search Patients...",
+          "kind": "search"
+        },
+        {
+          "name": "Filters",
+          "kind": "filter"
+        },
+        {
+          "name": "Show archived",
+          "kind": "filter"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/patient-search.md"
+    },
+    {
+      "id": "patients-proxy-role-groups",
+      "title": "Patients and Proxy Role Groups",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/proxy/role-groups"
+      ],
+      "controls": [
+        {
+          "name": "Search Role Groups...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Add New Role",
+          "kind": "mutation"
+        },
+        {
+          "name": "Add New Role Group",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/patients-proxy-role-groups.md"
+    },
+    {
+      "id": "qof-registers",
+      "title": "QOF Registers",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "patient-analyser"
+      ],
+      "controls": [
+        {
+          "name": "Reports",
+          "kind": "tab"
+        },
+        {
+          "name": "Search...",
+          "kind": "search"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/qof-registers.md"
+    },
+    {
+      "id": "quick-pay-accounts",
+      "title": "Quick Pay Accounts",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco-connect/quick-pay/accounts"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/quick-pay-accounts.md"
+    },
+    {
+      "id": "quick-pay-product-catalogue",
+      "title": "Quick Pay Product Catalogue",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco-connect/quick-pay/products"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/quick-pay-product-catalogue.md"
+    },
+    {
+      "id": "quick-pay-route-failure",
+      "title": "Quick Pay Route Failure",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Quick Pay",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/quick-pay-route-failure.md"
+    },
+    {
+      "id": "risk-strat-builder",
+      "title": "Risk Strat Builder",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "configuration"
+      ],
+      "controls": [
+        {
+          "name": "New Model",
+          "kind": "mutation"
+        },
+        {
+          "name": "Delete Model",
+          "kind": "destructive"
+        },
+        {
+          "name": "Save Model",
+          "kind": "mutation"
+        },
+        {
+          "name": "Models",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/risk-strat-builder.md"
+    },
+    {
+      "id": "rocket-bar",
+      "title": "Rocket Bar",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/"
+      ],
+      "controls": [
+        {
+          "name": "Launch Rocket Bar",
+          "kind": "external"
+        },
+        {
+          "name": "Download Rocket Bar",
+          "kind": "download"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/rocket-bar.md"
+    },
+    {
+      "id": "rocket-bar-submenu",
+      "title": "Rocket Bar Navigation",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Launch Rocket Bar",
+          "kind": "external-action"
+        },
+        {
+          "name": "Download Rocket Bar",
+          "kind": "download"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/rocket-bar-submenu.md"
+    },
+    {
+      "id": "template-library-route-failure",
+      "title": "Template Library Route Failure",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "configuration"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/template-library-route-failure.md"
+    },
+    {
+      "id": "top-bar-more-options",
+      "title": "Top Bar More Options",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/"
+      ],
+      "controls": [
+        {
+          "name": "PaComms",
+          "kind": "navigation"
+        },
+        {
+          "name": "Quick View",
+          "kind": "unknown"
+        },
+        {
+          "name": "PACO Assist",
+          "kind": "unknown"
+        },
+        {
+          "name": "Idle",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/top-bar-more-options.md"
+    },
+    {
+      "id": "unallocated-cases",
+      "title": "Unallocated Cases",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "my-case"
+      ],
+      "controls": [
+        {
+          "name": "Search this board",
+          "kind": "search"
+        },
+        {
+          "name": "List View",
+          "kind": "navigation"
+        },
+        {
+          "name": "Filters",
+          "kind": "filter"
+        },
+        {
+          "name": "Create new case",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/unallocated-cases.md"
+    },
+    {
+      "id": "user-portal-route-failure",
+      "title": "User Portal Route Failure",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-20",
+      "source": "views/user-portal-route-failure.md"
+    },
+    {
+      "id": "users-staff-profiles",
+      "title": "Users and Staff Profiles",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/staff/profiles"
+      ],
+      "controls": [
+        {
+          "name": "Active",
+          "kind": "read-only"
+        },
+        {
+          "name": "Archived",
+          "kind": "read-only"
+        },
+        {
+          "name": "My Profile",
+          "kind": "navigation"
+        },
+        {
+          "name": "Add Care Professional",
+          "kind": "mutation"
+        },
+        {
+          "name": "Previous",
+          "kind": "read-only"
+        },
+        {
+          "name": "Next",
+          "kind": "read-only"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/users-staff-profiles.md"
+    },
+    {
+      "id": "users-staff-role-groups",
+      "title": "Users and Staff Role Groups",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/staff/role-groups"
+      ],
+      "controls": [
+        {
+          "name": "Add New Role",
+          "kind": "mutation"
+        },
+        {
+          "name": "Add New Role Group",
+          "kind": "mutation"
+        },
+        {
+          "name": "Edit",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/users-staff-role-groups.md"
+    },
+    {
+      "id": "users-staff-teams",
+      "title": "Users and Staff Teams",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco/configuration/staff/teams"
+      ],
+      "controls": [
+        {
+          "name": "Add New",
+          "kind": "mutation"
+        },
+        {
+          "name": "Team Name",
+          "kind": "mutation"
+        },
+        {
+          "name": "Assign Staff",
+          "kind": "mutation"
+        },
+        {
+          "name": "Save",
+          "kind": "mutation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/users-staff-teams.md"
+    },
+    {
+      "id": "virtual-appointments-auth",
+      "title": "Virtual Appointments Authentication Boundary",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Open Question",
+      "routes": [
+        "web-chat-video-submenu"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/virtual-appointments-auth.md"
+    },
+    {
+      "id": "web-chat-outstanding-reviews",
+      "title": "Web Chat and Video Outstanding Reviews",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/web-chat/review/",
+        "/web-chat/?rd=/review/"
+      ],
+      "controls": [
+        {
+          "name": "Log in",
+          "kind": "external"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/web-chat-outstanding-reviews.md"
+    },
+    {
+      "id": "web-chat-video-submenu",
+      "title": "Web Chat & Video Navigation",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [
+        {
+          "name": "Virtual Appointments",
+          "kind": "navigation"
+        },
+        {
+          "name": "Media Library",
+          "kind": "navigation"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/web-chat-video-submenu.md"
+    },
+    {
+      "id": "web-chat-virtual-appointments",
+      "title": "Web Chat and Video Virtual Appointments",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/web-chat/appointments/",
+        "/"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-09-19",
+      "source": "views/web-chat-virtual-appointments.md"
+    }
+  ],
+  "edges": [
+    {
+      "from": "dashboard",
+      "to": "analytics-reports-scr-unauthorized",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "appointment-book-route-failure",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "capacity-demand",
+      "kind": "route"
+    },
+    {
+      "from": "patient-search",
+      "to": "care-navigation-patient-search",
+      "kind": "route"
+    },
+    {
+      "from": "configuration",
+      "to": "case-prioritisation",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "clinician-dashboard",
+      "kind": "route"
+    },
+    {
+      "from": "patient-analyser",
+      "to": "comms-analytics",
+      "kind": "route"
+    },
+    {
+      "from": "comms-hub-submenu",
+      "to": "comms-campaign-manager",
+      "kind": "route"
+    },
+    {
+      "from": "comms-campaign-manager",
+      "to": "comms-campaign-outbox",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "comms-hub-submenu",
+      "kind": "route"
+    },
+    {
+      "from": "comms-hub-submenu",
+      "to": "comms-patient-manager",
+      "kind": "route"
+    },
+    {
+      "from": "comms-hub-submenu",
+      "to": "comms-template-manager",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "configuration",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "connect-dashboard",
+      "kind": "route"
+    },
+    {
+      "from": "health-forms-submenu",
+      "to": "health-form-inbox",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "health-forms-designer",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "health-forms-designer-v2",
+      "kind": "route"
+    },
+    {
+      "from": "health-form-inbox",
+      "to": "health-forms-home",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "health-forms-submenu",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "manager-dashboard",
+      "kind": "route"
+    },
+    {
+      "from": "unallocated-cases",
+      "to": "master-case-board",
+      "kind": "route"
+    },
+    {
+      "from": "master-case-board",
+      "to": "master-task-board",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "media-library",
+      "kind": "route"
+    },
+    {
+      "from": "patient-analyser",
+      "to": "medication-analyser",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "my-case",
+      "kind": "route"
+    },
+    {
+      "from": "configuration",
+      "to": "organisation-general",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "patient-analyser",
+      "kind": "route"
+    },
+    {
+      "from": "patient-analyser",
+      "to": "patient-details-report",
+      "kind": "route"
+    },
+    {
+      "from": "configuration",
+      "to": "patient-dfd-route-failure",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "patient-search",
+      "kind": "route"
+    },
+    {
+      "from": "patient-analyser",
+      "to": "qof-registers",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "quick-pay-route-failure",
+      "kind": "route"
+    },
+    {
+      "from": "configuration",
+      "to": "risk-strat-builder",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "rocket-bar-submenu",
+      "kind": "route"
+    },
+    {
+      "from": "configuration",
+      "to": "template-library-route-failure",
+      "kind": "route"
+    },
+    {
+      "from": "my-case",
+      "to": "unallocated-cases",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "user-portal-route-failure",
+      "kind": "route"
+    },
+    {
+      "from": "web-chat-video-submenu",
+      "to": "virtual-appointments-auth",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "web-chat-video-submenu",
+      "kind": "route"
+    }
+  ],
+  "danglingRoutes": [
+    {
+      "from": "appointment-books",
+      "to": "/paco-connect/configuration/#appointment-books"
+    },
+    {
+      "from": "appointment-books-appointments",
+      "to": "/configuration/#appointments"
+    },
+    {
+      "from": "appointment-books-external-reminders",
+      "to": "/configuration/#externalApptReminders"
+    },
+    {
+      "from": "appointment-books-scheduler",
+      "to": "/configuration/#scheduler-config"
+    },
+    {
+      "from": "appointment-books-sessions",
+      "to": "/paco-connect/configuration/#clinics"
+    },
+    {
+      "from": "appointment-books-slot-types",
+      "to": "/paco-connect/configuration/#service-types"
+    },
+    {
+      "from": "comms-hub-configuration",
+      "to": "external-dashboard"
+    },
+    {
+      "from": "organisation-announcements",
+      "to": "/paco/configuration/organisation/announcements"
+    },
+    {
+      "from": "organisation-code-rule",
+      "to": "/configuration/#code-rules-config"
+    },
+    {
+      "from": "organisation-dx-priorities",
+      "to": "/paco/configuration/organisation/dx-priorities"
+    },
+    {
+      "from": "organisation-inbound-priority-flow",
+      "to": "/paco/configuration/organisation/inbound-priority-flow"
+    },
+    {
+      "from": "organisation-integrations",
+      "to": "/paco/configuration/organisation/integrations"
+    },
+    {
+      "from": "organisation-locations",
+      "to": "/paco/configuration/organisation/locations"
+    },
+    {
+      "from": "organisation-org-priorities",
+      "to": "/paco/configuration/organisation/org-priorities"
+    },
+    {
+      "from": "organisation-services",
+      "to": "/paco/configuration/organisation/services"
+    },
+    {
+      "from": "organisation-sharing-agreements",
+      "to": "/paco/configuration/organisation/sharing-agreements"
+    },
+    {
+      "from": "organisation-skills",
+      "to": "/paco/configuration/organisation/skills"
+    },
+    {
+      "from": "patient-care-navigation",
+      "to": "/configuration/#care-navigation-config"
+    },
+    {
+      "from": "patients-proxy-role-groups",
+      "to": "/paco/configuration/proxy/role-groups"
+    },
+    {
+      "from": "quick-pay-accounts",
+      "to": "/paco-connect/quick-pay/accounts"
+    },
+    {
+      "from": "quick-pay-product-catalogue",
+      "to": "/paco-connect/quick-pay/products"
+    },
+    {
+      "from": "rocket-bar",
+      "to": "/"
+    },
+    {
+      "from": "top-bar-more-options",
+      "to": "/"
+    },
+    {
+      "from": "users-staff-profiles",
+      "to": "/paco/configuration/staff/profiles"
+    },
+    {
+      "from": "users-staff-role-groups",
+      "to": "/paco/configuration/staff/role-groups"
+    },
+    {
+      "from": "users-staff-teams",
+      "to": "/paco/configuration/staff/teams"
+    },
+    {
+      "from": "web-chat-outstanding-reviews",
+      "to": "/web-chat/?rd=/review/"
+    },
+    {
+      "from": "web-chat-outstanding-reviews",
+      "to": "/web-chat/review/"
+    },
+    {
+      "from": "web-chat-virtual-appointments",
+      "to": "/"
+    },
+    {
+      "from": "web-chat-virtual-appointments",
+      "to": "/web-chat/appointments/"
+    }
+  ]
 }

@@ -1,0 +1,1364 @@
+- generic [active] [ref=e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=e3] [cursor=pointer]
+  - generic [ref=e6731]:
+    - generic [ref=e6732]:
+      - button "Expand sidebar" [ref=e6733] [cursor=pointer]:
+        - img "Paco Logo" [ref=e6734]
+      - generic [ref=e6736]:
+        - img "Dashboards" [ref=e6741] [cursor=pointer]
+        - img "Analytics & Reports" [ref=e6746] [cursor=pointer]
+        - img "Quick Send" [ref=e6751] [cursor=pointer]
+        - img "Health Forms" [ref=e6756] [cursor=pointer]
+        - img "Patient Search" [ref=e6761] [cursor=pointer]
+        - img "Web Chat & Video" [ref=e6766] [cursor=pointer]
+        - img "case load management" [ref=e6771] [cursor=pointer]
+        - img "Appointment Book" [ref=e6776] [cursor=pointer]
+        - img "Quick Pay" [ref=e6781] [cursor=pointer]
+        - img "Users" [ref=e6786] [cursor=pointer]
+        - img "Configuration" [ref=e6791] [cursor=pointer]
+        - img "Rocket Bar" [ref=e6796] [cursor=pointer]
+        - generic [ref=e6798] [cursor=pointer]
+      - button [ref=e6806] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=e6807]
+    - generic [ref=e6808]:
+      - generic [ref=e6809]:
+        - generic [ref=e6810]: 2h 15m
+        - generic [ref=e6815]:
+          - generic [ref=e6818]:
+            - generic [ref=e6819] [cursor=pointer]: TFN
+            - generic [ref=e6821]:
+              - generic [ref=e6822]: Test Fiona Nguyen
+              - generic [ref=e6823]: Super Admin GB
+              - generic [ref=e6825]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=e6830]
+          - generic [ref=e6831]:
+            - button "More options" [ref=e6833] [cursor=pointer]
+            - generic [ref=e6837] [cursor=pointer]: "0"
+      - generic [ref=e6842]:
+        - generic [ref=e6845]:
+          - generic [ref=e6846]:
+            - heading "Configuration" [level=1] [ref=e6848]
+            - generic [ref=e6851]:
+              - generic [ref=e6852]:
+                - button "Organisation" [expanded] [ref=e6853] [cursor=pointer]:
+                  - link "Organisation" [ref=e6855]:
+                    - /url: "#"
+                - region "Organisation" [ref=e6859]:
+                  - tree [ref=e6861]:
+                    - treeitem "General" [level=1] [ref=e6862]:
+                      - link [aria-hidden] [ref=e6864] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6865]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=e6866]:
+                      - link [aria-hidden] [ref=e6868] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6869]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=e6870]:
+                      - link [aria-hidden] [ref=e6872] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6873]: Locations
+                    - treeitem "Skills" [level=1] [ref=e6874]:
+                      - link [aria-hidden] [ref=e6876] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6877]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=e6878]:
+                      - link [aria-hidden] [ref=e6880] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6881]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=e6882]:
+                      - link [aria-hidden] [ref=e6884] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6885]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=e6886]:
+                      - link [aria-hidden] [ref=e6888] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6889]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=e6890]:
+                      - link [aria-hidden] [ref=e6892] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6893]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=e6894]:
+                      - link [aria-hidden] [ref=e6896] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6897]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=e6898]:
+                      - link [aria-hidden] [ref=e6900] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6901]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=e6902]:
+                      - link [aria-hidden] [ref=e6904] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6905]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=e6906]:
+                      - link [aria-hidden] [ref=e6908] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6909]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=e6910]:
+                      - link [aria-hidden] [ref=e6912] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e6913]: Integrations
+              - button "Patient" [ref=e6915] [cursor=pointer]:
+                - link "Patient" [ref=e6917]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=e6922] [cursor=pointer]:
+                - link "Appointment Books" [ref=e6924]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=e6929] [cursor=pointer]:
+                - link "Quick Pay" [ref=e6931]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=e6936] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=e6938]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=e6943] [cursor=pointer]:
+                - link "Users & Staff" [ref=e6945]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=e6950] [cursor=pointer]:
+                - link "Clinical Config" [ref=e6952]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=e6957] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=e6959]:
+                  - /url: "#"
+          - generic [ref=e6961] [cursor=pointer]
+        - generic [ref=e6965]:
+          - generic [ref=e6967]:
+            - heading "Skills" [level=1] [ref=e6968]
+            - textbox "Search Skills..." [ref=e6971]
+            - generic [ref=e6973]:
+              - button [ref=e6974] [cursor=pointer]
+              - menu:
+                - menuitem "Add":
+                  - menuitem "Add": Add Skill
+          - generic [ref=e6982]:
+            - text:  
+            - grid [ref=e6983]:
+              - rowgroup [ref=e6984]:
+                - row [ref=e6985]:
+                  - columnheader "Actions" [ref=e6986] [cursor=pointer]
+                  - columnheader "Name" [ref=e6988] [cursor=pointer]
+                  - columnheader "Created By" [ref=e6990] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e6991]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Pathways" [ref=e6993] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e6994]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "RBAC Skill" [ref=e6996] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e6997]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Snomed CT Code" [ref=e6999] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e7000]: 
+                    - text: 
+                    - generic:    
+              - rowgroup [ref=e7002]:
+                - row "Press SPACE to select this row." [ref=e7003]:
+                  - gridcell "test alex" [ref=e7004]
+                  - gridcell "14/05/2026" [ref=e7005]
+                  - gridcell "Abdominal or flank" [ref=e7006]
+                  - gridcell [ref=e7007]
+                  - gridcell [ref=e7008]
+                  - gridcell [ref=e7009]:
+                    - button [ref=e7011] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7014]:
+                  - gridcell "New Skill" [ref=e7015]
+                  - gridcell "14/05/2026" [ref=e7016]
+                  - gridcell "Abdominal Pain" [ref=e7017]
+                  - gridcell [ref=e7018]
+                  - gridcell [ref=e7019]
+                  - gridcell [ref=e7020]:
+                    - button [ref=e7022] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7025]:
+                  - gridcell "Audiological medicine" [ref=e7026]
+                  - gridcell "05/09/2025" [ref=e7027]
+                  - gridcell [ref=e7028]
+                  - gridcell [ref=e7029]
+                  - gridcell "394578005" [ref=e7030]
+                  - gridcell [ref=e7031]:
+                    - button [ref=e7033] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7036]:
+                  - gridcell "Blood banking and transfusion medicine" [ref=e7037]
+                  - gridcell "05/09/2025" [ref=e7038]
+                  - gridcell [ref=e7039]
+                  - gridcell [ref=e7040]
+                  - gridcell "421661004" [ref=e7041]
+                  - gridcell [ref=e7042]:
+                    - button [ref=e7044] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7047]:
+                  - gridcell "Burns care" [ref=e7048]
+                  - gridcell "05/09/2025" [ref=e7049]
+                  - gridcell [ref=e7050]
+                  - gridcell [ref=e7051]
+                  - gridcell "408462000" [ref=e7052]
+                  - gridcell [ref=e7053]:
+                    - button [ref=e7055] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7058]:
+                  - gridcell "Cardiology" [ref=e7059]
+                  - gridcell "05/09/2025" [ref=e7060]
+                  - gridcell [ref=e7061]
+                  - gridcell [ref=e7062]
+                  - gridcell "394579002" [ref=e7063]
+                  - gridcell [ref=e7064]:
+                    - button [ref=e7066] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7069]:
+                  - gridcell "Clinical genetics" [ref=e7070]
+                  - gridcell "05/09/2025" [ref=e7071]
+                  - gridcell [ref=e7072]
+                  - gridcell [ref=e7073]
+                  - gridcell "394580004" [ref=e7074]
+                  - gridcell [ref=e7075]:
+                    - button [ref=e7077] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7080]:
+                  - gridcell "Learning disability" [ref=e7081]
+                  - gridcell "05/09/2025" [ref=e7082]
+                  - gridcell [ref=e7083]
+                  - gridcell [ref=e7084]
+                  - gridcell "408468001" [ref=e7085]
+                  - gridcell [ref=e7086]:
+                    - button [ref=e7088] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7091]:
+                  - gridcell "Medical oncology" [ref=e7092]
+                  - gridcell "05/09/2025" [ref=e7093]
+                  - gridcell [ref=e7094]
+                  - gridcell [ref=e7095]
+                  - gridcell "394593009" [ref=e7096]
+                  - gridcell [ref=e7097]:
+                    - button [ref=e7099] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7102]:
+                  - gridcell "Medical ophthalmology" [ref=e7103]
+                  - gridcell "05/09/2025" [ref=e7104]
+                  - gridcell [ref=e7105]
+                  - gridcell [ref=e7106]
+                  - gridcell "394813003" [ref=e7107]
+                  - gridcell [ref=e7108]:
+                    - button [ref=e7110] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7113]:
+                  - gridcell "Military medicine" [ref=e7114]
+                  - gridcell "05/09/2025" [ref=e7115]
+                  - gridcell [ref=e7116]
+                  - gridcell [ref=e7117]
+                  - gridcell "410001006" [ref=e7118]
+                  - gridcell [ref=e7119]:
+                    - button [ref=e7121] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7124]:
+                  - gridcell "Nephrology" [ref=e7125]
+                  - gridcell "05/09/2025" [ref=e7126]
+                  - gridcell [ref=e7127]
+                  - gridcell [ref=e7128]
+                  - gridcell "394589003" [ref=e7129]
+                  - gridcell [ref=e7130]:
+                    - button [ref=e7132] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7135]:
+                  - gridcell "Neurology" [ref=e7136]
+                  - gridcell "05/09/2025" [ref=e7137]
+                  - gridcell [ref=e7138]
+                  - gridcell [ref=e7139]
+                  - gridcell "394591006" [ref=e7140]
+                  - gridcell [ref=e7141]:
+                    - button [ref=e7143] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7146]:
+                  - gridcell "Neuropathology" [ref=e7147]
+                  - gridcell "05/09/2025" [ref=e7148]
+                  - gridcell [ref=e7149]
+                  - gridcell [ref=e7150]
+                  - gridcell "394599008" [ref=e7151]
+                  - gridcell [ref=e7152]:
+                    - button [ref=e7154] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7157]:
+                  - gridcell "Another Test Skill Name" [ref=e7158]
+                  - gridcell "05/09/2025" [ref=e7159]
+                  - gridcell [ref=e7160]
+                  - gridcell [ref=e7161]
+                  - gridcell [ref=e7162]
+                  - gridcell [ref=e7163]:
+                    - button [ref=e7165] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7168]:
+                  - gridcell "Toast testing" [ref=e7169]
+                  - gridcell "05/09/2025" [ref=e7170]
+                  - gridcell [ref=e7171]
+                  - gridcell [ref=e7172]
+                  - gridcell [ref=e7173]
+                  - gridcell [ref=e7174]:
+                    - button [ref=e7176] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7179]:
+                  - gridcell "re-fetch data test" [ref=e7180]
+                  - gridcell "05/09/2025" [ref=e7181]
+                  - gridcell [ref=e7182]
+                  - gridcell [ref=e7183]
+                  - gridcell [ref=e7184]
+                  - gridcell [ref=e7185]:
+                    - button [ref=e7187] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7190]:
+                  - gridcell "PR feedback edgecase test" [ref=e7191]
+                  - gridcell "05/09/2025" [ref=e7192]
+                  - gridcell [ref=e7193]
+                  - gridcell [ref=e7194]
+                  - gridcell "773568002" [ref=e7195]
+                  - gridcell [ref=e7196]:
+                    - button [ref=e7198] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7201]:
+                  - gridcell "Another Test Skill 2" [ref=e7202]
+                  - gridcell "05/09/2025" [ref=e7203]
+                  - gridcell [ref=e7204]
+                  - gridcell [ref=e7205]
+                  - gridcell [ref=e7206]
+                  - gridcell [ref=e7207]:
+                    - button [ref=e7209] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7212]:
+                  - gridcell [ref=e7213]
+                  - gridcell "05/09/2025" [ref=e7214]
+                  - gridcell [ref=e7215]
+                  - gridcell [ref=e7216]
+                  - gridcell [ref=e7217]
+                  - gridcell [ref=e7218]:
+                    - button [ref=e7220] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7223]:
+                  - gridcell "Test - search 3" [ref=e7224]
+                  - gridcell "05/09/2025" [ref=e7225]
+                  - gridcell [ref=e7226]
+                  - gridcell [ref=e7227]
+                  - gridcell "24111000087100" [ref=e7228]
+                  - gridcell [ref=e7229]:
+                    - button [ref=e7231] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7234]:
+                  - gridcell "Test - search 4" [ref=e7235]
+                  - gridcell "05/09/2025" [ref=e7236]
+                  - gridcell [ref=e7237]
+                  - gridcell [ref=e7238]
+                  - gridcell "24111000087100" [ref=e7239]
+                  - gridcell [ref=e7240]:
+                    - button [ref=e7242] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7245]:
+                  - gridcell "Skill 3" [ref=e7246]
+                  - gridcell "05/09/2025" [ref=e7247]
+                  - gridcell [ref=e7248]
+                  - gridcell [ref=e7249]
+                  - gridcell "24111000087100" [ref=e7250]
+                  - gridcell [ref=e7251]:
+                    - button [ref=e7253] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7256]:
+                  - gridcell "Skill 4" [ref=e7257]
+                  - gridcell "05/09/2025" [ref=e7258]
+                  - gridcell [ref=e7259]
+                  - gridcell [ref=e7260]
+                  - gridcell "773568002" [ref=e7261]
+                  - gridcell [ref=e7262]:
+                    - button [ref=e7264] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7267]:
+                  - gridcell "RBAC Skill Name" [ref=e7268]
+                  - gridcell "05/09/2025" [ref=e7269]
+                  - gridcell [ref=e7270]
+                  - gridcell [ref=e7271]
+                  - gridcell "108501000000103" [ref=e7272]
+                  - gridcell [ref=e7273]:
+                    - button [ref=e7275] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7278]:
+                  - gridcell "Nuclear medicine" [ref=e7279]
+                  - gridcell "05/09/2025" [ref=e7280]
+                  - gridcell [ref=e7281]
+                  - gridcell [ref=e7282]
+                  - gridcell "394649004" [ref=e7283]
+                  - gridcell [ref=e7284]:
+                    - button [ref=e7286] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7289]:
+                  - gridcell "Obstetrics" [ref=e7290]
+                  - gridcell "05/09/2025" [ref=e7291]
+                  - gridcell [ref=e7292]
+                  - gridcell [ref=e7293]
+                  - gridcell "408470005" [ref=e7294]
+                  - gridcell [ref=e7295]:
+                    - button [ref=e7297] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7300]:
+                  - gridcell "Obstetrics and gynecology" [ref=e7301]
+                  - gridcell "05/09/2025" [ref=e7302]
+                  - gridcell [ref=e7303]
+                  - gridcell [ref=e7304]
+                  - gridcell "394585009" [ref=e7305]
+                  - gridcell [ref=e7306]:
+                    - button [ref=e7308] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7311]:
+                  - gridcell "Occupational medicine" [ref=e7312]
+                  - gridcell "05/09/2025" [ref=e7313]
+                  - gridcell [ref=e7314]
+                  - gridcell [ref=e7315]
+                  - gridcell "394821009" [ref=e7316]
+                  - gridcell [ref=e7317]:
+                    - button [ref=e7319] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7322]:
+                  - gridcell "Ophthalmic surgery" [ref=e7323]
+                  - gridcell "05/09/2025" [ref=e7324]
+                  - gridcell [ref=e7325]
+                  - gridcell [ref=e7326]
+                  - gridcell "422191005" [ref=e7327]
+                  - gridcell [ref=e7328]:
+                    - button [ref=e7330] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7333]:
+                  - gridcell "Ophthalmology" [ref=e7334]
+                  - gridcell "05/09/2025" [ref=e7335]
+                  - gridcell [ref=e7336]
+                  - gridcell [ref=e7337]
+                  - gridcell "394594003" [ref=e7338]
+                  - gridcell [ref=e7339]:
+                    - button [ref=e7341] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7344]:
+                  - gridcell "Osteopathic manipulative medicine" [ref=e7345]
+                  - gridcell "05/09/2025" [ref=e7346]
+                  - gridcell [ref=e7347]
+                  - gridcell [ref=e7348]
+                  - gridcell "416304004" [ref=e7349]
+                  - gridcell [ref=e7350]:
+                    - button [ref=e7352] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7355]:
+                  - gridcell "Otolaryngology" [ref=e7356]
+                  - gridcell "05/09/2025" [ref=e7357]
+                  - gridcell [ref=e7358]
+                  - gridcell [ref=e7359]
+                  - gridcell "418960008" [ref=e7360]
+                  - gridcell [ref=e7361]:
+                    - button [ref=e7363] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7366]:
+                  - gridcell "Pain management" [ref=e7367]
+                  - gridcell "05/09/2025" [ref=e7368]
+                  - gridcell [ref=e7369]
+                  - gridcell [ref=e7370]
+                  - gridcell "394882004" [ref=e7371]
+                  - gridcell [ref=e7372]:
+                    - button [ref=e7374] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7377]:
+                  - gridcell "Pediatric (Child and adolescent) psychiatry" [ref=e7378]
+                  - gridcell "05/09/2025" [ref=e7379]
+                  - gridcell [ref=e7380]
+                  - gridcell [ref=e7381]
+                  - gridcell "394588006" [ref=e7382]
+                  - gridcell [ref=e7383]:
+                    - button [ref=e7385] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7388]:
+                  - gridcell "test" [ref=e7389]
+                  - gridcell "05/09/2025" [ref=e7390]
+                  - gridcell [ref=e7391]
+                  - gridcell [ref=e7392]
+                  - gridcell "12345" [ref=e7393]
+                  - gridcell [ref=e7394]:
+                    - button [ref=e7396] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7399]:
+                  - gridcell "User added skill 2" [ref=e7400]
+                  - gridcell "05/09/2025" [ref=e7401]
+                  - gridcell [ref=e7402]
+                  - gridcell [ref=e7403]
+                  - gridcell "394612005" [ref=e7404]
+                  - gridcell [ref=e7405]:
+                    - button [ref=e7407] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7410]:
+                  - gridcell "Pediatric cardiology" [ref=e7411]
+                  - gridcell "05/09/2025" [ref=e7412]
+                  - gridcell [ref=e7413]
+                  - gridcell [ref=e7414]
+                  - gridcell "408459003" [ref=e7415]
+                  - gridcell [ref=e7416]:
+                    - button [ref=e7418] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7421]:
+                  - gridcell "Pediatric dentistry" [ref=e7422]
+                  - gridcell "05/09/2025" [ref=e7423]
+                  - gridcell [ref=e7424]
+                  - gridcell [ref=e7425]
+                  - gridcell "394607009" [ref=e7426]
+                  - gridcell [ref=e7427]:
+                    - button [ref=e7429] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7432]:
+                  - gridcell "Demo Test Save" [ref=e7433]
+                  - gridcell "05/09/2025" [ref=e7434]
+                  - gridcell [ref=e7435]
+                  - gridcell [ref=e7436]
+                  - gridcell [ref=e7437]
+                  - gridcell [ref=e7438]:
+                    - button [ref=e7440] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7443]:
+                  - gridcell "Pediatric endocrinology" [ref=e7444]
+                  - gridcell "05/09/2025" [ref=e7445]
+                  - gridcell [ref=e7446]
+                  - gridcell [ref=e7447]
+                  - gridcell "419610006" [ref=e7448]
+                  - gridcell [ref=e7449]:
+                    - button [ref=e7451] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7454]:
+                  - gridcell "Pediatric gastroenterology" [ref=e7455]
+                  - gridcell "05/09/2025" [ref=e7456]
+                  - gridcell [ref=e7457]
+                  - gridcell [ref=e7458]
+                  - gridcell "418058008" [ref=e7459]
+                  - gridcell [ref=e7460]:
+                    - button [ref=e7462] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7465]:
+                  - gridcell "Pediatric genetics" [ref=e7466]
+                  - gridcell "05/09/2025" [ref=e7467]
+                  - gridcell [ref=e7468]
+                  - gridcell [ref=e7469]
+                  - gridcell "420208008" [ref=e7470]
+                  - gridcell [ref=e7471]:
+                    - button [ref=e7473] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7476]:
+                  - gridcell "Pediatric hematology" [ref=e7477]
+                  - gridcell "05/09/2025" [ref=e7478]
+                  - gridcell [ref=e7479]
+                  - gridcell [ref=e7480]
+                  - gridcell "418652005" [ref=e7481]
+                  - gridcell [ref=e7482]:
+                    - button [ref=e7484] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7487]:
+                  - gridcell "dfgdfg" [ref=e7488]
+                  - gridcell "05/09/2025" [ref=e7489]
+                  - gridcell [ref=e7490]
+                  - gridcell [ref=e7491]
+                  - gridcell [ref=e7492]
+                  - gridcell [ref=e7493]:
+                    - button [ref=e7495] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7498]:
+                  - gridcell "ts error fix test - edit" [ref=e7499]
+                  - gridcell "05/09/2025" [ref=e7500]
+                  - gridcell [ref=e7501]
+                  - gridcell [ref=e7502]
+                  - gridcell "773568002" [ref=e7503]
+                  - gridcell [ref=e7504]:
+                    - button [ref=e7506] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7509]:
+                  - gridcell "Pediatric immunology" [ref=e7510]
+                  - gridcell "05/09/2025" [ref=e7511]
+                  - gridcell [ref=e7512]
+                  - gridcell [ref=e7513]
+                  - gridcell "418535003" [ref=e7514]
+                  - gridcell [ref=e7515]:
+                    - button [ref=e7517] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7520]:
+                  - gridcell "Pediatric infectious diseases" [ref=e7521]
+                  - gridcell "05/09/2025" [ref=e7522]
+                  - gridcell [ref=e7523]
+                  - gridcell [ref=e7524]
+                  - gridcell "418862001" [ref=e7525]
+                  - gridcell [ref=e7526]:
+                    - button [ref=e7528] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7531]:
+                  - gridcell "Pediatric nephrology" [ref=e7532]
+                  - gridcell "05/09/2025" [ref=e7533]
+                  - gridcell [ref=e7534]
+                  - gridcell [ref=e7535]
+                  - gridcell "419365004" [ref=e7536]
+                  - gridcell [ref=e7537]:
+                    - button [ref=e7539] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7542]:
+                  - gridcell "Pediatric oncology" [ref=e7543]
+                  - gridcell "05/09/2025" [ref=e7544]
+                  - gridcell [ref=e7545]
+                  - gridcell [ref=e7546]
+                  - gridcell "418002000" [ref=e7547]
+                  - gridcell [ref=e7548]:
+                    - button [ref=e7550] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7553]:
+                  - gridcell "Pediatric ophthalmology" [ref=e7554]
+                  - gridcell "05/09/2025" [ref=e7555]
+                  - gridcell [ref=e7556]
+                  - gridcell [ref=e7557]
+                  - gridcell "419983000" [ref=e7558]
+                  - gridcell [ref=e7559]:
+                    - button [ref=e7561] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7564]:
+                  - gridcell "Pediatric pulmonology" [ref=e7565]
+                  - gridcell "05/09/2025" [ref=e7566]
+                  - gridcell [ref=e7567]
+                  - gridcell [ref=e7568]
+                  - gridcell "419170002" [ref=e7569]
+                  - gridcell [ref=e7570]:
+                    - button [ref=e7572] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7575]:
+                  - gridcell "Pediatric rheumatology" [ref=e7576]
+                  - gridcell "05/09/2025" [ref=e7577]
+                  - gridcell [ref=e7578]
+                  - gridcell [ref=e7579]
+                  - gridcell "419472004" [ref=e7580]
+                  - gridcell [ref=e7581]:
+                    - button [ref=e7583] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7586]:
+                  - gridcell "Pediatric surgery" [ref=e7587]
+                  - gridcell "05/09/2025" [ref=e7588]
+                  - gridcell [ref=e7589]
+                  - gridcell [ref=e7590]
+                  - gridcell "394539006" [ref=e7591]
+                  - gridcell [ref=e7592]:
+                    - button [ref=e7594] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7597]:
+                  - gridcell "Pediatric surgery-bone marrow transplantation" [ref=e7598]
+                  - gridcell "05/09/2025" [ref=e7599]
+                  - gridcell [ref=e7600]
+                  - gridcell [ref=e7601]
+                  - gridcell "420112009" [ref=e7602]
+                  - gridcell [ref=e7603]:
+                    - button [ref=e7605] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7608]:
+                  - gridcell "Preventive medicine" [ref=e7609]
+                  - gridcell "05/09/2025" [ref=e7610]
+                  - gridcell [ref=e7611]
+                  - gridcell [ref=e7612]
+                  - gridcell "409968004" [ref=e7613]
+                  - gridcell [ref=e7614]:
+                    - button [ref=e7616] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7619]:
+                  - gridcell "Psychiatry" [ref=e7620]
+                  - gridcell "05/09/2025" [ref=e7621]
+                  - gridcell [ref=e7622]
+                  - gridcell [ref=e7623]
+                  - gridcell "394587001" [ref=e7624]
+                  - gridcell [ref=e7625]:
+                    - button [ref=e7627] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7630]:
+                  - gridcell "Clinical cytogenetics and molecular genetics" [ref=e7631]
+                  - gridcell "05/09/2025" [ref=e7632]
+                  - gridcell [ref=e7633]
+                  - gridcell [ref=e7634]
+                  - gridcell "394804000" [ref=e7635]
+                  - gridcell [ref=e7636]:
+                    - button [ref=e7638] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7641]:
+                  - gridcell "Clinical hematology" [ref=e7642]
+                  - gridcell "05/09/2025" [ref=e7643]
+                  - gridcell [ref=e7644]
+                  - gridcell [ref=e7645]
+                  - gridcell "394803006" [ref=e7646]
+                  - gridcell [ref=e7647]:
+                    - button [ref=e7649] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7652]:
+                  - gridcell "Clinical immunology" [ref=e7653]
+                  - gridcell "05/09/2025" [ref=e7654]
+                  - gridcell [ref=e7655]
+                  - gridcell [ref=e7656]
+                  - gridcell "408480009" [ref=e7657]
+                  - gridcell [ref=e7658]:
+                    - button [ref=e7660] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7663]:
+                  - gridcell "Clinical microbiology" [ref=e7664]
+                  - gridcell "05/09/2025" [ref=e7665]
+                  - gridcell [ref=e7666]
+                  - gridcell [ref=e7667]
+                  - gridcell "408454008" [ref=e7668]
+                  - gridcell [ref=e7669]:
+                    - button [ref=e7671] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7674]:
+                  - gridcell "Clinical neuro-physiology" [ref=e7675]
+                  - gridcell "05/09/2025" [ref=e7676]
+                  - gridcell [ref=e7677]
+                  - gridcell [ref=e7678]
+                  - gridcell "394809005" [ref=e7679]
+                  - gridcell [ref=e7680]:
+                    - button [ref=e7682] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7685]:
+                  - gridcell "Gastroenterology" [ref=e7686]
+                  - gridcell "05/09/2025" [ref=e7687]
+                  - gridcell [ref=e7688]
+                  - gridcell [ref=e7689]
+                  - gridcell "394584008" [ref=e7690]
+                  - gridcell [ref=e7691]:
+                    - button [ref=e7693] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7696]:
+                  - gridcell "General medical practice" [ref=e7697]
+                  - gridcell "05/09/2025" [ref=e7698]
+                  - gridcell [ref=e7699]
+                  - gridcell [ref=e7700]
+                  - gridcell "408443003" [ref=e7701]
+                  - gridcell [ref=e7702]:
+                    - button [ref=e7704] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7707]:
+                  - gridcell "General medicine" [ref=e7708]
+                  - gridcell "05/09/2025" [ref=e7709]
+                  - gridcell [ref=e7710]
+                  - gridcell [ref=e7711]
+                  - gridcell "394802001" [ref=e7712]
+                  - gridcell [ref=e7713]:
+                    - button [ref=e7715] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7718]:
+                  - gridcell "General pathology" [ref=e7719]
+                  - gridcell "05/09/2025" [ref=e7720]
+                  - gridcell [ref=e7721]
+                  - gridcell [ref=e7722]
+                  - gridcell "394915009" [ref=e7723]
+                  - gridcell [ref=e7724]:
+                    - button [ref=e7726] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7729]:
+                  - gridcell "General practice" [ref=e7730]
+                  - gridcell "05/09/2025" [ref=e7731]
+                  - gridcell [ref=e7732]
+                  - gridcell [ref=e7733]
+                  - gridcell "394814009" [ref=e7734]
+                  - gridcell [ref=e7735]:
+                    - button [ref=e7737] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7740]:
+                  - gridcell "Genito-urinary medicine" [ref=e7741]
+                  - gridcell "05/09/2025" [ref=e7742]
+                  - gridcell [ref=e7743]
+                  - gridcell [ref=e7744]
+                  - gridcell "394808002" [ref=e7745]
+                  - gridcell [ref=e7746]:
+                    - button [ref=e7748] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7751]:
+                  - gridcell "Geriatric medicine" [ref=e7752]
+                  - gridcell "05/09/2025" [ref=e7753]
+                  - gridcell [ref=e7754]
+                  - gridcell [ref=e7755]
+                  - gridcell "394811001" [ref=e7756]
+                  - gridcell [ref=e7757]:
+                    - button [ref=e7759] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7762]:
+                  - gridcell "Gynecological oncology" [ref=e7763]
+                  - gridcell "05/09/2025" [ref=e7764]
+                  - gridcell [ref=e7765]
+                  - gridcell [ref=e7766]
+                  - gridcell "408446006" [ref=e7767]
+                  - gridcell [ref=e7768]:
+                    - button [ref=e7770] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7773]:
+                  - gridcell "Gynecology" [ref=e7774]
+                  - gridcell "05/09/2025" [ref=e7775]
+                  - gridcell [ref=e7776]
+                  - gridcell [ref=e7777]
+                  - gridcell "394586005" [ref=e7778]
+                  - gridcell [ref=e7779]:
+                    - button [ref=e7781] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7784]:
+                  - gridcell "Hematopathology" [ref=e7785]
+                  - gridcell "05/09/2025" [ref=e7786]
+                  - gridcell [ref=e7787]
+                  - gridcell [ref=e7788]
+                  - gridcell "394916005" [ref=e7789]
+                  - gridcell [ref=e7790]:
+                    - button [ref=e7792] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7795]:
+                  - gridcell "Hepatology" [ref=e7796]
+                  - gridcell "05/09/2025" [ref=e7797]
+                  - gridcell [ref=e7798]
+                  - gridcell [ref=e7799]
+                  - gridcell "408472002" [ref=e7800]
+                  - gridcell [ref=e7801]:
+                    - button [ref=e7803] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7806]:
+                  - gridcell "Histopathology" [ref=e7807]
+                  - gridcell "05/09/2025" [ref=e7808]
+                  - gridcell [ref=e7809]
+                  - gridcell [ref=e7810]
+                  - gridcell "394597005" [ref=e7811]
+                  - gridcell [ref=e7812]:
+                    - button [ref=e7814] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7817]:
+                  - gridcell "Immunopathology" [ref=e7818]
+                  - gridcell "05/09/2025" [ref=e7819]
+                  - gridcell [ref=e7820]
+                  - gridcell [ref=e7821]
+                  - gridcell "394598000" [ref=e7822]
+                  - gridcell [ref=e7823]:
+                    - button [ref=e7825] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7828]:
+                  - gridcell "Infectious diseases" [ref=e7829]
+                  - gridcell "05/09/2025" [ref=e7830]
+                  - gridcell [ref=e7831]
+                  - gridcell [ref=e7832]
+                  - gridcell "394807007" [ref=e7833]
+                  - gridcell [ref=e7834]:
+                    - button [ref=e7836] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7839]:
+                  - gridcell "Internal medicine" [ref=e7840]
+                  - gridcell "05/09/2025" [ref=e7841]
+                  - gridcell [ref=e7842]
+                  - gridcell [ref=e7843]
+                  - gridcell "419192003" [ref=e7844]
+                  - gridcell [ref=e7845]:
+                    - button [ref=e7847] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7850]:
+                  - gridcell "Surgery-Dentistry-Restorative dentistry" [ref=e7851]
+                  - gridcell "05/09/2025" [ref=e7852]
+                  - gridcell [ref=e7853]
+                  - gridcell [ref=e7854]
+                  - gridcell "394606000" [ref=e7855]
+                  - gridcell [ref=e7856]:
+                    - button [ref=e7858] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7861]:
+                  - gridcell "Surgery-Dentistry--surgical" [ref=e7862]
+                  - gridcell "05/09/2025" [ref=e7863]
+                  - gridcell [ref=e7864]
+                  - gridcell [ref=e7865]
+                  - gridcell "408449004" [ref=e7866]
+                  - gridcell [ref=e7867]:
+                    - button [ref=e7869] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7872]:
+                  - gridcell "Surgery-Dentistry-surgical-Orthodontics" [ref=e7873]
+                  - gridcell "05/09/2025" [ref=e7874]
+                  - gridcell [ref=e7875]
+                  - gridcell [ref=e7876]
+                  - gridcell "394608004" [ref=e7877]
+                  - gridcell [ref=e7878]:
+                    - button [ref=e7880] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7883]:
+                  - gridcell "Surgery-Dermatologic surgery" [ref=e7884]
+                  - gridcell "05/09/2025" [ref=e7885]
+                  - gridcell [ref=e7886]
+                  - gridcell [ref=e7887]
+                  - gridcell "418018006" [ref=e7888]
+                  - gridcell [ref=e7889]:
+                    - button [ref=e7891] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7894]:
+                  - gridcell "Surgery-Ear, nose and throat surgery" [ref=e7895]
+                  - gridcell "05/09/2025" [ref=e7896]
+                  - gridcell [ref=e7897]
+                  - gridcell [ref=e7898]
+                  - gridcell "394604002" [ref=e7899]
+                  - gridcell [ref=e7900]:
+                    - button [ref=e7902] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7905]:
+                  - gridcell "Surgery-Hepatobiliary and pancreatic surgery" [ref=e7906]
+                  - gridcell "05/09/2025" [ref=e7907]
+                  - gridcell [ref=e7908]
+                  - gridcell [ref=e7909]
+                  - gridcell "408474001" [ref=e7910]
+                  - gridcell [ref=e7911]:
+                    - button [ref=e7913] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7916]:
+                  - gridcell "Surgery-Neurosurgery" [ref=e7917]
+                  - gridcell "05/09/2025" [ref=e7918]
+                  - gridcell [ref=e7919]
+                  - gridcell [ref=e7920]
+                  - gridcell "394610002" [ref=e7921]
+                  - gridcell [ref=e7922]:
+                    - button [ref=e7924] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7927]:
+                  - gridcell "Surgery-Plastic surgery" [ref=e7928]
+                  - gridcell "05/09/2025" [ref=e7929]
+                  - gridcell [ref=e7930]
+                  - gridcell [ref=e7931]
+                  - gridcell "394611003" [ref=e7932]
+                  - gridcell [ref=e7933]:
+                    - button [ref=e7935] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7938]:
+                  - gridcell "Skill 2" [ref=e7939]
+                  - gridcell "05/09/2025" [ref=e7940]
+                  - gridcell [ref=e7941]
+                  - gridcell [ref=e7942]
+                  - gridcell "1255913008" [ref=e7943]
+                  - gridcell [ref=e7944]:
+                    - button [ref=e7946] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7949]:
+                  - gridcell "Skill 6" [ref=e7950]
+                  - gridcell "05/09/2025" [ref=e7951]
+                  - gridcell [ref=e7952]
+                  - gridcell [ref=e7953]
+                  - gridcell "773568002" [ref=e7954]
+                  - gridcell [ref=e7955]:
+                    - button [ref=e7957] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7960]:
+                  - gridcell "Test a new skill" [ref=e7961]
+                  - gridcell "05/09/2025" [ref=e7962]
+                  - gridcell [ref=e7963]
+                  - gridcell [ref=e7964]
+                  - gridcell "24111000087100" [ref=e7965]
+                  - gridcell [ref=e7966]:
+                    - button [ref=e7968] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7971]:
+                  - gridcell "Local test demo" [ref=e7972]
+                  - gridcell "05/09/2025" [ref=e7973]
+                  - gridcell [ref=e7974]
+                  - gridcell [ref=e7975]
+                  - gridcell [ref=e7976]
+                  - gridcell [ref=e7977]:
+                    - button [ref=e7979] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7982]:
+                  - gridcell "PR Feedback test 5" [ref=e7983]
+                  - gridcell "05/09/2025" [ref=e7984]
+                  - gridcell [ref=e7985]
+                  - gridcell [ref=e7986]
+                  - gridcell [ref=e7987]
+                  - gridcell [ref=e7988]:
+                    - button [ref=e7990] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e7993]:
+                  - gridcell "Skill 1" [ref=e7994]
+                  - gridcell "05/09/2025" [ref=e7995]
+                  - gridcell [ref=e7996]
+                  - gridcell [ref=e7997]
+                  - gridcell [ref=e7998]
+                  - gridcell [ref=e7999]:
+                    - button [ref=e8001] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8004]:
+                  - gridcell "Skill 5" [ref=e8005]
+                  - gridcell "05/09/2025" [ref=e8006]
+                  - gridcell [ref=e8007]
+                  - gridcell [ref=e8008]
+                  - gridcell "90741000000103" [ref=e8009]
+                  - gridcell [ref=e8010]:
+                    - button [ref=e8012] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8015]:
+                  - gridcell "Surgery-Colorectal surgery" [ref=e8016]
+                  - gridcell "05/09/2025" [ref=e8017]
+                  - gridcell [ref=e8018]
+                  - gridcell [ref=e8019]
+                  - gridcell "408464004" [ref=e8020]
+                  - gridcell [ref=e8021]:
+                    - button [ref=e8023] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8026]:
+                  - gridcell "Surgery-Dental-Endodontics" [ref=e8027]
+                  - gridcell "05/09/2025" [ref=e8028]
+                  - gridcell [ref=e8029]
+                  - gridcell [ref=e8030]
+                  - gridcell "408441001" [ref=e8031]
+                  - gridcell [ref=e8032]:
+                    - button [ref=e8034] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8037]:
+                  - gridcell "Surgery-Dental-Oral and maxillofacial surgery" [ref=e8038]
+                  - gridcell "05/09/2025" [ref=e8039]
+                  - gridcell [ref=e8040]
+                  - gridcell [ref=e8041]
+                  - gridcell "408465003" [ref=e8042]
+                  - gridcell [ref=e8043]:
+                    - button [ref=e8045] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8048]:
+                  - gridcell "Surgery-Dental-Oral surgery" [ref=e8049]
+                  - gridcell "05/09/2025" [ref=e8050]
+                  - gridcell [ref=e8051]
+                  - gridcell [ref=e8052]
+                  - gridcell "394605001" [ref=e8053]
+                  - gridcell [ref=e8054]:
+                    - button [ref=e8056] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8059]:
+                  - gridcell "Surgery-Dental-Orthodontics" [ref=e8060]
+                  - gridcell "05/09/2025" [ref=e8061]
+                  - gridcell [ref=e8062]
+                  - gridcell [ref=e8063]
+                  - gridcell "394608004" [ref=e8064]
+                  - gridcell [ref=e8065]:
+                    - button [ref=e8067] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8070]:
+                  - gridcell "Surgery-Dental-Periodontal surgery" [ref=e8071]
+                  - gridcell "05/09/2025" [ref=e8072]
+                  - gridcell [ref=e8073]
+                  - gridcell [ref=e8074]
+                  - gridcell "408461007" [ref=e8075]
+                  - gridcell [ref=e8076]:
+                    - button [ref=e8078] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8081]:
+                  - gridcell "Surgery-Dental-Prosthetic dentistry (Prosthodontics)" [ref=e8082]
+                  - gridcell "05/09/2025" [ref=e8083]
+                  - gridcell [ref=e8084]
+                  - gridcell [ref=e8085]
+                  - gridcell "408460008" [ref=e8086]
+                  - gridcell [ref=e8087]:
+                    - button [ref=e8089] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8092]:
+                  - gridcell "Surgery-Dental-surgical-Prosthodontics" [ref=e8093]
+                  - gridcell "05/09/2025" [ref=e8094]
+                  - gridcell [ref=e8095]
+                  - gridcell [ref=e8096]
+                  - gridcell "408460008" [ref=e8097]
+                  - gridcell [ref=e8098]:
+                    - button [ref=e8100] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8103]:
+                  - gridcell "Clinical oncology" [ref=e8104]
+                  - gridcell "05/09/2025" [ref=e8105]
+                  - gridcell [ref=e8106]
+                  - gridcell [ref=e8107]
+                  - gridcell "394592004" [ref=e8108]
+                  - gridcell [ref=e8109]:
+                    - button [ref=e8111] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8114]:
+                  - gridcell "Clinical pharmacology" [ref=e8115]
+                  - gridcell "05/09/2025" [ref=e8116]
+                  - gridcell [ref=e8117]
+                  - gridcell [ref=e8118]
+                  - gridcell "394600006" [ref=e8119]
+                  - gridcell [ref=e8120]:
+                    - button [ref=e8122] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8125]:
+                  - gridcell "Clinical physiology" [ref=e8126]
+                  - gridcell "05/09/2025" [ref=e8127]
+                  - gridcell [ref=e8128]
+                  - gridcell [ref=e8129]
+                  - gridcell "394601005" [ref=e8130]
+                  - gridcell [ref=e8131]:
+                    - button [ref=e8133] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8136]:
+                  - gridcell "Community medicine" [ref=e8137]
+                  - gridcell "05/09/2025" [ref=e8138]
+                  - gridcell [ref=e8139]
+                  - gridcell [ref=e8140]
+                  - gridcell "394581000" [ref=e8141]
+                  - gridcell [ref=e8142]:
+                    - button [ref=e8144] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8147]:
+                  - gridcell "Critical care medicine" [ref=e8148]
+                  - gridcell "05/09/2025" [ref=e8149]
+                  - gridcell [ref=e8150]
+                  - gridcell [ref=e8151]
+                  - gridcell "408478003" [ref=e8152]
+                  - gridcell [ref=e8153]:
+                    - button [ref=e8155] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8158]:
+                  - gridcell "Dental medicine specialties" [ref=e8159]
+                  - gridcell "05/09/2025" [ref=e8160]
+                  - gridcell [ref=e8161]
+                  - gridcell [ref=e8162]
+                  - gridcell "394812008" [ref=e8163]
+                  - gridcell [ref=e8164]:
+                    - button [ref=e8166] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8169]:
+                  - gridcell "Dental-General dental practice" [ref=e8170]
+                  - gridcell "05/09/2025" [ref=e8171]
+                  - gridcell [ref=e8172]
+                  - gridcell [ref=e8173]
+                  - gridcell "408444009" [ref=e8174]
+                  - gridcell [ref=e8175]:
+                    - button [ref=e8177] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8180]:
+                  - gridcell "Test Skill Name" [ref=e8181]
+                  - gridcell "05/09/2025" [ref=e8182]
+                  - gridcell [ref=e8183]
+                  - gridcell [ref=e8184]
+                  - gridcell [ref=e8185]
+                  - gridcell [ref=e8186]:
+                    - button [ref=e8188] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8191]:
+                  - gridcell "fghfghfgh" [ref=e8192]
+                  - gridcell "05/09/2025" [ref=e8193]
+                  - gridcell [ref=e8194]
+                  - gridcell [ref=e8195]
+                  - gridcell [ref=e8196]
+                  - gridcell [ref=e8197]:
+                    - button [ref=e8199] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8202]:
+                  - gridcell "fghfghfghfgh fglhkjf ghlkj" [ref=e8203]
+                  - gridcell "05/09/2025" [ref=e8204]
+                  - gridcell [ref=e8205]
+                  - gridcell [ref=e8206]
+                  - gridcell [ref=e8207]
+                  - gridcell [ref=e8208]:
+                    - button [ref=e8210] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8213]:
+                  - gridcell "Post conflict add skill testing" [ref=e8214]
+                  - gridcell "05/09/2025" [ref=e8215]
+                  - gridcell [ref=e8216]
+                  - gridcell [ref=e8217]
+                  - gridcell [ref=e8218]
+                  - gridcell [ref=e8219]:
+                    - button [ref=e8221] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8224]:
+                  - gridcell "PR Feedback test" [ref=e8225]
+                  - gridcell "05/09/2025" [ref=e8226]
+                  - gridcell [ref=e8227]
+                  - gridcell [ref=e8228]
+                  - gridcell [ref=e8229]
+                  - gridcell [ref=e8230]:
+                    - button [ref=e8232] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8235]:
+                  - gridcell "PR feedback edgecase test copy" [ref=e8236]
+                  - gridcell "05/09/2025" [ref=e8237]
+                  - gridcell [ref=e8238]
+                  - gridcell [ref=e8239]
+                  - gridcell "773568002" [ref=e8240]
+                  - gridcell [ref=e8241]:
+                    - button [ref=e8243] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8246]:
+                  - gridcell "Test - search" [ref=e8247]
+                  - gridcell "05/09/2025" [ref=e8248]
+                  - gridcell [ref=e8249]
+                  - gridcell [ref=e8250]
+                  - gridcell "773568002" [ref=e8251]
+                  - gridcell [ref=e8252]:
+                    - button [ref=e8254] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8257]:
+                  - gridcell "Test - seach 2" [ref=e8258]
+                  - gridcell "05/09/2025" [ref=e8259]
+                  - gridcell [ref=e8260]
+                  - gridcell [ref=e8261]
+                  - gridcell [ref=e8262]
+                  - gridcell [ref=e8263]:
+                    - button [ref=e8265] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8268]:
+                  - gridcell "Dermatology" [ref=e8269]
+                  - gridcell "05/09/2025" [ref=e8270]
+                  - gridcell [ref=e8271]
+                  - gridcell [ref=e8272]
+                  - gridcell "394582007" [ref=e8273]
+                  - gridcell [ref=e8274]:
+                    - button [ref=e8276] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8279]:
+                  - gridcell "Diabetic medicine" [ref=e8280]
+                  - gridcell "05/09/2025" [ref=e8281]
+                  - gridcell [ref=e8282]
+                  - gridcell [ref=e8283]
+                  - gridcell "408475000" [ref=e8284]
+                  - gridcell [ref=e8285]:
+                    - button [ref=e8287] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8290]:
+                  - gridcell "Dive medicine" [ref=e8291]
+                  - gridcell "05/09/2025" [ref=e8292]
+                  - gridcell [ref=e8293]
+                  - gridcell [ref=e8294]
+                  - gridcell "410005002" [ref=e8295]
+                  - gridcell [ref=e8296]:
+                    - button [ref=e8298] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8301]:
+                  - gridcell "Endocrinology" [ref=e8302]
+                  - gridcell "05/09/2025" [ref=e8303]
+                  - gridcell [ref=e8304]
+                  - gridcell [ref=e8305]
+                  - gridcell "394583002" [ref=e8306]
+                  - gridcell [ref=e8307]:
+                    - button [ref=e8309] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8312]:
+                  - gridcell "Family practice" [ref=e8313]
+                  - gridcell "05/09/2025" [ref=e8314]
+                  - gridcell [ref=e8315]
+                  - gridcell [ref=e8316]
+                  - gridcell "419772000" [ref=e8317]
+                  - gridcell [ref=e8318]:
+                    - button [ref=e8320] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8323]:
+                  - gridcell "Psychotherapy" [ref=e8324]
+                  - gridcell "05/09/2025" [ref=e8325]
+                  - gridcell [ref=e8326]
+                  - gridcell [ref=e8327]
+                  - gridcell "394913002" [ref=e8328]
+                  - gridcell [ref=e8329]:
+                    - button [ref=e8331] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8334]:
+                  - gridcell "Public health medicine" [ref=e8335]
+                  - gridcell "05/09/2025" [ref=e8336]
+                  - gridcell [ref=e8337]
+                  - gridcell [ref=e8338]
+                  - gridcell "408440000" [ref=e8339]
+                  - gridcell [ref=e8340]:
+                    - button [ref=e8342] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8345]:
+                  - gridcell "Pulmonary medicine" [ref=e8346]
+                  - gridcell "05/09/2025" [ref=e8347]
+                  - gridcell [ref=e8348]
+                  - gridcell [ref=e8349]
+                  - gridcell "418112009" [ref=e8350]
+                  - gridcell [ref=e8351]:
+                    - button [ref=e8353] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8356]:
+                  - gridcell "Radiation oncology" [ref=e8357]
+                  - gridcell "05/09/2025" [ref=e8358]
+                  - gridcell [ref=e8359]
+                  - gridcell [ref=e8360]
+                  - gridcell "419815003" [ref=e8361]
+                  - gridcell [ref=e8362]:
+                    - button [ref=e8364] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8367]:
+                  - gridcell "Radiology" [ref=e8368]
+                  - gridcell "05/09/2025" [ref=e8369]
+                  - gridcell [ref=e8370]
+                  - gridcell [ref=e8371]
+                  - gridcell "394914008" [ref=e8372]
+                  - gridcell [ref=e8373]:
+                    - button [ref=e8375] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8378]:
+                  - gridcell "Radiology-Interventional radiology" [ref=e8379]
+                  - gridcell "05/09/2025" [ref=e8380]
+                  - gridcell [ref=e8381]
+                  - gridcell [ref=e8382]
+                  - gridcell "408455009" [ref=e8383]
+                  - gridcell [ref=e8384]:
+                    - button [ref=e8386] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8389]:
+                  - gridcell "Rehabilitation" [ref=e8390]
+                  - gridcell "05/09/2025" [ref=e8391]
+                  - gridcell [ref=e8392]
+                  - gridcell [ref=e8393]
+                  - gridcell "394602003" [ref=e8394]
+                  - gridcell [ref=e8395]:
+                    - button [ref=e8397] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8400]:
+                  - gridcell "Respite care" [ref=e8401]
+                  - gridcell "05/09/2025" [ref=e8402]
+                  - gridcell [ref=e8403]
+                  - gridcell [ref=e8404]
+                  - gridcell "408447002" [ref=e8405]
+                  - gridcell [ref=e8406]:
+                    - button [ref=e8408] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8411]:
+                  - gridcell "Rheumatology" [ref=e8412]
+                  - gridcell "05/09/2025" [ref=e8413]
+                  - gridcell [ref=e8414]
+                  - gridcell [ref=e8415]
+                  - gridcell "394810000" [ref=e8416]
+                  - gridcell [ref=e8417]:
+                    - button [ref=e8419] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8422]:
+                  - gridcell "Sleep studies" [ref=e8423]
+                  - gridcell "05/09/2025" [ref=e8424]
+                  - gridcell [ref=e8425]
+                  - gridcell [ref=e8426]
+                  - gridcell "408450004" [ref=e8427]
+                  - gridcell [ref=e8428]:
+                    - button [ref=e8430] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8433]:
+                  - gridcell "Surgery-Bone and marrow transplantation" [ref=e8434]
+                  - gridcell "05/09/2025" [ref=e8435]
+                  - gridcell [ref=e8436]
+                  - gridcell [ref=e8437]
+                  - gridcell "408476004" [ref=e8438]
+                  - gridcell [ref=e8439]:
+                    - button [ref=e8441] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8444]:
+                  - gridcell "Surgery-Breast surgery" [ref=e8445]
+                  - gridcell "05/09/2025" [ref=e8446]
+                  - gridcell [ref=e8447]
+                  - gridcell [ref=e8448]
+                  - gridcell "408469009" [ref=e8449]
+                  - gridcell [ref=e8450]:
+                    - button [ref=e8452] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8455]:
+                  - gridcell "Surgery-Cardiac surgery" [ref=e8456]
+                  - gridcell "05/09/2025" [ref=e8457]
+                  - gridcell [ref=e8458]
+                  - gridcell [ref=e8459]
+                  - gridcell "408466002" [ref=e8460]
+                  - gridcell [ref=e8461]:
+                    - button [ref=e8463] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8466]:
+                  - gridcell "Surgery-Cardiothoracic transplantation" [ref=e8467]
+                  - gridcell "05/09/2025" [ref=e8468]
+                  - gridcell [ref=e8469]
+                  - gridcell [ref=e8470]
+                  - gridcell "408471009" [ref=e8471]
+                  - gridcell [ref=e8472]:
+                    - button [ref=e8474] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8477]:
+                  - gridcell "Surgery-general" [ref=e8478]
+                  - gridcell "05/09/2025" [ref=e8479]
+                  - gridcell [ref=e8480]
+                  - gridcell [ref=e8481]
+                  - gridcell "394609007" [ref=e8482]
+                  - gridcell [ref=e8483]:
+                    - button [ref=e8485] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8488]:
+                  - gridcell "Surgery-Transplantation surgery" [ref=e8489]
+                  - gridcell "05/09/2025" [ref=e8490]
+                  - gridcell [ref=e8491]
+                  - gridcell [ref=e8492]
+                  - gridcell "408477008" [ref=e8493]
+                  - gridcell [ref=e8494]:
+                    - button [ref=e8496] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8499]:
+                  - gridcell "Surgery-Trauma and orthopedics" [ref=e8500]
+                  - gridcell "05/09/2025" [ref=e8501]
+                  - gridcell [ref=e8502]
+                  - gridcell [ref=e8503]
+                  - gridcell "394801008" [ref=e8504]
+                  - gridcell [ref=e8505]:
+                    - button [ref=e8507] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8510]:
+                  - gridcell "Surgery-Vascular" [ref=e8511]
+                  - gridcell "05/09/2025" [ref=e8512]
+                  - gridcell [ref=e8513]
+                  - gridcell [ref=e8514]
+                  - gridcell "408463005" [ref=e8515]
+                  - gridcell [ref=e8516]:
+                    - button [ref=e8518] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8521]:
+                  - gridcell "Surgical oncology" [ref=e8522]
+                  - gridcell "05/09/2025" [ref=e8523]
+                  - gridcell [ref=e8524]
+                  - gridcell [ref=e8525]
+                  - gridcell "419321007" [ref=e8526]
+                  - gridcell [ref=e8527]:
+                    - button [ref=e8529] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8532]:
+                  - gridcell "Surgical-Accident & emergency" [ref=e8533]
+                  - gridcell "05/09/2025" [ref=e8534]
+                  - gridcell [ref=e8535]
+                  - gridcell [ref=e8536]
+                  - gridcell "394576009" [ref=e8537]
+                  - gridcell [ref=e8538]:
+                    - button [ref=e8540] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8543]:
+                  - gridcell "Thoracic medicine" [ref=e8544]
+                  - gridcell "05/09/2025" [ref=e8545]
+                  - gridcell [ref=e8546]
+                  - gridcell [ref=e8547]
+                  - gridcell "394590007" [ref=e8548]
+                  - gridcell [ref=e8549]:
+                    - button [ref=e8551] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8554]:
+                  - gridcell "Toxicology" [ref=e8555]
+                  - gridcell "05/09/2025" [ref=e8556]
+                  - gridcell [ref=e8557]
+                  - gridcell [ref=e8558]
+                  - gridcell "409967009" [ref=e8559]
+                  - gridcell [ref=e8560]:
+                    - button [ref=e8562] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8565]:
+                  - gridcell "Tropical medicine" [ref=e8566]
+                  - gridcell "05/09/2025" [ref=e8567]
+                  - gridcell [ref=e8568]
+                  - gridcell [ref=e8569]
+                  - gridcell "408448007" [ref=e8570]
+                  - gridcell [ref=e8571]:
+                    - button [ref=e8573] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8576]:
+                  - gridcell "Urological oncology" [ref=e8577]
+                  - gridcell "05/09/2025" [ref=e8578]
+                  - gridcell [ref=e8579]
+                  - gridcell [ref=e8580]
+                  - gridcell "419043006" [ref=e8581]
+                  - gridcell [ref=e8582]:
+                    - button [ref=e8584] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8587]:
+                  - gridcell "Urology" [ref=e8588]
+                  - gridcell "05/09/2025" [ref=e8589]
+                  - gridcell [ref=e8590]
+                  - gridcell [ref=e8591]
+                  - gridcell "394612005" [ref=e8592]
+                  - gridcell [ref=e8593]:
+                    - button [ref=e8595] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8598]:
+                  - gridcell "Medical specialty--OTHER--NOT LISTED" [ref=e8599]
+                  - gridcell "05/09/2025" [ref=e8600]
+                  - gridcell [ref=e8601]
+                  - gridcell [ref=e8602]
+                  - gridcell "394733009" [ref=e8603]
+                  - gridcell [ref=e8604]:
+                    - button [ref=e8606] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8609]:
+                  - gridcell "Surgical specialty--OTHER-NOT LISTED" [ref=e8610]
+                  - gridcell "05/09/2025" [ref=e8611]
+                  - gridcell [ref=e8612]
+                  - gridcell [ref=e8613]
+                  - gridcell "394732004" [ref=e8614]
+                  - gridcell [ref=e8615]:
+                    - button [ref=e8617] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8620]:
+                  - gridcell "New skill" [ref=e8621]
+                  - gridcell "05/09/2025" [ref=e8622]
+                  - gridcell [ref=e8623]
+                  - gridcell [ref=e8624]
+                  - gridcell "1259938008" [ref=e8625]
+                  - gridcell [ref=e8626]:
+                    - button [ref=e8628] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8631]:
+                  - gridcell "Adult mental illness" [ref=e8632]
+                  - gridcell "05/09/2025" [ref=e8633]
+                  - gridcell [ref=e8634]
+                  - gridcell [ref=e8635]
+                  - gridcell "408467006" [ref=e8636]
+                  - gridcell [ref=e8637]:
+                    - button [ref=e8639] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8642]:
+                  - gridcell "Palliative medicine" [ref=e8643]
+                  - gridcell "05/09/2025" [ref=e8644]
+                  - gridcell [ref=e8645]
+                  - gridcell [ref=e8646]
+                  - gridcell "394806003" [ref=e8647]
+                  - gridcell [ref=e8648]:
+                    - button [ref=e8650] [cursor=pointer]
+                - row "Press SPACE to select this row." [ref=e8653]:
+                  - gridcell "Anesthetics" [ref=e8654]
+                  - gridcell "05/09/2025" [ref=e8655]
+                  - gridcell [ref=e8656]
+                  - gridcell [ref=e8657]
+                  - gridcell "394577000" [ref=e8658]
+                  - gridcell [ref=e8659]:
+                    - button [ref=e8661] [cursor=pointer]
+            - text:    

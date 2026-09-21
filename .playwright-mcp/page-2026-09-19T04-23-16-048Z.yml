@@ -1,0 +1,55 @@
+- generic [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e356]:
+    - generic [ref=f28e357]:
+      - button "Collapse sidebar" [active] [ref=f28e460] [cursor=pointer]:
+        - img "Paco Logo" [ref=f28e359]
+      - textbox "Search menu..." [ref=f28e462]
+      - generic [ref=f28e361]:
+        - generic [ref=f28e363] [cursor=pointer]:
+          - img "Dashboards" [ref=f28e366]
+          - generic [ref=f28e463]: Dashboards
+        - generic [ref=f28e368] [cursor=pointer]:
+          - img "Quick Send" [ref=f28e371]
+          - generic [ref=f28e466]: Comms Hub
+        - generic [ref=f28e373] [cursor=pointer]:
+          - img "Patient Search" [ref=f28e376]
+          - generic [ref=f28e469]: Patients
+        - generic [ref=f28e378] [cursor=pointer]:
+          - img "case load management" [ref=f28e381]
+          - generic [ref=f28e472]: Case Load Management
+        - generic [ref=f28e383] [cursor=pointer]:
+          - img "Appointment Book" [ref=f28e386]
+          - generic [ref=f28e475]: Appointment Book
+        - generic [ref=f28e388] [cursor=pointer]:
+          - img "Users" [ref=f28e391]
+          - generic [ref=f28e478]: User Portal
+        - generic [ref=f28e393] [cursor=pointer]:
+          - img "Configuration" [ref=f28e396]
+          - generic [ref=f28e479]: Configuration
+        - generic [ref=f28e398] [cursor=pointer]:
+          - img "Rocket Bar" [ref=f28e401]
+          - generic [ref=f28e480]: Rocket Bar
+        - generic [ref=f28e402]: Sign Out
+      - button [ref=f28e411] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f28e412]
+    - generic [ref=f28e413]:
+      - generic [ref=f28e414]:
+        - generic [ref=f28e415]: 1h 50m
+        - generic [ref=f28e420]:
+          - generic [ref=f28e423]:
+            - generic [ref=f28e424] [cursor=pointer]: FN
+            - generic [ref=f28e426]:
+              - generic [ref=f28e427]: Fiona Nguyen
+              - generic [ref=f28e428]: Super User
+              - generic [ref=f28e430]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f28e435]
+          - generic [ref=f28e436]:
+            - button "More options" [ref=f28e438] [cursor=pointer]
+            - generic [ref=f28e442] [cursor=pointer]: "0"
+      - generic [ref=f28e450]:
+        - generic [ref=f28e451]: There are no new cases
+        - generic [ref=f28e452]: You don't have any active case assigned to you
+  - tooltip [aria-hidden]:
+    - generic: Close menu sidebar

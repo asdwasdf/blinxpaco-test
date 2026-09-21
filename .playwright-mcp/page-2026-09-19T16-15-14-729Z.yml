@@ -1,0 +1,258 @@
+- generic [ref=f91e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f91e8] [cursor=pointer]
+  - generic [ref=f91e11]:
+    - generic [ref=f91e12]:
+      - generic [ref=f91e13]:
+        - button "Expand sidebar" [ref=f91e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f91e15]
+        - generic [ref=f91e17]:
+          - img "Dashboards" [ref=f91e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f91e27] [cursor=pointer]
+          - img "Quick Send" [ref=f91e32] [cursor=pointer]
+          - img "Health Forms" [ref=f91e37] [cursor=pointer]
+          - img "Patient Search" [ref=f91e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f91e47] [cursor=pointer]
+          - img "case load management" [ref=f91e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f91e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f91e62] [cursor=pointer]
+          - img "Users" [ref=f91e67] [cursor=pointer]
+          - img "Configuration" [ref=f91e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f91e77] [cursor=pointer]
+          - generic [ref=f91e79] [cursor=pointer]
+        - button [ref=f91e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f91e88]
+      - generic [ref=f91e94]:
+        - generic [ref=f91e95]: External Appt Reminders
+        - generic [ref=f91e96]:
+          - generic [ref=f91e97]: All appointments booked through PACO will follow the reminder settings configured for that campaign.
+          - generic [ref=f91e98]:
+            - generic [ref=f91e99]:
+              - generic [ref=f91e101]:
+                - generic [ref=f91e102]: Consent Test
+                - img [ref=f91e103] [cursor=pointer]
+                - img [aria-hidden] [ref=f91e104] [cursor=pointer]
+              - generic [ref=f91e106]:
+                - generic [ref=f91e107]:
+                  - generic [ref=f91e108]: Slot Type
+                  - generic [ref=f91e109] [cursor=pointer]:
+                    - generic:
+                      - combobox [expanded]: EMIS - Same Day GP Appt
+                    - generic [ref=f91e110]: EMIS - Same Day GP Appt
+                - generic [ref=f91e115]:
+                  - generic [ref=f91e116]: Email Template
+                  - generic [ref=f91e117] [cursor=pointer]:
+                    - generic:
+                      - textbox: 1555 - Reminder
+                    - generic:
+                      - combobox:
+                        - option "1555 - Reminder" [selected]
+                    - generic [ref=f91e118]: 1555 - Reminder
+                    - img "Clear" [ref=f91e119]
+                    - button "Select an option..." [ref=f91e121]
+                - generic [ref=f91e124]:
+                  - generic [ref=f91e125]: SMS Template
+                  - generic [ref=f91e126] [cursor=pointer]:
+                    - generic:
+                      - textbox: 1553 - Quick Send Reminder SMS
+                    - generic:
+                      - combobox:
+                        - option "1553 - Quick Send Reminder SMS" [selected]
+                    - generic [ref=f91e127]: 1553 - Quick Send Reminder SMS
+                    - img "Clear" [ref=f91e128]
+                    - button "Select an option..." [ref=f91e130]
+                - generic [ref=f91e133]:
+                  - generic [ref=f91e134]: Scheduling
+                  - generic [ref=f91e135] [cursor=pointer]:
+                    - generic:
+                      - combobox: 1 Day
+                    - generic [ref=f91e136]: 1 Day
+                - generic [ref=f91e141]:
+                  - checkbox [ref=f91e143] [cursor=pointer]
+                  - generic [ref=f91e145]: Save to Patient Record?
+            - generic [ref=f91e146]: Add new Reminder
+          - button "Save" [ref=f91e152] [cursor=pointer]
+    - generic "one-paco-top-bar" [ref=f91e155]:
+      - generic [ref=f91e157]:
+        - generic [ref=f91e158]:
+          - img "Mobile burger menu" [ref=f91e159] [cursor=pointer]
+          - generic [ref=f91e160]: TFN
+        - generic [ref=f91e164]:
+          - generic [ref=f91e165] [cursor=pointer]
+          - button "More options" [ref=f91e167] [cursor=pointer]
+          - generic [ref=f91e173] [cursor=pointer]
+          - generic [ref=f91e174] [cursor=pointer]: "0"
+  - alert [ref=f91e6]
+  - generic [ref=f91e188]:
+    - generic [ref=f91e189]:
+      - checkbox [ref=f91e191]:
+        - checkbox [ref=f91e192] [cursor=pointer]
+      - searchbox "Search..." [active] [ref=f91e195]
+      - button "Close" [ref=f91e198] [cursor=pointer]
+    - listbox [ref=f91e202]:
+      - option "EMIS - Same Day GP Appt" [selected] [ref=f91e203] [cursor=pointer]:
+        - checkbox [checked] [ref=f91e206]
+      - option "EMIS - 2 Day Same Day GP Appt" [ref=f91e211] [cursor=pointer]:
+        - checkbox [ref=f91e214]
+      - option "EMIS - Allocate" [ref=f91e217] [cursor=pointer]:
+        - checkbox [ref=f91e220]
+      - option "EMIS - Archive Test" [ref=f91e223] [cursor=pointer]:
+        - checkbox [ref=f91e226]
+      - option "EMIS - archived" [ref=f91e229] [cursor=pointer]:
+        - checkbox [ref=f91e232]
+      - option "EMIS - AskFirst Call Back" [ref=f91e235] [cursor=pointer]:
+        - checkbox [ref=f91e238]
+      - option "EMIS - AskFirst Online Consultation" [ref=f91e241] [cursor=pointer]:
+        - checkbox [ref=f91e244]
+      - option "EMIS - AskFirst Tel" [ref=f91e247] [cursor=pointer]:
+        - checkbox [ref=f91e250]
+      - option "EMIS - Atom" [ref=f91e253] [cursor=pointer]:
+        - checkbox [ref=f91e256]
+      - option "EMIS - Best Practice Flu Vaccination" [ref=f91e259] [cursor=pointer]:
+        - checkbox [ref=f91e262]
+      - option "EMIS - Best Practice Health Forms" [ref=f91e265] [cursor=pointer]:
+        - checkbox [ref=f91e268]
+      - option "EMIS - Best Practice Out of Hours" [ref=f91e271] [cursor=pointer]:
+        - checkbox [ref=f91e274]
+      - option "EMIS - Best Practice PCN Service" [ref=f91e277] [cursor=pointer]:
+        - checkbox [ref=f91e280]
+      - option "EMIS - Best Practice Phone Triage" [ref=f91e283] [cursor=pointer]:
+        - checkbox [ref=f91e286]
+      - option "EMIS - Best Practice Phone Triage 2" [ref=f91e289] [cursor=pointer]:
+        - checkbox [ref=f91e292]
+      - option "EMIS - Best Practice Routine F2F GP" [ref=f91e295] [cursor=pointer]:
+        - checkbox [ref=f91e298]
+      - option "EMIS - Best Practice Same Day GP" [ref=f91e301] [cursor=pointer]:
+        - checkbox [ref=f91e304]
+      - option "EMIS - Best Practice Telephone Consultation" [ref=f91e307] [cursor=pointer]:
+        - checkbox [ref=f91e310]
+      - option "EMIS - Best Practice Untimed List" [ref=f91e313] [cursor=pointer]:
+        - checkbox [ref=f91e316]
+      - option "EMIS - Best Practice Video" [ref=f91e319] [cursor=pointer]:
+        - checkbox [ref=f91e322]
+      - option "EMIS - Best Practice Webchat" [ref=f91e325] [cursor=pointer]:
+        - checkbox [ref=f91e328]
+      - option "EMIS - Blinx Flu" [ref=f91e331] [cursor=pointer]:
+        - checkbox [ref=f91e334]
+      - option "EMIS - Blinx Joint Session" [ref=f91e337] [cursor=pointer]:
+        - checkbox [ref=f91e340]
+      - option "EMIS - Blinx Virtual Consultation" [ref=f91e343] [cursor=pointer]:
+        - checkbox [ref=f91e346]
+      - option "EMIS - Bloods" [ref=f91e349] [cursor=pointer]:
+        - checkbox [ref=f91e352]
+      - option "EMIS - Comment" [ref=f91e355] [cursor=pointer]:
+        - checkbox [ref=f91e358]
+      - option "EMIS - CP Message Consultation" [ref=f91e361] [cursor=pointer]:
+        - checkbox [ref=f91e364]
+      - option "EMIS - CP Virtual Consultation" [ref=f91e367] [cursor=pointer]:
+        - checkbox [ref=f91e370]
+      - option "EMIS - Default" [ref=f91e373] [cursor=pointer]:
+        - checkbox [ref=f91e376]
+      - option "EMIS - eConsult" [ref=f91e379] [cursor=pointer]:
+        - checkbox [ref=f91e382]
+      - option "EMIS - F2F LTC Review" [ref=f91e385] [cursor=pointer]:
+        - checkbox [ref=f91e388]
+      - option "EMIS - F2F Mental Health Review" [ref=f91e391] [cursor=pointer]:
+        - checkbox [ref=f91e394]
+      - option "EMIS - F2F PF" [ref=f91e397] [cursor=pointer]:
+        - checkbox [ref=f91e400]
+      - option "EMIS - Flu Jab" [ref=f91e403] [cursor=pointer]:
+        - checkbox [ref=f91e406]
+      - option "EMIS - GPAD Triage" [ref=f91e409] [cursor=pointer]:
+        - checkbox [ref=f91e412]
+      - option "EMIS - Health Forms" [ref=f91e415] [cursor=pointer]:
+        - checkbox [ref=f91e418]
+      - option "EMIS - Hero Unregistered Patient" [ref=f91e421] [cursor=pointer]:
+        - checkbox [ref=f91e424]
+      - option "EMIS - IVR" [ref=f91e427] [cursor=pointer]:
+        - checkbox [ref=f91e430]
+      - option "EMIS - Joint Slot Test" [ref=f91e433] [cursor=pointer]:
+        - checkbox [ref=f91e436]
+      - option "EMIS - JS test slot" [ref=f91e439] [cursor=pointer]:
+        - checkbox [ref=f91e442]
+      - option "EMIS - LD AHC" [ref=f91e445] [cursor=pointer]:
+        - checkbox [ref=f91e448]
+      - option "EMIS - Magic Slots" [ref=f91e451] [cursor=pointer]:
+        - checkbox [ref=f91e454]
+      - option "EMIS - MHUK N 15" [ref=f91e457] [cursor=pointer]:
+        - checkbox [ref=f91e460]
+      - option "EMIS - MHUK N 30" [ref=f91e463] [cursor=pointer]:
+        - checkbox [ref=f91e466]
+      - option "EMIS - MHUK N 5" [ref=f91e469] [cursor=pointer]:
+        - checkbox [ref=f91e472]
+      - option "EMIS - MHUK TG 10" [ref=f91e475] [cursor=pointer]:
+        - checkbox [ref=f91e478]
+      - option "EMIS - Mike Mike Gareth" [ref=f91e481] [cursor=pointer]:
+        - checkbox [ref=f91e484]
+      - option "EMIS - Mike R" [ref=f91e487] [cursor=pointer]:
+        - checkbox [ref=f91e490]
+      - option "EMIS - Mike Slot" [ref=f91e493] [cursor=pointer]:
+        - checkbox [ref=f91e496]
+      - option "EMIS - MT Consult Slot" [ref=f91e499] [cursor=pointer]:
+        - checkbox [ref=f91e502]
+      - option "EMIS - MWO Test Slots A" [ref=f91e505] [cursor=pointer]:
+        - checkbox [ref=f91e508]
+      - option "EMIS - MWO Test Slots B" [ref=f91e511] [cursor=pointer]:
+        - checkbox [ref=f91e514]
+      - option "EMIS - My Test" [ref=f91e517] [cursor=pointer]:
+        - checkbox [ref=f91e520]
+      - option "EMIS - Nurse Sit and Wait" [ref=f91e523] [cursor=pointer]:
+        - checkbox [ref=f91e526]
+      - option "EMIS - over 50s" [ref=f91e529] [cursor=pointer]:
+        - checkbox [ref=f91e532]
+      - option "EMIS - PAC2 5215" [ref=f91e535] [cursor=pointer]:
+        - checkbox [ref=f91e538]
+      - option "EMIS - PAC21579" [ref=f91e541] [cursor=pointer]:
+        - checkbox [ref=f91e544]
+      - option "EMIS - PACO1011" [ref=f91e547] [cursor=pointer]:
+        - checkbox [ref=f91e550]
+      - option "EMIS - paediatric" [ref=f91e553] [cursor=pointer]:
+        - checkbox [ref=f91e556]
+      - option "EMIS - Pharmacist" [ref=f91e559] [cursor=pointer]:
+        - checkbox [ref=f91e562]
+      - option "EMIS - Provisionally Booked" [ref=f91e565] [cursor=pointer]:
+        - checkbox [ref=f91e568]
+      - option "EMIS - Red" [ref=f91e571] [cursor=pointer]:
+        - checkbox [ref=f91e574]
+      - option "EMIS - Reserved for Out of Hours" [ref=f91e577] [cursor=pointer]:
+        - checkbox [ref=f91e580]
+      - option "EMIS - Reserved for Out of Hours Face to Face" [ref=f91e583] [cursor=pointer]:
+        - checkbox [ref=f91e586]
+      - option "EMIS - SC Bookable and Cancelable" [ref=f91e589] [cursor=pointer]:
+        - checkbox [ref=f91e592]
+      - option "EMIS - Scott - telepone" [ref=f91e595] [cursor=pointer]:
+        - checkbox [ref=f91e598]
+      - option "EMIS - Single Session" [ref=f91e601] [cursor=pointer]:
+        - checkbox [ref=f91e604]
+      - option "EMIS - Smear" [ref=f91e607] [cursor=pointer]:
+        - checkbox [ref=f91e610]
+      - option "EMIS - Split 15 and 15" [ref=f91e613] [cursor=pointer]:
+        - checkbox [ref=f91e616]
+      - option "EMIS - Split 7 and 8" [ref=f91e619] [cursor=pointer]:
+        - checkbox [ref=f91e622]
+      - option "EMIS - TAYLOR_RULES22" [ref=f91e625] [cursor=pointer]:
+        - checkbox [ref=f91e628]
+      - option "EMIS - Tom and Mike" [ref=f91e631] [cursor=pointer]:
+        - checkbox [ref=f91e634]
+      - option "EMIS - tom to archive" [ref=f91e637] [cursor=pointer]:
+        - checkbox [ref=f91e640]
+      - option "EMIS - tom to archive non book" [ref=f91e643] [cursor=pointer]:
+        - checkbox [ref=f91e646]
+      - option "EMIS - UNTIMED APPOINTMENT" [ref=f91e649] [cursor=pointer]:
+        - checkbox [ref=f91e652]
+      - option "EMIS - Vapour Media" [ref=f91e655] [cursor=pointer]:
+        - checkbox [ref=f91e658]
+      - option "EMIS - Video Consultation PF" [ref=f91e661] [cursor=pointer]:
+        - checkbox [ref=f91e664]
+      - option "EMIS - Virtual General Clinic" [ref=f91e667] [cursor=pointer]:
+        - checkbox [ref=f91e670]
+      - option "EMIS - Virtual LTC Review" [ref=f91e673] [cursor=pointer]:
+        - checkbox [ref=f91e676]
+      - option "EMIS - Virtual Mental Health Review" [ref=f91e679] [cursor=pointer]:
+        - checkbox [ref=f91e682]
+      - option "EMIS - VM Auto Telephone Booking" [ref=f91e685] [cursor=pointer]:
+        - checkbox [ref=f91e688]
+      - option "EMIS - Weight loss education session" [ref=f91e691] [cursor=pointer]:
+        - checkbox [ref=f91e694]
+      - option "EMIS - Witness Te" [ref=f91e697] [cursor=pointer]:
+        - checkbox [ref=f91e700]

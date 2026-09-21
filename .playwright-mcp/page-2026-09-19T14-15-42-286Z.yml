@@ -1,0 +1,232 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e2918]:
+    - generic [ref=f4e2919]:
+      - button "Expand sidebar" [ref=f4e2920] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e2921]
+      - generic [ref=f4e2923]:
+        - img "Dashboards" [ref=f4e2928] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e2933] [cursor=pointer]
+        - img "Quick Send" [ref=f4e2938] [cursor=pointer]
+        - img "Health Forms" [ref=f4e2943] [cursor=pointer]
+        - img "Patient Search" [ref=f4e2948] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e2953] [cursor=pointer]
+        - img "case load management" [ref=f4e2958] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e2963] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e2968] [cursor=pointer]
+        - img "Users" [ref=f4e2973] [cursor=pointer]
+        - img "Configuration" [ref=f4e2978] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e2983] [cursor=pointer]
+        - generic [ref=f4e2985] [cursor=pointer]
+      - button [ref=f4e2993] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e2994]
+    - generic [ref=f4e2995]:
+      - generic [ref=f4e2996]:
+        - generic [ref=f4e2997]: 2h 15m
+        - generic [ref=f4e3002]:
+          - generic [ref=f4e3005]:
+            - generic [ref=f4e3006] [cursor=pointer]: TFN
+            - generic [ref=f4e3008]:
+              - generic [ref=f4e3009]: Test Fiona Nguyen
+              - generic [ref=f4e3010]: Super Admin GB
+              - generic [ref=f4e3012]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e3017]
+          - generic [ref=f4e3018]:
+            - button "More options" [ref=f4e3020] [cursor=pointer]
+            - generic [ref=f4e3024] [cursor=pointer]: "0"
+      - generic [ref=f4e3029]:
+        - generic [ref=f4e3032]:
+          - generic [ref=f4e3033]:
+            - heading "Configuration" [level=1] [ref=f4e3035]
+            - generic [ref=f4e3038]:
+              - generic [ref=f4e3039]:
+                - button "Organisation" [expanded] [ref=f4e3040] [cursor=pointer]:
+                  - link "Organisation" [ref=f4e3042]:
+                    - /url: "#"
+                - region "Organisation" [ref=f4e3046]:
+                  - tree [ref=f4e3048]:
+                    - treeitem "General" [level=1] [ref=f4e3049]:
+                      - link [aria-hidden] [ref=f4e3051] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3052]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f4e3053]:
+                      - link [aria-hidden] [ref=f4e3055] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3056]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f4e3057]:
+                      - link [aria-hidden] [ref=f4e3059] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3060]: Locations
+                    - treeitem "Skills" [level=1] [ref=f4e3061]:
+                      - link [aria-hidden] [ref=f4e3063] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3064]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f4e3065]:
+                      - link [aria-hidden] [ref=f4e3067] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3068]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f4e3069]:
+                      - link [aria-hidden] [ref=f4e3071] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3072]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f4e3073]:
+                      - link [aria-hidden] [ref=f4e3075] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3076]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f4e3077]:
+                      - link [aria-hidden] [ref=f4e3079] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3080]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f4e3081]:
+                      - link [aria-hidden] [ref=f4e3083] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3084]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f4e3085]:
+                      - link [aria-hidden] [ref=f4e3087] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3088]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f4e3089]:
+                      - link [aria-hidden] [ref=f4e3091] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3092]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f4e3093]:
+                      - link [aria-hidden] [ref=f4e3095] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3096]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f4e3097]:
+                      - link [aria-hidden] [ref=f4e3099] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f4e3100]: Integrations
+              - button "Patient" [ref=f4e3102] [cursor=pointer]:
+                - link "Patient" [ref=f4e3104]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f4e3109] [cursor=pointer]:
+                - link "Appointment Books" [ref=f4e3111]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f4e3116] [cursor=pointer]:
+                - link "Quick Pay" [ref=f4e3118]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f4e3123] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f4e3125]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f4e3130] [cursor=pointer]:
+                - link "Users & Staff" [ref=f4e3132]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f4e3137] [cursor=pointer]:
+                - link "Clinical Config" [ref=f4e3139]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f4e3144] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f4e3146]:
+                  - /url: "#"
+          - generic [ref=f4e3148] [cursor=pointer]
+        - generic [ref=f4e3152]:
+          - banner [ref=f4e3153]:
+            - generic [ref=f4e3154]:
+              - heading "Inbound priority rules engine" [level=2] [ref=f4e3155]
+              - generic [ref=f4e3156]:
+                - button "Preview walk" [ref=f4e3157] [cursor=pointer]
+                - button "Reset to default" [ref=f4e3158] [cursor=pointer]
+                - button "Save" [ref=f4e3159] [cursor=pointer]
+            - paragraph [ref=f4e3160]: Configure the question pathway used when manually creating an inbound case. Map outcomes to your organisation priorities before publishing changes.
+          - region "Flow settings" [ref=f4e3161]:
+            - generic [ref=f4e3162]:
+              - generic [ref=f4e3163]: Flow name
+              - generic [ref=f4e3164]:
+                - textbox "Flow name" [ref=f4e3165]: Inbound case priority flow
+                - img [aria-hidden] [ref=f4e3166] [cursor=pointer]
+            - generic [ref=f4e3168]:
+              - generic [ref=f4e3169]: Entry node (start question)
+              - generic [ref=f4e3171] [cursor=pointer]:
+                - generic [ref=f4e3172]:
+                  - textbox: Is the caller a registered HCP?
+                - generic [ref=f4e3174]: Is the caller a registered HCP?
+                - button [ref=f4e3175]
+          - generic [ref=f4e3178]:
+            - complementary [ref=f4e3179]:
+              - generic [ref=f4e3180]:
+                - heading "Questions" [level=3] [ref=f4e3181]
+                - button "Add" [ref=f4e3182] [cursor=pointer]
+              - list [ref=f4e3183]:
+                - listitem [ref=f4e3184]:
+                  - button "Symptoms / reason" [ref=f4e3185] [cursor=pointer]
+                - listitem [ref=f4e3188]:
+                  - button "Has the clinician been with the patient and assessed in the past 24 hours?" [ref=f4e3189] [cursor=pointer]
+                - listitem [ref=f4e3192]:
+                  - button "Is the caller currently with the patient?" [ref=f4e3193] [cursor=pointer]
+                - listitem [ref=f4e3196]:
+                  - button "Was death expected?" [ref=f4e3197] [cursor=pointer]
+                - listitem [ref=f4e3200]:
+                  - button "Drugs required?" [ref=f4e3201] [cursor=pointer]
+                - listitem [ref=f4e3204]:
+                  - button "Entry node Is the caller a registered HCP?" [ref=f4e3205] [cursor=pointer]:
+                    - generic [ref=f4e3206]:
+                      - img "Entry node" [ref=f4e3207]
+                      - generic [ref=f4e3209]: Is the caller a registered HCP?
+                - listitem [ref=f4e3210]:
+                  - button "What's the reason for the call?" [ref=f4e3211] [cursor=pointer]
+                - listitem [ref=f4e3214]:
+                  - button "Immediate life threatening condition?" [ref=f4e3215] [cursor=pointer]
+                - listitem [ref=f4e3218]:
+                  - button "Please state nature of problem" [ref=f4e3219] [cursor=pointer]
+                - listitem [ref=f4e3222]:
+                  - button "Priority selector" [ref=f4e3223] [cursor=pointer]
+                - listitem [ref=f4e3226]:
+                  - button "Redirect to 111 or a local pharmacy?" [ref=f4e3227] [cursor=pointer]
+                - listitem [ref=f4e3230]:
+                  - button "Palliative Care or Controlled Drug?" [ref=f4e3231] [cursor=pointer]
+              - generic [ref=f4e3234]:
+                - heading "Outcomes" [level=3] [ref=f4e3235]
+                - button "Add" [ref=f4e3236] [cursor=pointer]
+              - list [ref=f4e3237]:
+                - listitem [ref=f4e3238]:
+                  - button "Call 111" [ref=f4e3239] [cursor=pointer]
+                - listitem [ref=f4e3243]:
+                  - button "20-minute DCA" [ref=f4e3244] [cursor=pointer]
+                - listitem [ref=f4e3248]:
+                  - button "Consider 999" [ref=f4e3249] [cursor=pointer]
+                - listitem [ref=f4e3253]:
+                  - button "2-hour home visit" [ref=f4e3254] [cursor=pointer]
+                - listitem [ref=f4e3258]:
+                  - button "Local pharmacy" [ref=f4e3259] [cursor=pointer]
+                - listitem [ref=f4e3263]:
+                  - button "DCA at identified priority" [ref=f4e3264] [cursor=pointer]
+                - listitem [ref=f4e3268]:
+                  - button "Call back once assessed" [ref=f4e3269] [cursor=pointer]
+                - listitem [ref=f4e3273]:
+                  - button "Unexpected death — follow organisation policy" [ref=f4e3274] [cursor=pointer]
+            - generic [ref=f4e3279]:
+              - generic [ref=f4e3280]:
+                - heading "Question" [level=3] [ref=f4e3281]
+                - button "Delete" [ref=f4e3282] [cursor=pointer]
+              - generic [ref=f4e3283]: Prompt
+              - generic [ref=f4e3284]:
+                - textbox [ref=f4e3285]: Is the caller a registered HCP?
+                - img [aria-hidden] [ref=f4e3286] [cursor=pointer]
+              - generic [ref=f4e3288]: Help text
+              - textbox [ref=f4e3289]: HCP calls via HCP line / HCP Digital Front Door.
+              - generic [ref=f4e3290]: Response type
+              - generic [ref=f4e3292] [cursor=pointer]:
+                - generic [ref=f4e3293]:
+                  - textbox: yes_no
+                - generic [ref=f4e3295]: yes_no
+                - button [ref=f4e3296]
+              - generic [ref=f4e3299]:
+                - heading "Options / branches" [level=4] [ref=f4e3301]
+                - generic [ref=f4e3302]:
+                  - generic [ref=f4e3303]: Label
+                  - generic [ref=f4e3304]: Next
+                - generic [ref=f4e3305]:
+                  - generic [ref=f4e3306]: "Yes"
+                  - generic [ref=f4e3308] [cursor=pointer]:
+                    - generic [ref=f4e3309]:
+                      - textbox: Is the caller currently with the patient?
+                    - generic [ref=f4e3311]: Is the caller currently with the patient?
+                    - button [ref=f4e3312]
+                - generic [ref=f4e3315]:
+                  - generic [ref=f4e3316]: "No"
+                  - generic [ref=f4e3318] [cursor=pointer]:
+                    - generic [ref=f4e3319]:
+                      - textbox: Call 111
+                    - generic [ref=f4e3321]: Call 111
+                    - button [ref=f4e3322]

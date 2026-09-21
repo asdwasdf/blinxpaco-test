@@ -1,0 +1,34 @@
+- generic [ref=e5]:
+  - generic [ref=e7]:
+    - paragraph [ref=e8]: Welcome
+    - paragraph [ref=e11]:
+      - generic [ref=e12]: Powered By
+  - generic [ref=e13]:
+    - img "Paco-24-icon" [ref=e15]
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - generic [ref=e18]: Log in
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - generic [ref=e21]:
+              - generic [ref=e22]: User Name
+              - textbox "User Name" [ref=e23]:
+                - /placeholder: Username
+                - text: blinx_daophuongnguyen28022003+2
+            - generic [ref=e24]:
+              - generic [ref=e25]: Password
+              - textbox "Password" [ref=e26]: Nguyen28022003@
+          - button "Log in" [ref=e29] [cursor=pointer]
+      - generic [ref=e31]:
+        - generic [ref=e32]: OR
+        - button "Single Sign On" [ref=e34] [cursor=pointer]
+        - generic [ref=e36]: OR
+        - button "Log in with my Care Identity" [ref=e38] [cursor=pointer]:
+          - generic [ref=e40]: Log in with my
+          - text: Care Identity
+      - generic [ref=e42]:
+        - link "Forgot Password" [ref=e43] [cursor=pointer]:
+          - /url: "#"
+        - text: "|"
+        - link "Privacy Policy" [ref=e44] [cursor=pointer]:
+          - /url: "#"

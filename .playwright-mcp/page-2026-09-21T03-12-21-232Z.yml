@@ -1,0 +1,127 @@
+- generic [active] [ref=f170e1]:
+  - paragraph [ref=f170e6]: Gathering data...
+  - banner [ref=f170e8]:
+    - generic [ref=f170e10]:
+      - generic [ref=f170e11]:
+        - generic [ref=f170e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f170e16]
+        - heading "Communications Hub" [level=1] [ref=f170e17]
+      - generic [ref=f170e18]:              
+      - generic [ref=f170e19]:
+        - generic:
+          - list: 
+        - generic [ref=f170e20]: 
+  - navigation [ref=f170e24]:
+    - generic [ref=f170e25]:
+      - img "Blinx Company Logo" [ref=f170e27]
+      - generic [ref=f170e28] [cursor=pointer]
+    - generic [ref=f170e29]:
+      - list [ref=f170e32]:
+        - listitem [ref=f170e33]:
+          - link "Home" [ref=f170e35] [cursor=pointer]:
+            - /url: ""
+        - listitem [ref=f170e36]:
+          - generic [ref=f170e37] [cursor=pointer]:
+            - link "Analytics" [ref=f170e38]:
+              - /url: /analytics-home
+            - generic [ref=f170e39]: 
+        - listitem [ref=f170e40]:
+          - generic [ref=f170e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f170e42]:
+              - /url: /commshub/
+            - generic [ref=f170e43]: 
+        - listitem [ref=f170e44]:
+          - generic [ref=f170e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f170e46]:
+              - /url: /web-chat
+            - generic [ref=f170e47]: 
+        - listitem [ref=f170e48]:
+          - link "Patient Search" [ref=f170e50] [cursor=pointer]:
+            - /url: /patient-search
+        - listitem [ref=f170e51]:
+          - generic [ref=f170e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f170e53]:
+              - /url: /health-forms
+            - generic [ref=f170e54]: 
+        - listitem [ref=f170e55]:
+          - link "Care Navigator" [ref=f170e57] [cursor=pointer]:
+            - /url: /patient-search
+        - listitem [ref=f170e58]:
+          - link "Configuration" [ref=f170e60] [cursor=pointer]:
+            - /url: /configuration
+      - list [ref=f170e61]:
+        - listitem [ref=f170e62]:
+          - link "Dashboard" [ref=f170e64] [cursor=pointer]:
+            - /url: /paco-connect/dashboard
+        - listitem [ref=f170e65]:
+          - link "Appointment Book" [ref=f170e67] [cursor=pointer]:
+            - /url: /paco-connect/appointment-book
+        - listitem [ref=f170e68]:
+          - link "Settings" [ref=f170e70] [cursor=pointer]:
+            - /url: /paco-connect/configuration
+      - list [ref=f170e71]:
+        - listitem [ref=f170e72]:
+          - link "User Management" [ref=f170e74] [cursor=pointer]:
+            - /url: /users
+        - listitem [ref=f170e75]:
+          - generic [ref=f170e76] [cursor=pointer]: Log Out
+        - listitem [ref=f170e78]:
+          - generic [ref=f170e79]: Version 1.0
+  - generic [ref=f170e83]:
+    - generic [ref=f170e84]:
+      - generic [ref=f170e85]: Notifications
+      - generic [ref=f170e86] [cursor=pointer]:
+        - generic [ref=f170e87]: Clear All
+        - generic [ref=f170e88]: 
+    - generic [ref=f170e90]:
+      - generic [ref=f170e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f170e92]: "0"
+      - generic [ref=f170e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f170e94]: "0"
+      - generic [ref=f170e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f170e96]: "0"
+  - generic [ref=f170e99]:  
+  - generic [ref=f170e100]:
+    - generic [ref=f170e101]:
+      - generic [ref=f170e102]:
+        - link "" [ref=f170e103] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f170e105]: •
+        - link "Comms Hub" [ref=f170e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - generic [ref=f170e107]: •
+        - generic [ref=f170e108]: Template Manager
+      - generic [ref=f170e109]:
+        - button " Show Org. Default Templates" [ref=f170e110] [cursor=pointer]:
+          - generic [ref=f170e111]: 
+          - generic [ref=f170e112]: Show Org. Default Templates
+        - button " Create New Email" [ref=f170e113] [cursor=pointer]:
+          - generic [ref=f170e114]: 
+          - generic [ref=f170e115]: Create New Email
+        - link [ref=f170e116] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder/sms/create
+          - button " Create New SMS" [ref=f170e117]:
+            - generic [ref=f170e118]: 
+            - generic [ref=f170e119]: Create New SMS
+    - generic [ref=f170e125]:
+      - generic [ref=f170e127]:
+        - textbox "Search any data in the table" [ref=f170e128]
+        - generic [ref=f170e129]: 
+      - generic [ref=f170e131]:
+        - text:   
+        - button " Reset Column Widths" [ref=f170e133] [cursor=pointer]:
+          - generic [ref=f170e134]: 
+          - text: Reset Column Widths
+        - button " Show All Columns" [ref=f170e136] [cursor=pointer]:
+          - generic [ref=f170e137]: 
+          - text: Show All Columns
+        - button " Clear Filters" [ref=f170e139] [cursor=pointer]:
+          - generic [ref=f170e140]: 
+          - text: Clear Filters
+        - button " Export to CSV" [ref=f170e142] [cursor=pointer]:
+          - generic [ref=f170e143]: 
+          - text: Export to CSV
+  - text:  

@@ -1,0 +1,38 @@
+- generic [active] [ref=f20e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f20e3] [cursor=pointer]
+  - generic [ref=f20e9]:
+    - generic [ref=f20e11]:
+      - paragraph [ref=f20e12]: Welcome
+      - paragraph [ref=f20e15]:
+        - generic [ref=f20e16]: Powered By
+    - generic [ref=f20e17]:
+      - img "Paco-24-icon" [ref=f20e19]
+      - generic [ref=f20e20]:
+        - status [ref=f20e21]: We couldn't confirm your session was still active, so you were signed out for security. Please sign in again.
+        - generic [ref=f20e22]:
+          - generic [ref=f20e23]: Log in
+          - generic [ref=f20e24]:
+            - generic [ref=f20e25]:
+              - generic [ref=f20e26]:
+                - generic [ref=f20e27]: User Name
+                - textbox "User Name" [ref=f20e28]:
+                  - /placeholder: Username
+                  - text: blinx_daophuongnguyen28022003+2
+              - generic [ref=f20e29]:
+                - generic [ref=f20e30]: Password
+                - textbox "Password" [ref=f20e31]: Nguyen28022003@
+            - button "Log in" [ref=f20e34] [cursor=pointer]
+        - generic [ref=f20e36]:
+          - generic [ref=f20e37]: OR
+          - button "Single Sign On" [ref=f20e39] [cursor=pointer]
+          - generic [ref=f20e41]: OR
+          - button "Log in with my Care Identity" [ref=f20e43] [cursor=pointer]:
+            - generic [ref=f20e45]: Log in with my
+            - text: Care Identity
+        - generic [ref=f20e47]:
+          - link "Forgot Password" [ref=f20e48] [cursor=pointer]:
+            - /url: "#"
+          - text: "|"
+          - link "Privacy Policy" [ref=f20e49] [cursor=pointer]:
+            - /url: "#"

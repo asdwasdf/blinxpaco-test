@@ -1,0 +1,22 @@
+- generic [active] [ref=f82e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f82e8] [cursor=pointer]
+  - banner [ref=f82e15]:
+    - generic [ref=f82e16]:
+      - generic [ref=f82e17]:
+        - img [aria-hidden] [ref=f82e18] [cursor=pointer]
+        - img "Blinx Healthcare" [ref=f82e20]
+      - generic [ref=f82e22]:
+        - generic [ref=f82e23]:
+          - paragraph [ref=f82e24]: "Last Updated: N/A"
+          - button "Timestamp for when the data was last pulled from EMIS. Time is based on a 24-hour clock." [ref=f82e25] [cursor=pointer]
+        - generic [ref=f82e29] [cursor=pointer]:
+          - generic:
+            - textbox
+          - generic:
+            - combobox:
+              - option "Select an Organisation" [selected]
+          - generic [ref=f82e30]: Select an Organisation
+          - button "Select an Organisation" [ref=f82e32]
+        - button "Notifications" [ref=f82e35] [cursor=pointer]
+  - alert [ref=f82e6]

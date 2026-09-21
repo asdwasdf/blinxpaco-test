@@ -1,0 +1,340 @@
+- generic [active] [ref=f127e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f127e8] [cursor=pointer]
+  - generic [ref=f127e11]:
+    - generic [ref=f127e12]:
+      - generic [ref=f127e13]:
+        - button "Expand sidebar" [ref=f127e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f127e15]
+        - generic [ref=f127e17]:
+          - img "Dashboards" [ref=f127e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f127e27] [cursor=pointer]
+          - img "Quick Send" [ref=f127e32] [cursor=pointer]
+          - img "Health Forms" [ref=f127e37] [cursor=pointer]
+          - img "Patient Search" [ref=f127e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f127e47] [cursor=pointer]
+          - img "case load management" [ref=f127e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f127e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f127e62] [cursor=pointer]
+          - img "Users" [ref=f127e67] [cursor=pointer]
+          - img "Configuration" [ref=f127e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f127e77] [cursor=pointer]
+          - generic [ref=f127e79] [cursor=pointer]
+        - button [ref=f127e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f127e88]
+      - generic [ref=f127e89]:
+        - generic [ref=f127e91]:
+          - generic [ref=f127e94]:
+            - img [aria-hidden] [ref=f127e96] [cursor=pointer]
+            - generic [ref=f127e98]:
+              - text: •
+              - button [ref=f127e99] [cursor=pointer]:
+                - link "Analytics" [ref=f127e100]:
+                  - /url: /analytics-home/
+            - generic [ref=f127e101]: •Capacity & Demand
+          - generic [ref=f127e102]:
+            - button "1 Selected" [ref=f127e104] [cursor=pointer]
+            - generic [ref=f127e106] [cursor=pointer]:
+              - paragraph [ref=f127e107]: Date Range
+              - paragraph [ref=f127e108]: All Time
+            - group "text alignment" [ref=f127e111]:
+              - button [pressed] [ref=f127e112] [cursor=pointer]
+              - button [ref=f127e115] [cursor=pointer]
+        - generic [ref=f127e119]:
+          - generic [ref=f127e121]:
+            - generic [ref=f127e125]:
+              - generic [ref=f127e126]: CLINICIAN CAPACITY
+              - button "This card is an overview of how many appointments have been booked during your selected time period. Y axis - Time of the day/Day of week X axis - Number of booked appointments Line - Each coloured line displays a clinical role. This card excludes the session type List." [ref=f127e127] [cursor=pointer]
+            - generic [ref=f127e133]:
+              - generic [ref=f127e134]:
+                - heading "345 Booked Appt. of 345 Total Appt." [level=1] [ref=f127e135]
+                - paragraph [ref=f127e136]: 0 Unused Appt.
+              - img [ref=f127e690]:
+                - generic [ref=f127e696]: Total Clinician Capacity
+                - generic [ref=f127e717]:
+                  - generic [ref=f127e718]: "1900"
+                  - generic [ref=f127e719]: "1919"
+                  - generic [ref=f127e720]: "1938"
+                  - generic [ref=f127e721]: "1957"
+                  - generic [ref=f127e722]: "1976"
+                  - generic [ref=f127e723]: "1995"
+                  - generic [ref=f127e724]: "2014"
+                  - generic [ref=f127e725]: "2033"
+                  - generic [ref=f127e726]: "2052"
+                  - generic [ref=f127e727]: "2071"
+                  - generic [ref=f127e728]: "2090"
+                  - generic [ref=f127e729]: "2109"
+                  - generic [ref=f127e730]: "2128"
+                  - generic [ref=f127e731]: "2147"
+                  - generic [ref=f127e732]: "2166"
+                  - generic [ref=f127e733]: "2185"
+                - generic [ref=f127e734]:
+                  - generic [ref=f127e735]: "0"
+                  - generic [ref=f127e736]: "20"
+                  - generic [ref=f127e737]: "40"
+              - generic [ref=f127e190]:
+                - button "Deselect All" [ref=f127e192] [cursor=pointer]
+                - button "Nurse" [ref=f127e195] [cursor=pointer]
+                - button "Doctor" [ref=f127e199] [cursor=pointer]
+                - button "Unallocated" [ref=f127e203] [cursor=pointer]
+                - button "Pharmacist" [ref=f127e207] [cursor=pointer]
+                - button "Mental Health Practitioner" [ref=f127e211] [cursor=pointer]
+                - button "Admin" [ref=f127e215] [cursor=pointer]
+          - generic [ref=f127e219]:
+            - generic [ref=f127e223]:
+              - generic [ref=f127e224]: CONSULTATION OBSERVATIONS
+              - button "This card is an overview of presenting conditions during your selected time period. % in table is the % of overall count of the presenting conditions against all presenting conditions during this time frame." [ref=f127e225] [cursor=pointer]
+            - generic [ref=f127e234]:
+              - generic: 5 Observations Selected
+              - generic [ref=f127e235]:
+                - generic [ref=f127e236]:
+                  - generic [ref=f127e237]:
+                    - heading "O/E - blood pressure reading" [level=1] [ref=f127e238]
+                    - paragraph [ref=f127e239]: 28 / 646 Obs. (4.33%)
+                  - img [ref=f127e244]:
+                    - generic [ref=f127e250]: No. of Obs.
+                    - generic [ref=f127e257]:
+                      - generic [ref=f127e258]: "1900"
+                      - generic [ref=f127e259]: "1920"
+                      - generic [ref=f127e260]: "1940"
+                      - generic [ref=f127e261]: "1960"
+                      - generic [ref=f127e262]: "1980"
+                      - generic [ref=f127e263]: "2000"
+                      - generic [ref=f127e264]: "2020"
+                      - generic [ref=f127e265]: "2040"
+                      - generic [ref=f127e266]: "2060"
+                      - generic [ref=f127e267]: "2080"
+                      - generic [ref=f127e268]: "2100"
+                      - generic [ref=f127e269]: "2120"
+                      - generic [ref=f127e270]: "2140"
+                      - generic [ref=f127e271]: "2160"
+                      - generic [ref=f127e272]: "2180"
+                      - generic [ref=f127e273]: "2200"
+                    - generic [ref=f127e274]:
+                      - generic [ref=f127e275]: "0"
+                      - generic [ref=f127e276]: "6"
+                      - generic [ref=f127e277]: "12"
+                      - generic [ref=f127e278]: "3"
+                      - generic [ref=f127e279]: "9"
+                      - generic [ref=f127e280]: "15"
+                - generic [ref=f127e282]:
+                  - generic [ref=f127e283]:
+                    - generic [ref=f127e284]: Pulse rate
+                    - generic "20 / 646 Obs." [ref=f127e286]
+                    - generic [ref=f127e287]: 3.10%
+                    - button [ref=f127e290] [cursor=pointer]
+                  - generic [ref=f127e293]:
+                    - generic [ref=f127e294]: O/E - pulse rhythm regular
+                    - generic "16 / 646 Obs." [ref=f127e296]
+                    - generic [ref=f127e297]: 2.48%
+                    - button [ref=f127e300] [cursor=pointer]
+                  - generic [ref=f127e303]:
+                    - generic [ref=f127e304]: Chronic obstructive pulmonary disease
+                    - generic "15 / 646 Obs." [ref=f127e306]
+                    - generic [ref=f127e307]: 2.32%
+                    - button [ref=f127e310] [cursor=pointer]
+                  - generic [ref=f127e313]:
+                    - generic [ref=f127e314]: Chronic obstructive pulmonary disease monitoring
+                    - generic "14 / 646 Obs." [ref=f127e316]
+                    - generic [ref=f127e317]: 2.17%
+                    - button [ref=f127e320] [cursor=pointer]
+          - generic [ref=f127e324]:
+            - generic [ref=f127e328]:
+              - generic [ref=f127e329]: "APPT. DURATION: PLANNED vs ACTUAL"
+              - button "This card is an overview of how much your practice has varied away from your planned clinical time, it will show the planned time allocated to patients VS the actual time spent with patients. Within this card we are looking at timed booked appointments. Y axis - Time of the day/Day of week. X Axis - Appointment time total. Coloured Line- Actual time taken and how much time was planned. This card excludes session type List and Untimed." [ref=f127e330] [cursor=pointer]
+            - generic [ref=f127e336]:
+              - generic [ref=f127e337]:
+                - heading "49h 46m Planned vs 52h 46m Actual" [level=1] [ref=f127e338]
+                - paragraph [ref=f127e339]: 3h Variance
+              - img [ref=f127e741]:
+                - generic [ref=f127e747]: Total Appt. Time
+                - generic [ref=f127e761]:
+                  - generic [ref=f127e762] [cursor=pointer]: Actual Time
+                  - generic [ref=f127e765] [cursor=pointer]: Planned Time
+                - generic [ref=f127e768]:
+                  - generic [ref=f127e769]: "1900"
+                  - generic [ref=f127e770]: "1920"
+                  - generic [ref=f127e771]: "1940"
+                  - generic [ref=f127e772]: "1960"
+                  - generic [ref=f127e773]: "1980"
+                  - generic [ref=f127e774]: "2000"
+                  - generic [ref=f127e775]: "2020"
+                  - generic [ref=f127e776]: "2040"
+                  - generic [ref=f127e777]: "2060"
+                  - generic [ref=f127e778]: "2080"
+                  - generic [ref=f127e779]: "2100"
+                  - generic [ref=f127e780]: "2120"
+                  - generic [ref=f127e781]: "2140"
+                  - generic [ref=f127e782]: "2160"
+                  - generic [ref=f127e783]: "2180"
+                  - generic [ref=f127e784]: "2200"
+                - generic [ref=f127e785]:
+                  - generic [ref=f127e786]: 0m
+                  - generic [ref=f127e787]: 3h 20m
+                  - generic [ref=f127e788]: 6h 40m
+                  - generic [ref=f127e789]: 10h 0m
+          - generic [ref=f127e394]:
+            - generic [ref=f127e398]:
+              - generic [ref=f127e399]: APPT. TIME BY SESSION
+              - button "On this card we are showing (by session) how many patients were seen, and the total time taken to see these patients. The figure in the coloured box is the difference between the time spent with the patients and the expected appointment time (total). Some sessions are lists and untimed where appointment times are not set, therefore the card assumes each appointment is planned to 15 min slots. This card will show the top 5 as default." [ref=f127e400] [cursor=pointer]
+            - generic [ref=f127e410]:
+              - generic [ref=f127e411]:
+                - heading "Session 66AAE" [level=1] [ref=f127e412]
+                - paragraph [ref=f127e413]: 1 Appts. in 25m
+              - img [ref=f127e418]:
+                - generic [ref=f127e424]: No. of Appts.
+                - generic [ref=f127e431]:
+                  - generic [ref=f127e432]: "1900"
+                  - generic [ref=f127e433]: "1919"
+                  - generic [ref=f127e434]: "1938"
+                  - generic [ref=f127e435]: "1957"
+                  - generic [ref=f127e436]: "1976"
+                  - generic [ref=f127e437]: "1995"
+                  - generic [ref=f127e438]: "2014"
+                  - generic [ref=f127e439]: "2033"
+                  - generic [ref=f127e440]: "2052"
+                  - generic [ref=f127e441]: "2071"
+                  - generic [ref=f127e442]: "2090"
+                  - generic [ref=f127e443]: "2109"
+                  - generic [ref=f127e444]: "2128"
+                  - generic [ref=f127e445]: "2147"
+                  - generic [ref=f127e446]: "2166"
+                  - generic [ref=f127e447]: "2185"
+                - generic [ref=f127e448]:
+                  - generic [ref=f127e449]: "0"
+                  - generic [ref=f127e450]: "1"
+                  - generic [ref=f127e451]: "2"
+              - generic [ref=f127e453]:
+                - generic [ref=f127e454]:
+                  - generic [ref=f127e455]: SH WALK IN
+                  - generic [ref=f127e456]: 1 Pts / 36m
+                  - generic "21m" [ref=f127e458]
+                  - button [ref=f127e460] [cursor=pointer]
+                - generic [ref=f127e463]:
+                  - generic [ref=f127e464]: Session C95AF
+                  - generic [ref=f127e465]: 1 Pts / 3m
+                  - generic "0m" [ref=f127e467]: "-2m"
+                  - button [ref=f127e469] [cursor=pointer]
+                - generic [ref=f127e472]:
+                  - generic [ref=f127e473]: Session 6642B
+                  - generic [ref=f127e474]: 1 Pts / 1m
+                  - generic "0m" [ref=f127e476]: "-2m"
+                  - button [ref=f127e478] [cursor=pointer]
+                - generic [ref=f127e481]:
+                  - generic [ref=f127e482]: BGP WALK IN
+                  - generic [ref=f127e483]: 4 Pts / 43m
+                  - generic "0m" [ref=f127e485]: "-17m"
+                  - button [ref=f127e487] [cursor=pointer]
+          - generic [ref=f127e491]:
+            - generic [ref=f127e495]:
+              - generic [ref=f127e496]: APPT. SEEN vs DNA
+              - button "This card is an overview of which clinicians have the highest DNA rate during your selected time period. % in table is a specific % of appointments lost to DNAs for this clinician against all booked appointments during your selected time period." [ref=f127e497] [cursor=pointer]
+            - generic [ref=f127e503]:
+              - generic [ref=f127e504]:
+                - heading "6h 35m Lost" [level=1] [ref=f127e505]
+                - paragraph [ref=f127e506]: 27 DNA's from 345 Appt. Booked (7.83% loss)
+              - img [ref=f127e793]:
+                - generic [ref=f127e799]: Appointments
+                - generic [ref=f127e802]:
+                  - generic [ref=f127e803] [cursor=pointer]
+                  - generic [ref=f127e804] [cursor=pointer]
+                  - generic [ref=f127e805] [cursor=pointer]
+                  - generic [ref=f127e806] [cursor=pointer]
+                  - generic [ref=f127e807] [cursor=pointer]
+                  - generic [ref=f127e808] [cursor=pointer]
+                  - generic [ref=f127e809] [cursor=pointer]
+                  - generic [ref=f127e810] [cursor=pointer]
+                - generic [ref=f127e814]:
+                  - generic [ref=f127e815] [cursor=pointer]: Seen
+                  - generic [ref=f127e818] [cursor=pointer]: DNA
+                - generic [ref=f127e821]:
+                  - generic [ref=f127e822]: "1900"
+                  - generic [ref=f127e823]: "1919"
+                  - generic [ref=f127e824]: "1938"
+                  - generic [ref=f127e825]: "1957"
+                  - generic [ref=f127e826]: "1976"
+                  - generic [ref=f127e827]: "1995"
+                  - generic [ref=f127e828]: "2014"
+                  - generic [ref=f127e829]: "2033"
+                  - generic [ref=f127e830]: "2052"
+                  - generic [ref=f127e831]: "2071"
+                  - generic [ref=f127e832]: "2090"
+                  - generic [ref=f127e833]: "2109"
+                  - generic [ref=f127e834]: "2128"
+                  - generic [ref=f127e835]: "2147"
+                  - generic [ref=f127e836]: "2166"
+                  - generic [ref=f127e837]: "2185"
+                - generic [ref=f127e838]:
+                  - generic [ref=f127e839]: "0"
+                  - generic [ref=f127e840]: "5"
+                  - generic [ref=f127e841]: "10"
+                  - generic [ref=f127e842]: "15"
+          - generic [ref=f127e562]:
+            - generic [ref=f127e566]:
+              - generic [ref=f127e567]: DNA BY CLINICIAN
+              - button "This card is an overview of which clinicians have the highest DNA rate during your selected time period. % in table is a specific % of appointments lost to DNAs for this clinician against all booked appointments during your selected time period." [ref=f127e568] [cursor=pointer]
+            - generic [ref=f127e579]:
+              - generic [ref=f127e580]:
+                - heading "Clinical Psychologist3050 Clinical Psychologist3050" [level=1] [ref=f127e581]
+                - paragraph [ref=f127e582]: 12 DNA / 20 Appt. (60.00% )
+              - img [ref=f127e587]:
+                - generic [ref=f127e593]: No. of DNA’s
+                - generic [ref=f127e600]:
+                  - generic [ref=f127e601]: "1900"
+                  - generic [ref=f127e602]: "1919"
+                  - generic [ref=f127e603]: "1938"
+                  - generic [ref=f127e604]: "1957"
+                  - generic [ref=f127e605]: "1976"
+                  - generic [ref=f127e606]: "1995"
+                  - generic [ref=f127e607]: "2014"
+                  - generic [ref=f127e608]: "2033"
+                  - generic [ref=f127e609]: "2052"
+                  - generic [ref=f127e610]: "2071"
+                  - generic [ref=f127e611]: "2090"
+                  - generic [ref=f127e612]: "2109"
+                  - generic [ref=f127e613]: "2128"
+                  - generic [ref=f127e614]: "2147"
+                  - generic [ref=f127e615]: "2166"
+                  - generic [ref=f127e616]: "2185"
+                - generic [ref=f127e617]:
+                  - generic [ref=f127e618]: "0"
+                  - generic [ref=f127e619]: "2"
+                  - generic [ref=f127e620]: "4"
+                  - generic [ref=f127e621]: "6"
+                  - generic [ref=f127e622]: "8"
+                  - generic [ref=f127e623]: "10"
+              - generic [ref=f127e624]:
+                - generic [ref=f127e625]:
+                  - generic [ref=f127e626]: Pharmacist2937 Pharmacist2937
+                  - generic [ref=f127e627]: 2 DNA / 9 Appt.
+                  - generic [ref=f127e628]: 22.22%
+                  - button [ref=f127e630] [cursor=pointer]
+                - generic [ref=f127e633]:
+                  - generic [ref=f127e634]: General Medical Practitioner2839 General Medical Practitioner2839
+                  - generic [ref=f127e635]: 2 DNA / 8 Appt.
+                  - generic [ref=f127e636]: 25.00%
+                  - button [ref=f127e638] [cursor=pointer]
+                - generic [ref=f127e641]:
+                  - generic [ref=f127e642]: General Medical Practitioner2757 General Medical Practitioner2757
+                  - generic [ref=f127e643]: 2 DNA / 17 Appt.
+                  - generic [ref=f127e644]: 11.76%
+                  - button [ref=f127e646] [cursor=pointer]
+                - generic [ref=f127e649]:
+                  - generic [ref=f127e650]: Health Care Support Worker3038 Health Care Support Worker3038
+                  - generic [ref=f127e651]: 1 DNA / 11 Appt.
+                  - generic [ref=f127e652]: 9.09%
+                  - button [ref=f127e654] [cursor=pointer]
+    - generic "one-paco-top-bar" [ref=f127e657]:
+      - generic [ref=f127e659]:
+        - generic [ref=f127e662]:
+          - generic [ref=f127e663]: TFN
+          - generic [ref=f127e665]:
+            - generic [ref=f127e666]: Test Fiona Nguyen
+            - generic [ref=f127e667]: Super Admin GB
+            - generic [ref=f127e669]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f127e674]
+        - generic [ref=f127e675]:
+          - button "More options" [ref=f127e677] [cursor=pointer]
+          - generic [ref=f127e683] [cursor=pointer]
+          - generic [ref=f127e684] [cursor=pointer]: "0"
+  - alert [ref=f127e6]

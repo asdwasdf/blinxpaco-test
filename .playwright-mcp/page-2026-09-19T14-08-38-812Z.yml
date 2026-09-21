@@ -1,0 +1,178 @@
+- generic [active] [ref=e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=e3] [cursor=pointer]
+  - generic [ref=e1879]:
+    - generic [ref=e1880]:
+      - button "Expand sidebar" [ref=e1881] [cursor=pointer]:
+        - img "Paco Logo" [ref=e1882]
+      - generic [ref=e1884]:
+        - img "Dashboards" [ref=e1889] [cursor=pointer]
+        - img "Analytics & Reports" [ref=e1894] [cursor=pointer]
+        - img "Quick Send" [ref=e1899] [cursor=pointer]
+        - img "Health Forms" [ref=e1904] [cursor=pointer]
+        - img "Patient Search" [ref=e1909] [cursor=pointer]
+        - img "Web Chat & Video" [ref=e1914] [cursor=pointer]
+        - img "case load management" [ref=e1919] [cursor=pointer]
+        - img "Appointment Book" [ref=e1924] [cursor=pointer]
+        - img "Quick Pay" [ref=e1929] [cursor=pointer]
+        - img "Users" [ref=e1934] [cursor=pointer]
+        - img "Configuration" [ref=e1939] [cursor=pointer]
+        - img "Rocket Bar" [ref=e1944] [cursor=pointer]
+        - generic [ref=e1946] [cursor=pointer]
+      - button [ref=e1954] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=e1955]
+    - generic [ref=e1956]:
+      - generic [ref=e1957]:
+        - generic [ref=e1958]: 2h 15m
+        - generic [ref=e1963]:
+          - generic [ref=e1966]:
+            - generic [ref=e1967] [cursor=pointer]: TFN
+            - generic [ref=e1969]:
+              - generic [ref=e1970]: Test Fiona Nguyen
+              - generic [ref=e1971]: Super Admin GB
+              - generic [ref=e1973]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=e1978]
+          - generic [ref=e1979]:
+            - button "More options" [ref=e1981] [cursor=pointer]
+            - generic [ref=e1985] [cursor=pointer]: "0"
+      - generic [ref=e1990]:
+        - generic [ref=e1993]:
+          - generic [ref=e1994]:
+            - heading "Configuration" [level=1] [ref=e1996]
+            - generic [ref=e1999]:
+              - generic [ref=e2000]:
+                - button "Organisation" [expanded] [ref=e2001] [cursor=pointer]:
+                  - link "Organisation" [ref=e2003]:
+                    - /url: "#"
+                - region "Organisation" [ref=e2007]:
+                  - tree [ref=e2009]:
+                    - treeitem "General" [level=1] [ref=e2010]:
+                      - link [aria-hidden] [ref=e2012] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2013]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=e2014]:
+                      - link [aria-hidden] [ref=e2016] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2017]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=e2018]:
+                      - link [aria-hidden] [ref=e2020] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2021]: Locations
+                    - treeitem "Skills" [level=1] [ref=e2022]:
+                      - link [aria-hidden] [ref=e2024] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2025]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=e2026]:
+                      - link [aria-hidden] [ref=e2028] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2029]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=e2030]:
+                      - link [aria-hidden] [ref=e2032] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2033]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=e2034]:
+                      - link [aria-hidden] [ref=e2036] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2037]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=e2038]:
+                      - link [aria-hidden] [ref=e2040] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2041]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=e2042]:
+                      - link [aria-hidden] [ref=e2044] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2045]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=e2046]:
+                      - link [aria-hidden] [ref=e2048] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2049]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=e2050]:
+                      - link [aria-hidden] [ref=e2052] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2053]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=e2054]:
+                      - link [aria-hidden] [ref=e2056] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2057]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=e2058]:
+                      - link [aria-hidden] [ref=e2060] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=e2061]: Integrations
+              - button "Patient" [ref=e2063] [cursor=pointer]:
+                - link "Patient" [ref=e2065]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=e2070] [cursor=pointer]:
+                - link "Appointment Books" [ref=e2072]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=e2077] [cursor=pointer]:
+                - link "Quick Pay" [ref=e2079]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=e2084] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=e2086]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=e2091] [cursor=pointer]:
+                - link "Users & Staff" [ref=e2093]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=e2098] [cursor=pointer]:
+                - link "Clinical Config" [ref=e2100]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=e2105] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=e2107]:
+                  - /url: "#"
+          - generic [ref=e2109] [cursor=pointer]
+        - generic [ref=e2113]:
+          - progressbar [ref=e2116]
+          - generic [ref=e2120]:
+            - heading "Locations" [level=1] [ref=e2121]
+            - textbox "Search Locations..." [ref=e2124]
+            - generic [ref=e2126]:
+              - button [ref=e2127] [cursor=pointer]
+              - menu:
+                - menuitem "Add":
+                  - menuitem "Add":
+                    - paragraph: Add Location
+          - generic [ref=e2135]:
+            - text:  
+            - grid [ref=e2136]:
+              - rowgroup [ref=e2137]:
+                - row [ref=e2138]:
+                  - columnheader [ref=e2139] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2140]: 
+                    - generic [ref=e2141]: Assigned Staff
+                    - text:     
+                  - columnheader [ref=e2142] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2143]: 
+                    - generic [ref=e2144]: Name
+                    - text:     
+                  - columnheader [ref=e2145] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2146]: 
+                    - generic [ref=e2147]: Address
+                    - text:     
+                  - columnheader [ref=e2148] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2149]: 
+                    - generic [ref=e2150]: Contact Number
+                    - text:     
+                  - columnheader [ref=e2151] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2152]: 
+                    - generic [ref=e2153]: Email Address
+                    - text:     
+                  - columnheader [ref=e2154] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2155]: 
+                    - generic [ref=e2156]: Created Date
+                    - text:     
+                  - columnheader [ref=e2157] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2158]: 
+                    - generic [ref=e2159]: Created By
+                    - text:     
+                  - columnheader [ref=e2160] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=e2161]: 
+                    - generic [ref=e2162]: Updated Date
+                    - text: 
+                    - generic [ref=e2163]:
+                      - text: 
+                      - generic [aria-hidden] [ref=e2164]: 
+                      - text:  
+              - row [ref=e2165]:
+                - columnheader [ref=e2166] [cursor=pointer]:
+                  - generic [ref=e2167]: Actions
+            - text:    

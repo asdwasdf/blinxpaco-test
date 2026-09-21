@@ -1,0 +1,232 @@
+- generic [active] [ref=f4e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f4e3] [cursor=pointer]
+  - generic [ref=f4e381]:
+    - generic [ref=f4e382]:
+      - button "Expand sidebar" [ref=f4e383] [cursor=pointer]:
+        - img "Paco Logo" [ref=f4e384]
+      - generic [ref=f4e386]:
+        - img "Dashboards" [ref=f4e391] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f4e396] [cursor=pointer]
+        - img "Quick Send" [ref=f4e401] [cursor=pointer]
+        - img "Health Forms" [ref=f4e406] [cursor=pointer]
+        - img "Patient Search" [ref=f4e411] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f4e416] [cursor=pointer]
+        - img "case load management" [ref=f4e421] [cursor=pointer]
+        - img "Appointment Book" [ref=f4e426] [cursor=pointer]
+        - img "Quick Pay" [ref=f4e431] [cursor=pointer]
+        - img "Users" [ref=f4e436] [cursor=pointer]
+        - img "Configuration" [ref=f4e441] [cursor=pointer]
+        - img "Rocket Bar" [ref=f4e446] [cursor=pointer]
+        - generic [ref=f4e448] [cursor=pointer]
+      - button [ref=f4e456] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f4e457]
+    - generic [ref=f4e458]:
+      - generic [ref=f4e459]:
+        - generic [ref=f4e460]: 1h 1m
+        - generic [ref=f4e465]:
+          - generic [ref=f4e468]:
+            - generic [ref=f4e469] [cursor=pointer]: TFN
+            - generic [ref=f4e471]:
+              - generic [ref=f4e472]: Test Fiona Nguyen
+              - generic [ref=f4e473]: Super Admin GB
+              - generic [ref=f4e475]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f4e480]
+          - generic [ref=f4e481]:
+            - button "More options" [ref=f4e483] [cursor=pointer]
+            - generic [ref=f4e487] [cursor=pointer]: "0"
+      - generic [ref=f4e493]:
+        - tablist [ref=f4e496]:
+          - tab "Org Tasks" [selected] [ref=f4e497] [cursor=pointer]
+          - tab "Staff Performance" [ref=f4e499] [cursor=pointer]
+          - tab "Org Stats" [ref=f4e500] [cursor=pointer]
+          - tab "All Patients" [ref=f4e501] [cursor=pointer]
+          - tab "CQC Readiness" [ref=f4e502] [cursor=pointer]
+          - tab "Message Outbox" [ref=f4e503] [cursor=pointer]
+          - tab "Comms Analytics" [ref=f4e504] [cursor=pointer]
+        - tabpanel [ref=f4e506]:
+          - generic [ref=f4e508]:
+            - generic [ref=f4e509]:
+              - generic [ref=f4e510]:
+                - heading "Organisation Overview" [level=1] [ref=f4e511]
+                - paragraph [ref=f4e512]: Aggregated view of all tasks and activity across the organisation
+              - generic [ref=f4e513]:
+                - button "Day" [ref=f4e514] [cursor=pointer]
+                - button "Week" [ref=f4e515] [cursor=pointer]
+                - button "Month" [ref=f4e516] [cursor=pointer]
+                - button "Year" [ref=f4e517] [cursor=pointer]
+            - generic [ref=f4e518]:
+              - generic [ref=f4e519] [cursor=pointer]:
+                - generic [ref=f4e520]: Booked vs Seen
+                - generic [ref=f4e521]:
+                  - generic [ref=f4e522]: "94"
+                  - generic [ref=f4e523]: /
+                  - generic [ref=f4e524]: "62"
+              - generic [ref=f4e525] [cursor=pointer]:
+                - generic [ref=f4e526]: Prescription Requests
+                - generic [ref=f4e527]: "38"
+              - generic [ref=f4e528] [cursor=pointer]:
+                - generic [ref=f4e529]: Total Tasks
+                - generic [ref=f4e530]: "71"
+              - generic [ref=f4e531] [cursor=pointer]:
+                - generic [ref=f4e532]: Active Clinicians
+                - generic [ref=f4e533]: "18"
+              - generic [ref=f4e534] [cursor=pointer]:
+                - generic [ref=f4e535]: Consultations Completed
+                - generic [ref=f4e536]: "87"
+              - generic [ref=f4e537]:
+                - generic [ref=f4e538]: Avg Wait Time
+                - generic [ref=f4e539]: 12 min
+              - generic [ref=f4e540] [cursor=pointer]:
+                - generic [ref=f4e541]: Tasks Overdue
+                - generic [ref=f4e542]: "14"
+            - generic [ref=f4e543]:
+              - generic [ref=f4e544]:
+                - generic [ref=f4e545]:
+                  - heading "All Organisation Tasks (8)" [level=2] [ref=f4e546]
+                  - generic [ref=f4e547]:
+                    - combobox [ref=f4e548] [cursor=pointer]:
+                      - option "All Staff" [selected]
+                      - option "Dr. Sarah Jones"
+                      - option "Dr. Michael Chen"
+                      - option "Nurse Katie Sparrow"
+                      - option "Dr. Jane Wilson"
+                      - option "Nurse Tom Harris"
+                    - combobox [ref=f4e549] [cursor=pointer]:
+                      - option "All Priorities" [selected]
+                      - option "High"
+                      - option "Medium"
+                      - option "Low"
+                - generic [ref=f4e550]:
+                  - generic [ref=f4e553] [cursor=pointer]:
+                    - generic [ref=f4e554]:
+                      - heading "Book Patient an appointment" [level=3] [ref=f4e555]
+                      - generic [ref=f4e556]: Dr. Sarah Jones
+                    - generic [ref=f4e557]: Diabetes over 60s
+                    - generic [ref=f4e559]:
+                      - generic [ref=f4e560]: Amanda Williams
+                      - generic [ref=f4e561]: "- 123 456 7890"
+                    - generic [ref=f4e562]:
+                      - generic [ref=f4e563]: High Priority
+                      - generic [ref=f4e567]: "Due: 01/01/2026"
+                  - generic [ref=f4e570] [cursor=pointer]:
+                    - generic [ref=f4e571]:
+                      - heading "Send Asthma Review Invite" [level=3] [ref=f4e572]
+                      - generic [ref=f4e573]: Dr. Michael Chen
+                    - generic [ref=f4e574]: Annual Asthma Review
+                    - generic [ref=f4e576]:
+                      - generic [ref=f4e577]: John James
+                      - generic [ref=f4e578]: "- 234 567 8901"
+                    - generic [ref=f4e579]:
+                      - generic [ref=f4e580]: High Priority
+                      - generic [ref=f4e584]: "Due: 01/01/2026"
+                  - generic [ref=f4e587] [cursor=pointer]:
+                    - generic [ref=f4e588]:
+                      - heading "Review blood results" [level=3] [ref=f4e589]
+                      - generic [ref=f4e590]: Nurse Katie Sparrow
+                    - generic [ref=f4e591]: Pathology Review
+                    - generic [ref=f4e593]:
+                      - generic [ref=f4e594]: Helen Brown
+                      - generic [ref=f4e595]: "- 345 678 9012"
+                    - generic [ref=f4e596]:
+                      - generic [ref=f4e597]: High Priority
+                      - generic [ref=f4e601]: "Due: 02/01/2026"
+                  - generic [ref=f4e604] [cursor=pointer]:
+                    - generic [ref=f4e605]:
+                      - heading "Complete discharge summary" [level=3] [ref=f4e606]
+                      - generic [ref=f4e607]: Dr. Sarah Jones
+                    - generic [ref=f4e608]: Admin
+                    - generic [ref=f4e610]:
+                      - generic [ref=f4e611]: David Martinez
+                      - generic [ref=f4e612]: "- 456 789 0123"
+                    - generic [ref=f4e613]:
+                      - generic [ref=f4e614]: Medium Priority
+                      - generic [ref=f4e618]: "Due: 03/01/2026"
+                  - generic [ref=f4e621] [cursor=pointer]:
+                    - generic [ref=f4e622]:
+                      - heading "Follow-up call" [level=3] [ref=f4e623]
+                      - generic [ref=f4e624]: Dr. Jane Wilson
+                    - generic [ref=f4e625]: Post-consultation
+                    - generic [ref=f4e627]:
+                      - generic [ref=f4e628]: Lisa Anderson
+                      - generic [ref=f4e629]: "- 567 890 1234"
+                    - generic [ref=f4e630]:
+                      - generic [ref=f4e631]: Medium Priority
+                      - generic [ref=f4e635]: "Due: 02/01/2026"
+                  - generic [ref=f4e638] [cursor=pointer]:
+                    - generic [ref=f4e639]:
+                      - heading "Referral letter" [level=3] [ref=f4e640]
+                      - generic [ref=f4e641]: Dr. Michael Chen
+                    - generic [ref=f4e642]: Specialist Referral
+                    - generic [ref=f4e644]:
+                      - generic [ref=f4e645]: Rachel Taylor
+                      - generic [ref=f4e646]: "- 678 901 2345"
+                    - generic [ref=f4e647]:
+                      - generic [ref=f4e648]: High Priority
+                      - generic [ref=f4e652]: "Due: 01/01/2026"
+                  - generic [ref=f4e655] [cursor=pointer]:
+                    - generic [ref=f4e656]:
+                      - heading "Medication review" [level=3] [ref=f4e657]
+                      - generic [ref=f4e658]: Nurse Tom Harris
+                    - generic [ref=f4e659]: Prescriptions
+                    - generic [ref=f4e661]:
+                      - generic [ref=f4e662]: James Wilson
+                      - generic [ref=f4e663]: "- 789 012 3456"
+                    - generic [ref=f4e664]:
+                      - generic [ref=f4e665]: Low Priority
+                      - generic [ref=f4e669]: "Due: 05/01/2026"
+                  - generic [ref=f4e672] [cursor=pointer]:
+                    - generic [ref=f4e673]:
+                      - heading "Health form follow-up" [level=3] [ref=f4e674]
+                      - generic [ref=f4e675]: Dr. Jane Wilson
+                    - generic [ref=f4e676]: Health Forms
+                    - generic [ref=f4e678]:
+                      - generic [ref=f4e679]: Emma Davis
+                      - generic [ref=f4e680]: "- 890 123 4567"
+                    - generic [ref=f4e681]:
+                      - generic [ref=f4e682]: Medium Priority
+                      - generic [ref=f4e686]: "Due: 04/01/2026"
+              - generic [ref=f4e687]:
+                - generic [ref=f4e688]:
+                  - heading "Case Outcomes" [level=3] [ref=f4e689]
+                  - generic [ref=f4e690]:
+                    - generic [ref=f4e691] [cursor=pointer]:
+                      - generic [ref=f4e693]: Resolved
+                      - generic [ref=f4e694]: "64"
+                    - generic [ref=f4e695] [cursor=pointer]:
+                      - generic [ref=f4e697]: Referred
+                      - generic [ref=f4e698]: "23"
+                    - generic [ref=f4e699] [cursor=pointer]:
+                      - generic [ref=f4e701]: Follow-up
+                      - generic [ref=f4e702]: "18"
+                    - generic [ref=f4e703] [cursor=pointer]:
+                      - generic [ref=f4e705]: Escalated
+                      - generic [ref=f4e706]: "7"
+                - generic [ref=f4e707]:
+                  - heading "Staff Workload" [level=3] [ref=f4e708]
+                  - generic [ref=f4e709]:
+                    - generic [ref=f4e710] [cursor=pointer]:
+                      - generic [ref=f4e711]: Dr. Sarah Jones
+                      - generic [ref=f4e712]:
+                        - generic [ref=f4e713]: 24 cases
+                        - generic [ref=f4e714]: On track
+                    - generic [ref=f4e715] [cursor=pointer]:
+                      - generic [ref=f4e716]: Dr. Michael Chen
+                      - generic [ref=f4e717]:
+                        - generic [ref=f4e718]: 19 cases
+                        - generic [ref=f4e719]: On track
+                    - generic [ref=f4e720] [cursor=pointer]:
+                      - generic [ref=f4e721]: Nurse Katie Sparrow
+                      - generic [ref=f4e722]:
+                        - generic [ref=f4e723]: 31 cases
+                        - generic [ref=f4e724]: Heavy
+                    - generic [ref=f4e725] [cursor=pointer]:
+                      - generic [ref=f4e726]: Dr. Jane Wilson
+                      - generic [ref=f4e727]:
+                        - generic [ref=f4e728]: 22 cases
+                        - generic [ref=f4e729]: On track
+                    - generic [ref=f4e730] [cursor=pointer]:
+                      - generic [ref=f4e731]: Nurse Tom Harris
+                      - generic [ref=f4e732]:
+                        - generic [ref=f4e733]: 28 cases
+                        - generic [ref=f4e734]: Heavy

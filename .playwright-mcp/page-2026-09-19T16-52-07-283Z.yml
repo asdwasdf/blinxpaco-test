@@ -1,0 +1,244 @@
+- generic [ref=f121e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f121e3] [cursor=pointer]
+  - generic [ref=f121e8]:
+    - generic [ref=f121e9]:
+      - button "Expand sidebar" [ref=f121e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f121e11]
+      - generic [ref=f121e13]:
+        - img "Dashboards" [ref=f121e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f121e23] [cursor=pointer]
+        - img "Quick Send" [ref=f121e28] [cursor=pointer]
+        - img "Health Forms" [ref=f121e33] [cursor=pointer]
+        - img "Patient Search" [ref=f121e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f121e43] [cursor=pointer]
+        - img "case load management" [ref=f121e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f121e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f121e58] [cursor=pointer]
+        - img "Users" [ref=f121e63] [cursor=pointer]
+        - img "Configuration" [ref=f121e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f121e73] [cursor=pointer]
+        - generic [ref=f121e75] [cursor=pointer]
+      - button [ref=f121e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f121e84]
+    - generic [ref=f121e85]:
+      - generic [ref=f121e86]:
+        - generic [ref=f121e87]: 3h 45m
+        - generic [ref=f121e92]:
+          - generic [ref=f121e96]:
+            - generic [ref=f121e97] [cursor=pointer]: TFN
+            - generic [ref=f121e355]:
+              - generic [ref=f121e356]: Test Fiona Nguyen
+              - generic [ref=f121e357]: Super Admin GB
+              - generic [ref=f121e359]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f121e364]
+          - generic [ref=f121e99]:
+            - button "More options" [ref=f121e102] [cursor=pointer]
+            - generic [ref=f121e106] [cursor=pointer]: "0"
+      - generic [ref=f121e3818]:
+        - generic [ref=f121e3819]:
+          - tablist [ref=f121e3822]:
+            - tab "Org Tasks" [ref=f121e3823] [cursor=pointer]
+            - tab "Staff Performance" [ref=f121e3824] [cursor=pointer]
+            - tab "Org Stats" [ref=f121e3825] [cursor=pointer]
+            - tab "All Patients" [ref=f121e3826] [cursor=pointer]
+            - tab "CQC Readiness" [ref=f121e3827] [cursor=pointer]
+            - tab "Message Outbox" [ref=f121e3828] [cursor=pointer]
+            - tab "Comms Analytics" [selected] [ref=f121e3829] [cursor=pointer]
+          - tabpanel [ref=f121e3832]:
+            - generic [ref=f121e3834]:
+              - generic [ref=f121e3835]:
+                - generic [ref=f121e3836]:
+                  - heading "Comms Analytics" [level=1] [ref=f121e3837]
+                  - paragraph [ref=f121e3838]: Volume, delivery and spend across every outbound channel.
+                - generic [ref=f121e3839]:
+                  - generic [ref=f121e3841]:
+                    - generic [ref=f121e3842]: Campaign
+                    - generic [ref=f121e3843] [cursor=pointer]:
+                      - generic [ref=f121e3844]:
+                        - textbox "Campaign"
+                      - button [ref=f121e3846]
+                  - generic [ref=f121e3850]:
+                    - generic [ref=f121e3851]: Date
+                    - button "1 Aug 2026 – 31 Aug 2026" [ref=f121e3852] [cursor=pointer]
+                  - button "Export PDF" [ref=f121e3858] [cursor=pointer]
+              - progressbar [ref=f121e3861]
+              - generic [ref=f121e3864]:
+                - generic [ref=f121e3865]:
+                  - heading "SMS fragments over time each period against budget" [level=2] [ref=f121e4043]
+                  - generic [ref=f121e3868]:
+                    - button "Budget settings" [ref=f121e3869] [cursor=pointer]
+                    - group "Totals" [ref=f121e3872]:
+                      - button "Running total" [ref=f121e3873] [cursor=pointer]
+                      - button "Per period" [active] [pressed] [ref=f121e3874] [cursor=pointer]
+                    - group "Granularity" [ref=f121e3875]:
+                      - button "Hour" [ref=f121e3876] [cursor=pointer]
+                      - button "Day" [ref=f121e3877] [cursor=pointer]
+                      - button "Week" [ref=f121e3878] [cursor=pointer]
+                      - button "Month" [pressed] [ref=f121e3879] [cursor=pointer]
+                      - button "Year" [ref=f121e3880] [cursor=pointer]
+                - paragraph [ref=f121e3881]: No SMS with carrier receipts in this period.
+              - generic [ref=f121e3882]:
+                - heading "Sends by sender messages" [level=2] [ref=f121e3883]
+                - paragraph [ref=f121e3884]: Nothing was sent in this period.
+              - generic [ref=f121e3885]:
+                - generic [ref=f121e3886]:
+                  - generic [ref=f121e3887]:
+                    - heading "Engagement messages, every channel · campaign and date only" [level=2] [ref=f121e3888]
+                    - group "Funnel scope" [ref=f121e3889]:
+                      - button "All messages" [pressed] [ref=f121e3890] [cursor=pointer]
+                      - button "Patient action campaigns" [ref=f121e3891] [cursor=pointer]
+                  - generic [ref=f121e3892]:
+                    - generic [ref=f121e3893]:
+                      - paragraph [ref=f121e3894]: Delivery · each step is part of the one above
+                      - generic [ref=f121e3895]:
+                        - generic [ref=f121e3896]: Sent
+                        - generic [ref=f121e3899]: "0"
+                        - generic [ref=f121e3900]: —
+                      - generic [ref=f121e3901]:
+                        - generic [ref=f121e3902]: Delivered
+                        - generic [ref=f121e3905]: "0"
+                        - generic [ref=f121e3906]: —
+                      - generic [ref=f121e3907]:
+                        - generic [ref=f121e3908]: Opened
+                        - generic [ref=f121e3911]: "0"
+                        - generic [ref=f121e3912]: —
+                    - generic [ref=f121e3913]:
+                      - paragraph [ref=f121e3914]: Actions taken · counted separately, not stages
+                      - generic [ref=f121e3915]:
+                        - generic [ref=f121e3916]: Link clicked
+                        - generic [ref=f121e3919]: "0"
+                        - generic [ref=f121e3920]: —
+                - generic [ref=f121e3921]:
+                  - heading "Channel split volume" [level=2] [ref=f121e3922]
+                  - generic [ref=f121e3923]:
+                    - generic [ref=f121e3924]:
+                      - generic [ref=f121e3925]: SMS
+                      - generic [ref=f121e3926]: 0 · 0.0%
+                    - generic [ref=f121e3928]:
+                      - generic [ref=f121e3929]: Email
+                      - generic [ref=f121e3930]: 0 · 100.0%
+                  - paragraph [ref=f121e3931]:
+                    - text: Only SMS is billed, and it is billed per fragment rather than per message. An email only saves money when it goes
+                    - emphasis [ref=f121e3932]: instead of
+                    - text: an SMS — where a campaign sends both, the SMS is billed anyway.
+              - generic [ref=f121e3933]:
+                - heading "Language volume by language sent · date range only" [level=2] [ref=f121e3934]
+                - paragraph [ref=f121e3935]: Message counts come from the recorded language of each send. Characters, fragments and spend are not counted per language yet, so they show as dashes rather than as zeros.
+                - generic [ref=f121e3936]:
+                  - textbox "Search languages" [ref=f121e3939]
+                  - generic [ref=f121e3940]: 0 groups
+                  - button "Export" [ref=f121e3942] [cursor=pointer]
+                - generic [ref=f121e3946]:
+                  - text:  
+                  - grid [ref=f121e3947]:
+                    - rowgroup [ref=f121e3948]:
+                      - row [ref=f121e3949]:
+                        - columnheader "Language" [ref=f121e3950] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3951]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Sent" [ref=f121e3953] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3954]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Avg chars" [ref=f121e3956] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3957]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Chars / fragment" [ref=f121e3959] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3960]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Avg fragments" [ref=f121e3962] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3963]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Fragments" [ref=f121e3965] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3966]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Spend" [ref=f121e3968] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e3969]: 
+                          - text: 
+                          - generic:    
+                  - generic [ref=f121e3974]:
+                    - tablist [ref=f121e3975]:
+                      - tab "Columns" [ref=f121e3976] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f121e3977]: 
+                      - tab "Filters" [ref=f121e3979] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f121e3980]: 
+                    - text:                                                          
+                  - text:    
+                - paragraph [ref=f121e3982]: Messages in non-Latin script are sent as UCS-2, which cuts a fragment from 153 characters to 67 — so a translated message can cost more than twice its English original at the same length. Trimming a translated template pays twice.
+              - generic [ref=f121e3983]:
+                - generic [ref=f121e3984]:
+                  - heading "Breakdown" [level=2] [ref=f121e3985]
+                  - generic [ref=f121e3987]:
+                    - generic [ref=f121e3988]: Cut by
+                    - generic [ref=f121e3989] [cursor=pointer]:
+                      - generic [ref=f121e3990]:
+                        - textbox "Cut by": Campaign
+                      - generic [ref=f121e3992]: Campaign
+                      - button [ref=f121e3993]
+                - generic [ref=f121e3996]:
+                  - textbox "Search campaigns" [ref=f121e3999]
+                  - generic [ref=f121e4000]: 0 rows
+                  - button "Export" [ref=f121e4002] [cursor=pointer]
+                - generic [ref=f121e4006]:
+                  - text:  
+                  - grid [ref=f121e4007]:
+                    - rowgroup [ref=f121e4008]:
+                      - row [ref=f121e4009]:
+                        - columnheader "Campaign" [ref=f121e4010] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4011]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Messages" [ref=f121e4013] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4014]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "SMS" [ref=f121e4016] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4017]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Email" [ref=f121e4019] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4020]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Fragments" [ref=f121e4022] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4023]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Avg chars" [ref=f121e4025] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4026]: 
+                          - text: 
+                          - generic:    
+                        - columnheader "Avg fragments" [ref=f121e4028] [cursor=pointer]:
+                          - text: 
+                          - generic [aria-hidden] [ref=f121e4029]: 
+                          - text: 
+                          - generic:    
+                  - generic [ref=f121e4034]:
+                    - tablist [ref=f121e4035]:
+                      - tab "Columns" [ref=f121e4036] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f121e4037]: 
+                      - tab "Filters" [ref=f121e4039] [cursor=pointer]:
+                        - generic [aria-hidden] [ref=f121e4040]: 
+                    - text:                                                          
+                  - text:    
+        - button "Scroll tabs left"
+        - button "Scroll tabs right" [ref=f121e4042] [cursor=pointer]

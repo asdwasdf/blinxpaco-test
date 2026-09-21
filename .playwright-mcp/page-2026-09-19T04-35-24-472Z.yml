@@ -1,0 +1,356 @@
+- generic [ref=f44e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f44e3] [cursor=pointer]
+  - generic [ref=f44e345]:
+    - generic [ref=f44e346]:
+      - button "Expand sidebar" [ref=f44e347] [cursor=pointer]:
+        - img "Paco Logo" [ref=f44e348]
+      - generic [ref=f44e350]:
+        - img "Dashboards" [ref=f44e355] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f44e360] [cursor=pointer]
+        - img "Quick Send" [ref=f44e365] [cursor=pointer]
+        - img "Health Forms" [ref=f44e370] [cursor=pointer]
+        - img "Patient Search" [ref=f44e375] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f44e380] [cursor=pointer]
+        - img "case load management" [ref=f44e385] [cursor=pointer]
+        - img "Appointment Book" [ref=f44e390] [cursor=pointer]
+        - img "Quick Pay" [ref=f44e395] [cursor=pointer]
+        - img "Users" [ref=f44e400] [cursor=pointer]
+        - img "Configuration" [ref=f44e405] [cursor=pointer]
+        - img "Rocket Bar" [ref=f44e410] [cursor=pointer]
+        - generic [ref=f44e412] [cursor=pointer]
+      - button [ref=f44e420] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f44e421]
+    - generic [ref=f44e422]:
+      - generic [ref=f44e423]:
+        - generic [ref=f44e424]: 2h 1m
+        - generic [ref=f44e429]:
+          - generic [ref=f44e432]:
+            - generic [ref=f44e433] [cursor=pointer]: TFN
+            - generic [ref=f44e435]:
+              - generic [ref=f44e436]: Test Fiona Nguyen
+              - generic [ref=f44e437]: Super Admin GB
+              - generic [ref=f44e439]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f44e444]
+          - generic [ref=f44e445]:
+            - button "More options" [ref=f44e447] [cursor=pointer]
+            - generic [ref=f44e451] [cursor=pointer]: "0"
+      - generic [ref=f44e456]:
+        - generic [ref=f44e459]:
+          - generic [ref=f44e460]:
+            - heading "Configuration" [level=1] [ref=f44e462]
+            - generic [ref=f44e465]:
+              - button "Organisation" [ref=f44e467] [cursor=pointer]:
+                - link "Organisation" [ref=f44e469]:
+                  - /url: "#"
+              - button "Patient" [ref=f44e474] [cursor=pointer]:
+                - link "Patient" [ref=f44e476]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f44e481] [cursor=pointer]:
+                - link "Appointment Books" [ref=f44e483]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f44e488] [cursor=pointer]:
+                - link "Quick Pay" [ref=f44e490]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f44e495] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f44e497]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f44e502] [cursor=pointer]:
+                - link "Users & Staff" [ref=f44e504]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f44e509] [cursor=pointer]:
+                - link "Clinical Config" [ref=f44e511]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f44e516] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f44e518]:
+                  - /url: "#"
+          - generic [ref=f44e520] [cursor=pointer]
+        - generic [ref=f44e523]:
+          - generic [ref=f44e524]:
+            - generic [ref=f44e526]:
+              - heading "Case Prioritisation" [level=1] [ref=f44e527]
+              - button "View audit" [ref=f44e528] [cursor=pointer]
+            - generic [ref=f44e531]:
+              - generic [ref=f44e532]:
+                - generic [ref=f44e533]:
+                  - generic [ref=f44e535]:
+                    - button [ref=f44e536] [cursor=pointer]
+                    - generic [ref=f44e538]:
+                      - paragraph [ref=f44e539]: Priority Factor
+                      - generic [ref=f44e541] [cursor=pointer]:
+                        - generic [ref=f44e542]:
+                          - textbox: Patient
+                        - generic [ref=f44e544]: Patient
+                        - button [ref=f44e545]
+                  - generic [ref=f44e549]:
+                    - generic [ref=f44e550]:
+                      - generic [ref=f44e552]:
+                        - textbox [ref=f44e553]: OOH / IUC
+                        - img [aria-hidden] [ref=f44e554] [cursor=pointer]
+                      - textbox [ref=f44e558]
+                    - generic [ref=f44e559]:
+                      - generic [ref=f44e561]:
+                        - textbox [ref=f44e562]: CAS
+                        - img [aria-hidden] [ref=f44e563] [cursor=pointer]
+                      - textbox [ref=f44e567]
+                    - generic [ref=f44e568]:
+                      - generic [ref=f44e570]:
+                        - textbox [ref=f44e571]: PCAS
+                        - img [aria-hidden] [ref=f44e572] [cursor=pointer]
+                      - textbox [ref=f44e576]
+                    - generic [ref=f44e577]:
+                      - generic [ref=f44e579]:
+                        - textbox [ref=f44e580]: Primary Care Streaming
+                        - img [aria-hidden] [ref=f44e581] [cursor=pointer]
+                      - textbox [ref=f44e585]
+                    - generic [ref=f44e586]:
+                      - generic [ref=f44e588]:
+                        - textbox [ref=f44e589]: Neighbourhood
+                        - img [aria-hidden] [ref=f44e590] [cursor=pointer]
+                      - textbox [ref=f44e594]
+                    - generic [ref=f44e595]:
+                      - generic [ref=f44e597]:
+                        - textbox [ref=f44e598]: Community
+                        - img [aria-hidden] [ref=f44e599] [cursor=pointer]
+                      - textbox [ref=f44e603]
+                    - generic [ref=f44e604]:
+                      - generic [ref=f44e606]:
+                        - textbox [ref=f44e607]: Mental Health
+                        - img [aria-hidden] [ref=f44e608] [cursor=pointer]
+                      - textbox [ref=f44e612]
+                    - generic [ref=f44e613]:
+                      - generic [ref=f44e615]:
+                        - textbox [ref=f44e616]: SPOA
+                        - img [aria-hidden] [ref=f44e617] [cursor=pointer]
+                      - textbox [ref=f44e621]
+                    - generic [ref=f44e622]:
+                      - generic [ref=f44e624]:
+                        - textbox [ref=f44e625]: Private
+                        - img [aria-hidden] [ref=f44e626] [cursor=pointer]
+                      - textbox [ref=f44e630]
+                    - generic [ref=f44e631]:
+                      - generic [ref=f44e633]:
+                        - textbox [ref=f44e634]: Emergency Department
+                        - img [aria-hidden] [ref=f44e635] [cursor=pointer]
+                      - textbox [ref=f44e639]
+                    - generic [ref=f44e640]:
+                      - generic [ref=f44e642]:
+                        - textbox [ref=f44e643]: "999"
+                        - img [aria-hidden] [ref=f44e644] [cursor=pointer]
+                      - textbox [ref=f44e648]
+                    - generic [ref=f44e649]:
+                      - generic [ref=f44e651]:
+                        - textbox [ref=f44e652]: "111"
+                        - img [aria-hidden] [ref=f44e653] [cursor=pointer]
+                      - textbox [ref=f44e657]
+                    - generic [ref=f44e658]:
+                      - generic [ref=f44e660]:
+                        - textbox [ref=f44e661]: Voluntary Sector
+                        - img [aria-hidden] [ref=f44e662] [cursor=pointer]
+                      - textbox [ref=f44e666]
+                    - generic [ref=f44e667]:
+                      - generic [ref=f44e669]:
+                        - textbox [ref=f44e670]: Local Authority/Public Health
+                        - img [aria-hidden] [ref=f44e671] [cursor=pointer]
+                      - textbox [ref=f44e675]
+                - generic [ref=f44e676]:
+                  - generic [ref=f44e678]:
+                    - button [ref=f44e679] [cursor=pointer]
+                    - generic [ref=f44e681]:
+                      - paragraph [ref=f44e682]: Priority Factor
+                      - generic [ref=f44e684] [cursor=pointer]:
+                        - generic [ref=f44e685]:
+                          - textbox: SPN
+                        - generic [ref=f44e687]: SPN
+                        - button [ref=f44e688]
+                  - generic [ref=f44e692]:
+                    - generic [ref=f44e693]:
+                      - generic [ref=f44e695]:
+                        - textbox [ref=f44e696]: "Yes"
+                        - img [aria-hidden] [ref=f44e697] [cursor=pointer]
+                      - textbox [ref=f44e701]
+                    - generic [ref=f44e702]:
+                      - generic [ref=f44e704]:
+                        - textbox [ref=f44e705]: "No"
+                        - img [aria-hidden] [ref=f44e706] [cursor=pointer]
+                      - textbox [ref=f44e710]
+                - generic [ref=f44e711]:
+                  - generic [ref=f44e713]:
+                    - button [ref=f44e714] [cursor=pointer]
+                    - generic [ref=f44e716]:
+                      - paragraph [ref=f44e717]: Priority Factor
+                      - generic [ref=f44e719] [cursor=pointer]:
+                        - generic [ref=f44e720]:
+                          - textbox: Age
+                        - generic [ref=f44e722]: Age
+                        - button [ref=f44e723]
+                  - generic [ref=f44e727]:
+                    - generic [ref=f44e728]:
+                      - generic [ref=f44e730]:
+                        - textbox [ref=f44e731]: 0 to 5
+                        - img [aria-hidden] [ref=f44e732] [cursor=pointer]
+                      - textbox [ref=f44e736]
+                    - generic [ref=f44e737]:
+                      - generic [ref=f44e739]:
+                        - textbox [ref=f44e740]: 6 to 17
+                        - img [aria-hidden] [ref=f44e741] [cursor=pointer]
+                      - textbox [ref=f44e745]
+                    - generic [ref=f44e746]:
+                      - generic [ref=f44e748]:
+                        - textbox [ref=f44e749]: 18 to 74
+                        - img [aria-hidden] [ref=f44e750] [cursor=pointer]
+                      - textbox [ref=f44e754]
+                    - generic [ref=f44e755]:
+                      - generic [ref=f44e757]:
+                        - textbox [ref=f44e758]: 75 and above
+                        - img [aria-hidden] [ref=f44e759] [cursor=pointer]
+                      - textbox [ref=f44e763]
+                - generic [ref=f44e764]:
+                  - generic [ref=f44e766]:
+                    - button [ref=f44e767] [cursor=pointer]
+                    - generic [ref=f44e769]:
+                      - paragraph [ref=f44e770]: Priority Factor
+                      - generic [ref=f44e772] [cursor=pointer]:
+                        - generic [ref=f44e773]:
+                          - textbox: Number cases in last 72hours
+                        - generic [ref=f44e775]: Number cases in last 72hours
+                        - button [ref=f44e776]
+                  - generic [ref=f44e781]:
+                    - generic [ref=f44e783]:
+                      - textbox [ref=f44e784]: 4 and above
+                      - img [aria-hidden] [ref=f44e785] [cursor=pointer]
+                    - textbox [ref=f44e789]
+                - generic [ref=f44e790]:
+                  - generic [ref=f44e792]:
+                    - button [ref=f44e793] [cursor=pointer]
+                    - generic [ref=f44e795]:
+                      - paragraph [ref=f44e796]: Priority Factor
+                      - generic [ref=f44e798] [cursor=pointer]:
+                        - generic [ref=f44e799]:
+                          - textbox: Day
+                        - generic [ref=f44e801]: Day
+                        - button [ref=f44e802]
+                  - generic [ref=f44e806]:
+                    - generic [ref=f44e807]:
+                      - generic [ref=f44e809]:
+                        - textbox [ref=f44e810]: Sunday
+                        - img [aria-hidden] [ref=f44e811] [cursor=pointer]
+                      - textbox [ref=f44e815]
+                    - generic [ref=f44e816]:
+                      - generic [ref=f44e818]:
+                        - textbox [ref=f44e819]: Monday
+                        - img [aria-hidden] [ref=f44e820] [cursor=pointer]
+                      - textbox [ref=f44e824]
+                    - generic [ref=f44e825]:
+                      - generic [ref=f44e827]:
+                        - textbox [ref=f44e828]: Tuesday
+                        - img [aria-hidden] [ref=f44e829] [cursor=pointer]
+                      - textbox [ref=f44e833]
+                    - generic [ref=f44e834]:
+                      - generic [ref=f44e836]:
+                        - textbox [ref=f44e837]: Wednesday
+                        - img [aria-hidden] [ref=f44e838] [cursor=pointer]
+                      - textbox [ref=f44e842]
+                    - generic [ref=f44e843]:
+                      - generic [ref=f44e845]:
+                        - textbox [ref=f44e846]: Thursday
+                        - img [aria-hidden] [ref=f44e847] [cursor=pointer]
+                      - textbox [ref=f44e851]
+                    - generic [ref=f44e852]:
+                      - generic [ref=f44e854]:
+                        - textbox [ref=f44e855]: Friday
+                        - img [aria-hidden] [ref=f44e856] [cursor=pointer]
+                      - textbox [ref=f44e860]
+                    - generic [ref=f44e861]:
+                      - generic [ref=f44e863]:
+                        - textbox [ref=f44e864]: Saturday
+                        - img [aria-hidden] [ref=f44e865] [cursor=pointer]
+                      - textbox [ref=f44e869]
+                    - generic [ref=f44e870]:
+                      - generic [ref=f44e872]:
+                        - textbox [ref=f44e873]: Bank Holiday
+                        - img [aria-hidden] [ref=f44e874] [cursor=pointer]
+                      - textbox [ref=f44e878]
+                - generic [ref=f44e881]:
+                  - button [ref=f44e882] [cursor=pointer]
+                  - generic [ref=f44e884]:
+                    - paragraph [ref=f44e885]: Priority Factor
+                    - generic [ref=f44e887] [cursor=pointer]:
+                      - generic [ref=f44e888]:
+                        - textbox: Case Priority
+                      - generic [ref=f44e890]: Case Priority
+                      - button [ref=f44e891]
+                - generic [ref=f44e895]:
+                  - generic [ref=f44e897]:
+                    - button [ref=f44e898] [cursor=pointer]
+                    - generic [ref=f44e900]:
+                      - paragraph [ref=f44e901]: Priority Factor
+                      - generic [ref=f44e903] [cursor=pointer]:
+                        - generic [ref=f44e904]:
+                          - textbox: Breach Time
+                        - generic [ref=f44e906]: Breach Time
+                        - button [ref=f44e907]
+                  - generic [ref=f44e911]:
+                    - generic [ref=f44e912]:
+                      - generic [ref=f44e914]:
+                        - textbox [ref=f44e915]: Red
+                        - img [aria-hidden] [ref=f44e916] [cursor=pointer]
+                      - textbox [ref=f44e920]
+                    - generic [ref=f44e921]:
+                      - generic [ref=f44e923]:
+                        - textbox [ref=f44e924]: Amber
+                        - img [aria-hidden] [ref=f44e925] [cursor=pointer]
+                      - textbox [ref=f44e929]
+                    - generic [ref=f44e930]:
+                      - generic [ref=f44e932]:
+                        - textbox [ref=f44e933]: Green
+                        - img [aria-hidden] [ref=f44e934] [cursor=pointer]
+                      - textbox [ref=f44e938]
+                - generic [ref=f44e939]:
+                  - generic [ref=f44e941]:
+                    - button [ref=f44e942] [cursor=pointer]
+                    - generic [ref=f44e944]:
+                      - paragraph [ref=f44e945]: Priority Factor
+                      - generic [ref=f44e947] [cursor=pointer]:
+                        - generic [ref=f44e948]:
+                          - textbox: Out of Hours
+                        - generic [ref=f44e950]: Out of Hours
+                        - button [ref=f44e951]
+                  - generic [ref=f44e955]:
+                    - generic [ref=f44e956]:
+                      - generic [ref=f44e958]:
+                        - textbox [ref=f44e959]: 0 to 20%
+                        - img [aria-hidden] [ref=f44e960] [cursor=pointer]
+                      - textbox [ref=f44e964]
+                    - generic [ref=f44e965]:
+                      - generic [ref=f44e967]:
+                        - textbox [ref=f44e968]: 21 to 40%
+                        - img [aria-hidden] [ref=f44e969] [cursor=pointer]
+                      - textbox [ref=f44e973]
+                    - generic [ref=f44e974]:
+                      - generic [ref=f44e976]:
+                        - textbox [ref=f44e977]: 41 to 60%
+                        - img [aria-hidden] [ref=f44e978] [cursor=pointer]
+                      - textbox [ref=f44e982]
+                    - generic [ref=f44e983]:
+                      - generic [ref=f44e985]:
+                        - textbox [ref=f44e986]: 61 to 80%
+                        - img [aria-hidden] [ref=f44e987] [cursor=pointer]
+                      - textbox [ref=f44e991]
+                    - generic [ref=f44e992]:
+                      - generic [ref=f44e994]:
+                        - textbox [ref=f44e995]: 81 to 100%
+                        - img [aria-hidden] [ref=f44e996] [cursor=pointer]
+                      - textbox [ref=f44e1000]
+              - generic [ref=f44e1001]:
+                - button "Add Another" [ref=f44e1002] [cursor=pointer]
+                - button "Save" [ref=f44e1003] [cursor=pointer]
+          - generic "Audit Modal"
+  - dialog "Case Prioritisation Audit" [ref=f44e1005]:
+    - generic [ref=f44e1007]:
+      - generic [ref=f44e1008]: Case Prioritisation Audit
+      - button "Close" [active] [ref=f44e1010] [cursor=pointer]
+    - generic [ref=f44e1015]:
+      - button "Refresh audit trail" [ref=f44e1017] [cursor=pointer]:
+        - generic [ref=f44e1020]: Refresh
+      - paragraph [ref=f44e1022]: No audit events found.

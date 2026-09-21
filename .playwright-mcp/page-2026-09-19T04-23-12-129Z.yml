@@ -1,0 +1,41 @@
+- generic [active] [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e356]:
+    - generic [ref=f28e357]:
+      - button "Expand sidebar" [ref=f28e358] [cursor=pointer]:
+        - img "Paco Logo" [ref=f28e359]
+      - generic [ref=f28e361]:
+        - img "Dashboards" [ref=f28e366] [cursor=pointer]
+        - img "Quick Send" [ref=f28e371] [cursor=pointer]
+        - img "Patient Search" [ref=f28e376] [cursor=pointer]
+        - img "case load management" [ref=f28e381] [cursor=pointer]
+        - img "Appointment Book" [ref=f28e386] [cursor=pointer]
+        - img "Users" [ref=f28e391] [cursor=pointer]
+        - img "Configuration" [ref=f28e396] [cursor=pointer]
+        - img "Rocket Bar" [ref=f28e401] [cursor=pointer]
+        - generic [ref=f28e403] [cursor=pointer]
+      - button [ref=f28e411] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f28e412]
+    - generic [ref=f28e413]:
+      - generic [ref=f28e414]:
+        - generic [ref=f28e415]: 1h 50m
+        - generic [ref=f28e420]:
+          - generic [ref=f28e423]:
+            - generic [ref=f28e424] [cursor=pointer]: FN
+            - generic [ref=f28e426]:
+              - generic [ref=f28e427]: Fiona Nguyen
+              - generic [ref=f28e428]: Super User
+              - generic [ref=f28e430]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f28e435]
+          - generic [ref=f28e436]:
+            - button "More options" [ref=f28e438] [cursor=pointer]
+            - generic [ref=f28e442] [cursor=pointer]: "0"
+      - generic [ref=f28e450]:
+        - generic [ref=f28e451]: There are no new cases
+        - generic [ref=f28e452]: You don't have any active case assigned to you
+  - generic [ref=f28e453]:
+    - button "Appointment Book" [ref=f28e455] [cursor=pointer]
+    - button "Appointment Settings" [ref=f28e458] [cursor=pointer]
+  - tooltip [aria-hidden]:
+    - generic: Appointment Book

@@ -1,0 +1,223 @@
+- generic [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e172]:
+    - generic [ref=f28e173]:
+      - button "Expand sidebar" [ref=f28e174] [cursor=pointer]:
+        - img "Paco Logo" [ref=f28e175]
+      - generic [ref=f28e177]:
+        - img "Dashboards" [ref=f28e182] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f28e187] [cursor=pointer]
+        - img "Quick Send" [ref=f28e192] [cursor=pointer]
+        - img "Health Forms" [ref=f28e197] [cursor=pointer]
+        - img "Patient Search" [ref=f28e202] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f28e207] [cursor=pointer]
+        - img "case load management" [ref=f28e212] [cursor=pointer]
+        - img "Appointment Book" [ref=f28e217] [cursor=pointer]
+        - img "Quick Pay" [ref=f28e222] [cursor=pointer]
+        - img "Users" [ref=f28e227] [cursor=pointer]
+        - img "Configuration" [ref=f28e232] [cursor=pointer]
+        - img "Rocket Bar" [ref=f28e237] [cursor=pointer]
+        - generic [ref=f28e239] [cursor=pointer]
+      - button [ref=f28e247] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f28e248]
+    - generic [ref=f28e249]:
+      - generic [ref=f28e250]:
+        - generic [ref=f28e251]: 4h 3m
+        - generic [ref=f28e256]:
+          - generic [ref=f28e259]:
+            - generic [ref=f28e260] [cursor=pointer]: TFN
+            - generic [ref=f28e262]:
+              - generic [ref=f28e263]: Test Fiona Nguyen
+              - generic [ref=f28e264]: Super Admin GB
+              - generic [ref=f28e266]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f28e271]
+          - generic [ref=f28e272]:
+            - button "More options" [ref=f28e274] [cursor=pointer]
+            - generic [ref=f28e278] [cursor=pointer]: "0"
+      - generic [ref=f28e283]:
+        - generic [ref=f28e285]:
+          - link "Back to Dashboard" [ref=f28e289] [cursor=pointer]:
+            - /url: /paco/dashboard
+          - generic [ref=f28e290]:
+            - heading "workboardName" [level=2] [ref=f28e293]: Unallocated (639)
+            - generic [ref=f28e295]:
+              - textbox "Search this board" [ref=f28e298]
+              - generic [ref=f28e299]:
+                - button "Card View" [active] [ref=f28e16560] [cursor=pointer]
+                - button "Create new case" [ref=f28e306] [cursor=pointer]
+                - generic [ref=f28e310] [cursor=pointer]:
+                  - generic [ref=f28e311]:
+                    - textbox: Breaching (high to low)
+                  - generic [ref=f28e313]: Breaching (high to low)
+                  - button [ref=f28e314]
+                - button "Filters" [ref=f28e319] [cursor=pointer]
+            - generic [ref=f28e322]:
+              - button "All (639)" [ref=f28e323] [cursor=pointer]
+              - button "Mid Priority (530)" [ref=f28e324] [cursor=pointer]
+              - button "High Priority (17)" [ref=f28e325] [cursor=pointer]
+              - button "Low Priority (23)" [ref=f28e326] [cursor=pointer]
+              - button "white (1)" [ref=f28e327] [cursor=pointer]
+              - button "Emergency (68)" [ref=f28e328] [cursor=pointer]
+        - generic [ref=f28e329]:
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - text:  
+                        - grid:
+                          - rowgroup [ref=f28e16564]:
+                            - row [ref=f28e16565]:
+                              - columnheader "Indicators" [ref=f28e16566]:
+                                - generic [aria-hidden] [ref=f28e16567]: 
+                                - text: 
+                                - generic: 
+                              - columnheader "Date" [ref=f28e16569] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16570]: 
+                                - text: 
+                                - generic:    
+                              - columnheader "Case Status" [ref=f28e16572] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16573]: 
+                                - text: 
+                                - generic:    
+                              - columnheader "Priority" [ref=f28e16575] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16576]: 
+                                - text: 
+                                - generic:    
+                              - columnheader "Case Score" [ref=f28e16578] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16579]: 
+                                - text: 
+                                - generic:    
+                              - columnheader "Case ID" [ref=f28e16581] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16582]: 
+                                - text: 
+                                - generic:    
+                              - columnheader "Viewer" [ref=f28e16584]:
+                                - generic [aria-hidden] [ref=f28e16585]: 
+                                - text: 
+                                - generic: 
+                              - columnheader "Patient Name" [ref=f28e16587] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16588]: 
+                                - text: 
+                                - generic:    
+                              - columnheader "Age" [ref=f28e16590] [cursor=pointer]:
+                                - generic [aria-hidden] [ref=f28e16591]: 
+                                - text: 
+                                - generic:    
+                          - row [ref=f28e16593]:
+                            - columnheader "Actions" [ref=f28e16594]:
+                              - generic [aria-hidden] [ref=f28e16595]: 
+                              - text: 
+                              - generic: 
+                          - rowgroup [ref=f28e16597]:
+                            - row [ref=f28e16598] [cursor=pointer]:
+                              - gridcell "01/05/2025" [ref=f28e16599]
+                              - gridcell [ref=f28e16600]
+                              - gridcell "Closed" [ref=f28e16605]
+                              - gridcell "2 hours OOH" [ref=f28e16611]
+                              - gridcell "-" [ref=f28e16612]
+                              - gridcell [ref=f28e16613]:
+                                - button
+                              - gridcell [ref=f28e16614]
+                              - gridcell "Justin Huet" [ref=f28e16615]
+                              - gridcell "-" [ref=f28e16616]
+                            - row [ref=f28e16617] [cursor=pointer]:
+                              - gridcell "18/09/2026" [ref=f28e16618]
+                              - gridcell [ref=f28e16619]
+                              - gridcell "Open" [ref=f28e16622]
+                              - gridcell "Over 72 hour" [ref=f28e16628]
+                              - gridcell "-" [ref=f28e16629]
+                              - gridcell [ref=f28e16630]:
+                                - button "132" [ref=f28e16631]
+                              - gridcell [ref=f28e16633]
+                              - gridcell "Autoqa Testerbhijhbebghadiaadjfhidh" [ref=f28e16634]
+                              - gridcell "-" [ref=f28e16635]
+                            - row [ref=f28e16636] [cursor=pointer]:
+                              - gridcell "18/09/2026" [ref=f28e16637]
+                              - gridcell [ref=f28e16638]
+                              - gridcell "Open" [ref=f28e16639]
+                              - gridcell "Over 72 hour" [ref=f28e16645]
+                              - gridcell "-" [ref=f28e16646]
+                              - gridcell [ref=f28e16647]:
+                                - button "131" [ref=f28e16648]
+                              - gridcell [ref=f28e16650]
+                              - gridcell "Autoqa Testerbhijhbeadfjdhaachcgbic" [ref=f28e16651]
+                              - gridcell "-" [ref=f28e16652]
+                            - row [ref=f28e16653] [cursor=pointer]:
+                              - gridcell "18/09/2026" [ref=f28e16654]
+                              - gridcell [ref=f28e16655]
+                              - gridcell "Open" [ref=f28e16656]
+                              - gridcell "Over 72 hour" [ref=f28e16662]
+                              - gridcell "-" [ref=f28e16663]
+                              - gridcell [ref=f28e16664]:
+                                - button "129" [ref=f28e16665]
+                              - gridcell [ref=f28e16667]
+                              - gridcell "Autoqa Testerbhijhbddhggdiaabcijgif" [ref=f28e16668]
+                              - gridcell "-" [ref=f28e16669]
+                            - row [ref=f28e16670] [cursor=pointer]:
+                              - gridcell "18/09/2026" [ref=f28e16671]
+                              - gridcell [ref=f28e16672]
+                              - gridcell "Open" [ref=f28e16673]
+                              - gridcell "Over 72 hour" [ref=f28e16679]
+                              - gridcell "-" [ref=f28e16680]
+                              - gridcell [ref=f28e16681]:
+                                - button "128" [ref=f28e16682]
+                              - gridcell [ref=f28e16684]
+                              - gridcell "Autoqa Testerbhijhbdagjbigaabecjjcf" [ref=f28e16685]
+                              - gridcell "-" [ref=f28e16686]
+                          - rowgroup [ref=f28e16687]:
+                            - row [ref=f28e16688] [cursor=pointer]:
+                              - gridcell [ref=f28e16689]:
+                                - button [ref=f28e16690]
+                            - row [ref=f28e16693] [cursor=pointer]:
+                              - gridcell [ref=f28e16694]:
+                                - button [ref=f28e16695]
+                            - row [ref=f28e16698] [cursor=pointer]:
+                              - gridcell [ref=f28e16699]:
+                                - button [ref=f28e16700]
+                            - row [ref=f28e16703] [cursor=pointer]:
+                              - gridcell [ref=f28e16704]:
+                                - button [ref=f28e16705]
+                            - row [ref=f28e16708] [cursor=pointer]:
+                              - gridcell [ref=f28e16709]:
+                                - button [ref=f28e16710]
+                          - rowgroup:
+                            - row " Loading" [ref=f28e16713] [cursor=pointer]:
+                              - generic [ref=f28e16714]:
+                                - generic [ref=f28e16715]: 
+                                - generic [ref=f28e16716]: Loading
+                            - row " Loading" [ref=f28e16717] [cursor=pointer]:
+                              - generic [ref=f28e16718]:
+                                - generic [ref=f28e16719]: 
+                                - generic [ref=f28e16720]: Loading
+                            - row " Loading" [ref=f28e16721] [cursor=pointer]:
+                              - generic [ref=f28e16722]:
+                                - generic [ref=f28e16723]: 
+                                - generic [ref=f28e16724]: Loading
+                            - row " Loading" [ref=f28e16725] [cursor=pointer]:
+                              - generic [ref=f28e16726]:
+                                - generic [ref=f28e16727]: 
+                                - generic [ref=f28e16728]: Loading
+                            - row " Loading" [ref=f28e16729] [cursor=pointer]:
+                              - generic [ref=f28e16730]:
+                                - generic [ref=f28e16731]: 
+                                - generic [ref=f28e16732]: Loading
+                            - row " Loading" [ref=f28e16733] [cursor=pointer]:
+                              - generic [ref=f28e16734]:
+                                - generic [ref=f28e16735]: 
+                                - generic [ref=f28e16736]: Loading
+                        - generic:
+                          - tablist [ref=f28e16740]:
+                            - tab "Columns" [ref=f28e16741] [cursor=pointer]:
+                              - generic [aria-hidden] [ref=f28e16742]: 
+                            - tab "Filters" [ref=f28e16744] [cursor=pointer]:
+                              - generic [aria-hidden] [ref=f28e16745]: 
+                          - text:                                                                                                          
+                        - text:    
+        - generic [ref=f28e4043]:
+          - generic [ref=f28e4044]: PDS Validated
+          - generic [ref=f28e4048]: PDS Validation Pending
+          - generic [ref=f28e4052]: PDS Not Matched

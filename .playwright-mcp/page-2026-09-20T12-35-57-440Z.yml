@@ -1,0 +1,192 @@
+- generic [active] [ref=f14e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f14e8] [cursor=pointer]
+  - generic [ref=f14e11]:
+    - generic [ref=f14e12]:
+      - generic [ref=f14e13]:
+        - button "Expand sidebar" [ref=f14e5852] [cursor=pointer]:
+          - img "Paco Logo" [ref=f14e15]
+        - generic [ref=f14e17]:
+          - img "Dashboards" [ref=f14e5857] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f14e5862] [cursor=pointer]
+          - img "Quick Send" [ref=f14e5867] [cursor=pointer]
+          - img "Health Forms" [ref=f14e5872] [cursor=pointer]
+          - img "Patient Search" [ref=f14e5877] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f14e5882] [cursor=pointer]
+          - img "case load management" [ref=f14e5887] [cursor=pointer]
+          - img "Appointment Book" [ref=f14e5892] [cursor=pointer]
+          - img "Quick Pay" [ref=f14e5897] [cursor=pointer]
+          - img "Users" [ref=f14e5902] [cursor=pointer]
+          - img "Configuration" [ref=f14e5907] [cursor=pointer]
+          - img "Rocket Bar" [ref=f14e5912] [cursor=pointer]
+          - generic [ref=f14e5914] [cursor=pointer]
+        - button [ref=f14e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f14e88]
+      - generic [ref=f14e89]:
+        - generic [ref=f14e91]:
+          - generic [ref=f14e93]:
+            - img [aria-hidden] [ref=f14e95] [cursor=pointer]
+            - generic [ref=f14e97]:
+              - text: •
+              - button [ref=f14e98] [cursor=pointer]:
+                - link "Health Forms" [ref=f14e99]:
+                  - /url: /health-forms/
+            - generic [ref=f14e100]: •Health Form Inbox
+          - generic [ref=f14e101]:
+            - button "Refreshing in 14 seconds" [ref=f14e7576] [cursor=pointer]
+            - button "1 Selected" [ref=f14e105] [cursor=pointer]
+            - generic [ref=f14e7577]:
+              - button "Filters" [ref=f14e7578] [cursor=pointer]
+              - generic [ref=f14e7580]: "1"
+        - generic [ref=f14e113]:
+          - generic "statistic-panel" [ref=f14e114]:
+            - generic [ref=f14e116] [cursor=pointer]:
+              - paragraph [ref=f14e117]: Total Sent to Patient
+              - paragraph [ref=f14e118]: 58,440
+            - generic [ref=f14e123] [cursor=pointer]:
+              - paragraph [ref=f14e124]: Incomplete
+              - paragraph [ref=f14e125]: 47,273
+            - generic [ref=f14e130] [cursor=pointer]:
+              - paragraph [ref=f14e131]: Overdue from Patient
+              - paragraph [ref=f14e132]: 11,642
+            - generic [ref=f14e137] [cursor=pointer]:
+              - paragraph [ref=f14e138]: Completed by Patient
+              - progressbar [ref=f14e139]
+              - paragraph [ref=f14e141]: 11,167 of 58,440
+            - generic [ref=f14e142]:
+              - generic [ref=f14e143] [cursor=pointer]
+              - generic [ref=f14e146] [cursor=pointer]:
+                - generic [ref=f14e147]:
+                  - paragraph [ref=f14e148]: Awaiting Review
+                  - generic [ref=f14e149]:
+                    - generic [ref=f14e150]: •
+                    - generic [ref=f14e151]: Awaiting Review
+                  - generic [ref=f14e152]:
+                    - generic [ref=f14e153]: •
+                    - generic [ref=f14e154]: Completed
+                - generic [ref=f14e156]:
+                  - generic [ref=f14e157]:
+                    - progressbar [ref=f14e158]
+                    - progressbar [ref=f14e161]
+                  - generic [ref=f14e164]: 15511,167
+            - generic [ref=f14e167] [cursor=pointer]:
+              - generic [ref=f14e168]:
+                - paragraph [ref=f14e169]: Reviewed
+                - generic [ref=f14e170]:
+                  - generic [ref=f14e171]: •
+                  - generic [ref=f14e172]: Reviewed (synced)
+                - generic [ref=f14e173]:
+                  - generic [ref=f14e174]: •
+                  - generic [ref=f14e175]: Reviewed (not synced)
+                - generic [ref=f14e176]:
+                  - generic [ref=f14e177]: •
+                  - generic [ref=f14e178]: Completed
+              - generic [ref=f14e180]:
+                - generic [ref=f14e181]:
+                  - progressbar [ref=f14e182]
+                  - progressbar [ref=f14e185]
+                  - progressbar [ref=f14e4672]
+                - generic [ref=f14e192]:
+                  - generic [ref=f14e193]: 4,816
+                  - generic [ref=f14e194]: 6,196
+                  - generic [ref=f14e195]: 11,167
+          - generic [ref=f14e196]:
+            - heading "Completed By Patient - Alarm Triggered" [level=4] [ref=f14e201]
+            - heading "Completed By Patient - No Alarm Triggered" [level=4] [ref=f14e210]
+        - generic [ref=f14e213]:
+          - generic [ref=f14e214]:
+            - heading "All Health Forms" [level=4] [ref=f14e216]
+            - generic [ref=f14e217]:
+              - paragraph [ref=f14e223] [cursor=pointer]: All (58,440)
+              - paragraph [ref=f14e229] [cursor=pointer]: Incomplete (47,273)
+              - paragraph [ref=f14e235] [cursor=pointer]: Overdue (11,642)
+              - paragraph [ref=f14e241] [cursor=pointer]: Completed (11,167)
+              - paragraph [ref=f14e247] [cursor=pointer]: Awaiting Review (155)
+              - generic [ref=f14e252] [cursor=pointer]:
+                - paragraph [ref=f14e253]: Reviewed (11,012)
+                - list [ref=f14e254]:
+                  - button "Synced to PR (4,816)" [ref=f14e255]
+                  - button "Not Synced to PR (6,196)" [ref=f14e256]
+          - generic [ref=f14e257]:
+            - generic [ref=f14e258]:
+              - generic [ref=f14e259]:
+                - textbox "Search..." [ref=f14e260]
+                - img [aria-hidden] [ref=f14e261] [cursor=pointer]
+              - generic [ref=f14e265]:
+                - button [disabled]
+              - generic [ref=f14e266]:
+                - button "Expand All" [ref=f14e267] [cursor=pointer]
+                - button "Collapse All" [ref=f14e268] [cursor=pointer]
+              - generic [ref=f14e269]:
+                - button "View By Patient" [ref=f14e270] [cursor=pointer]
+                - button "View By Health Form" [ref=f14e271] [cursor=pointer]
+              - button [ref=f14e273] [cursor=pointer]
+            - generic [ref=f14e280]:
+              - generic:          
+              - generic [ref=f14e281]:
+                - grid [ref=f14e282]:
+                  - row [ref=f14e283]:
+                    - columnheader [ref=f14e284] [cursor=pointer]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f14e285]: 
+                      - text:    
+                  - rowgroup [ref=f14e286]:
+                    - row [ref=f14e287]:
+                      - columnheader "Patient Email Address" [ref=f14e288] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e289]: 
+                        - text:    
+                      - columnheader "Patient Mobile Number" [ref=f14e291] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e292]: 
+                        - text:    
+                      - columnheader "Patient Name" [ref=f14e294] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e295]: 
+                        - text:    
+                      - columnheader "Health Form Name" [ref=f14e297] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e298]: 
+                        - text:    
+                      - columnheader "Patient ID" [ref=f14e300] [cursor=pointer]:
+                        - text: 
+                        - generic [aria-hidden] [ref=f14e301]: 
+                        - text:    
+                  - row [ref=f14e303]:
+                    - columnheader "Action" [ref=f14e304]:  
+                    - columnheader [ref=f14e306]:
+                      - text: 
+                      - generic [ref=f14e307]:
+                        - text: Synced
+                        - button "Synced to Primary Care Patient Record" [ref=f14e308] [cursor=pointer]
+                    - columnheader [ref=f14e311] [cursor=pointer]:
+                      - text: 
+                      - generic [aria-hidden] [ref=f14e312]: 
+                      - text:    
+                  - rowgroup [ref=f14e346]
+                  - row "Press SPACE to select this row." [ref=f14e7581]:
+                    - generic [ref=f14e7582]:
+                      - generic [ref=f14e7583]: 
+                      - text: Fetching your report...
+                - generic [ref=f14e538]:
+                  - tablist [ref=f14e539]:
+                    - tab "Columns" [ref=f14e540] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f14e541]: 
+                    - tab "Filters" [ref=f14e543] [cursor=pointer]:
+                      - generic [aria-hidden] [ref=f14e544]: 
+                  - text:                                                                                                                                                                                                                                          
+              - text:    
+    - generic "one-paco-top-bar" [ref=f14e546]:
+      - generic [ref=f14e548]:
+        - generic [ref=f14e551]:
+          - generic [ref=f14e552]: TFN
+          - generic [ref=f14e554]:
+            - generic [ref=f14e555]: Test Fiona Nguyen
+            - generic [ref=f14e556]: Super Admin GB
+            - generic [ref=f14e558]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f14e563]
+        - generic [ref=f14e564]:
+          - button "More options" [ref=f14e566] [cursor=pointer]
+          - generic [ref=f14e572] [cursor=pointer]
+          - generic [ref=f14e573] [cursor=pointer]: "0"
+  - alert [ref=f14e6]

@@ -1,0 +1,217 @@
+- generic [active] [ref=f125e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f125e3] [cursor=pointer]
+  - generic [ref=f125e8]:
+    - generic [ref=f125e9]:
+      - button "Expand sidebar" [ref=f125e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f125e11]
+      - generic [ref=f125e13]:
+        - img "Dashboards" [ref=f125e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f125e23] [cursor=pointer]
+        - img "Quick Send" [ref=f125e28] [cursor=pointer]
+        - img "Health Forms" [ref=f125e33] [cursor=pointer]
+        - img "Patient Search" [ref=f125e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f125e43] [cursor=pointer]
+        - img "case load management" [ref=f125e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f125e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f125e58] [cursor=pointer]
+        - img "Users" [ref=f125e63] [cursor=pointer]
+        - img "Configuration" [ref=f125e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f125e73] [cursor=pointer]
+        - generic [ref=f125e75] [cursor=pointer]
+      - button [ref=f125e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f125e84]
+    - generic [ref=f125e85]:
+      - generic [ref=f125e86]:
+        - generic [ref=f125e87]: 3h 52m
+        - generic [ref=f125e92]:
+          - generic [ref=f125e95]:
+            - generic [ref=f125e96] [cursor=pointer]: TFN
+            - generic [ref=f125e98]:
+              - generic [ref=f125e99]: Test Fiona Nguyen
+              - generic [ref=f125e100]: Super Admin GB
+              - generic [ref=f125e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f125e107]
+          - generic [ref=f125e108]:
+            - button "More options" [ref=f125e110] [cursor=pointer]
+            - generic [ref=f125e114] [cursor=pointer]: "0"
+      - generic [ref=f125e355]:
+        - tablist [ref=f125e358]:
+          - tab "Mi Tasks" [ref=f125e359] [cursor=pointer]
+          - tab "Mi Time" [selected] [ref=f125e360] [cursor=pointer]
+          - tab "Mi Stats" [ref=f125e362] [cursor=pointer]
+          - tab "Mi Patients" [ref=f125e363] [cursor=pointer]
+        - tabpanel [ref=f125e365]:
+          - generic [ref=f125e366]:
+            - generic [ref=f125e368]:
+              - generic [ref=f125e369]:
+                - heading "Mi Time" [level=1] [ref=f125e370]
+                - paragraph [ref=f125e371]: Medical Intelligence – Your optimised daily schedule
+              - generic [ref=f125e372]:
+                - button "Mi Time Configuration" [ref=f125e373] [cursor=pointer]
+                - generic [ref=f125e377]:
+                  - button "Block list" [ref=f125e378] [cursor=pointer]
+                  - button "Timeline" [ref=f125e383] [cursor=pointer]
+                - generic [ref=f125e388]:
+                  - generic [ref=f125e389]: "View:"
+                  - button "Today" [ref=f125e391] [cursor=pointer]
+            - generic [ref=f125e395]:
+              - generic [ref=f125e397]:
+                - generic [ref=f125e399]:
+                  - generic [ref=f125e401]:
+                    - generic [ref=f125e405]:
+                      - generic [ref=f125e406]: "12"
+                      - generic [ref=f125e407]: /
+                      - generic [ref=f125e408]: "32"
+                    - generic [ref=f125e409]: Appointments
+                  - generic [ref=f125e411]:
+                    - generic [ref=f125e415]:
+                      - generic [ref=f125e416]: "8"
+                      - generic [ref=f125e417]: /
+                      - generic [ref=f125e418]: "9"
+                    - generic [ref=f125e419]: Admin
+                  - generic [ref=f125e421]:
+                    - generic [ref=f125e425]:
+                      - generic [ref=f125e426]: "9"
+                      - generic [ref=f125e427]: /
+                      - generic [ref=f125e428]: "12"
+                    - generic [ref=f125e429]: Prescriptions
+                  - generic [ref=f125e431]:
+                    - generic [ref=f125e435]:
+                      - generic [ref=f125e436]: "4"
+                      - generic [ref=f125e437]: /
+                      - generic [ref=f125e438]: "5"
+                    - generic [ref=f125e439]: Calls
+                  - generic [ref=f125e441]:
+                    - generic [ref=f125e445]:
+                      - generic [ref=f125e446]: "0"
+                      - generic [ref=f125e447]: /
+                      - generic [ref=f125e448]: "1"
+                    - generic [ref=f125e449]: Breaks
+                  - generic [ref=f125e451]:
+                    - generic [ref=f125e455]:
+                      - generic [ref=f125e456]: "15"
+                      - generic [ref=f125e457]: /
+                      - generic [ref=f125e458]: "18"
+                    - generic [ref=f125e459]: Results
+                  - generic [ref=f125e461]:
+                    - generic [ref=f125e465]:
+                      - generic [ref=f125e466]: "3"
+                      - generic [ref=f125e467]: /
+                      - generic [ref=f125e468]: "4"
+                    - generic [ref=f125e469]: Letters
+                - generic [ref=f125e470]:
+                  - generic [ref=f125e471]:
+                    - generic [ref=f125e472]: "!"
+                    - generic [ref=f125e473]: Behind
+                  - generic [ref=f125e474]: 52/81 items · 64% complete
+                  - generic [ref=f125e475]: (expected ~81 by now)
+              - generic [ref=f125e476]:
+                - generic [ref=f125e478]:
+                  - generic [ref=f125e479]:
+                    - generic [ref=f125e480]: 08:00
+                    - generic [ref=f125e481]: 18:00
+                  - generic [ref=f125e482]:
+                    - button "⋮⋮ Review test results 08:10 - 08:40 8 abnormal results pending 15/18 View Details" [ref=f125e483]:
+                      - generic [ref=f125e484]:
+                        - generic [ref=f125e485]: ⋮⋮
+                        - generic [ref=f125e488] [cursor=pointer]:
+                          - heading "Review test results" [level=3] [ref=f125e490]
+                          - generic [ref=f125e491]: 08:10 - 08:40
+                      - paragraph [ref=f125e492]: 8 abnormal results pending
+                      - generic [ref=f125e493]: 15/18
+                      - button "View Details" [ref=f125e499] [cursor=pointer]
+                    - button "⋮⋮ Repeat prescriptions 08:40 - 09:00 Requests due by noon 9/12 View Details" [ref=f125e500]:
+                      - generic [ref=f125e501]:
+                        - generic [ref=f125e502]: ⋮⋮
+                        - generic [ref=f125e505] [cursor=pointer]:
+                          - heading "Repeat prescriptions" [level=3] [ref=f125e507]
+                          - generic [ref=f125e508]: 08:40 - 09:00
+                      - paragraph [ref=f125e509]: Requests due by noon
+                      - generic [ref=f125e510]: 9/12
+                      - button "View Details" [ref=f125e516] [cursor=pointer]
+                    - button "⋮⋮ Morning clinic 09:00 - 12:00 16 patients 12/16 View Details" [ref=f125e517]:
+                      - generic [ref=f125e518]:
+                        - generic [ref=f125e519]: ⋮⋮
+                        - generic [ref=f125e522] [cursor=pointer]:
+                          - heading "Morning clinic" [level=3] [ref=f125e524]
+                          - generic [ref=f125e525]: 09:00 - 12:00
+                      - paragraph [ref=f125e526]: 16 patients
+                      - generic [ref=f125e527]: 12/16
+                      - button "View Details" [ref=f125e533] [cursor=pointer]
+                    - button "⋮⋮ Lunch 12:05 - 12:35 1/1" [ref=f125e534]:
+                      - generic [ref=f125e535]:
+                        - generic [ref=f125e536]: ⋮⋮
+                        - generic [ref=f125e539]:
+                          - heading "Lunch" [level=3] [ref=f125e541]
+                          - generic [ref=f125e542]: 12:05 - 12:35
+                      - generic [ref=f125e543]: 1/1
+                    - button "⋮⋮ Review Health Forms 12:35 - 13:05 8/9 View Details" [ref=f125e548]:
+                      - generic [ref=f125e549]:
+                        - generic [ref=f125e550]: ⋮⋮
+                        - generic [ref=f125e553] [cursor=pointer]:
+                          - heading "Review Health Forms" [level=3] [ref=f125e555]
+                          - generic [ref=f125e556]: 12:35 - 13:05
+                      - generic [ref=f125e557]: 8/9
+                      - button "View Details" [ref=f125e563] [cursor=pointer]
+                    - button "⋮⋮ Patient calls 13:05 - 13:35 4/5 View Details" [ref=f125e564]:
+                      - generic [ref=f125e565]:
+                        - generic [ref=f125e566]: ⋮⋮
+                        - generic [ref=f125e569] [cursor=pointer]:
+                          - heading "Patient calls" [level=3] [ref=f125e571]
+                          - generic [ref=f125e572]: 13:05 - 13:35
+                      - generic [ref=f125e573]: 4/5
+                      - button "View Details" [ref=f125e579] [cursor=pointer]
+                    - button "⋮⋮ Afternoon clinic 14:00 - 17:00 16 patients 0/16 View Details" [ref=f125e580]:
+                      - generic [ref=f125e581]:
+                        - generic [ref=f125e582]: ⋮⋮
+                        - generic [ref=f125e585] [cursor=pointer]:
+                          - heading "Afternoon clinic" [level=3] [ref=f125e587]
+                          - generic [ref=f125e588]: 14:00 - 17:00
+                      - paragraph [ref=f125e589]: 16 patients
+                      - generic [ref=f125e590]: 0/16
+                      - button "View Details" [ref=f125e594] [cursor=pointer]
+                    - button "⋮⋮ Buffer 17:00 - 17:20 Catch-up time" [ref=f125e595]:
+                      - generic [ref=f125e596]:
+                        - generic [ref=f125e597]: ⋮⋮
+                        - generic [ref=f125e600]:
+                          - heading "Buffer" [level=3] [ref=f125e602]
+                          - generic [ref=f125e603]: 17:00 - 17:20
+                      - paragraph [ref=f125e604]: Catch-up time
+                    - button "⋮⋮ Letters / referrals 17:20 - 17:50 3/4 View Details" [ref=f125e605]:
+                      - generic [ref=f125e606]:
+                        - generic [ref=f125e607]: ⋮⋮
+                        - generic [ref=f125e610] [cursor=pointer]:
+                          - heading "Letters / referrals" [level=3] [ref=f125e612]
+                          - generic [ref=f125e613]: 17:20 - 17:50
+                      - generic [ref=f125e614]: 3/4
+                      - button "View Details" [ref=f125e620] [cursor=pointer]
+                  - status [ref=f125e621]
+                - generic [ref=f125e622]:
+                  - generic [ref=f125e626]:
+                    - generic [ref=f125e627]:
+                      - generic [ref=f125e628]: Now
+                      - paragraph [ref=f125e629]:
+                        - text: "Next:"
+                        - generic [ref=f125e630]: Review test results (08:10–08:40)
+                      - paragraph [ref=f125e631]: 8 abnormal results pending
+                    - img "Target icon" [ref=f125e633]
+                  - generic [ref=f125e637]:
+                    - generic [ref=f125e642]:
+                      - generic [ref=f125e643]:
+                        - generic [ref=f125e644]: "64"
+                        - generic [ref=f125e645]: "%"
+                      - generic [ref=f125e646]: Complete
+                    - generic [ref=f125e647]:
+                      - generic [ref=f125e648]:
+                        - generic [ref=f125e649]: "52"
+                        - generic [ref=f125e650]: Done
+                      - generic [ref=f125e652]:
+                        - generic [ref=f125e653]: "29"
+                        - generic [ref=f125e654]: Remaining
+                      - generic [ref=f125e656]:
+                        - generic [ref=f125e657]: "81"
+                        - generic [ref=f125e658]: Total
+                    - generic [ref=f125e659]:
+                      - generic [ref=f125e660]: "!"
+                      - generic [ref=f125e661]: Behind

@@ -1,0 +1,434 @@
+- generic [ref=f8e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f8e3] [cursor=pointer]
+  - generic [ref=f8e8]:
+    - generic [ref=f8e9]:
+      - button "Expand sidebar" [ref=f8e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f8e11]
+      - generic [ref=f8e13]:
+        - img "Dashboards" [ref=f8e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f8e23] [cursor=pointer]
+        - img "Quick Send" [ref=f8e28] [cursor=pointer]
+        - img "Health Forms" [ref=f8e33] [cursor=pointer]
+        - img "Patient Search" [ref=f8e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f8e43] [cursor=pointer]
+        - img "case load management" [ref=f8e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f8e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f8e58] [cursor=pointer]
+        - img "Users" [ref=f8e63] [cursor=pointer]
+        - img "Configuration" [ref=f8e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f8e73] [cursor=pointer]
+        - generic [ref=f8e75] [cursor=pointer]
+      - button [ref=f8e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f8e84]
+    - generic [ref=f8e85]:
+      - generic [ref=f8e86]:
+        - generic [ref=f8e87]: 2h 19m
+        - generic [ref=f8e92]:
+          - generic [ref=f8e95]:
+            - generic [ref=f8e96] [cursor=pointer]: TFN
+            - generic [ref=f8e98]:
+              - generic [ref=f8e99]: Test Fiona Nguyen
+              - generic [ref=f8e100]: Super Admin GB
+              - generic [ref=f8e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f8e107]
+          - generic [ref=f8e108]:
+            - button "More options" [ref=f8e110] [cursor=pointer]
+            - generic [ref=f8e114] [cursor=pointer]: "0"
+      - generic [ref=f8e119]:
+        - generic [ref=f8e122]:
+          - generic [ref=f8e123]:
+            - heading "Configuration" [level=1] [ref=f8e125]
+            - generic [ref=f8e128]:
+              - generic [ref=f8e129]:
+                - button "Organisation" [expanded] [ref=f8e130] [cursor=pointer]:
+                  - link "Organisation" [ref=f8e132]:
+                    - /url: "#"
+                - region "Organisation" [ref=f8e136]:
+                  - tree [ref=f8e138]:
+                    - treeitem "General" [level=1] [ref=f8e139]:
+                      - link [aria-hidden] [ref=f8e141] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e142]: General
+                    - treeitem "Practice Profiles" [level=1] [ref=f8e143]:
+                      - link [aria-hidden] [ref=f8e145] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e146]: Practice Profiles
+                    - treeitem "Locations" [level=1] [ref=f8e147]:
+                      - link [aria-hidden] [ref=f8e149] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e150]: Locations
+                    - treeitem "Skills" [level=1] [ref=f8e151]:
+                      - link [aria-hidden] [ref=f8e153] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e154]: Skills
+                    - treeitem "Code Rule" [level=1] [ref=f8e155]:
+                      - link [aria-hidden] [ref=f8e157] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e158]: Code Rule
+                    - treeitem "Sharing Agreements" [level=1] [ref=f8e159]:
+                      - link [aria-hidden] [ref=f8e161] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e162]: Sharing Agreements
+                    - treeitem "Pathways Config" [level=1] [ref=f8e163]:
+                      - link [aria-hidden] [ref=f8e165] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e166]: Pathways Config
+                    - treeitem "Services" [level=1] [ref=f8e167]:
+                      - link [aria-hidden] [ref=f8e169] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e170]: Services
+                    - treeitem "Dx Priority" [level=1] [ref=f8e171]:
+                      - link [aria-hidden] [ref=f8e173] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e174]: Dx Priority
+                    - treeitem "Org Priority" [level=1] [ref=f8e175]:
+                      - link [aria-hidden] [ref=f8e177] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e178]: Org Priority
+                    - treeitem "Inbound Priority Flow" [level=1] [ref=f8e179]:
+                      - link [aria-hidden] [ref=f8e181] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e182]: Inbound Priority Flow
+                    - treeitem "Announcements" [level=1] [ref=f8e183]:
+                      - link [aria-hidden] [ref=f8e185] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e186]: Announcements
+                    - treeitem "Integrations" [level=1] [ref=f8e187]:
+                      - link [aria-hidden] [ref=f8e189] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e190]: Integrations
+              - button "Patient" [ref=f8e192] [cursor=pointer]:
+                - link "Patient" [ref=f8e194]:
+                  - /url: "#"
+              - generic [ref=f8e198]:
+                - button "Appointment Books" [expanded] [ref=f8e199] [cursor=pointer]:
+                  - link "Appointment Books" [active] [ref=f8e201]:
+                    - /url: "#"
+                - region "Appointment Books" [ref=f8e766]:
+                  - tree [ref=f8e768]:
+                    - treeitem "Scheduler" [level=1] [ref=f8e769]:
+                      - link [aria-hidden] [ref=f8e771] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e772]: Scheduler
+                    - treeitem "Appointment Books" [level=1] [ref=f8e773]:
+                      - link [aria-hidden] [ref=f8e775] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e776]: Appointment Books
+                    - treeitem "Sessions" [level=1] [ref=f8e777]:
+                      - link [aria-hidden] [ref=f8e779] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e780]: Sessions
+                    - treeitem "Slot Types" [level=1] [ref=f8e781]:
+                      - link [aria-hidden] [ref=f8e783] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e784]: Slot Types
+                    - treeitem "Appointments" [level=1] [ref=f8e785]:
+                      - link [aria-hidden] [ref=f8e787] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e788]: Appointments
+                    - treeitem "External Appt Reminders" [level=1] [ref=f8e789]:
+                      - link [aria-hidden] [ref=f8e791] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f8e792]: External Appt Reminders
+              - button "Quick Pay" [ref=f8e206] [cursor=pointer]:
+                - link "Quick Pay" [ref=f8e208]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f8e213] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f8e215]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f8e220] [cursor=pointer]:
+                - link "Users & Staff" [ref=f8e222]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f8e227] [cursor=pointer]:
+                - link "Clinical Config" [ref=f8e229]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f8e234] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f8e236]:
+                  - /url: "#"
+          - generic [ref=f8e238] [cursor=pointer]
+        - generic [ref=f8e243]:
+          - heading "General" [level=1] [ref=f8e246]
+          - generic [ref=f8e248]:
+            - heading "Basic Information" [level=2] [ref=f8e251]
+            - generic [ref=f8e252]:
+              - generic [ref=f8e257]:
+                - generic [ref=f8e258] [cursor=pointer]:
+                  - button "Choose File" [ref=f8e259]
+                  - button "Upload Photo"
+                - button "Remove Photo" [ref=f8e260] [cursor=pointer]
+              - generic [ref=f8e262]:
+                - generic [ref=f8e264]:
+                  - generic [ref=f8e265]: Organisation Name
+                  - textbox "Organisation Name" [ref=f8e267]: General Practice (Blinx Demo Site)
+                - generic [ref=f8e269]:
+                  - generic [ref=f8e270]: Organisation Type *
+                  - generic [ref=f8e273] [cursor=pointer]:
+                    - generic [ref=f8e274]:
+                      - textbox: General Practice
+                    - generic [ref=f8e276]: General Practice
+                    - button "Select Organisation Type" [ref=f8e277]
+                - generic [ref=f8e281]:
+                  - generic [ref=f8e282]: ODS code
+                  - generic [ref=f8e283]:
+                    - textbox [disabled]: YGMQJ
+            - heading "Location & Contact Information" [level=2] [ref=f8e286]
+            - generic [ref=f8e289]:
+              - generic [ref=f8e290]: Address
+              - textbox [ref=f8e291]: Warrington, Halton 5, WA4 4AB
+              - link "Edit Address" [ref=f8e292] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=f8e293]:
+              - generic [ref=f8e295]:
+                - generic [ref=f8e296]: Contact Number
+                - generic [ref=f8e299]:
+                  - combobox "Country selector" [ref=f8e301] [cursor=pointer]
+                  - textbox "-" [ref=f8e304]: +44 1925 552266
+              - generic [ref=f8e306]:
+                - generic [ref=f8e307]: Email Address
+                - textbox "Email Address" [ref=f8e309]: contact@blinxsolutions.com
+              - generic [ref=f8e311]:
+                - generic [ref=f8e312]: Website URL
+                - textbox "Website URL" [ref=f8e314]: https://www.blinxhealthcare.com/
+            - heading "Opening Hours" [level=2] [ref=f8e317]
+            - generic [ref=f8e318]:
+              - generic [ref=f8e319]:
+                - heading "Regular Opening Hours" [level=2] [ref=f8e321]
+                - generic [ref=f8e322]: From
+                - generic [ref=f8e323]: To
+              - generic [ref=f8e324]:
+                - generic [ref=f8e326]:
+                  - checkbox "Monday" [checked] [ref=f8e329] [cursor=pointer]
+                  - generic [ref=f8e331]: Monday
+                - combobox [ref=f8e335] [cursor=pointer]: 09:00
+                - combobox [ref=f8e339] [cursor=pointer]: 17:00
+                - generic [ref=f8e340]:
+                  - checkbox [ref=f8e342]:
+                    - switch [ref=f8e343] [cursor=pointer]
+                    - generic [ref=f8e344] [cursor=pointer]
+                  - generic [ref=f8e345]: Next Day
+              - generic [ref=f8e346]:
+                - generic [ref=f8e348]:
+                  - checkbox "Tuesday" [checked] [ref=f8e351] [cursor=pointer]
+                  - generic [ref=f8e353]: Tuesday
+                - combobox [ref=f8e357] [cursor=pointer]: 09:00
+                - combobox [ref=f8e361] [cursor=pointer]: 17:00
+                - generic [ref=f8e362]:
+                  - checkbox [ref=f8e364]:
+                    - switch [ref=f8e365] [cursor=pointer]
+                    - generic [ref=f8e366] [cursor=pointer]
+                  - generic [ref=f8e367]: Next Day
+              - generic [ref=f8e368]:
+                - generic [ref=f8e370]:
+                  - checkbox "Wednesday" [checked] [ref=f8e373] [cursor=pointer]
+                  - generic [ref=f8e375]: Wednesday
+                - combobox [ref=f8e379] [cursor=pointer]: 09:00
+                - combobox [ref=f8e383] [cursor=pointer]: 19:00
+                - generic [ref=f8e384]:
+                  - checkbox [checked] [ref=f8e386]:
+                    - switch [checked] [ref=f8e387] [cursor=pointer]
+                    - generic [ref=f8e388] [cursor=pointer]
+                  - generic [ref=f8e389]: Next Day
+              - generic [ref=f8e390]:
+                - generic [ref=f8e392]:
+                  - checkbox "Thursday" [checked] [ref=f8e395] [cursor=pointer]
+                  - generic [ref=f8e397]: Thursday
+                - combobox [ref=f8e401] [cursor=pointer]: 09:00
+                - combobox [ref=f8e405] [cursor=pointer]: 17:00
+                - generic [ref=f8e406]:
+                  - checkbox [checked] [ref=f8e408]:
+                    - switch [checked] [ref=f8e409] [cursor=pointer]
+                    - generic [ref=f8e410] [cursor=pointer]
+                  - generic [ref=f8e411]: Next Day
+              - generic [ref=f8e412]:
+                - generic [ref=f8e414]:
+                  - checkbox "Friday" [checked] [ref=f8e417] [cursor=pointer]
+                  - generic [ref=f8e419]: Friday
+                - combobox [ref=f8e423] [cursor=pointer]: 09:00
+                - combobox [ref=f8e427] [cursor=pointer]: 17:00
+                - generic [ref=f8e428]:
+                  - checkbox [ref=f8e430]:
+                    - switch [ref=f8e431] [cursor=pointer]
+                    - generic [ref=f8e432] [cursor=pointer]
+                  - generic [ref=f8e433]: Next Day
+              - generic [ref=f8e434]:
+                - generic [ref=f8e436]:
+                  - checkbox "Saturday" [checked] [ref=f8e439] [cursor=pointer]
+                  - generic [ref=f8e441]: Saturday
+                - combobox [ref=f8e445] [cursor=pointer]: 09:00
+                - combobox [ref=f8e449] [cursor=pointer]: 17:00
+                - generic [ref=f8e450]:
+                  - checkbox [ref=f8e452]:
+                    - switch [ref=f8e453] [cursor=pointer]
+                    - generic [ref=f8e454] [cursor=pointer]
+                  - generic [ref=f8e455]: Next Day
+              - generic [ref=f8e456]:
+                - generic [ref=f8e458]:
+                  - checkbox "Sunday" [ref=f8e461] [cursor=pointer]
+                  - generic [ref=f8e463]: Sunday
+                - combobox [ref=f8e467] [cursor=pointer]: 09:00
+                - combobox [ref=f8e471] [cursor=pointer]: 17:00
+                - generic [ref=f8e472]:
+                  - checkbox [ref=f8e474]:
+                    - switch [ref=f8e475] [cursor=pointer]
+                    - generic [ref=f8e476] [cursor=pointer]
+                  - generic [ref=f8e477]: Next Day
+            - generic [ref=f8e479]:
+              - heading "Special Opening Hours" [level=3] [ref=f8e482]
+              - button "+ Add Special Opening Hours" [ref=f8e485] [cursor=pointer]
+            - heading "Communications" [level=2] [ref=f8e488]
+            - generic [ref=f8e490]:
+              - heading "Standard Header" [level=2] [ref=f8e491]
+              - application [ref=f8e493]:
+                - generic [ref=f8e494]:
+                  - generic [ref=f8e495]:
+                    - button "Bold" [ref=f8e496] [cursor=pointer]
+                    - button "Italic" [ref=f8e500] [cursor=pointer]
+                    - button "Underline" [ref=f8e504] [cursor=pointer]
+                    - button "Font Size" [ref=f8e508] [cursor=pointer]
+                    - option [ref=f8e512] [cursor=pointer]: "8"
+                    - option [ref=f8e513] [cursor=pointer]: "9"
+                    - option [ref=f8e514] [cursor=pointer]: "10"
+                    - option [ref=f8e515] [cursor=pointer]: "11"
+                    - option [ref=f8e516] [cursor=pointer]: "12"
+                    - option [ref=f8e517] [cursor=pointer]: "14"
+                    - option [ref=f8e518] [cursor=pointer]: "18"
+                    - option [ref=f8e519] [cursor=pointer]: "24"
+                    - option [ref=f8e520] [cursor=pointer]: "30"
+                    - option [ref=f8e521] [cursor=pointer]: "36"
+                    - option [ref=f8e522] [cursor=pointer]: "48"
+                    - option [ref=f8e523] [cursor=pointer]: "60"
+                    - option [ref=f8e524] [cursor=pointer]: "72"
+                    - option [ref=f8e525] [cursor=pointer]: "96"
+                    - button "More Text" [ref=f8e526] [cursor=pointer]
+                  - generic [ref=f8e530]:
+                    - generic [ref=f8e531]:
+                      - button "Ordered List" [ref=f8e532] [cursor=pointer]
+                      - button "Ordered List" [ref=f8e536] [cursor=pointer]
+                      - option [ref=f8e537] [cursor=pointer]: Default
+                      - option [ref=f8e538] [cursor=pointer]: Lower Alpha
+                      - option [ref=f8e539] [cursor=pointer]: Lower Greek
+                      - option [ref=f8e540] [cursor=pointer]: Lower Roman
+                      - option [ref=f8e541] [cursor=pointer]: Upper Alpha
+                      - option [ref=f8e542] [cursor=pointer]: Upper Roman
+                    - generic [ref=f8e543]:
+                      - button "Unordered List" [ref=f8e544] [cursor=pointer]
+                      - button "Unordered List" [ref=f8e548] [cursor=pointer]
+                      - option [ref=f8e549] [cursor=pointer]: Default
+                      - option [ref=f8e550] [cursor=pointer]: Circle
+                      - option [ref=f8e551] [cursor=pointer]: Disc
+                      - option [ref=f8e552] [cursor=pointer]: Square
+                    - button "Align Left" [ref=f8e553] [cursor=pointer]
+                    - button "Align Center" [ref=f8e557] [cursor=pointer]
+                    - button "Align Right" [ref=f8e561] [cursor=pointer]
+                    - button "Align Justify" [ref=f8e565] [cursor=pointer]
+                    - button "Undo" [disabled] [ref=f8e569]
+                    - button "Redo" [disabled] [ref=f8e573]
+                  - generic [ref=f8e577]:
+                    - button "Insert Link" [ref=f8e578] [cursor=pointer]
+                    - button "Insert Table" [ref=f8e582] [cursor=pointer]
+                    - button "Fullscreen" [ref=f8e586] [cursor=pointer]
+                    - button "Code View" [ref=f8e590] [cursor=pointer]
+                  - generic [ref=f8e594]:
+                    - button "Dynamic Fields Dynamic Fields" [ref=f8e595] [cursor=pointer]:
+                      - text: Dynamic Fields
+                      - generic [ref=f8e596]: Dynamic Fields
+                    - option [ref=f8e597] [cursor=pointer]: Practice Name
+                    - option [ref=f8e598] [cursor=pointer]: Practice Webpage
+                    - option [ref=f8e599] [cursor=pointer]: Practice Email
+                    - option [ref=f8e600] [cursor=pointer]: Practice Phone Number
+                    - option [ref=f8e601] [cursor=pointer]: Practice Address
+                  - button "Practice Logo Practice Logo" [ref=f8e603] [cursor=pointer]:
+                    - text: Practice Logo
+                    - generic [ref=f8e604]: Practice Logo
+                  - generic:
+                    - button "Font Family" [ref=f8e605] [cursor=pointer]
+                    - option [ref=f8e609] [cursor=pointer]: Arial
+                    - option [ref=f8e610] [cursor=pointer]: Georgia
+                    - option [ref=f8e611] [cursor=pointer]: Impact
+                    - option [ref=f8e612] [cursor=pointer]: Tahoma
+                    - option [ref=f8e613] [cursor=pointer]: Times New Roman
+                    - option [ref=f8e614] [cursor=pointer]: Verdana
+                    - button "Text Color" [ref=f8e615] [cursor=pointer]
+                - paragraph [ref=f8e621]:
+                  - img [ref=f8e622] [cursor=pointer]
+                - generic [ref=f8e623]: "Words : 0"
+              - heading "Standard Footer" [level=2] [ref=f8e625]
+              - application [ref=f8e627]:
+                - generic [ref=f8e628]:
+                  - generic [ref=f8e629]:
+                    - button "Bold" [ref=f8e630] [cursor=pointer]
+                    - button "Italic" [ref=f8e634] [cursor=pointer]
+                    - button "Underline" [ref=f8e638] [cursor=pointer]
+                    - button "Font Size" [ref=f8e642] [cursor=pointer]
+                    - option [ref=f8e646] [cursor=pointer]: "8"
+                    - option [ref=f8e647] [cursor=pointer]: "9"
+                    - option [ref=f8e648] [cursor=pointer]: "10"
+                    - option [ref=f8e649] [cursor=pointer]: "11"
+                    - option [ref=f8e650] [cursor=pointer]: "12"
+                    - option [ref=f8e651] [cursor=pointer]: "14"
+                    - option [ref=f8e652] [cursor=pointer]: "18"
+                    - option [ref=f8e653] [cursor=pointer]: "24"
+                    - option [ref=f8e654] [cursor=pointer]: "30"
+                    - option [ref=f8e655] [cursor=pointer]: "36"
+                    - option [ref=f8e656] [cursor=pointer]: "48"
+                    - option [ref=f8e657] [cursor=pointer]: "60"
+                    - option [ref=f8e658] [cursor=pointer]: "72"
+                    - option [ref=f8e659] [cursor=pointer]: "96"
+                    - button "More Text" [ref=f8e660] [cursor=pointer]
+                  - generic [ref=f8e664]:
+                    - generic [ref=f8e665]:
+                      - button "Ordered List" [ref=f8e666] [cursor=pointer]
+                      - button "Ordered List" [ref=f8e670] [cursor=pointer]
+                      - option [ref=f8e671] [cursor=pointer]: Default
+                      - option [ref=f8e672] [cursor=pointer]: Lower Alpha
+                      - option [ref=f8e673] [cursor=pointer]: Lower Greek
+                      - option [ref=f8e674] [cursor=pointer]: Lower Roman
+                      - option [ref=f8e675] [cursor=pointer]: Upper Alpha
+                      - option [ref=f8e676] [cursor=pointer]: Upper Roman
+                    - generic [ref=f8e677]:
+                      - button "Unordered List" [ref=f8e678] [cursor=pointer]
+                      - button "Unordered List" [ref=f8e682] [cursor=pointer]
+                      - option [ref=f8e683] [cursor=pointer]: Default
+                      - option [ref=f8e684] [cursor=pointer]: Circle
+                      - option [ref=f8e685] [cursor=pointer]: Disc
+                      - option [ref=f8e686] [cursor=pointer]: Square
+                    - button "Align Left" [ref=f8e687] [cursor=pointer]
+                    - button "Align Center" [ref=f8e691] [cursor=pointer]
+                    - button "Align Right" [ref=f8e695] [cursor=pointer]
+                    - button "Align Justify" [ref=f8e699] [cursor=pointer]
+                    - button "Undo" [disabled] [ref=f8e703]
+                    - button "Redo" [disabled] [ref=f8e707]
+                  - generic [ref=f8e711]:
+                    - button "Insert Link" [ref=f8e712] [cursor=pointer]
+                    - button "Insert Table" [ref=f8e716] [cursor=pointer]
+                    - button "Fullscreen" [ref=f8e720] [cursor=pointer]
+                    - button "Code View" [ref=f8e724] [cursor=pointer]
+                  - generic [ref=f8e728]:
+                    - button "Dynamic Fields Dynamic Fields" [ref=f8e729] [cursor=pointer]:
+                      - text: Dynamic Fields
+                      - generic [ref=f8e730]: Dynamic Fields
+                    - option [ref=f8e731] [cursor=pointer]: Practice Name
+                    - option [ref=f8e732] [cursor=pointer]: Practice Webpage
+                    - option [ref=f8e733] [cursor=pointer]: Practice Email
+                    - option [ref=f8e734] [cursor=pointer]: Practice Phone Number
+                    - option [ref=f8e735] [cursor=pointer]: Practice Address
+                  - button "Practice Logo Practice Logo" [ref=f8e737] [cursor=pointer]:
+                    - text: Practice Logo
+                    - generic [ref=f8e738]: Practice Logo
+                  - generic:
+                    - button "Font Family" [ref=f8e739] [cursor=pointer]
+                    - option [ref=f8e743] [cursor=pointer]: Arial
+                    - option [ref=f8e744] [cursor=pointer]: Georgia
+                    - option [ref=f8e745] [cursor=pointer]: Impact
+                    - option [ref=f8e746] [cursor=pointer]: Tahoma
+                    - option [ref=f8e747] [cursor=pointer]: Times New Roman
+                    - option [ref=f8e748] [cursor=pointer]: Verdana
+                    - button "Text Color" [ref=f8e749] [cursor=pointer]
+                - generic [ref=f8e754]:
+                  - paragraph [ref=f8e755]: "{{{organisation_name}}}"
+                  - paragraph [ref=f8e756]: "{{{organisation_website}}}"
+                  - paragraph [ref=f8e757]: "{{{organisation_phone_number}}}"
+                  - paragraph [ref=f8e758]: "{{{organisation_address}}}"
+                - generic [ref=f8e759]: "Words : 4"
+          - button "Save" [ref=f8e763] [cursor=pointer]

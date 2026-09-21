@@ -1,0 +1,53 @@
+- generic [active] [ref=f52e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f52e3] [cursor=pointer]
+  - generic [ref=f52e7]:
+    - generic [ref=f52e8]:
+      - generic [ref=f52e9]:
+        - button "Expand sidebar" [ref=f52e10] [cursor=pointer]:
+          - img "Paco Logo" [ref=f52e11]
+        - generic [ref=f52e13]:
+          - img "Dashboards" [ref=f52e18] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f52e23] [cursor=pointer]
+          - img "Quick Send" [ref=f52e28] [cursor=pointer]
+          - img "Health Forms" [ref=f52e33] [cursor=pointer]
+          - img "Patient Search" [ref=f52e38] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f52e43] [cursor=pointer]
+          - img "case load management" [ref=f52e48] [cursor=pointer]
+          - img "Appointment Book" [ref=f52e53] [cursor=pointer]
+          - img "Quick Pay" [ref=f52e58] [cursor=pointer]
+          - img "Users" [ref=f52e63] [cursor=pointer]
+          - img "Configuration" [ref=f52e68] [cursor=pointer]
+          - img "Rocket Bar" [ref=f52e73] [cursor=pointer]
+          - generic [ref=f52e75] [cursor=pointer]
+        - button [ref=f52e83] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f52e84]
+      - generic [ref=f52e89]:
+        - paragraph [ref=f52e92]: Home, Hi Test Fiona Nguyen
+        - generic [ref=f52e93]:
+          - generic [ref=f52e94]: Analytics
+          - generic [ref=f52e99]: Comms Hub
+          - generic [ref=f52e104]: Web Chat & Video
+          - generic [ref=f52e109]: Patient Search
+          - generic [ref=f52e114]: Health Forms
+          - generic [ref=f52e119]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f52e124]:
+      - generic [ref=f52e126]:
+        - generic [ref=f52e129]:
+          - generic [ref=f52e130]: TFN
+          - generic [ref=f52e132]:
+            - generic [ref=f52e133]: Test Fiona Nguyen
+            - generic [ref=f52e134]: Super Admin GB
+            - generic [ref=f52e136]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f52e141]
+        - generic [ref=f52e142]:
+          - button "More options" [ref=f52e144] [cursor=pointer]
+          - generic [ref=f52e150] [cursor=pointer]
+          - generic [ref=f52e151] [cursor=pointer]: "0"
+  - alert [ref=f52e154]
+  - generic [ref=f52e155]:
+    - button "Virtual Appointments" [ref=f52e157] [cursor=pointer]
+    - button "Media Library" [ref=f52e160] [cursor=pointer]
+    - button "Outstanding Reviews" [ref=f52e163] [cursor=pointer]
+  - tooltip [aria-hidden]:
+    - generic: Web Chat & Video

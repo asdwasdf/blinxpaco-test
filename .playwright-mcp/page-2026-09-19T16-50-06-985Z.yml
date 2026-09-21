@@ -1,0 +1,101 @@
+- generic [ref=f121e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f121e3] [cursor=pointer]
+  - generic [ref=f121e8]:
+    - generic [ref=f121e9]:
+      - button "Expand sidebar" [ref=f121e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f121e11]
+      - generic [ref=f121e13]:
+        - img "Dashboards" [ref=f121e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f121e23] [cursor=pointer]
+        - img "Quick Send" [ref=f121e28] [cursor=pointer]
+        - img "Health Forms" [ref=f121e33] [cursor=pointer]
+        - img "Patient Search" [ref=f121e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f121e43] [cursor=pointer]
+        - img "case load management" [ref=f121e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f121e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f121e58] [cursor=pointer]
+        - img "Users" [ref=f121e63] [cursor=pointer]
+        - img "Configuration" [ref=f121e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f121e73] [cursor=pointer]
+        - generic [ref=f121e75] [cursor=pointer]
+      - button [ref=f121e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f121e84]
+    - generic [ref=f121e85]:
+      - generic [ref=f121e86]:
+        - generic [ref=f121e87]: 3h 43m
+        - generic [ref=f121e92]:
+          - generic [ref=f121e96]:
+            - generic [ref=f121e97] [cursor=pointer]: TFN
+            - generic [ref=f121e355]:
+              - generic [ref=f121e356]: Test Fiona Nguyen
+              - generic [ref=f121e357]: Super Admin GB
+              - generic [ref=f121e359]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f121e364]
+          - generic [ref=f121e99]:
+            - button "More options" [ref=f121e102] [cursor=pointer]
+            - generic [ref=f121e106] [cursor=pointer]: "0"
+      - generic [ref=f121e939]:
+        - generic [ref=f121e940]:
+          - tablist [ref=f121e943]:
+            - tab "Org Tasks" [ref=f121e944] [cursor=pointer]
+            - tab "Staff Performance" [ref=f121e945] [cursor=pointer]
+            - tab "Org Stats" [ref=f121e946] [cursor=pointer]
+            - tab "All Patients" [ref=f121e947] [cursor=pointer]
+            - tab "CQC Readiness" [selected] [ref=f121e948] [cursor=pointer]
+            - tab "Message Outbox" [ref=f121e950] [cursor=pointer]
+            - tab "Comms Analytics" [ref=f121e951] [cursor=pointer]
+          - tabpanel [ref=f121e953]:
+            - generic [ref=f121e955]:
+              - generic [ref=f121e956]:
+                - generic [ref=f121e957]:
+                  - heading "CQC Compliance" [level=1] [ref=f121e958]
+                  - paragraph [ref=f121e959]: Readiness assessment, complaints management and regulatory compliance — Regulation 16 & CQC SAF
+                - generic [ref=f121e1388]:
+                  - button "Preview Report" [ref=f121e1389] [cursor=pointer]
+                  - button "Download Report" [ref=f121e1393] [cursor=pointer]
+              - generic [ref=f121e969]:
+                - button "CQC Readiness" [active] [ref=f121e970] [cursor=pointer]
+                - button "Complaints 2" [ref=f121e974] [cursor=pointer]:
+                  - text: Complaints
+                  - generic [ref=f121e977]: "2"
+              - generic [ref=f121e1397]:
+                - generic [ref=f121e1398]:
+                  - generic [ref=f121e1399]: Quality statements with a recorded position
+                  - generic [ref=f121e1400]: 3 of 34
+                - generic [ref=f121e1402]:
+                  - generic [ref=f121e1403]:
+                    - generic [ref=f121e1405]: Safe
+                    - generic [ref=f121e1406]: 2/8
+                  - generic [ref=f121e1407]:
+                    - generic [ref=f121e1409]: Effective
+                    - generic [ref=f121e1410]: 1/6
+                  - generic [ref=f121e1411]:
+                    - generic [ref=f121e1413]: Caring
+                    - generic [ref=f121e1414]: 0/5
+                  - generic [ref=f121e1415]:
+                    - generic [ref=f121e1417]: Responsive
+                    - generic [ref=f121e1418]: 0/7
+                  - generic [ref=f121e1419]:
+                    - generic [ref=f121e1421]: Well-Led
+                    - generic [ref=f121e1422]: 0/8
+              - generic [ref=f121e1423]:
+                - generic [ref=f121e1425] [cursor=pointer]:
+                  - generic [ref=f121e1427]:
+                    - heading "Safe" [level=2] [ref=f121e1428]
+                    - generic [ref=f121e1429]: 1 inadequate
+                  - generic [ref=f121e1431]: 2/8
+                - generic [ref=f121e1441] [cursor=pointer]:
+                  - heading "Effective" [level=2] [ref=f121e1444]
+                  - generic [ref=f121e1445]: 1/6
+                - generic [ref=f121e1455] [cursor=pointer]:
+                  - heading "Caring" [level=2] [ref=f121e1458]
+                  - generic [ref=f121e1459]: 0/5
+                - generic [ref=f121e1469] [cursor=pointer]:
+                  - heading "Responsive" [level=2] [ref=f121e1472]
+                  - generic [ref=f121e1473]: 0/7
+                - generic [ref=f121e1483] [cursor=pointer]:
+                  - heading "Well-Led" [level=2] [ref=f121e1486]
+                  - generic [ref=f121e1487]: 0/8
+        - button "Scroll tabs left"
+        - button "Scroll tabs right" [ref=f121e1077] [cursor=pointer]

@@ -1,0 +1,114 @@
+- generic [ref=f56e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f56e3] [cursor=pointer]
+  - generic [ref=f56e207]:
+    - generic [ref=f56e208]:
+      - button "Expand sidebar" [ref=f56e209] [cursor=pointer]:
+        - img "Paco Logo" [ref=f56e210]
+      - generic [ref=f56e212]:
+        - img "Dashboards" [ref=f56e217] [cursor=pointer]
+        - img "Quick Send" [ref=f56e222] [cursor=pointer]
+        - img "Patient Search" [ref=f56e227] [cursor=pointer]
+        - img "case load management" [ref=f56e232] [cursor=pointer]
+        - img "Appointment Book" [ref=f56e237] [cursor=pointer]
+        - img "Users" [ref=f56e242] [cursor=pointer]
+        - img "Configuration" [ref=f56e247] [cursor=pointer]
+        - img "Rocket Bar" [ref=f56e252] [cursor=pointer]
+        - generic [ref=f56e254] [cursor=pointer]
+      - button [ref=f56e262] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f56e263]
+    - generic [ref=f56e264]:
+      - generic [ref=f56e265]:
+        - generic [ref=f56e266]: 3h 17m
+        - generic [ref=f56e271]:
+          - generic [ref=f56e274]:
+            - generic [ref=f56e275] [cursor=pointer]: FN
+            - generic [ref=f56e277]:
+              - generic [ref=f56e278]: Fiona Nguyen
+              - generic [ref=f56e279]: Super User
+              - generic [ref=f56e281]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f56e286]
+          - generic [ref=f56e287]:
+            - button "More options" [ref=f56e289] [cursor=pointer]
+            - generic [ref=f56e293] [cursor=pointer]: "0"
+      - generic [ref=f56e298]:
+        - generic [ref=f56e301]:
+          - generic [ref=f56e302]:
+            - heading "Configuration" [level=1] [ref=f56e304]
+            - generic [ref=f56e307]:
+              - button "Organisation" [ref=f56e309] [cursor=pointer]:
+                - link "Organisation" [ref=f56e311]:
+                  - /url: "#"
+              - button "Patient" [ref=f56e316] [cursor=pointer]:
+                - link "Patient" [ref=f56e318]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f56e323] [cursor=pointer]:
+                - link "Appointment Books" [ref=f56e325]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f56e330] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f56e332]:
+                  - /url: "#"
+              - generic [ref=f56e336]:
+                - button "Users & Staff" [expanded] [ref=f56e337] [cursor=pointer]:
+                  - link "Users & Staff" [ref=f56e339]:
+                    - /url: "#"
+                - region "Users & Staff" [ref=f56e343]:
+                  - tree [ref=f56e345]:
+                    - treeitem "Staff Profiles" [level=1] [ref=f56e346]:
+                      - link [aria-hidden] [ref=f56e348] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f56e349]: Staff Profiles
+                    - treeitem "Role Groups" [level=1] [ref=f56e350]:
+                      - link [aria-hidden] [ref=f56e352] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f56e353]: Role Groups
+          - generic [ref=f56e354] [cursor=pointer]
+        - generic [ref=f56e357]:
+          - generic [ref=f56e359]:
+            - generic [ref=f56e360]:
+              - button [ref=f56e361] [cursor=pointer]
+              - button [ref=f56e364] [cursor=pointer]
+            - generic [ref=f56e367]:
+              - heading "Staff Profiles" [level=1] [ref=f56e368]
+              - group "Filter staff by status" [ref=f56e369]:
+                - button "Active" [ref=f56e370] [cursor=pointer]
+                - button "Archived" [pressed] [ref=f56e371] [cursor=pointer]
+            - textbox "Search..." [active] [ref=f56e375]: __qa_no_match_20260919__
+            - button "My Profile" [ref=f56e376] [cursor=pointer]
+            - generic [ref=f56e381]:
+              - button [ref=f56e382] [cursor=pointer]
+              - menu:
+                - menuitem "Add":
+                  - menuitem "Add":
+                    - paragraph: Add Care Professional
+          - generic [ref=f56e390]:
+            - text:  
+            - grid [ref=f56e391]:
+              - rowgroup [ref=f56e392]:
+                - row [ref=f56e393]:
+                  - columnheader "First Name" [ref=f56e394] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e395]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Last Name" [ref=f56e397] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e398]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Gender" [ref=f56e400] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e401]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Email" [ref=f56e403] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e404]: 
+                    - text: 
+                    - generic:    
+                  - columnheader "Roles" [ref=f56e406] [cursor=pointer]:
+                    - generic [aria-hidden] [ref=f56e407]: 
+                    - text: 
+                    - generic:    
+              - row [ref=f56e409]:
+                - columnheader "Actions" [ref=f56e992] [cursor=pointer]
+              - generic [aria-hidden]:
+                - generic: No Rows To Show
+            - text:    
+          - paragraph [ref=f56e623]: Showing 0–0 of 0

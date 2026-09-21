@@ -1,0 +1,64 @@
+- generic [active] [ref=f28e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f28e3] [cursor=pointer]
+  - generic [ref=f28e7]:
+    - generic [ref=f28e20716]:
+      - generic [ref=f28e20717]:
+        - button "Expand sidebar" [ref=f28e20718] [cursor=pointer]:
+          - img "Paco Logo" [ref=f28e20719]
+        - generic [ref=f28e20721]:
+          - img "Dashboards" [ref=f28e20726] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f28e20731] [cursor=pointer]
+          - img "Quick Send" [ref=f28e20736] [cursor=pointer]
+          - img "Health Forms" [ref=f28e20741] [cursor=pointer]
+          - img "Patient Search" [ref=f28e20746] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f28e20751] [cursor=pointer]
+          - img "case load management" [ref=f28e20756] [cursor=pointer]
+          - img "Appointment Book" [ref=f28e20761] [cursor=pointer]
+          - img "Quick Pay" [ref=f28e20766] [cursor=pointer]
+          - img "Users" [ref=f28e20771] [cursor=pointer]
+          - img "Configuration" [ref=f28e20776] [cursor=pointer]
+          - img "Rocket Bar" [ref=f28e20781] [cursor=pointer]
+          - generic [ref=f28e20783] [cursor=pointer]
+        - button [ref=f28e20791] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f28e20792]
+      - generic [ref=f28e20793]:
+        - generic [ref=f28e20794]:
+          - generic [ref=f28e20795]: 4h 5m
+          - generic [ref=f28e20800]:
+            - generic [ref=f28e20803]:
+              - generic [ref=f28e20804] [cursor=pointer]: TFN
+              - generic [ref=f28e20806]:
+                - generic [ref=f28e20807]: Test Fiona Nguyen
+                - generic [ref=f28e20808]: Super Admin GB
+                - generic [ref=f28e20810]: General Practice (Blinx Demo Site)
+            - textbox "Search patients by name or NHS number" [ref=f28e20815]
+            - generic [ref=f28e20816]:
+              - button "More options" [ref=f28e20818] [cursor=pointer]
+              - generic [ref=f28e20822] [cursor=pointer]: "0"
+        - generic [ref=f28e20828]:
+          - generic [ref=f28e20829]:
+            - generic [ref=f28e20830]:
+              - link "Back to Dashboard" [ref=f28e20834] [cursor=pointer]:
+                - /url: /paco/dashboard
+              - heading "Work Boards" [level=1] [ref=f28e20835]
+            - generic [ref=f28e20836]:
+              - generic [ref=f28e20837]:
+                - generic [ref=f28e20838] [cursor=pointer]:
+                  - checkbox "View My Tasks Only" [ref=f28e20841]
+                  - generic [ref=f28e20844]: View My Tasks Only
+                - generic [ref=f28e20845] [cursor=pointer]:
+                  - checkbox "View My Cases Only" [ref=f28e20848]
+                  - generic [ref=f28e20851]: View My Cases Only
+              - generic [ref=f28e20852]: Search all boards
+              - generic [ref=f28e20853]:
+                - button "Board" [ref=f28e20854] [cursor=pointer]
+                - button "Case ID" [ref=f28e20856] [cursor=pointer]
+                - button "Patient" [ref=f28e20858] [cursor=pointer]
+              - textbox "Board name" [ref=f28e20861]
+              - generic [ref=f28e20862]:
+                - button "Tasks (0)" [ref=f28e20863] [cursor=pointer]
+                - button "Cases (0)" [ref=f28e20865] [cursor=pointer]
+              - button "Create new board" [ref=f28e20875] [cursor=pointer]
+          - button [ref=f28e20879] [cursor=pointer]
+    - status [ref=f28e20883]

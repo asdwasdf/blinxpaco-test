@@ -1,0 +1,51 @@
+- generic [active] [ref=f54e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f54e3] [cursor=pointer]
+  - generic [ref=f54e7]:
+    - generic [ref=f54e8]:
+      - generic [ref=f54e9]:
+        - button "Expand sidebar" [ref=f54e10] [cursor=pointer]:
+          - img "Paco Logo" [ref=f54e11]
+        - generic [ref=f54e13]:
+          - img "Dashboards" [ref=f54e18] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f54e23] [cursor=pointer]
+          - img "Quick Send" [ref=f54e28] [cursor=pointer]
+          - img "Health Forms" [ref=f54e33] [cursor=pointer]
+          - img "Patient Search" [ref=f54e38] [cursor=pointer]
+          - img "case load management" [ref=f54e43] [cursor=pointer]
+          - img "Appointment Book" [ref=f54e48] [cursor=pointer]
+          - img "Quick Pay" [ref=f54e53] [cursor=pointer]
+          - img "Users" [ref=f54e58] [cursor=pointer]
+          - img "Configuration" [ref=f54e63] [cursor=pointer]
+          - img "Rocket Bar" [ref=f54e68] [cursor=pointer]
+          - generic [ref=f54e70] [cursor=pointer]
+        - button [ref=f54e78] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f54e79]
+      - generic [ref=f54e84]:
+        - paragraph [ref=f54e87]: Home, Hi Fiona Nguyen
+        - generic [ref=f54e88]:
+          - generic [ref=f54e89]: Analytics
+          - generic [ref=f54e94]: Comms Hub
+          - generic [ref=f54e99]: Patient Search
+          - generic [ref=f54e104]: Health Forms
+          - generic [ref=f54e109]: Care Navigator
+    - generic "one-paco-top-bar" [ref=f54e114]:
+      - generic [ref=f54e116]:
+        - generic [ref=f54e119]:
+          - generic [ref=f54e120]: FN
+          - generic [ref=f54e122]:
+            - generic [ref=f54e123]: Fiona Nguyen
+            - generic [ref=f54e124]: Super User
+            - generic [ref=f54e126]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f54e131]
+        - generic [ref=f54e132]:
+          - button "More options" [ref=f54e134] [cursor=pointer]
+          - generic [ref=f54e140] [cursor=pointer]
+          - generic [ref=f54e141] [cursor=pointer]: "0"
+  - alert [ref=f54e144]
+  - generic [ref=f54e145]:
+    - button "Inbox" [ref=f54e147] [cursor=pointer]
+    - button "Designer" [ref=f54e150] [cursor=pointer]
+    - button "Designer V2" [ref=f54e153] [cursor=pointer]
+  - tooltip [aria-hidden]:
+    - generic: Health Forms

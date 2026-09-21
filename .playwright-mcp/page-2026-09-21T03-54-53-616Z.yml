@@ -1,0 +1,119 @@
+- generic [active] [ref=f179e1]:
+  - paragraph [ref=f179e6]: Gathering data...
+  - banner [ref=f179e8]:
+    - generic [ref=f179e10]:
+      - generic [ref=f179e11]:
+        - generic [ref=f179e13] [cursor=pointer]
+        - img "blinx-logo" [ref=f179e16]
+        - heading "Communications Hub" [level=1] [ref=f179e17]
+      - generic [ref=f179e18]:              
+      - generic [ref=f179e19]:
+        - generic:
+          - list: 
+        - generic [ref=f179e20]: 
+  - navigation [ref=f179e24]:
+    - generic [ref=f179e25]:
+      - img "Blinx Company Logo" [ref=f179e27]
+      - generic [ref=f179e28] [cursor=pointer]
+    - generic [ref=f179e29]:
+      - list [ref=f179e32]:
+        - listitem [ref=f179e33]:
+          - link "Home" [ref=f179e35] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f179e36]:
+          - generic [ref=f179e37] [cursor=pointer]:
+            - link "Analytics" [ref=f179e38]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f179e39]: 
+        - listitem [ref=f179e40]:
+          - generic [ref=f179e41] [cursor=pointer]:
+            - link "Comms Hub" [ref=f179e42]:
+              - /url: /commshub/
+            - generic [ref=f179e43]: 
+        - listitem [ref=f179e44]:
+          - generic [ref=f179e45] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f179e46]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f179e47]: 
+        - listitem [ref=f179e48]:
+          - link "Patient Search" [ref=f179e50] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f179e51]:
+          - generic [ref=f179e52] [cursor=pointer]:
+            - link "Health Forms" [ref=f179e53]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f179e54]: 
+        - listitem [ref=f179e55]:
+          - link "Care Navigator" [ref=f179e57] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f179e58]:
+          - link "Configuration" [ref=f179e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f179e61]:
+        - listitem [ref=f179e62]:
+          - link "Dashboard" [ref=f179e64] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f179e65]:
+          - link "Appointment Book" [ref=f179e67] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book
+        - listitem [ref=f179e68]:
+          - link "Settings" [ref=f179e70] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f179e71]:
+        - listitem [ref=f179e72]:
+          - link "User Management" [ref=f179e74] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f179e75]:
+          - generic [ref=f179e76] [cursor=pointer]: Log Out
+        - listitem [ref=f179e78]:
+          - generic [ref=f179e79]: Version 1.0
+  - generic [ref=f179e83]:
+    - generic [ref=f179e84]:
+      - generic [ref=f179e85]: Notifications
+      - generic [ref=f179e86] [cursor=pointer]:
+        - generic [ref=f179e87]: Clear All
+        - generic [ref=f179e88]: 
+    - generic [ref=f179e90]:
+      - generic [ref=f179e91] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f179e92]: "0"
+      - generic [ref=f179e93] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f179e94]: "0"
+      - generic [ref=f179e95] [cursor=pointer]:
+        - text: All
+        - generic [ref=f179e96]: "0"
+  - text:  
+  - generic [ref=f179e99]:
+    - generic [ref=f179e100]:
+      - generic [ref=f179e103]:
+        - link "" [ref=f179e104] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - text: •
+        - link "Comms Hub" [ref=f179e106] [cursor=pointer]:
+          - /url: /commshub/commshub
+        - text: •
+        - link "Template Manager" [ref=f179e107] [cursor=pointer]:
+          - /url: /commshub/commshub/template-builder
+        - text: • New Email
+      - button " Save" [disabled] [ref=f179e110]:
+        - generic [ref=f179e111]: 
+        - text: Save
+    - tablist [ref=f179e118]:
+      - generic [ref=f179e119]: From Address
+      - generic [ref=f179e124]:
+        - generic [ref=f179e125]: Language Selection
+        - generic "Language Selection" [ref=f179e128]
+      - generic [ref=f179e133]:
+        - generic [ref=f179e134]: Subject line *
+        - textbox "Subject line *" [ref=f179e135]:
+          - /placeholder: Subject Line
+        - generic [ref=f179e136]: Email Text *
+        - paragraph [ref=f179e137]: The text body of the email. Recipients whose email clients don't display HTML email see this version of the email. This value may contain dynamic fields.
+        - textbox "Email Text *" [ref=f179e138]:
+          - /placeholder: Email Text
+      - generic [ref=f179e139]:
+        - generic [ref=f179e140]: Dynamic fields
+        - generic "Dynamic fields" [ref=f179e143]
+      - text: 
+  - text:    

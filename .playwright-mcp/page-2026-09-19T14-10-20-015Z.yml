@@ -1,0 +1,98 @@
+- generic [active] [ref=f2e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f2e36] [cursor=pointer]
+  - generic [ref=f2e6]:
+    - generic [ref=f2e7]:
+      - generic [ref=f2e39]:
+        - button "Expand sidebar" [ref=f2e40] [cursor=pointer]:
+          - img "Paco Logo" [ref=f2e41]
+        - generic [ref=f2e43]:
+          - img "Dashboards" [ref=f2e48] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f2e53] [cursor=pointer]
+          - img "Quick Send" [ref=f2e58] [cursor=pointer]
+          - img "Health Forms" [ref=f2e63] [cursor=pointer]
+          - img "Patient Search" [ref=f2e68] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f2e73] [cursor=pointer]
+          - img "case load management" [ref=f2e78] [cursor=pointer]
+          - img "Appointment Book" [ref=f2e83] [cursor=pointer]
+          - img "Quick Pay" [ref=f2e88] [cursor=pointer]
+          - img "Users" [ref=f2e93] [cursor=pointer]
+          - img "Configuration" [ref=f2e98] [cursor=pointer]
+          - img "Rocket Bar" [ref=f2e103] [cursor=pointer]
+          - generic [ref=f2e105] [cursor=pointer]
+        - button [ref=f2e113] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f2e114]
+      - generic [ref=f2e119]:
+        - generic [ref=f2e120]: Code Rule Config
+        - generic [ref=f2e121]:
+          - generic [ref=f2e123]:
+            - generic [ref=f2e124]: Search Snomed Code
+            - textbox "Search Snomed Code" [ref=f2e125]
+          - separator [ref=f2e126]
+          - heading "Create or update rules:" [level=1] [ref=f2e127]
+          - paragraph [ref=f2e128]: ", ,"
+          - generic [ref=f2e130]:
+            - generic [ref=f2e133]:
+              - generic [ref=f2e137]:
+                - generic [ref=f2e138]:
+                  - heading "Input layout from FE" [level=5] [ref=f2e139]
+                  - separator [ref=f2e140]
+                - generic [ref=f2e141]: what you expect from FE input, key name used as identity when transform at output stage
+                - generic [ref=f2e147]:
+                  - generic [ref=f2e148]:
+                    - heading "properties" [level=5] [ref=f2e149]
+                    - separator [ref=f2e150]
+                  - button "Add Item" [ref=f2e154] [cursor=pointer]
+              - generic [ref=f2e161]:
+                - generic [ref=f2e162]:
+                  - heading "Setting for FE layout" [level=5] [ref=f2e163]
+                  - separator [ref=f2e164]
+                - generic [ref=f2e165]: Instruct how FE render input field
+                - generic [ref=f2e167]:
+                  - generic [ref=f2e172]:
+                    - generic [ref=f2e173]: ui:field
+                    - combobox "ui:field" [ref=f2e174]:
+                      - option [selected]
+                      - option "slash-unit"
+                  - generic [ref=f2e179]:
+                    - generic [ref=f2e180]: ui:widget
+                    - combobox "ui:widget" [ref=f2e181]:
+                      - option [selected]
+                      - option "react-select"
+                  - generic [ref=f2e185]:
+                    - generic [ref=f2e186]:
+                      - heading "ui:options" [level=5] [ref=f2e187]
+                      - separator [ref=f2e188]
+                    - generic [ref=f2e189]:
+                      - generic [ref=f2e194]:
+                        - generic [ref=f2e195]: unit
+                        - textbox "unit" [ref=f2e196]:
+                          - /placeholder: ""
+                      - generic [ref=f2e203]:
+                        - generic [ref=f2e204]:
+                          - heading "selections" [level=5] [ref=f2e205]
+                          - separator [ref=f2e206]
+                        - generic [ref=f2e207]: if input is selection from options. here to declared. it also used as transform output
+                        - button "Add Item" [ref=f2e214] [cursor=pointer]
+                  - button "Add Item" [ref=f2e220] [cursor=pointer]
+              - generic [ref=f2e230]:
+                - generic [ref=f2e231]:
+                  - heading "operations" [level=5] [ref=f2e232]
+                  - separator [ref=f2e233]
+                - generic [ref=f2e234]: It is list of transformation. so you can decide how input transform to output like
+                - button "Add Item" [ref=f2e241] [cursor=pointer]
+            - button "Submit" [ref=f2e246] [cursor=pointer]
+    - generic "one-paco-top-bar" [ref=f2e247]:
+      - generic [ref=f2e249]:
+        - generic [ref=f2e252]:
+          - generic [ref=f2e253]: TFN
+          - generic [ref=f2e255]:
+            - generic [ref=f2e256]: Test Fiona Nguyen
+            - generic [ref=f2e257]: Super Admin GB
+            - generic [ref=f2e259]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f2e264]
+        - generic [ref=f2e265]:
+          - button "More options" [ref=f2e267] [cursor=pointer]
+          - generic [ref=f2e273] [cursor=pointer]
+          - generic [ref=f2e274] [cursor=pointer]: "0"
+  - alert [ref=f2e34]

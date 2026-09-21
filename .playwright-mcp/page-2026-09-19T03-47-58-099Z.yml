@@ -1,0 +1,19 @@
+- generic [active] [ref=f24e1]:
+  - generic [ref=f24e2]:
+    - img "Blinx Logo" [ref=f24e4]
+    - generic [ref=f24e5]:
+      - generic [ref=f24e6]:
+        - heading "Welcome Back" [level=2] [ref=f24e7]
+        - paragraph [ref=f24e8]: Welcome back to Communications Hub.
+      - generic [ref=f24e9]:
+        - button "Sign In" [ref=f24e10] [cursor=pointer]
+        - generic [ref=f24e11] [cursor=pointer]: Username and Password -->
+        - generic [ref=f24e14]:
+          - link "Terms & Conditions" [ref=f24e15] [cursor=pointer]:
+            - /url: "#"
+          - text: "|"
+          - link "Privacy Policy" [ref=f24e16] [cursor=pointer]:
+            - /url: /commshub/privacy-policy
+  - generic [ref=f24e18]:
+    - text: Powered by
+    - img "Blinx Logo" [ref=f24e19]

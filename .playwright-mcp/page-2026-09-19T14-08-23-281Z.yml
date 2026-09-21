@@ -1,0 +1,125 @@
+- generic [active] [ref=e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=e3] [cursor=pointer]
+  - generic [ref=e1119]:
+    - generic [ref=e1120]:
+      - button "Expand sidebar" [ref=e1121] [cursor=pointer]:
+        - img "Paco Logo" [ref=e1122]
+      - generic [ref=e1124]:
+        - img "Dashboards" [ref=e1129] [cursor=pointer]
+        - img "Analytics & Reports" [ref=e1134] [cursor=pointer]
+        - img "Quick Send" [ref=e1139] [cursor=pointer]
+        - img "Health Forms" [ref=e1144] [cursor=pointer]
+        - img "Patient Search" [ref=e1149] [cursor=pointer]
+        - img "Web Chat & Video" [ref=e1154] [cursor=pointer]
+        - img "case load management" [ref=e1159] [cursor=pointer]
+        - img "Appointment Book" [ref=e1164] [cursor=pointer]
+        - img "Quick Pay" [ref=e1169] [cursor=pointer]
+        - img "Users" [ref=e1174] [cursor=pointer]
+        - img "Configuration" [ref=e1179] [cursor=pointer]
+        - img "Rocket Bar" [ref=e1184] [cursor=pointer]
+        - generic [ref=e1186] [cursor=pointer]
+      - button [ref=e1189] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=e1190]
+    - generic [ref=e1191]:
+      - generic [ref=e1192]:
+        - generic [ref=e1193]: 2h 14m
+        - generic [ref=e1198]:
+          - generic [ref=e1201]:
+            - generic [ref=e1202] [cursor=pointer]: TFN
+            - generic [ref=e1204]:
+              - generic [ref=e1205]: Test Fiona Nguyen
+              - generic [ref=e1206]: Super Admin GB
+              - generic [ref=e1208]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=e1213]
+          - generic [ref=e1214]:
+            - button "More options" [ref=e1216] [cursor=pointer]
+            - generic [ref=e1217] [cursor=pointer]: "0"
+      - generic [ref=e1222]:
+        - generic [ref=e1225]:
+          - generic [ref=e1226]:
+            - heading "Configuration" [level=1] [ref=e1228]
+            - generic [ref=e1231]:
+              - button "Organisation" [ref=e1233] [cursor=pointer]:
+                - link "Organisation" [ref=e1235]:
+                  - /url: "#"
+              - button "Patient" [ref=e1240] [cursor=pointer]:
+                - link "Patient" [ref=e1242]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=e1247] [cursor=pointer]:
+                - link "Appointment Books" [ref=e1249]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=e1254] [cursor=pointer]:
+                - link "Quick Pay" [ref=e1256]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=e1261] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=e1263]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=e1268] [cursor=pointer]:
+                - link "Users & Staff" [ref=e1270]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=e1275] [cursor=pointer]:
+                - link "Clinical Config" [ref=e1277]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=e1282] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=e1284]:
+                  - /url: "#"
+          - generic [ref=e1286] [cursor=pointer]
+        - generic [ref=e1291]:
+          - heading "General" [level=1] [ref=e1294]
+          - generic [ref=e1296]:
+            - heading "Basic Information" [level=2] [ref=e1299]
+            - generic [ref=e1300]:
+              - generic [ref=e1305]:
+                - generic [ref=e1306] [cursor=pointer]:
+                  - button "Choose File" [ref=e1307]
+                  - button "Upload Photo"
+                - button "Remove Photo" [ref=e1308] [cursor=pointer]
+              - generic [ref=e1310]:
+                - generic [ref=e1312]:
+                  - generic [ref=e1313]: Organisation Name
+                  - textbox "Organisation Name" [ref=e1315]
+                - generic [ref=e1317]:
+                  - generic [ref=e1318]: Organisation Type *
+                  - generic [ref=e1321] [cursor=pointer]:
+                    - generic [ref=e1322]:
+                      - textbox
+                    - generic [ref=e1324]: Select Organisation Type
+                    - button "Select Organisation Type" [ref=e1325]
+                - generic [ref=e1329]:
+                  - generic [ref=e1330]: ODS code
+                  - generic [ref=e1331]:
+                    - textbox [disabled]
+            - heading "Location & Contact Information" [level=2] [ref=e1334]
+            - generic [ref=e1337]:
+              - generic [ref=e1338]: Address
+              - textbox [ref=e1339]
+              - link "Edit Address" [ref=e1340] [cursor=pointer]:
+                - /url: "#"
+            - generic [ref=e1341]:
+              - generic [ref=e1343]:
+                - generic [ref=e1344]: Contact Number
+                - generic [ref=e1347]:
+                  - combobox "Country selector" [ref=e1349] [cursor=pointer]
+                  - textbox "-" [ref=e1352]: "+44"
+              - generic [ref=e1354]:
+                - generic [ref=e1355]: Email Address
+                - textbox "Email Address" [ref=e1357]
+              - generic [ref=e1359]:
+                - generic [ref=e1360]: Website URL
+                - textbox "Website URL" [ref=e1362]
+            - heading "Opening Hours" [level=2] [ref=e1365]
+            - generic [ref=e1367]:
+              - heading "Regular Opening Hours" [level=2] [ref=e1369]
+              - generic [ref=e1370]: From
+              - generic [ref=e1371]: To
+            - generic [ref=e1373]:
+              - heading "Special Opening Hours" [level=3] [ref=e1376]
+              - button "+ Add Special Opening Hours" [ref=e1379] [cursor=pointer]
+            - heading "Communications" [level=2] [ref=e1382]
+            - generic [ref=e1384]:
+              - heading "Standard Header" [level=2] [ref=e1385]
+              - textbox [ref=e1387]
+              - heading "Standard Footer" [level=2] [ref=e1388]
+              - textbox [ref=e1390]
+          - button "Save" [ref=e1393] [cursor=pointer]

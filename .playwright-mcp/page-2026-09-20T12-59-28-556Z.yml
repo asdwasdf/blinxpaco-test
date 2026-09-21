@@ -1,0 +1,56 @@
+- generic [ref=f22e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f22e8] [cursor=pointer]
+  - generic [ref=f22e11]:
+    - generic [ref=f22e12]:
+      - generic [ref=f22e13]:
+        - button "Expand sidebar" [ref=f22e14] [cursor=pointer]:
+          - img "Paco Logo" [ref=f22e15]
+        - generic [ref=f22e17]:
+          - img "Dashboards" [ref=f22e22] [cursor=pointer]
+          - img "Analytics & Reports" [ref=f22e27] [cursor=pointer]
+          - img "Quick Send" [ref=f22e32] [cursor=pointer]
+          - img "Health Forms" [ref=f22e37] [cursor=pointer]
+          - img "Patient Search" [ref=f22e42] [cursor=pointer]
+          - img "Web Chat & Video" [ref=f22e47] [cursor=pointer]
+          - img "case load management" [ref=f22e52] [cursor=pointer]
+          - img "Appointment Book" [ref=f22e57] [cursor=pointer]
+          - img "Quick Pay" [ref=f22e62] [cursor=pointer]
+          - img "Users" [ref=f22e67] [cursor=pointer]
+          - img "Configuration" [ref=f22e72] [cursor=pointer]
+          - img "Rocket Bar" [ref=f22e77] [cursor=pointer]
+          - generic [ref=f22e79] [cursor=pointer]
+        - button [ref=f22e87] [cursor=pointer]:
+          - img "Switch to dark theme" [ref=f22e88]
+      - generic [ref=f22e89]:
+        - generic [ref=f22e94]:
+          - img [aria-hidden] [ref=f22e96] [cursor=pointer]
+          - generic [ref=f22e98]: •Patient Profile Search
+        - generic [ref=f22e103]:
+          - paragraph [ref=f22e106]: Patient Profile Search
+          - generic [ref=f22e109]:
+            - textbox "Search Patients..." [active] [ref=f22e110]: qanomatch20260920
+            - img [aria-hidden] [ref=f22e111] [cursor=pointer]
+            - img [aria-hidden] [ref=f22e146] [cursor=pointer]
+          - generic [ref=f22e149]:
+            - paragraph [ref=f22e151]: No Patients Found
+            - generic [ref=f22e154]:
+              - generic [ref=f22e156]:
+                - checkbox "Include deleted patients" [ref=f22e158] [cursor=pointer]
+                - generic [ref=f22e160] [cursor=pointer]: Include deleted patients
+              - paragraph [ref=f22e162]: Showing 0 result
+          - generic [ref=f22e113]: A-Z Search
+    - generic "one-paco-top-bar" [ref=f22e116]:
+      - generic [ref=f22e118]:
+        - generic [ref=f22e121]:
+          - generic [ref=f22e122]: TFN
+          - generic [ref=f22e124]:
+            - generic [ref=f22e125]: Test Fiona Nguyen
+            - generic [ref=f22e126]: Super Admin GB
+            - generic [ref=f22e128]: General Practice (Blinx Demo Site)
+        - textbox "Search..." [ref=f22e133]
+        - generic [ref=f22e134]:
+          - button "More options" [ref=f22e136] [cursor=pointer]
+          - generic [ref=f22e142] [cursor=pointer]
+          - generic [ref=f22e143] [cursor=pointer]: "0"
+  - alert [ref=f22e6]

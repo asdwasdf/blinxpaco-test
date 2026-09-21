@@ -7,7 +7,7 @@ description: Use when locating or observing selected Paco scope, or surveying Pa
 
 ## Scope and dependencies
 
-Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`SURVEY`), environment, valid local browser auth and role. `locate` and `observe` also require selected ticket and valid requirements; `survey` does not. Read feature-location/product-survey/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. If auth is missing/expired, return `Blocked: Authentication expired` with `npm run auth:login`; never request credentials. Dùng Claude Playwright plugin-first; không probe private APIs, infer intent, design suites hoặc orchestrate phases.
+Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`SURVEY`), environment, valid auth in the current Claude Playwright plugin browser tab and role. `locate` and `observe` also require selected ticket and valid requirements; `survey` does not. Read feature-location/product-survey/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. Dùng Claude Playwright plugin-first. If auth is missing or expired, navigate the current plugin tab to `/paco/login`, return `Blocked: Authentication expired`, and ask the tester to complete login/SSO/MFA manually in that tab. After the tester reports completion, verify the tab reached `/paco/dashboard` or another authenticated Paco page before resuming. Never request credentials or read, copy, persist, or report cookies, tokens, headers, or browser auth state. Không probe private APIs, infer intent, design suites hoặc orchestrate phases.
 
 ## Ownership
 

@@ -1,0 +1,92 @@
+- generic [ref=f50e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f50e3] [cursor=pointer]
+  - generic [ref=f50e8]:
+    - generic [ref=f50e9]:
+      - button "Expand sidebar" [ref=f50e10] [cursor=pointer]:
+        - img "Paco Logo" [ref=f50e11]
+      - generic [ref=f50e13]:
+        - img "Dashboards" [ref=f50e18] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f50e23] [cursor=pointer]
+        - img "Quick Send" [ref=f50e28] [cursor=pointer]
+        - img "Health Forms" [ref=f50e33] [cursor=pointer]
+        - img "Patient Search" [ref=f50e38] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f50e43] [cursor=pointer]
+        - img "case load management" [ref=f50e48] [cursor=pointer]
+        - img "Appointment Book" [ref=f50e53] [cursor=pointer]
+        - img "Quick Pay" [ref=f50e58] [cursor=pointer]
+        - img "Users" [ref=f50e63] [cursor=pointer]
+        - img "Configuration" [ref=f50e68] [cursor=pointer]
+        - img "Rocket Bar" [ref=f50e73] [cursor=pointer]
+        - generic [ref=f50e75] [cursor=pointer]
+      - button [ref=f50e83] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f50e84]
+    - generic [ref=f50e85]:
+      - generic [ref=f50e86]:
+        - generic [ref=f50e87]: 2h 7m
+        - generic [ref=f50e92]:
+          - generic [ref=f50e95]:
+            - generic [ref=f50e96] [cursor=pointer]: TFN
+            - generic [ref=f50e98]:
+              - generic [ref=f50e99]: Test Fiona Nguyen
+              - generic [ref=f50e100]: Super Admin GB
+              - generic [ref=f50e102]: General Practice (Blinx Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f50e107]
+          - generic [ref=f50e108]:
+            - button "More options" [ref=f50e110] [cursor=pointer]
+            - generic [ref=f50e114] [cursor=pointer]: "0"
+      - generic [ref=f50e119]:
+        - generic [ref=f50e122]:
+          - generic [ref=f50e123]:
+            - heading "Configuration" [level=1] [ref=f50e125]
+            - generic [ref=f50e128]:
+              - button "Organisation" [ref=f50e130] [cursor=pointer]:
+                - link "Organisation" [ref=f50e132]:
+                  - /url: "#"
+              - button "Patient" [ref=f50e137] [cursor=pointer]:
+                - link "Patient" [ref=f50e139]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f50e144] [cursor=pointer]:
+                - link "Appointment Books" [ref=f50e146]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f50e151] [cursor=pointer]:
+                - link "Quick Pay" [ref=f50e153]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f50e158] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f50e160]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f50e165] [cursor=pointer]:
+                - link "Users & Staff" [ref=f50e167]:
+                  - /url: "#"
+              - generic [ref=f50e171]:
+                - button "Clinical Config" [expanded] [ref=f50e172] [cursor=pointer]:
+                  - link "Clinical Config" [ref=f50e174]:
+                    - /url: "#"
+                - region "Clinical Config" [ref=f50e194]:
+                  - tree [active] [ref=f50e196]:
+                    - treeitem "Risk Strat Builder" [level=1] [ref=f50e197]:
+                      - link [aria-hidden] [ref=f50e199] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f50e200]: Risk Strat Builder
+                    - treeitem "Template Library" [expanded] [level=1] [ref=f50e201]:
+                      - link [aria-hidden] [ref=f50e203] [cursor=pointer]:
+                        - /url: "#"
+                        - generic [ref=f50e206]: Template Library
+                      - group [ref=f50e210]:
+                        - treeitem "Document Templates" [level=2] [ref=f50e211]:
+                          - link [aria-hidden] [ref=f50e213] [cursor=pointer]:
+                            - /url: "#"
+                            - generic [ref=f50e214]: Document Templates
+                        - treeitem "Consultation Templates" [level=2] [ref=f50e215]:
+                          - link [aria-hidden] [ref=f50e217] [cursor=pointer]:
+                            - /url: "#"
+                            - generic [ref=f50e218]: Consultation Templates
+                        - treeitem "Prescribing Formularies" [level=2] [ref=f50e219]:
+                          - link [aria-hidden] [ref=f50e221] [cursor=pointer]:
+                            - /url: "#"
+                            - generic [ref=f50e222]: Prescribing Formularies
+              - button "Case Prioritisation" [ref=f50e179] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f50e181]:
+                  - /url: "#"
+          - generic [ref=f50e183] [cursor=pointer]
+        - generic [ref=f50e186]: Please select a menu item
