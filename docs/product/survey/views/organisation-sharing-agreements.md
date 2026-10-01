@@ -9,7 +9,8 @@ routes:
   - /paco/configuration/organisation/sharing-agreements
 controls: []
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Organisation Sharing Agreements
@@ -46,6 +47,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 
 - Source, approval lifecycle, and management controls for agreements remain unobserved.
 - `Status` did not expose a sort state; field-value filtering remains unavailable or unverified because its menu exposed only `general` and `columns` tabs.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/sharing-agreements`: `Organisations you share data with`, có dữ liệu (populated).
 
 ## Tester notes
 

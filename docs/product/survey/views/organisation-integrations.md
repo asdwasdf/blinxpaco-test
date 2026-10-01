@@ -1,14 +1,28 @@
 ---
 id: organisation-integrations
 title: Organisation Integrations
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/integrations]
+routes:
+  - /paco/configuration/organisation/integrations
 controls:
-  - { name: Save, kind: mutation }
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-organisation-integrations-1
+    from: organisation-integrations
+    destination_hint: cấu hình integration được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Integrations
@@ -41,6 +55,16 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Blank c
 ## Open questions
 
 - Whether blank content is intended, permission-based, loading failure, or defect remains unresolved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/integrations`: heading `Integrations`; control `Save`.
+
+Gap / Open Question:
+
+- `Save` có thể đổi kết nối hệ thống ngoài (rủi ro EXTERNAL_SIDE_EFFECT).
 
 ## Tester notes
 

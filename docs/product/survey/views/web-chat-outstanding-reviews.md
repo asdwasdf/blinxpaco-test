@@ -1,14 +1,19 @@
 ---
 id: web-chat-outstanding-reviews
 title: Web Chat and Video Outstanding Reviews
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/web-chat/review/, /web-chat/?rd=/review/]
+routes:
+  - /web-chat/review/
+  - /web-chat/?rd=/review/
 controls:
-  - { name: Log in, kind: external }
+  - name: Log in
+    kind: external
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Web Chat and Video Outstanding Reviews
@@ -41,6 +46,16 @@ Navigation and accessibility observation, dev, `Super Admin GB`, 2026-09-19. Aut
 ## Open questions
 
 - Required Web Chat authentication, review visibility, review actions, and empty/error states remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Outstanding Reviews` chuyển `/web-chat/review/` → `/web-chat/?rd=/review/` → SSO Microsoft.
+
+Gap / Open Question:
+
+- Cần tester đăng nhập SSO Web Chat.
 
 ## Tester notes
 

@@ -15,7 +15,8 @@ controls:
   - name: Show archived
     kind: filter
 verified_by: []
-last_observed: 2026-09-30
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Patient Search
@@ -47,6 +48,16 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. S
 
 - `View`, `Edit`, `View Audit`, `Archive`, and `Save for offline access` remain untested; only `Profile` navigation was verified.
 - `Gender` filter options expose `undefined` accessible names, preventing reliable option identification and indicating an accessibility/data-label gap.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Patients > Patient Search` mở `/paco/patient-search` (khác `/patient-search/` của Care Navigation); sau 6s chỉ thấy header, chưa thấy UI tìm kiếm.
+
+Gap / Open Question:
+
+- Chưa phân biệt empty với tải chậm; hai route patient search khác nhau cần làm rõ.
 
 ## Tester notes
 

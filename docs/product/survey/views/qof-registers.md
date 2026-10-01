@@ -13,7 +13,8 @@ controls:
   - name: Search...
     kind: search
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # QOF Registers
@@ -43,6 +44,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. `
 ## Open questions
 
 - Register definitions, selector dependency, `Run` behavior, and expected calculations remain unknown.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `QOF Registers` mở `/patient-analyser-new/` với 4 row; nhãn menu trùng nên cần chọn button visible cuối cùng.
 
 ## Tester notes
 

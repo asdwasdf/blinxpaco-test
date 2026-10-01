@@ -1,18 +1,26 @@
 ---
 id: quick-pay-product-catalogue
 title: Quick Pay Product Catalogue
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco-connect/quick-pay/products]
+routes:
+  - /paco-connect/quick-pay/products
 controls:
-  - { name: Search..., kind: read-only }
-  - { name: Create New Product, kind: mutation }
-  - { name: Columns, kind: read-only }
-  - { name: Filters, kind: read-only }
-  - { name: Action, kind: unknown }
+  - name: Search...
+    kind: read-only
+  - name: Create New Product
+    kind: mutation
+  - name: Columns
+    kind: read-only
+  - name: Filters
+    kind: read-only
+  - name: Action
+    kind: unknown
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Quick Pay Product Catalogue
@@ -44,6 +52,12 @@ Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026
 ## Open questions
 
 - Whether route is stale, unavailable in dev, permission-dependent, or defective remains unresolved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Tab `Product Catalogue` → `/paco-connect/quick-pay/products` (heading `Products`). Configuration > Quick Pay > Product Catalogue dùng cùng route.
 
 ## Tester notes
 

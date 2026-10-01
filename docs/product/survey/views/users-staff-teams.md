@@ -1,17 +1,44 @@
 ---
 id: users-staff-teams
 title: Users and Staff Teams
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/staff/teams]
+routes:
+  - /paco/configuration/staff/teams
 controls:
-  - { name: Add New, kind: mutation }
-  - { name: Team Name, kind: mutation }
-  - { name: Assign Staff, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Add New
+    kind: mutation
+  - name: Team Name
+    kind: mutation
+  - name: Assign Staff
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-users-staff-teams-1
+    from: users-staff-teams
+    destination_hint: team mới
+    trigger: Add New
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-users-staff-teams-2
+    from: users-staff-teams
+    destination_hint: teams được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Users and Staff Teams
@@ -44,6 +71,12 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22 after ma
 ## Open questions
 
 - Team creation/removal, membership validation, duplicate handling, authorization, and save behavior remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/staff/teams`: heading `Teams`; control `Add New`, `Save`.
 
 ## Tester notes
 

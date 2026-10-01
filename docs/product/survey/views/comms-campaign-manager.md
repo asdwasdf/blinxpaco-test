@@ -25,7 +25,48 @@ controls:
   - name: Campaign Types
     kind: filter
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-comms-campaign-manager-1
+    from: comms-campaign-manager
+    destination_hint: draft campaign
+    trigger: Create Campaign
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-campaign-manager-2
+    from: comms-campaign-manager
+    destination_hint: tin được gửi lại (SEND)
+    trigger: Resend
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-campaign-manager-3
+    from: comms-campaign-manager
+    destination_hint: recipient campaign thay đổi
+    trigger: Add Selected
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-campaign-manager-4
+    from: comms-campaign-manager
+    destination_hint: campaign được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Campaign Manager
@@ -61,6 +102,16 @@ Accessibility observation, external Comms Hub dev, authenticated session associa
 
 - Safe recipient, send boundary and cleanup process remain unspecified.
 - Campaign Outbox landing/search is covered separately; communication details, context persistence, export contents and campaign details remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Campaign Manager` → `/commshub/campaign-manager` trên host Comms Hub, 9 row, kèm `SESSION EXPIRED`.
+
+Gap / Open Question:
+
+- `Resend` gửi lại tin cho bệnh nhân (SEND): cần recipient synthetic được duyệt.
 
 ## Tester notes
 

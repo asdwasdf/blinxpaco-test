@@ -17,7 +17,8 @@ controls:
   - name: Search observation
     kind: search
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Capacity & Demand
@@ -60,6 +61,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 - Observation selector filtering, session selection, saved-report behavior, table search, grid-side panels, row expansion, and query execution remain unverified.
 - `Save Report` and `Import` are mutation boundaries and require approval.
 - Chart semantics and expected metric values lack a trusted baseline.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Capacity & Demand` mở app `/capacity-demand/` với dữ liệu (ví dụ tổng appointment booked, planned vs actual hours).
 
 ## Tester notes
 

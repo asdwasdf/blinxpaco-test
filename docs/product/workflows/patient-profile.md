@@ -139,4 +139,11 @@
 - `[Observed: dev, Super Admin GB, 2026-10-01]` Inbox `Columns` có `Response ID` ẩn và `Date Sent` checked; `Filters` có danh sách UUID cho `Response ID` và phép `Equals` theo ngày cho `Date Sent`. Panel đóng không thay đổi. Không lưu giá trị ID/patient hoặc bật cột; mutation `None`.
 - Exact resume state: candidate profile–Inbox chưa đối chiếu cùng instance vì thiếu cùng ID hoặc timestamp phía profile. Nếu cần chứng minh một-một, tìm khóa chung bằng UI read-only trên fixture an toàn; không dùng `View Form` đang bất ổn hoặc suy từ tên form. Nếu không có khóa, pivot sang gap khác.
 
+## Discovery update run-20261001-085609
+
+`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+- `Patients > Patient Search` → `/paco/patient-search`: sau 6s chỉ thấy header. `Patients > Care Navigation` → `Patient Profile Search` (`/patient-search/`, `A-Z Search`). Hai route patient search khác nhau cần làm rõ.
+- Data dependency: cần bệnh nhân synthetic; tìm kiếm yêu cầu định danh bệnh nhân nên không khám phá.
+
 ## Tester notes

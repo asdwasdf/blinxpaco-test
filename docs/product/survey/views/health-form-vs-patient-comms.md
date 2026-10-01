@@ -1,3 +1,16 @@
+---
+id: health-form-vs-patient-comms
+title: Health Form Inbox vs Patient Comms
+routes:
+  - health-form-inbox
+roles:
+  - Super Admin GB
+environment: dev
+status: Observed
+controls: []
+verified_by: []
+last_observed: 2026-10-01
+---
 # Health Form Inbox vs Patient Comms — So sánh
 
 ## Tổng quan

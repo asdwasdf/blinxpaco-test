@@ -1,17 +1,54 @@
 ---
 id: users-staff-role-groups
 title: Users and Staff Role Groups
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/staff/role-groups]
+routes:
+  - /paco/configuration/staff/role-groups
 controls:
-  - { name: Add New Role, kind: mutation }
-  - { name: Add New Role Group, kind: mutation }
-  - { name: Edit, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Add New Role
+    kind: mutation
+  - name: Add New Role Group
+    kind: mutation
+  - name: Edit
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-users-staff-role-groups-1
+    from: users-staff-role-groups
+    destination_hint: role group mới
+    trigger: Add New
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-users-staff-role-groups-2
+    from: users-staff-role-groups
+    destination_hint: quyền role group thay đổi
+    trigger: Edit
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-users-staff-role-groups-3
+    from: users-staff-role-groups
+    destination_hint: role groups được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Users and Staff Role Groups
@@ -44,6 +81,16 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthet
 ## Open questions
 
 - Difference from proxy role groups, edit lifecycle, validation, authorization safeguards, and save behavior remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/staff/role-groups`: heading `Role Groups`; control `Add New`, `Edit`, `Save`.
+
+Gap / Open Question:
+
+- Sửa role group đổi quyền (mutation rủi ro cao); VERIFY_FLOW cần role group test thuộc sở hữu.
 
 ## Tester notes
 

@@ -17,7 +17,28 @@ controls:
   - name: Create new case
     kind: mutation
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-unallocated-cases-1
+    from: unallocated-cases
+    destination_hint: form case mới / case detail
+    trigger: Create new case
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-unallocated-cases-1
+    from: unallocated-cases
+    destination_hint: filter preset được lưu (persistence chưa rõ)
+    trigger: Filters > Save
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Unallocated Cases
@@ -52,6 +73,22 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-20. Synthetic no-match
 - Case allocation, status transitions, and board-card actions remain unverified.
 - The visible `white` priority label may represent configuration data rather than intended UI terminology; expected label remains unknown.
 - Applying alternate sort values remains unverified to avoid unnecessary exposure of live case ordering.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `/paco/unallocated` hiển thị `Unallocated (0)`, `List View`, sort `Breaching (high to low)`, `Filters`, `Create new case`.
+
+Gap / Open Question:
+
+- List rỗng; sort/allocation cần case chưa phân bổ (data dependency).
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Filters` mở sidebar `Filters` (`Clear all`, `Loading filters`, `Cancel`, `Save`); `List View` không thấy thay đổi.
 
 ## Tester notes
 

@@ -25,7 +25,168 @@ controls:
   - name: Quick Pay
     kind: navigation
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-configuration-1
+    from: configuration
+    to: users-staff-teams
+    trigger: Users & Staff > Teams
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-2
+    from: configuration
+    to: users-staff-role-groups
+    trigger: Users & Staff > Role Groups
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-3
+    from: configuration
+    to: users-staff-profiles
+    trigger: Users & Staff > Staff Profiles
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-4
+    from: configuration
+    to: patient-dfd-route-failure
+    trigger: Patient > DFD
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-5
+    from: configuration
+    to: patient-care-navigation
+    trigger: Patient > Care Navigation
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-6
+    from: configuration
+    to: appointment-books-scheduler
+    trigger: Appointment Books > Scheduler
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-7
+    from: configuration
+    to: appointment-books-sessions
+    trigger: Appointment Books > Sessions
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-8
+    from: configuration
+    to: appointment-books-slot-types
+    trigger: Appointment Books > Slot Types
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-9
+    from: configuration
+    to: appointment-books-appointments
+    trigger: Appointment Books > Appointments
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-10
+    from: configuration
+    to: appointment-books-external-reminders
+    trigger: Appointment Books > External Appt Reminders
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-11
+    from: configuration
+    to: appointment-books
+    trigger: Appointment Books > Appointment Books
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-12
+    from: configuration
+    to: quick-pay-product-catalogue
+    trigger: Quick Pay > Product Catalogue
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-13
+    from: configuration
+    to: quick-pay-accounts
+    trigger: Quick Pay > Accounts
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-14
+    from: configuration
+    to: patients-proxy-role-groups
+    trigger: Patients & Proxy > Role Groups
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-15
+    from: configuration
+    to: risk-strat-builder
+    trigger: Clinical Config > Risk Strat Builder
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-configuration-16
+    from: configuration
+    to: template-library-route-failure
+    trigger: Clinical Config > Template Library
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Configuration
@@ -69,6 +230,18 @@ Accessibility observation reverified, dev, `Super Admin GB`, 2026-09-20. `Patien
 ## Open questions
 
 - Mutation behavior and permission boundaries inside child pages remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- Nhóm `Users & Staff` trong Configuration gồm `Staff Profiles`, `Role Groups`, `Teams`.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Nhóm `Patient`: `DFD`, `Care Navigation`. Nhóm `Appointment Books`: `Scheduler`, `Appointment Books`, `Sessions`, `Slot Types`, `Appointments`, `External Appt Reminders`. Nhóm `Quick Pay`: `Product Catalogue`, `Accounts`. Nhóm `Patients & Proxy`: `Role Groups`. Nhóm `Clinical Config`: `Risk Strat Builder`, `Template Library`.
 
 ## Tester notes
 

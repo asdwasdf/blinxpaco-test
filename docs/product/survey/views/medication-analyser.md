@@ -13,7 +13,8 @@ controls:
   - name: Search...
     kind: search
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Medication Analyser
@@ -44,6 +45,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. S
 
 - Report definitions and expected calculations remain unknown.
 - Grid search behavior remains unestablished because the synthetic query produced no observable row change.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Medication Analyser` mở cùng URL `/patient-analyser-new/` với Patient Analyser; tab không phản ánh trên URL.
 
 ## Tester notes
 

@@ -11,7 +11,8 @@ controls:
   - name: Log in
     kind: unknown
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Media Library
@@ -42,6 +43,16 @@ Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026
 
 - Does Media Library require additional authentication or role-specific permission?
 - Is persistent loading state expected behavior or environment issue?
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Media Library` chuyển `/web-chat/media-library/` → `/web-chat/?rd=/media-library/` → SSO Microsoft (`login.microsoftonline.com`).
+
+Gap / Open Question:
+
+- Web Chat & Video cần SSO Microsoft riêng; agent không đăng nhập, không lưu URL SAML.
 
 ## Tester notes
 

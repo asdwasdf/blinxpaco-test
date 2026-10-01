@@ -23,7 +23,8 @@ controls:
   - name: Notifications
     kind: panel
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Comms Hub Navigation
@@ -68,6 +69,12 @@ Accessibility observation, Paco and authenticated external Comms Hub dev, `Super
 - Expected session duration and `error-at-axios-interceptor` expiry behavior remain undocumented.
 - `Dismissed` and `All` notification-tab behavior remains blocked by decorative overlay interception; `Clear All` semantics were not tested.
 - Sidebar responsiveness below 1920×1080 remains unclear: at 1536×730 content was off-screen, while 1920×1080 exposed a working `.navigation-toggle` and normal submenu expansion.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- Submenu `Comms Hub`: `Template Manager`, `Campaign Manager`, `Patient Manager`.
 
 ## Tester notes
 

@@ -13,7 +13,8 @@ controls:
   - name: Submit
     kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Organisation Code Rule
@@ -48,6 +49,16 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthet
 
 - Rule operands and generated paragraph were not accessible enough to classify.
 - Validation, duplicate handling, and persistence behavior remain unobserved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Code Rule` trong Configuration chuyển sang app `/configuration/`; không thấy heading sau 4s.
+
+Gap / Open Question:
+
+- Rời `/paco` sang app cấu hình legacy; nội dung chưa quan sát được.
 
 ## Tester notes
 

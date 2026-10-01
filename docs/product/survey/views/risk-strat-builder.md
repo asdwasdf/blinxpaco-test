@@ -17,7 +17,48 @@ controls:
   - name: Models
     kind: navigation
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-risk-strat-builder-1
+    from: risk-strat-builder
+    destination_hint: risk model mới
+    trigger: New Model
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-risk-strat-builder-2
+    from: risk-strat-builder
+    destination_hint: risk model thay đổi
+    trigger: Add Risk Factor
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-risk-strat-builder-3
+    from: risk-strat-builder
+    destination_hint: risk model được lưu
+    trigger: Save Model
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-risk-strat-builder-4
+    from: risk-strat-builder
+    destination_hint: risk model bị xóa (DELETE)
+    trigger: Delete Model
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Risk Strat Builder
@@ -50,6 +91,12 @@ Mutation verified: created uniquely named empty synthetic model, observed score 
 ## Open questions
 
 - Required fields and whether deletion has confirmation/usage constraints remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/clinical-config/risk-strat-builder`: `Models`, model mẫu `My BMI Risk Model`; control `New Model`, `Add Risk Factor`, `Save Model`, `Delete Model`, `Save`.
 
 ## Tester notes
 

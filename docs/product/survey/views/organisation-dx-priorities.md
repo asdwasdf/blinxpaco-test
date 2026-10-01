@@ -1,17 +1,54 @@
 ---
 id: organisation-dx-priorities
 title: Organisation DX Priorities
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/dx-priorities]
+routes:
+  - /paco/configuration/organisation/dx-priorities
 controls:
-  - { name: Search Priorities..., kind: read-only }
-  - { name: Add Service & Priority, kind: mutation }
-  - { name: Remove pair, kind: destructive }
-  - { name: Save, kind: mutation }
+  - name: Search Priorities...
+    kind: read-only
+  - name: Add Service & Priority
+    kind: mutation
+  - name: Remove pair
+    kind: destructive
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-organisation-dx-priorities-1
+    from: organisation-dx-priorities
+    destination_hint: mapping dx priority thay đổi
+    trigger: Add Service & Priority
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-dx-priorities-2
+    from: organisation-dx-priorities
+    destination_hint: mapping dx priority thay đổi
+    trigger: Remove pair
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-dx-priorities-3
+    from: organisation-dx-priorities
+    destination_hint: dx priorities được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation DX Priorities
@@ -44,6 +81,12 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthet
 ## Open questions
 
 - Pair validation, save behavior, and effects on case handling remain unobserved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/dx-priorities`: heading `DX Priorities`; control `Remove pair`, `Add Service & Priority`, `Save`.
 
 ## Tester notes
 

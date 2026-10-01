@@ -13,7 +13,8 @@ controls:
   - name: A-Z Search
     kind: navigation
 verified_by: []
-last_observed: 2026-09-30
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Care Navigation Patient Profile Search
@@ -44,6 +45,16 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-20. `A-Z Search` struc
 ## Open questions
 
 - Patient profile workflow remains unverified; positive-result A-Z behavior requires approved test-patient data.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Patients > Care Navigation` mở `Patient Profile Search` (`/patient-search/`) với `A-Z Search` và ô `Search Patients...`; không có view care-navigation riêng.
+
+Gap / Open Question:
+
+- Cần bệnh nhân synthetic được chọn (data dependency); tìm kiếm cần định danh bệnh nhân.
 
 ## Tester notes
 

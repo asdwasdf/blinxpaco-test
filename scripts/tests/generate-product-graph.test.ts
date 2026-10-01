@@ -44,3 +44,46 @@ test('rejects duplicate view ids', () => {
   const parsed = parseSurveyView(view, 'quick.md');
   assert.throws(() => buildProductGraph([parsed, parsed]), /Duplicate survey view id/);
 });
+
+const relationshipView = view.replace('status: Confirmed', 'status: Observed').replace('last_observed: 2026-09-19', `last_observed: 2026-09-19
+relationships:
+  - id: R2
+    from: quick-send
+    destination_hint: sent-messages
+    trigger: Send
+    relationship: workflow
+    context: [selected patient]
+    classification: Inferred
+    mutation_boundary: true
+    evidence: [E1]
+  - id: R1
+    from: quick-send
+    to: patient-search
+    trigger: "Back \\"search\\""
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence: [E1]`);
+
+test('keeps legacy graph fields and adds typed relationships deterministically', () => {
+  const patient = parseSurveyView(view.replace('id: quick-send', 'id: patient-search').replace('routes: [patient-search]', 'routes: []'), 'patient.md');
+  const graph = buildProductGraph([parseSurveyView(relationshipView, 'quick.md'), patient]);
+  assert.deepEqual(graph.edges, [{ from: 'patient-search', to: 'quick-send', kind: 'route' }]);
+  assert.deepEqual(graph.relationships.map((item) => item.id), ['R1', 'R2']);
+  assert.equal(parseSurveyView(view, 'legacy.md').relationships.length, 0);
+});
+
+test('mutation boundaries never render as verified destinations', () => {
+  const graph = buildProductGraph([parseSurveyView(relationshipView, 'quick.md')]);
+  const mermaid = renderMermaid(graph);
+  assert.doesNotMatch(mermaid, /--> .*sent-messages/);
+  assert.match(mermaid, /-\.->\|boundary: Send\|/);
+  assert.match(mermaid, /&quot;search&quot;/);
+});
+
+test('rejects relationships without provenance or with unproven verification', () => {
+  assert.throws(() => parseSurveyView(relationshipView.replace('evidence: [E1]', 'evidence: []'), 'bad.md'), /evidence/);
+  assert.throws(() => parseSurveyView(relationshipView.replace('classification: Observed', 'classification: Verified-by-Mutation'), 'bad.md'), /reservation_id/);
+  assert.throws(() => parseSurveyView(relationshipView.replace('destination_hint: sent-messages', 'to: sent-messages'), 'bad.md'), /boundary/);
+});

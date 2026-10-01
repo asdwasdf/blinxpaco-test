@@ -1,17 +1,54 @@
 ---
 id: organisation-services
 title: Organisation Services
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/services]
+routes:
+  - /paco/configuration/organisation/services
 controls:
-  - { name: Search Services..., kind: read-only }
-  - { name: Remove service, kind: destructive }
-  - { name: Add Another, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Search Services...
+    kind: read-only
+  - name: Remove service
+    kind: destructive
+  - name: Add Another
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-organisation-services-1
+    from: organisation-services
+    destination_hint: danh sách service thay đổi
+    trigger: Remove service
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-services-2
+    from: organisation-services
+    destination_hint: danh sách service thay đổi
+    trigger: Add Another
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-services-3
+    from: organisation-services
+    destination_hint: services được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Services
@@ -45,6 +82,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 ## Open questions
 
 - Service fields, dependencies, validation, and removal semantics remain unobserved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/services`: heading `Services`; control `Remove service`, `Add Another`, `Save`.
 
 ## Tester notes
 

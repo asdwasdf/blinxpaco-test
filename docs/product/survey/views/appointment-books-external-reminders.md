@@ -1,20 +1,30 @@
 ---
 id: appointment-books-external-reminders
 title: External Appointment Reminders
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/configuration/#externalApptReminders]
+routes:
+  - /configuration/#externalApptReminders
 controls:
-  - { name: Slot Type, kind: mutation }
-  - { name: Email Template, kind: mutation }
-  - { name: SMS Template, kind: mutation }
-  - { name: Scheduling, kind: mutation }
-  - { name: Save to Patient Record?, kind: mutation }
-  - { name: Add new Reminder, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Slot Type
+    kind: mutation
+  - name: Email Template
+    kind: mutation
+  - name: SMS Template
+    kind: mutation
+  - name: Scheduling
+    kind: mutation
+  - name: Save to Patient Record?
+    kind: mutation
+  - name: Add new Reminder
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # External Appointment Reminders
@@ -47,6 +57,12 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. `Slot T
 ## Open questions
 
 - Reminder creation/removal lifecycle, validation, campaign precedence, delivery behavior, and patient-record persistence remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Appointment Books > External Appt Reminders` trong Configuration chuyển sang app `/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

@@ -1,17 +1,44 @@
 ---
 id: patients-proxy-role-groups
 title: Patients and Proxy Role Groups
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/proxy/role-groups]
+routes:
+  - /paco/configuration/proxy/role-groups
 controls:
-  - { name: Search Role Groups..., kind: read-only }
-  - { name: Add New Role, kind: mutation }
-  - { name: Add New Role Group, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Search Role Groups...
+    kind: read-only
+  - name: Add New Role
+    kind: mutation
+  - name: Add New Role Group
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-patients-proxy-role-groups-1
+    from: patients-proxy-role-groups
+    destination_hint: proxy role group mới
+    trigger: Add New
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-patients-proxy-role-groups-2
+    from: patients-proxy-role-groups
+    destination_hint: proxy role groups được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Patients and Proxy Role Groups
@@ -44,6 +71,12 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthet
 ## Open questions
 
 - Add/edit/delete lifecycle, validation, assignment semantics, authorization safeguards, and save behavior remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/proxy/role-groups`: heading `Role Groups`; control `Add New`, `Save`.
 
 ## Tester notes
 

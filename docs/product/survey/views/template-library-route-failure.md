@@ -9,7 +9,8 @@ routes:
   - configuration
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Template Library Route Failure
@@ -39,6 +40,12 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII
 ## Open questions
 
 - Is `/paco/configuration/clinical-config/template-library` the intended dev destination?
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Click `Clinical Config > Template Library` để trang nằm lại `/paco/configuration/organisation/general` (không điều hướng).
 
 ## Tester notes
 

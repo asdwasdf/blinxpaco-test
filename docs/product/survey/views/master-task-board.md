@@ -22,6 +22,17 @@ controls:
     kind: navigation
 verified_by: []
 last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-master-task-board-1
+    from: master-task-board
+    destination_hint: work board mới
+    trigger: Create new board
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Master Task Board
@@ -63,6 +74,22 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. W
 
 - Task detail đã quan sát read-only cho một task; creation, edit, assignment, comments, attachments và drag-and-drop behavior chưa kiểm chứng. Link trực tiếp từ `Patient Profile > Tasks` tới board chưa quan sát được.
 - Repeated console errors occurred while board data rendered; user-visible impact beyond successful rendering remains unclear.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Task Workboards` mở `/paco/workboards?tab=task`: `Work Boards`, `Tasks (0)`, `Cases (0)`, toggle `View My Tasks Only`/`View My Cases Only`, `Create new board`.
+
+Gap / Open Question:
+
+- Vẫn hiện `Loading workboards...` lúc 3.5s; chưa phân biệt empty với tải chậm.
+
+## Discovery run-20261001-085609 (part 3)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `View My Cases Only` không lọc tại chỗ mà điều hướng tới một board cụ thể `/paco/workboards/<id>`.
 
 ## Tester notes
 

@@ -15,7 +15,8 @@ controls:
   - name: Save
     kind: mutation
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Case Prioritisation
@@ -46,6 +47,16 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. Audit dialog opene
 ## Open questions
 
 - Valid rule semantics, precedence, audit refresh behavior, and safe cleanup remain unspecified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Mở nhóm `Case Prioritisation` trong Configuration không thấy mục con nào.
+
+Gap / Open Question:
+
+- Nhóm rỗng hay là link trực tiếp: chưa phân biệt.
 
 ## Tester notes
 

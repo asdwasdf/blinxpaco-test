@@ -18,6 +18,17 @@ controls:
     kind: filter
 verified_by: []
 last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-master-case-board-1
+    from: master-case-board
+    destination_hint: work board mới
+    trigger: Create new board
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Master Case Board
@@ -55,6 +66,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. S
 
 - Case-card detail, actions, allocation, status transitions, and drag-and-drop behavior remain unverified.
 - Repeated console errors occurred while board data rendered; user-visible impact beyond successful rendering remains unclear.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Case Workboards` mở một board cụ thể `/paco/workboards/<id>`: `Work Boards`, `Master Case Board`, cột `Awaiting patient validation`; có `Create new board`.
 
 ## Tester notes
 

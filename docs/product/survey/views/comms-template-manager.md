@@ -19,7 +19,48 @@ controls:
   - name: Set Org. Defaults
     kind: mutation
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-comms-template-manager-1
+    from: comms-template-manager
+    destination_hint: draft email template
+    trigger: Create New Email
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-template-manager-2
+    from: comms-template-manager
+    destination_hint: draft sms template
+    trigger: Create New SMS
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-template-manager-3
+    from: comms-template-manager
+    destination_hint: draft custom build
+    trigger: Create without a Template
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-template-manager-4
+    from: comms-template-manager
+    destination_hint: template được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Template Manager
@@ -62,6 +103,16 @@ Accessibility observation, external Comms Hub dev, authenticated session associa
 - Mutation setup, cleanup and approved test organisation remain unspecified.
 - Default-template persistence and validation remain unverified because dialog `Save` was not used.
 - Pre-built `Next` now reaches a populated unsaved editor, but persistence validation remains unverified. `Save` appeared enabled while required subject/plain-text fields were empty; whether save-time validation blocks persistence is unknown. Chooser/editor console errors remain unexplained.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Tester đã đăng nhập Comms Hub và cho phép truy cập read-only. `Template Manager` → `nhs-comms-hub-dev.blinxhealthcare.com/commshub/template-builder`: `Create a custom build`, `Use a pre-built template`, 9 row; đồng thời hiện `SESSION EXPIRED`.
+
+Gap / Open Question:
+
+- Banner `SESSION EXPIRED` hiện dù tester đã đăng nhập; trạng thái session chưa rõ.
 
 ## Tester notes
 

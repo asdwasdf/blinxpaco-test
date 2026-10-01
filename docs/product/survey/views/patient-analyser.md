@@ -17,7 +17,48 @@ controls:
   - name: Search...
     kind: search
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-patient-analyser-1
+    from: patient-analyser
+    destination_hint: luồng Comms Hub (cross-module, SEND)
+    trigger: Send to Comms Hub
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-patient-analyser-2
+    from: patient-analyser
+    destination_hint: gửi tin nhóm (SEND)
+    trigger: Group Quick Send
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-patient-analyser-3
+    from: patient-analyser
+    destination_hint: saved report
+    trigger: Save Report
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p3-patient-analyser-1
+    from: patient-analyser
+    destination_hint: import search definition (upload)
+    trigger: Advanced Search > Import
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Patient Analyser
@@ -51,6 +92,23 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. R
 
 - Report data prerequisites and expected calculations remain unknown.
 - Search scope and delayed/filter-trigger behavior remain unestablished because synthetic queries produced no observable row change.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Patient Analyser` mở `/patient-analyser-new/` (app Patient & Medication Analyser); boundary `Send to Comms Hub`, `Group Quick Send`, `Save Report`.
+
+## Discovery run-20261001-085609 (part 3)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Advanced Search` mở dialog `Advanced Patient Search`: `Tutorial`, `Existing version`, `Analyse`, `Import`, `Reference Report(s)`, `Add Rule Group`.
+- Click `Columns` không thực hiện được trong 8s (timeout).
+
+Gap / Open Question:
+
+- `Import` là upload định nghĩa search (cần approval).
 
 ## Tester notes
 

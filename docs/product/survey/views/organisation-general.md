@@ -19,7 +19,78 @@ controls:
   - name: Add Special Opening Hours
     kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-organisation-general-1
+    from: organisation-general
+    to: organisation-pathways-config
+    trigger: Pathways Config
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-general-2
+    from: organisation-general
+    to: organisation-skills
+    trigger: Skills
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-general-3
+    from: organisation-general
+    to: organisation-sharing-agreements
+    trigger: Sharing Agreements
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-general-4
+    from: organisation-general
+    to: organisation-org-priorities
+    trigger: Org Priority
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-general-5
+    from: organisation-general
+    to: organisation-inbound-priority-flow
+    trigger: Inbound Priority Flow
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-general-6
+    from: organisation-general
+    destination_hint: organisation general settings được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-general-7
+    from: organisation-general
+    destination_hint: editor special opening hours
+    trigger: + Add Special Opening Hours
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation General
@@ -52,6 +123,13 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Address
 ## Open questions
 
 - Which fields require validation and which persist immediately remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Configuration` mở `/paco/configuration/organisation/general`. Menu `Organisation` gồm `General`, `Practice Profiles`, `Locations`, `Skills`, `Code Rule`, `Sharing Agreements`, `Pathways Config`, `Services`, `Dx Priority`, `Org Priority`, `Inbound Priority Flow`, `Announcements`, `Integrations`.
+- Các nhóm cấu hình khác: `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, `Users & Staff`, `Clinical Config`, `Case Prioritisation`.
 
 ## Tester notes
 

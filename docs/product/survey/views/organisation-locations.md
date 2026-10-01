@@ -11,7 +11,8 @@ controls:
   - name: Search Locations...
     kind: read-only
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Organisation Locations
@@ -49,6 +50,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 - Meaning and safety of row `Actions` remain unverified.
 - Pagination, detail transitions, and an explicit page-search empty-state presentation remain unobserved.
 - Additional field sorts and applied grid filters remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/locations`: heading `Locations`, có 3 row.
 
 ## Tester notes
 

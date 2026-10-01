@@ -1,18 +1,56 @@
 ---
 id: organisation-inbound-priority-flow
 title: Organisation Inbound Priority Flow
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/inbound-priority-flow]
+routes:
+  - /paco/configuration/organisation/inbound-priority-flow
 controls:
-  - { name: Preview walk, kind: read-only }
-  - { name: Reset to default, kind: destructive }
-  - { name: Add, kind: mutation }
-  - { name: Delete, kind: destructive }
-  - { name: Save, kind: mutation }
+  - name: Preview walk
+    kind: read-only
+  - name: Reset to default
+    kind: destructive
+  - name: Add
+    kind: mutation
+  - name: Delete
+    kind: destructive
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-organisation-inbound-priority-flow-1
+    from: organisation-inbound-priority-flow
+    destination_hint: inbound priority rules thay đổi
+    trigger: Add
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-inbound-priority-flow-2
+    from: organisation-inbound-priority-flow
+    destination_hint: inbound priority rules thay đổi
+    trigger: Delete
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-inbound-priority-flow-3
+    from: organisation-inbound-priority-flow
+    destination_hint: inbound priority rules thay đổi
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Inbound Priority Flow
@@ -45,6 +83,16 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Preview
 ## Open questions
 
 - Full preview branches, draft persistence outside preview, publish semantics, validation, and correct clinical branching remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/inbound-priority-flow`: `Inbound priority rules engine` với `Questions`/`Outcomes`; control `Save`, `Add`, `Delete`.
+
+Gap / Open Question:
+
+- Thay đổi rule ảnh hưởng ưu tiên case inbound; cần rule test thuộc sở hữu và approval cleanup.
 
 ## Tester notes
 

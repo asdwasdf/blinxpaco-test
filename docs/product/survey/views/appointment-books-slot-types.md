@@ -1,13 +1,16 @@
 ---
 id: appointment-books-slot-types
 title: Appointment Books Slot Types Configuration
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco-connect/configuration/#service-types]
+routes:
+  - /paco-connect/configuration/#service-types
 controls: []
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Appointment Books Slot Types Configuration
@@ -39,6 +42,12 @@ Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026
 ## Open questions
 
 - Whether route is stale, unavailable in dev, permission-dependent, or defective remains unresolved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Appointment Books > Slot Types` trong Configuration chuyển sang app `/paco-connect/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

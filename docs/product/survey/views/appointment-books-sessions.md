@@ -1,13 +1,16 @@
 ---
 id: appointment-books-sessions
 title: Appointment Books Sessions Configuration
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco-connect/configuration/#clinics]
+routes:
+  - /paco-connect/configuration/#clinics
 controls: []
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Appointment Books Sessions Configuration
@@ -39,6 +42,12 @@ Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026
 ## Open questions
 
 - Whether route is stale, unavailable in dev, permission-dependent, or defective remains unresolved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Appointment Books > Sessions` trong Configuration chuyển sang app `/paco-connect/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

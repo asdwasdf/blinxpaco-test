@@ -1,3 +1,16 @@
+---
+id: patient-comms-hub
+title: Patient Comms / Comms Hub
+routes:
+  - comms-analytics
+roles:
+  - Super Admin GB
+environment: dev
+status: Observed
+controls: []
+verified_by: []
+last_observed: 2026-10-01
+---
 # Patient Comms / Comms Hub
 
 ## Overview

@@ -98,3 +98,14 @@ locator.type('text', {delay: 80});
 - Consent pills: SMS and Email pills are display-only, not checkbox inputs — they reflect patient communication preferences
 - Next button disabled state: React controlled, no external value indicators
 - Assertions lacking trusted expected basis: exact validation rules for enabling Next, campaign type impact on subsequent steps, tag selection defaults
+
+## Discovery update run-20261001-085609
+
+`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+- Sidebar `Comms Hub`: `Template Manager`, `Campaign Manager`, `Patient Manager` → host `nhs-comms-hub-dev.blinxhealthcare.com` (đã thêm vào `externalDevHosts` cho read-only theo approval tester).
+- Sau khi tester đăng nhập: cả ba trang tải dữ liệu (9 row) nhưng đồng thời hiện `SESSION EXPIRED`. `Analytics & Reports > Comms Analytics` vẫn rơi về `/commshub/login` (`loggedout=true&msg=error-at-axios-interceptor` ở lần đầu).
+- Approval stop: Template `Create New Email/SMS`, `Create without a Template`, `Save`; Campaign `Create Campaign`, `Resend` (SEND), `Add Selected`, `Save`; Patient `Create List`, `Add to Existing List`, `Upload CSV` (import), `Save`.
+- Handoff từ Paco: Patient Analyser `Send to Comms Hub`/`Group Quick Send` (SEND boundary, chưa thực hiện).
+
+## Tester notes
