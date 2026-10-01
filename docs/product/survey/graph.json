@@ -2627,6 +2627,34 @@
             "test-results/product-survey/run-20261001-085609/outcomes/"
           ],
           "destination_hint": "services được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p7-organisation-services-1",
+          "from": "organisation-services",
+          "trigger": "Add Another > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "service mới được lưu",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#12"
+        },
+        {
+          "id": "run-20261001-085609-p7-organisation-services-2",
+          "from": "organisation-services",
+          "trigger": "Remove service > Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "service bị xóa ngay",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#13"
         }
       ]
     },
@@ -3269,6 +3297,34 @@
             "test-results/product-survey/run-20261001-085609/outcomes/"
           ],
           "destination_hint": "risk model bị xóa (DELETE)"
+        },
+        {
+          "id": "run-20261001-085609-p6-risk-strat-builder-1",
+          "from": "risk-strat-builder",
+          "trigger": "Create Risk Factor",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "factor lưu ngay vào model đang chọn (không cần Save Model)",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#9"
+        },
+        {
+          "id": "run-20261001-085609-p6-risk-strat-builder-2",
+          "from": "risk-strat-builder",
+          "trigger": "Remove factor > Save all changes",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "factor bị gỡ khỏi model sau reload",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#10"
         }
       ]
     },
@@ -3685,6 +3741,48 @@
             "test-results/product-survey/run-20261001-085609/outcomes/"
           ],
           "destination_hint": "teams được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p5-users-staff-teams-1",
+          "from": "users-staff-teams",
+          "trigger": "Add New > Add > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "team mới xuất hiện trong danh sách sau reload",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#2"
+        },
+        {
+          "id": "run-20261001-085609-p5-users-staff-teams-2",
+          "from": "users-staff-teams",
+          "trigger": "Rename > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "tên team cập nhật; toast Team Update 1 successful",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#3"
+        },
+        {
+          "id": "run-20261001-085609-p5-users-staff-teams-3",
+          "from": "users-staff-teams",
+          "trigger": "Delete > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "team bị xóa khỏi danh sách sau reload",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#5"
         }
       ]
     },
@@ -5494,6 +5592,104 @@
         "test-results/product-survey/run-20261001-085609/outcomes/"
       ],
       "destination_hint": "draft SMS (`/template-builder/sms/create`)"
+    },
+    {
+      "id": "run-20261001-085609-p5-users-staff-teams-1",
+      "from": "users-staff-teams",
+      "trigger": "Add New > Add > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "team mới xuất hiện trong danh sách sau reload",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#2"
+    },
+    {
+      "id": "run-20261001-085609-p5-users-staff-teams-2",
+      "from": "users-staff-teams",
+      "trigger": "Rename > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "tên team cập nhật; toast Team Update 1 successful",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#3"
+    },
+    {
+      "id": "run-20261001-085609-p5-users-staff-teams-3",
+      "from": "users-staff-teams",
+      "trigger": "Delete > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "team bị xóa khỏi danh sách sau reload",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#5"
+    },
+    {
+      "id": "run-20261001-085609-p6-risk-strat-builder-1",
+      "from": "risk-strat-builder",
+      "trigger": "Create Risk Factor",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "factor lưu ngay vào model đang chọn (không cần Save Model)",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#9"
+    },
+    {
+      "id": "run-20261001-085609-p6-risk-strat-builder-2",
+      "from": "risk-strat-builder",
+      "trigger": "Remove factor > Save all changes",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "factor bị gỡ khỏi model sau reload",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#10"
+    },
+    {
+      "id": "run-20261001-085609-p7-organisation-services-1",
+      "from": "organisation-services",
+      "trigger": "Add Another > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "service mới được lưu",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#12"
+    },
+    {
+      "id": "run-20261001-085609-p7-organisation-services-2",
+      "from": "organisation-services",
+      "trigger": "Remove service > Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "service bị xóa ngay",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#13"
     },
     {
       "id": "run-20261001-085609-patient-details-report-1",

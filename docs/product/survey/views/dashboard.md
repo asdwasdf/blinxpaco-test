@@ -287,6 +287,16 @@ Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ kh
 
 - Chọn kỳ `month` thay đổi nội dung dashboard (variant mới); `week`/`year` chưa ghi vào checkpoint vì hết budget.
 
+## Discovery run-20261001-085609 (part 5 — direct mutation discovery)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Phiên PACO bị đăng xuất 2 lần (Cognito logout → `/paco/login`) trong lúc khám phá; kiểm chứng: mở Comms Hub rồi quay lại không gây logout, nên nhiều khả năng là hết hạn phiên.
+
+Gap / Open Question:
+
+- Thời lượng phiên PACO và nguyên nhân logout chưa xác định (Open Question).
+
 ## Tester notes
 
 [Protected area]

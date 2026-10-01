@@ -39,6 +39,39 @@ relationships:
     mutation_boundary: true
     evidence:
       - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p5-users-staff-teams-1
+    from: users-staff-teams
+    destination_hint: team mới xuất hiện trong danh sách sau reload
+    trigger: Add New > Add > Save
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#2
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p5-users-staff-teams-2
+    from: users-staff-teams
+    destination_hint: tên team cập nhật; toast Team Update 1 successful
+    trigger: Rename > Save
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#3
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p5-users-staff-teams-3
+    from: users-staff-teams
+    destination_hint: team bị xóa khỏi danh sách sau reload
+    trigger: Delete > Save
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#5
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Users and Staff Teams
@@ -77,6 +110,20 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22 after ma
 Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
 
 - `/paco/configuration/staff/teams`: heading `Teams`; control `Add New`, `Save`.
+
+## Discovery run-20261001-085609 (part 5 — direct mutation discovery)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Mutation có kiểm soát (dữ liệu `QA-AUTO`, đã cleanup), theo ngoại lệ khám phá trực tiếp trong `CLAUDE.md`.
+- `Add New` mở panel `Name` (tối đa 50 ký tự) + `Add`; `Add` chỉ thêm dòng ở client, reload là mất. Phải bấm `Save` chung để lưu.
+- `Save` sau khi thêm: team được lưu (19 → 20). Đổi tên + `Save`: toast `Success — Team Update 1 successful, 0 new teams created`.
+- `Delete` xóa dòng ngay ở client, không có confirm; chỉ lưu khi `Save`. Toast sau khi xóa vẫn là `Team Update 0 successful, 0 new teams created` (không nhắc xóa).
+
+Gap / Open Question:
+
+- Toast không phản ánh thao tác xóa; chưa rõ là thiết kế hay thiếu sót.
+- Chưa thử gán staff vào team (`Assign Staff`).
 
 ## Tester notes
 

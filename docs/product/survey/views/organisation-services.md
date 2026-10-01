@@ -49,6 +49,28 @@ relationships:
     mutation_boundary: true
     evidence:
       - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p7-organisation-services-1
+    from: organisation-services
+    destination_hint: service mới được lưu
+    trigger: Add Another > Save
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#12
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p7-organisation-services-2
+    from: organisation-services
+    destination_hint: service bị xóa ngay
+    trigger: Remove service > Delete
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#13
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Services
@@ -88,6 +110,18 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
 
 - `/paco/configuration/organisation/services`: heading `Services`; control `Remove service`, `Add Another`, `Save`.
+
+## Discovery run-20261001-085609 (part 7 — Services, Work Boards)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Mutation có kiểm soát (QA-AUTO, đã cleanup). `Add Another` thêm dòng `Service ID`/`Service Name`/`Case Type` (mặc định `Not set`); `Save` lưu, toast `Success — Changes saved successfully!`.
+- `Service ID` chỉ nhận chữ số: nhập `QA-AUTO-SVC-1` được lưu thành `1`, không có cảnh báo.
+- `Remove service` mở confirm `Delete Confirmation — Are you sure you want to delete <name>?`; `Delete` xóa **ngay** (không cần `Save`), toast `Item deleted successfully!` — khác với Teams (phải Save).
+
+Gap / Open Question:
+
+- Ràng buộc trùng `Service ID` chưa kiểm tra.
 
 ## Tester notes
 

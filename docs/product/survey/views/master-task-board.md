@@ -91,6 +91,17 @@ Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ kh
 
 - `View My Cases Only` không lọc tại chỗ mà điều hướng tới một board cụ thể `/paco/workboards/<id>`.
 
+## Discovery run-20261001-085609 (part 7 — Services, Work Boards)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Create new board` → `/paco/workboards/new-workboard`: `Board name`, `Assign Staff/Team`, `Board Owner`, `Organisation`, `Type`, `Add Actioned Cases`, `Permission for users to create tasks`, `Cancel`/`Save`.
+- Board `/paco/workboards/<id>`: `List view`/`Card view`, `Filters`, chip theo priority (`All`, `Emergency`, `High/Mid/Low Priority`, `Other`); menu `ellipsis` trên card case.
+
+Gap / Open Question:
+
+- Không thấy cách xóa/archive board trên UI nên chưa tạo board test.
+
 ## Tester notes
 
 [Protected area]

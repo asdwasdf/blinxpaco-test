@@ -180,6 +180,17 @@ Gap / Open Question:
 - `Show Org. Default Templates` và `Filters` chưa thấy thay đổi quan sát được.
 - `Edit` không mở vì chưa rõ form có tự lưu.
 
+## Discovery run-20261001-085609 (part 5 — direct mutation discovery)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Create New Email` mở modal chọn `Create a custom build` / `Use a pre-built template`; custom build trỏ tới `/commshub/commshub/template-builder/email/create` (path lặp `commshub`).
+- Form: `Language Selection` (mặc định `English`), `Subject line *`, `Email Text *` (bản plain-text), `Dynamic fields`, `Media Library`; nút `Save` (`#saveEmailTemplateBtn`) vẫn disabled sau khi nhập subject + text — có vẻ cần nội dung editor HTML (iframe). Không có gì được lưu.
+
+Gap / Open Question:
+
+- Điều kiện enable `Save` của email template chưa xác định.
+
 ## Tester notes
 
 [Protected area]

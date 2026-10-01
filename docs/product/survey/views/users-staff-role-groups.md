@@ -92,6 +92,18 @@ Gap / Open Question:
 
 - Sửa role group đổi quyền (mutation rủi ro cao); VERIFY_FLOW cần role group test thuộc sở hữu.
 
+## Discovery run-20261001-085609 (part 6 — Role Groups và Risk Strat factor)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Trang là bảng ánh xạ `Role` → `Role Group` → `RBAC Role` → `RBAC Activities` (permission P-code, ví dụ `(P7005) Super User`) → `Activity Status`; phân trang 5 trang.
+- `Add New` mở panel `Name` (50 ký tự) + `Add` (cùng mẫu Teams). Nút `Edit` duy nhất mở dialog `Edit Activity Status` (status presence: `Name`, `Status colour`, `Time Sensitive`), không phải sửa role.
+- Không có `Delete`/deactivate cho role trên trang → không tạo role test vì không cleanup được.
+
+Gap / Open Question:
+
+- Cách xóa/vô hiệu hóa role chưa thấy trên UI.
+
 ## Tester notes
 
 [Protected area]
