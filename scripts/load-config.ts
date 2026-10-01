@@ -79,6 +79,7 @@ export function loadConfig(configPath = path.resolve(process.cwd(), 'paco.config
 
   const paths = record(root.paths, 'paths');
   const ticket = record(root.ticket, 'ticket');
+  const jira = record(root.jira, 'jira');
   const safety = record(root.safety, 'safety');
   const defaults = record(root.defaults, 'defaults');
   const sourcePattern = string(ticket.sourcePattern, 'ticket.sourcePattern');
@@ -86,6 +87,20 @@ export function loadConfig(configPath = path.resolve(process.cwd(), 'paco.config
     new RegExp(sourcePattern);
   } catch {
     throw new Error('Invalid config: ticket.sourcePattern must be a valid regular expression');
+  }
+  const jiraOrigin = string(jira.origin, 'jira.origin');
+  let parsedJiraOrigin: URL;
+  try {
+    parsedJiraOrigin = new URL(jiraOrigin);
+  } catch {
+    throw new Error('Invalid config: jira.origin must be an HTTPS origin');
+  }
+  if (parsedJiraOrigin.protocol !== 'https:' || parsedJiraOrigin.href !== `${parsedJiraOrigin.origin}/`) {
+    throw new Error('Invalid config: jira.origin must be an HTTPS origin');
+  }
+  const jiraBrowsePath = string(jira.browsePath, 'jira.browsePath');
+  if (!jiraBrowsePath.startsWith('/') || !jiraBrowsePath.endsWith('/')) {
+    throw new Error('Invalid config: jira.browsePath must start and end with /');
   }
 
   return {
@@ -100,6 +115,10 @@ export function loadConfig(configPath = path.resolve(process.cwd(), 'paco.config
     ticket: {
       sourcePattern,
       primarySourceFile: literal(ticket.primarySourceFile, 'ticket.md', 'ticket.primarySourceFile'),
+    },
+    jira: {
+      origin: parsedJiraOrigin.origin,
+      browsePath: jiraBrowsePath,
     },
     safety: {
       mutationEnabledEnvironments: stringArray(safety.mutationEnabledEnvironments, 'safety.mutationEnabledEnvironments', false),

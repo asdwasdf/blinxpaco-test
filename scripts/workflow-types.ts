@@ -5,9 +5,9 @@ export const PHASES = [
   'LOCATE',
   'EXPLORE',
   'TEST_DESIGN',
-  'AUTOMATION_REVIEW',
+  'MANUAL_EXECUTE',
   'AUTOMATE',
-  'EXECUTE',
+  'AUTOMATION_EXECUTE',
   'REPORT',
   'COMPLETE',
 ] as const;
@@ -42,6 +42,51 @@ export type MutationClass =
   | 'Destructive'
   | 'Unknown';
 export type TestResult = 'Pass' | 'Fail' | 'Blocked' | 'Not Run' | 'Inconclusive';
+export type ExpectedBasis = 'Confirmed' | 'Observed' | 'Inferred' | 'Open Question';
+export type AutomationVerification =
+  | 'Matched product result'
+  | 'Product behavior mismatch'
+  | 'Automation defect'
+  | 'Setup or authentication failure'
+  | 'Inconclusive';
+
+export interface ManualAttempt {
+  id: string;
+  result: TestResult;
+  data_variant: 'same' | 'clean' | 'fresh_session' | 'control' | 'initial';
+  evidence: string[];
+}
+
+export interface ManualCaseExecution {
+  result: TestResult;
+  expected_basis: ExpectedBasis;
+  attempts: ManualAttempt[];
+  control_path_checked: boolean;
+  route: string;
+  locators: string[];
+  skip_or_block_reason: string | null;
+}
+
+export interface AutomationCaseImplementation {
+  spec_path: string | null;
+  diagnostic: boolean;
+  reason: string | null;
+  input_revision: number;
+}
+
+export interface AutomationCaseExecution {
+  result: TestResult;
+  verification: AutomationVerification;
+  evidence: string[];
+  product_result_changed: false;
+}
+
+export interface ExecutionState {
+  case_ids: string[];
+  manual: Record<string, ManualCaseExecution>;
+  automation: Record<string, AutomationCaseImplementation>;
+  runs: Record<string, AutomationCaseExecution>;
+}
 
 export interface PacoEnvironment {
   baseUrl: string;
@@ -63,6 +108,10 @@ export interface PacoConfig {
   ticket: {
     sourcePattern: string;
     primarySourceFile: 'ticket.md';
+  };
+  jira: {
+    origin: string;
+    browsePath: string;
   };
   safety: {
     mutationEnabledEnvironments: string[];

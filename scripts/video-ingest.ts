@@ -23,10 +23,10 @@ export interface VideoIngestPlan {
   contactSheet: VideoCommand;
 }
 
-export function validateVideoInput(inputPath: string): '.mp4' | '.webm' {
+export function validateVideoInput(inputPath: string): '.mp4' | '.webm' | '.mov' {
   const extension = path.extname(inputPath).toLowerCase();
-  if (extension !== '.mp4' && extension !== '.webm') {
-    throw new Error('Only .mp4 and .webm ticket videos are supported');
+  if (extension !== '.mp4' && extension !== '.webm' && extension !== '.mov') {
+    throw new Error('Only .mp4, .webm and .mov ticket videos are supported');
   }
   return extension;
 }
@@ -39,9 +39,10 @@ function isInside(parent: string, child: string): boolean {
 export function buildContactSheetCommand(framePattern: string, contactSheetPath: string, frameCount: number): VideoCommand {
   const columns = Math.min(3, Math.max(1, frameCount));
   const rows = Math.max(1, Math.ceil(frameCount / columns));
+  const frameWidth = Math.min(480, Math.floor(((16_383 - 16) / rows - 8) * 16 / 9));
   return {
     command: 'ffmpeg',
-    args: ['-y', '-i', framePattern, '-vf', `scale=480:-1,tile=${columns}x${rows}:padding=8:margin=8`, '-frames:v', '1', '-c:v', 'libwebp', contactSheetPath],
+    args: ['-y', '-i', framePattern, '-vf', `scale=${frameWidth}:-1,tile=${columns}x${rows}:padding=8:margin=8`, '-frames:v', '1', '-c:v', 'libwebp', contactSheetPath],
   };
 }
 
@@ -69,7 +70,7 @@ export function buildVideoIngestPlan(inputPath: string, outputDir: string): Vide
     },
     extract: {
       command: 'ffmpeg',
-      args: ['-i', resolvedInput, '-vf', `select='isnan(prev_selected_t)+gt(scene,${SCENE_THRESHOLD})+gte(t-prev_selected_t,${MAX_FRAME_INTERVAL_SECONDS})',showinfo`, '-vsync', 'vfr', '-c:v', 'libwebp', framePattern],
+      args: ['-i', resolvedInput, '-vf', `select='isnan(prev_selected_t)+gt(scene,${SCENE_THRESHOLD})+gte(t-prev_selected_t,${MAX_FRAME_INTERVAL_SECONDS})',showinfo`, '-fps_mode', 'vfr', '-c:v', 'libwebp', framePattern],
     },
     fallback: {
       command: 'ffmpeg',
@@ -138,7 +139,7 @@ const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : '';
 if (invokedPath === fileURLToPath(import.meta.url)) {
   const [inputPath, outputDir] = process.argv.slice(2);
   if (!inputPath || !outputDir) {
-    throw new Error('Usage: npm run video:ingest -- <input.mp4|input.webm> <docs/tickets/<ticket>/video>');
+    throw new Error('Usage: npm run video:ingest -- <input.mp4|input.webm|input.mov> <docs/tickets/<ticket>/video>');
   }
   ingestVideo(inputPath, outputDir);
 }

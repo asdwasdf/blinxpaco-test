@@ -3,13 +3,15 @@ import path from 'node:path';
 import { test } from 'node:test';
 import { buildContactSheetCommand, buildTimeline, buildVideoIngestPlan, parseShowinfoTimestamps, validateVideoInput } from '../video-ingest.js';
 
-test('accepts mp4 and webm inputs', () => {
+test('accepts mp4, webm and mov inputs', () => {
   assert.equal(validateVideoInput('ticket/PAC2-999-demo/demo.mp4'), '.mp4');
   assert.equal(validateVideoInput('ticket/PAC2-999-demo/demo.WEBM'), '.webm');
+  assert.equal(validateVideoInput('ticket/PAC2-999-demo/demo.mov'), '.mov');
+  assert.equal(validateVideoInput('ticket/PAC2-999-demo/demo.MOV'), '.mov');
 });
 
 test('rejects unsupported video inputs', () => {
-  assert.throws(() => validateVideoInput('demo.mov'), /Only \.mp4 and \.webm/);
+  assert.throws(() => validateVideoInput('demo.avi'), /Only \.mp4, \.webm and \.mov/);
 });
 
 test('builds safe ffmpeg argument arrays under durable ticket output', () => {
@@ -23,6 +25,9 @@ test('builds safe ffmpeg argument arrays under durable ticket output', () => {
   assert.deepEqual(plan.extract.command, 'ffmpeg');
   assert.ok(plan.extract.args.some((arg) => arg.includes('gt(scene')));
   assert.ok(plan.extract.args.some((arg) => arg.includes('gte(t-prev_selected_t,2)')));
+  assert.ok(plan.extract.args.includes('-fps_mode'));
+  assert.equal(plan.extract.args[plan.extract.args.indexOf('-fps_mode') + 1], 'vfr');
+  assert.ok(!plan.extract.args.includes('-vsync'));
   assert.deepEqual(plan.contactSheet.command, 'ffmpeg');
 });
 
@@ -73,6 +78,15 @@ test('builds a non-looping contact sheet for actual frames', () => {
 
   assert.ok(!command.args.includes('-stream_loop'));
   assert.ok(command.args.includes('scale=480:-1,tile=1x1:padding=8:margin=8'));
+});
+
+test('keeps long-video contact sheets within the WebP dimension limit', () => {
+  const command = buildContactSheetCommand('/tmp/frames/frame-%04d.webp', '/tmp/contact-sheet.webp', 371);
+  const filter = command.args[command.args.indexOf('-vf') + 1];
+  const [, width, columns, rows] = /scale=(\d+):-1,tile=(\d+)x(\d+)/.exec(filter) ?? [];
+
+  assert.ok(Number(width) * Number(columns) + 16 < 16_384);
+  assert.ok(Math.ceil(Number(width) * 9 / 16) * Number(rows) + 16 < 16_384);
 });
 
 test('rejects output outside docs/tickets', () => {

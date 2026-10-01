@@ -19,6 +19,13 @@ export function renderStatus(manifest: Manifest, nextAction: string): string {
     (item) => `- ${item.at} | revision ${item.input_revision} | ${item.phase} | ${item.outcome} | ${item.message}`,
   );
   const location = manifest.phases.LOCATE;
+  const manualCounts = Object.values(manifest.execution.manual).reduce<Record<string, number>>((counts, item) => {
+    counts[item.result] = (counts[item.result] ?? 0) + 1;
+    return counts;
+  }, {});
+  const implemented = Object.values(manifest.execution.automation).filter((item) => item.spec_path).length;
+  const automationBlocked = Object.values(manifest.execution.automation).filter((item) => !item.spec_path && item.reason).length;
+  const executed = Object.keys(manifest.execution.runs).length;
   const budget = location.budget
     ? `${location.budget.views_used}/${location.budget.views_limit} views; ${location.budget.elapsed_minutes}/${location.budget.minutes_limit} minutes`
     : 'Chưa ghi';
@@ -35,6 +42,11 @@ export function renderStatus(manifest: Manifest, nextAction: string): string {
 | Phase | Status | Outcome | Updated |
 |---|---|---|---|
 ${rows}
+
+## Execution Summary
+
+- Manual results: Pass ${manualCounts.Pass ?? 0}, Fail ${manualCounts.Fail ?? 0}, Inconclusive ${manualCounts.Inconclusive ?? 0}, Blocked ${manualCounts.Blocked ?? 0}, Not Run ${manualCounts['Not Run'] ?? 0}
+- Automation: Implemented ${implemented}, Executed ${executed}, Blocked ${automationBlocked}
 
 ## Completed Work
 

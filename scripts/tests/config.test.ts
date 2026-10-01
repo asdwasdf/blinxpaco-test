@@ -19,6 +19,9 @@ paths:
 ticket:
   sourcePattern: "^[A-Z][A-Z0-9]*-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*$"
   primarySourceFile: ticket.md
+jira:
+  origin: https://jira.example.test
+  browsePath: /browse/
 safety:
   mutationEnabledEnvironments: [dev]
   allowedHosts: [example.test]
