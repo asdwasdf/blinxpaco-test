@@ -1,0 +1,212 @@
+schema_version: 2
+ticket:
+  key: PAC2-6982
+  folder_name: PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org
+  source_directory: ticket/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org
+  primary_source: ticket.md
+input_snapshot:
+  revision: 1
+  generated_at: 2026-10-01T12:41:17.879Z
+  files:
+    - path: ticket.md
+      role: primary_source
+      type: md
+      sha256: 8cdad3f787c3dc5743c908bfb56d136ca976474fbb7b9df874c7603cc0b23db0
+workflow:
+  status: blocked
+  current_phase: MANUAL_EXECUTE
+  last_completed_phase: TEST_DESIGN
+  updated_at: 2026-10-01T13:35:41.481Z
+  checkpoints:
+    - at: 2026-10-01T12:41:17.879Z
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Đã xác minh ticket duy nhất, confinement và ticket.md.
+    - at: 2026-10-01T12:41:17.879Z
+      phase: INGEST
+      outcome: completed
+      input_revision: 1
+      message: Đã hash toàn bộ source; chỉ có ticket.md, không có video/attachments.
+    - at: 2026-10-01T12:42:57.543Z
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Hai atomic requirements từ AC trong Description; bốn open questions.
+    - at: 2026-10-01T12:42:57.543Z
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Cần QA xác nhận environment/role và manual auth trước khi duyệt website.
+    - at: 2026-10-01T12:53:48.605Z
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Auth hiện tại verified; Health Forms Designer route mở được, full
+        campaign/patient route chưa đủ.
+    - at: 2026-10-01T13:22:57.850Z
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: External host/auth blocker resolved. QA approved separate test
+        campaign; no mutation. Candidate/context unresolved; bounded scan
+        stopped.
+    - at: 2026-10-01T13:35:41.481Z
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: PCN-child hierarchy and setup roots confirmed.
+    - at: 2026-10-01T13:35:41.481Z
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Read-only setup surfaces and mutation boundary recorded.
+    - at: 2026-10-01T13:35:41.481Z
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Two stable cases designed; inventory persisted.
+    - at: 2026-10-01T13:35:41.481Z
+      phase: MANUAL_EXECUTE
+      outcome: blocked
+      input_revision: 1
+      message: Exact form relationship and safe patient required before mutation.
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-01T12:41:17.879Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-01T12:41:17.879Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-01T12:42:57.543Z
+    artifacts:
+      - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/requirements.md
+    warnings:
+      - AC nằm trong Description; thiếu role, safe test data, patient auth và
+        control context.
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-01T13:35:41.481Z
+    artifacts:
+      - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/feature-location.md
+    warnings:
+      - Campaign/form setup roots confirmed; patient scheduler route deferred to
+        execution.
+    blockers: []
+    budget:
+      views_used: 12
+      views_limit: 12
+      elapsed_minutes: 8
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-01T13:35:41.481Z
+    artifacts:
+      - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/exploration.md
+    warnings:
+      - Exact form ownership and safe patient remain execution inputs.
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-01T13:35:41.481Z
+    artifacts:
+      - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/test-cases.md
+    warnings:
+      - Execution blocked until exact child-owned form and safe test patient are
+        verified.
+    blockers: []
+  MANUAL_EXECUTE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: 2026-10-01T13:35:41.481Z
+    artifacts: []
+    warnings: []
+    blockers:
+      - Need exact child-owned form without Shared To and safe test
+        patient/recipient before persistent campaign creation/send.
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-01T12:41:17.879Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-01T12:41:17.879Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-01T12:41:17.879Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-01T12:41:17.879Z
+    artifacts: []
+    warnings: []
+    blockers: []
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: bc9207df1f72af2c09c69fdd564469b26df141458712cb110d0b06e13c5c1640
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 064a46161bb4b8a9585d2314e4058cd745634e45d09b81f91564e6c84bb69f89
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 5fac0f074100f576fd2746556bdeb1fc4d68d9a5d752b224708ee0950d0b30dc
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: 4ca2236b98bb3a6ec925bc28c6393c395f3d9f36959cb84c39ae12485619144b
+execution:
+  case_ids:
+    - PAC2-6982-TC-001
+    - PAC2-6982-TC-002
+  manual: {}
+  automation: {}
+  runs: {}

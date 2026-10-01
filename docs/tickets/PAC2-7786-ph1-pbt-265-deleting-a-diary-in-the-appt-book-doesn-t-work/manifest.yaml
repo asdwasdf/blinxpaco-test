@@ -1,0 +1,138 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-7786
+  folder_name: PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work
+  source_directory: ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-10-01T14:02:37.318Z"
+  files:
+    - path: ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/ticket.md
+      sha256: 86ad19a9f28700cb33798aaa5da6270b6f2520d84127095d560aaff0857e935e
+    - path: ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/attachments/123654-image-20260818-162620.png
+      sha256: 979edc9cb6e66c4c33344b52d9319f15729c7621589d0d92611a8047ad33a5fd
+    - path: ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/attachments/124861-PAC2-7786.mp4
+      sha256: 51491c1db6228a6038f33647ee377b72f31390000602fbfe4fd70b7df9272856
+    - path: "ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/attachments/124857-Screen Recording 2026-08-27 at 9.22.35 PM.mov"
+      sha256: fb4e262c2688888303b86fc9cd4a9f1e8b6f2bffb86e179b6c9d62b841506118
+    - path: "ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/attachments/124858-Screenshot 2026-08-27 at 9.29.44 PM.png"
+      sha256: ec1d9ca11a85a47d9ca42411ee4a48a0c2bb2b16a17370e6b1a5e8479ccf4a2c
+    - path: "ticket/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/attachments/124859-Screenshot 2026-08-27 at 9.31.08 PM.png"
+      sha256: 0e117ea97146a46d0760636b690cc88ba1b75e3b15cfb46ebd2bc9b443da6bc7
+
+fast_path:
+  video_ingest: completed
+  graph_lookup: pending
+  unresolved_blockers: 7
+  mutation_ledger: null
+  durable_evidence:
+    - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/PAC2-7786/contact-sheet.webp
+    - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/screen-recording-2026-08-27/contact-sheet.webp
+
+workflow:
+  status: in_progress
+  current_phase: LOCATE
+  last_completed_phase: ANALYZE
+  updated_at: "2026-10-01"
+  checkpoints:
+    - phase: DISCOVER
+      status: completed
+      outcome: completed
+      input_revision: 1
+      updated_at: "2026-10-01"
+    - phase: INGEST
+      status: completed
+      outcome: completed
+      input_revision: 1
+      updated_at: "2026-10-01"
+    - phase: ANALYZE
+      status: completed
+      outcome: completed_with_warnings
+      input_revision: 1
+      updated_at: "2026-10-01"
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/requirements.md
+      sha256: 06cb1473a6f68381cc995cc8acd1364a6fc068d079b78a60937324416fcc8415
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-01"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-01"
+    artifacts:
+      - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/PAC2-7786/timeline.md
+      - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/PAC2-7786/contact-sheet.webp
+      - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/screen-recording-2026-08-27/timeline.md
+      - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/screen-recording-2026-08-27/contact-sheet.webp
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-01"
+    artifacts:
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/requirements.md
+        sha256: 06cb1473a6f68381cc995cc8acd1364a6fc068d079b78a60937324416fcc8415
+    warnings:
+      - Formal Acceptance Criteria missing.
+      - Role, paired deployment environment, exact booking message, and Block/Delete product rule remain open.
+    blockers: []
+  LOCATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+    budget:
+      views_used: 0
+      views_limit: 12
+      elapsed_minutes: 0
+      minutes_limit: 15
+  EXPLORE: &pending_phase
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  TEST_DESIGN: *pending_phase
+  MANUAL_EXECUTE: *pending_phase
+  AUTOMATE: *pending_phase
+  AUTOMATION_EXECUTE: *pending_phase
+  REPORT: *pending_phase
+  COMPLETE: *pending_phase
+
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/feature-location.md
+    state: missing
+    input_revision: 1
+    sha256: null
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 06cb1473a6f68381cc995cc8acd1364a6fc068d079b78a60937324416fcc8415
+
+execution:
+  case_ids: []
+  manual: {}
+  automation: {}
+  runs: {}

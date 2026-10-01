@@ -1,0 +1,111 @@
+ticket:
+  id: PAC2-7669
+  title: Poor Performance in Scheduler Configuration Clinician Selection
+  sourceHash: "119562275d74aa7562cfe99a27e0502e86c3716aa377a6e0404f1c14f7bce99f"
+  sourcePath: ticket/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/ticket.md
+  importedAt: "2026-10-01T12:40:13.167Z"
+
+environment:
+  target: dev
+  baseUrl: https://pac2-7669.dev.blinxpaco-np.com
+  role: Blinx Deployment
+  roleAccessBasis: tester-confirmed admin-equivalent
+
+workflow:
+  startedAt: "2026-10-01T12:40:30.000Z"
+  currentPhase: AUTOMATE
+  phases:
+    - id: ANALYZE
+      status: complete
+      warning: requirements artifact contains unsupported <1 second wording; manual execution used ticket baseline instead
+    - id: LOCATE
+      status: complete
+      warning: feature-location artifact still names the old shared-dev route; branch route is verified in status and manual evidence
+    - id: EXPLORE
+      status: complete
+      warning: exploration artifact includes superseded shared-dev observation
+    - id: TEST_DESIGN
+      status: complete
+      warning: test-cases artifact incorrectly classifies draft clinician selection as mutation None
+    - id: MANUAL_EXECUTE
+      status: complete
+      completedAt: "2026-10-01T13:58:20Z"
+      artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/automation.md
+      artifactSha256: "efe5c340fc293f3ab137b857fc18b63fdf13f5d96c0dcacad73782f8e539ff01"
+    - id: AUTOMATE
+      status: pending
+    - id: AUTOMATION_EXECUTE
+      status: pending
+    - id: REPORT
+      status: pending
+    - id: COMPLETE
+      status: pending
+
+scope:
+  issueType: Performance Bug
+  summary: Clinician selection in Scheduler Configuration slow/freeze since proxy
+  rootCauseClaim: Proxy DB views not indexed plus redundant row/session fetching and render work
+  fixClaim: Jira comment says memory leak and redundant API fetching were fixed and tested on feature branch
+  testerAssigned: Fiona Nguyen
+
+artifacts:
+  - id: requirements.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/requirements.md
+    type: requirements
+    sha256: "1fb943c765c5589714575e41cc05edc8695a105d24cba6747792efdc13513ec0"
+  - id: video-timeline.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/video/timeline.md
+    type: evidence
+  - id: feature-location.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/feature-location.md
+    type: feature-location
+    sha256: "9ccfe59bd3faf429857a9b2904e2a58d0e1de15ecd183fe6e1058b4de71761e0"
+  - id: exploration.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/exploration.md
+    type: exploration
+    sha256: "06f55f332dbc31af94229114be4a68a278120fa885e6291a5225d075bb47779c"
+  - id: test-cases.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/test-cases.md
+    type: test-cases
+    sha256: "ae88bce7cbfe5bdea773ff76216783b22436ef8f1eb17eab741321f5adbb6f8c"
+  - id: automation.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/automation.md
+    type: manual-results
+    sha256: "efe5c340fc293f3ab137b857fc18b63fdf13f5d96c0dcacad73782f8e539ff01"
+  - id: emis-clinician-selection.png
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/emis-clinician-selection.png
+    type: evidence
+    sha256: "3551ebf4722aaaaabd8d7b1b0305ca05146d2e1acbc7cda4d87520fb0f96d832"
+  - id: saved-clinician-state.png
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/saved-clinician-state.png
+    type: evidence
+    sha256: "76f134d9e12062a342f8cbdd65085ab24ea78fc9dbc1387256c4664567283c9c"
+
+execution:
+  case_ids:
+    - TC-7669-001
+    - TC-7669-002
+    - TC-7669-003
+    - TC-7669-004
+    - TC-7669-005
+  results:
+    TC-7669-001: Pass
+    TC-7669-002: Pass
+    TC-7669-003: Pass
+    TC-7669-004: Pass
+    TC-7669-005: Pass
+  coverage:
+    emis:
+      mapping: Blood Test FJ / Face to Face / Same Day GP Appt
+      timingsMs: [149.1, 117.6, 134.5, 120.8]
+    pacoConnect:
+      mapping: Blood Test Due - Boot Camp 240225 / Face to Face / Blood Test
+      timingsMs: [143.7, 122.0, 143.4, 140.0, 113.3]
+  mutation:
+    class: Temporary
+    actions: clinician selection in unsaved dialog draft
+    persisted: false
+    cleanup: removed temporary chips where applicable and closed with Cancel
+    cleanupVerified: true
+    leftovers: []
+  blocker: null
