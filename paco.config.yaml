@@ -15,10 +15,14 @@ ticket:
   sourcePattern: "^[A-Z][A-Z0-9]*-[0-9]+-[a-z0-9]+(?:-[a-z0-9]+)*$"
   primarySourceFile: ticket.md
 
+jira:
+  origin: https://blinxsolutions.atlassian.net
+  browsePath: /browse/
+
 safety:
   mutationEnabledEnvironments: [dev]
-  allowedHosts: [blinx.dev.blinxpaco-np.com]
-  externalDevHosts: []
+  allowedHosts: [blinx.dev.blinxpaco-np.com, pac2-3798.dev.blinxpaco-np.com, pac2-4700-qs-only.dev.blinxpaco-np.com]
+  externalDevHosts: [pac2-6763-send-key.dev.blinxpaco-np.com]
 
 defaults:
   readOnly: true

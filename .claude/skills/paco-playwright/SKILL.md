@@ -1,24 +1,46 @@
 ---
 name: paco-playwright
-description: Use when assessing, implementing, or executing explicitly selected Paco Playwright cases within safety scope.
+description: Use when manually executing, generating, or running standalone Paco Playwright cases within the selected ticket scope.
 ---
 
 # Paco Playwright
 
 ## Scope and dependencies
-Only `AUTOMATION_REVIEW`, `AUTOMATE`, or `EXECUTE`. Require selected valid case, clear expected basis, environment, valid local browser-auth state, role when relevant, and exact mutation approval. For every UI-dependent case, call `evaluateUiLocationGate()` before assessment or code; require valid `feature-location.md`, `Confirmed` entry path, context and test-data category. Read feature-location/data-safety/evidence standards, `docs/templates/automation.md`, and `scripts/manual-login.md`. If auth state is missing or expired, direct tester to `npm run auth:login`; never request or use credentials. Do not automate unassessed cases, infer correctness from `Inferred` knowledge, auto-fill login credentials, or broaden scope.
+Only `MANUAL_EXECUTE`, `AUTOMATE`, or `AUTOMATION_EXECUTE`. Require selected valid cases, environment, role, current revision, valid local browser-auth state, and a valid `feature-location.md` for every UI-dependent case. Call `evaluateUiLocationGate()` before UI work. Read feature-location, workflow, data-safety and evidence standards plus `docs/templates/automation.md`. Missing/expired auth is `Blocked: Authentication expired`; direct tester to `npm run auth:login`. Never request credentials, read serialized auth state, infer expected behavior, broaden scope, or automate assertions based only on `Inferred`/`Open Question` knowledge.
 
 ## Ownership
-Own `automation.md` and selected Playwright source; raw output stays in `test-results/`. Preserve final `## Tester notes`.
+Own `automation.md`, selected Playwright source, and structured `playwright_cases` proposals. Raw runner output stays in `test-results/`; durable reviewed/redacted evidence is promoted for `REPORT`. Preserve final `## Tester notes`. Never update `manifest.yaml` or `status.md`.
 
-## Workflow
-1. **Plugin-first:** dùng Claude Playwright plugin để explore và execute observable test trước khi viết code. Quyết định mỗi case `Worth automating`, `Not worth automating`, `Later`, hoặc `Blocked` với lý do.
-2. Chỉ tạo `.spec.ts` nhỏ khi regression quan trọng, expected result dựa trên `Confirmed`/`Observed`, flow/locator ổn định và chạy lại có giá trị. Không automate để khám phá expected behavior.
-3. Prefer Chromium, role locators, observable waits, and sourced assertions. No fixed sleep/private API bypass.
-4. Use local ignored storage state without reading it into prompt/docs. Missing or login redirect is `Blocked: Authentication expired`, not product failure.
-5. Trên dev, mutation đầy đủ phải gọi hostname-aware `evaluateMutationGate()` với `paco.config.yaml`, exact approval và runtime guards. Production/unknown host luôn bị chặn; mọi mutation ghi ledger đã redact.
-6. Nếu thiếu domain rule, test recipient, test data hoặc expected result, **Ask QA early** với blocker, observation, evidence/timestamp, decision, concrete choices và affected cases; không đoán hoặc viết automation để né blocker.
-7. Record `Pass`/`Fail`/`Blocked`/`Not Run`/`Inconclusive`, durable evidence, mutation, cleanup, leftovers, and redaction. Raw output ở `test-results/`; evidence dùng sau `REPORT` phải promote vào `docs/tickets/<ticket-folder>/evidence/`. Only clear expected result plus met precondition may `Fail`.
+## Modes
+
+### `MANUAL_EXECUTE` — mode `manual`
+
+1. Dùng Claude Playwright MCP chạy từng case đúng environment, role, precondition và safe test data. Ghi route, role locator, sequence, observable wait, expected basis, timestamp và evidence từng attempt.
+2. Kiểm tra UI result và persisted state sau reload/navigation. Dùng network observation chỉ để phân biệt nguyên nhân; không bypass UI behavior cần test.
+3. Attempt đầu `Fail` phải chạy lại tối thiểu ba diagnostic attempts: cùng dữ liệu, dữ liệu mới/sạch, fresh page/session; thêm control path gần nhất. Mỗi retry phải có mục đích và evidence. Chỉ ghi `Fail` khi tái hiện ổn định hoặc evidence xác định product cause.
+4. Fail rồi pass/outcome không ổn định là `Inconclusive`, không ép thành `Fail`. `Blocked`/`Not Run` phải có reason. Trước khi hoàn thành, rà acceptance criteria, requirement mapping và toàn bộ case inventory để tránh bỏ case/step.
+5. Trả structured `playwright_cases[].manual`; không tạo spec trong phase này.
+
+### `AUTOMATE` — mode `generate`
+
+1. Tạo standalone `.spec.ts` cho mọi manual `Pass`/`Fail`. `Fail` encode expected requirement nên spec được phép fail đúng product assertion khi defect còn tồn tại.
+2. Intermittent/flaky `Inconclusive` tạo diagnostic repeat spec nhưng không encode unsupported correctness conclusion. `Blocked`/`Not Run` được skip chỉ với reason.
+3. Tái dùng durable route/locator/precondition từ manual record; không dùng MCP khám phá lại. Nếu dữ liệu thiếu/stale, trả blocker để orchestrator quay lại bounded manual investigation.
+4. Prefer Chromium, role locators, observable waits và sourced assertions. Không fixed sleep, private API bypass hoặc assertion chỉ từ `Inferred`.
+5. Đặt spec dưới `playwright/tests/tickets/`; filename phải chứa stable case ID. Trả spec trong artifact list với checksum cùng structured `playwright_cases[].automation` gồm spec path, diagnostic flag, reason và input revision.
+
+### `AUTOMATION_EXECUTE` — mode `cli`
+
+1. Chạy Playwright CLI ngay, đúng ticket/test scope; không dùng MCP.
+2. Ghi exit status, case result và phân loại: `Matched product result`, `Product behavior mismatch`, `Automation defect`, `Setup or authentication failure`, hoặc `Inconclusive`.
+3. CLI fail đúng expected product assertion tái hiện manual `Fail`; không phải automation defect. Locator/auth/setup failure không chứng minh product `Fail`. Không sửa product result từ automation result.
+4. Trả structured `playwright_cases[].run`; evidence cần report phải durable/redacted.
+
+## Mutation, cleanup và evidence
+
+Execution-first workflow authorization cho phép side effect đúng ticket/case/action/test-data scope trên configured dev host mà không hỏi lại từng lần. Vẫn bắt buộc hostname-aware `evaluateMutationGate()`, `PACO_ALLOW_MUTATION=true`, destructive guard riêng, safe recipient/data, mutation ledger, cleanup khi khả thi và leftovers khi cleanup fail. Production/unknown host hard block. Không thực hiện destructive action không cần cho expected result.
+
+Record result chỉ bằng `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive`. Raw output ở `test-results/`; không lưu credential, cookie, token, header hoặc auth state.
 
 ## Direct invocation, stop, outcome
-Write owned artifact/source and return proposal; never update manifest/status or call next skill. Stale dependency/auth/approval is `Blocked`; runner fault is `Failed`. Return `ChildSkillOutcome` v1 with checksums, counts, mutation/cleanup, sensitive-data status, blockers/warnings, and next phase.
+Write only owned artifact/source and return `ChildSkillOutcome` v1 with structured cases, checksums, counts, mutation/cleanup, sensitive-data status, blockers/warnings and recommended next phase. Stale dependency/auth/data is `Blocked`; runner fault is `Failed`. Never call another skill or update workflow checkpoint.

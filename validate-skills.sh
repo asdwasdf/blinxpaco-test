@@ -11,8 +11,12 @@ done
 
 grep -q 'markFeatureLocationStale' .claude/skills/paco-ticket/SKILL.md || { echo "FAIL: paco-ticket semantic location stale gate"; exit 1; }
 grep -q 'evaluateUiLocationGate' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright UI location gate"; exit 1; }
-grep -q 'Plugin-first' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright plugin-first contract"; exit 1; }
+grep -q 'MANUAL_EXECUTE' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright manual execution contract"; exit 1; }
+grep -q 'AUTOMATION_EXECUTE' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright CLI execution contract"; exit 1; }
+grep -q 'tối thiểu ba' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright manual retry contract"; exit 1; }
 grep -q 'Ask QA early' .claude/skills/paco-ticket/SKILL.md || { echo "FAIL: paco-ticket ask-QA contract"; exit 1; }
+grep -q 'Product Result' .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report product result contract"; exit 1; }
+grep -q 'Automation Verification' .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report automation verification contract"; exit 1; }
 grep -q 'docs/tickets/<ticket-folder>/evidence/' .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report durable evidence contract"; exit 1; }
 
 echo "PASS: skill contracts complete"
