@@ -1,0 +1,349 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-4700
+  folder_name: PAC2-4700-refactor-here-for-branching-purposes-only
+  source_directory: ticket/PAC2-4700-refactor-here-for-branching-purposes-only
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-23T19:10:00+07:00"
+  files:
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/ticket.md
+      role: primary_source
+      type: md
+      sha256: c19debcb04ca6e239a179869f5fb8274494686abe23a4d8246a2bac94fccc7ac
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/101185-Screen Recording 2026-02-11 at 23.15.26.mov
+      role: supporting
+      type: mov
+      sha256: d4696d505ee1754600306512c05e2c2ffafb928ed6192f63dfce420528ebab3c
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/101186-Screen Recording 2026-02-12 at 00.25.56.mov
+      role: supporting
+      type: mov
+      sha256: ce8dd52002eaac5eee4c1e0716bef4db9171e938ad5d43dbaa9b17622dd28040
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/101187-Screen Recording 2026-02-12 at 00.05.38.mov
+      role: supporting
+      type: mov
+      sha256: 91fa7b56c08767a6fe32ad0c591d797009991febdcaebf01e566d2ef53cc029e
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/101694-Screen Recording 2026-02-16 at 16.39.00.mov
+      role: supporting
+      type: mov
+      sha256: b61c121fa68097fe09e29b88a6cabf537b4f101e49723a4fbf78b140bcc21b56
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/126597-OS Rocketbar Test.mp4
+      role: supporting
+      type: mp4
+      sha256: 8a99198938ae058af260cf07d9dfbe48f597fda47b9c7c65a82c48e5d8a62d9b
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/126598-Connect ROCKETBAR Test.mp4
+      role: supporting
+      type: mp4
+      sha256: 21002442ff1cd16f8a23315cd5c5457c39eaae3b080e0bab10c9271a7e870cd0
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/126599-GP ROCKETBAR Test.mp4
+      role: supporting
+      type: mp4
+      sha256: 29525c3935cf702706d24d3f1f8532dcd30425974fe3f733636346a711e753f4
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127142-image-20260917-101016.png
+      role: supporting
+      type: png
+      sha256: b150104c4f1365dd08d355455910f28680984f65ae2c6fb058f81f2905676317
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127143-image-20260917-101319.png
+      role: supporting
+      type: png
+      sha256: 2ca259447802d220b62e76d0362c6ce72704bba30d4d955736d1392331aa9334
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127144-image-20260917-100959.png
+      role: supporting
+      type: png
+      sha256: 22b74edb1b31aaa7e4b8ed97f7063b2103fb89ffaef565f5ff4116711cb67dd1
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127145-image-20260917-101517.png
+      role: supporting
+      type: png
+      sha256: 1a189f7a4edbb747a79b44aa1c6ef3d64a1f0df233936e8adeaa81d073477e12
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127146-image-20260917-100814.png
+      role: supporting
+      type: png
+      sha256: c4c7bd7227f2d0352b8ea7d08ae1bfd6935fe9810ad89b97b7fd1e20b29860c4
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127147-Screen sharing - 2026-09-17 11_11_44 AM.mp4
+      role: supporting
+      type: mp4
+      sha256: 4e3322ade2ea564f63b2fed41c40352787e4f3fd8a18190dadbfe7449dd7d34c
+    - path: ticket/PAC2-4700-refactor-here-for-branching-purposes-only/attachments/127148-image-20260917-101412.png
+      role: supporting
+      type: png
+      sha256: 893edc90f13fbac35357c3e292429461961583fef2a328a2f1c2a33de3e72df0
+
+fast_path:
+  video_ingest: completed_with_warnings
+  graph_lookup: completed_with_warnings
+  unresolved_blockers: 0
+  automation_decision: later_no_spec
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: completed
+  current_phase: COMPLETE
+  last_completed_phase: COMPLETE
+  updated_at: "2026-09-24T11:23:00+07:00"
+  checkpoints:
+    - at: "2026-09-23T19:10:00+07:00"
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: "Resolved exactly PAC2-4700; folder PAC2-4700-refactor-here-for-branching-purposes-only matches regex, confined, unique key, ticket.md present. No existing docs/tickets output. 15 source files (ticket.md + 14 attachments)."
+    - at: "2026-09-23T19:44:05+07:00"
+      phase: INGEST
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Initial ingest: 4 mp4; four .mov unsupported at that time."
+    - at: "2026-09-23T22:40:00+07:00"
+      phase: INGEST
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Added native .mov support; ingested and visually reviewed all 4 MOV contact sheets/timelines in separate output dirs. Video coverage now 8/8. MOV evidence confirms existing Quick Send flows; no new requirement. PII remains local only."
+    - at: "2026-09-23T19:50:43+07:00"
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "paco-requirements: 14 atomic REQ (8 Confirmed QA-scope, 6 Inferred consistency/functional candidates including 1 Disputed scheduler popup). Jira AC missing. Graph has no reusable Quick Send route. PII in source frames redacted in requirements.md. Next LOCATE needs env/role/auth."
+    - at: "2026-09-23T20:02:41+07:00"
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "paco-explore locate: Quick Send dialog Confirmed on baseline, Connect branch, OS branch via Patient actions menu. GP blocked at /login/ (host not allowlisted, SSO does not carry). Rocketbar unresolved. Mutation None. 11/12 views."
+    - at: "2026-09-23T20:16:30+07:00"
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "paco-explore observe: QS read-only on baseline/Connect/OS. SMS default; sort options match; no Scheduler Link Required popup; OS Files tooltip missing Patient Number; Connect first-search patient ≠ OS/baseline. GP/Rocketbar not observed. Mutation None."
+    - at: "2026-09-23T21:36:00+07:00"
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "paco-test-design: 12 cases (6 Confirmed TC-001..006, 6 Inferred TC-010..015). Mutation None. GP/Quick Form/Rocketbar Preliminary. Automation Later only TC-001..003 open+Close/sort/tick; Inferred+unlocated Blocked. Live dashboard ≠ PAC2-4683 URL."
+    - at: "2026-09-23T21:53:22+07:00"
+      phase: AUTOMATION_REVIEW
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "paco-playwright: TC-001..003 Later (plugin-first locators ổn, không pixel/4683). TC-004..006 Blocked locate. TC-010..015 Blocked Inferred/fixture. Không .spec.ts. Mutation None."
+    - at: "2026-09-23T21:53:22+07:00"
+      phase: AUTOMATE
+      outcome: no_change
+      input_revision: 1
+      message: "Skip AUTOMATE: không viết .spec.ts run này. Plugin-first đủ cho EXECUTE. Later khi URL 4683 + fixture chốt."
+    - at: "2026-09-23T21:53:22+07:00"
+      phase: EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Plugin-first 20260923-plugin-qs Super Admin GB. TC-001 Pass smoke/Inconclusive vs 4683; TC-002 Pass; TC-003 Pass. TC-004 Not Run; TC-005/006/010/012/013 Blocked; TC-011/014/015 Inconclusive. Không Fail. Mutation None. Close cleanup."
+    - at: "2026-09-23T22:08:09+07:00"
+      phase: EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Rerun 20260923-plugin-ramella. Tester: live /paco/dashboard = PAC2-4683. Fixture Michael Ramella. TC-001 Pass vs 4683; TC-010/012/014 Inconclusive Inferred; TC-013 Blocked mapped-campaign. 0 Fail. Mutation None. Close cleanup."
+    - at: "2026-09-23T22:19:21+07:00"
+      phase: EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Rerun 20260923-plugin-gp-ramella after tester manual auth + allowlist approval. TC-004 Pass locate/read-only; TC-005 Pass read-only; TC-006 Blocked because Rocket Bar desktop protocol handler is absent. 0 Fail. Mutation None."
+    - at: "2026-09-23T22:49:00+07:00"
+      phase: REPORT
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Report generated. Overall Inconclusive: 5 Pass, 0 Fail, 2 Blocked, 5 Inconclusive. Video 8/8. Mutation None; cleanup complete; sensitive evidence retained local only."
+    - at: "2026-09-23T22:50:00+07:00"
+      phase: COMPLETE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Workflow complete with warnings. Remaining optional reruns require Rocket Bar desktop handler, mapped campaign, documents fixture, or Confirmed expected basis."
+    - at: "2026-09-23T23:15:00+07:00"
+      phase: EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Deep read-only rerun after manual re-auth on baseline PAC2-4683, Connect branch and OS branch. Quick Send open/close and layout stable; Files completed loading; Booking Link rendered. 0 new Fail. Mutation None."
+    - at: "2026-09-23T23:16:00+07:00"
+      phase: REPORT
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Report reconciled after deep rerun; overall remains Inconclusive: 5 Pass, 0 Fail, 2 Blocked, 5 Inconclusive."
+    - at: "2026-09-24T11:22:00+07:00"
+      phase: EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Focused Quick Send rerun excluding Send/Schedule. Baseline, OS and GP opened with same patient; Files completed loading. Connect patient selection reproduced branch-context loss to baseline twice. 0 Fail on current basis; Mutation None."
+    - at: "2026-09-24T11:23:00+07:00"
+      phase: REPORT
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Report reconciled with focused rerun; overall remains Inconclusive. Connect branch-context retention requires QA expected-basis confirmation."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-23T19:10:00+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T22:40:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/video/
+    warnings:
+      - "All 8/8 videos ingested and visually reviewed, including four .mov attachments."
+      - "Extracted frames contain patient identifiers and emails; treat as local evidence, not shareable."
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T19:50:43+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/requirements.md
+    warnings:
+      - "Jira Acceptance criteria is Not provided; REQ-001..008 Confirmed only as QA-comment instructions, not product AC."
+      - "REQ-009..014 remain Inferred from Beth comments/video/PNG; REQ-013 Disputed (Scheduler Link Required)."
+      - "No reusable Quick Send route in product graph/feature-map; Connect dashboard survey is 404 on mainline."
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T20:02:41+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/feature-location.md
+    warnings:
+      - "GP host pac2-4700-qs-only.dev.blinxpaco-np.com is outside allowedHosts; PACO SSO did not carry; stopped at /login/."
+      - "Rocket Bar sidebar consumer not opened (no feature-branch URL; budget)."
+      - "Locate screenshots contain patient identifiers; local evidence, not shareable."
+    blockers: []
+    budget:
+      views_used: 11
+      views_limit: 12
+      elapsed_minutes: 7
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T20:16:30+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/exploration.md
+    warnings:
+      - "GP not observed (auth Blocked; host outside allowedHosts)."
+      - "Rocketbar not observed (no feature-branch URL)."
+      - "Connect first search result is not the same patient as OS/baseline; REQ-009/011/012 not comparable on this fixture."
+      - "REQ-013 Scheduler Link Required not reproduced; still Disputed."
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T21:36:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/test-cases.md
+    warnings:
+      - "Tester 2026-09-23: live /paco/dashboard = PAC2-4683 đã merge; visual vs 4683 Pass-capable."
+      - "GP resolved; TC-004/005 Pass read-only. Rocket Bar route resolved; TC-006 Blocked external desktop protocol handler."
+      - "Fixture Michael Ramella used; TC-013 still Blocked mapped campaign; Select Attachment empty — Inconclusive not Fail."
+      - "REQ-004 coverage thin: re-click selected SMS only; no off→on other Send as in mutation None."
+      - "REQ-013 Disputed; do not automate must-popup. Do not re-fail PAC2-4683/PAC2-5776."
+      - "Do not automate assertions whose expected-result basis is only Inferred (TC-010..015)."
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T21:53:22+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/automation.md
+    warnings:
+      - "Không viết .spec.ts; TC-001..003 Later; Inferred Blocked."
+      - "Baseline = PAC2-4683 (tester 2026-09-23); visual vs 4683 Pass-capable; không pixel automate."
+    blockers: []
+  AUTOMATE:
+    status: skipped
+    outcome: no_change
+    input_revision: 1
+    updated_at: "2026-09-23T21:53:22+07:00"
+    artifacts: []
+    warnings:
+      - "Skip .spec.ts run này — plugin-first EXECUTE; Later khi GP/Rocketbar/Quick Form locate."
+    blockers: []
+  EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T22:19:21+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/automation.md
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/test-cases.md
+    warnings:
+      - "TC-004 Pass locate/read-only; không chọn Quick Form."
+      - "TC-005 Pass GP read-only; TC-006 Blocked external Rocket Bar protocol handler."
+      - "TC-013 Blocked mapped campaign; TC-010/012 Inconclusive Inferred (Ramella email on file; Select Attachment empty)."
+      - "TC-011/014/015 Inconclusive — Inferred/Disputed; không Fail."
+      - "Không Fail pixel, default SMS, missing Patient Number, empty chip, must-popup, must-persist, Connect first-search ≠ OS."
+    blockers: []
+  REPORT:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T22:49:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/report.md
+    warnings:
+      - "Overall Inconclusive: TC-006 external desktop handler; TC-013 mapped campaign; TC-010/011/012/014/015 Inferred or Disputed."
+      - "Raw screenshots and video frames contain PII; retained local only and not promoted as durable evidence."
+    blockers: []
+  COMPLETE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-23T22:50:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/report.md
+    warnings:
+      - "Optional reruns require Rocket Bar desktop handler, mapped campaign/documents fixture, or Confirmed expected basis."
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 6b7648cac3f125bb1f914efb0842ad61fcddb1167806fe3f9f0c48867143e0c8
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: c529c7ab25a2180cb319c0da429c1eb3814fa4a96ef17d78e746c870f2c0538c
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 420c6bdd05221cb905e04c59ba35e55d12207fd605aaaa6033557d58a7e971d7
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: 1fd4d6a88369ceef72a034d88e4b8137b8db99690aa5632d5a3c3af173a843ca
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/automation.md
+    state: valid
+    input_revision: 1
+    sha256: a98cead1d6133195b7c8dc7e8c50af977ecb6fb2b6826fbf5d1228190f91af52
+  report.md:
+    owner: paco-report
+    path: docs/tickets/PAC2-4700-refactor-here-for-branching-purposes-only/report.md
+    state: valid
+    input_revision: 1
+    sha256: 0d11a86443052d64127b22f3c27276d0c6d58889a97fea0b3badc781f20d11ac

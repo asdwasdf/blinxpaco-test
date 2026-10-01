@@ -9,7 +9,7 @@ routes:
   - /paco/configuration/organisation/sharing-agreements
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation Sharing Agreements
@@ -20,7 +20,9 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The read-only grid exposes `ODS Code`, `Name`, and `Address`; previously observed row content also included access categories, status, and an identifier. Observed rows had `active` status and access categories including prescribing, consultations, documents, and codings. No dedicated search field or pagination control was visible. Selecting the `ODS Code` header did not expose `aria-sort` or a visible sort indicator, so sortable behavior is not established. Organisation and agreement identifiers are omitted from this artifact.
+The read-only grid exposes `ODS Code`, `Name`, `Address`, `Access`, `Status`, and `ID`. Observed rows had `active` status and access categories including prescribing, consultations, documents, and codings. No dedicated page search or pagination control was visible. Selecting the `Status` header did not expose `aria-sort`, so sortable behavior remains unestablished.
+
+Keyboard-opening the `Status` column menu exposed `general` and `columns` tabs. `general` contained `Pin Column`, `Autosize This Column`, `Autosize All Columns`, and `Reset Columns`. `columns` listed all six fields with checked visibility controls and a search box. A synthetic no-match search emptied the column list; clearing restored it. The menu was dismissed without pinning, resizing, resetting, or changing visibility. Organisation and agreement identifiers are omitted. Mutation: `None`.
 
 ## Execution guidance
 
@@ -38,12 +40,12 @@ The read-only grid exposes `ODS Code`, `Name`, and `Address`; previously observe
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. `ODS Code` header selection produced no observable sort state. Organisation names, addresses, ODS codes, and IDs redacted from documentation. Mutation: `None`.
+Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 2026-09-22. `Status` header selection produced no observable sort state. Its column menu `general`/`columns` tabs and a synthetic no-match column search were inspected and restored unchanged. Organisation names, addresses, ODS codes, and IDs redacted. Mutation: `None`.
 
 ## Open questions
 
 - Source, approval lifecycle, and management controls for agreements remain unobserved.
-- Whether status or access columns support filtering/sorting remains unverified.
+- `Status` did not expose a sort state; field-value filtering remains unavailable or unverified because its menu exposed only `general` and `columns` tabs.
 
 ## Tester notes
 

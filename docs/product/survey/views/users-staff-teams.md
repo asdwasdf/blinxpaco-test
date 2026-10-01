@@ -11,7 +11,7 @@ controls:
   - { name: Assign Staff, kind: mutation }
   - { name: Save, kind: mutation }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Users and Staff Teams
@@ -22,7 +22,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The page displayed `Search Teams...`, repeated `Team Name` and `Assign Staff` fields, plus `Add New` and `Save`. A synthetic no-match query did not hide the 18 visible team assignment blocks and produced no explicit empty-state message, so current search matching behavior could not be established from DOM state. Clearing the query preserved the same block count. Existing team names and staff assignments are omitted. No field, assignment, add action, or save action was used.
+The page displays `Search Teams...`, repeated `Team Name` and `Assign Staff` fields, plus `Add New` and `Save`. Reverified after manual authentication on 2026-09-22: a synthetic no-match query did not hide any of the 18 accessible team assignment blocks and produced no explicit empty-state message, so current search matching behavior remains unestablished. Clearing preserved the same structure. Existing team names and staff assignments are omitted. No field, assignment, add action, or save action was used. Mutation: `None`.
 
 ## Execution guidance
 
@@ -39,7 +39,7 @@ The page displayed `Search Teams...`, repeated `Team Name` and `Assign Staff` fi
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Synthetic no-match search left 18 visible team assignment blocks unchanged and showed no explicit empty state. Team and staff values redacted. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22 after manual authentication. Synthetic no-match search left 18 accessible team assignment blocks unchanged and showed no explicit empty state; search was cleared. Team and staff values redacted. Mutation: `None`.
 
 ## Open questions
 

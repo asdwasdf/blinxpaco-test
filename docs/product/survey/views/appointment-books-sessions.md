@@ -7,7 +7,7 @@ status: Observed
 routes: [/paco-connect/configuration/#clinics]
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Appointment Books Sessions Configuration
@@ -18,7 +18,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The route returned HTTP 404 and exposed only a `Loading` status in the accessibility tree. No session configuration, empty state, or actionable control became available.
+Reverified on 2026-09-22: the route returned HTTP 404 and remained on an explicit `Loading sessions` status after a bounded wait. No session configuration, empty state, terminal UI error, or actionable content became available. Mutation: `None`.
 
 ## Execution guidance
 
@@ -34,7 +34,7 @@ The route returned HTTP 404 and exposed only a `Loading` status in the accessibi
 
 ## Evidence
 
-Navigation and accessibility observation, dev, `Super Admin GB`, 2026-09-19. HTTP 404 with `Loading`-only state. Mutation: `None`.
+Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. HTTP 404 with persistent `Loading sessions` after a three-second bounded wait. Mutation: `None`.
 
 ## Open questions
 

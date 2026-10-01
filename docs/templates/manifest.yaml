@@ -1,4 +1,4 @@
-schema_version: 1
+schema_version: 2
 
 ticket:
   key: ""
@@ -15,7 +15,6 @@ fast_path:
   video_ingest: not_applicable
   graph_lookup: pending
   unresolved_blockers: 0
-  automation_decision: null
   mutation_ledger: null
   durable_evidence: []
 
@@ -46,9 +45,9 @@ phases:
       minutes_limit: 15
   EXPLORE: *pending_phase
   TEST_DESIGN: *pending_phase
-  AUTOMATION_REVIEW: *pending_phase
+  MANUAL_EXECUTE: *pending_phase
   AUTOMATE: *pending_phase
-  EXECUTE: *pending_phase
+  AUTOMATION_EXECUTE: *pending_phase
   REPORT: *pending_phase
   COMPLETE: *pending_phase
 
@@ -59,3 +58,9 @@ outputs:
     state: missing
     input_revision: 1
     sha256: null
+
+execution:
+  case_ids: []
+  manual: {}
+  automation: {}
+  runs: {}

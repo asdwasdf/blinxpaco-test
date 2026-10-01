@@ -1,0 +1,283 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-6763
+  folder_name: PAC2-6763-paco-assist-document-analyser-management
+  source_directory: ticket/PAC2-6763-paco-assist-document-analyser-management
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-28T09:55:33.689Z"
+  files:
+    - path: ticket/PAC2-6763-paco-assist-document-analyser-management/ticket.md
+      role: primary_source
+      type: md
+      sha256: ae5e202e9fbf1b89864d3e721370de6153d19a07ef3cfae1a2b207da479ade86
+
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: no_match
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: complete
+  current_phase: COMPLETE
+  last_completed_phase: REPORT
+  updated_at: "2026-09-28T13:12:08.288Z"
+  checkpoints:
+    - at: "2026-09-28T09:55:33.689Z"
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Resolved exactly one ticket and validated its primary source checksum.
+    - at: "2026-09-28T09:55:33.689Z"
+      phase: INGEST
+      outcome: completed
+      input_revision: 1
+      message: Primary Markdown source ingested; no video or attachment input applies.
+    - at: "2026-09-28T09:58:52.151Z"
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Extracted 16 atomic requirements and 13 open questions; scope, role, host, safe data and several expected behaviors remain unspecified.
+    - at: "2026-09-28T10:12:47.813Z"
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Feature-branch scope and Super Admin role confirmed; dashboard redirected to login because plugin-browser authentication is missing or expired.
+    - at: "2026-09-28T10:18:32.489Z"
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Authenticated dashboard and PACO Assist entry located; entry is disabled for Super Admin GB in General Practice (Demo Site), so the feature root cannot be reached.
+    - at: "2026-09-28T11:51:36.217Z"
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Tester narrowed the run scope to document upload; added scoped upload requirement while retaining the original ticket as context.
+    - at: "2026-09-28T11:52:17.825Z"
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Corrected target to Patient Profile Documents upload; reusable route found, but current branch session expired during validation and redirected to login.
+    - at: "2026-09-28T12:03:42.332Z"
+      phase: LOCATE
+      outcome: completed
+      input_revision: 1
+      message: Auth restored; current branch route validated read-only from Patient Search through test-patient Profile and Documents to visible Upload boundary.
+    - at: "2026-09-28T12:15:07.128Z"
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Observed patient Documents upload entry and mutation boundary.
+    - at: "2026-09-28T12:18:10.842Z"
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Tester supplied the Document Inbox route; verified Upload a document dialog, Upload & analyse boundary and observable inbox lifecycle states read-only.
+    - at: "2026-09-28T12:20:11.653Z"
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Designed one P0 inbox upload smoke case using safe synthetic PDF, observable-state assertion, runtime mutation guard and conditional cleanup.
+    - at: "2026-09-28T13:12:08.288Z"
+      phase: MANUAL_EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Case closed as Not Run; tester reported testing complete but supplied no product result or evidence, and workflow did not verify a completed upload.
+    - at: "2026-09-28T13:12:08.288Z"
+      phase: AUTOMATE
+      outcome: skipped
+      input_revision: 1
+      message: Skipped because no manual Pass, Fail, or intermittent Inconclusive requires a spec.
+    - at: "2026-09-28T13:12:08.288Z"
+      phase: AUTOMATION_EXECUTE
+      outcome: skipped
+      input_revision: 1
+      message: Skipped because no spec was generated.
+    - at: "2026-09-28T13:12:08.288Z"
+      phase: REPORT
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Generated closure report with overall Not Run and explicit evidence, mutation and automation limitations.
+    - at: "2026-09-28T13:12:08.288Z"
+      phase: COMPLETE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Workflow closed at tester request without a verified product result.
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-28T09:55:33.689Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-28T09:55:33.689Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T09:58:52.151Z"
+    artifacts:
+      - docs/tickets/PAC2-6763-paco-assist-document-analyser-management/requirements.md
+    warnings:
+      - Scope, expected-behavior details and dependencies require QA confirmation before definitive execution.
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-28T12:03:42.332Z"
+    artifacts:
+      - docs/tickets/PAC2-6763-paco-assist-document-analyser-management/feature-location.md
+    budget:
+      views_used: 7
+      views_limit: 12
+      elapsed_minutes: 10
+      minutes_limit: 15
+    warnings:
+      - Previous PACO Assist route was rejected after tester clarified the exact document-upload scope.
+      - Dashboard Patient Search image click did not navigate; direct /paco/patient-search route worked.
+    blockers: []
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T12:18:10.842Z"
+    artifacts:
+      - docs/tickets/PAC2-6763-paco-assist-document-analyser-management/exploration.md
+    warnings:
+      - Exact extensions, maximum size, immediate success indicator and cleanup action require mutation-phase observation.
+      - Patient Documents upload and Document Inbox Upload & analyse are distinct entry flows; test design must keep assertions separate.
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T12:20:11.653Z"
+    artifacts:
+      - docs/tickets/PAC2-6763-paco-assist-document-analyser-management/test-cases.md
+    warnings:
+      - Exact file constraints, immediate success indicator, analyser SLA and safe cleanup control remain unspecified.
+    blockers: []
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T13:12:08.288Z"
+    artifacts: []
+    warnings:
+      - PAC2-6763-TC-001 is Not Run because no verified product result or execution evidence was supplied.
+    blockers: []
+  AUTOMATE:
+    status: skipped
+    outcome: no_change
+    input_revision: 1
+    updated_at: "2026-09-28T13:12:08.288Z"
+    artifacts: []
+    warnings:
+      - No manual Pass, Fail, or intermittent Inconclusive required automation.
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: skipped
+    outcome: no_change
+    input_revision: 1
+    updated_at: "2026-09-28T13:12:08.288Z"
+    artifacts: []
+    warnings:
+      - No generated spec required CLI execution.
+    blockers: []
+  REPORT:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T13:12:08.288Z"
+    artifacts:
+      - docs/tickets/PAC2-6763-paco-assist-document-analyser-management/report.md
+    warnings:
+      - Overall result is Not Run; tester completion statement did not include a verifiable product outcome.
+    blockers: []
+  COMPLETE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T13:12:08.288Z"
+    artifacts:
+      - docs/tickets/PAC2-6763-paco-assist-document-analyser-management/report.md
+    warnings:
+      - Closed at tester request without a verified manual result.
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-6763-paco-assist-document-analyser-management/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 1d32157f1b90e6f050c279b02d641bb0e0d41760016aedb346f9dd1d031b1f98
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-6763-paco-assist-document-analyser-management/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 5c2e9e77fc90cfb66c8a6623ee92c90b94168ac3c745502ab5f0f58ca1f333ab
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-6763-paco-assist-document-analyser-management/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 01038fda5be934940c880e214f814c0d05f5b9a3e37cbd8887e33150e12c61ff
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-6763-paco-assist-document-analyser-management/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: d34c9da95e9848f4edd3060c21dc16139fb155b70b6948f8a8ad85c6e6ab0c65
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-6763-paco-assist-document-analyser-management/automation.md
+    state: missing
+    input_revision: 1
+    sha256: null
+  report.md:
+    owner: paco-report
+    path: docs/tickets/PAC2-6763-paco-assist-document-analyser-management/report.md
+    state: valid
+    input_revision: 1
+    sha256: b9a1519ae4b61fdf54632dfa4efda343e82d58216c7f47c6a116bdd1614d21c6
+
+execution:
+  case_ids:
+    - PAC2-6763-TC-001
+  manual:
+    PAC2-6763-TC-001:
+      result: Not Run
+      expected_basis: Confirmed
+      attempts: []
+      control_path_checked: false
+      route: /paco/inbox
+      locators:
+        - "button:Upload a document"
+        - "button:Choose a document (PDF, image, Word…)"
+        - "button:Upload & analyse"
+      skip_or_block_reason: Tester requested closure without supplying a verifiable product outcome or evidence; workflow did not complete a confirmed upload.
+  automation:
+    PAC2-6763-TC-001:
+      spec_path: null
+      diagnostic: false
+      reason: Manual result is Not Run.
+      input_revision: 1
+  runs: {}

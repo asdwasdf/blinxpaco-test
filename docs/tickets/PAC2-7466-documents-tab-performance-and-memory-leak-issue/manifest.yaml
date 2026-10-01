@@ -1,0 +1,92 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-7466
+  folder_name: PAC2-7466-documents-tab-performance-and-memory-leak-issue
+  source_directory: ticket/PAC2-7466-documents-tab-performance-and-memory-leak-issue
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-25T22:08:01+07:00"
+  files:
+    - path: ticket/PAC2-7466-documents-tab-performance-and-memory-leak-issue/ticket.md
+      sha256: 7fc6284fa2859d387a68c9c2c3ca58ee6a9c81e603ff9a05a0009c35c30cfdbb
+
+fast_path:
+  video_ingest: completed_review_pending
+  graph_lookup: pending
+  unresolved_blockers: 1
+  automation_decision: null
+  mutation_ledger: null
+  durable_evidence:
+    - docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/video/119150/contact-sheet.webp
+    - docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/video/119150/timeline.md
+    - docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/video/120891/contact-sheet.webp
+    - docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/video/120891/timeline.md
+
+workflow:
+  status: blocked
+  current_phase: INGEST
+  last_completed_phase: DISCOVER
+  updated_at: "2026-09-25T22:08:01+07:00"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      at: "2026-09-25T22:08:01+07:00"
+      note: "Resolved exactly one ticket and validated source checksum."
+    - phase: INGEST
+      outcome: blocked
+      at: "2026-09-25T22:08:01+07:00"
+      note: "Both videos ingested; role provenance is missing, so timeline review cannot classify observations."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T22:08:01+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-25T22:08:01+07:00"
+    artifacts:
+      - docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/video/119150/timeline.md
+      - docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/video/120891/timeline.md
+    warnings: []
+    blockers:
+      - "Cần xác nhận role/permission context dùng để test và gắn provenance cho video."
+  ANALYZE: &pending_phase
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  LOCATE:
+    <<: *pending_phase
+    budget:
+      views_used: 0
+      views_limit: 12
+      elapsed_minutes: 0
+      minutes_limit: 15
+  EXPLORE: *pending_phase
+  TEST_DESIGN: *pending_phase
+  AUTOMATION_REVIEW: *pending_phase
+  AUTOMATE: *pending_phase
+  EXECUTE: *pending_phase
+  REPORT: *pending_phase
+  COMPLETE: *pending_phase
+
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-7466-documents-tab-performance-and-memory-leak-issue/feature-location.md
+    state: missing
+    input_revision: 1
+    sha256: null

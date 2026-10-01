@@ -2,6 +2,7 @@
 
 **Input Revision:** [revision]
 **Environment:** [environment]
+**Role:** [role]
 **Updated:** [timestamp]
 
 ## Feature Location Gate
@@ -10,40 +11,45 @@
 |---|---|---|---|---|---|
 | [TC-ID] | [Yes/No] | [valid/stale/missing/N/A] | [Confirmed/Candidate/Blocked/Inconclusive/N/A] | [Yes/No] | [Allowed/Blocked] |
 
-## Assessment
+## Execution Summary
 
-| Test Case | Decision | Reason | Mutation | Approval |
-|---|---|---|---|---|
-| [TC-ID] | [Worth automating/Not worth automating/Later/Blocked] | [reason] | [class] | [status] |
+| Test case | Manual result | Attempts | Spec path | CLI result | Match | Skip/block reason |
+|---|---|---:|---|---|---|---|
+| [TC-ID] | [Pass/Fail/Blocked/Not Run/Inconclusive] | [count] | [path/N/A] | [result/N/A] | [classification/N/A] | [reason/N/A] |
 
-## Plugin-first Execution
+## Manual Execution Evidence
 
-**Direct execution result:** [Pass/Fail/Blocked/Not Run/Inconclusive]
-**Why code is/is not valuable:** [reason]
-
-## Automated Tests
-
-| Test Case | Source | Requirement Basis | Status |
-|---|---|---|---|
-| [TC-ID] | [Playwright path] | [REQ-ID/source] | [Implemented/Not Implemented] |
-
-## Execution History
-
-| Run | Result | Environment | Role | Revision | Evidence |
+| Test Case | Attempt | Data Variant | Result | Expected Basis | Evidence |
 |---|---|---|---|---|---|
-| [run-id] | [Pass/Fail/Blocked/Not Run/Inconclusive] | [env] | [role] | [revision] | [refs] |
+| [TC-ID] | [attempt-id] | [initial/same/clean/fresh_session/control] | [result] | [Confirmed/Observed/Inferred/Open Question] | [refs] |
+
+**Control path checked:** [Yes/No/N/A]
+**Persisted state checked:** [method/result]
+**Coverage review:** [acceptance criteria and inventory result]
+
+## Automation Implementation
+
+| Test Case | Source | Diagnostic | Input Revision | Status/Reason |
+|---|---|---|---:|---|
+| [TC-ID] | [Playwright path/N/A] | [Yes/No] | [revision] | [Implemented/block reason] |
+
+## CLI Verification
+
+| Run | Test Case | Result | Verification | Evidence |
+|---|---|---|---|---|
+| [run-id] | [TC-ID] | [Pass/Fail/Blocked/Not Run/Inconclusive] | [Matched product result/Product behavior mismatch/Automation defect/Setup or authentication failure/Inconclusive] | [refs] |
 
 ## Mutation and Cleanup
 
 **Occurred:** [Yes/No]
 **Class:** [class]
-**Approval Scope:** [run/case/action/data]
+**Workflow Scope:** [ticket/case/action/data]
 **Cleanup:** [status/method]
 **Leftover Identifiers:** [redacted identifiers]
 
 ## Blockers and Warnings
 
-[Auth, stale dependency, stability, data, approval]
+[Auth, stale dependency, stability, data, cleanup or technical blocker]
 
 ## Tester notes
 

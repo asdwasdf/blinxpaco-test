@@ -12,7 +12,7 @@ controls:
   - { name: Delete, kind: destructive }
   - { name: Save, kind: mutation }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation Inbound Priority Flow
@@ -23,7 +23,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-Page shows flow settings, an entry question, question and outcome lists, selected-node prompt/help/response type, and option branches with next targets. Controls include `Preview walk`, `Reset to default`, `Add`, `Delete`, and `Save`. `Preview walk` opened a read-only `Inbound case` dialog at question `01` with `Yes`, `No`, and `Cancel`. Selecting `Yes` advanced to question `02`, which added `Back`; `Back` returned to question `01`, and `Cancel` closed the dialog. No configuration field or mutation control was used.
+Page shows flow settings, an entry question, question and outcome lists, selected-node prompt/help/response type, and option branches with next targets. Controls include `Preview walk`, `Reset to default`, `Add`, `Delete`, and `Save`. `Preview walk` opened a read-only `Inbound case` dialog at question `01` with `Yes`, `No`, and `Cancel`. The `Yes` branch was previously observed advancing to question `02`. Reverified on 2026-09-22: selecting `No` reached a terminal preview state exposing `End preview`, `Back`, and `Cancel`; `Back` returned to question `01`, and `Cancel` closed the dialog. Clinical text and mapped outcomes are omitted. No configuration field or mutation control was used. Mutation: `None`.
 
 ## Execution guidance
 
@@ -40,7 +40,7 @@ Page shows flow settings, an entry question, question and outcome lists, selecte
 
 ## Evidence
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-19. Preview question `01` → `Yes` → question `02` → `Back` → `Cancel` completed without editing configuration. Clinical wording recorded only where needed to identify state; organisation mapping values omitted. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Preview question `01` → `No` → terminal state with `End preview` → `Back` → `Cancel` completed without editing configuration. Clinical wording and organisation mapping values omitted. Mutation: `None`.
 
 ## Open questions
 

@@ -1,5 +1,7 @@
 # Đặc tả thiết kế bộ skill QA Paco
 
+> **Superseded in part:** Workflow và automation sections được thay thế bởi `2026-09-28-paco-execution-first-playwright-design.md`.
+
 - **Ngày:** 2026-09-09
 - **Trạng thái:** Đã được người dùng duyệt ngày 2026-09-09
 - **Phạm vi:** Black-box QA chỉ dành cho Paco

@@ -1,0 +1,261 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-8384
+  folder_name: PAC2-8384-fix-filtering-in-appointment-book
+  source_directory: ticket/PAC2-8384-fix-filtering-in-appointment-book
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-25T09:38:32+07:00"
+  files:
+    - path: ticket/PAC2-8384-fix-filtering-in-appointment-book/ticket.md
+      sha256: d311026f6c0577596213ffc1cd31326d58220c1cdf1144368d6a958691c26276
+
+fast_path:
+  video_ingest: completed
+  graph_lookup: completed
+  unresolved_blockers: 0
+  automation_decision: automate_tc_002_later_after_safe_setup_cleanup_standardization
+  mutation_ledger:
+    run_id: PAC2-8384-20260925-manual-03
+    environment: dev
+    class: Destructive
+    scope: Owned Book A/B and Session A/B controlled records only
+    cleanup: Session records deleted; appointment books archived; active search clear
+    sensitive_data: Redacted; raw browser artifacts local-only
+  durable_evidence:
+    - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/video/126788/contact-sheet.webp
+    - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/video/126786/contact-sheet.webp
+    - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/video/126787/contact-sheet.webp
+
+workflow:
+  status: completed
+  current_phase: COMPLETE
+  last_completed_phase: COMPLETE
+  updated_at: "2026-09-25T13:55:00+07:00"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      timestamp: "2026-09-25T09:38:32+07:00"
+      summary: Exact ticket folder and required ticket.md validated.
+    - phase: INGEST
+      outcome: completed
+      timestamp: "2026-09-25T09:38:32+07:00"
+      summary: Three ticket videos ingested; contact sheets and timelines reviewed.
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T09:38:32+07:00"
+      summary: Seven atomic requirements recorded; missing Acceptance Criteria and two proposed UI changes require confirmation.
+    - phase: LOCATE
+      outcome: blocked
+      timestamp: "2026-09-25T09:38:32+07:00"
+      summary: Role and manual Paco authentication validity require tester confirmation.
+    - phase: LOCATE
+      outcome: completed
+      timestamp: "2026-09-25T09:57:00+07:00"
+      summary: Confirmed Appointment Book > Filters > Location using Super Admin GB in dev, read-only.
+    - phase: EXPLORE
+      outcome: inconclusive
+      timestamp: "2026-09-25T10:10:00+07:00"
+      summary: Observed two-book selection and Location option, but no trusted multi-book data mapping supports a correctness verdict.
+    - phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T10:25:00+07:00"
+      summary: Seven cases designed around approved isolated dev data; two inferred UI proposals remain non-verdict exploratory cases.
+    - phase: AUTOMATION_REVIEW
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T10:40:00+07:00"
+      summary: TC-002 and TC-005 are worth automating only after manual setup and cleanup proof; no code or mutation executed.
+    - phase: AUTOMATE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T13:40:00+07:00"
+      summary: Automation intentionally not created; TC-002 remains valuable after safe setup and destructive cleanup are standardized, while TC-005 lacks deterministic appointment data.
+    - phase: EXECUTE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T13:40:00+07:00"
+      summary: Manual plugin-first run failed TC-002; TC-003 and TC-004 were inconclusive, TC-005 was not run; controlled sessions deleted and books archived.
+    - phase: REPORT
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T13:55:00+07:00"
+      summary: Overall Fail reported with one traceable defect; no raw screenshot promoted because available files do not show the controlled failing state.
+    - phase: COMPLETE
+      outcome: completed
+      timestamp: "2026-09-25T13:55:00+07:00"
+      summary: Workflow complete; durable redacted report, defect, execution ledger and test-run summary recorded; cleanup verified.
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T09:38:32+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T09:38:32+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/video/126788/timeline.md
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/video/126786/timeline.md
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/video/126787/timeline.md
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T09:38:32+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/requirements.md
+    warnings:
+      - Acceptance Criteria missing.
+      - Location chip and explicit loading/empty state are proposed fixes, not confirmed scope.
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T09:57:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/feature-location.md
+    warnings:
+      - Appointment Book UI loaded despite visible transport status 404.
+    blockers: []
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 4
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: inconclusive
+    input_revision: 1
+    updated_at: "2026-09-25T10:10:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/exploration.md
+    warnings:
+      - Two appointment books were selected, but option provenance could not be established from UI alone.
+    blockers:
+      - Provide trusted multi-book test-data mapping before correctness evaluation.
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T10:25:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/test-cases.md
+    warnings:
+      - REQ-PAC2-8384-006 and REQ-PAC2-8384-007 remain inferred and non-automatable.
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T10:40:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/automation.md
+    warnings:
+      - Setup and cleanup routes require one successful manual plugin-first run before automation code is justified.
+      - REQ-PAC2-8384-006 and REQ-PAC2-8384-007 remain inferred and blocked for automated verdicts.
+    blockers: []
+  AUTOMATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T13:40:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/automation.md
+    warnings:
+      - No Playwright source created; safe reusable destructive cleanup is not standardized.
+      - TC-005 lacks deterministic appointment data.
+    blockers: []
+  EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T13:40:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/automation.md
+    warnings:
+      - TC-003 and TC-004 remain Inconclusive; TC-005 was Not Run.
+      - Raw browser evidence and affected-record CSV remain local-only pending review/redaction.
+    blockers: []
+  REPORT:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T13:55:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/report.md
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/defects/PAC2-8384-DEF-001.md
+      - docs/test-runs/PAC2-8384-20260925-manual-03/summary.md
+    warnings:
+      - No screenshot promoted because available raw screenshots predate the controlled failing run.
+      - TC-003 and TC-004 remain Inconclusive; TC-005 was Not Run.
+    blockers: []
+  COMPLETE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T13:55:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/report.md
+      - docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/defects/PAC2-8384-DEF-001.md
+      - docs/test-runs/PAC2-8384-20260925-manual-03/summary.md
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 552686820d0b14eed28455644fa37540b0460b39c8ce949b48a7a7ed8417a76c
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 4b993f0edb1155dcdbc95dd306fd63f5016b50f0aca771527fb34a0bb9a35868
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 0ebe810408e54fff457042a78e6a2e825117a83858c633e5a72382d8a3bb4781
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: ea5375b7d3ca0f0a2eed5c4546f9fd5d8a6946c0c0359a2d63774fedb3a3c413
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/automation.md
+    state: valid
+    input_revision: 1
+    sha256: 7d86dec4454d22e1be2b34cdf0d9f5fe2fd4f3ed7da08c3c9092f90d7efc3229
+  report.md:
+    owner: paco-report
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/report.md
+    state: valid
+    input_revision: 1
+    sha256: 3271f4c812fec02b594dc76eb01b994830bb34f809158e5a848937a739126825
+  defects/PAC2-8384-DEF-001.md:
+    owner: paco-report
+    path: docs/tickets/PAC2-8384-fix-filtering-in-appointment-book/defects/PAC2-8384-DEF-001.md
+    state: valid
+    input_revision: 1
+    sha256: 2e4ac27f6436046db592c67e36ede24654f2b5673d949e7c7d36de39697e2d7c
+  test-run-summary.md:
+    owner: paco-report
+    path: docs/test-runs/PAC2-8384-20260925-manual-03/summary.md
+    state: valid
+    input_revision: 1
+    sha256: 83e464dd5cf0b23bcf647d986b4936afbbfb6e9b8f9937f7c240b4a0d3838370

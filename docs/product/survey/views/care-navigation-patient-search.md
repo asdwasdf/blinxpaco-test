@@ -13,7 +13,7 @@ controls:
   - name: A-Z Search
     kind: navigation
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-09-30
 ---
 
 # Care Navigation Patient Profile Search
@@ -24,7 +24,7 @@ last_observed: 2026-09-20
 
 ## Entry and transitions
 
-Landing state exposes `Search Patients...` and `A-Z Search`. `A-Z Search` exposed letters A–Z, a selector with `First Name` and `Last Name`, and initial guidance `Please Select A Letter To Begin Search`. Selecting `Q` under the default `First Name` mode produced explicit `No Results`; returning restored the standard search view. A synthetic no-match query produced explicit `No Patients Found` and `Showing 0 result` states plus `Include deleted patients`. Toggling `Include deleted patients` on retained the zero-result state; it was restored off before clearing search. No patient profile was opened.
+Landing state exposes `Search Patients...` and `A-Z Search`. `A-Z Search` exposed letters A–Z, a selector with `First Name` and `Last Name`, and initial guidance `Please Select A Letter To Begin Search`. Selecting `Q` under the default `First Name` mode produced explicit `No Results`; returning restored the standard search view. A synthetic no-match query produced explicit `No Patients Found` and `Showing 0 result` states plus `Include deleted patients`. Toggling `Include deleted patients` on retained the zero-result state; it was restored off before clearing search. `[Observed: dev, Super Admin GB, 2026-09-30]` Route vẫn hiển thị `Patient Profile Search`; synthetic no-match trả `No Patients Found`. Đã clear query; tại thời điểm snapshot ngay sau clear, grid vẫn ở zero-result state, chưa xác minh populated results sau khi settle. Không suy ra input normalization từ việc ký tự `_` không còn trong textbox sau nhập. No patient profile was opened.
 
 ## Execution guidance
 
@@ -39,7 +39,7 @@ Landing state exposes `Search Patients...` and `A-Z Search`. `A-Z Search` expose
 
 ## Evidence
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-20. `A-Z Search` structure, `First Name`/`Last Name` mode options, and representative `Q` no-result state observed before returning. Synthetic no-match search produced explicit zero-result messaging; `Include deleted patients` toggled on and restored off while zero results remained, then search cleared. Mutation: `None`; no PII retained.
+Accessibility observation, dev, `Super Admin GB`, 2026-09-20. `A-Z Search` structure, `First Name`/`Last Name` mode options, and representative `Q` no-result state observed before returning. Synthetic no-match search produced explicit zero-result messaging; `Include deleted patients` toggled on and restored off while zero results remained, then search cleared. Reverified route/heading and no-match state 2026-09-30; query cleared before auth expiration on 2026-10-01. Mutation: `None`; no PII retained.
 
 ## Open questions
 

@@ -7,9 +7,11 @@ environment: dev
 status: Observed
 routes:
   - dashboard
-controls: []
+controls:
+  - name: Log in
+    kind: unknown
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Media Library
@@ -20,7 +22,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-Page displays persistent loading state with top bar and sidebar visible. No media library controls or content appeared after 3-second wait.
+Reverified on 2026-09-22: direct navigation redirected from `/web-chat/media-library/` to `/web-chat/?rd=/media-library/` and displayed a `Welcome Back` Web & Video Chat authentication handoff with `Log in`, `Terms of Service`, and `Privacy Policy`. No media-library controls or content appeared after a bounded wait. `Log in` was not used because it may begin a separate authentication flow. Mutation: `None`.
 
 ## Execution guidance
 
@@ -34,7 +36,7 @@ Page displays persistent loading state with top bar and sidebar visible. No medi
 
 ## Evidence
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII retained.
+Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Redirect reached a secondary `Welcome Back` login handoff rather than Media Library content. Authentication and organisation values omitted. Mutation: `None`.
 
 ## Open questions
 

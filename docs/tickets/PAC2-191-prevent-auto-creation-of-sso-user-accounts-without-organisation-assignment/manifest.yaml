@@ -1,0 +1,115 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-191
+  folder_name: PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment
+  source_directory: ticket/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-25T19:44:46+07:00"
+  files:
+    - path: ticket/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment/ticket.md
+      sha256: 2aa7082011a32f557822031cefc240137b8208af91aa3d5841a90324049d56e6
+
+fast_path:
+  video_ingest: completed
+  graph_lookup: pending
+  unresolved_blockers: 0
+  automation_decision: null
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: in_progress
+  current_phase: LOCATE
+  last_completed_phase: ANALYZE
+  updated_at: "2026-09-25T20:10:00+07:00"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      timestamp: "2026-09-25T19:44:46+07:00"
+      note: "Resolved exactly PAC2-191; folder regex, confinement, uniqueness, and ticket.md validated. Tester supplied feature environment and Super Admin GB role."
+    - phase: INGEST
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T20:01:00+07:00"
+      note: "Ingested and reviewed all 7 Jira videos. Raw artifacts contain PII/auth details and remain local; historical mutations were observed only."
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-25T20:10:00+07:00"
+      note: "Extracted 3 Inferred requirements. Missing Acceptance Criteria, disputed negative-case definition/error UI, and unresolved verification/test-data questions remain."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T19:44:46+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T20:01:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment/video/review.md"
+        sha256: 6c7d4254d2b4788640af8adc292c8780b2981ab943449ed9da2af2e2f4a5c824
+    warnings:
+      - "Raw video artifacts contain PII, saved-login identifiers, organisation data, Cognito client identifiers, and DevTools details; keep local until redacted."
+      - "Videos are historical and include prior mutations; they do not establish current expected behavior."
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T20:10:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment/requirements.md"
+        sha256: 777672f065267b31ccbbdc02b62383e9c2b21424b8f87407ebe0566e8a10399e
+    warnings:
+      - "Ticket has no Description or Acceptance Criteria; all requirements are Inferred."
+      - "Negative-case setup, exact error UI/route, backend verification method, safe SSO account, and Cognito redirect_mismatch scope remain unresolved."
+    blockers: []
+  LOCATE: &pending_phase
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+    budget:
+      views_used: 0
+      views_limit: 12
+      elapsed_minutes: 0
+      minutes_limit: 15
+  EXPLORE: *pending_phase
+  TEST_DESIGN: *pending_phase
+  AUTOMATION_REVIEW: *pending_phase
+  AUTOMATE: *pending_phase
+  EXECUTE: *pending_phase
+  REPORT: *pending_phase
+  COMPLETE: *pending_phase
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment/requirements.md"
+    state: valid
+    input_revision: 1
+    sha256: 777672f065267b31ccbbdc02b62383e9c2b21424b8f87407ebe0566e8a10399e
+  video/review.md:
+    owner: paco-ticket
+    path: "docs/tickets/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment/video/review.md"
+    state: valid
+    input_revision: 1
+    sha256: 6c7d4254d2b4788640af8adc292c8780b2981ab943449ed9da2af2e2f4a5c824
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-191-prevent-auto-creation-of-sso-user-accounts-without-organisation-assignment/feature-location.md"
+    state: missing
+    input_revision: 1
+    sha256: null

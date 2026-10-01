@@ -14,7 +14,7 @@ controls:
   - { name: Add new Reminder, kind: mutation }
   - { name: Save, kind: mutation }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # External Appointment Reminders
@@ -25,7 +25,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The visible reminder structure included `Slot Type`, `Email Template`, `SMS Template`, `Scheduling`, `Save to Patient Record?`, `Add new Reminder`, and `Save`. A success notification reported that EMIS slot types loaded. Opening `Slot Type` exposed a listbox with 83 options; closing it without selection preserved the current value. Existing campaign, slot-type, and template values are omitted. No field value, checkbox, add action, or save action was changed.
+The visible reminder structure includes `Slot Type`, `Email Template`, `SMS Template`, `Scheduling`, `Save to Patient Record?`, `Add new Reminder`, and `Save`. Reverified on 2026-09-22: opening `Slot Type` exposed a searchable listbox with the current option selected. A synthetic no-match search displayed explicit `No results found`; closing the dropdown without selection preserved the configured value. The `Email Template` and `SMS Template` selectors likewise exposed searchable option lists; synthetic no-match searches displayed `No results found`, then `Escape` dismissed each list without selection. Existing campaign, slot-type, and template values are omitted. No field value, checkbox, add action, or save action was changed. Mutation: `None`.
 
 ## Execution guidance
 
@@ -42,7 +42,7 @@ The visible reminder structure included `Slot Type`, `Email Template`, `SMS Temp
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Slot-type load notification observed; listbox exposed 83 options and closed without selection. Organisation-specific configuration values redacted. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. `Slot Type`, `Email Template`, and `SMS Template` searchable lists each showed explicit `No results found` for synthetic queries and were dismissed without selection. Organisation-specific configuration values redacted. Mutation: `None`.
 
 ## Open questions
 

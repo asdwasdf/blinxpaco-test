@@ -9,7 +9,7 @@ controls:
   - { name: Select Campaign, kind: unknown }
   - { name: Search..., kind: read-only }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Appointment Books Scheduler Configuration
@@ -20,7 +20,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The page displayed `Scheduler Config`, `Select Campaign`, `Search Templates...`, `Search Slot Type...`, and a success notification stating that PACO Connect slot types loaded. Opening `Select Campaign` exposed a listbox with 4,137 options; `Escape` closed it without selection. Campaign, template, slot-type, and organisation-specific values are omitted. No field or selector value was changed.
+The page displayed `Scheduler Config`, `Select Campaign`, `Search Templates...`, `Search Slot Type...`, and a success notification stating that PACO Connect slot types loaded. Opening `Select Campaign` previously exposed a listbox with 4,137 options. On 2026-09-22, a synthetic no-match campaign query produced explicit `No options`; `Escape` dismissed the list without selection. Synthetic no-match values were also entered then cleared in `Search Templates...` and `Search Slot Type...`; neither visibly reduced the rendered lists, indicating those fields may require another trigger or their filtering behavior may be unavailable. Campaign, template, slot-type, and organisation-specific values are omitted. No field or selector value was retained. Mutation: `None`.
 
 ## Execution guidance
 
@@ -37,11 +37,12 @@ The page displayed `Scheduler Config`, `Select Campaign`, `Search Templates...`,
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Campaign list exposed 4,137 options and closed without selection. Organisation and campaign values redacted. Mutation: `None`.
+Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 2026-09-22. Campaign synthetic no-match produced `No options` and was dismissed without selection. Template and slot-type synthetic searches produced no observable list reduction and were cleared. Organisation, campaign, template, and slot-type values redacted. Mutation: `None`.
 
 ## Open questions
 
-- Campaign selection behavior, template/slot-type search states, scheduler rules, empty/error states, and persistence boundary remain unverified.
+- Campaign selection behavior, scheduler rules, non-search empty/error states, and persistence boundary remain unverified.
+- `Search Templates...` and `Search Slot Type...` accepted input but produced no observable filtering; expected trigger and behavior remain open questions.
 
 ## Tester notes
 

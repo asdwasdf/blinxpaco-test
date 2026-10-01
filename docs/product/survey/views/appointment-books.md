@@ -7,7 +7,7 @@ status: Observed
 routes: [/paco-connect/configuration/#appointment-books]
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Appointment Books Configuration
@@ -18,7 +18,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The route returned HTTP 404 and exposed only a `Loading` status in the accessibility tree. No configuration content, empty state, or actionable control became available.
+Reverified on 2026-09-22: the route retained the `PACO Connect` shell but exposed no appointment-book configuration, loading status, empty state, terminal UI error, or actionable content after a bounded wait. The earlier HTTP 404 was not surfaced by this navigation observation. Mutation: `None`.
 
 ## Execution guidance
 
@@ -34,7 +34,7 @@ The route returned HTTP 404 and exposed only a `Loading` status in the accessibi
 
 ## Evidence
 
-Navigation and accessibility observation, dev, `Super Admin GB`, 2026-09-19. HTTP 404 with `Loading`-only state. Mutation: `None`.
+Navigation and accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. `PACO Connect` shell remained blank after a three-second bounded wait; no terminal state or controls appeared. Mutation: `None`.
 
 ## Open questions
 

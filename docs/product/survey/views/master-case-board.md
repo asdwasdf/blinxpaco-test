@@ -17,7 +17,7 @@ controls:
   - name: Filters
     kind: filter
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-10-01
 ---
 
 # Master Case Board
@@ -34,6 +34,8 @@ Opening `Filters` exposed `Age`, `Incoming Service`, `Pathway`, `Skills`, `Prior
 
 `List view` changed the URL to `/paco/workboards/58?view=list` and exposed 42 structural rows with visible columns `Indicators`, `Date`, `Case Status`, `Priority`, `Case Score`, `Case ID`, `Viewer`, and `Actions`. `Card view` restored the default route. Case cards and actions were not opened; case and patient values are omitted.
 
+`[Observed: dev, Super Admin GB, 2026-10-01]` `Case Load Management > Case Workboards` mở danh sách `/paco/workboards?tab=case`, rồi `Master Case Board` tại `/paco/workboards/58`. `List view` thêm `?view=list`; `Group by: By Priority` gom grid thành các row nhóm, xuất hiện `Clear grouping`. Cột đang hiển thị gồm `Indicators`, `Priority`, `Date`, `Case Status`, `Case Score`, `Case ID`, `Viewer`, `Patient Name`, `Age`, `Time Received`, `Active Time`, `Time to breach`, và pinned `Actions`. `Clear grouping` khôi phục ungrouped grid; `Card view` khôi phục URL mặc định. Không expand nhóm hay mở case; không lưu tên, ID, tuổi, priority value hoặc live count.
+
 ## Execution guidance
 
 - Treat case cards, patient context, and board counts as sensitive.
@@ -47,7 +49,7 @@ Opening `Filters` exposed `Age`, `Incoming Service`, `Pathway`, `Skills`, `Prior
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. Synthetic no-match search produced zero cards without explicit message and was cleared. Every visible priority tab was visited and `All` restored. Filter drawer opened and cancelled unchanged. List view opened, grid structure observed, then card view restored. Mutation: `None`; case, patient, and live-count data excluded.
+Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. Synthetic no-match search produced zero cards without explicit message and was cleared. Every visible priority tab was visited and `All` restored. Filter drawer opened and cancelled unchanged. List view opened, grid structure observed, then card view restored. On 2026-10-01, UI navigation, `List view > By Priority > Clear grouping > Card view` verified with no group expansion. Mutation: `None`; case, patient, and live-count data excluded.
 
 ## Open questions
 

@@ -1,0 +1,234 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-8522
+  folder_name: PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms
+  source_directory: ticket/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-28T14:02:07Z"
+  files:
+    - path: ticket/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/ticket.md
+      sha256: 38a8e6a360f799fee5a25cc5f3186a3caa9e5b99a6f149eb183dc70eb9950641
+
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: no_match
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: in_progress
+  current_phase: LOCATE
+  last_completed_phase: MANUAL_EXECUTE
+  updated_at: "2026-09-28T15:02:00Z"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      timestamp: "2026-09-28T14:02:07Z"
+    - phase: INGEST
+      outcome: completed
+      timestamp: "2026-09-28T14:02:07Z"
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-28T14:03:56Z"
+    - phase: LOCATE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-28T14:14:35Z"
+    - phase: EXPLORE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-28T14:35:29Z"
+    - phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      timestamp: "2026-09-28T14:37:27Z"
+    - phase: MANUAL_EXECUTE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-28T15:02:00Z"
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-28T14:02:07Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-28T14:02:07Z"
+    artifacts:
+      - ticket/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/ticket.md
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T14:03:56Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/requirements.md
+        sha256: 144aeebcb04d618bcd8abbe00ce5e30000e1ceb70e269fc169d2dde2cdad2cad
+    warnings:
+      - Permission/role mapping chưa được xác nhận.
+      - Safe campaign/tag test data chưa được cung cấp.
+      - Scope Save as new Campaign còn mâu thuẫn.
+    blockers: []
+  LOCATE:
+    status: stale
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T14:14:35Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/feature-location.md
+        sha256: c7f03d5d74507c52f72cb554a1298220578c18767fc8798b781c52702f1cba2d
+    warnings:
+      - Query flag persistence after login redirect was not independently confirmed.
+      - Patient-containing raw snapshots remain local-only.
+      - Corrected manual evidence uses result-row Patient actions menu → Quick Send; feature-location.md requires child-owner reconciliation.
+    blockers: []
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 6
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T14:35:29Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/exploration.md
+        sha256: 25a96d79eb4a1ffe5d0a9ad9bb99324142f158bb868584079eef16846362b89f
+    warnings:
+      - Current composer does not render tag chips or edit control shown in ticket attachment.
+      - Read-only/no-permission account unavailable.
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T14:37:27Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/test-cases.md
+        sha256: 2f296b675a73eeda5d452be7027a3ec28b584f7305805446a8989e9bd916e82e
+    warnings:
+      - Four cases require unavailable role or fixture data.
+      - Save as new Campaign expected behavior remains disputed.
+    blockers: []
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-28T15:02:00Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/automation.md
+        sha256: 0480dae53c924a17f6001973c3700b7e28e1598668bcab40ba2e649d9cc08286
+    warnings:
+      - TC-002 cannot establish editing-off context under Super Admin GB.
+      - TC-005 missing-option attached-tag fixture is unavailable.
+      - TC-006 no-update-permission account is unavailable.
+      - TC-007 expected behavior remains disputed.
+      - feature-location.md and exploration.md retain stale wrong-flow observations; child-owned artifacts require reconciliation before new UI execution.
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8522-quick-send-view-add-and-edit-campaign-tags-in-the-modal-instead-of-only-in-comms/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: c7f03d5d74507c52f72cb554a1298220578c18767fc8798b781c52702f1cba2d
+
+execution:
+  case_ids:
+    - PAC2-8522-TC-001
+    - PAC2-8522-TC-002
+    - PAC2-8522-TC-003
+    - PAC2-8522-TC-004
+    - PAC2-8522-TC-005
+    - PAC2-8522-TC-006
+    - PAC2-8522-TC-007
+  manual:
+    PAC2-8522-TC-001:
+      result: Pass
+      attempts: 1
+      evidence: automation.md
+      input_revision: 1
+    PAC2-8522-TC-002:
+      result: Blocked
+      attempts: 1
+      reason: editing-off context unavailable
+      evidence: automation.md
+      input_revision: 1
+    PAC2-8522-TC-003:
+      result: Pass
+      attempts: 1
+      evidence: automation.md
+      input_revision: 1
+    PAC2-8522-TC-004:
+      result: Pass
+      attempts: 1
+      evidence: automation.md
+      input_revision: 1
+      mutation:
+        class: Persistent
+        cleanup: passed
+        leftovers: []
+    PAC2-8522-TC-005:
+      result: Blocked
+      attempts: 1
+      reason: missing-option attached-tag fixture unavailable
+      evidence: automation.md
+      input_revision: 1
+    PAC2-8522-TC-006:
+      result: Blocked
+      attempts: 0
+      reason: no-update-permission account unavailable
+      evidence: automation.md
+      input_revision: 1
+    PAC2-8522-TC-007:
+      result: Not Run
+      attempts: 0
+      reason: expected behavior disputed
+      evidence: automation.md
+      input_revision: 1
+  automation: {}
+  runs: {}

@@ -11,7 +11,7 @@ controls:
   - name: Search Locations...
     kind: read-only
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation Locations
@@ -22,7 +22,9 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The grid exposes `Assigned Staff`, `Name`, `Address`, `Contact Number`, `Email Address`, `Created Date`, `Created By`, `Updated Date`, `Updated By`, and `Actions`. `Search Locations...` is the visible read-only filter. A synthetic no-match query removed all data rows while retaining the grid header/action structure; no explicit empty-state label appeared. Clearing the query restored location rows. Row details and action controls were not opened because their persistence boundary was not established.
+The grid exposes `Assigned Staff`, `Name`, `Address`, `Contact Number`, `Email Address`, `Created Date`, `Created By`, `Updated Date`, `Updated By`, and `Actions`. `Search Locations...` is the visible read-only filter. A synthetic no-match query removed all data rows while retaining the grid header/action structure; no explicit empty-state label appeared. Clearing the query restored location rows.
+
+On 2026-09-22, `Created Date` sorting cycled none → ascending → descending → none; `Updated Date` was initially descending. The `Created Date` column menu exposed `general`, `filter`, and `columns`. Its distinct-value filter search produced explicit `No matches.` for a synthetic query and restored after clearing. The columns panel listed all ten fields. The menu was dismissed without applying filters, changing visibility, pinning, sizing, or resetting. Row details and `Actions` were not opened because their persistence boundary was not established. Mutation: `None`.
 
 ## Execution guidance
 
@@ -40,12 +42,13 @@ The grid exposes `Assigned Staff`, `Name`, `Address`, `Contact Number`, `Email A
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Synthetic no-match search removed data rows without an explicit empty-state label; clearing it restored rows. Record values omitted. Mutation: `None`.
+Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 2026-09-22. `Created Date` sort cycled ascending/descending/none; its value-filter no-match state and full column inventory were inspected, then restored unchanged. Record values omitted. Mutation: `None`.
 
 ## Open questions
 
 - Meaning and safety of row `Actions` remain unverified.
-- Pagination, sorting, detail transitions, and an explicit empty-state presentation remain unobserved.
+- Pagination, detail transitions, and an explicit page-search empty-state presentation remain unobserved.
+- Additional field sorts and applied grid filters remain unverified.
 
 ## Tester notes
 

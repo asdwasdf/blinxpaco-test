@@ -1,0 +1,218 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-8552
+  folder_name: PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat
+  source_directory: ticket/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-09-25T09:34:09+07:00"
+  files:
+    - path: ticket/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/ticket.md
+      role: primary_source
+      type: md
+      sha256: 89d18028c06e9177b54d45b780c8cb40f608faa82268c70b11a61c658f30d170
+
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: pending
+  unresolved_blockers: 0
+  automation_decision: null
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: blocked
+  current_phase: EXECUTE
+  last_completed_phase: AUTOMATE
+  updated_at: "2026-09-25T14:15:00+07:00"
+  checkpoints:
+    - at: "2026-09-25T09:34:09+07:00"
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: "Resolved exactly PAC2-8552; folder matches regex, confined, unique key, and ticket.md exists."
+    - at: "2026-09-25T09:34:09+07:00"
+      phase: INGEST
+      outcome: completed
+      input_revision: 1
+      message: "Captured one primary Markdown source; no attachments or video."
+    - at: "2026-09-25T09:34:09+07:00"
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "paco-requirements: 8 Confirmed requirements from Description/test plan; Acceptance criteria missing. Runtime deployment, role, safe test data, mutation approval, DB access, and reschedule scope remain open."
+    - at: "2026-09-25T09:34:09+07:00"
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: "LOCATE requires tester-confirmed role and valid manual authentication. Mutation-dependent later tests also require approved test data and explicit mutation scope."
+    - at: "2026-09-25T14:00:00+07:00"
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Manual auth verified as Super Admin GB. Confirmed sidebar Appointment Book -> Appointment Book -> /paco-connect/appointment-book plus /configuration/#appointments. Feature root renders despite HTTP 404. Mutation None; 3/12 views."
+    - at: "2026-09-25T14:05:00+07:00"
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Read-only observation: appointment book loaded five session regions and slot structure; booking/cancel/session-edit boundaries not crossed. HTTP 404 with rendered UI; backend performance remains unobservable. Mutation None."
+    - at: "2026-09-25T14:10:00+07:00"
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "Designed 9 cases covering booking, two cancellation paths, multi-org, multi-slot, split allocation, DB partition pruning, integrity guards, and slot lookup. Mutation: None/Temporary/Destructive; execution blocked pending fixtures and approvals."
+    - at: "2026-09-25T14:15:00+07:00"
+      phase: AUTOMATION_REVIEW
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: "UI mutation cases Later/Blocked pending exact routes, fixtures and approval. Backend cases belong in service repos; DB case requires owner. No Playwright spec created."
+    - at: "2026-09-25T14:15:00+07:00"
+      phase: AUTOMATE
+      outcome: no_change
+      input_revision: 1
+      message: "Skipped automation: no safe stable UI case ready; no guessed locators or unsafe live-data automation."
+    - at: "2026-09-25T14:15:00+07:00"
+      phase: EXECUTE
+      outcome: blocked
+      input_revision: 1
+      message: "Tester confirmed both target PRs deployed. Execution remains blocked: tester does not know a disposable fixture and is not the authority for destructive approval; DB validation also lacks owner/access."
+    - at: "2026-09-25T17:56:00+07:00"
+      phase: EXECUTE
+      outcome: blocked
+      input_revision: 1
+      message: "Read-only validation on tester-provided feature branches: Connect appointment book renders but selected context has no available sessions; Scheduler DFD renders, searched appointment candidates, sampled Availability Test candidate reports No availability. No booking/cancel mutation performed."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T09:34:09+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-25T09:34:09+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T09:34:09+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/requirements.md
+    warnings:
+      - "Acceptance criteria missing; requirements derive from Description/test plan."
+      - "Deployment status and DB performance evidence are unknown."
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T14:00:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/feature-location.md
+    warnings:
+      - "Appointment book UI renders at /paco-connect/appointment-book despite HTTP 404."
+      - "Quick Book and all mutation controls were not used."
+    blockers: []
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 3
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T14:05:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/exploration.md
+    warnings:
+      - "Feature root renders despite HTTP 404."
+      - "Read-only observation cannot validate partition pruning or cancellation correctness."
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T14:10:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/test-cases.md
+    warnings:
+      - "Mutation cases require approved dedicated fixtures and cleanup."
+      - "Multi-org and multi-slot cases are destructive and need separate approval."
+      - "DB partition-pruning validation needs a DB owner/environment."
+    blockers: []
+  AUTOMATION_REVIEW:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-25T14:15:00+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/automation.md
+    warnings:
+      - "UI cases need fixtures, stable paths and exact approval."
+      - "Backend/DB cases are not Playwright targets."
+    blockers: []
+  AUTOMATE:
+    status: skipped
+    outcome: no_change
+    input_revision: 1
+    updated_at: "2026-09-25T14:15:00+07:00"
+    artifacts: []
+    warnings:
+      - "No safe stable UI case ready; no spec created."
+    blockers: []
+  EXECUTE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-25T14:15:00+07:00"
+    artifacts: []
+    warnings: []
+    blockers:
+      - "Need deployment confirmation, approved test data, cleanup owner and exact mutation approval."
+      - "Need DB owner/access for partition-pruning validation."
+  REPORT: *pending_phase
+  COMPLETE: *pending_phase
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 846c1061452502628ed019e21826865a78e2070fdb3c79cf2d062f67a1b50740
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 02d393e29bb619c7baea72133b787d86054a504404f016bcd68a56f4918977a5
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 01129954d490ac04b19c70e9694dc745f8e82cc11fb19391343f18171b736fcc
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: 8b58a6311cd19d2fccdd0e364b90bdbe75a60ac0cdbd5892426ffe3090beb44a
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-8552-improve-performance-of-booking-cancelling-appointments-paco-connect-directly-pat/automation.md
+    state: valid
+    input_revision: 1
+    sha256: 99771e356b67531dec5088169ae781cc6266b84aa94da5a5a409250186f71fbe

@@ -12,7 +12,7 @@ controls:
   - { name: Delete, kind: destructive }
   - { name: Save, kind: mutation }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation Announcements
@@ -23,7 +23,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-Expanded `Welcome Message` contains rich-text editors, `Apply to locations` selectors, `Add another`, `Delete`, and page-level `Save`. Selecting `Service Updates` collapsed `Welcome Message` and expanded a separate service-update editor with the same visible mutation boundary: rich-text editing, `Add another`, `Delete`, and page-level `Save`. Selecting `Service Updates` again collapsed it. Existing message content and location names are omitted. No editor or selector was changed.
+Expanded `Welcome Message` contains rich-text editors, `Apply to locations` selectors, `Add another`, `Delete`, and page-level `Save`. Selecting `Service Updates` collapses `Welcome Message` and expands a separate service-update editor. Reverified on 2026-09-22: the service-update editor toolbar exposed `Bold`, `Italic`, `Underline`, `Text Color`, three alignment controls, ordered/unordered list styles, `Insert Link`, `Insert Table`, and `Insert Image`. Its `Apply to locations` selector reported a multi-selection count. `Add another` was enabled; the current block's `Delete` was disabled; page-level `Save` remained the persistence boundary. Selecting `Service Updates` again collapsed it. Existing message content and location names are omitted. No editor, selector, add, delete, or save control was changed. Mutation: `None`.
 
 ## Execution guidance
 
@@ -40,7 +40,7 @@ Expanded `Welcome Message` contains rich-text editors, `Apply to locations` sele
 
 ## Evidence
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-19. Content and location values redacted. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. `Welcome Message` was collapsed; `Service Updates` was expanded, its editor toolbar and disabled current-block `Delete` were inspected, then the section was collapsed. Content and location values redacted. Mutation: `None`.
 
 ## Open questions
 

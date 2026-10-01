@@ -1,0 +1,328 @@
+schema_version: 2
+ticket:
+  key: PAC2-7137
+  folder_name: PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view
+  source_directory: ticket/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view
+  primary_source: ticket.md
+input_snapshot:
+  revision: 1
+  generated_at: 2026-09-30T11:17:33.328Z
+  files:
+    - path: attachments/117335-image-20260703-093734.png
+      role: supporting
+      type: png
+      sha256: 3ac4c115fbb47e0236a0ae1b10a3f9415c1064ef38d8a26c5ce27c0f9a90031e
+    - path: attachments/117378-20260703-1212-00.5637485.mp4
+      role: supporting
+      type: mp4
+      sha256: 8ba07764ade0b368cd3e7cb47ab0e6457ce33244657044f4939ec3f571cb4f8e
+    - path: attachments/117381-Screen sharing - 2026-07-03 1_40_15 PM.mp4
+      role: supporting
+      type: mp4
+      sha256: ffbfea7d0fa9c88c82c6b77a6444c1711c2c1e3a338022cde36c4c8684e9e903
+    - path: attachments/117419-20260703-1813-51.5665139.mp4
+      role: supporting
+      type: mp4
+      sha256: 6b5bf19f23378b04daef9635351bef0f7ec377de87a6f6a87e6dceb8b36d591d
+    - path: attachments/117623-20260706-1317-12.2371613.mp4
+      role: supporting
+      type: mp4
+      sha256: b24de9fbd4a4b8bfbd73c945fb5b55cba43454a9f96a729a375a2e958bae2168
+    - path: attachments/117698-image-20260706-201745.png
+      role: supporting
+      type: png
+      sha256: 338362983c388cdab9b7e89c772807adaf8f451867e986acbbf4248c542e8f38
+    - path: attachments/117731-20260706-2227-10.5886819.mp4
+      role: supporting
+      type: mp4
+      sha256: 945d42ccaed564f7e52a1246405c381e32d1d57df7775622af3ee0e6f01ca788
+    - path: attachments/117801-20260707-1038-39.5541664.mp4
+      role: supporting
+      type: mp4
+      sha256: 185f59ee0afb6f0cff1617bd87fad853bff14195654de79d63386515740b2847
+    - path: attachments/120739-20260729-1641-27.5946892.mp4
+      role: supporting
+      type: mp4
+      sha256: fc46b2f37db7124983d5a65a7c69a6f842f1f7e0497194c7ae6012003a57bc5e
+    - path: attachments/120740-20260729-1641-27.5946892
+        (50633734-d44f-480b-8779-a1f52aa7e698).mp4
+      role: supporting
+      type: mp4
+      sha256: fc46b2f37db7124983d5a65a7c69a6f842f1f7e0497194c7ae6012003a57bc5e
+    - path: attachments/120741-image-20260729-164507.png
+      role: supporting
+      type: png
+      sha256: f0cbd4454376d6ad22e62314bc9de4bcdabfab2d2b866e8f37274c49ec0a82d3
+    - path: attachments/120742-image-20260729-164427.png
+      role: supporting
+      type: png
+      sha256: 22a411e7645fea8fb4d9b26aaab00c99e0fa5cedb29ebafd74c2306fc83a8d76
+    - path: attachments/121000-image-20260731-083333.png
+      role: supporting
+      type: png
+      sha256: eec48ccef86fb74327427cf1fcb35c039007bee42cd36ca80305d461e0e247e1
+    - path: attachments/121001-image-20260731-083303.png
+      role: supporting
+      type: png
+      sha256: eec48ccef86fb74327427cf1fcb35c039007bee42cd36ca80305d461e0e247e1
+    - path: ticket.md
+      role: primary_source
+      type: md
+      sha256: ca24f52d29e17a47e62693e6b586e433d6beb08c2e7cd2ca5527af71f0a3e9a9
+workflow:
+  status: in_progress
+  current_phase: AUTOMATE
+  last_completed_phase: MANUAL_EXECUTE
+  updated_at: 2026-09-30T14:41:12.234Z
+  checkpoints:
+    - at: 2026-09-30T11:17:33.328Z
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Đã xác minh đúng một ticket, folder hợp lệ, không trùng key.
+    - at: 2026-09-30T11:17:33.328Z
+      phase: INGEST
+      outcome: completed
+      input_revision: 1
+      message: Đã snapshot ticket.md và toàn bộ attachments bằng SHA-256.
+    - at: 2026-09-30T11:24:29.888Z
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: 4 requirements; 8 video contact sheets reviewed; domain ambiguity
+        retained.
+    - at: 2026-09-30T11:24:29.888Z
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Chờ QA xác nhận role, auth, baseline host và safe test data.
+    - at: 2026-09-30T11:58:09.190Z
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Browser redirected to /paco/login; manual login required.
+    - at: 2026-09-30T12:04:57.149Z
+      phase: LOCATE
+      outcome: blocked
+      input_revision: 1
+      message: Auth valid; route candidate reached; authenticated role is Super Admin
+        GB, not selected Config Admin.
+    - at: 2026-09-30T12:07:35.657Z
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Confirmed Appointment Book route in 2 meaningful views; current context
+        empty.
+    - at: 2026-09-30T12:10:23.327Z
+      phase: EXPLORE
+      outcome: blocked
+      input_revision: 1
+      message: Observed count controls and selector read-only; no verified safe
+        session-bearing data.
+    - at: 2026-09-30T12:20:14.925Z
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Safe PAC2-8384 baseline found on 2026-09-29; Day/Week counts match 6
+        slots.
+    - at: 2026-09-30T12:28:11.750Z
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Designed 5 stable cases; multi-holder case blocked; non-bookable Available rule observational only.
+    - at: 2026-09-30T12:39:54.519Z
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Tester-provided PAC2-7137 feature-branch route confirmed; downstream default-route observations marked stale.
+    - at: 2026-09-30T12:47:26.070Z
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Feature-branch Day/Week baseline revalidated; counts match six slots; no mutation.
+    - at: 2026-09-30T12:51:34.955Z
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Preserved 5 case IDs; execution paths refreshed to PAC2-7137 feature branch.
+    - at: 2026-09-30T14:41:12.234Z
+      phase: MANUAL_EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: 4 Pass, 1 stable Fail; TC-004 reproduced across same-data, fresh navigation and fresh tab; default-route control blocked by HTTP 404/login redirect.
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-09-30T11:17:33.328Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-09-30T11:17:33.328Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-09-30T11:24:29.888Z
+    artifacts:
+      - docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/requirements.md
+    warnings:
+      - Ticket thiếu Acceptance Criteria.
+      - Quy tắc non-bookable trong Available count đang Disputed.
+      - Role, safe mutable data và baseline host chưa được xác nhận.
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-09-30T12:39:54.519Z
+    artifacts:
+      - docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/feature-location.md
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 4
+      minutes_limit: 15
+    warnings:
+      - Current appointment book has no available sessions.
+      - Authenticated role is Super Admin GB, explicitly approved by QA.
+      - Tester-provided PAC2-7137 feature-branch route supersedes default route for ticket execution.
+    blockers: []
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-09-30T12:47:26.070Z
+    artifacts:
+      - docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/exploration.md
+    warnings:
+      - Non-bookable Available rule remains unknown.
+      - Multi-holder scenario not present in current data.
+      - Initial feature-branch navigation had one transient redirect; authenticated retry rendered correctly.
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-09-30T12:51:34.955Z
+    artifacts:
+      - docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/test-cases.md
+    warnings:
+      - Non-bookable Available inclusion remains unknown; no Pass/Fail assertion designed.
+      - Multi-holder case lacks safe appointment/patient data and verified cleanup path.
+    blockers: []
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-09-30T14:41:12.234Z
+    artifacts:
+      - docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/automation.md
+    warnings:
+      - TC-004 default-route control bị HTTP 404 rồi redirect login; feature branch retries vẫn tái hiện ổn định.
+      - Non-bookable Available inclusion remains unknown; TC-005 assertion chỉ kiểm tra visibility.
+    blockers: []
+  AUTOMATE:
+    status: in_progress
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-09-30T14:41:12.234Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-09-30T11:17:33.328Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-09-30T11:17:33.328Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-09-30T11:17:33.328Z
+    artifacts: []
+    warnings: []
+    blockers: []
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 4f6e364b1d638845b686135145f936296b2b88d4ba069db62f1b3d8987cebe4d
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 9337721800cfdae7e8893b3c7216b4cf411189db865a84b2a06dd3b83958ad1
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: df8e3c3cbcfb63bce2f59ba5ad8a6856f24a50dc90b3e9e7dc7d8c32d916559a
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: 99bdd054a6c0854b77ce021c776b242ace863bbd6fd40e3428a597b99d91d593
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-7137-session-slot-count-is-inaccurate-compared-to-top-view/automation.md
+    state: valid
+    input_revision: 1
+    sha256: 941889e0a5bf5a1d74fef343ba66cbf6c182c6bb3d67159b7afcaeb21a9a6809
+execution:
+  case_ids:
+    - PAC2-7137-TC-001
+    - PAC2-7137-TC-002
+    - PAC2-7137-TC-003
+    - PAC2-7137-TC-004
+    - PAC2-7137-TC-005
+  manual:
+    PAC2-7137-TC-001:
+      result: Pass
+      attempts: 1
+      input_revision: 1
+    PAC2-7137-TC-002:
+      result: Pass
+      attempts: 1
+      input_revision: 1
+    PAC2-7137-TC-003:
+      result: Pass
+      attempts: 1
+      input_revision: 1
+    PAC2-7137-TC-004:
+      result: Fail
+      attempts: 7
+      input_revision: 1
+      control_path: Blocked
+    PAC2-7137-TC-005:
+      result: Pass
+      attempts: 1
+      input_revision: 1
+      mutation_class: Temporary
+      cleanup: completed
+  automation: {}
+  runs: {}

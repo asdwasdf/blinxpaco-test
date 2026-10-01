@@ -19,7 +19,7 @@ controls:
   - name: Add Special Opening Hours
     kind: mutation
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation General
@@ -30,9 +30,9 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-Page displays `Basic Information` (name, type, ODS code, photo), `Location & Contact Information` (address, phone, email, website), `Opening Hours` (regular weekly schedule, special hours), `Communications` (header/footer rich text editors with dynamic fields).
+Page displays `Basic Information` (name, type, ODS code, photo), `Location & Contact Information` (address, phone, email, website), `Opening Hours` (regular weekly schedule, special hours), and `Communications` (header/footer rich-text editors with dynamic fields). Organisation-specific values are omitted.
 
-Organisation name: `General Practice (Blinx Demo Site)`. Organisation type: `General Practice`. ODS code: `YGMQJ` (disabled field). Sensitive organisation values omitted.
+Reverified on 2026-09-22: `Edit Address` opened an `Enter Address` dialog containing `Address Line 1`, optional `Address Line 2`, `City`, `County`, and `Postcode`, plus `Close`, `Cancel`, and disabled `Confirm`. Existing values were not changed or recorded. `Cancel` closed the dialog. `Add Special Opening Hours`, photo controls, editor fields, and `Save` were not used. Mutation: `None`.
 
 ## Execution guidance
 
@@ -47,7 +47,7 @@ Organisation name: `General Practice (Blinx Demo Site)`. Organisation type: `Gen
 
 ## Evidence
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-19. Organisation identity values omitted.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Address-dialog field structure inspected, then cancelled; organisation identity and address values omitted. Mutation: `None`.
 
 ## Open questions
 

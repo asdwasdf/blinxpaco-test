@@ -15,18 +15,22 @@
 | LOCATE | pending | - | - |
 | EXPLORE | pending | - | - |
 | TEST_DESIGN | pending | - | - |
-| AUTOMATION_REVIEW | pending | - | - |
+| MANUAL_EXECUTE | pending | - | - |
 | AUTOMATE | pending | - | - |
-| EXECUTE | pending | - | - |
+| AUTOMATION_EXECUTE | pending | - | - |
 | REPORT | pending | - | - |
 | COMPLETE | pending | - | - |
+
+## Execution Summary
+
+- Manual results: Pass 0, Fail 0, Inconclusive 0, Blocked 0, Not Run 0
+- Automation: Implemented 0, Executed 0, Blocked 0
 
 ## Fast Path
 
 - Video ingest: not applicable
 - Product graph lookup: pending
 - Unresolved QA blockers: 0
-- Automation decision: pending
 - Mutation ledger: none
 - Durable evidence: none
 

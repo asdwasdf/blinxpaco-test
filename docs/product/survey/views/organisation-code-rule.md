@@ -13,7 +13,7 @@ controls:
   - name: Submit
     kind: mutation
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation Code Rule
@@ -24,7 +24,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The page exposes `Search Snomed Code`, a `Create or update rules:` section, `Add Item`, and `Submit`. After a clean dashboard reload, the legacy shell transitioned correctly to `Code Rule Config`; direct hash changes from another legacy view can temporarily retain stale page content until full navigation completes. A synthetic no-match search produced no visible listbox or explicit empty-state message; clearing it restored the initial state. No rule was selected, created, updated, or submitted.
+The page exposes `Search Snomed Code`, a `Create or update rules:` section, rule-builder content, and `Submit`. After clean navigation, the legacy shell transitioned correctly to `Code Rule Config`; direct hash changes from another legacy view can temporarily retain stale page content until full navigation completes. Reverified on 2026-09-22: a synthetic no-match search produced no visible listbox, result row, or explicit empty-state message; the rule-builder area and enabled `Submit` remained present. Clearing restored the initial state. No rule was selected, created, updated, or submitted. Mutation: `None`.
 
 ## Execution guidance
 
@@ -42,7 +42,7 @@ The page exposes `Search Snomed Code`, a `Create or update rules:` section, `Add
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Synthetic no-match search produced no explicit result state; clean navigation was required after stale legacy hash content. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthetic no-match search produced no explicit result state; rule-builder content and enabled `Submit` remained visible, then search was cleared. Mutation: `None`.
 
 ## Open questions
 

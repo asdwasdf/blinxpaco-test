@@ -11,7 +11,7 @@ controls:
   - name: Search Skills...
     kind: read-only
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation Skills
@@ -22,7 +22,9 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The grid exposes `Actions`, `Name`, `Created By`, `Pathways`, `RBAC Skill`, and `Snomed CT Code`. `Search Skills...` is the visible read-only filter. A synthetic no-match query removed all data rows while retaining the grid header/action structure; no explicit empty-state label or pagination summary appeared. Clearing the query restored skill rows. Skill rows and action controls were not opened because their persistence boundary was not established.
+The grid exposes `Actions`, `Name`, `Created By`, `Pathways`, `RBAC Skill`, and `Snomed CT Code`. `Search Skills...` is the visible read-only filter. A synthetic no-match query removed all data rows while retaining the grid header/action structure; no explicit empty-state label or pagination summary appeared. Clearing the query restored skill rows.
+
+On 2026-09-22, `Created By` sorting cycled ascending → descending → none. Its keyboard-opened column menu exposed `general`, `filter`, and `columns`. The value filter listed distinct timestamp values; a synthetic no-match produced explicit `No matches.`, then clearing restored all values. The columns panel listed five named fields plus one unlabeled action column. The menu was dismissed without applying a filter, changing visibility, pinning, sizing, or resetting columns. Skill rows and `Actions` were not opened because their persistence boundary was not established. Mutation: `None`.
 
 ## Execution guidance
 
@@ -40,7 +42,7 @@ The grid exposes `Actions`, `Name`, `Created By`, `Pathways`, `RBAC Skill`, and 
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Synthetic no-match search removed data rows without an explicit empty-state label or pagination summary; clearing it restored rows. Record values omitted. Mutation: `None`.
+Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 2026-09-22. `Created By` sort cycled ascending/descending/none; its filter search produced `No matches.` and was cleared; column inventory was inspected unchanged. Record values omitted. Mutation: `None`.
 
 ## Open questions
 

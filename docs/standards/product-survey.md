@@ -20,7 +20,7 @@ Lưu normalized route, title/heading, accessible controls, stable selector clues
 
 ## Mutation
 
-Mutation đầy đủ được phép khi environment và hostname qua `evaluateMutationGate()`. Production và hostname ngoài allowlist luôn bị chặn. `Send` cần test recipient đã xác minh. Form thiếu domain rule phải `Blocked` và Ask QA early, không đoán.
+Mode `survey` được tự thực hiện mutation trong đúng run/action/test-data scope, không cần ticket/case hoặc approval từng action, khi environment `dev`, hostname allowlist và runtime guards qua `evaluateMutationGate()` với authorization `paco-explore-survey`. `PACO_ALLOW_MUTATION=true` bắt buộc; destructive cần thêm `PACO_ALLOW_DESTRUCTIVE=true`. Production và hostname ngoài allowlist luôn bị chặn. Dùng synthetic/owned data; `Send` cần test recipient đã xác minh. Ghi ledger đã redact và cleanup an toàn, báo leftovers nếu cleanup thất bại. Form thiếu domain rule/test data an toàn phải `Blocked` và Ask QA early, không đoán.
 
 ## Knowledge
 

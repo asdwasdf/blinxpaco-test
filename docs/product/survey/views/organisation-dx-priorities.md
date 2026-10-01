@@ -11,7 +11,7 @@ controls:
   - { name: Remove pair, kind: destructive }
   - { name: Save, kind: mutation }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Organisation DX Priorities
@@ -22,7 +22,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-Page exposes `Search Priorities...`, disabled diagnosis identifier fields, repeated `Add Service & Priority` and `Remove pair` controls, and a `Save` button initially disabled. A synthetic no-match query hid the priority blocks and displayed `No priorities match “__qa_no_match_20260919__”`; `Save` remained visible. Clearing the query restored 72 visible `Add Service & Priority` controls. No pair or field was changed.
+Page exposes `Search Priorities...`, disabled diagnosis identifier fields, repeated `Add Service & Priority` and `Remove pair` controls, and a `Save` button initially disabled. Reverified on 2026-09-22: a synthetic no-match query hid the priority blocks and displayed an explicit `No priorities match` message containing the query; `Save` remained visible and disabled. Clearing restored the configured blocks. Exact counts and configured values are intentionally omitted. No pair or field was changed. Mutation: `None`.
 
 ## Execution guidance
 
@@ -39,7 +39,7 @@ Page exposes `Search Priorities...`, disabled diagnosis identifier fields, repea
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Synthetic no-match search showed an explicit message; clearing it restored 72 visible priority-block controls. Diagnosis and priority values omitted. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthetic no-match search showed an explicit message and disabled `Save`; clearing restored the configured blocks. Diagnosis, priority values, and exact counts omitted. Mutation: `None`.
 
 ## Open questions
 

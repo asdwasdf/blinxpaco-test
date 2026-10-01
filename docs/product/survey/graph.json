@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21",
+  "generatedAt": "2026-10-01",
   "views": [
     {
       "id": "analytics-reports-scr-unauthorized",
@@ -60,7 +60,7 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/appointment-books.md"
     },
     {
@@ -101,7 +101,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/appointment-books-appointments.md"
     },
     {
@@ -146,7 +146,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/appointment-books-external-reminders.md"
     },
     {
@@ -171,7 +171,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/appointment-books-scheduler.md"
     },
     {
@@ -187,7 +187,7 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/appointment-books-sessions.md"
     },
     {
@@ -203,7 +203,7 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/appointment-books-slot-types.md"
     },
     {
@@ -236,7 +236,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/capacity-demand.md"
     },
     {
@@ -261,7 +261,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-09-30",
       "source": "views/care-navigation-patient-search.md"
     },
     {
@@ -754,7 +754,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-21",
+      "last_observed": "2026-09-22",
       "source": "views/dashboard.md"
     },
     {
@@ -795,7 +795,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-10-01",
       "source": "views/health-form-inbox.md"
     },
     {
@@ -869,7 +869,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-09-30",
       "source": "views/health-forms-designer-v2.md"
     },
     {
@@ -1005,7 +1005,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-10-01",
       "source": "views/master-case-board.md"
     },
     {
@@ -1039,10 +1039,14 @@
         {
           "name": "Create New Task",
           "kind": "mutation"
+        },
+        {
+          "name": "Task card detail",
+          "kind": "navigation"
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-10-01",
       "source": "views/master-task-board.md"
     },
     {
@@ -1056,9 +1060,14 @@
       "routes": [
         "dashboard"
       ],
-      "controls": [],
+      "controls": [
+        {
+          "name": "Log in",
+          "kind": "unknown"
+        }
+      ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/media-library.md"
     },
     {
@@ -1136,7 +1145,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-announcements.md"
     },
     {
@@ -1161,7 +1170,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-code-rule.md"
     },
     {
@@ -1194,7 +1203,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-dx-priorities.md"
     },
     {
@@ -1231,7 +1240,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-general.md"
     },
     {
@@ -1268,7 +1277,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-inbound-priority-flow.md"
     },
     {
@@ -1289,7 +1298,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-integrations.md"
     },
     {
@@ -1310,7 +1319,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-locations.md"
     },
     {
@@ -1343,7 +1352,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-org-priorities.md"
     },
     {
@@ -1376,7 +1385,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-services.md"
     },
     {
@@ -1392,7 +1401,7 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-sharing-agreements.md"
     },
     {
@@ -1413,7 +1422,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/organisation-skills.md"
     },
     {
@@ -1520,6 +1529,55 @@
       "source": "views/patient-dfd-route-failure.md"
     },
     {
+      "id": "patient-profile",
+      "title": "Patient Profile",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "patient-search"
+      ],
+      "controls": [
+        {
+          "name": "Patient actions",
+          "kind": "menu"
+        },
+        {
+          "name": "Care Plan",
+          "kind": "tab"
+        },
+        {
+          "name": "Tasks",
+          "kind": "tab"
+        },
+        {
+          "name": "Task detail",
+          "kind": "navigation"
+        },
+        {
+          "name": "Patient Comms",
+          "kind": "tab"
+        },
+        {
+          "name": "Consultations & Admin",
+          "kind": "tab"
+        },
+        {
+          "name": "Medication",
+          "kind": "tab"
+        },
+        {
+          "name": "Shared Records",
+          "kind": "tab"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/patient-profile.md"
+    },
+    {
       "id": "patient-search",
       "title": "Patient Search",
       "roles": [
@@ -1545,7 +1603,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-09-30",
       "source": "views/patient-search.md"
     },
     {
@@ -1578,7 +1636,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/patients-proxy-role-groups.md"
     },
     {
@@ -1617,10 +1675,64 @@
       "routes": [
         "/paco-connect/quick-pay/accounts"
       ],
-      "controls": [],
+      "controls": [
+        {
+          "name": "Connect New Account",
+          "kind": "mutation"
+        },
+        {
+          "name": "Columns",
+          "kind": "read-only"
+        },
+        {
+          "name": "Filters",
+          "kind": "read-only"
+        },
+        {
+          "name": "Action",
+          "kind": "unknown"
+        }
+      ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/quick-pay-accounts.md"
+    },
+    {
+      "id": "quick-pay-invoices",
+      "title": "Quick Pay Invoices",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "/paco-connect/quick-pay/invoices"
+      ],
+      "controls": [
+        {
+          "name": "Search patients...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Create New Invoice",
+          "kind": "mutation"
+        },
+        {
+          "name": "Columns",
+          "kind": "read-only"
+        },
+        {
+          "name": "Filters",
+          "kind": "read-only"
+        },
+        {
+          "name": "Action",
+          "kind": "unknown"
+        }
+      ],
+      "verified_by": [],
+      "last_observed": "2026-09-22",
+      "source": "views/quick-pay-invoices.md"
     },
     {
       "id": "quick-pay-product-catalogue",
@@ -1633,9 +1745,30 @@
       "routes": [
         "/paco-connect/quick-pay/products"
       ],
-      "controls": [],
+      "controls": [
+        {
+          "name": "Search...",
+          "kind": "read-only"
+        },
+        {
+          "name": "Create New Product",
+          "kind": "mutation"
+        },
+        {
+          "name": "Columns",
+          "kind": "read-only"
+        },
+        {
+          "name": "Filters",
+          "kind": "read-only"
+        },
+        {
+          "name": "Action",
+          "kind": "unknown"
+        }
+      ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/quick-pay-product-catalogue.md"
     },
     {
@@ -1656,7 +1789,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
+      "last_observed": "2026-09-22",
       "source": "views/quick-pay-route-failure.md"
     },
     {
@@ -1878,7 +2011,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/users-staff-profiles.md"
     },
     {
@@ -1911,7 +2044,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/users-staff-role-groups.md"
     },
     {
@@ -1944,7 +2077,7 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
+      "last_observed": "2026-09-22",
       "source": "views/users-staff-teams.md"
     },
     {
@@ -2175,6 +2308,11 @@
       "kind": "route"
     },
     {
+      "from": "patient-search",
+      "to": "patient-profile",
+      "kind": "route"
+    },
+    {
       "from": "dashboard",
       "to": "patient-search",
       "kind": "route"
@@ -2305,6 +2443,10 @@
     {
       "from": "quick-pay-accounts",
       "to": "/paco-connect/quick-pay/accounts"
+    },
+    {
+      "from": "quick-pay-invoices",
+      "to": "/paco-connect/quick-pay/invoices"
     },
     {
       "from": "quick-pay-product-catalogue",

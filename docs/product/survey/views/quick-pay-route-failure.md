@@ -11,7 +11,7 @@ controls:
   - name: Quick Pay
     kind: navigation
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-09-22
 ---
 
 # Quick Pay Route Failure
@@ -36,7 +36,7 @@ The target returned HTTP 404 under page title `PACO Connect`. No invoice workflo
 
 ## Evidence
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-20. `/paco-connect/quick-pay/invoices` returned HTTP 404 under page title `PACO Connect`. Mutation: `None`; no payment, account, invoice, or PII data retained.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. `/paco-connect/quick-pay/invoices` returned HTTP 404 under page title `PACO Connect`. Mutation: `None`; no payment, account, invoice, or PII data retained.
 
 ## Open questions
 

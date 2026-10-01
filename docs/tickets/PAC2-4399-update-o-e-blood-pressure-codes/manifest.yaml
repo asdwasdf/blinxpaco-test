@@ -1,0 +1,276 @@
+schema_version: 1
+
+ticket:
+  key: PAC2-4399
+  folder_name: PAC2-4399-update-o-e-blood-pressure-codes
+  source_directory: ticket/PAC2-4399-update-o-e-blood-pressure-codes
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 2
+  generated_at: "2026-09-29"
+  files:
+    - path: ticket/PAC2-4399-update-o-e-blood-pressure-codes/ticket.md
+      sha256: 9a9282f08fcaae0efdea92a59abcb650dd9a3114d3d4cac1131f2855b519d02b
+    - path: ticket/PAC2-4399-update-o-e-blood-pressure-codes/attachments/101896-image-27.png
+      sha256: a1bd1872ad9d67c04a7e6fd66b823973e44c4013fbc3f9e90585893f6719442f
+    - path: ticket/PAC2-4399-update-o-e-blood-pressure-codes/attachments/Screen sharing - 2026-09-29 1_24_51 PM.mp4
+      sha256: cb9c0941af7f01f488114e5c6cf1095db882a787b63d2b52c48352c05da872fd
+
+fast_path:
+  video_ingest: completed
+  graph_lookup: pending
+  unresolved_blockers: 0
+  automation_decision: null
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: complete_with_limitations
+  current_phase: COMPLETE
+  last_completed_phase: REPORT
+  updated_at: "2026-09-29"
+  checkpoints:
+    - phase: DISCOVER
+      outcome: completed
+      timestamp: "2026-09-22T16:06:53+07:00"
+      note: "Resolved exactly PAC2-4399; folder regex, confinement, uniqueness, and ticket.md validated."
+    - phase: INGEST
+      outcome: completed
+      timestamp: "2026-09-22T16:06:53+07:00"
+      note: "Hashed raw ticket.md; revision 1. One PNG attachment; no video ingest required."
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-22T16:06:53+07:00"
+      note: "paco-requirements: 3 Inferred requirements; mapping, migration scope, DB mechanism, environment, role, test data, and expected EMIS representation remain unresolved."
+    - phase: LOCATE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-22T16:14:00+07:00"
+      note: "Verified Code Rule Config at /configuration/#code-rules-config in dev as Super Admin GB, read-only. End-to-end filing route still needs safe test patient and flow clue; DB verification is non-UI."
+    - phase: EXPLORE
+      outcome: blocked
+      timestamp: "2026-09-22T16:23:00+07:00"
+      note: "Read-only Patient Search scan found Care Navigation and unknown Quick Form/Care Navigator/Quick Send patient actions. Stopped before potential mutation; no blood-pressure flow reached."
+    - phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      timestamp: "2026-09-22T16:25:00+07:00"
+      note: "paco-test-design: 3 preliminary blocked cases. TC-001/003 need exact flow, fixture, EMIS access, mutation approval and cleanup; TC-002 needs redacted DB evidence and confirmed migration scope."
+    - phase: AUTOMATION_REVIEW
+      outcome: blocked
+      timestamp: "2026-09-22T16:27:00+07:00"
+      note: "No case passed automation gates; no spec generated and no mutation occurred."
+    - phase: AUTOMATE
+      outcome: no_change
+      timestamp: "2026-09-22T16:27:00+07:00"
+      note: "Skipped because all cases were blocked or not worth automating."
+    - phase: EXECUTE
+      outcome: blocked
+      timestamp: "2026-09-22T16:29:00+07:00"
+      note: "No execution: missing entry flow, fixture, EMIS result access, mutation approval/cleanup, and DB evidence/scope."
+    - phase: REPORT
+      outcome: completed_with_warnings
+      timestamp: "2026-09-22T16:29:00+07:00"
+      note: "Report records all three test cases as Blocked; no defect, mutation, or durable run evidence."
+    - phase: EXPLORE
+      outcome: inconclusive
+      timestamp: "2026-09-22T16:36:00+07:00"
+      note: "With tester approval, Care Navigator opened and blood pressure search returned no visible match. Quick Form failed before render with patient_patientnumber is required. No draft or mutation."
+    - phase: EXPLORE
+      outcome: inconclusive
+      timestamp: "2026-09-22T16:39:00+07:00"
+      note: "Retried Quick Form on a second demo fixture with visible patient number; same patient_patientnumber is required error. No draft or mutation. Random fixture retries stopped."
+    - phase: EXPLORE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-22T16:46:00+07:00"
+      note: "Health Forms Designer search found multiple active blood-pressure forms. Best candidate: Blood Pressure O/E coding test. Row not opened because it may enter mutation editor."
+    - phase: EXPLORE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-22T16:55:31+07:00"
+      note: "With tester approval, exact AG Grid row was mapped by row-id and Blood Pressure O/E coding test opened read-only. Four Blood Pressure components observed; first records combined O/E blood pressure under Examination. No selected SNOMED ID visible; no Save/Update/mutation."
+    - phase: INGEST
+      outcome: completed_with_warnings
+      timestamp: "2026-09-29"
+      note: "Input revision 2: ingested and reviewed new 172.98s screen-sharing video. Video demonstrates Health Form Builder blood-pressure setup but does not show EMIS filing, SNOMED IDs, payload, or DB mapping."
+    - phase: ANALYZE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-29"
+      note: "Requirements refreshed for revision 2. Video adds observed builder/setup evidence only; target mapping and migration scope remain disputed."
+    - phase: EXPLORE
+      outcome: completed_with_warnings
+      timestamp: "2026-09-29"
+      note: "Beth confirmed intended pop-out was the first Blood Pressure component edit sidebar. Combined O/E option visibly selected; separate option unselected. Read-only; no mutation."
+    - phase: REPORT
+      outcome: completed_with_limitations
+      timestamp: "2026-09-29"
+      note: "Beth O/E configuration check passed. EMIS/primary-care result unavailable; ticket mapping remains blocked and disputed."
+    - phase: COMPLETE
+      outcome: completed_with_limitations
+      timestamp: "2026-09-29"
+      note: "Closed after requested UI verification; no mapping pass/fail conclusion."
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-22T16:06:53+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-09-22T16:06:53+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 2
+    updated_at: "2026-09-29"
+    artifacts:
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/requirements.md"
+        sha256: 664e9b9124ddc94bbd41314b582117f0b2ebed0f9b213d7a55837a6681e6011c
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/video/timeline.md"
+        sha256: 3e6e6de4eebe442c3d408bf26887569d03ec329518ba036c1fb14526883ea532
+    warnings:
+      - "Ticket lacks Acceptance Criteria; all three requirements are Inferred."
+      - "Target mapping and migration scope are disputed; do not automate expected-result assertions yet."
+    blockers: []
+  LOCATE:
+    status: stale
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-22T16:14:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/feature-location.md"
+        sha256: 47f033a3dee79e47cac1819e5f32d1aabb1496e5014251ae3c2561affe7750db
+    warnings:
+      - "Code Rule Config relevance to the hard-coded mapping is not confirmed."
+      - "End-to-end filing route needs safe patient data and an entry-flow clue."
+      - "Database migration cannot be verified through Paco black-box UI."
+    blockers: []
+    budget:
+      views_used: 2
+      views_limit: 12
+      elapsed_minutes: 3
+      minutes_limit: 15
+  EXPLORE:
+    status: stale
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-22T16:55:31+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/exploration.md"
+        sha256: b7b6e71c6578dad57b3f4f6b9cfd7aa4d886ca226611fb88bd44d9cb28360fa0
+    warnings:
+      - "Care Navigator blood-pressure search returned no visible result."
+      - "Quick Form failed before rendering with patient_patientnumber is required."
+      - "Exact Health Form structure is observed, but selected SNOMED ConceptID/DescriptionID is not visible in the editor."
+    blockers:
+      - "Need a working approved demo-patient Health Form delivery flow, mutation approval, cleanup, and EMIS result access for filing validation."
+      - "Database migration is not observable through Paco black-box UI."
+  TEST_DESIGN:
+    status: stale
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-22T16:25:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/test-cases.md"
+        sha256: 6388c0435a6c93989391aea56c3714eab6e064ce79bdd59e300ae3ddcf852553
+    warnings:
+      - "All cases are Preliminary/Blocked; none is ready to execute or automate."
+    blockers:
+      - "TC-001/003 need exact entry flow, fixture, EMIS result access, mutation approval and cleanup."
+      - "TC-002 needs confirmed migration scope and redacted DB evidence."
+  AUTOMATION_REVIEW:
+    status: completed
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-22T16:27:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/automation-review.md"
+        sha256: ab8782c6993690396812049993e2b86e840306d2b5890e27e40ab7a7dc453869
+    warnings:
+      - "TC-002 is not worth automating because trusted DB evidence is outside Paco UI."
+    blockers:
+      - "TC-001/003 lack complete UI location, test data, EMIS access, mutation approval and cleanup."
+      - "TC-003 expected result remains Inferred."
+  AUTOMATE: &pending_phase
+    status: skipped
+    outcome: no_change
+    input_revision: 1
+    updated_at: "2026-09-22T16:27:00+07:00"
+    artifacts: []
+    warnings:
+      - "No cases passed automation gates."
+    blockers: []
+  EXECUTE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-22T16:29:00+07:00"
+    artifacts: []
+    warnings: []
+    blockers:
+      - "No exact flow, safe fixture, EMIS result access, mutation approval/cleanup, or DB evidence/scope."
+  REPORT:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-09-22T16:29:00+07:00"
+    artifacts:
+      - path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/report.md"
+        sha256: e9196528afe0e4f261ab264b0f5333bc44079b0e9d32277812476a0117900100
+    warnings:
+      - "Overall result is Blocked; no execution evidence exists."
+    blockers: []
+  COMPLETE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-09-22T16:29:00+07:00"
+    artifacts: []
+    warnings: []
+    blockers:
+      - "Execution blockers remain unresolved."
+
+outputs:
+  report.md:
+    owner: paco-report
+    path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/report.md"
+    state: stale
+    input_revision: 1
+    sha256: e9196528afe0e4f261ab264b0f5333bc44079b0e9d32277812476a0117900100
+  automation-review.md:
+    owner: paco-playwright
+    path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/automation-review.md"
+    state: stale
+    input_revision: 1
+    sha256: ab8782c6993690396812049993e2b86e840306d2b5890e27e40ab7a7dc453869
+  test-cases.md:
+    owner: paco-test-design
+    path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/test-cases.md"
+    state: stale
+    input_revision: 1
+    sha256: 6388c0435a6c93989391aea56c3714eab6e064ce79bdd59e300ae3ddcf852553
+  exploration.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/exploration.md"
+    state: stale
+    input_revision: 1
+    sha256: 8e167d995b07842b88356b793c814af313e7f605fa7116633bf421484f2edea7
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/requirements.md"
+    state: valid
+    input_revision: 2
+    sha256: 664e9b9124ddc94bbd41314b582117f0b2ebed0f9b213d7a55837a6681e6011c
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-4399-update-o-e-blood-pressure-codes/feature-location.md"
+    state: stale
+    input_revision: 1
+    sha256: 47f033a3dee79e47cac1819e5f32d1aabb1496e5014251ae3c2561affe7750db

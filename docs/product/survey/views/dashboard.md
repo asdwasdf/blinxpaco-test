@@ -34,7 +34,7 @@ controls:
   - name: On Leave
     kind: filter
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-09-22
 ---
 
 # Dashboard
@@ -57,7 +57,9 @@ The global `Accessibility Menu` opens a UserWay iframe dialog with contrast, lin
 
 `Switch to dark theme` was clicked once, but the control label and computed page colors remained unchanged, so no distinct theme state was established. No further theme interaction was attempted.
 
-`Observed` on 2026-09-21: `What do these statuses mean?` opened inline guidance distinguishing user-selected `Available`/`Triage`/`Break` and `On Leave` from automatic `Away from Desk` and `Logged Out`; clicking the control again closed it. The `Staff Availability` sort selector exposed `A - Z Last Name` and `Status`; selecting `Status` reordered the two visible staff cards, then `A - Z Last Name` restored the initial order. Selecting `On Leave (0)` produced an empty card area without an explicit empty-state message; `Available (2)` restored both cards. A synthetic value in `Search Clinicians...` changed `Available (2)` to `Available (0)` and displayed `No clinicians match that search.`; clearing restored both cards. No staff card or status editor was opened.
+`Observed` on 2026-09-21: `What do these statuses mean?` opened inline guidance distinguishing user-selected `Available`/`Triage`/`Break` and `On Leave` from automatic `Away from Desk` and `Logged Out`; clicking the control again closed it. The `Staff Availability` sort selector exposed `A - Z Last Name` and `Status`; selecting `Status` reordered the two visible staff cards, then `A - Z Last Name` restored the initial order. Selecting `On Leave (0)` produced an empty card area without an explicit empty-state message; `Available (2)` restored both cards. A synthetic value in `Search Clinicians...` changed `Available (2)` to `Available (0)` and displayed `No clinicians match that search.`; clearing restored both cards.
+
+`Observed` on 2026-09-22: the board overview selector exposed multiple configured board-overview choices; choosing another option updated the selected overview without navigation. Opening a staff card produced a read-only dialog with a status timeline and duration, then `Close` restored the dashboard. The top-bar `More options` menu exposed `PaComms`, `Quick View`, `PACO Assist`, and two indistinguishable `Success` entries; none were opened. Exact board names, staff identity, and durations are omitted.
 
 Dashboard period controls were completed through `month` and `year`, then restored to `day`. Each selection changed the selected period; exact chart values were not recorded because their business basis is untrusted. A click attempt on the `Staff Status` card content was intercepted by a decorative overlay; no force-click was used and no new state opened.
 

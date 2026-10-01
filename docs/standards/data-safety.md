@@ -14,6 +14,8 @@ Trên environment `dev` và hostname nằm trong `paco.config.yaml` safety allow
 
 `Send` cần test recipient/destination đã xác minh. Thiếu domain rule, expected result hoặc safe test data phải Ask QA early; không đoán. Mọi mutation ghi ledger đã redact và cleanup khi không phá dữ liệu nền.
 
+Authorization đã duyệt cho execution-first workflow cho phép `MANUAL_EXECUTE` và standalone Playwright spec thực hiện side effect đúng ticket/case/action/test-data scope mà không hỏi lại từng lần. Authorization này chỉ bỏ prompt lặp; không bỏ hostname/environment allowlist, runtime guard, safe test data, mutation ledger hoặc cleanup. Production/unknown host vẫn hard block. Action ngoài test case hoặc khác scope cần approval mới.
+
 ## Safety Gates
 
 ### Design-time

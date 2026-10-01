@@ -15,7 +15,7 @@ controls:
   - name: Show archived
     kind: filter
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-09-30
 ---
 
 # Patient Search
@@ -26,7 +26,7 @@ last_observed: 2026-09-20
 
 ## Entry and transitions
 
-The landing state exposes patient search, filters, archived-record toggle, result grid and audit modal region. A synthetic no-match query reduced the grid to three structural rows without an explicit empty-state message; clearing restored the populated grid. Opening `Filters` exposed `Title`, `Age`, `Gender`, `Ethnicity`, `Country of Birth`, `Language`, `Postcode`, and `Practice`, plus `Clear all`, `Cancel`, and `Save`. `Title` exposed nine labeled options and closed without selection. `Gender` exposed four options whose accessible names rendered as `undefined`; it was closed without selection. The drawer was dismissed unchanged. Representative sorting on `Date of Registration` cycled `none` → `ascending` → `descending` → `none`, restoring the original unsorted state. `Show archived` was toggled on and restored off; both states retained 54 structural rows in the observed DOM. `Offline config`, `Create new patient`, patient rows, and audit actions were not used.
+The landing state exposes patient search, filters, archived-record toggle, result grid and audit modal region. A synthetic no-match query reduced the grid to three structural rows without an explicit empty-state message; clearing restored the populated grid. Opening `Filters` exposed `Title`, `Age`, `Gender`, `Ethnicity`, `Country of Birth`, `Language`, `Postcode`, and `Practice`, plus `Clear all`, `Cancel`, and `Save`. `Title` exposed nine labeled options and closed without selection. `Gender` exposed four options whose accessible names rendered as `undefined`; it was closed without selection. The drawer was dismissed unchanged. Representative sorting on `Date of Registration` cycled `none` → `ascending` → `descending` → `none`, restoring the original unsorted state. `Show archived` was toggled on and restored off; both states retained 54 structural rows in the observed DOM. `Offline config`, `Create new patient`, and audit actions were not used. `[Observed: dev, Super Admin GB, 2026-09-30]` A populated grid row's pinned `Actions` button opened `Profile`, `View`, `Edit`, `View Audit`, `Archive`, and `Save for offline access`. Selecting `Profile` navigated to `/paco/patient-profile/<patient-guid>/dashboard`; patient identifier and row data are excluded. The `Actions` cells live in a separate pinned AG Grid row group; locate the matching row by `row-index` only after confirming alignment with the main row. No mutation performed.
 
 ## Execution guidance
 
@@ -45,7 +45,7 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. S
 
 ## Open questions
 
-- Patient-detail actions and audit behavior remain unverified.
+- `View`, `Edit`, `View Audit`, `Archive`, and `Save for offline access` remain untested; only `Profile` navigation was verified.
 - `Gender` filter options expose `undefined` accessible names, preventing reliable option identification and indicating an accessibility/data-label gap.
 
 ## Tester notes

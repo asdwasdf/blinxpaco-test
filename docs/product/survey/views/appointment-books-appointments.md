@@ -13,7 +13,7 @@ controls:
   - { name: Columns, kind: read-only }
   - { name: Filters, kind: read-only }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Appointment Books Appointments
@@ -24,7 +24,9 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The grid exposed columns `Appointment ID`, `Patient Name`, `Appointment Slot ID`, `Session Name`, `Clinician`, `Appointment Date`, `Booked Via`, and `Session Ids`. Seven rows were visible in the initial observation. Controls included `Fetch Latest Appointments`, `Fetch All Slot Details`, `Show Cancelled Bookings`, `Search...`, `Columns`, and `Filters`. Enabling `Show Cancelled Bookings` expanded the loaded grid state from 16 to 46 visible `role=row` elements; disabling it restored 16. Counts include grid structural rows and therefore are evidence of a filter-state change, not appointment totals. Patient, clinician, session, and identifier values are omitted. Selecting `Appointment ID` cycled `aria-sort` through `ascending`, `descending`, and `none` while the summary remained `Rows: 7`, `Total Rows: 7`. Fetch controls were not used.
+The grid exposed columns `Appointment ID`, `Patient Name`, `Appointment Slot ID`, `Session Name`, `Clinician`, `Appointment Date`, `Booked Via`, `Session Ids`, `Slot Length`, and `Slot Type ID`. Six rows were visible during the 2026-09-22 recheck; live totals are not treated as expected values. Controls included `Fetch Latest Appointments`, `Fetch All Slot Details`, `Show Cancelled Bookings`, `Columns`, and `Filters`. Enabling `Show Cancelled Bookings` previously expanded the loaded grid state from 16 to 46 visible `role=row` elements; disabling it restored 16. Counts include grid structural rows and therefore evidence a filter-state change, not appointment totals. Patient, clinician, session, and identifier values are omitted. Selecting `Appointment ID` previously cycled `aria-sort` through `ascending`, `descending`, and `none`.
+
+On 2026-09-22, `Columns` exposed searchable visibility controls and a `Row Groups` drop area. A synthetic no-match query emptied the column list; clearing restored it. `Filters` exposed searchable entries for appointment, patient, session, clinician, date, booking-source, and slot metadata. A synthetic no-match query hid all filter entries; clearing restored them. Both panels were closed without changing visibility, grouping, or filter values. Fetch controls and row-selection checkboxes were not used. Mutation: `None`.
 
 ## Execution guidance
 
@@ -41,11 +43,12 @@ The grid exposed columns `Appointment ID`, `Patient Name`, `Appointment Slot ID`
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Seven appointment rows observed initially. `Show Cancelled Bookings` changed visible grid structure from 16 to 46 `role=row` elements and returned to 16 when disabled. `Appointment ID` sorting cycled ascending/descending/none without changing the 7-row summary. All personal and operational values redacted. Mutation: `None`.
+Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 2026-09-22. Six live rows were present during recheck; values excluded. `Columns` and `Filters` panels each transitioned through synthetic no-match and restored states without changing grid configuration. Earlier `Show Cancelled Bookings` and `Appointment ID` sort transitions remain documented as historical observations. All personal and operational values redacted. Mutation: `None`.
 
 ## Open questions
 
-- Fetch side effects, refresh semantics, exact cancelled-booking totals/status values, pagination, and source synchronization remain unverified.
+- Fetch side effects, refresh semantics, exact cancelled-booking totals/status values, row selection, pagination, and source synchronization remain unverified.
+- Applying field filters, changing column visibility, and row grouping remain unverified; no configuration was changed.
 
 ## Tester notes
 

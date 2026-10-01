@@ -11,7 +11,7 @@ controls:
   - { name: Edit, kind: mutation }
   - { name: Save, kind: mutation }
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-09-22
 ---
 
 # Users and Staff Role Groups
@@ -22,7 +22,7 @@ last_observed: 2026-09-19
 
 ## Entry and transitions
 
-The page exposed `Role`, `Role Group`, `RBAC Role`, `RBAC Activities`, and `Search Role Groups...`. Controls included two `Add New` actions, `Edit`, and a disabled `Save`. A synthetic no-match query hid all mapping inputs and mutation controls except disabled `Save`; no explicit empty-state message appeared. Clearing search restored the mappings and controls without enabling `Save`. Existing role names and activity assignments are omitted. No control or value was changed.
+The page exposes `Role`, `Role Group`, `RBAC Role`, `RBAC Activities`, and `Search Role Groups...`. Controls include two `Add New` actions, `Edit`, and a disabled `Save`. Reverified on 2026-09-22: a synthetic no-match query hid all mapping inputs and mutation controls except disabled `Save`; no explicit empty-state message appeared. Clearing restored the mappings and controls without enabling `Save`. Existing role names and activity assignments are omitted. No control or value was changed. Mutation: `None`.
 
 ## Execution guidance
 
@@ -39,7 +39,7 @@ The page exposed `Role`, `Role Group`, `RBAC Role`, `RBAC Activities`, and `Sear
 
 ## Evidence
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. Synthetic no-match search hid mappings without an explicit empty-state message; clearing restored them. Role and RBAC values redacted. Mutation: `None`.
+Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. Synthetic no-match search hid mappings without an explicit empty-state message; disabled `Save` remained, and clearing restored mappings. Role and RBAC values redacted. Mutation: `None`.
 
 ## Open questions
 

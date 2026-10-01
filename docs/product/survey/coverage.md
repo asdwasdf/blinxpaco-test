@@ -3,7 +3,7 @@
 ## Super Admin GB — dev
 
 - Status: `In Progress`
-- Last observed: `2026-09-21`
+- Last observed: `2026-09-22`
 - Structured views: 62
 - Visited states: dashboard and staff availability; Manager/Clinician dashboards; analytics/report states; Comms Hub; Health Forms; Patients; Case Load Management; Configuration; Web Chat & Video; failed global routes
 - Pending queue: read-only completeness audit of remaining sidebar/submenu/dialog/tab/filter/pagination states
