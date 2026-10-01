@@ -1,18 +1,26 @@
 ---
 id: quick-pay-invoices
 title: Quick Pay Invoices
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco-connect/quick-pay/invoices]
+routes:
+  - /paco-connect/quick-pay/invoices
 controls:
-  - { name: Search patients..., kind: read-only }
-  - { name: Create New Invoice, kind: mutation }
-  - { name: Columns, kind: read-only }
-  - { name: Filters, kind: read-only }
-  - { name: Action, kind: unknown }
+  - name: Search patients...
+    kind: read-only
+  - name: Create New Invoice
+    kind: mutation
+  - name: Columns
+    kind: read-only
+  - name: Filters
+    kind: read-only
+  - name: Action
+    kind: unknown
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Quick Pay Invoices
@@ -49,6 +57,22 @@ Navigation and accessibility observation, dev, `Super Admin GB`, 2026-09-22. HTT
 ## Open questions
 
 - Search matching behavior, grid-panel states, invoice details, `Action`, creation, credit lifecycle, and persistence remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Quick Pay` điều hướng trực tiếp tới `/paco-connect/quick-pay/invoices` (PACO Connect). Heading `Invoices`; tab `Invoices`/`Product Catalogue`/`Accounts`; panel `Columns`/`Filters`.
+
+Gap / Open Question:
+
+- Document trả HTTP 404 trong khi SPA vẫn render `Invoices` (Observed; ý định chưa rõ).
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Click tab `Filters`/`Columns` không thấy overlay hay URL đổi sau 1.5s (selector có thể chưa khớp panel inline).
 
 ## Tester notes
 

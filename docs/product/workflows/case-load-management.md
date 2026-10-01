@@ -86,4 +86,15 @@
 - Open questions: Case và Task Workboards đều không thoát `Loading workboards...` trong session hiện tại; business meaning của priority/PDS/breach chưa có trusted source; data condition đưa case vào `My Case` chưa được quan sát.
 - Exact resume state: defer cả hai Workboards cho tới khi session/environment loading được làm rõ; không lặp lại cùng state. Tiếp tục workflow khác hoặc retry bằng session mới. Tránh chọn staff status.
 
+## Discovery update run-20261001-085609
+
+`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+- Entry: sidebar `Case Load Management` mở submenu `My Case`, `Unallocated`, `Case Workboards`, `Task Workboards`.
+- `My Case` (`/paco/my-case`) empty: `There are no new cases`; workflow có dữ liệu cần case được giao (data dependency).
+- `Unallocated` (`/paco/unallocated`): `Unallocated (0)`, sort `Breaching (high to low)`, `List View`, `Filters` mở sidebar (`Clear all`, `Cancel`, `Save`).
+- `Task Workboards` → `/paco/workboards?tab=task` (`Tasks (0)`, `Cases (0)`); `View My Cases Only` điều hướng sang board `/paco/workboards/<id>`; `Case Workboards` mở `Master Case Board` với cột `Awaiting patient validation`.
+- Approval stop: `Create new case`, `Create new board`, `Filters > Save` (persistence chưa rõ).
+- Gap: `Loading workboards...` còn hiện lúc 3.5s; chưa phân biệt empty với tải chậm.
+
 ## Tester notes

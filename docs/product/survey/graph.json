@@ -2,6 +2,23 @@
   "generatedAt": "2026-10-01",
   "views": [
     {
+      "id": "analytics-reports-access-denied",
+      "title": "Analytics and Reports — Access Denied",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "analytics-reports-scr-unauthorized"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/analytics-reports-access-denied.md",
+      "relationships": []
+    },
+    {
       "id": "analytics-reports-scr-unauthorized",
       "title": "Analytics and Reports — SCR Unauthorized",
       "roles": [
@@ -19,8 +36,36 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/analytics-reports-scr-unauthorized.md"
+      "last_observed": "2026-10-01",
+      "source": "views/analytics-reports-scr-unauthorized.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-analytics-reports-scr-unauthorized-1",
+          "from": "analytics-reports-scr-unauthorized",
+          "trigger": "Prescriptions",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "analytics-reports-access-denied"
+        },
+        {
+          "id": "run-20261001-085609-analytics-reports-scr-unauthorized-2",
+          "from": "analytics-reports-scr-unauthorized",
+          "trigger": "NCRS",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "analytics-reports-access-denied"
+        }
+      ]
     },
     {
       "id": "appointment-book-route-failure",
@@ -45,7 +90,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-20",
-      "source": "views/appointment-book-route-failure.md"
+      "source": "views/appointment-book-route-failure.md",
+      "relationships": []
     },
     {
       "id": "appointment-books",
@@ -60,8 +106,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/appointment-books.md"
+      "last_observed": "2026-10-01",
+      "source": "views/appointment-books.md",
+      "relationships": []
     },
     {
       "id": "appointment-books-appointments",
@@ -101,8 +148,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/appointment-books-appointments.md"
+      "last_observed": "2026-10-01",
+      "source": "views/appointment-books-appointments.md",
+      "relationships": []
     },
     {
       "id": "appointment-books-external-reminders",
@@ -146,8 +194,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/appointment-books-external-reminders.md"
+      "last_observed": "2026-10-01",
+      "source": "views/appointment-books-external-reminders.md",
+      "relationships": []
     },
     {
       "id": "appointment-books-scheduler",
@@ -171,8 +220,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/appointment-books-scheduler.md"
+      "last_observed": "2026-10-01",
+      "source": "views/appointment-books-scheduler.md",
+      "relationships": []
     },
     {
       "id": "appointment-books-sessions",
@@ -187,8 +237,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/appointment-books-sessions.md"
+      "last_observed": "2026-10-01",
+      "source": "views/appointment-books-sessions.md",
+      "relationships": []
     },
     {
       "id": "appointment-books-slot-types",
@@ -203,8 +254,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/appointment-books-slot-types.md"
+      "last_observed": "2026-10-01",
+      "source": "views/appointment-books-slot-types.md",
+      "relationships": []
     },
     {
       "id": "capacity-demand",
@@ -236,8 +288,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/capacity-demand.md"
+      "last_observed": "2026-10-01",
+      "source": "views/capacity-demand.md",
+      "relationships": []
     },
     {
       "id": "care-navigation-patient-search",
@@ -261,8 +314,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-30",
-      "source": "views/care-navigation-patient-search.md"
+      "last_observed": "2026-10-01",
+      "source": "views/care-navigation-patient-search.md",
+      "relationships": []
     },
     {
       "id": "case-prioritisation",
@@ -290,8 +344,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/case-prioritisation.md"
+      "last_observed": "2026-10-01",
+      "source": "views/case-prioritisation.md",
+      "relationships": []
     },
     {
       "id": "clinician-dashboard",
@@ -324,7 +379,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-19",
-      "source": "views/clinician-dashboard.md"
+      "source": "views/clinician-dashboard.md",
+      "relationships": []
     },
     {
       "id": "comms-analytics",
@@ -364,8 +420,23 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-21",
-      "source": "views/comms-analytics.md"
+      "last_observed": "2026-10-01",
+      "source": "views/comms-analytics.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-comms-analytics-1",
+          "from": "comms-analytics",
+          "trigger": "Comms Analytics",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "trang login Comms Hub ở host ngoài"
+        }
+      ]
     },
     {
       "id": "comms-campaign-manager",
@@ -413,8 +484,153 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-21",
-      "source": "views/comms-campaign-manager.md"
+      "last_observed": "2026-10-01",
+      "source": "views/comms-campaign-manager.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-comms-campaign-manager-1",
+          "from": "comms-campaign-manager",
+          "trigger": "Create Campaign",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "draft campaign"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-campaign-manager-2",
+          "from": "comms-campaign-manager",
+          "trigger": "Resend",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "tin được gửi lại (SEND)"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-campaign-manager-3",
+          "from": "comms-campaign-manager",
+          "trigger": "Add Selected",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "recipient campaign thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-campaign-manager-4",
+          "from": "comms-campaign-manager",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-1",
+          "from": "comms-campaign-manager",
+          "trigger": "Analytics",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "/commshub/analytics (patient-level)"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-2",
+          "from": "comms-campaign-manager",
+          "trigger": "Outbox",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "/commshub/campaign-outbox"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-3",
+          "from": "comms-campaign-manager",
+          "trigger": "Edit",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign bị sửa"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-4",
+          "from": "comms-campaign-manager",
+          "trigger": "Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign bị xóa (DELETE)"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-5",
+          "from": "comms-campaign-manager",
+          "trigger": "Restore",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign được khôi phục"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-6",
+          "from": "comms-campaign-manager",
+          "trigger": "Create Campaign",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign mới"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-7",
+          "from": "comms-campaign-manager",
+          "trigger": "Analytics > Export to CSV",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "file CSV chứa PII (download)"
+        }
+      ]
     },
     {
       "id": "comms-campaign-outbox",
@@ -455,7 +671,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-21",
-      "source": "views/comms-campaign-outbox.md"
+      "source": "views/comms-campaign-outbox.md",
+      "relationships": []
     },
     {
       "id": "comms-hub-configuration",
@@ -484,7 +701,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-21",
-      "source": "views/comms-hub-configuration.md"
+      "source": "views/comms-hub-configuration.md",
+      "relationships": []
     },
     {
       "id": "comms-hub-submenu",
@@ -528,8 +746,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-21",
-      "source": "views/comms-hub-submenu.md"
+      "last_observed": "2026-10-01",
+      "source": "views/comms-hub-submenu.md",
+      "relationships": []
     },
     {
       "id": "comms-patient-manager",
@@ -585,8 +804,62 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-21",
-      "source": "views/comms-patient-manager.md"
+      "last_observed": "2026-10-01",
+      "source": "views/comms-patient-manager.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-comms-patient-manager-1",
+          "from": "comms-patient-manager",
+          "trigger": "Create List",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "patient list mới"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-patient-manager-2",
+          "from": "comms-patient-manager",
+          "trigger": "Add to Existing List",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "patient list thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-patient-manager-3",
+          "from": "comms-patient-manager",
+          "trigger": "Upload CSV",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "import patient list (upload)"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-patient-manager-4",
+          "from": "comms-patient-manager",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "patient list được lưu"
+        }
+      ]
     },
     {
       "id": "comms-template-manager",
@@ -622,8 +895,127 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-21",
-      "source": "views/comms-template-manager.md"
+      "last_observed": "2026-10-01",
+      "source": "views/comms-template-manager.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-comms-template-manager-1",
+          "from": "comms-template-manager",
+          "trigger": "Create New Email",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "draft email template"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-template-manager-2",
+          "from": "comms-template-manager",
+          "trigger": "Create New SMS",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "draft sms template"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-template-manager-3",
+          "from": "comms-template-manager",
+          "trigger": "Create without a Template",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "draft custom build"
+        },
+        {
+          "id": "run-20261001-085609-p2-comms-template-manager-4",
+          "from": "comms-template-manager",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-1",
+          "from": "comms-template-manager",
+          "trigger": "Copy",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "bản sao template mới"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-2",
+          "from": "comms-template-manager",
+          "trigger": "Edit",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template bị sửa"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-3",
+          "from": "comms-template-manager",
+          "trigger": "Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template bị xóa (DELETE)"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-4",
+          "from": "comms-template-manager",
+          "trigger": "Set Org. Defaults",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template mặc định của org thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-5",
+          "from": "comms-template-manager",
+          "trigger": "Create New SMS",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "draft SMS (`/template-builder/sms/create`)"
+        }
+      ]
     },
     {
       "id": "configuration",
@@ -671,8 +1063,218 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
-      "source": "views/configuration.md"
+      "last_observed": "2026-10-01",
+      "source": "views/configuration.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-configuration-1",
+          "from": "configuration",
+          "trigger": "Users & Staff > Teams",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "users-staff-teams"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-2",
+          "from": "configuration",
+          "trigger": "Users & Staff > Role Groups",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "users-staff-role-groups"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-3",
+          "from": "configuration",
+          "trigger": "Users & Staff > Staff Profiles",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "users-staff-profiles"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-4",
+          "from": "configuration",
+          "trigger": "Patient > DFD",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "patient-dfd-route-failure"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-5",
+          "from": "configuration",
+          "trigger": "Patient > Care Navigation",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "patient-care-navigation"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-6",
+          "from": "configuration",
+          "trigger": "Appointment Books > Scheduler",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books-scheduler"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-7",
+          "from": "configuration",
+          "trigger": "Appointment Books > Sessions",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books-sessions"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-8",
+          "from": "configuration",
+          "trigger": "Appointment Books > Slot Types",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books-slot-types"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-9",
+          "from": "configuration",
+          "trigger": "Appointment Books > Appointments",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books-appointments"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-10",
+          "from": "configuration",
+          "trigger": "Appointment Books > External Appt Reminders",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books-external-reminders"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-11",
+          "from": "configuration",
+          "trigger": "Appointment Books > Appointment Books",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-12",
+          "from": "configuration",
+          "trigger": "Quick Pay > Product Catalogue",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "quick-pay-product-catalogue"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-13",
+          "from": "configuration",
+          "trigger": "Quick Pay > Accounts",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "quick-pay-accounts"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-14",
+          "from": "configuration",
+          "trigger": "Patients & Proxy > Role Groups",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "patients-proxy-role-groups"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-15",
+          "from": "configuration",
+          "trigger": "Clinical Config > Risk Strat Builder",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "risk-strat-builder"
+        },
+        {
+          "id": "run-20261001-085609-p2-configuration-16",
+          "from": "configuration",
+          "trigger": "Clinical Config > Template Library",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "template-library-route-failure"
+        }
+      ]
     },
     {
       "id": "connect-dashboard",
@@ -688,7 +1290,8 @@
       "controls": [],
       "verified_by": [],
       "last_observed": "2026-09-19",
-      "source": "views/connect-dashboard.md"
+      "source": "views/connect-dashboard.md",
+      "relationships": []
     },
     {
       "id": "dashboard",
@@ -754,8 +1357,237 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/dashboard.md"
+      "last_observed": "2026-10-01",
+      "source": "views/dashboard.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-dashboard-1",
+          "from": "dashboard",
+          "trigger": "Health Forms",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "health-forms-submenu"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-2",
+          "from": "dashboard",
+          "trigger": "Comms Hub",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "comms-hub-submenu"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-3",
+          "from": "dashboard",
+          "trigger": "Web Chat & Video",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "web-chat-video-submenu"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-4",
+          "from": "dashboard",
+          "trigger": "Rocket Bar",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "rocket-bar-submenu"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-5",
+          "from": "dashboard",
+          "trigger": "Appointment Book",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "appointment-books"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-6",
+          "from": "dashboard",
+          "trigger": "Configuration",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "organisation-general"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-7",
+          "from": "dashboard",
+          "trigger": "Quick Pay",
+          "relationship": "cross-module handoff",
+          "context": [
+            "PACO -> PACO Connect"
+          ],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "quick-pay-invoices"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-8",
+          "from": "dashboard",
+          "trigger": "User Portal",
+          "relationship": "cross-module handoff",
+          "context": [
+            "PACO -> PACO Connect"
+          ],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "user-portal-route-failure"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-9",
+          "from": "dashboard",
+          "trigger": "Case Load Management > My Case",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "my-case"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-10",
+          "from": "dashboard",
+          "trigger": "Case Load Management > Unallocated",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "unallocated-cases"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-11",
+          "from": "dashboard",
+          "trigger": "Case Load Management > Task Workboards",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "master-task-board"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-12",
+          "from": "dashboard",
+          "trigger": "Analytics & Reports > Patient Details",
+          "relationship": "cross-module handoff",
+          "context": [
+            "Patient & Medication Analyser app"
+          ],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "patient-details-report"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-13",
+          "from": "dashboard",
+          "trigger": "Analytics & Reports > Comms Analytics",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "comms-analytics"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-14",
+          "from": "dashboard",
+          "trigger": "Analytics & Reports > Reports",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "analytics-reports-scr-unauthorized"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-15",
+          "from": "dashboard",
+          "trigger": "Patients > Care Navigation",
+          "relationship": "cross-module handoff",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "care-navigation-patient-search"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-16",
+          "from": "dashboard",
+          "trigger": "Patients > Patient Search",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "patient-search"
+        },
+        {
+          "id": "run-20261001-085609-dashboard-17",
+          "from": "dashboard",
+          "trigger": "Session prompt",
+          "relationship": "system interrupt",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "set-your-status-dialog"
+        }
+      ]
     },
     {
       "id": "health-form-inbox",
@@ -768,35 +1600,28 @@
       "routes": [
         "health-forms-submenu"
       ],
-      "controls": [
-        {
-          "name": "Filters",
-          "kind": "filter"
-        },
-        {
-          "name": "All",
-          "kind": "filter"
-        },
-        {
-          "name": "Incomplete",
-          "kind": "filter"
-        },
-        {
-          "name": "Overdue",
-          "kind": "filter"
-        },
-        {
-          "name": "Completed",
-          "kind": "filter"
-        },
-        {
-          "name": "Awaiting Review",
-          "kind": "filter"
-        }
-      ],
+      "controls": [],
       "verified_by": [],
       "last_observed": "2026-10-01",
-      "source": "views/health-form-inbox.md"
+      "source": "views/health-form-inbox.md",
+      "relationships": []
+    },
+    {
+      "id": "health-form-vs-patient-comms",
+      "title": "Health Form Inbox vs Patient Comms",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "health-form-inbox"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/health-form-vs-patient-comms.md",
+      "relationships": []
     },
     {
       "id": "health-forms-designer",
@@ -828,8 +1653,23 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
-      "source": "views/health-forms-designer.md"
+      "last_observed": "2026-10-01",
+      "source": "views/health-forms-designer.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-health-forms-designer-1",
+          "from": "health-forms-designer",
+          "trigger": "New Health Form",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "health form builder cho form mới"
+        }
+      ]
     },
     {
       "id": "health-forms-designer-v2",
@@ -869,8 +1709,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-30",
-      "source": "views/health-forms-designer-v2.md"
+      "last_observed": "2026-10-01",
+      "source": "views/health-forms-designer-v2.md",
+      "relationships": []
     },
     {
       "id": "health-forms-home",
@@ -895,7 +1736,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-20",
-      "source": "views/health-forms-home.md"
+      "source": "views/health-forms-home.md",
+      "relationships": []
     },
     {
       "id": "health-forms-submenu",
@@ -923,8 +1765,25 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/health-forms-submenu.md"
+      "last_observed": "2026-10-01",
+      "source": "views/health-forms-submenu.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-health-forms-submenu-1",
+          "from": "health-forms-submenu",
+          "trigger": "Designer",
+          "relationship": "cross-module handoff",
+          "context": [
+            "Health Forms app"
+          ],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "health-forms-designer"
+        }
+      ]
     },
     {
       "id": "manager-dashboard",
@@ -973,7 +1832,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-19",
-      "source": "views/manager-dashboard.md"
+      "source": "views/manager-dashboard.md",
+      "relationships": []
     },
     {
       "id": "master-case-board",
@@ -1006,7 +1866,22 @@
       ],
       "verified_by": [],
       "last_observed": "2026-10-01",
-      "source": "views/master-case-board.md"
+      "source": "views/master-case-board.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-master-case-board-1",
+          "from": "master-case-board",
+          "trigger": "Create new board",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "work board mới"
+        }
+      ]
     },
     {
       "id": "master-task-board",
@@ -1047,7 +1922,22 @@
       ],
       "verified_by": [],
       "last_observed": "2026-10-01",
-      "source": "views/master-task-board.md"
+      "source": "views/master-task-board.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-master-task-board-1",
+          "from": "master-task-board",
+          "trigger": "Create new board",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "work board mới"
+        }
+      ]
     },
     {
       "id": "media-library",
@@ -1067,8 +1957,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/media-library.md"
+      "last_observed": "2026-10-01",
+      "source": "views/media-library.md",
+      "relationships": []
     },
     {
       "id": "medication-analyser",
@@ -1092,8 +1983,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/medication-analyser.md"
+      "last_observed": "2026-10-01",
+      "source": "views/medication-analyser.md",
+      "relationships": []
     },
     {
       "id": "my-case",
@@ -1108,8 +2000,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-20",
-      "source": "views/my-case.md"
+      "last_observed": "2026-10-01",
+      "source": "views/my-case.md",
+      "relationships": []
     },
     {
       "id": "organisation-announcements",
@@ -1145,8 +2038,49 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-announcements.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-announcements.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-organisation-announcements-1",
+          "from": "organisation-announcements",
+          "trigger": "Add another",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "danh sách announcement thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-organisation-announcements-2",
+          "from": "organisation-announcements",
+          "trigger": "Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "announcement bị xóa"
+        },
+        {
+          "id": "run-20261001-085609-p2-organisation-announcements-3",
+          "from": "organisation-announcements",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "announcement được lưu/phát"
+        }
+      ]
     },
     {
       "id": "organisation-code-rule",
@@ -1170,8 +2104,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-code-rule.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-code-rule.md",
+      "relationships": []
     },
     {
       "id": "organisation-dx-priorities",
@@ -1203,8 +2138,49 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-dx-priorities.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-dx-priorities.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-organisation-dx-priorities-1",
+          "from": "organisation-dx-priorities",
+          "trigger": "Add Service & Priority",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "mapping dx priority thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-organisation-dx-priorities-2",
+          "from": "organisation-dx-priorities",
+          "trigger": "Remove pair",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "mapping dx priority thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-organisation-dx-priorities-3",
+          "from": "organisation-dx-priorities",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "dx priorities được lưu"
+        }
+      ]
     },
     {
       "id": "organisation-general",
@@ -1240,8 +2216,101 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-general.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-general.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-organisation-general-1",
+          "from": "organisation-general",
+          "trigger": "Pathways Config",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "organisation-pathways-config"
+        },
+        {
+          "id": "run-20261001-085609-organisation-general-2",
+          "from": "organisation-general",
+          "trigger": "Skills",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "organisation-skills"
+        },
+        {
+          "id": "run-20261001-085609-organisation-general-3",
+          "from": "organisation-general",
+          "trigger": "Sharing Agreements",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "organisation-sharing-agreements"
+        },
+        {
+          "id": "run-20261001-085609-organisation-general-4",
+          "from": "organisation-general",
+          "trigger": "Org Priority",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "organisation-org-priorities"
+        },
+        {
+          "id": "run-20261001-085609-organisation-general-5",
+          "from": "organisation-general",
+          "trigger": "Inbound Priority Flow",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "organisation-inbound-priority-flow"
+        },
+        {
+          "id": "run-20261001-085609-organisation-general-6",
+          "from": "organisation-general",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "organisation general settings được lưu"
+        },
+        {
+          "id": "run-20261001-085609-organisation-general-7",
+          "from": "organisation-general",
+          "trigger": "+ Add Special Opening Hours",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "editor special opening hours"
+        }
+      ]
     },
     {
       "id": "organisation-inbound-priority-flow",
@@ -1277,8 +2346,49 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-inbound-priority-flow.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-inbound-priority-flow.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-organisation-inbound-priority-flow-1",
+          "from": "organisation-inbound-priority-flow",
+          "trigger": "Add",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "inbound priority rules thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-organisation-inbound-priority-flow-2",
+          "from": "organisation-inbound-priority-flow",
+          "trigger": "Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "inbound priority rules thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-organisation-inbound-priority-flow-3",
+          "from": "organisation-inbound-priority-flow",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "inbound priority rules thay đổi"
+        }
+      ]
     },
     {
       "id": "organisation-integrations",
@@ -1298,8 +2408,23 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-integrations.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-integrations.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-organisation-integrations-1",
+          "from": "organisation-integrations",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "cấu hình integration được lưu"
+        }
+      ]
     },
     {
       "id": "organisation-locations",
@@ -1319,8 +2444,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-locations.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-locations.md",
+      "relationships": []
     },
     {
       "id": "organisation-org-priorities",
@@ -1352,8 +2478,83 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-org-priorities.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-org-priorities.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-organisation-org-priorities-1",
+          "from": "organisation-org-priorities",
+          "trigger": "Add new",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "org priority list thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-organisation-org-priorities-2",
+          "from": "organisation-org-priorities",
+          "trigger": "Edit",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "org priority list thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-organisation-org-priorities-3",
+          "from": "organisation-org-priorities",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "org priority list thay đổi"
+        }
+      ]
+    },
+    {
+      "id": "organisation-pathways-config",
+      "title": "Configuration — Pathways Config",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "organisation-general"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-pathways-config.md",
+      "relationships": []
+    },
+    {
+      "id": "organisation-practice-profiles",
+      "title": "Configuration — Practice Profiles",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "organisation-general"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-practice-profiles.md",
+      "relationships": []
     },
     {
       "id": "organisation-services",
@@ -1385,8 +2586,77 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-services.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-services.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-organisation-services-1",
+          "from": "organisation-services",
+          "trigger": "Remove service",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "danh sách service thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-organisation-services-2",
+          "from": "organisation-services",
+          "trigger": "Add Another",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "danh sách service thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-organisation-services-3",
+          "from": "organisation-services",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "services được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p7-organisation-services-1",
+          "from": "organisation-services",
+          "trigger": "Add Another > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "service mới được lưu",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#12"
+        },
+        {
+          "id": "run-20261001-085609-p7-organisation-services-2",
+          "from": "organisation-services",
+          "trigger": "Remove service > Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "service bị xóa ngay",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#13"
+        }
+      ]
     },
     {
       "id": "organisation-sharing-agreements",
@@ -1401,8 +2671,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-sharing-agreements.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-sharing-agreements.md",
+      "relationships": []
     },
     {
       "id": "organisation-skills",
@@ -1422,8 +2693,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/organisation-skills.md"
+      "last_observed": "2026-10-01",
+      "source": "views/organisation-skills.md",
+      "relationships": []
     },
     {
       "id": "patient-analyser",
@@ -1455,8 +2727,62 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/patient-analyser.md"
+      "last_observed": "2026-10-01",
+      "source": "views/patient-analyser.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-patient-analyser-1",
+          "from": "patient-analyser",
+          "trigger": "Send to Comms Hub",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "luồng Comms Hub (cross-module, SEND)"
+        },
+        {
+          "id": "run-20261001-085609-p2-patient-analyser-2",
+          "from": "patient-analyser",
+          "trigger": "Group Quick Send",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "gửi tin nhóm (SEND)"
+        },
+        {
+          "id": "run-20261001-085609-p2-patient-analyser-3",
+          "from": "patient-analyser",
+          "trigger": "Save Report",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "saved report"
+        },
+        {
+          "id": "run-20261001-085609-p3-patient-analyser-1",
+          "from": "patient-analyser",
+          "trigger": "Advanced Search > Import",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "import search definition (upload)"
+        }
+      ]
     },
     {
       "id": "patient-care-navigation",
@@ -1484,8 +2810,26 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/patient-care-navigation.md"
+      "last_observed": "2026-10-01",
+      "source": "views/patient-care-navigation.md",
+      "relationships": []
+    },
+    {
+      "id": "patient-comms-hub",
+      "title": "Patient Comms / Comms Hub",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "comms-analytics"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/patient-comms-hub.md",
+      "relationships": []
     },
     {
       "id": "patient-details-report",
@@ -1509,8 +2853,49 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/patient-details-report.md"
+      "last_observed": "2026-10-01",
+      "source": "views/patient-details-report.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-patient-details-report-1",
+          "from": "patient-details-report",
+          "trigger": "Send to Comms Hub",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "luồng recipient/campaign của Comms Hub (cross-module)"
+        },
+        {
+          "id": "run-20261001-085609-patient-details-report-2",
+          "from": "patient-details-report",
+          "trigger": "Group Quick Send",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "luồng gửi tin nhóm"
+        },
+        {
+          "id": "run-20261001-085609-patient-details-report-3",
+          "from": "patient-details-report",
+          "trigger": "Save Report",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "saved report"
+        }
+      ]
     },
     {
       "id": "patient-dfd-route-failure",
@@ -1525,8 +2910,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/patient-dfd-route-failure.md"
+      "last_observed": "2026-10-01",
+      "source": "views/patient-dfd-route-failure.md",
+      "relationships": []
     },
     {
       "id": "patient-profile",
@@ -1575,7 +2961,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-10-01",
-      "source": "views/patient-profile.md"
+      "source": "views/patient-profile.md",
+      "relationships": []
     },
     {
       "id": "patient-search",
@@ -1603,8 +2990,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-30",
-      "source": "views/patient-search.md"
+      "last_observed": "2026-10-01",
+      "source": "views/patient-search.md",
+      "relationships": []
     },
     {
       "id": "patients-proxy-role-groups",
@@ -1636,8 +3024,36 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/patients-proxy-role-groups.md"
+      "last_observed": "2026-10-01",
+      "source": "views/patients-proxy-role-groups.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-patients-proxy-role-groups-1",
+          "from": "patients-proxy-role-groups",
+          "trigger": "Add New",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "proxy role group mới"
+        },
+        {
+          "id": "run-20261001-085609-p2-patients-proxy-role-groups-2",
+          "from": "patients-proxy-role-groups",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "proxy role groups được lưu"
+        }
+      ]
     },
     {
       "id": "qof-registers",
@@ -1661,8 +3077,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/qof-registers.md"
+      "last_observed": "2026-10-01",
+      "source": "views/qof-registers.md",
+      "relationships": []
     },
     {
       "id": "quick-pay-accounts",
@@ -1694,8 +3111,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/quick-pay-accounts.md"
+      "last_observed": "2026-10-01",
+      "source": "views/quick-pay-accounts.md",
+      "relationships": []
     },
     {
       "id": "quick-pay-invoices",
@@ -1731,8 +3149,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/quick-pay-invoices.md"
+      "last_observed": "2026-10-01",
+      "source": "views/quick-pay-invoices.md",
+      "relationships": []
     },
     {
       "id": "quick-pay-product-catalogue",
@@ -1768,8 +3187,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/quick-pay-product-catalogue.md"
+      "last_observed": "2026-10-01",
+      "source": "views/quick-pay-product-catalogue.md",
+      "relationships": []
     },
     {
       "id": "quick-pay-route-failure",
@@ -1790,7 +3210,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-22",
-      "source": "views/quick-pay-route-failure.md"
+      "source": "views/quick-pay-route-failure.md",
+      "relationships": []
     },
     {
       "id": "risk-strat-builder",
@@ -1822,8 +3243,90 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/risk-strat-builder.md"
+      "last_observed": "2026-10-01",
+      "source": "views/risk-strat-builder.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-risk-strat-builder-1",
+          "from": "risk-strat-builder",
+          "trigger": "New Model",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "risk model mới"
+        },
+        {
+          "id": "run-20261001-085609-p2-risk-strat-builder-2",
+          "from": "risk-strat-builder",
+          "trigger": "Add Risk Factor",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "risk model thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-risk-strat-builder-3",
+          "from": "risk-strat-builder",
+          "trigger": "Save Model",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "risk model được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p2-risk-strat-builder-4",
+          "from": "risk-strat-builder",
+          "trigger": "Delete Model",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "risk model bị xóa (DELETE)"
+        },
+        {
+          "id": "run-20261001-085609-p6-risk-strat-builder-1",
+          "from": "risk-strat-builder",
+          "trigger": "Create Risk Factor",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "factor lưu ngay vào model đang chọn (không cần Save Model)",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#9"
+        },
+        {
+          "id": "run-20261001-085609-p6-risk-strat-builder-2",
+          "from": "risk-strat-builder",
+          "trigger": "Remove factor > Save all changes",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "factor bị gỡ khỏi model sau reload",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#10"
+        }
+      ]
     },
     {
       "id": "rocket-bar",
@@ -1848,7 +3351,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-19",
-      "source": "views/rocket-bar.md"
+      "source": "views/rocket-bar.md",
+      "relationships": []
     },
     {
       "id": "rocket-bar-submenu",
@@ -1872,8 +3376,53 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/rocket-bar-submenu.md"
+      "last_observed": "2026-10-01",
+      "source": "views/rocket-bar-submenu.md",
+      "relationships": []
+    },
+    {
+      "id": "set-your-status-dialog",
+      "title": "Set your status dialog",
+      "roles": [
+        "Super Admin GB"
+      ],
+      "environment": "dev",
+      "status": "Observed",
+      "routes": [
+        "dashboard"
+      ],
+      "controls": [],
+      "verified_by": [],
+      "last_observed": "2026-10-01",
+      "source": "views/set-your-status-dialog.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-set-your-status-dialog-1",
+          "from": "set-your-status-dialog",
+          "trigger": "Choose status",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "presence status của user thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-set-your-status-dialog-2",
+          "from": "set-your-status-dialog",
+          "trigger": "Remind me later",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "dialog đóng; persistence reminder chưa rõ"
+        }
+      ]
     },
     {
       "id": "template-library-route-failure",
@@ -1888,8 +3437,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/template-library-route-failure.md"
+      "last_observed": "2026-10-01",
+      "source": "views/template-library-route-failure.md",
+      "relationships": []
     },
     {
       "id": "top-bar-more-options",
@@ -1922,7 +3472,8 @@
       ],
       "verified_by": [],
       "last_observed": "2026-09-19",
-      "source": "views/top-bar-more-options.md"
+      "source": "views/top-bar-more-options.md",
+      "relationships": []
     },
     {
       "id": "unallocated-cases",
@@ -1954,8 +3505,36 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-20",
-      "source": "views/unallocated-cases.md"
+      "last_observed": "2026-10-01",
+      "source": "views/unallocated-cases.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-unallocated-cases-1",
+          "from": "unallocated-cases",
+          "trigger": "Create new case",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "form case mới / case detail"
+        },
+        {
+          "id": "run-20261001-085609-p2-unallocated-cases-1",
+          "from": "unallocated-cases",
+          "trigger": "Filters > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "filter preset được lưu (persistence chưa rõ)"
+        }
+      ]
     },
     {
       "id": "user-portal-route-failure",
@@ -1970,8 +3549,23 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-20",
-      "source": "views/user-portal-route-failure.md"
+      "last_observed": "2026-10-01",
+      "source": "views/user-portal-route-failure.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-user-portal-route-failure-1",
+          "from": "user-portal-route-failure",
+          "trigger": "Release Notes",
+          "relationship": "external link",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "site công khai www.blinxhealthcare.com/release-notes/ (tab mới)"
+        }
+      ]
     },
     {
       "id": "users-staff-profiles",
@@ -2011,8 +3605,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/users-staff-profiles.md"
+      "last_observed": "2026-10-01",
+      "source": "views/users-staff-profiles.md",
+      "relationships": []
     },
     {
       "id": "users-staff-role-groups",
@@ -2044,8 +3639,49 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/users-staff-role-groups.md"
+      "last_observed": "2026-10-01",
+      "source": "views/users-staff-role-groups.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-users-staff-role-groups-1",
+          "from": "users-staff-role-groups",
+          "trigger": "Add New",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "role group mới"
+        },
+        {
+          "id": "run-20261001-085609-p2-users-staff-role-groups-2",
+          "from": "users-staff-role-groups",
+          "trigger": "Edit",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "quyền role group thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p2-users-staff-role-groups-3",
+          "from": "users-staff-role-groups",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "role groups được lưu"
+        }
+      ]
     },
     {
       "id": "users-staff-teams",
@@ -2077,8 +3713,78 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-22",
-      "source": "views/users-staff-teams.md"
+      "last_observed": "2026-10-01",
+      "source": "views/users-staff-teams.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-p2-users-staff-teams-1",
+          "from": "users-staff-teams",
+          "trigger": "Add New",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "team mới"
+        },
+        {
+          "id": "run-20261001-085609-p2-users-staff-teams-2",
+          "from": "users-staff-teams",
+          "trigger": "Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "teams được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p5-users-staff-teams-1",
+          "from": "users-staff-teams",
+          "trigger": "Add New > Add > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "team mới xuất hiện trong danh sách sau reload",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#2"
+        },
+        {
+          "id": "run-20261001-085609-p5-users-staff-teams-2",
+          "from": "users-staff-teams",
+          "trigger": "Rename > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "tên team cập nhật; toast Team Update 1 successful",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#3"
+        },
+        {
+          "id": "run-20261001-085609-p5-users-staff-teams-3",
+          "from": "users-staff-teams",
+          "trigger": "Delete > Save",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Verified-by-Mutation",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "team bị xóa khỏi danh sách sau reload",
+          "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#5"
+        }
+      ]
     },
     {
       "id": "virtual-appointments-auth",
@@ -2093,8 +3799,9 @@
       ],
       "controls": [],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/virtual-appointments-auth.md"
+      "last_observed": "2026-10-01",
+      "source": "views/virtual-appointments-auth.md",
+      "relationships": []
     },
     {
       "id": "web-chat-outstanding-reviews",
@@ -2115,8 +3822,9 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/web-chat-outstanding-reviews.md"
+      "last_observed": "2026-10-01",
+      "source": "views/web-chat-outstanding-reviews.md",
+      "relationships": []
     },
     {
       "id": "web-chat-video-submenu",
@@ -2140,8 +3848,25 @@
         }
       ],
       "verified_by": [],
-      "last_observed": "2026-09-19",
-      "source": "views/web-chat-video-submenu.md"
+      "last_observed": "2026-10-01",
+      "source": "views/web-chat-video-submenu.md",
+      "relationships": [
+        {
+          "id": "run-20261001-085609-web-chat-video-submenu-1",
+          "from": "web-chat-video-submenu",
+          "trigger": "Virtual Appointments",
+          "relationship": "cross-module handoff",
+          "context": [
+            "Web Chat & Video app"
+          ],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "to": "virtual-appointments-auth"
+        }
+      ]
     },
     {
       "id": "web-chat-virtual-appointments",
@@ -2158,10 +3883,16 @@
       "controls": [],
       "verified_by": [],
       "last_observed": "2026-09-19",
-      "source": "views/web-chat-virtual-appointments.md"
+      "source": "views/web-chat-virtual-appointments.md",
+      "relationships": []
     }
   ],
   "edges": [
+    {
+      "from": "analytics-reports-scr-unauthorized",
+      "to": "analytics-reports-access-denied",
+      "kind": "route"
+    },
     {
       "from": "dashboard",
       "to": "analytics-reports-scr-unauthorized",
@@ -2238,6 +3969,11 @@
       "kind": "route"
     },
     {
+      "from": "health-form-inbox",
+      "to": "health-form-vs-patient-comms",
+      "kind": "route"
+    },
+    {
       "from": "dashboard",
       "to": "health-forms-designer",
       "kind": "route"
@@ -2293,8 +4029,23 @@
       "kind": "route"
     },
     {
+      "from": "organisation-general",
+      "to": "organisation-pathways-config",
+      "kind": "route"
+    },
+    {
+      "from": "organisation-general",
+      "to": "organisation-practice-profiles",
+      "kind": "route"
+    },
+    {
       "from": "dashboard",
       "to": "patient-analyser",
+      "kind": "route"
+    },
+    {
+      "from": "comms-analytics",
+      "to": "patient-comms-hub",
       "kind": "route"
     },
     {
@@ -2335,6 +4086,11 @@
     {
       "from": "dashboard",
       "to": "rocket-bar-submenu",
+      "kind": "route"
+    },
+    {
+      "from": "dashboard",
+      "to": "set-your-status-dialog",
       "kind": "route"
     },
     {
@@ -2487,6 +4243,1559 @@
     {
       "from": "web-chat-virtual-appointments",
       "to": "/web-chat/appointments/"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "run-20261001-085609-analytics-reports-scr-unauthorized-1",
+      "from": "analytics-reports-scr-unauthorized",
+      "trigger": "Prescriptions",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "analytics-reports-access-denied"
+    },
+    {
+      "id": "run-20261001-085609-analytics-reports-scr-unauthorized-2",
+      "from": "analytics-reports-scr-unauthorized",
+      "trigger": "NCRS",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "analytics-reports-access-denied"
+    },
+    {
+      "id": "run-20261001-085609-comms-analytics-1",
+      "from": "comms-analytics",
+      "trigger": "Comms Analytics",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "trang login Comms Hub ở host ngoài"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-1",
+      "from": "dashboard",
+      "trigger": "Health Forms",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "health-forms-submenu"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-10",
+      "from": "dashboard",
+      "trigger": "Case Load Management > Unallocated",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "unallocated-cases"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-11",
+      "from": "dashboard",
+      "trigger": "Case Load Management > Task Workboards",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "master-task-board"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-12",
+      "from": "dashboard",
+      "trigger": "Analytics & Reports > Patient Details",
+      "relationship": "cross-module handoff",
+      "context": [
+        "Patient & Medication Analyser app"
+      ],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "patient-details-report"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-13",
+      "from": "dashboard",
+      "trigger": "Analytics & Reports > Comms Analytics",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "comms-analytics"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-14",
+      "from": "dashboard",
+      "trigger": "Analytics & Reports > Reports",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "analytics-reports-scr-unauthorized"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-15",
+      "from": "dashboard",
+      "trigger": "Patients > Care Navigation",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "care-navigation-patient-search"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-16",
+      "from": "dashboard",
+      "trigger": "Patients > Patient Search",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "patient-search"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-17",
+      "from": "dashboard",
+      "trigger": "Session prompt",
+      "relationship": "system interrupt",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "set-your-status-dialog"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-2",
+      "from": "dashboard",
+      "trigger": "Comms Hub",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "comms-hub-submenu"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-3",
+      "from": "dashboard",
+      "trigger": "Web Chat & Video",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "web-chat-video-submenu"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-4",
+      "from": "dashboard",
+      "trigger": "Rocket Bar",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "rocket-bar-submenu"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-5",
+      "from": "dashboard",
+      "trigger": "Appointment Book",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-6",
+      "from": "dashboard",
+      "trigger": "Configuration",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "organisation-general"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-7",
+      "from": "dashboard",
+      "trigger": "Quick Pay",
+      "relationship": "cross-module handoff",
+      "context": [
+        "PACO -> PACO Connect"
+      ],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "quick-pay-invoices"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-8",
+      "from": "dashboard",
+      "trigger": "User Portal",
+      "relationship": "cross-module handoff",
+      "context": [
+        "PACO -> PACO Connect"
+      ],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "user-portal-route-failure"
+    },
+    {
+      "id": "run-20261001-085609-dashboard-9",
+      "from": "dashboard",
+      "trigger": "Case Load Management > My Case",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "my-case"
+    },
+    {
+      "id": "run-20261001-085609-health-forms-designer-1",
+      "from": "health-forms-designer",
+      "trigger": "New Health Form",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "health form builder cho form mới"
+    },
+    {
+      "id": "run-20261001-085609-health-forms-submenu-1",
+      "from": "health-forms-submenu",
+      "trigger": "Designer",
+      "relationship": "cross-module handoff",
+      "context": [
+        "Health Forms app"
+      ],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "health-forms-designer"
+    },
+    {
+      "id": "run-20261001-085609-master-task-board-1",
+      "from": "master-task-board",
+      "trigger": "Create new board",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "work board mới"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-1",
+      "from": "organisation-general",
+      "trigger": "Pathways Config",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "organisation-pathways-config"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-2",
+      "from": "organisation-general",
+      "trigger": "Skills",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "organisation-skills"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-3",
+      "from": "organisation-general",
+      "trigger": "Sharing Agreements",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "organisation-sharing-agreements"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-4",
+      "from": "organisation-general",
+      "trigger": "Org Priority",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "organisation-org-priorities"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-5",
+      "from": "organisation-general",
+      "trigger": "Inbound Priority Flow",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "organisation-inbound-priority-flow"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-6",
+      "from": "organisation-general",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "organisation general settings được lưu"
+    },
+    {
+      "id": "run-20261001-085609-organisation-general-7",
+      "from": "organisation-general",
+      "trigger": "+ Add Special Opening Hours",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "editor special opening hours"
+    },
+    {
+      "id": "run-20261001-085609-organisation-inbound-priority-flow-1",
+      "from": "organisation-inbound-priority-flow",
+      "trigger": "Add",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "inbound priority rules thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-organisation-inbound-priority-flow-2",
+      "from": "organisation-inbound-priority-flow",
+      "trigger": "Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "inbound priority rules thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-organisation-inbound-priority-flow-3",
+      "from": "organisation-inbound-priority-flow",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "inbound priority rules thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-organisation-org-priorities-1",
+      "from": "organisation-org-priorities",
+      "trigger": "Add new",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "org priority list thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-organisation-org-priorities-2",
+      "from": "organisation-org-priorities",
+      "trigger": "Edit",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "org priority list thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-organisation-org-priorities-3",
+      "from": "organisation-org-priorities",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "org priority list thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-campaign-manager-1",
+      "from": "comms-campaign-manager",
+      "trigger": "Create Campaign",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "draft campaign"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-campaign-manager-2",
+      "from": "comms-campaign-manager",
+      "trigger": "Resend",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "tin được gửi lại (SEND)"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-campaign-manager-3",
+      "from": "comms-campaign-manager",
+      "trigger": "Add Selected",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "recipient campaign thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-campaign-manager-4",
+      "from": "comms-campaign-manager",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-patient-manager-1",
+      "from": "comms-patient-manager",
+      "trigger": "Create List",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "patient list mới"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-patient-manager-2",
+      "from": "comms-patient-manager",
+      "trigger": "Add to Existing List",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "patient list thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-patient-manager-3",
+      "from": "comms-patient-manager",
+      "trigger": "Upload CSV",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "import patient list (upload)"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-patient-manager-4",
+      "from": "comms-patient-manager",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "patient list được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-template-manager-1",
+      "from": "comms-template-manager",
+      "trigger": "Create New Email",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "draft email template"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-template-manager-2",
+      "from": "comms-template-manager",
+      "trigger": "Create New SMS",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "draft sms template"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-template-manager-3",
+      "from": "comms-template-manager",
+      "trigger": "Create without a Template",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "draft custom build"
+    },
+    {
+      "id": "run-20261001-085609-p2-comms-template-manager-4",
+      "from": "comms-template-manager",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-1",
+      "from": "configuration",
+      "trigger": "Users & Staff > Teams",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "users-staff-teams"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-10",
+      "from": "configuration",
+      "trigger": "Appointment Books > External Appt Reminders",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books-external-reminders"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-11",
+      "from": "configuration",
+      "trigger": "Appointment Books > Appointment Books",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-12",
+      "from": "configuration",
+      "trigger": "Quick Pay > Product Catalogue",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "quick-pay-product-catalogue"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-13",
+      "from": "configuration",
+      "trigger": "Quick Pay > Accounts",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "quick-pay-accounts"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-14",
+      "from": "configuration",
+      "trigger": "Patients & Proxy > Role Groups",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "patients-proxy-role-groups"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-15",
+      "from": "configuration",
+      "trigger": "Clinical Config > Risk Strat Builder",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "risk-strat-builder"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-16",
+      "from": "configuration",
+      "trigger": "Clinical Config > Template Library",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "template-library-route-failure"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-2",
+      "from": "configuration",
+      "trigger": "Users & Staff > Role Groups",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "users-staff-role-groups"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-3",
+      "from": "configuration",
+      "trigger": "Users & Staff > Staff Profiles",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "users-staff-profiles"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-4",
+      "from": "configuration",
+      "trigger": "Patient > DFD",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "patient-dfd-route-failure"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-5",
+      "from": "configuration",
+      "trigger": "Patient > Care Navigation",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "patient-care-navigation"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-6",
+      "from": "configuration",
+      "trigger": "Appointment Books > Scheduler",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books-scheduler"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-7",
+      "from": "configuration",
+      "trigger": "Appointment Books > Sessions",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books-sessions"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-8",
+      "from": "configuration",
+      "trigger": "Appointment Books > Slot Types",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books-slot-types"
+    },
+    {
+      "id": "run-20261001-085609-p2-configuration-9",
+      "from": "configuration",
+      "trigger": "Appointment Books > Appointments",
+      "relationship": "cross-module handoff",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "appointment-books-appointments"
+    },
+    {
+      "id": "run-20261001-085609-p2-master-case-board-1",
+      "from": "master-case-board",
+      "trigger": "Create new board",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "work board mới"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-announcements-1",
+      "from": "organisation-announcements",
+      "trigger": "Add another",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "danh sách announcement thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-announcements-2",
+      "from": "organisation-announcements",
+      "trigger": "Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "announcement bị xóa"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-announcements-3",
+      "from": "organisation-announcements",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "announcement được lưu/phát"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-dx-priorities-1",
+      "from": "organisation-dx-priorities",
+      "trigger": "Add Service & Priority",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "mapping dx priority thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-dx-priorities-2",
+      "from": "organisation-dx-priorities",
+      "trigger": "Remove pair",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "mapping dx priority thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-dx-priorities-3",
+      "from": "organisation-dx-priorities",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "dx priorities được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-integrations-1",
+      "from": "organisation-integrations",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "cấu hình integration được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-services-1",
+      "from": "organisation-services",
+      "trigger": "Remove service",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "danh sách service thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-services-2",
+      "from": "organisation-services",
+      "trigger": "Add Another",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "danh sách service thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-organisation-services-3",
+      "from": "organisation-services",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "services được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-patient-analyser-1",
+      "from": "patient-analyser",
+      "trigger": "Send to Comms Hub",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "luồng Comms Hub (cross-module, SEND)"
+    },
+    {
+      "id": "run-20261001-085609-p2-patient-analyser-2",
+      "from": "patient-analyser",
+      "trigger": "Group Quick Send",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "gửi tin nhóm (SEND)"
+    },
+    {
+      "id": "run-20261001-085609-p2-patient-analyser-3",
+      "from": "patient-analyser",
+      "trigger": "Save Report",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "saved report"
+    },
+    {
+      "id": "run-20261001-085609-p2-patients-proxy-role-groups-1",
+      "from": "patients-proxy-role-groups",
+      "trigger": "Add New",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "proxy role group mới"
+    },
+    {
+      "id": "run-20261001-085609-p2-patients-proxy-role-groups-2",
+      "from": "patients-proxy-role-groups",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "proxy role groups được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-risk-strat-builder-1",
+      "from": "risk-strat-builder",
+      "trigger": "New Model",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "risk model mới"
+    },
+    {
+      "id": "run-20261001-085609-p2-risk-strat-builder-2",
+      "from": "risk-strat-builder",
+      "trigger": "Add Risk Factor",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "risk model thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-risk-strat-builder-3",
+      "from": "risk-strat-builder",
+      "trigger": "Save Model",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "risk model được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-risk-strat-builder-4",
+      "from": "risk-strat-builder",
+      "trigger": "Delete Model",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "risk model bị xóa (DELETE)"
+    },
+    {
+      "id": "run-20261001-085609-p2-unallocated-cases-1",
+      "from": "unallocated-cases",
+      "trigger": "Filters > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "filter preset được lưu (persistence chưa rõ)"
+    },
+    {
+      "id": "run-20261001-085609-p2-users-staff-role-groups-1",
+      "from": "users-staff-role-groups",
+      "trigger": "Add New",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "role group mới"
+    },
+    {
+      "id": "run-20261001-085609-p2-users-staff-role-groups-2",
+      "from": "users-staff-role-groups",
+      "trigger": "Edit",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "quyền role group thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p2-users-staff-role-groups-3",
+      "from": "users-staff-role-groups",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "role groups được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p2-users-staff-teams-1",
+      "from": "users-staff-teams",
+      "trigger": "Add New",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "team mới"
+    },
+    {
+      "id": "run-20261001-085609-p2-users-staff-teams-2",
+      "from": "users-staff-teams",
+      "trigger": "Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "teams được lưu"
+    },
+    {
+      "id": "run-20261001-085609-p3-patient-analyser-1",
+      "from": "patient-analyser",
+      "trigger": "Advanced Search > Import",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "import search definition (upload)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-1",
+      "from": "comms-campaign-manager",
+      "trigger": "Analytics",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "/commshub/analytics (patient-level)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-2",
+      "from": "comms-campaign-manager",
+      "trigger": "Outbox",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "/commshub/campaign-outbox"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-3",
+      "from": "comms-campaign-manager",
+      "trigger": "Edit",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign bị sửa"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-4",
+      "from": "comms-campaign-manager",
+      "trigger": "Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign bị xóa (DELETE)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-5",
+      "from": "comms-campaign-manager",
+      "trigger": "Restore",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign được khôi phục"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-6",
+      "from": "comms-campaign-manager",
+      "trigger": "Create Campaign",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign mới"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-7",
+      "from": "comms-campaign-manager",
+      "trigger": "Analytics > Export to CSV",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "file CSV chứa PII (download)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-1",
+      "from": "comms-template-manager",
+      "trigger": "Copy",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "bản sao template mới"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-2",
+      "from": "comms-template-manager",
+      "trigger": "Edit",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template bị sửa"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-3",
+      "from": "comms-template-manager",
+      "trigger": "Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template bị xóa (DELETE)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-4",
+      "from": "comms-template-manager",
+      "trigger": "Set Org. Defaults",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template mặc định của org thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-5",
+      "from": "comms-template-manager",
+      "trigger": "Create New SMS",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "draft SMS (`/template-builder/sms/create`)"
+    },
+    {
+      "id": "run-20261001-085609-p5-users-staff-teams-1",
+      "from": "users-staff-teams",
+      "trigger": "Add New > Add > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "team mới xuất hiện trong danh sách sau reload",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#2"
+    },
+    {
+      "id": "run-20261001-085609-p5-users-staff-teams-2",
+      "from": "users-staff-teams",
+      "trigger": "Rename > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "tên team cập nhật; toast Team Update 1 successful",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#3"
+    },
+    {
+      "id": "run-20261001-085609-p5-users-staff-teams-3",
+      "from": "users-staff-teams",
+      "trigger": "Delete > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "team bị xóa khỏi danh sách sau reload",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#5"
+    },
+    {
+      "id": "run-20261001-085609-p6-risk-strat-builder-1",
+      "from": "risk-strat-builder",
+      "trigger": "Create Risk Factor",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "factor lưu ngay vào model đang chọn (không cần Save Model)",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#9"
+    },
+    {
+      "id": "run-20261001-085609-p6-risk-strat-builder-2",
+      "from": "risk-strat-builder",
+      "trigger": "Remove factor > Save all changes",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "factor bị gỡ khỏi model sau reload",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#10"
+    },
+    {
+      "id": "run-20261001-085609-p7-organisation-services-1",
+      "from": "organisation-services",
+      "trigger": "Add Another > Save",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "service mới được lưu",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#12"
+    },
+    {
+      "id": "run-20261001-085609-p7-organisation-services-2",
+      "from": "organisation-services",
+      "trigger": "Remove service > Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Verified-by-Mutation",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "service bị xóa ngay",
+      "reservation_id": "ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#13"
+    },
+    {
+      "id": "run-20261001-085609-patient-details-report-1",
+      "from": "patient-details-report",
+      "trigger": "Send to Comms Hub",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "luồng recipient/campaign của Comms Hub (cross-module)"
+    },
+    {
+      "id": "run-20261001-085609-patient-details-report-2",
+      "from": "patient-details-report",
+      "trigger": "Group Quick Send",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "luồng gửi tin nhóm"
+    },
+    {
+      "id": "run-20261001-085609-patient-details-report-3",
+      "from": "patient-details-report",
+      "trigger": "Save Report",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "saved report"
+    },
+    {
+      "id": "run-20261001-085609-set-your-status-dialog-1",
+      "from": "set-your-status-dialog",
+      "trigger": "Choose status",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "presence status của user thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-set-your-status-dialog-2",
+      "from": "set-your-status-dialog",
+      "trigger": "Remind me later",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "dialog đóng; persistence reminder chưa rõ"
+    },
+    {
+      "id": "run-20261001-085609-unallocated-cases-1",
+      "from": "unallocated-cases",
+      "trigger": "Create new case",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "form case mới / case detail"
+    },
+    {
+      "id": "run-20261001-085609-user-portal-route-failure-1",
+      "from": "user-portal-route-failure",
+      "trigger": "Release Notes",
+      "relationship": "external link",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "site công khai www.blinxhealthcare.com/release-notes/ (tab mới)"
+    },
+    {
+      "id": "run-20261001-085609-web-chat-video-submenu-1",
+      "from": "web-chat-video-submenu",
+      "trigger": "Virtual Appointments",
+      "relationship": "cross-module handoff",
+      "context": [
+        "Web Chat & Video app"
+      ],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "to": "virtual-appointments-auth"
     }
   ]
 }

@@ -1,3 +1,17 @@
+---
+id: health-form-inbox
+title: Health Form Inbox
+roles:
+  - Super Admin GB
+environment: dev
+status: Observed
+routes:
+  - health-forms-submenu
+controls: []
+verified_by: []
+last_observed: 2026-10-01
+relationships: []
+---
 # Health Form Inbox
 
 ## Overview
@@ -97,6 +111,22 @@ View để quản lý và theo dõi health form responses từ bệnh nhân.
 - **Observed:** Health Form Inbox là primary view cho health form responses trong Paco
 - **Observed:** Comms Hub (Patient Comms) không có health form response view — campaigns và analytics không expose health form data
 - **Observed:** Response ID có thể enable qua Columns panel nhưng không hiển thị ở collapsed state
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Health Forms > Inbox` mở `/health-forms/responses/` (Health Forms app), tự refresh (`Refreshing in N seconds`); bộ đếm `Total Sent to Patient`/`Incomplete`/`Overdue from Patient`/`Completed by Patient` đều 0; `View By Patient`/`View By Health Form`, `Filters`, `Columns`.
+
+Gap / Open Question:
+
+- Luồng review cần form synthetic đã gửi (data dependency).
+
+## Discovery run-20261001-085609 (part 3)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Filters` mở panel `Inbox Filters`: `Date Range` (`All time`), `Health Form`, `Reviewers`.
 
 ## Tester notes
 

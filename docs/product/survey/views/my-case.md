@@ -9,7 +9,8 @@ routes:
   - dashboard
 controls: []
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # My Case
@@ -40,6 +41,16 @@ Accessibility observation reverified after manual re-authentication, dev, `Super
 ## Open questions
 
 - Assignment, status transition and case closure flows remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `/paco/my-case` empty: `There are no new cases`, `You don't have any active case assigned to you`.
+
+Gap / Open Question:
+
+- Workflow có dữ liệu cần case được giao cho user (data dependency).
 
 ## Tester notes
 

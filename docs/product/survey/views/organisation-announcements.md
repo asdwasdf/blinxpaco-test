@@ -1,18 +1,56 @@
 ---
 id: organisation-announcements
 title: Organisation Announcements
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/announcements]
+routes:
+  - /paco/configuration/organisation/announcements
 controls:
-  - { name: Welcome Message, kind: navigation }
-  - { name: Service Updates, kind: navigation }
-  - { name: Add another, kind: mutation }
-  - { name: Delete, kind: destructive }
-  - { name: Save, kind: mutation }
+  - name: Welcome Message
+    kind: navigation
+  - name: Service Updates
+    kind: navigation
+  - name: Add another
+    kind: mutation
+  - name: Delete
+    kind: destructive
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-organisation-announcements-1
+    from: organisation-announcements
+    destination_hint: danh sách announcement thay đổi
+    trigger: Add another
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-announcements-2
+    from: organisation-announcements
+    destination_hint: announcement bị xóa
+    trigger: Delete
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-announcements-3
+    from: organisation-announcements
+    destination_hint: announcement được lưu/phát
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Announcements
@@ -45,6 +83,16 @@ Accessibility observation, dev, `Super Admin GB`, reverified 2026-09-22. `Welcom
 ## Open questions
 
 - Scheduling/display lifecycle, field validation, and save behavior remain unobserved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/announcements`: heading `Announcements`; control `Add another`, `Delete`, `Save`.
+
+Gap / Open Question:
+
+- `Save` có thể phát announcement tới người dùng (external effect chưa rõ).
 
 ## Tester notes
 

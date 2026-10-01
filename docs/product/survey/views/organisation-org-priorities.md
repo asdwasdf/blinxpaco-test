@@ -1,17 +1,54 @@
 ---
 id: organisation-org-priorities
 title: Organisation Priorities
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/org-priorities]
+routes:
+  - /paco/configuration/organisation/org-priorities
 controls:
-  - { name: Search Org Priority..., kind: read-only }
-  - { name: Add new, kind: mutation }
-  - { name: Edit, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Search Org Priority...
+    kind: read-only
+  - name: Add new
+    kind: mutation
+  - name: Edit
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-organisation-org-priorities-1
+    from: organisation-org-priorities
+    destination_hint: org priority list thay đổi
+    trigger: Add new
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-org-priorities-2
+    from: organisation-org-priorities
+    destination_hint: org priority list thay đổi
+    trigger: Edit
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-organisation-org-priorities-3
+    from: organisation-org-priorities
+    destination_hint: org priority list thay đổi
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Priorities
@@ -44,6 +81,16 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 ## Open questions
 
 - Empty body cause and priority lifecycle remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/org-priorities`: heading `Org Priorities`; control `Add new`, `Add`, `Edit`, `Save`.
+
+Gap / Open Question:
+
+- Thay đổi ảnh hưởng case prioritisation; VERIFY_FLOW cần priority test thuộc sở hữu và approval cleanup.
 
 ## Tester notes
 

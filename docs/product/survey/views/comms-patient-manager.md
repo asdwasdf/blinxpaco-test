@@ -29,7 +29,48 @@ controls:
   - name: Add to Existing List
     kind: mutation
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-comms-patient-manager-1
+    from: comms-patient-manager
+    destination_hint: patient list mới
+    trigger: Create List
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-patient-manager-2
+    from: comms-patient-manager
+    destination_hint: patient list thay đổi
+    trigger: Add to Existing List
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-patient-manager-3
+    from: comms-patient-manager
+    destination_hint: import patient list (upload)
+    trigger: Upload CSV
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-patient-manager-4
+    from: comms-patient-manager
+    destination_hint: patient list được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Patient Manager
@@ -63,6 +104,28 @@ Accessibility observation, external Comms Hub dev, authenticated session associa
 
 - Patient record actions, list membership changes, tag selection, applied date filtering and context persistence remain unverified.
 - Global patient search and both Lists/Patients grid searches accepted synthetic input but caused no observable result reduction; trigger and matching semantics remain unknown.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Patient Manager` → `/commshub/patient-management` trên host Comms Hub, 9 row, kèm `SESSION EXPIRED`.
+
+Gap / Open Question:
+
+- `Upload CSV` là import (cần approval).
+
+## Discovery run-20261001-085609 (part 4 — Comms Hub deep dive)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- **Đính chính:** `Create List`, `Add to Existing List`, `Upload CSV` tồn tại trong DOM nhưng **ẩn** trên trang này (part 2 ghi nhầm là control hiển thị); `SESSION EXPIRED` cũng là modal ẩn.
+- Trang là danh sách recipient list: nhóm `Non-Shared Lists (33)`, `Shared Lists (186)`; cột `Multi Org List?`, `Recipient List ID`, `List Name`, `Description`, `Tags`, `Created By Organisation`, `Shared To Orgs`, `Created Date`, `Updated Date`, `Actions`.
+
+Gap / Open Question:
+
+- Ô `Actions` của các dòng quan sát được đều trống (AG Grid ảo hoá cột); action trên list chưa xác định.
+- Chi tiết list chứa bệnh nhân (PII) chưa mở.
 
 ## Tester notes
 

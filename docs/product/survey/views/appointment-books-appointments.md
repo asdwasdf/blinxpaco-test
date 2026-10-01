@@ -1,19 +1,28 @@
 ---
 id: appointment-books-appointments
 title: Appointment Books Appointments
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/configuration/#appointments]
+routes:
+  - /configuration/#appointments
 controls:
-  - { name: Fetch Latest Appointments, kind: unknown }
-  - { name: Fetch All Slot Details, kind: unknown }
-  - { name: Show Cancelled Bookings, kind: read-only }
-  - { name: Search..., kind: read-only }
-  - { name: Columns, kind: read-only }
-  - { name: Filters, kind: read-only }
+  - name: Fetch Latest Appointments
+    kind: unknown
+  - name: Fetch All Slot Details
+    kind: unknown
+  - name: Show Cancelled Bookings
+    kind: read-only
+  - name: Search...
+    kind: read-only
+  - name: Columns
+    kind: read-only
+  - name: Filters
+    kind: read-only
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Appointment Books Appointments
@@ -49,6 +58,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 
 - Fetch side effects, refresh semantics, exact cancelled-booking totals/status values, row selection, pagination, and source synchronization remain unverified.
 - Applying field filters, changing column visibility, and row grouping remain unverified; no configuration was changed.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Appointment Books > Appointments` trong Configuration chuyển sang app `/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

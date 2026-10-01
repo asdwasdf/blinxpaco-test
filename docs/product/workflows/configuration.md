@@ -126,4 +126,14 @@
 - Open questions: `Scheduler` loading có hoàn tất khi dependency khác hoạt động không; `Care Navigation` thiếu body do permission, data dependency hay app failure; `Prescribing Formularies` có chủ đích ở configuration root hay click handler/route bị thiếu. Warning `PACOMMS` chỉ là correlated console observation, chưa phải causal evidence.
 - Exact resume state: không retry ba gap trên khi session/dependency không đổi. Cần product/API owner cung cấp trusted expected behavior hoặc dependency/permission prerequisite; sau đó mới observe lại. Batch 26 (2026-09-16) confirmed `Document Templates` row-click opens inline edit form with safe `CANCEL`; `Consultation Templates` card-click opens side panel with safe `CANCEL`. Safe close actions confirmed.
 
+## Discovery update run-20261001-085609
+
+`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+- Menu `Organisation`: `General`, `Practice Profiles`, `Locations`, `Skills`, `Code Rule`, `Sharing Agreements`, `Pathways Config`, `Services`, `Dx Priority`, `Org Priority`, `Inbound Priority Flow`, `Announcements`, `Integrations`; nhóm khác: `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, `Users & Staff`, `Clinical Config`, `Case Prioritisation` (rỗng).
+- Trạng thái lỗi: `Pathways Config` → `Page Not Found`; `Practice Profiles` → text `Page Not Found`/`Access Denied`; `Template Library` click không điều hướng.
+- Handoff sang app khác (không thấy heading sau 4s): `Code Rule`, `Patient > DFD`, `Patient > Care Navigation`, `Appointment Books > Scheduler/Appointments/External Appt Reminders` → `/configuration/`; `Appointment Books > Appointment Books/Sessions/Slot Types` → `/paco-connect/configuration/`; `Quick Pay > Product Catalogue/Accounts` → route Quick Pay của PACO Connect.
+- Approval stop rủi ro cao: `Users & Staff > Role Groups` (Add New/Edit/Save — quyền), `Integrations > Save` (hệ thống ngoài), `Announcements > Save` (có thể phát tới user), `Risk Strat Builder > Delete Model`, `Org Priorities`/`Dx Priorities`/`Inbound Priority Flow`/`Services` Add/Remove/Save, `General > Save`.
+- Automation: menu item dùng `.p-menuitem` lọc visible (có bản ẩn trùng text); nhóm dùng `.p-panelmenu-header`.
+
 ## Tester notes

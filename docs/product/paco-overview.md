@@ -285,6 +285,16 @@ Reusable read-only observations about Paco product areas. This file records curr
 - `[Observed: dev, Super Admin GB, 2026-09-16]` Comms Hub `Campaign Manager` (`https://nhs-comms-hub-dev.blinxhealthcare.com/commshub/campaign-manager`) shows 4 campaigns (`Weekly Campaign`, `GP NHS App Campaign`, `Redmoor GP Practice`, `Email Campaign for MAC`) with status `Sent`, channel `Email`, 4,950 / 3 / 1,100 recipients, sent dates in Sept 2026. Filter panel shows `Campaign Statuses` multi-select with all known statuses listed; no mutation controls used.
 - Mutation: `None`. Evidence local: `test-results/product-survey/batch26/`.
 
+## Autonomous discovery run-20261001-085609
+
+Role `Super Admin GB`, dev, 2026-10-01; read-only, dừng do budget (30 state), còn 50 task chờ. Checkpoint: `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Tất cả là `Observed`/`Open Question`, chưa đối chiếu requirement.
+
+- Cần làm rõ: `Pathways Config` → `Page Not Found`; `Prescriptions`/`NCRS` → `Access Denied`; `Reports` mặc định `error=not-authorized`; `Quick Pay`/`User Portal` document HTTP 404 nhưng SPA render; `Comms Analytics` chuyển host ngoài với `error-at-axios-interceptor`.
+- Auth riêng: `Web Chat & Video` yêu cầu login riêng dù phiên PACO còn.
+- Handoff giữa app: PACO Connect (Quick Pay, User Portal), Patient & Medication Analyser (4 mục Analytics), Health Forms app, Patient Search app, Comms Hub host ngoài.
+- Mutation boundary chưa thực hiện: `Send to Comms Hub`, `Group Quick Send`, `Save Report`, `Create new case`, `Create new board`, `New Health Form`, Add/Edit/Save trong Org Priorities, Inbound Priority Flow, General.
+- Modal `Set your status` có thể chặn UI; quy ước tester: chọn `Admin`.
+
 ## Open questions
 
 - Does clicking `QOF Registers` or `Patient Details` in the sidebar actually switch the in-page tab on `/patient-analyser-new/`, or does it always land on the last/default tab? (batch 5 confirmed the app itself renders fine, but tab-switch-on-sidebar-click is still unconfirmed)

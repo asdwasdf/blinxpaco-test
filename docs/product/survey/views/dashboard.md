@@ -34,7 +34,181 @@ controls:
   - name: On Leave
     kind: filter
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-dashboard-1
+    from: dashboard
+    to: health-forms-submenu
+    trigger: Health Forms
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-2
+    from: dashboard
+    to: comms-hub-submenu
+    trigger: Comms Hub
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-3
+    from: dashboard
+    to: web-chat-video-submenu
+    trigger: Web Chat & Video
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-4
+    from: dashboard
+    to: rocket-bar-submenu
+    trigger: Rocket Bar
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-5
+    from: dashboard
+    to: appointment-books
+    trigger: Appointment Book
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-6
+    from: dashboard
+    to: organisation-general
+    trigger: Configuration
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-7
+    from: dashboard
+    to: quick-pay-invoices
+    trigger: Quick Pay
+    relationship: cross-module handoff
+    context:
+      - PACO -> PACO Connect
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-8
+    from: dashboard
+    to: user-portal-route-failure
+    trigger: User Portal
+    relationship: cross-module handoff
+    context:
+      - PACO -> PACO Connect
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-9
+    from: dashboard
+    to: my-case
+    trigger: Case Load Management > My Case
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-10
+    from: dashboard
+    to: unallocated-cases
+    trigger: Case Load Management > Unallocated
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-11
+    from: dashboard
+    to: master-task-board
+    trigger: Case Load Management > Task Workboards
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-12
+    from: dashboard
+    to: patient-details-report
+    trigger: Analytics & Reports > Patient Details
+    relationship: cross-module handoff
+    context:
+      - Patient & Medication Analyser app
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-13
+    from: dashboard
+    to: comms-analytics
+    trigger: Analytics & Reports > Comms Analytics
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-14
+    from: dashboard
+    to: analytics-reports-scr-unauthorized
+    trigger: Analytics & Reports > Reports
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-15
+    from: dashboard
+    to: care-navigation-patient-search
+    trigger: Patients > Care Navigation
+    relationship: cross-module handoff
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-16
+    from: dashboard
+    to: patient-search
+    trigger: Patients > Patient Search
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-dashboard-17
+    from: dashboard
+    to: set-your-status-dialog
+    trigger: Session prompt
+    relationship: system interrupt
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Dashboard
@@ -93,6 +267,35 @@ Dashboard period controls were completed through `month` and `year`, then restor
 - Dashboard chart meaning and role-dependent content remain outside this checkpoint.
 - Whether `Switch to dark theme` is unavailable, delayed, or failed remains unresolved; no observable theme change occurred.
 - Whether `Staff Status` has an intended read-only detail remains unresolved because its overlay intercepted pointer events.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- Dashboard đã xác thực; sidebar có 12 mục: `Dashboards`, `Analytics & Reports`, `Comms Hub`, `Health Forms`, `Patients`, `Web Chat & Video`, `Case Load Management`, `Appointment Book`, `Quick Pay`, `User Portal`, `Configuration`, `Rocket Bar`, cộng `Sign Out`.
+- Phần lớn mục sidebar là nhóm menu mở submenu; `Quick Pay`, `User Portal`, `Configuration` điều hướng trực tiếp.
+- Bộ chọn kỳ `day`/`week`/`month`/`year` và panel `Staff Availability` hiển thị trên dashboard (chưa khám phá variant).
+
+Gap / Open Question:
+
+- `Sign Out` không khám phá vì có side effect lên phiên.
+- Ô tìm bệnh nhân trên dashboard cần nhập định danh bệnh nhân; không khám phá.
+
+## Discovery run-20261001-085609 (part 3)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Chọn kỳ `month` thay đổi nội dung dashboard (variant mới); `week`/`year` chưa ghi vào checkpoint vì hết budget.
+
+## Discovery run-20261001-085609 (part 5 — direct mutation discovery)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Phiên PACO bị đăng xuất 2 lần (Cognito logout → `/paco/login`) trong lúc khám phá; kiểm chứng: mở Comms Hub rồi quay lại không gây logout, nên nhiều khả năng là hết hạn phiên.
+
+Gap / Open Question:
+
+- Thời lượng phiên PACO và nguyên nhân logout chưa xác định (Open Question).
 
 ## Tester notes
 

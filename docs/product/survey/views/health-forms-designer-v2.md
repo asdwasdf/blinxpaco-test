@@ -22,6 +22,7 @@ controls:
     kind: read-only
 verified_by: []
 last_observed: 2026-10-01
+relationships: []
 ---
 
 # Health Forms Designer V2
@@ -97,6 +98,12 @@ Opening a Health Form template opens `/health-forms/builder/editor/` with title 
 - Each template type's mandatory fields and workflow steps remain unspecified.
 - Archive/restore semantics and whether deletion is permanent remain unspecified.
 - `View Audit` produced no observable UI change for the sampled row on 2026-09-30. Whether this is an unavailable action, silent failure, or another behavior needs confirmation; no expected behavior asserted.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Designer V2` ở lại trong PACO: `/paco/health-forms`, heading `Health Form Templates`; trong khi `Designer` mở Health Forms app riêng.
 
 ## Tester notes
 

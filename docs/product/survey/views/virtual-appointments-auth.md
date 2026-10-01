@@ -9,7 +9,8 @@ routes:
   - web-chat-video-submenu
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Virtual Appointments Authentication Boundary
@@ -40,6 +41,16 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII
 ## Open questions
 
 - Required Microsoft account scope and expected appointment permissions remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Virtual Appointments` chuyển tới `/web-chat/?rd=/appointments/` hiển thị `Welcome Back` / `Log in` dù phiên PACO còn hiệu lực.
+
+Gap / Open Question:
+
+- Web Chat & Video yêu cầu đăng nhập riêng; `Media Library`, `Outstanding Reviews` chưa khám phá được khi chưa có tester login.
 
 ## Tester notes
 

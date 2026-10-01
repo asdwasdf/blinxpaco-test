@@ -17,7 +17,18 @@ controls:
   - name: Filters
     kind: read-only
 verified_by: []
-last_observed: 2026-09-20
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-health-forms-designer-1
+    from: health-forms-designer
+    destination_hint: health form builder cho form mới
+    trigger: New Health Form
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Health Forms Designer
@@ -55,6 +66,22 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. S
 
 - New form creation workflow steps and mandatory fields remain unverified.
 - Archive/restore semantics and whether deletion is permanent remain unspecified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Designer` mở `/health-forms/builder/` (Health Forms app): danh sách form với cột type, reviewer, name, created/updated, shared organisations, archived, editable, actions.
+
+Gap / Open Question:
+
+- `New Health Form` có thể mở draft chưa lưu; persistence chưa rõ nên coi là boundary.
+
+## Discovery run-20261001-085609 (part 3)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Filters`/`Columns` không click được trong 8s; menu hàng (row actions) chưa quan sát được (probe bấm nhầm `More options` của top bar: `PaComms`, `Quick View`, `PACO Assist`).
 
 ## Tester notes
 

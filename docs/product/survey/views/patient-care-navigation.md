@@ -1,16 +1,22 @@
 ---
 id: patient-care-navigation
 title: Patient Care Navigation
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/configuration/#care-navigation-config]
+routes:
+  - /configuration/#care-navigation-config
 controls:
-  - { name: Item Settings, kind: mutation }
-  - { name: "+", kind: mutation }
-  - { name: Delete, kind: destructive }
+  - name: Item Settings
+    kind: mutation
+  - name: +
+    kind: mutation
+  - name: Delete
+    kind: destructive
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Patient Care Navigation
@@ -43,6 +49,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. O
 ## Open questions
 
 - Hierarchy semantics, settings behavior, validation, persistence, and deletion safeguards remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Patient > Care Navigation` trong Configuration chuyển sang app `/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

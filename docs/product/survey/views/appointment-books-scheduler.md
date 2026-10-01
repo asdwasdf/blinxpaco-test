@@ -1,15 +1,20 @@
 ---
 id: appointment-books-scheduler
 title: Appointment Books Scheduler Configuration
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/configuration/#scheduler-config]
+routes:
+  - /configuration/#scheduler-config
 controls:
-  - { name: Select Campaign, kind: unknown }
-  - { name: Search..., kind: read-only }
+  - name: Select Campaign
+    kind: unknown
+  - name: Search...
+    kind: read-only
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Appointment Books Scheduler Configuration
@@ -43,6 +48,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 
 - Campaign selection behavior, scheduler rules, non-search empty/error states, and persistence boundary remain unverified.
 - `Search Templates...` and `Search Slot Type...` accepted input but produced no observable filtering; expected trigger and behavior remain open questions.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Appointment Books > Scheduler` trong Configuration chuyển sang app `/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

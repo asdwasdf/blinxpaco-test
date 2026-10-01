@@ -13,7 +13,8 @@ controls:
   - name: Download Rocket Bar
     kind: download
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Rocket Bar Navigation
@@ -44,6 +45,16 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No launch, downloa
 ## Open questions
 
 - Launch destination and downloaded artifact behavior remain unverified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- Submenu `Rocket Bar`: `Launch Rocket Bar`, `Download Rocket Bar`.
+
+Gap / Open Question:
+
+- `Launch Rocket Bar` có thể mở app desktop ngoài; `Download Rocket Bar` tải file cần approval. Không khám phá.
 
 ## Tester notes
 

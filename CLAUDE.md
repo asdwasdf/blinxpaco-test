@@ -18,11 +18,18 @@ Black-box QA workflow cho Paco, chỉ có website và ticket.
 Mặc định **read-only**: điều hướng, xem, search, filter, sort, pagination.
 
 **Phải hỏi trước:**
-- `Create`, `Update`, `Delete`, `Submit`, `Approve`, `Reject`
+
 - Upload, import, gửi dữ liệu
 - Bất kỳ action có side effect
 
-Ngoại lệ đã được duyệt: `MANUAL_EXECUTE` và generated standalone Playwright spec được tự chạy side effect đúng ticket/case/action/test-data scope; riêng `paco-explore` mode `survey` được tự chạy side effect đúng run/action/test-data scope, không cần ticket/case hay hỏi lại từng action. Chỉ trên configured dev host; vẫn bắt buộc runtime guard, safe data/recipient, mutation ledger và cleanup. `locate`/`observe` giữ read-only; production/unknown host luôn bị chặn.
+Ngoại lệ đã được duyệt: `MANUAL_EXECUTE` và generated standalone Playwright spec được tự chạy side effect đúng ticket/case/action/test-data scope; riêng `paco-verify-flow` (do `paco-discover` điều phối) được tự chạy side effect cho mutation candidate đã reserve, đúng run/action/class/test-data/recipient trong authorization tester cấp ngoài agent, không cần ticket/case hay hỏi lại từng action. Chỉ trên configured dev host; vẫn bắt buộc runtime guard, safe data/recipient, mutation ledger và cleanup. Agent không tự bật guard hay tự cấp authorization. `locate`/`observe`/`survey` giữ read-only; production/unknown host luôn bị chặn.
+
+Ngoại lệ khám phá trực tiếp (tester duyệt 2026-10-01): khi đào sâu một màn/feature trực tiếp trên browser (Claude Playwright plugin, không qua `paco:discover` checkpoint), agent được tự làm `Create`/`Update`/`Save`, `Delete`/`Restore`, `Upload`/`Import`/`Download`, `Send`/`Resend` không cần hỏi lại, với điều kiện:
+
+- Chỉ host dev đã cấu hình trong `paco.config.yaml` (`allowedHosts` + `externalDevHosts`); production/unknown host luôn bị chặn.
+- Chỉ dữ liệu test do chính lần khám phá tạo ra, đặt tên tiền tố `QA-AUTO`; không sửa/xóa/gửi trên dữ liệu có sẵn, không dùng PII bệnh nhân thật.
+- Email chỉ gửi tới `fiona.nguyen@blinxsolutions.com`; SMS chưa có recipient được duyệt nên phải hỏi trước.
+- Ghi ledger đã redact (action, đối tượng, kết quả), cleanup bản ghi test khi xong và báo leftovers; báo rõ checkpoint không được cập nhật.
 
 ## Ticket Convention
 
@@ -74,6 +81,8 @@ Mọi artifact có khu vực `## Tester notes` được bảo vệ. Skill không
 
 Orchestrator: `paco-ticket`
 Phase skills: `paco-requirements`, `paco-explore`, `paco-test-design`, `paco-playwright`, `paco-report`
+
+Product discovery ngoài ticket: orchestrator `paco-discover` (state qua `npm run paco:discover`), child `paco-explore` mode `survey` (read-only) và `paco-verify-flow` (mutation đã reserve). Child chỉ trả `DiscoveryChildOutcome`; chỉ `paco-discover` cập nhật discovery checkpoint.
 
 Child skill gọi trực tiếp chỉ ghi artifact thuộc ownership và trả checkpoint proposal; chỉ `paco-ticket` cập nhật manifest/status.
 

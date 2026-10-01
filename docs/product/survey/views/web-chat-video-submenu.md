@@ -13,7 +13,19 @@ controls:
   - name: Media Library
     kind: navigation
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-web-chat-video-submenu-1
+    from: web-chat-video-submenu
+    to: virtual-appointments-auth
+    trigger: Virtual Appointments
+    relationship: cross-module handoff
+    context:
+      - Web Chat & Video app
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Web Chat & Video Navigation
@@ -44,6 +56,12 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII
 ## Open questions
 
 - Virtual appointment and media workflows remain blocked by expired SSO session.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- Submenu `Web Chat & Video`: `Virtual Appointments`, `Media Library`, `Outstanding Reviews`.
 
 ## Tester notes
 

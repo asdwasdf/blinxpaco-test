@@ -25,7 +25,118 @@ controls:
   - name: Campaign Types
     kind: filter
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-comms-campaign-manager-1
+    from: comms-campaign-manager
+    destination_hint: draft campaign
+    trigger: Create Campaign
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-campaign-manager-2
+    from: comms-campaign-manager
+    destination_hint: tin được gửi lại (SEND)
+    trigger: Resend
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-campaign-manager-3
+    from: comms-campaign-manager
+    destination_hint: recipient campaign thay đổi
+    trigger: Add Selected
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-campaign-manager-4
+    from: comms-campaign-manager
+    destination_hint: campaign được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-1
+    from: comms-campaign-manager
+    destination_hint: /commshub/analytics (patient-level)
+    trigger: Analytics
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-2
+    from: comms-campaign-manager
+    destination_hint: /commshub/campaign-outbox
+    trigger: Outbox
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-3
+    from: comms-campaign-manager
+    destination_hint: campaign bị sửa
+    trigger: Edit
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-4
+    from: comms-campaign-manager
+    destination_hint: campaign bị xóa (DELETE)
+    trigger: Delete
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-5
+    from: comms-campaign-manager
+    destination_hint: campaign được khôi phục
+    trigger: Restore
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-6
+    from: comms-campaign-manager
+    destination_hint: campaign mới
+    trigger: Create Campaign
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-campaign-manager-7
+    from: comms-campaign-manager
+    destination_hint: file CSV chứa PII (download)
+    trigger: Analytics > Export to CSV
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Campaign Manager
@@ -61,6 +172,31 @@ Accessibility observation, external Comms Hub dev, authenticated session associa
 
 - Safe recipient, send boundary and cleanup process remain unspecified.
 - Campaign Outbox landing/search is covered separately; communication details, context persistence, export contents and campaign details remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Campaign Manager` → `/commshub/campaign-manager` trên host Comms Hub, 9 row, kèm `SESSION EXPIRED`.
+
+Gap / Open Question:
+
+- `Resend` gửi lại tin cho bệnh nhân (SEND): cần recipient synthetic được duyệt.
+
+## Discovery run-20261001-085609 (part 4 — Comms Hub deep dive)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- **Đính chính:** `SESSION EXPIRED` là modal ẩn, không phải banner.
+- Nhóm `Non-Shared Campaigns (4115)`, `Shared Campaigns (445)`; cột `Campaign`, `Status`, `Description`, `Campaign Type`, `Email Template`, `SMS Template`, `Created By Organisation`, `Shared To Orgs`, `Created By`, `Created Date`, `Tags`, `Start/End Date & Time`, `Next Scheduled Date & Time`, `Repeat Interval`, `List`.
+- Actions mỗi campaign: `Analytics`, `Outbox` (read-only); `Edit`, `Delete`, `Restore` (boundary).
+- `Analytics` → `/commshub/analytics`: bảng cấp bệnh nhân (`Patient Name`, `NHS Number`, `Booked Appt.`, `Health Form Submitted`, `Gender`, `Age`, `Email Address`, `Mobile Number`) và `Export to CSV`; dữ liệu là PII nên không ghi.
+- `Outbox`/`Campaign Outbox` → `/commshub/campaign-outbox`: chọn trong `Campaigns`/`Campaign Types`, `Search campaigns...`, `Search communications...`; bảng chỉ hiện sau khi chọn campaign.
+
+Gap / Open Question:
+
+- Danh sách giá trị `Status` chưa đọc được (cột bị ảo hoá).
+- `Export to CSV` là download PII: cần approval.
 
 ## Tester notes
 

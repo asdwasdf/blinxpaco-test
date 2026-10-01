@@ -11,7 +11,8 @@ controls:
   - name: Search Skills...
     kind: read-only
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Organisation Skills
@@ -48,6 +49,16 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 
 - Meaning and safety of row `Actions` remain unverified.
 - Relationship among `Pathways`, `RBAC Skill`, and `Snomed CT Code` is not confirmed by trusted requirements.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/skills`: heading `Skills`; không thấy row hay control mutation sau 2.5s.
+
+Gap / Open Question:
+
+- Chưa phân biệt được empty với tải chậm.
 
 ## Tester notes
 

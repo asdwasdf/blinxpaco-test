@@ -19,7 +19,98 @@ controls:
   - name: Set Org. Defaults
     kind: mutation
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-comms-template-manager-1
+    from: comms-template-manager
+    destination_hint: draft email template
+    trigger: Create New Email
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-template-manager-2
+    from: comms-template-manager
+    destination_hint: draft sms template
+    trigger: Create New SMS
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-template-manager-3
+    from: comms-template-manager
+    destination_hint: draft custom build
+    trigger: Create without a Template
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-comms-template-manager-4
+    from: comms-template-manager
+    destination_hint: template được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-1
+    from: comms-template-manager
+    destination_hint: bản sao template mới
+    trigger: Copy
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-2
+    from: comms-template-manager
+    destination_hint: template bị sửa
+    trigger: Edit
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-3
+    from: comms-template-manager
+    destination_hint: template bị xóa (DELETE)
+    trigger: Delete
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-4
+    from: comms-template-manager
+    destination_hint: template mặc định của org thay đổi
+    trigger: Set Org. Defaults
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-5
+    from: comms-template-manager
+    destination_hint: draft SMS (`/template-builder/sms/create`)
+    trigger: Create New SMS
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Template Manager
@@ -62,6 +153,43 @@ Accessibility observation, external Comms Hub dev, authenticated session associa
 - Mutation setup, cleanup and approved test organisation remain unspecified.
 - Default-template persistence and validation remain unverified because dialog `Save` was not used.
 - Pre-built `Next` now reaches a populated unsaved editor, but persistence validation remains unverified. `Save` appeared enabled while required subject/plain-text fields were empty; whether save-time validation blocks persistence is unknown. Chooser/editor console errors remain unexplained.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Tester đã đăng nhập Comms Hub và cho phép truy cập read-only. `Template Manager` → `nhs-comms-hub-dev.blinxhealthcare.com/commshub/template-builder`: `Create a custom build`, `Use a pre-built template`, 9 row; đồng thời hiện `SESSION EXPIRED`.
+
+Gap / Open Question:
+
+- Banner `SESSION EXPIRED` hiện dù tester đã đăng nhập; trạng thái session chưa rõ.
+
+## Discovery run-20261001-085609 (part 4 — Comms Hub deep dive)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- **Đính chính:** `SESSION EXPIRED`, `Current Password`, `Export Report`, `Upload Media` là heading của modal **ẩn** dùng chung toàn app; phiên Comms Hub hoạt động bình thường (part 1–2 ghi nhầm là banner đang hiện).
+- Bảng AG Grid nhóm theo chia sẻ: `Shared Templates (418)`, `Non-Shared Templates (2220)`; cột `Shared Campaign?`, `Name`, `Type` (`Email`/`SMS`), `Communication Type` (`General News`, `Guidance & Advice`, `Reminder`, `Confirmation`, `Booking Links & Health Forms`), `Created By Organisation`, `Shared To Orgs`, `Actions`.
+- Bộ lọc org `Viewing data for:` (`General Practice (Demo Site)`, `Primary Care 24`, `Select All`, `Apply`); `Search Templates`, `Columns`, `Filters`, `Reset Column Widths`, `Show All Columns`, `Clear Filters`.
+- Actions: template được chia sẻ có `View` (read-only) và `Copy`; template không chia sẻ có `Edit`, `Delete`, `Copy`.
+- `View` → `/commshub/template-builder/email/view/<id>`: `Language Selection`, `Subject line`, `Email Text` khóa read-only, chỉ có nút `Back`.
+- Nhóm phải mở bằng icon `.ag-group-contracted`; click vào chữ tên nhóm không mở.
+
+Gap / Open Question:
+
+- `Show Org. Default Templates` và `Filters` chưa thấy thay đổi quan sát được.
+- `Edit` không mở vì chưa rõ form có tự lưu.
+
+## Discovery run-20261001-085609 (part 5 — direct mutation discovery)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Create New Email` mở modal chọn `Create a custom build` / `Use a pre-built template`; custom build trỏ tới `/commshub/commshub/template-builder/email/create` (path lặp `commshub`).
+- Form: `Language Selection` (mặc định `English`), `Subject line *`, `Email Text *` (bản plain-text), `Dynamic fields`, `Media Library`; nút `Save` (`#saveEmailTemplateBtn`) vẫn disabled sau khi nhập subject + text — có vẻ cần nội dung editor HTML (iframe). Không có gì được lưu.
+
+Gap / Open Question:
+
+- Điều kiện enable `Save` của email template chưa xác định.
 
 ## Tester notes
 

@@ -1,0 +1,4050 @@
+schema_version: 1
+run_id: run-20261001-085609
+environment: dev
+role: Super Admin GB
+revision: 203
+status: paused_budget
+current_task: null
+queue:
+  - state:
+      role: Super Admin GB
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+      heading: ""
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: unverified-auth
+    action: Verify authenticated dashboard
+    category: module
+    provenance:
+      kind: bootstrap
+      ref: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    id: d38cc0bbfede7a1e703c03659ba70e519bab219bc8d27d85a7dc833e7c9a7987
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 2663e56bdbbf87ca0cf44776035db6c842138e37099956d5fbb949e218ef1e00
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Comms Hub
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 45d3a1be2f1d654481a864de6b37229b12475dbc2e5913076dfb7f699bc5f46d
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Health Forms
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 079ae57ed01d1ab8cd1d1064acbc6d6e23648d0246670c5851a6feb6c2882e02
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Patients
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: aa09b7bfb1ed0f3c51eb53b6f4846c3bc0a72f0180ce3716db48b150e1b11d3b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Web Chat & Video
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 3bbd64fdde7ce5294dfc6b5bde3db92bb06f168f3f7431da4eb8df828ffac8c7
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Case Load Management
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 8eecb221e2eb565fec35f6195125f013bd8e7561c9723ffe905567bd1a137963
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Appointment Book
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 354e2ff4fbf68241671959c29bbe0c70fc8da9d27655f8093db60c469f926980
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Quick Pay
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 37337c89cec9d36b09651a8a0c79817c1e17db8a880388f0affcd88939be5b2c
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open User Portal
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: fa41da617fc1b72ad0a082e21cb3b4b78b1bae2655bd87b49dc54afcfcbbca57
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Configuration
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: d25e529d71121b08996587821ed92217bc0856caaba180ca08bb134c3bacf55b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Rocket Bar
+    category: module
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: f707854c6d0b8122a6d849de5cceff65e7df2b29d8701a8604edd6295eab6a12
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Switch period week
+    category: variant
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 38efe2632623b8ce3e42f5be3b0308105756357ec581ebeb4d744419aaadcdf9
+    status: queued
+    attempts: 0
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Switch period month
+    category: variant
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 1cb0dabb200be4bf97e5509fc4a9a4c06a717085ed8710b79c66eb0db016d6a4
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Switch period year
+    category: variant
+    provenance:
+      kind: evidence
+      ref: E-dashboard
+    id: 283fd6801b83cd4704b74259f1edd42efc286cf5c9b71d1755f9b4ae3e3f29f8
+    status: queued
+    attempts: 0
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Health Forms
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Health Forms > Inbox
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-hf-menu
+    id: 55a97dbf0e3f6b661bb3f18ab57e508cb08aabcdf191165c2b3e2c4b93b31481
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Health Forms
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Health Forms > Designer
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-hf-menu
+    id: 3457064278f35be3aac6bff3df6890f1fcf608cd1f5f0c4d27ad8c68a6a71c0b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Health Forms
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Health Forms > Designer V2
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-hf-menu
+    id: 705d204f45ba2a3839768126b526f47897b58dd726b7f6a47053af81d35fee83
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > Capacity & Demand
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: ab232e3a60d8a27b34afa1dc4c887ae8ee4f7ba5b057d3fd17aba475ab414723
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > Patient Analyser
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: 9324bad7a8643a3ea57b1b1134eb3145ff85969313b50e0a3541d9663c73b442
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > Medication Analyser
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: e813d2d0f85969e2cc812c4a072a1db451d32e0f1ee2ccebc24c89c7c4c87c8e
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > QOF Registers
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: 7ea7066316acdb4d3029c4cbcadd6f7c7a40fce8c400dad0fb487d2518035efb
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > Patient Details
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: 24fc6bfd2b54e46008be6febbb5e32c11f83cc0bb6aa3920c6e7183ab96d0315
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > Comms Analytics
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: 1e08341347ecf62969d74b7ff597dac4b22348a4ccb98ea70a0eca311e9173e3
+    status: explored
+    attempts: 2
+    reason: "requeued: Tester logged in to Comms Hub and allowed read-only access
+      (2026-10-01); host added to externalDevHosts"
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Analytics & Reports
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Analytics & Reports > Reports
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O3-analytics
+    id: 3f63ffbc725e13cea5cbd2d369637b3a7ccf2e745668b5ae98c9cebbf074a98a
+    status: explored
+    attempts: 2
+    reason: "requeued: Tester approved Remind me later; Set your status modal
+      dismissed"
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Appointment Book
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Appointment Book > Appointment Book
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O4-appointment-book
+    id: 87b129a8d6a6753e7592ab950a5058168433cc6724aec4a291cf53baee3cc910
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Appointment Book
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Appointment Book > Appointment Settings
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O4-appointment-book
+    id: fbac0318c6167971a85e4904252f6b6978dea2a2de8fc2bd02ea022a3a0901f6
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: Invoices
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/quick-pay/invoices
+    action: Open Quick Pay > Product Catalogue
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O5-quick-pay
+    id: 6690d4b96797c868dde4895e79bb4bf12a9ce0e77bbf88437f55a7ae53af5e18
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: Invoices
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/quick-pay/invoices
+    action: Open Quick Pay > Accounts
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O5-quick-pay
+    id: a92a369163ad85d1e6d0135cbce592b4101598b27714dfac239c2f5986b44618
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: Invoices
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/quick-pay/invoices
+    action: Open Invoices panel Columns
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O5-quick-pay
+    id: 5b518a0188b58c2a495ed110c59b3c12f1d0758b3bb1fa4834dd3e5db432f93f
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: Invoices
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/quick-pay/invoices
+    action: Open Invoices panel Filters
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O5-quick-pay
+    id: 0c4bc97bc44a7c2a9542af6f8bfca800d2fe68faff5f0b8b2727beb6b1c74158
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Web Chat & Video
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Web Chat & Video > Virtual Appointments
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O6-web-chat
+    id: 0f075ec08217f7b115972af2324da9be168d1fa5bae49539e799b9fca4b011ff
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Web Chat & Video
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Web Chat & Video > Media Library
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O6-web-chat
+    id: 5f09c5f82210a4a0e505e8d35a5296be0cd17213889524e12d8b55bab4cef2b4
+    status: blocked
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Web Chat & Video
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Web Chat & Video > Outstanding Reviews
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O6-web-chat
+    id: 71223441ed72c26b904d1f569ca5c70f6020fc035ec73d438e62e93a906dcdd9
+    status: blocked
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Comms Hub
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Comms Hub > Template Manager
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O7-comms-hub
+    id: e1283bb85d7d3e81230a359c8f471121eebaaf68578e4c4e69de20ec09527d79
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Comms Hub
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Comms Hub > Campaign Manager
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O7-comms-hub
+    id: a4eefe053c32aa16521029f94ac5698d2022a5abfef096b61a86a2d1b6520067
+    status: explored
+    attempts: 2
+    reason: "requeued: Tester logged in to Comms Hub and allowed read-only access
+      (2026-10-01); host added to externalDevHosts"
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Comms Hub
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Comms Hub > Patient Manager
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O7-comms-hub
+    id: eababf7b166531d8c9755f72b0682751b90b5bd06920502a12378e35dd0a8141
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Case Load Management
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Case Load Management > My Case
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O8-case-load
+    id: 067e8ba1d2a8b7479bf9a554f609f017bd6263785b760dace30c150ecc5d9339
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Case Load Management
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Case Load Management > Unallocated
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O8-case-load
+    id: 18e68b16e2e9567b353e48858335c8f08e62775761c707f24f55bd71d5f1a214
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Case Load Management
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Case Load Management > Case Workboards
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O8-case-load
+    id: 70f0bcce9301e5c1b4d5bda6a932f31b836ccee2b11c5bc91a0dfb28450359bd
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Case Load Management
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Case Load Management > Task Workboards
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O8-case-load
+    id: 23974655b5799355d647b121f72a0ccdfaf130bf8e6de719e312b2c7cc4753c9
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Patients
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Patients > Patient Search
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O9-patients
+    id: 4f6a8c72e509344ced399f487edbc89a5bb5789c9a95cc9dc5b7ea734542a78f
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: sidebar-group:Patients
+      context: ""
+      variant: day
+      heading: Dashboard
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    action: Open Patients > Care Navigation
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O9-patients
+    id: 3b52ff8910ac44344f79b040b3350be859aad6d7ffdea4f3d7dcfaf23461c70c
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Practice Profiles
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: fcf9a48f978213f3360d69ec45899b891ba3fa54d7a6a39aeef5a2938b88cb9c
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Locations
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: f0794dee4c871f96888333717a44d79401d7f28993c791764d55e38f6e5a54a6
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Skills
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 0071c5039e6b076c7cd3af340905eed0ced33e08b255c31c698f4fa3dfa3855b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Code Rule
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 59274bdb925d8748f4e2502fde1b0a986f8cc4b8b015149b74f16aab9be91efb
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Sharing Agreements
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 10b6037bc11ed57c267cc374341a234c257ac6e7f04c83d34bcd89b8ba069dc6
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Pathways Config
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 0001bd4a2aaabdf3361b95258944bc4b04ff6341c673034746ce1e2d91e517cf
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Services
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 734bf0de7bf0697d4da7353c371e76ac5aa06bc69413c1ea70493491d6a50d01
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Dx Priority
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: e2ca7e026453538ff4b06b0752f1dbdf541c862e0ac5d998bafa64df23c2ca18
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Org Priority
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 3d558808271a475c19190d659b6f7813e44ebb7f3c71689a1cb6edc50989610b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Inbound Priority Flow
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 3f6d5406687c90b604b4d2b0ecc3f8d45cc939a848fd76796e81366b4823ad9f
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Announcements
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: b954f7bbc1884fc197d686b109e4750ee4c1c7e8f9e48ca706b35093c2a9e9c1
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Integrations
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O10-configuration
+    id: 73bd7b7e55889dfbbbfecdf83ee542fe2e2eaab10c9f3ede4457bc62d9688eea
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: User Guides
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: User Portal
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/user-training-portal
+    action: Open User Portal > FAQs
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O12-user-portal
+    id: f3df0e33ad749263c61fe90ad1a83b40d824a4d0b00f37bbc5c2fdabb6035e4d
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: User Guides
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: User Portal
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/user-training-portal
+    action: Open User Portal > Technical Support
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O12-user-portal
+    id: affd8bab3ecfd9f68962adaa9bb22d867909220bbddc1488bde3331e3555e399
+    status: blocked
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: User Guides
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: User Portal
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/user-training-portal
+    action: Open User Portal > Release Notes
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O12-user-portal
+    id: 3de4bcde777e500ca40e29e21dc623881d5ed02bc9fa5344e725553859ddfb33
+    status: blocked
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: User Guides
+      overlay: ""
+      context: PACO Connect
+      variant: default
+      heading: User Portal
+      url: https://blinx.dev.blinxpaco-np.com/paco-connect/user-training-portal
+    action: Open User Portal > Videos
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O12-user-portal
+    id: f908132578f4a934f726b3d3dad63912b036735622a9e4f205f3ba15d43b2ebd
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Patient
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: 76a67601a364e29c90a22435ee7e68be586d20e5a2676cebaa8412b17b55e4fc
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Appointment Books
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: 960cdb70f4386f273cdd2a32fad63adc5761536b4f1806d42e22012eda5f8b8d
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Quick Pay
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: ce99a8e02581d45a185b2eb4de5524aa1b8241ffb060f49bb45a9a6e074bb3ef
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Patients & Proxy
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: 9ef5dd30a446931cc5b0a165b68b31ac0c030fbf5c110b07d8ad04d6eba30c58
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Users & Staff
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: 15fc80af72b4c05d180769e979b2eab9fe20b25382a64a904dcf4ff0cc1da2b1
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Clinical Config
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: cf46302361bf8c5e9b3e3837a1d215b877e6823fd8c74d1bace151dddc73ea07
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: ""
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration group > Case Prioritisation
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O13-pathways
+    id: a7d0b6a0916e6eac98e1029c162606217e534b73d4981cfd1d5789e6018f5e58
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Users & Staff
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Users & Staff > Staff Profiles
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O18-users-staff
+    id: 67d2d108a83103ed99b942cbf2e250d5f3f92f4bb6b7eb28a94e2be69c6dd492
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Users & Staff
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Users & Staff > Role Groups
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O18-users-staff
+    id: 89a3c41248a12d2aad1584a60f6836dcd7899293e48dbe36e70c89e4074a384b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Users & Staff
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Users & Staff > Teams
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O18-users-staff
+    id: 60e2e724328a8ee63dc29d190b179c57dbbd1c5948946c196320f39df7ba9a9b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: empty
+      heading: Unallocated
+      url: https://blinx.dev.blinxpaco-np.com/paco/unallocated
+    action: Open Unallocated Filters
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O19-unallocated
+    id: e65435126dffa31c20cc95c7ed70dd9af64bded9f06877cf199f4f7cf7097965
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: empty
+      heading: Unallocated
+      url: https://blinx.dev.blinxpaco-np.com/paco/unallocated
+    action: Open Unallocated List View toggle
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O19-unallocated
+    id: 1dc610b7b0dada788064d502db948f43049f999154039bea5e3c875745755984
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: task
+      overlay: ""
+      context: ""
+      variant: empty
+      heading: Work Boards
+      url: https://blinx.dev.blinxpaco-np.com/paco/workboards?tab=task
+    action: Toggle View My Tasks Only
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O21-task-workboards
+    id: dfc843fc5374ce14984d27b642c584c910d2f56d32881d9d34360e1edbd38e0a
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: task
+      overlay: ""
+      context: ""
+      variant: empty
+      heading: Work Boards
+      url: https://blinx.dev.blinxpaco-np.com/paco/workboards?tab=task
+    action: Toggle View My Cases Only
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O21-task-workboards
+    id: d1af94af3b686728910d6ed991e9ab794be940dee4e0c0b1b3859febb986fa01
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: Patient Details
+      overlay: ""
+      context: Patient Analyser app
+      variant: default
+      heading: Patient & Medication Analyser
+      url: https://blinx.dev.blinxpaco-np.com/patient-analyser-new/
+    action: Open Analyser Advanced Search
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O22-patient-details
+    id: de0bb90aa26655482d20dd213ef52dbefd78f37d347d9506644b9714d5fb2721
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: Patient Details
+      overlay: ""
+      context: Patient Analyser app
+      variant: default
+      heading: Patient & Medication Analyser
+      url: https://blinx.dev.blinxpaco-np.com/patient-analyser-new/
+    action: Open Analyser Columns
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O22-patient-details
+    id: 22c61c9f806ab92a6233610c7f2ae666f19ad376a38a2f3674651b4d9bae7956
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: Health Forms app
+      variant: populated
+      heading: Health Form Designer
+      url: https://blinx.dev.blinxpaco-np.com/health-forms/builder/
+    action: Open Designer Filters
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O23-hf-designer
+    id: f4a41acb90852de88f8e82668627ea1f0f711ceaef9c3188877bf6ba92aa6814
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: Health Forms app
+      variant: populated
+      heading: Health Form Designer
+      url: https://blinx.dev.blinxpaco-np.com/health-forms/builder/
+    action: Open Designer Columns
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O23-hf-designer
+    id: c04dcc897e0828b89e30e7edd3d59357c0cc7f7f7ee860af8521439599b383ba
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: Health Forms app
+      variant: populated
+      heading: Health Form Designer
+      url: https://blinx.dev.blinxpaco-np.com/health-forms/builder/
+    action: Open Designer row Actions menu
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O23-hf-designer
+    id: f97f1eaddb1c710731b39c7882fcfefd7c50f816cf3bb7b46970128a1b21aa95
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: SCR
+      overlay: ""
+      context: ""
+      variant: not-authorized
+      heading: Analytics and Reports
+      url: https://blinx.dev.blinxpaco-np.com/paco/analytics-reports?error=not-authorized&report=scr
+      meaningful_query:
+        - report
+        - error
+    action: Open Reports tab Patient Cases
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O28-reports
+    id: d0a5515b0f5d8fd97904304c2e1aa2a579fc7b417a94f7937b6abe5a19fe1d39
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: SCR
+      overlay: ""
+      context: ""
+      variant: not-authorized
+      heading: Analytics and Reports
+      url: https://blinx.dev.blinxpaco-np.com/paco/analytics-reports?error=not-authorized&report=scr
+      meaningful_query:
+        - report
+        - error
+    action: Open Reports tab Prescriptions
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O28-reports
+    id: 2f8c7cb724ac62591bbde30c81d8a49e11c6d2d2c5a5741418dd757225220aa8
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: SCR
+      overlay: ""
+      context: ""
+      variant: not-authorized
+      heading: Analytics and Reports
+      url: https://blinx.dev.blinxpaco-np.com/paco/analytics-reports?error=not-authorized&report=scr
+      meaningful_query:
+        - report
+        - error
+    action: Open Reports tab NCRS
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O28-reports
+    id: 469e80ea7342bacad94f507ce22472f9447b99467d2ab013c840c9ed036c8efc
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: Health Forms app
+      variant: zero-counts
+      heading: Health Form Inbox
+      url: https://blinx.dev.blinxpaco-np.com/health-forms/responses/
+    action: Switch Inbox View By Health Form
+    category: variant
+    provenance:
+      kind: evidence
+      ref: E-O33-hf-inbox
+    id: 2bec1d23ae625949ad54d8f5a4ca70c9d36af7b52f8c18ed1db2180b8948744d
+    status: queued
+    attempts: 0
+  - state:
+      role: Super Admin GB
+      tab: ""
+      overlay: ""
+      context: Health Forms app
+      variant: zero-counts
+      heading: Health Form Inbox
+      url: https://blinx.dev.blinxpaco-np.com/health-forms/responses/
+    action: Open Inbox Filters
+    category: transition
+    provenance:
+      kind: evidence
+      ref: E-O33-hf-inbox
+    id: 2c110816ec7e241730c7bdbecb77b1af9876f277fadd805db7b0d260df0229f9
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Patient
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Patient > DFD
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-76a67601a3
+    id: 229e565d242015800790302e3da01528aeef6cc9d0dde98a5f57a3f38e006fab
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Patient
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Patient > Care Navigation
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-76a67601a3
+    id: e436b85b8734b0a72f98e1ef702e3d32e5f8af16cea6fe788a775577ffb12763
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Appointment Books
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Appointment Books > Scheduler
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-960cdb70f4
+    id: 9fc0de42cc2469bb153fcfc462a6527513b359035721dcd747670b8a9be6ac4c
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Appointment Books
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Appointment Books > Appointment Books
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-960cdb70f4
+    id: b93783de30a8e950644c0a4a735f71e44d358000f4205ffdc2d852836a3948c4
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Appointment Books
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Appointment Books > Sessions
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-960cdb70f4
+    id: a55223f5eea12c920c65190f3588756ec1513e7200c548702dd2c5df3107bfd2
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Appointment Books
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Appointment Books > Slot Types
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-960cdb70f4
+    id: 8af60b826b2e654cee1eeb318c24817cbb5bb83e71bfa186958183400ea6158b
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Appointment Books
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Appointment Books > Appointments
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-960cdb70f4
+    id: 3c64f00f348e2a93afbac5de587cef678bcc6d9624868e28d5fc195fa8896aad
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Appointment Books
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Appointment Books > External Appt Reminders
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-960cdb70f4
+    id: 1751e4824869c3a18d4012b42988d45941287ae2d405832e5442741b061ebe6e
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Patients & Proxy
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Patients & Proxy > Role Groups
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-9ef5dd30a4
+    id: 4f00526c18ac8485b461eabc0791ec79f7b8c18dc953d4aef2d44929fe21bb9e
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Quick Pay
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Quick Pay > Product Catalogue
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-ce99a8e025
+    id: 0f3772b99e0912b540713c0dc581770f4d91c985ffdc454c2aec9329f2e364a9
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Quick Pay
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Quick Pay > Accounts
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-ce99a8e025
+    id: 39627794ad763e1bb823efb39ea2e4097dc1b40428644765f507ce9649b3c955
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Clinical Config
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Clinical Config > Risk Strat Builder
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-cf46302361
+    id: 3367d3bd5c963391f779fbe10c9d0b2cbd975e9fa2cefde148845852cdc00aad
+    status: explored
+    attempts: 1
+  - state:
+      role: Super Admin GB
+      tab: General
+      overlay: config-group:Clinical Config
+      context: ""
+      variant: default
+      heading: Configuration
+      url: https://blinx.dev.blinxpaco-np.com/paco/configuration/organisation/general
+    action: Open Configuration > Clinical Config > Template Library
+    category: branch
+    provenance:
+      kind: evidence
+      ref: E-O-cf46302361
+    id: a9a9266eeb30d0baebc1b88f37ce4d8789ea3185bcbb8cf0742525048f241775
+    status: explored
+    attempts: 1
+visited_states:
+  - b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+  - d17ad0ede5cbe684f2dcde464660a0c591b254e15d3cb655adbe29a9b95a2142
+  - ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+  - 08ff4faa4dbcafb0ae8ba8199a9a9d070abb52905f136fcdfa7e6c52030b01af
+  - 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+  - 1054c12468963bffb6c678b7e331c5993045c3a0fe7a3aea637258311d9512c2
+  - 444f3196542c9fb48555ac679a24262c1896d6ff0af5dda0ac71753163b7dcb7
+  - 3283f2c7f99dc09f76694bc818ab812e1e6b0f3f2451ba1f16a85679d546720e
+  - f944830d96e5587db4c5c80e3bcb29f09bddb4a13b926d726ae04868191ffc27
+  - 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+  - 54996127297ee3dcab3882e0cb6665b6ae7d5127ddfbcef1402c48d7c0c706ba
+  - 6bb2ab88559c2070b40da9c92ab2b98fe986905d839ec39dc88e48c13f0e8c1f
+  - 9922ee5c610282882828abad027d68d0ce07f75448268a28c1dd656682e0171b
+  - 1d6aceb67e0e91c76d90039f8f59b5001627e16ad4f425143fd81ca261949e3d
+  - e3a95785d7fd902563cdc1c7d84f68f4357fc70b5e005d53e8bff570f942bf8a
+  - a4bc60139c42d6c8563f23d8959ebb786dbe0941303d8763d75b246c76029a1b
+  - e071a1f3d1e43249f1cbd78c13ae28410d2a36723c82d217d4b76503bc38f418
+  - 99e2d016b9d712a67c0ce92bc0d44f4140479dad46c5412383be1739f64d5cf9
+  - 84d289aba1791f4a5c1a4cf2905d670c1d893a010ddeb617200b7dd0ca380b52
+  - a1d630ac8e0b8521c1be4ccf365e2930a7ba5a411556921e5729f583cbce8255
+  - 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+  - 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+  - 81655bd4737c431df5c537681d4c6057e09f57e1b19475ddd2027a2cb4a3cf21
+  - 8c7c4b0591bf63a0c00bde3538603581d365b0b70430951d16a668e2eca83134
+  - 94af0d245f6949f3b40cfbfdb901afc7999c831393b8f6a8e8e2bcb60553c6d8
+  - 025a147200ca606442f84ef85676951aad35728792ffeae09376b2379d228696
+  - f6475e608ff10949c3193da56d0d19f8ff77e44bbcabca774c469c6a877dd2f7
+  - dae6e46add8a8ae6f4b01e5967566b7f81eb027e218328c2847ef4386cf8d15e
+  - 0643ed37755fb69c051663982e81e877240ed2d79e53501aa4a6b043d1a4870e
+  - d3e9c90f13a3fa18dc0f6d2a6310ae201e1837f316faa1c6732016577600dbcd
+  - 64217764355d4e6f269a7b1a6e634b3bcd871a3afe492d8447661f4e2b10d746
+  - a2f50ea2707626f8b4c0e9b5f416384f68b3f99c52d5b6af22a5128dffba77f6
+  - 7c107f1449b1dc6c237befa1dbaf46140c98e6e9c2a54f9744bb90ad3790ae33
+  - bafa8eb61026f61244d73623db85cd105725070ad18e7bedcf4cd526073417d0
+  - 0b75c71619a2bdda3afdfdcef2810795505c92828733845e80344d7996f3f02f
+  - 10eda97fc1de2ce7150d6d431f46dab22e825ec3aee0219499b579fb8f2fe343
+  - ca11e8742a5145c6b237327e13b91e1edd44a4069b6a24c5c84395972ebf4212
+  - efbcf87d44a5b3d68e3fcdf4a737b967651da3d415df3d53b8581926c5647ea7
+  - bec87f522874a8e0dc4bc8cd6347036eaf7a06ffd40c8c9b94da85259d9c4994
+  - 1ad39f2db18413e9a836d8b182eb5e580fff7efb8646ad9ab2cd5daef1bca3c2
+  - 12355518c6ae56716c0600524918c88aebd27feb9dc946412482e078d4421814
+  - 2b15e2dd2f48bbdb5666f937bee313cdc4192c804e0b3eb236db8c3c997366a7
+  - 1cec4579b8c3957ef02242607ea912ba485f38d99ae7af0280b40fc49886882c
+  - 1998b5d808e1996a7328243a1b7a4f3ecb1c9a9155a391d22725da231dd6151f
+  - adb6c4812b68c1b8eafa028d12c425965a92a83ae3df69e9b93aa428a26a1ff0
+  - 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+  - 569aa2595fffc98444439017748192a7efad2b04d81ba18cef4a7a4bf59b8aa9
+  - d6157a48d095c957696e1d2cfad566f1cd460b1416bde8920f61a3f770e59f56
+  - 495fd7052cd6cca74311d320b4c866be4142a2b9a807461aedb6c13fa76f2a61
+  - ade7d7a9c19674c6c8f13eedc6100c688f50d7437c56b8660ff1eb1773634ad1
+  - 980b2d67fe3cd3a0986547741fc891d2f3d69ec4d5b94525b3bd1aba317b86fa
+  - dfb75799adb70a26af1c9545146b5911bd30f01a1723ecbef9ed895f2de93a2f
+  - 7fab680d9439e96aa3553e2871b7438c6fdd7f2069af070e8a8176e20ccc7e40
+  - a53920771a2397fdf8fa295bdac53c0b63a9fe13bb205310c2e2244f8391d33c
+  - ffed6abc874a162f41fedd79f461f5671caa50ad12aa908e6f05d8dfa0f66725
+  - d6b807465450946d2fa37497a7b66bffc69679b8eeb8fe6b44700e2a82698a5c
+  - d6a869a2367edea741ff46e7c496b0297f497b6bcf16a2ed3c7b40889c6d1e1e
+  - a62683d287367b83ff3425de1bae2988057ad9cae97162a0ae452afe05f7ca28
+  - b0892f89a5de5495ebfed822244df82a090c20f8ffcdbdab33ebe6539346b73f
+  - d4ce73a760684f965197a7efc662ae4dd946cac2a1f8d9d2ffb3f8b6abf8fc84
+  - d2774c3c90b31391386bb238a1093accc4cecfb2449d5d34c65da027aa27d860
+  - 29d88fac452a706fcafccc7735d2647e148310d5117790da32b4427a72cc93f5
+  - c43ba2ed3d68674ffb5b69b61997fa4fb7b22239a9e13252076dff302c4453a4
+  - 32cdafcadc5e5004515885a53087c14f88c9c0a2e5aa50c1f889bb21fd0fc467
+  - 30e373986191ac8814ee14fdeea0b9cced2b048f662f6ead9494f41881b0b47a
+  - 92d90a48f3072a19a7837141a226e188394dcd530910115e7150203b74b2c6e1
+  - 7377673ab3df69a0a76b7e327ff6007c9905ecce9d83b413a6138249c250cd25
+  - 55a9c0602cc34b31249e231212a5129474e3b52cf436f56f8e90e5bd60b6b788
+  - f95029b4f21a1b777518f756b2304d58a84841bd80050de968cc43e95f8107c7
+  - ff87a94c1fb3289d6e4c7593ed38d5738002635fd7761572bdff4f397372e44c
+  - bdfc0db7af3b4fed6b7aeca1ca1e8bc1cf490c0e2614bd946329ed004decaa11
+  - 1290bf62f508efd63dc8afd2c683fa8b8c4d90b8efa09a9095bb11eb5e8207fc
+  - 6e8a08fada580b7d324c5828d896cfcce098096ac2ea716261805d940fca6ae2
+  - 3bb099f4634b7b477a556a571e9e78de989c50fdb7cbcab32823a18a33129e25
+  - 53638d6478446a37f41b9d4437f40389dfb7a3dcad34331674e08f2d708531d9
+  - 6a3ea224d2f3ca181a5736cdcf236a56f913a8de4af7f4ade6f409eedce5d868
+  - c43e97fa561ba84fed07c7eaab2a295833fa44ed23e68c69dbd675cfc0c435c7
+  - 89a45aa8889afa9ce1147b8f9bbb3cf3812d71f73ba6f8f21cedcfa7a697625c
+  - bb215a4aadb79e4b94d5bbe6504d6e659e4de41374c7e8c8c050a2328d50e85f
+  - cc6a84b1f1c76736d5c2fadc0457a26e3ad016b27f2007a65f8d810674948563
+attempted_transitions:
+  - d38cc0bbfede7a1e703c03659ba70e519bab219bc8d27d85a7dc833e7c9a7987
+  - 079ae57ed01d1ab8cd1d1064acbc6d6e23648d0246670c5851a6feb6c2882e02
+  - 2663e56bdbbf87ca0cf44776035db6c842138e37099956d5fbb949e218ef1e00
+  - 354e2ff4fbf68241671959c29bbe0c70fc8da9d27655f8093db60c469f926980
+  - 37337c89cec9d36b09651a8a0c79817c1e17db8a880388f0affcd88939be5b2c
+  - 3bbd64fdde7ce5294dfc6b5bde3db92bb06f168f3f7431da4eb8df828ffac8c7
+  - 45d3a1be2f1d654481a864de6b37229b12475dbc2e5913076dfb7f699bc5f46d
+  - 8eecb221e2eb565fec35f6195125f013bd8e7561c9723ffe905567bd1a137963
+  - aa09b7bfb1ed0f3c51eb53b6f4846c3bc0a72f0180ce3716db48b150e1b11d3b
+  - d25e529d71121b08996587821ed92217bc0856caaba180ca08bb134c3bacf55b
+  - f707854c6d0b8122a6d849de5cceff65e7df2b29d8701a8604edd6295eab6a12
+  - fa41da617fc1b72ad0a082e21cb3b4b78b1bae2655bd87b49dc54afcfcbbca57
+  - 0001bd4a2aaabdf3361b95258944bc4b04ff6341c673034746ce1e2d91e517cf
+  - 0071c5039e6b076c7cd3af340905eed0ced33e08b255c31c698f4fa3dfa3855b
+  - 067e8ba1d2a8b7479bf9a554f609f017bd6263785b760dace30c150ecc5d9339
+  - 0f075ec08217f7b115972af2324da9be168d1fa5bae49539e799b9fca4b011ff
+  - 10b6037bc11ed57c267cc374341a234c257ac6e7f04c83d34bcd89b8ba069dc6
+  - 15fc80af72b4c05d180769e979b2eab9fe20b25382a64a904dcf4ff0cc1da2b1
+  - 18e68b16e2e9567b353e48858335c8f08e62775761c707f24f55bd71d5f1a214
+  - 23974655b5799355d647b121f72a0ccdfaf130bf8e6de719e312b2c7cc4753c9
+  - 24fc6bfd2b54e46008be6febbb5e32c11f83cc0bb6aa3920c6e7183ab96d0315
+  - 3457064278f35be3aac6bff3df6890f1fcf608cd1f5f0c4d27ad8c68a6a71c0b
+  - 3b52ff8910ac44344f79b040b3350be859aad6d7ffdea4f3d7dcfaf23461c70c
+  - 3d558808271a475c19190d659b6f7813e44ebb7f3c71689a1cb6edc50989610b
+  - 3f63ffbc725e13cea5cbd2d369637b3a7ccf2e745668b5ae98c9cebbf074a98a
+  - 2f8c7cb724ac62591bbde30c81d8a49e11c6d2d2c5a5741418dd757225220aa8
+  - 3f6d5406687c90b604b4d2b0ecc3f8d45cc939a848fd76796e81366b4823ad9f
+  - 469e80ea7342bacad94f507ce22472f9447b99467d2ab013c840c9ed036c8efc
+  - 4f6a8c72e509344ced399f487edbc89a5bb5789c9a95cc9dc5b7ea734542a78f
+  - 55a97dbf0e3f6b661bb3f18ab57e508cb08aabcdf191165c2b3e2c4b93b31481
+  - 59274bdb925d8748f4e2502fde1b0a986f8cc4b8b015149b74f16aab9be91efb
+  - 60e2e724328a8ee63dc29d190b179c57dbbd1c5948946c196320f39df7ba9a9b
+  - 6690d4b96797c868dde4895e79bb4bf12a9ce0e77bbf88437f55a7ae53af5e18
+  - 67d2d108a83103ed99b942cbf2e250d5f3f92f4bb6b7eb28a94e2be69c6dd492
+  - 705d204f45ba2a3839768126b526f47897b58dd726b7f6a47053af81d35fee83
+  - 70f0bcce9301e5c1b4d5bda6a932f31b836ccee2b11c5bc91a0dfb28450359bd
+  - 734bf0de7bf0697d4da7353c371e76ac5aa06bc69413c1ea70493491d6a50d01
+  - 73bd7b7e55889dfbbbfecdf83ee542fe2e2eaab10c9f3ede4457bc62d9688eea
+  - 76a67601a364e29c90a22435ee7e68be586d20e5a2676cebaa8412b17b55e4fc
+  - 229e565d242015800790302e3da01528aeef6cc9d0dde98a5f57a3f38e006fab
+  - 7ea7066316acdb4d3029c4cbcadd6f7c7a40fce8c400dad0fb487d2518035efb
+  - 87b129a8d6a6753e7592ab950a5058168433cc6724aec4a291cf53baee3cc910
+  - 89a3c41248a12d2aad1584a60f6836dcd7899293e48dbe36e70c89e4074a384b
+  - 9324bad7a8643a3ea57b1b1134eb3145ff85969313b50e0a3541d9663c73b442
+  - 960cdb70f4386f273cdd2a32fad63adc5761536b4f1806d42e22012eda5f8b8d
+  - 1751e4824869c3a18d4012b42988d45941287ae2d405832e5442741b061ebe6e
+  - 3c64f00f348e2a93afbac5de587cef678bcc6d9624868e28d5fc195fa8896aad
+  - 8af60b826b2e654cee1eeb318c24817cbb5bb83e71bfa186958183400ea6158b
+  - 9ef5dd30a446931cc5b0a165b68b31ac0c030fbf5c110b07d8ad04d6eba30c58
+  - 4f00526c18ac8485b461eabc0791ec79f7b8c18dc953d4aef2d44929fe21bb9e
+  - 9fc0de42cc2469bb153fcfc462a6527513b359035721dcd747670b8a9be6ac4c
+  - a55223f5eea12c920c65190f3588756ec1513e7200c548702dd2c5df3107bfd2
+  - a7d0b6a0916e6eac98e1029c162606217e534b73d4981cfd1d5789e6018f5e58
+  - a92a369163ad85d1e6d0135cbce592b4101598b27714dfac239c2f5986b44618
+  - ab232e3a60d8a27b34afa1dc4c887ae8ee4f7ba5b057d3fd17aba475ab414723
+  - b93783de30a8e950644c0a4a735f71e44d358000f4205ffdc2d852836a3948c4
+  - b954f7bbc1884fc197d686b109e4750ee4c1c7e8f9e48ca706b35093c2a9e9c1
+  - ce99a8e02581d45a185b2eb4de5524aa1b8241ffb060f49bb45a9a6e074bb3ef
+  - 0f3772b99e0912b540713c0dc581770f4d91c985ffdc454c2aec9329f2e364a9
+  - 39627794ad763e1bb823efb39ea2e4097dc1b40428644765f507ce9649b3c955
+  - cf46302361bf8c5e9b3e3837a1d215b877e6823fd8c74d1bace151dddc73ea07
+  - 1e08341347ecf62969d74b7ff597dac4b22348a4ccb98ea70a0eca311e9173e3
+  - 3367d3bd5c963391f779fbe10c9d0b2cbd975e9fa2cefde148845852cdc00aad
+  - a4eefe053c32aa16521029f94ac5698d2022a5abfef096b61a86a2d1b6520067
+  - a9a9266eeb30d0baebc1b88f37ce4d8789ea3185bcbb8cf0742525048f241775
+  - d0a5515b0f5d8fd97904304c2e1aa2a579fc7b417a94f7937b6abe5a19fe1d39
+  - e1283bb85d7d3e81230a359c8f471121eebaaf68578e4c4e69de20ec09527d79
+  - e2ca7e026453538ff4b06b0752f1dbdf541c862e0ac5d998bafa64df23c2ca18
+  - e436b85b8734b0a72f98e1ef702e3d32e5f8af16cea6fe788a775577ffb12763
+  - e813d2d0f85969e2cc812c4a072a1db451d32e0f1ee2ccebc24c89c7c4c87c8e
+  - eababf7b166531d8c9755f72b0682751b90b5bd06920502a12378e35dd0a8141
+  - f0794dee4c871f96888333717a44d79401d7f28993c791764d55e38f6e5a54a6
+  - f3df0e33ad749263c61fe90ad1a83b40d824a4d0b00f37bbc5c2fdabb6035e4d
+  - f908132578f4a934f726b3d3dad63912b036735622a9e4f205f3ba15d43b2ebd
+  - fbac0318c6167971a85e4904252f6b6978dea2a2de8fc2bd02ea022a3a0901f6
+  - fcf9a48f978213f3360d69ec45899b891ba3fa54d7a6a39aeef5a2938b88cb9c
+  - 0c4bc97bc44a7c2a9542af6f8bfca800d2fe68faff5f0b8b2727beb6b1c74158
+  - 1dc610b7b0dada788064d502db948f43049f999154039bea5e3c875745755984
+  - 22c61c9f806ab92a6233610c7f2ae666f19ad376a38a2f3674651b4d9bae7956
+  - 2c110816ec7e241730c7bdbecb77b1af9876f277fadd805db7b0d260df0229f9
+  - 5b518a0188b58c2a495ed110c59b3c12f1d0758b3bb1fa4834dd3e5db432f93f
+  - c04dcc897e0828b89e30e7edd3d59357c0cc7f7f7ee860af8521439599b383ba
+  - d1af94af3b686728910d6ed991e9ab794be940dee4e0c0b1b3859febb986fa01
+  - de0bb90aa26655482d20dd213ef52dbefd78f37d347d9506644b9714d5fb2721
+  - dfc843fc5374ce14984d27b642c584c910d2f56d32881d9d34360e1edbd38e0a
+  - e65435126dffa31c20cc95c7ed70dd9af64bded9f06877cf199f4f7cf7097965
+  - f4a41acb90852de88f8e82668627ea1f0f711ceaef9c3188877bf6ba92aa6814
+  - f97f1eaddb1c710731b39c7882fcfefd7c50f816cf3bb7b46970128a1b21aa95
+  - 1cb0dabb200be4bf97e5509fc4a9a4c06a717085ed8710b79c66eb0db016d6a4
+evidence:
+  - E-dashboard
+  - E-hf-menu
+  - E-O3-analytics
+  - E-O4-appointment-book
+  - E-O5-quick-pay
+  - E-O6-web-chat
+  - E-O7-comms-hub
+  - E-O8-case-load
+  - E-O9-patients
+  - E-O10-configuration
+  - E-O11-rocket-bar
+  - E-O12-user-portal
+  - E-O13-pathways
+  - E-O14-skills
+  - E-O15-my-case
+  - E-O16-web-chat-login
+  - E-O17-sharing
+  - E-O18-users-staff
+  - E-O19-unallocated
+  - E-O20-comms-analytics
+  - E-O21-task-workboards
+  - E-O22-patient-details
+  - E-O23-hf-designer
+  - E-O24-care-navigation
+  - E-O25-org-priority
+  - E-O26-release-notes
+  - E-O27-status-dialog
+  - E-O28-reports
+  - E-O29-prescriptions
+  - E-O30-inbound-priority
+  - E-O31-ncrs
+  - E-O32-patient-search
+  - E-O33-hf-inbox
+  - E-O-59274bdb92
+  - E-O-5f09c5f822
+  - E-O-60e2e72432
+  - E-O-6690d4b967
+  - E-O-67d2d108a8
+  - E-O-705d204f45
+  - E-O-70f0bcce93
+  - E-O-71223441ed
+  - E-O-734bf0de7b
+  - E-O-73bd7b7e55
+  - E-O-76a67601a3
+  - E-O-229e565d24
+  - E-O-7ea7066316
+  - E-O-87b129a8d6
+  - E-O-89a3c41248
+  - E-O-9324bad7a8
+  - E-O-960cdb70f4
+  - E-O-1751e48248
+  - E-O-3c64f00f34
+  - E-O-8af60b826b
+  - E-O-9ef5dd30a4
+  - E-O-4f00526c18
+  - E-O-9fc0de42cc
+  - E-O-a4eefe053c
+  - E-O-a55223f5ee
+  - E-O-a7d0b6a091
+  - E-O-a92a369163
+  - E-O-ab232e3a60
+  - E-O-affd8bab3e
+  - E-O-b93783de30
+  - E-O-b954f7bbc1
+  - E-O-ce99a8e025
+  - E-O-0f3772b99e
+  - E-O-39627794ad
+  - E-O-cf46302361
+  - E-O-1e08341347
+  - E-O-3367d3bd5c
+  - E-O-a4eefe053c-r150
+  - E-O-a9a9266eeb-r152
+  - E-O-d0a5515b0f-r154
+  - E-O-e1283bb85d-r156
+  - E-O-e2ca7e0264-r158
+  - E-O-e436b85b87-r160
+  - E-O-e813d2d0f8-r162
+  - E-O-eababf7b16-r164
+  - E-O-f0794dee4c-r166
+  - E-O-f3df0e33ad-r168
+  - E-O-f908132578-r170
+  - E-O-fbac0318c6-r172
+  - E-O-fcf9a48f97-r174
+  - E-O-0c4bc97bc4-r176
+  - E-O-1dc610b7b0-r178
+  - E-O-22c61c9f80-r182
+  - E-O-2c110816ec-r184
+  - E-O-5b518a0188-r186
+  - E-O-c04dcc897e-r188
+  - E-O-d1af94af3b-r190
+  - E-O-de0bb90aa2-r192
+  - E-O-dfc843fc53-r194
+  - E-O-e65435126d-r196
+  - E-O-f4a41acb90-r198
+  - E-O-f97f1eaddb-r200
+  - E-O-1cb0dabb20-r202
+discovered_edges:
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T08:59:42.261Z
+    id: R-dash-hf-menu
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: d17ad0ede5cbe684f2dcde464660a0c591b254e15d3cb655adbe29a9b95a2142
+    trigger: Health Forms
+    relationship: navigation
+    evidence:
+      - E-hf-menu
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:00:16.936Z
+    id: R-O3-analytics
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    trigger: Analytics & Reports
+    relationship: navigation
+    evidence:
+      - E-O3-analytics
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:01:08.864Z
+    id: R-O4-appointment-book
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 08ff4faa4dbcafb0ae8ba8199a9a9d070abb52905f136fcdfa7e6c52030b01af
+    trigger: Appointment Book
+    relationship: navigation
+    evidence:
+      - E-O4-appointment-book
+  - context:
+      - PACO -> PACO Connect app
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:02:24.944Z
+    id: R-O5-quick-pay
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    trigger: Quick Pay
+    relationship: cross-module handoff
+    evidence:
+      - E-O5-quick-pay
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:02:57.552Z
+    id: R-O6-web-chat
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 1054c12468963bffb6c678b7e331c5993045c3a0fe7a3aea637258311d9512c2
+    trigger: Web Chat & Video
+    relationship: navigation
+    evidence:
+      - E-O6-web-chat
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:03:27.753Z
+    id: R-O7-comms-hub
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 444f3196542c9fb48555ac679a24262c1896d6ff0af5dda0ac71753163b7dcb7
+    trigger: Comms Hub
+    relationship: navigation
+    evidence:
+      - E-O7-comms-hub
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:03:57.574Z
+    id: R-O8-case-load
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 3283f2c7f99dc09f76694bc818ab812e1e6b0f3f2451ba1f16a85679d546720e
+    trigger: Case Load Management
+    relationship: navigation
+    evidence:
+      - E-O8-case-load
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:04:27.986Z
+    id: R-O9-patients
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: f944830d96e5587db4c5c80e3bcb29f09bddb4a13b926d726ae04868191ffc27
+    trigger: Patients
+    relationship: navigation
+    evidence:
+      - E-O9-patients
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:05:12.555Z
+    id: R-O10-configuration
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    trigger: Configuration
+    relationship: navigation
+    evidence:
+      - E-O10-configuration
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:05:12.556Z
+    id: R-O10-cfg-save
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    destination_hint: organisation general settings persisted
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O10-configuration
+  - context: []
+    mutation_boundary: true
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:05:12.556Z
+    id: R-O10-cfg-special-hours
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    destination_hint: special opening hours editor
+    trigger: + Add Special Opening Hours
+    relationship: workflow
+    evidence:
+      - E-O10-configuration
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:05:47.958Z
+    id: R-O11-rocket-bar
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 54996127297ee3dcab3882e0cb6665b6ae7d5127ddfbcef1402c48d7c0c706ba
+    trigger: Rocket Bar
+    relationship: navigation
+    evidence:
+      - E-O11-rocket-bar
+  - context:
+      - PACO -> PACO Connect app
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:06:39.243Z
+    id: R-O12-user-portal
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 6bb2ab88559c2070b40da9c92ab2b98fe986905d839ec39dc88e48c13f0e8c1f
+    trigger: User Portal
+    relationship: cross-module handoff
+    evidence:
+      - E-O12-user-portal
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:08:15.538Z
+    id: R-O13-pathways
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 9922ee5c610282882828abad027d68d0ce07f75448268a28c1dd656682e0171b
+    trigger: Pathways Config
+    relationship: navigation
+    evidence:
+      - E-O13-pathways
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:08:43.818Z
+    id: R-O14-skills
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 1d6aceb67e0e91c76d90039f8f59b5001627e16ad4f425143fd81ca261949e3d
+    trigger: Skills
+    relationship: navigation
+    evidence:
+      - E-O14-skills
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:09:18.748Z
+    id: R-O15-my-case
+    from: 3283f2c7f99dc09f76694bc818ab812e1e6b0f3f2451ba1f16a85679d546720e
+    to: e3a95785d7fd902563cdc1c7d84f68f4357fc70b5e005d53e8bff570f942bf8a
+    trigger: My Case
+    relationship: navigation
+    evidence:
+      - E-O15-my-case
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:10:10.630Z
+    id: R-O16-web-chat-login
+    from: 1054c12468963bffb6c678b7e331c5993045c3a0fe7a3aea637258311d9512c2
+    to: a4bc60139c42d6c8563f23d8959ebb786dbe0941303d8763d75b246c76029a1b
+    trigger: Virtual Appointments
+    relationship: cross-module handoff
+    evidence:
+      - E-O16-web-chat-login
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:10:40.056Z
+    id: R-O17-sharing
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: e071a1f3d1e43249f1cbd78c13ae28410d2a36723c82d217d4b76503bc38f418
+    trigger: Sharing Agreements
+    relationship: navigation
+    evidence:
+      - E-O17-sharing
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:11:06.780Z
+    id: R-O18-users-staff
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 99e2d016b9d712a67c0ce92bc0d44f4140479dad46c5412383be1739f64d5cf9
+    trigger: Users & Staff
+    relationship: navigation
+    evidence:
+      - E-O18-users-staff
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:11:46.094Z
+    id: R-O19-unallocated
+    from: 3283f2c7f99dc09f76694bc818ab812e1e6b0f3f2451ba1f16a85679d546720e
+    to: 84d289aba1791f4a5c1a4cf2905d670c1d893a010ddeb617200b7dd0ca380b52
+    trigger: Unallocated
+    relationship: navigation
+    evidence:
+      - E-O19-unallocated
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:11:46.095Z
+    id: R-O19-create-case
+    from: 84d289aba1791f4a5c1a4cf2905d670c1d893a010ddeb617200b7dd0ca380b52
+    destination_hint: new case form / case detail
+    trigger: Create new case
+    relationship: workflow
+    evidence:
+      - E-O19-unallocated
+  - context: []
+    mutation_boundary: false
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:12:26.102Z
+    id: R-O20-comms-analytics
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    destination_hint: external Comms Hub host login (nhs-comms-hub-dev.blinxhealthcare.com)
+    trigger: Comms Analytics
+    relationship: cross-module handoff
+    evidence:
+      - E-O20-comms-analytics
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:13:07.727Z
+    id: R-O21-task-workboards
+    from: 3283f2c7f99dc09f76694bc818ab812e1e6b0f3f2451ba1f16a85679d546720e
+    to: a1d630ac8e0b8521c1be4ccf365e2930a7ba5a411556921e5729f583cbce8255
+    trigger: Task Workboards
+    relationship: navigation
+    evidence:
+      - E-O21-task-workboards
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:13:07.729Z
+    id: R-O21-create-board
+    from: a1d630ac8e0b8521c1be4ccf365e2930a7ba5a411556921e5729f583cbce8255
+    destination_hint: new work board
+    trigger: Create new board
+    relationship: workflow
+    evidence:
+      - E-O21-task-workboards
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:14:00.021Z
+    id: R-O22-patient-details
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    trigger: Patient Details
+    relationship: cross-module handoff
+    evidence:
+      - E-O22-patient-details
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:14:00.022Z
+    id: R-O22-b0
+    from: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    destination_hint: Comms Hub recipient/campaign flow (cross-module)
+    trigger: Send to Comms Hub
+    relationship: workflow
+    evidence:
+      - E-O22-patient-details
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:14:00.022Z
+    id: R-O22-b1
+    from: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    destination_hint: group message send flow
+    trigger: Group Quick Send
+    relationship: workflow
+    evidence:
+      - E-O22-patient-details
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:14:00.022Z
+    id: R-O22-b2
+    from: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    destination_hint: saved report
+    trigger: Save Report
+    relationship: workflow
+    evidence:
+      - E-O22-patient-details
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:14:48.659Z
+    id: R-O23-hf-designer
+    from: d17ad0ede5cbe684f2dcde464660a0c591b254e15d3cb655adbe29a9b95a2142
+    to: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    trigger: Designer
+    relationship: cross-module handoff
+    evidence:
+      - E-O23-hf-designer
+  - context: []
+    mutation_boundary: true
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:14:48.660Z
+    id: R-O23-new-form
+    from: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    destination_hint: health form builder for a new form
+    trigger: New Health Form
+    relationship: workflow
+    evidence:
+      - E-O23-hf-designer
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:15:35.649Z
+    id: R-O24-care-navigation
+    from: f944830d96e5587db4c5c80e3bcb29f09bddb4a13b926d726ae04868191ffc27
+    to: 81655bd4737c431df5c537681d4c6057e09f57e1b19475ddd2027a2cb4a3cf21
+    trigger: Care Navigation
+    relationship: cross-module handoff
+    evidence:
+      - E-O24-care-navigation
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:16:18.691Z
+    id: R-O25-org-priority
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 8c7c4b0591bf63a0c00bde3538603581d365b0b70430951d16a668e2eca83134
+    trigger: Org Priority
+    relationship: navigation
+    evidence:
+      - E-O25-org-priority
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:16:18.692Z
+    id: R-O25-b0
+    from: 8c7c4b0591bf63a0c00bde3538603581d365b0b70430951d16a668e2eca83134
+    destination_hint: org priority list changed
+    trigger: Add new
+    relationship: workflow
+    evidence:
+      - E-O25-org-priority
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:16:18.692Z
+    id: R-O25-b1
+    from: 8c7c4b0591bf63a0c00bde3538603581d365b0b70430951d16a668e2eca83134
+    destination_hint: org priority list changed
+    trigger: Edit
+    relationship: workflow
+    evidence:
+      - E-O25-org-priority
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:16:18.692Z
+    id: R-O25-b2
+    from: 8c7c4b0591bf63a0c00bde3538603581d365b0b70430951d16a668e2eca83134
+    destination_hint: org priority list changed
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O25-org-priority
+  - context: []
+    mutation_boundary: false
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:16:54.421Z
+    id: R-O26-release-notes
+    from: 6bb2ab88559c2070b40da9c92ab2b98fe986905d839ec39dc88e48c13f0e8c1f
+    destination_hint: public site www.blinxhealthcare.com/release-notes/ in new tab
+    trigger: Release Notes
+    relationship: external link
+    evidence:
+      - E-O26-release-notes
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:18:21.002Z
+    id: R-O27-status-dialog
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: 94af0d245f6949f3b40cfbfdb901afc7999c831393b8f6a8e8e2bcb60553c6d8
+    trigger: session idle / periodic prompt
+    relationship: system interrupt
+    evidence:
+      - E-O27-status-dialog
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:18:21.003Z
+    id: R-O27-status-choose
+    from: 94af0d245f6949f3b40cfbfdb901afc7999c831393b8f6a8e8e2bcb60553c6d8
+    destination_hint: user presence status changed
+    trigger: Choose status
+    relationship: workflow
+    evidence:
+      - E-O27-status-dialog
+  - context: []
+    mutation_boundary: true
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:18:21.003Z
+    id: R-O27-remind-later
+    from: 94af0d245f6949f3b40cfbfdb901afc7999c831393b8f6a8e8e2bcb60553c6d8
+    destination_hint: dialog dismissed; reminder persistence unknown
+    trigger: Remind me later
+    relationship: workflow
+    evidence:
+      - E-O27-status-dialog
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:20:28.119Z
+    id: R-O28-reports
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: 025a147200ca606442f84ef85676951aad35728792ffeae09376b2379d228696
+    trigger: Reports
+    relationship: navigation
+    evidence:
+      - E-O28-reports
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:20:51.987Z
+    id: R-O29-prescriptions
+    from: 025a147200ca606442f84ef85676951aad35728792ffeae09376b2379d228696
+    to: f6475e608ff10949c3193da56d0d19f8ff77e44bbcabca774c469c6a877dd2f7
+    trigger: Prescriptions
+    relationship: navigation
+    evidence:
+      - E-O29-prescriptions
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:21:17.642Z
+    id: R-O30-inbound-priority
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: dae6e46add8a8ae6f4b01e5967566b7f81eb027e218328c2847ef4386cf8d15e
+    trigger: Inbound Priority Flow
+    relationship: navigation
+    evidence:
+      - E-O30-inbound-priority
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:21:17.643Z
+    id: R-O30-b0
+    from: dae6e46add8a8ae6f4b01e5967566b7f81eb027e218328c2847ef4386cf8d15e
+    destination_hint: inbound priority rules changed
+    trigger: Add question/outcome
+    relationship: workflow
+    evidence:
+      - E-O30-inbound-priority
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:21:17.643Z
+    id: R-O30-b1
+    from: dae6e46add8a8ae6f4b01e5967566b7f81eb027e218328c2847ef4386cf8d15e
+    destination_hint: inbound priority rules changed
+    trigger: Delete
+    relationship: workflow
+    evidence:
+      - E-O30-inbound-priority
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:21:17.643Z
+    id: R-O30-b2
+    from: dae6e46add8a8ae6f4b01e5967566b7f81eb027e218328c2847ef4386cf8d15e
+    destination_hint: inbound priority rules changed
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O30-inbound-priority
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:21:48.414Z
+    id: R-O31-ncrs
+    from: 025a147200ca606442f84ef85676951aad35728792ffeae09376b2379d228696
+    to: 0643ed37755fb69c051663982e81e877240ed2d79e53501aa4a6b043d1a4870e
+    trigger: NCRS
+    relationship: navigation
+    evidence:
+      - E-O31-ncrs
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:22:16.670Z
+    id: R-O32-patient-search
+    from: f944830d96e5587db4c5c80e3bcb29f09bddb4a13b926d726ae04868191ffc27
+    to: d3e9c90f13a3fa18dc0f6d2a6310ae201e1837f316faa1c6732016577600dbcd
+    trigger: Patient Search
+    relationship: navigation
+    evidence:
+      - E-O32-patient-search
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:26:45.442Z
+    id: R-O33-hf-inbox
+    from: d17ad0ede5cbe684f2dcde464660a0c591b254e15d3cb655adbe29a9b95a2142
+    to: 64217764355d4e6f269a7b1a6e634b3bcd871a3afe492d8447661f4e2b10d746
+    trigger: Inbox
+    relationship: cross-module handoff
+    evidence:
+      - E-O33-hf-inbox
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:28:30.827Z
+    id: R-O-59274bdb92
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: a2f50ea2707626f8b4c0e9b5f416384f68b3f99c52d5b6af22a5128dffba77f6
+    trigger: Code Rule
+    relationship: cross-module handoff
+    evidence:
+      - E-O-59274bdb92
+  - context: []
+    mutation_boundary: false
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:29:29.561Z
+    id: R-O-5f09c5f822
+    from: 1054c12468963bffb6c678b7e331c5993045c3a0fe7a3aea637258311d9512c2
+    destination_hint: /web-chat/media-library/ then Microsoft SSO login
+    trigger: Media Library
+    relationship: cross-module handoff
+    evidence:
+      - E-O-5f09c5f822
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:30:54.382Z
+    id: R-O-60e2e72432
+    from: 99e2d016b9d712a67c0ce92bc0d44f4140479dad46c5412383be1739f64d5cf9
+    to: 7c107f1449b1dc6c237befa1dbaf46140c98e6e9c2a54f9744bb90ad3790ae33
+    trigger: Teams
+    relationship: navigation
+    evidence:
+      - E-O-60e2e72432
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:30:54.383Z
+    id: R-O-60e2e72432-b0
+    from: 7c107f1449b1dc6c237befa1dbaf46140c98e6e9c2a54f9744bb90ad3790ae33
+    destination_hint: team created
+    trigger: Add New
+    relationship: workflow
+    evidence:
+      - E-O-60e2e72432
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:30:54.383Z
+    id: R-O-60e2e72432-b1
+    from: 7c107f1449b1dc6c237befa1dbaf46140c98e6e9c2a54f9744bb90ad3790ae33
+    destination_hint: teams saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-60e2e72432
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:35:45.114Z
+    id: R-O-6690d4b967
+    from: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    to: bafa8eb61026f61244d73623db85cd105725070ad18e7bedcf4cd526073417d0
+    trigger: Product Catalogue
+    relationship: navigation
+    evidence:
+      - E-O-6690d4b967
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:35:51.327Z
+    id: R-O-67d2d108a8
+    from: 99e2d016b9d712a67c0ce92bc0d44f4140479dad46c5412383be1739f64d5cf9
+    to: 0b75c71619a2bdda3afdfdcef2810795505c92828733845e80344d7996f3f02f
+    trigger: Staff Profiles
+    relationship: navigation
+    evidence:
+      - E-O-67d2d108a8
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:35:57.332Z
+    id: R-O-705d204f45
+    from: d17ad0ede5cbe684f2dcde464660a0c591b254e15d3cb655adbe29a9b95a2142
+    to: 10eda97fc1de2ce7150d6d431f46dab22e825ec3aee0219499b579fb8f2fe343
+    trigger: Designer V2
+    relationship: navigation
+    evidence:
+      - E-O-705d204f45
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:03.507Z
+    id: R-O-70f0bcce93
+    from: 3283f2c7f99dc09f76694bc818ab812e1e6b0f3f2451ba1f16a85679d546720e
+    to: ca11e8742a5145c6b237327e13b91e1edd44a4069b6a24c5c84395972ebf4212
+    trigger: Case Workboards
+    relationship: navigation
+    evidence:
+      - E-O-70f0bcce93
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:03.508Z
+    id: R-O-70f0bcce93-b0
+    from: ca11e8742a5145c6b237327e13b91e1edd44a4069b6a24c5c84395972ebf4212
+    destination_hint: new work board
+    trigger: Create new board
+    relationship: workflow
+    evidence:
+      - E-O-70f0bcce93
+  - context: []
+    mutation_boundary: false
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:09.629Z
+    id: R-O-71223441ed
+    from: 1054c12468963bffb6c678b7e331c5993045c3a0fe7a3aea637258311d9512c2
+    destination_hint: /web-chat/review/ then Microsoft SSO login
+    trigger: Outstanding Reviews
+    relationship: cross-module handoff
+    evidence:
+      - E-O-71223441ed
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:16.192Z
+    id: R-O-734bf0de7b
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: efbcf87d44a5b3d68e3fcdf4a737b967651da3d415df3d53b8581926c5647ea7
+    trigger: Services
+    relationship: navigation
+    evidence:
+      - E-O-734bf0de7b
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:16.193Z
+    id: R-O-734bf0de7b-b0
+    from: efbcf87d44a5b3d68e3fcdf4a737b967651da3d415df3d53b8581926c5647ea7
+    destination_hint: service list changed
+    trigger: Remove service
+    relationship: workflow
+    evidence:
+      - E-O-734bf0de7b
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:16.193Z
+    id: R-O-734bf0de7b-b1
+    from: efbcf87d44a5b3d68e3fcdf4a737b967651da3d415df3d53b8581926c5647ea7
+    destination_hint: service list changed
+    trigger: Add Another
+    relationship: workflow
+    evidence:
+      - E-O-734bf0de7b
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:16.194Z
+    id: R-O-734bf0de7b-b2
+    from: efbcf87d44a5b3d68e3fcdf4a737b967651da3d415df3d53b8581926c5647ea7
+    destination_hint: services saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-734bf0de7b
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:22.732Z
+    id: R-O-73bd7b7e55
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: bec87f522874a8e0dc4bc8cd6347036eaf7a06ffd40c8c9b94da85259d9c4994
+    trigger: Integrations
+    relationship: navigation
+    evidence:
+      - E-O-73bd7b7e55
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:22.733Z
+    id: R-O-73bd7b7e55-b0
+    from: bec87f522874a8e0dc4bc8cd6347036eaf7a06ffd40c8c9b94da85259d9c4994
+    destination_hint: integration settings saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-73bd7b7e55
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:36:29.155Z
+    id: R-O-76a67601a3
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 1ad39f2db18413e9a836d8b182eb5e580fff7efb8646ad9ab2cd5daef1bca3c2
+    trigger: Patient
+    relationship: navigation
+    evidence:
+      - E-O-76a67601a3
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:40.852Z
+    id: R-O-229e565d24
+    from: 1ad39f2db18413e9a836d8b182eb5e580fff7efb8646ad9ab2cd5daef1bca3c2
+    to: 12355518c6ae56716c0600524918c88aebd27feb9dc946412482e078d4421814
+    trigger: DFD
+    relationship: cross-module handoff
+    evidence:
+      - E-O-229e565d24
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:47.041Z
+    id: R-O-7ea7066316
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: 2b15e2dd2f48bbdb5666f937bee313cdc4192c804e0b3eb236db8c3c997366a7
+    trigger: QOF Registers
+    relationship: cross-module handoff
+    evidence:
+      - E-O-7ea7066316
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:53.413Z
+    id: R-O-87b129a8d6
+    from: 08ff4faa4dbcafb0ae8ba8199a9a9d070abb52905f136fcdfa7e6c52030b01af
+    to: 1cec4579b8c3957ef02242607ea912ba485f38d99ae7af0280b40fc49886882c
+    trigger: Appointment Book
+    relationship: cross-module handoff
+    evidence:
+      - E-O-87b129a8d6
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:59.520Z
+    id: R-O-89a3c41248
+    from: 99e2d016b9d712a67c0ce92bc0d44f4140479dad46c5412383be1739f64d5cf9
+    to: 1998b5d808e1996a7328243a1b7a4f3ecb1c9a9155a391d22725da231dd6151f
+    trigger: Role Groups
+    relationship: navigation
+    evidence:
+      - E-O-89a3c41248
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:59.520Z
+    id: R-O-89a3c41248-b0
+    from: 1998b5d808e1996a7328243a1b7a4f3ecb1c9a9155a391d22725da231dd6151f
+    destination_hint: role group created
+    trigger: Add New
+    relationship: workflow
+    evidence:
+      - E-O-89a3c41248
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:59.520Z
+    id: R-O-89a3c41248-b1
+    from: 1998b5d808e1996a7328243a1b7a4f3ecb1c9a9155a391d22725da231dd6151f
+    destination_hint: role group permissions changed
+    trigger: Edit
+    relationship: workflow
+    evidence:
+      - E-O-89a3c41248
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:40:59.520Z
+    id: R-O-89a3c41248-b2
+    from: 1998b5d808e1996a7328243a1b7a4f3ecb1c9a9155a391d22725da231dd6151f
+    destination_hint: role groups saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-89a3c41248
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:05.951Z
+    id: R-O-9324bad7a8
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: adb6c4812b68c1b8eafa028d12c425965a92a83ae3df69e9b93aa428a26a1ff0
+    trigger: Patient Analyser
+    relationship: cross-module handoff
+    evidence:
+      - E-O-9324bad7a8
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:05.952Z
+    id: R-O-9324bad7a8-b0
+    from: adb6c4812b68c1b8eafa028d12c425965a92a83ae3df69e9b93aa428a26a1ff0
+    destination_hint: Comms Hub flow
+    trigger: Send to Comms Hub
+    relationship: workflow
+    evidence:
+      - E-O-9324bad7a8
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:05.952Z
+    id: R-O-9324bad7a8-b1
+    from: adb6c4812b68c1b8eafa028d12c425965a92a83ae3df69e9b93aa428a26a1ff0
+    destination_hint: group send flow
+    trigger: Group Quick Send
+    relationship: workflow
+    evidence:
+      - E-O-9324bad7a8
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:05.952Z
+    id: R-O-9324bad7a8-b2
+    from: adb6c4812b68c1b8eafa028d12c425965a92a83ae3df69e9b93aa428a26a1ff0
+    destination_hint: saved report
+    trigger: Save Report
+    relationship: workflow
+    evidence:
+      - E-O-9324bad7a8
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:12.095Z
+    id: R-O-960cdb70f4
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    trigger: Appointment Books
+    relationship: navigation
+    evidence:
+      - E-O-960cdb70f4
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:18.292Z
+    id: R-O-1751e48248
+    from: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    to: 569aa2595fffc98444439017748192a7efad2b04d81ba18cef4a7a4bf59b8aa9
+    trigger: External Appt Reminders
+    relationship: cross-module handoff
+    evidence:
+      - E-O-1751e48248
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:24.536Z
+    id: R-O-3c64f00f34
+    from: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    to: d6157a48d095c957696e1d2cfad566f1cd460b1416bde8920f61a3f770e59f56
+    trigger: Appointments
+    relationship: cross-module handoff
+    evidence:
+      - E-O-3c64f00f34
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:30.712Z
+    id: R-O-8af60b826b
+    from: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    to: 495fd7052cd6cca74311d320b4c866be4142a2b9a807461aedb6c13fa76f2a61
+    trigger: Slot Types
+    relationship: cross-module handoff
+    evidence:
+      - E-O-8af60b826b
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:37.034Z
+    id: R-O-9ef5dd30a4
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: ade7d7a9c19674c6c8f13eedc6100c688f50d7437c56b8660ff1eb1773634ad1
+    trigger: Patients & Proxy
+    relationship: navigation
+    evidence:
+      - E-O-9ef5dd30a4
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:43.479Z
+    id: R-O-4f00526c18
+    from: ade7d7a9c19674c6c8f13eedc6100c688f50d7437c56b8660ff1eb1773634ad1
+    to: 980b2d67fe3cd3a0986547741fc891d2f3d69ec4d5b94525b3bd1aba317b86fa
+    trigger: Role Groups
+    relationship: navigation
+    evidence:
+      - E-O-4f00526c18
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:43.480Z
+    id: R-O-4f00526c18-b0
+    from: 980b2d67fe3cd3a0986547741fc891d2f3d69ec4d5b94525b3bd1aba317b86fa
+    destination_hint: proxy role group created
+    trigger: Add New
+    relationship: workflow
+    evidence:
+      - E-O-4f00526c18
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:43.480Z
+    id: R-O-4f00526c18-b1
+    from: 980b2d67fe3cd3a0986547741fc891d2f3d69ec4d5b94525b3bd1aba317b86fa
+    destination_hint: proxy role groups saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-4f00526c18
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:49.845Z
+    id: R-O-9fc0de42cc
+    from: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    to: dfb75799adb70a26af1c9545146b5911bd30f01a1723ecbef9ed895f2de93a2f
+    trigger: Scheduler
+    relationship: cross-module handoff
+    evidence:
+      - E-O-9fc0de42cc
+  - context: []
+    mutation_boundary: false
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:41:56.360Z
+    id: R-O-a4eefe053c
+    from: 444f3196542c9fb48555ac679a24262c1896d6ff0af5dda0ac71753163b7dcb7
+    destination_hint: external Comms Hub host login (nhs-comms-hub-dev.blinxhealthcare.com)
+    trigger: Campaign Manager
+    relationship: cross-module handoff
+    evidence:
+      - E-O-a4eefe053c
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:02.711Z
+    id: R-O-a55223f5ee
+    from: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    to: 7fab680d9439e96aa3553e2871b7438c6fdd7f2069af070e8a8176e20ccc7e40
+    trigger: Sessions
+    relationship: cross-module handoff
+    evidence:
+      - E-O-a55223f5ee
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:09.417Z
+    id: R-O-a7d0b6a091
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: a53920771a2397fdf8fa295bdac53c0b63a9fe13bb205310c2e2244f8391d33c
+    trigger: Case Prioritisation
+    relationship: navigation
+    evidence:
+      - E-O-a7d0b6a091
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:16.050Z
+    id: R-O-a92a369163
+    from: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    to: ffed6abc874a162f41fedd79f461f5671caa50ad12aa908e6f05d8dfa0f66725
+    trigger: Accounts
+    relationship: navigation
+    evidence:
+      - E-O-a92a369163
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:22.348Z
+    id: R-O-ab232e3a60
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: d6b807465450946d2fa37497a7b66bffc69679b8eeb8fe6b44700e2a82698a5c
+    trigger: Capacity & Demand
+    relationship: cross-module handoff
+    evidence:
+      - E-O-ab232e3a60
+  - context: []
+    mutation_boundary: false
+    classification: Open Question
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:28.873Z
+    id: R-O-affd8bab3e
+    from: 6bb2ab88559c2070b40da9c92ab2b98fe986905d839ec39dc88e48c13f0e8c1f
+    destination_hint: Atlassian service desk login (blinxsolutions.atlassian.net) in new tab
+    trigger: Technical Support
+    relationship: external link
+    evidence:
+      - E-O-affd8bab3e
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:35.086Z
+    id: R-O-b93783de30
+    from: 00e3eda2443ab174d01a2ad1d62b9ad5eb1d458369d9dd98bed51a68fcb7350e
+    to: d6a869a2367edea741ff46e7c496b0297f497b6bcf16a2ed3c7b40889c6d1e1e
+    trigger: Appointment Books
+    relationship: cross-module handoff
+    evidence:
+      - E-O-b93783de30
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:41.337Z
+    id: R-O-b954f7bbc1
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: a62683d287367b83ff3425de1bae2988057ad9cae97162a0ae452afe05f7ca28
+    trigger: Announcements
+    relationship: navigation
+    evidence:
+      - E-O-b954f7bbc1
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:41.337Z
+    id: R-O-b954f7bbc1-b0
+    from: a62683d287367b83ff3425de1bae2988057ad9cae97162a0ae452afe05f7ca28
+    destination_hint: announcement list changed
+    trigger: Add another
+    relationship: workflow
+    evidence:
+      - E-O-b954f7bbc1
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:41.337Z
+    id: R-O-b954f7bbc1-b1
+    from: a62683d287367b83ff3425de1bae2988057ad9cae97162a0ae452afe05f7ca28
+    destination_hint: announcement removed
+    trigger: Delete
+    relationship: workflow
+    evidence:
+      - E-O-b954f7bbc1
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:41.338Z
+    id: R-O-b954f7bbc1-b2
+    from: a62683d287367b83ff3425de1bae2988057ad9cae97162a0ae452afe05f7ca28
+    destination_hint: announcements published/saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-b954f7bbc1
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:47.629Z
+    id: R-O-ce99a8e025
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: b0892f89a5de5495ebfed822244df82a090c20f8ffcdbdab33ebe6539346b73f
+    trigger: Quick Pay
+    relationship: navigation
+    evidence:
+      - E-O-ce99a8e025
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:42:53.899Z
+    id: R-O-0f3772b99e
+    from: b0892f89a5de5495ebfed822244df82a090c20f8ffcdbdab33ebe6539346b73f
+    to: bafa8eb61026f61244d73623db85cd105725070ad18e7bedcf4cd526073417d0
+    trigger: Product Catalogue
+    relationship: cross-module handoff
+    evidence:
+      - E-O-0f3772b99e
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:43:00.147Z
+    id: R-O-39627794ad
+    from: b0892f89a5de5495ebfed822244df82a090c20f8ffcdbdab33ebe6539346b73f
+    to: ffed6abc874a162f41fedd79f461f5671caa50ad12aa908e6f05d8dfa0f66725
+    trigger: Accounts
+    relationship: cross-module handoff
+    evidence:
+      - E-O-39627794ad
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:43:07.085Z
+    id: R-O-cf46302361
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: d4ce73a760684f965197a7efc662ae4dd946cac2a1f8d9d2ffb3f8b6abf8fc84
+    trigger: Clinical Config
+    relationship: navigation
+    evidence:
+      - E-O-cf46302361
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:45:29.601Z
+    id: R-O-1e08341347
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: d2774c3c90b31391386bb238a1093accc4cecfb2449d5d34c65da027aa27d860
+    trigger: Comms Analytics
+    relationship: cross-module handoff
+    evidence:
+      - E-O-1e08341347
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:45:36.023Z
+    id: R-O-3367d3bd5c
+    from: d4ce73a760684f965197a7efc662ae4dd946cac2a1f8d9d2ffb3f8b6abf8fc84
+    to: 29d88fac452a706fcafccc7735d2647e148310d5117790da32b4427a72cc93f5
+    trigger: Risk Strat Builder
+    relationship: navigation
+    evidence:
+      - E-O-3367d3bd5c
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:45:36.024Z
+    id: R-O-3367d3bd5c-b0
+    from: 29d88fac452a706fcafccc7735d2647e148310d5117790da32b4427a72cc93f5
+    destination_hint: risk model created
+    trigger: New Model
+    relationship: workflow
+    evidence:
+      - E-O-3367d3bd5c
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:45:36.024Z
+    id: R-O-3367d3bd5c-b1
+    from: 29d88fac452a706fcafccc7735d2647e148310d5117790da32b4427a72cc93f5
+    destination_hint: risk model changed
+    trigger: Add Risk Factor
+    relationship: workflow
+    evidence:
+      - E-O-3367d3bd5c
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:45:36.024Z
+    id: R-O-3367d3bd5c-b2
+    from: 29d88fac452a706fcafccc7735d2647e148310d5117790da32b4427a72cc93f5
+    destination_hint: risk model saved
+    trigger: Save Model
+    relationship: workflow
+    evidence:
+      - E-O-3367d3bd5c
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:45:36.024Z
+    id: R-O-3367d3bd5c-b3
+    from: 29d88fac452a706fcafccc7735d2647e148310d5117790da32b4427a72cc93f5
+    destination_hint: risk model deleted
+    trigger: Delete Model
+    relationship: workflow
+    evidence:
+      - E-O-3367d3bd5c
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:09.933Z
+    id: R-O-a4eefe053c-r150
+    from: 444f3196542c9fb48555ac679a24262c1896d6ff0af5dda0ac71753163b7dcb7
+    to: c43ba2ed3d68674ffb5b69b61997fa4fb7b22239a9e13252076dff302c4453a4
+    trigger: Campaign Manager
+    relationship: cross-module handoff
+    evidence:
+      - E-O-a4eefe053c-r150
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:09.934Z
+    id: R-O-a4eefe053c-r150-b0
+    from: c43ba2ed3d68674ffb5b69b61997fa4fb7b22239a9e13252076dff302c4453a4
+    destination_hint: campaign draft
+    trigger: Create Campaign
+    relationship: workflow
+    evidence:
+      - E-O-a4eefe053c-r150
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:09.934Z
+    id: R-O-a4eefe053c-r150-b1
+    from: c43ba2ed3d68674ffb5b69b61997fa4fb7b22239a9e13252076dff302c4453a4
+    destination_hint: message re-sent to patients (SEND)
+    trigger: Resend
+    relationship: workflow
+    evidence:
+      - E-O-a4eefe053c-r150
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:09.934Z
+    id: R-O-a4eefe053c-r150-b2
+    from: c43ba2ed3d68674ffb5b69b61997fa4fb7b22239a9e13252076dff302c4453a4
+    destination_hint: campaign recipients changed
+    trigger: Add Selected
+    relationship: workflow
+    evidence:
+      - E-O-a4eefe053c-r150
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:09.934Z
+    id: R-O-a4eefe053c-r150-b3
+    from: c43ba2ed3d68674ffb5b69b61997fa4fb7b22239a9e13252076dff302c4453a4
+    destination_hint: campaign saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-a4eefe053c-r150
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:17.110Z
+    id: R-O-a9a9266eeb-r152
+    from: d4ce73a760684f965197a7efc662ae4dd946cac2a1f8d9d2ffb3f8b6abf8fc84
+    to: 32cdafcadc5e5004515885a53087c14f88c9c0a2e5aa50c1f889bb21fd0fc467
+    trigger: Template Library
+    relationship: navigation
+    evidence:
+      - E-O-a9a9266eeb-r152
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:24.102Z
+    id: R-O-d0a5515b0f-r154
+    from: 025a147200ca606442f84ef85676951aad35728792ffeae09376b2379d228696
+    to: 30e373986191ac8814ee14fdeea0b9cced2b048f662f6ead9494f41881b0b47a
+    trigger: Patient Cases
+    relationship: navigation
+    evidence:
+      - E-O-d0a5515b0f-r154
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:30.621Z
+    id: R-O-e1283bb85d-r156
+    from: 444f3196542c9fb48555ac679a24262c1896d6ff0af5dda0ac71753163b7dcb7
+    to: 92d90a48f3072a19a7837141a226e188394dcd530910115e7150203b74b2c6e1
+    trigger: Template Manager
+    relationship: cross-module handoff
+    evidence:
+      - E-O-e1283bb85d-r156
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:30.622Z
+    id: R-O-e1283bb85d-r156-b0
+    from: 92d90a48f3072a19a7837141a226e188394dcd530910115e7150203b74b2c6e1
+    destination_hint: email template draft
+    trigger: Create New Email
+    relationship: workflow
+    evidence:
+      - E-O-e1283bb85d-r156
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:30.622Z
+    id: R-O-e1283bb85d-r156-b1
+    from: 92d90a48f3072a19a7837141a226e188394dcd530910115e7150203b74b2c6e1
+    destination_hint: sms template draft
+    trigger: Create New SMS
+    relationship: workflow
+    evidence:
+      - E-O-e1283bb85d-r156
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:30.622Z
+    id: R-O-e1283bb85d-r156-b2
+    from: 92d90a48f3072a19a7837141a226e188394dcd530910115e7150203b74b2c6e1
+    destination_hint: custom build draft
+    trigger: Create without a Template
+    relationship: workflow
+    evidence:
+      - E-O-e1283bb85d-r156
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:30.622Z
+    id: R-O-e1283bb85d-r156-b3
+    from: 92d90a48f3072a19a7837141a226e188394dcd530910115e7150203b74b2c6e1
+    destination_hint: template saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-e1283bb85d-r156
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:37.059Z
+    id: R-O-e2ca7e0264-r158
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 7377673ab3df69a0a76b7e327ff6007c9905ecce9d83b413a6138249c250cd25
+    trigger: Dx Priority
+    relationship: navigation
+    evidence:
+      - E-O-e2ca7e0264-r158
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:37.060Z
+    id: R-O-e2ca7e0264-r158-b0
+    from: 7377673ab3df69a0a76b7e327ff6007c9905ecce9d83b413a6138249c250cd25
+    destination_hint: dx priority mapping changed
+    trigger: Remove pair
+    relationship: workflow
+    evidence:
+      - E-O-e2ca7e0264-r158
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:37.060Z
+    id: R-O-e2ca7e0264-r158-b1
+    from: 7377673ab3df69a0a76b7e327ff6007c9905ecce9d83b413a6138249c250cd25
+    destination_hint: dx priority mapping changed
+    trigger: Add Service & Priority
+    relationship: workflow
+    evidence:
+      - E-O-e2ca7e0264-r158
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:37.060Z
+    id: R-O-e2ca7e0264-r158-b2
+    from: 7377673ab3df69a0a76b7e327ff6007c9905ecce9d83b413a6138249c250cd25
+    destination_hint: dx priorities saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-e2ca7e0264-r158
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:44.026Z
+    id: R-O-e436b85b87-r160
+    from: 1ad39f2db18413e9a836d8b182eb5e580fff7efb8646ad9ab2cd5daef1bca3c2
+    to: 55a9c0602cc34b31249e231212a5129474e3b52cf436f56f8e90e5bd60b6b788
+    trigger: Care Navigation
+    relationship: cross-module handoff
+    evidence:
+      - E-O-e436b85b87-r160
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:50.586Z
+    id: R-O-e813d2d0f8-r162
+    from: ec721dbb020a4dd072ceba2a715fd4c34d6d318bcf91bb831c118773ffcb49d3
+    to: f95029b4f21a1b777518f756b2304d58a84841bd80050de968cc43e95f8107c7
+    trigger: Medication Analyser
+    relationship: cross-module handoff
+    evidence:
+      - E-O-e813d2d0f8-r162
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:57.167Z
+    id: R-O-eababf7b16-r164
+    from: 444f3196542c9fb48555ac679a24262c1896d6ff0af5dda0ac71753163b7dcb7
+    to: ff87a94c1fb3289d6e4c7593ed38d5738002635fd7761572bdff4f397372e44c
+    trigger: Patient Manager
+    relationship: cross-module handoff
+    evidence:
+      - E-O-eababf7b16-r164
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:57.167Z
+    id: R-O-eababf7b16-r164-b0
+    from: ff87a94c1fb3289d6e4c7593ed38d5738002635fd7761572bdff4f397372e44c
+    destination_hint: patient list created
+    trigger: Create List
+    relationship: workflow
+    evidence:
+      - E-O-eababf7b16-r164
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:57.167Z
+    id: R-O-eababf7b16-r164-b1
+    from: ff87a94c1fb3289d6e4c7593ed38d5738002635fd7761572bdff4f397372e44c
+    destination_hint: patient list changed
+    trigger: Add to Existing List
+    relationship: workflow
+    evidence:
+      - E-O-eababf7b16-r164
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:57.167Z
+    id: R-O-eababf7b16-r164-b2
+    from: ff87a94c1fb3289d6e4c7593ed38d5738002635fd7761572bdff4f397372e44c
+    destination_hint: patient list import (upload)
+    trigger: Upload CSV
+    relationship: workflow
+    evidence:
+      - E-O-eababf7b16-r164
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:46:57.167Z
+    id: R-O-eababf7b16-r164-b3
+    from: ff87a94c1fb3289d6e4c7593ed38d5738002635fd7761572bdff4f397372e44c
+    destination_hint: patient list saved
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-eababf7b16-r164
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:47:03.803Z
+    id: R-O-f0794dee4c-r166
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: bdfc0db7af3b4fed6b7aeca1ca1e8bc1cf490c0e2614bd946329ed004decaa11
+    trigger: Locations
+    relationship: navigation
+    evidence:
+      - E-O-f0794dee4c-r166
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:47:10.310Z
+    id: R-O-f3df0e33ad-r168
+    from: 6bb2ab88559c2070b40da9c92ab2b98fe986905d839ec39dc88e48c13f0e8c1f
+    to: 1290bf62f508efd63dc8afd2c683fa8b8c4d90b8efa09a9095bb11eb5e8207fc
+    trigger: FAQs
+    relationship: navigation
+    evidence:
+      - E-O-f3df0e33ad-r168
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:47:16.908Z
+    id: R-O-f908132578-r170
+    from: 6bb2ab88559c2070b40da9c92ab2b98fe986905d839ec39dc88e48c13f0e8c1f
+    to: 6e8a08fada580b7d324c5828d896cfcce098096ac2ea716261805d940fca6ae2
+    trigger: Videos
+    relationship: navigation
+    evidence:
+      - E-O-f908132578-r170
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:47:23.453Z
+    id: R-O-fbac0318c6-r172
+    from: 08ff4faa4dbcafb0ae8ba8199a9a9d070abb52905f136fcdfa7e6c52030b01af
+    to: 3bb099f4634b7b477a556a571e9e78de989c50fdb7cbcab32823a18a33129e25
+    trigger: Appointment Settings
+    relationship: cross-module handoff
+    evidence:
+      - E-O-fbac0318c6-r172
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:47:29.926Z
+    id: R-O-fcf9a48f97-r174
+    from: 3f9a3d60edd3060f752b6396209b3870a72f4c12f776761ec7acac9d3eb48221
+    to: 53638d6478446a37f41b9d4437f40389dfb7a3dcad34331674e08f2d708531d9
+    trigger: Practice Profiles
+    relationship: navigation
+    evidence:
+      - E-O-fcf9a48f97-r174
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:48:50.952Z
+    id: R-O-0c4bc97bc4-r176
+    from: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    to: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    trigger: Invoices Filters
+    relationship: transition
+    evidence:
+      - E-O-0c4bc97bc4-r176
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:48:57.687Z
+    id: R-O-1dc610b7b0-r178
+    from: 84d289aba1791f4a5c1a4cf2905d670c1d893a010ddeb617200b7dd0ca380b52
+    to: 84d289aba1791f4a5c1a4cf2905d670c1d893a010ddeb617200b7dd0ca380b52
+    trigger: Unallocated List View
+    relationship: transition
+    evidence:
+      - E-O-1dc610b7b0-r178
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:07.122Z
+    id: R-O-22c61c9f80-r182
+    from: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    to: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    trigger: Analyser Columns
+    relationship: transition
+    evidence:
+      - E-O-22c61c9f80-r182
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:13.878Z
+    id: R-O-2c110816ec-r184
+    from: 64217764355d4e6f269a7b1a6e634b3bcd871a3afe492d8447661f4e2b10d746
+    to: 6a3ea224d2f3ca181a5736cdcf236a56f913a8de4af7f4ade6f409eedce5d868
+    trigger: Filters
+    relationship: transition
+    evidence:
+      - E-O-2c110816ec-r184
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:20.653Z
+    id: R-O-5b518a0188-r186
+    from: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    to: 690fd2d905e4e47a0675fb91cba2faf1c6990649277322da0a6860f5d7cf4a65
+    trigger: Invoices Columns
+    relationship: transition
+    evidence:
+      - E-O-5b518a0188-r186
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:27.037Z
+    id: R-O-c04dcc897e-r188
+    from: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    to: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    trigger: Designer Columns
+    relationship: transition
+    evidence:
+      - E-O-c04dcc897e-r188
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:33.584Z
+    id: R-O-d1af94af3b-r190
+    from: a1d630ac8e0b8521c1be4ccf365e2930a7ba5a411556921e5729f583cbce8255
+    to: c43e97fa561ba84fed07c7eaab2a295833fa44ed23e68c69dbd675cfc0c435c7
+    trigger: View My Cases Only
+    relationship: transition
+    evidence:
+      - E-O-d1af94af3b-r190
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:39.941Z
+    id: R-O-de0bb90aa2-r192
+    from: 7330d664b86b3a83b0f82ac36ad7e1dac4338669d4d6d6e726861562b7edeb5f
+    to: 89a45aa8889afa9ce1147b8f9bbb3cf3812d71f73ba6f8f21cedcfa7a697625c
+    trigger: Advanced Search
+    relationship: transition
+    evidence:
+      - E-O-de0bb90aa2-r192
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:39.942Z
+    id: R-O-de0bb90aa2-r192-b0
+    from: 89a45aa8889afa9ce1147b8f9bbb3cf3812d71f73ba6f8f21cedcfa7a697625c
+    destination_hint: import search definition (upload)
+    trigger: Import
+    relationship: workflow
+    evidence:
+      - E-O-de0bb90aa2-r192
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:46.387Z
+    id: R-O-dfc843fc53-r194
+    from: a1d630ac8e0b8521c1be4ccf365e2930a7ba5a411556921e5729f583cbce8255
+    to: a1d630ac8e0b8521c1be4ccf365e2930a7ba5a411556921e5729f583cbce8255
+    trigger: View My Tasks Only
+    relationship: transition
+    evidence:
+      - E-O-dfc843fc53-r194
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:53.281Z
+    id: R-O-e65435126d-r196
+    from: 84d289aba1791f4a5c1a4cf2905d670c1d893a010ddeb617200b7dd0ca380b52
+    to: bb215a4aadb79e4b94d5bbe6504d6e659e4de41374c7e8c8c050a2328d50e85f
+    trigger: Filters
+    relationship: transition
+    evidence:
+      - E-O-e65435126d-r196
+  - context: []
+    mutation_boundary: true
+    classification: Inferred
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:53.282Z
+    id: R-O-e65435126d-r196-b0
+    from: bb215a4aadb79e4b94d5bbe6504d6e659e4de41374c7e8c8c050a2328d50e85f
+    destination_hint: saved filter preset (persistence unknown)
+    trigger: Save
+    relationship: workflow
+    evidence:
+      - E-O-e65435126d-r196
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:58:59.904Z
+    id: R-O-f4a41acb90-r198
+    from: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    to: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    trigger: Designer Filters
+    relationship: transition
+    evidence:
+      - E-O-f4a41acb90-r198
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:59:08.048Z
+    id: R-O-f97f1eaddb-r200
+    from: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    to: 2829518993c832b4cf8b2276377c5869ed7c8a6ccc94ec94fb194f65efb55514
+    trigger: Designer row Actions
+    relationship: transition
+    evidence:
+      - E-O-f97f1eaddb-r200
+  - context: []
+    mutation_boundary: false
+    classification: Observed
+    role: Super Admin GB
+    environment: dev
+    observed_at: 2026-10-01T09:59:15.307Z
+    id: R-O-1cb0dabb20-r202
+    from: b28b2c395ff17682247f17f682af8897ba45992665708eaf076bdc4933713138
+    to: cc6a84b1f1c76736d5c2fadc0457a26e3ad016b27f2007a65f8d810674948563
+    trigger: month
+    relationship: transition
+    evidence:
+      - E-O-1cb0dabb20-r202
+mutation_candidates: []
+mutations: []
+consumed_mutations: []
+blocked_tasks:
+  - 3de4bcde777e500ca40e29e21dc623881d5ed02bc9fa5344e725553859ddfb33
+  - 5f09c5f82210a4a0e505e8d35a5296be0cd17213889524e12d8b55bab4cef2b4
+  - 71223441ed72c26b904d1f569ca5c70f6020fc035ec73d438e62e93a906dcdd9
+  - affd8bab3ecfd9f68962adaa9bb22d867909220bbddc1488bde3331e3555e399
+known_gaps:
+  - "Sidebar Sign Out not explored: session side effect"
+  - "Dashboard patient search not explored: requires patient PII as input"
+  - "Quick Pay /paco-connect/quick-pay/invoices: document HTTP 404 while SPA
+    renders Invoices (Observed; intent unknown)"
+  - "Configuration > General: Save and + Add Special Opening Hours are mutation
+    boundaries; not candidates yet (no approved test data/ownership)"
+  - "Rocket Bar > Launch Rocket Bar: may hand off to external desktop app; not
+    explored read-only"
+  - "Rocket Bar > Download Rocket Bar: file download needs approval; not
+    explored"
+  - "User Portal /paco-connect/user-training-portal: document HTTP 404 while SPA
+    renders (same pattern as Quick Pay)"
+  - Configuration > Pathways Config route shows Page Not Found (Observed; menu
+    item exists)
+  - "Configuration > Skills: no table rows or mutation controls observed after
+    2.5s; empty vs slow-load not distinguished"
+  - My Case empty state for this user ('There are no new cases'); populated
+    workflow needs an assigned case (data dependency)
+  - Web Chat & Video requires a separate login (redirect
+    /web-chat/?rd=/appointments/ shows Welcome Back / Log in) although PACO
+    session is active; Virtual Appointments, Media Library, Outstanding Reviews
+    need tester login
+  - Unallocated empty (0); populated list, sort and allocation workflow need
+    unallocated cases (data dependency)
+  - Analytics & Reports > Comms Analytics hands off to external host
+    nhs-comms-hub-dev.blinxhealthcare.com login with
+    loggedout=true&msg=error-at-axios-interceptor; host not in allowlist, not
+    explored
+  - "Comms Analytics: external host outside configured Paco hosts"
+  - "Work Boards tab=task: 0 tasks/0 cases while 'Loading workboards...' still
+    shown at 3.5s; empty vs slow-load not distinguished"
+  - Patient Analyser app (/patient-analyser-new/) shared by Patient Analyser,
+    Medication Analyser, QOF Registers, Patient Details; result data contains
+    patient PII so only controls recorded
+  - Send to Comms Hub / Group Quick Send are SEND boundaries into Comms Hub;
+    need approved synthetic patient cohort and recipient before VERIFY_FLOW
+  - "Health Form Designer list columns: type, reviewer, name, created/updated,
+    shared organisations, archived, editable, actions; New Health Form may open
+    draft without persistence (unknown) so treated as boundary"
+  - Patients > Care Navigation lands on Patient Profile Search
+    (/patient-search/), not a separate care-navigation view; flow needs a
+    selected synthetic patient (data dependency; search input requires patient
+    identifiers)
+  - "Configuration > Org Priorities: Add new/Edit/Save are mutation boundaries
+    affecting case prioritisation; VERIFY_FLOW needs owned test priority and
+    cleanup approval"
+  - User Portal > Release Notes opens a new tab to public site
+    www.blinxhealthcare.com/release-notes/ (outside allowlist); tab closed, not
+    explored
+  - "Release Notes: external host outside configured Paco hosts"
+  - Modal 'Set your status' blocks all UI; auto-sets status TEST STATUS after
+    countdown (~5 min) if not chosen; Remind me later persistence unknown; needs
+    tester decision
+  - Analytics & Reports > Reports blocked by Set your status modal
+  - Reports opens default SCR report with error=not-authorized for Super Admin
+    GB (Observed; authorization intent unknown)
+  - "Set your status modal dismissed with Remind me later at tester request
+    (2026-10-01); tester rule going forward: choose Admin"
+  - Reports > Prescriptions shows Access Denied for Super Admin GB (Observed;
+    permission intent unknown)
+  - Inbound priority rules engine (Questions/Outcomes) has Save/Add/Delete
+    boundaries; rule changes affect inbound case priority, need owned test rule
+    + cleanup approval
+  - Reports > NCRS shows Access Denied for Super Admin GB (Observed; same as
+    Prescriptions)
+  - Patients > Patient Search opens /paco/patient-search (different from Care
+    Navigation /patient-search/); only header rendered after 6s, no search UI
+    observed (empty vs slow-load not distinguished)
+  - Health Form Inbox auto-refreshes (Refreshing in N seconds); counters Total
+    Sent/Incomplete/Overdue/Completed all 0 with 1 selected filter; populated
+    review flow needs sent synthetic forms
+  - Configuration > Code Rule leaves /paco to /configuration/ (separate app); no
+    heading/controls observed after 3s
+  - Web Chat & Video requires its own Microsoft SSO (redirect /web-chat/?rd=...
+    then login.microsoftonline.com SAML) although PACO session is active; not
+    logged in by agent
+  - "Media Library: Web Chat SSO login required"
+  - Staff Profiles list populated (63 rows); rows contain staff personal data,
+    not recorded
+  - Designer V2 stays inside PACO (/paco/health-forms, Health Form Templates)
+    while Designer opens separate Health Forms app
+  - Case Workboards opens a specific board (/paco/workboards/<id>, Master Case
+    Board) with column 'Awaiting patient validation'
+  - "Outstanding Reviews: Web Chat SSO login required"
+  - Integrations Save may change external system connections
+    (EXTERNAL_SIDE_EFFECT risk)
+  - Configuration > Patient > DFD hands off to legacy /configuration/ app; no
+    heading after 4s
+  - QOF Registers opens same /patient-analyser-new/ app; menu click needed
+    .last() visible button (duplicate label)
+  - Role Groups edits change permissions (high-risk mutation); VERIFY_FLOW needs
+    owned test role group
+  - Configuration > Appointment Books > External Appt Reminders hands off to
+    legacy /configuration/ app; no heading after 4s
+  - Configuration > Appointment Books > Appointments hands off to legacy
+    /configuration/ app; no heading after 4s
+  - Configuration > Appointment Books > Slot Types hands off to
+    /paco-connect/configuration/; no heading after 4s
+  - Configuration > Appointment Books > Scheduler hands off to legacy
+    /configuration/ app; no heading after 4s
+  - Comms Hub submenu items hand off to external host
+    nhs-comms-hub-dev.blinxhealthcare.com showing Welcome Back login; separate
+    auth, outside allowlist
+  - "Campaign Manager: external Comms Hub login"
+  - Configuration > Appointment Books > Sessions hands off to
+    /paco-connect/configuration/; no heading after 4s
+  - Configuration group Case Prioritisation expanded with no visible items
+    (empty group or direct link; not distinguished)
+  - User Portal > Technical Support opens new tab to Atlassian service desk
+    login (external); tab closed
+  - "Technical Support: external host"
+  - Configuration > Appointment Books > Appointment Books hands off to
+    /paco-connect/configuration/; no heading after 4s
+  - Announcements Save may publish to users (external effect unknown)
+  - Configuration > Quick Pay > Product Catalogue reuses Quick Pay app route
+    /paco-connect/quick-pay/products
+  - Comms Analytics still lands on Comms Hub login even after tester login;
+    other Comms Hub menus load (with SESSION EXPIRED banner)
+  - Comms Hub pages render data but also show 'SESSION EXPIRED' although tester
+    is logged in; session state unclear
+  - Configuration > Clinical Config > Template Library click left page on
+    /paco/configuration/organisation/general (no navigation observed)
+  - Reports > Patient Cases shows Access Denied for Super Admin GB (same as
+    Prescriptions, NCRS)
+  - Configuration > Patient > Care Navigation hands off to legacy
+    /configuration/ app; no heading after 4s
+  - Medication Analyser opens same /patient-analyser-new/ URL as Patient
+    Analyser; tab selection not reflected in URL
+  - "User Portal > Videos: no heading change observed after 3.5s"
+  - Appointment Settings hands off to PACO Connect /paco-connect/configuration;
+    no heading observed after 7s
+  - Configuration > Practice Profiles shows Page Not Found/Access Denied text
+    for Super Admin GB
+  - "Invoices Filters: no overlay or URL change observed after 1.5s (selector
+    may not match an inline panel)"
+  - "Unallocated List View: no overlay or URL change observed after 1.5s
+    (selector may not match an inline panel)"
+  - "Analyser Columns: button not clickable within 8s (timeout)"
+  - "Inbox Filters panel: Date Range (All time), Health Form, Reviewers"
+  - "Invoices Columns: no overlay or URL change observed after 1.5s (selector
+    may not match an inline panel)"
+  - "Designer Columns: button not clickable within 8s (timeout)"
+  - View My Cases Only navigates from /paco/workboards?tab=task to a specific
+    board /paco/workboards/<id>
+  - "Advanced Patient Search dialog: Tutorial, Existing version, Analyse,
+    Import, Reference Report(s), Add Rule Group"
+  - "View My Tasks Only: no overlay or URL change observed after 1.5s (selector
+    may not match an inline panel)"
+  - Unallocated Filters sidebar showed 'Loading filters'; Save may persist a
+    filter preset (unknown)
+  - "Designer Filters: button not clickable within 8s (timeout)"
+  - "Designer row Actions: probe clicked top-bar 'More options' instead (menu:
+    PaComms, Quick View, PACO Assist); row action menu not observed"
+applied_outcomes:
+  - O1-bootstrap
+  - O2-health-forms
+  - O3-analytics
+  - O4-appointment-book
+  - O5-quick-pay
+  - O6-web-chat
+  - O7-comms-hub
+  - O8-case-load
+  - O9-patients
+  - O10-configuration
+  - O11-rocket-bar
+  - O12-user-portal
+  - O13-pathways
+  - O14-skills
+  - O15-my-case
+  - O16-web-chat-login
+  - O17-sharing
+  - O18-users-staff
+  - O19-unallocated
+  - O20-comms-analytics
+  - O21-task-workboards
+  - O22-patient-details
+  - O23-hf-designer
+  - O24-care-navigation
+  - O25-org-priority
+  - O26-release-notes
+  - O27-status-dialog
+  - O28-reports
+  - O29-prescriptions
+  - O30-inbound-priority
+  - O31-ncrs
+  - O32-patient-search
+  - O33-hf-inbox
+  - O-59274bdb92
+  - O-5f09c5f822
+  - O-60e2e72432
+  - O-6690d4b967
+  - O-67d2d108a8
+  - O-705d204f45
+  - O-70f0bcce93
+  - O-71223441ed
+  - O-734bf0de7b
+  - O-73bd7b7e55
+  - O-76a67601a3
+  - O-229e565d24
+  - O-7ea7066316
+  - O-87b129a8d6
+  - O-89a3c41248
+  - O-9324bad7a8
+  - O-960cdb70f4
+  - O-1751e48248
+  - O-3c64f00f34
+  - O-8af60b826b
+  - O-9ef5dd30a4
+  - O-4f00526c18
+  - O-9fc0de42cc
+  - O-a4eefe053c
+  - O-a55223f5ee
+  - O-a7d0b6a091
+  - O-a92a369163
+  - O-ab232e3a60
+  - O-affd8bab3e
+  - O-b93783de30
+  - O-b954f7bbc1
+  - O-ce99a8e025
+  - O-0f3772b99e
+  - O-39627794ad
+  - O-cf46302361
+  - O-1e08341347
+  - O-3367d3bd5c
+  - O-a4eefe053c-r150
+  - O-a9a9266eeb-r152
+  - O-d0a5515b0f-r154
+  - O-e1283bb85d-r156
+  - O-e2ca7e0264-r158
+  - O-e436b85b87-r160
+  - O-e813d2d0f8-r162
+  - O-eababf7b16-r164
+  - O-f0794dee4c-r166
+  - O-f3df0e33ad-r168
+  - O-f908132578-r170
+  - O-fbac0318c6-r172
+  - O-fcf9a48f97-r174
+  - O-0c4bc97bc4-r176
+  - O-1dc610b7b0-r178
+  - O-22c61c9f80-r182
+  - O-2c110816ec-r184
+  - O-5b518a0188-r186
+  - O-c04dcc897e-r188
+  - O-d1af94af3b-r190
+  - O-de0bb90aa2-r192
+  - O-dfc843fc53-r194
+  - O-e65435126d-r196
+  - O-f4a41acb90-r198
+  - O-f97f1eaddb-r200
+  - O-1cb0dabb20-r202
+legacy_notes: []
+budget:
+  max_states: 80
+  max_actions: 100
+  max_minutes: 90
+  max_retries: 2
+  actions: 96
+  elapsed_ms: 3079158
+  active_since: 1790848466305
+checkpoint_time: 2026-10-01T09:59:16.900Z
+allow_mutation: false

@@ -15,7 +15,19 @@ controls:
   - name: Designer V2
     kind: navigation
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-health-forms-submenu-1
+    from: health-forms-submenu
+    to: health-forms-designer
+    trigger: Designer
+    relationship: cross-module handoff
+    context:
+      - Health Forms app
+    classification: Observed
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Health Forms Navigation
@@ -48,6 +60,12 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII
 ## Open questions
 
 - Safe creation/edit and cleanup flow for both designers remains unspecified.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- Submenu `Health Forms`: `Inbox`, `Designer`, `Designer V2`.
 
 ## Tester notes
 

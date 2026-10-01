@@ -79,4 +79,12 @@
 - Open questions: `Super Admin GB` thiếu entitlement, user/org context hay remote-module dependency; trusted expected access matrix; `Media Library` patient search trigger và populated state.
 - Exact resume state: không retry cùng session/dependency. Cần product/API owner cung cấp expected access, entitlement/dependency prerequisite, hoặc session đã sửa; sau đó verify một route trước rồi mới mở rộng cả ba.
 
+## Discovery update run-20261001-085609
+
+`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+- Submenu: `Virtual Appointments`, `Media Library`, `Outstanding Reviews`.
+- Với role `Super Admin GB` đã đăng nhập PACO, cả ba mục chuyển `/web-chat/?rd=/<page>/` → màn `Welcome Back` với nút `Log in` → `login.microsoftonline.com` (`Sign in to your account`). Web Chat dùng SSO Microsoft riêng.
+- Tester quyết định bỏ qua Web Chat trong run này; không đăng nhập, không lưu URL SAML.
+
 ## Tester notes

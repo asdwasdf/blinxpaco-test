@@ -13,7 +13,38 @@ controls:
   - name: Search...
     kind: search
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-patient-details-report-1
+    from: patient-details-report
+    destination_hint: luồng recipient/campaign của Comms Hub (cross-module)
+    trigger: Send to Comms Hub
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-patient-details-report-2
+    from: patient-details-report
+    destination_hint: luồng gửi tin nhóm
+    trigger: Group Quick Send
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-patient-details-report-3
+    from: patient-details-report
+    destination_hint: saved report
+    trigger: Save Report
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Patient Details Report
@@ -43,6 +74,17 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. G
 ## Open questions
 
 - Data prerequisites and intended report fields remain unknown.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Patient Details` mở app `Patient & Medication Analyser` (`/patient-analyser-new/`), dùng chung cho `Patient Analyser`, `Medication Analyser`, `QOF Registers`, `Patient Details`. Control: `Advanced Search`, `Reset View`, `Expand All`, `Collapse All`, `Columns`.
+
+Gap / Open Question:
+
+- Kết quả chứa PII bệnh nhân nên chỉ ghi control.
+- `Send to Comms Hub`/`Group Quick Send` là SEND boundary sang Comms Hub; cần cohort synthetic và recipient được duyệt trước VERIFY_FLOW.
 
 ## Tester notes
 

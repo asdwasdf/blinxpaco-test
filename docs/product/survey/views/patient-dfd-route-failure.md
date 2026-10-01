@@ -9,7 +9,8 @@ routes:
   - configuration
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Patient DFD Route Failure
@@ -40,6 +41,12 @@ Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII
 
 - Is `/paco/configuration/patient/dfd` the intended dev route pattern for Patient DFD config?
 - Does DFD config exist under different route structure?
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `Patient > DFD` trong Configuration chuyển sang app `/configuration/`; không thấy heading sau 4s.
 
 ## Tester notes
 

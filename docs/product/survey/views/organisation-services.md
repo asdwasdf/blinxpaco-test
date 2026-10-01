@@ -1,17 +1,76 @@
 ---
 id: organisation-services
 title: Organisation Services
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/organisation/services]
+routes:
+  - /paco/configuration/organisation/services
 controls:
-  - { name: Search Services..., kind: read-only }
-  - { name: Remove service, kind: destructive }
-  - { name: Add Another, kind: mutation }
-  - { name: Save, kind: mutation }
+  - name: Search Services...
+    kind: read-only
+  - name: Remove service
+    kind: destructive
+  - name: Add Another
+    kind: mutation
+  - name: Save
+    kind: mutation
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-p2-organisation-services-1
+    from: organisation-services
+    destination_hint: danh sách service thay đổi
+    trigger: Remove service
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-services-2
+    from: organisation-services
+    destination_hint: danh sách service thay đổi
+    trigger: Add Another
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p2-organisation-services-3
+    from: organisation-services
+    destination_hint: services được lưu
+    trigger: Save
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p7-organisation-services-1
+    from: organisation-services
+    destination_hint: service mới được lưu
+    trigger: Add Another > Save
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#12
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p7-organisation-services-2
+    from: organisation-services
+    destination_hint: service bị xóa ngay
+    trigger: Remove service > Delete
+    relationship: workflow
+    context: []
+    classification: Verified-by-Mutation
+    mutation_boundary: false
+    reservation_id: ledger:test-results/product-survey/direct-mutation-20261001/ledger.md#13
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Organisation Services
@@ -45,6 +104,24 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, reverified 20
 ## Open questions
 
 - Service fields, dependencies, validation, and removal semantics remain unobserved.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/organisation/services`: heading `Services`; control `Remove service`, `Add Another`, `Save`.
+
+## Discovery run-20261001-085609 (part 7 — Services, Work Boards)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Mutation có kiểm soát (QA-AUTO, đã cleanup). `Add Another` thêm dòng `Service ID`/`Service Name`/`Case Type` (mặc định `Not set`); `Save` lưu, toast `Success — Changes saved successfully!`.
+- `Service ID` chỉ nhận chữ số: nhập `QA-AUTO-SVC-1` được lưu thành `1`, không có cảnh báo.
+- `Remove service` mở confirm `Delete Confirmation — Are you sure you want to delete <name>?`; `Delete` xóa **ngay** (không cần `Save`), toast `Item deleted successfully!` — khác với Teams (phải Save).
+
+Gap / Open Question:
+
+- Ràng buộc trùng `Service ID` chưa kiểm tra.
 
 ## Tester notes
 

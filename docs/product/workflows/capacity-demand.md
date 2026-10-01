@@ -106,4 +106,10 @@
   - Breadcrumb: `.Breadcrumb_breadcrumb__Btn__Q0ZAp` (button "Analytics")
   - Console errors (không visible impact): HTTP 500, "Error fetching user provider roles"
 
+## Discovery update run-20261001-085609
+
+`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+- `Analytics & Reports > Capacity & Demand` mở app `/capacity-demand/` với dữ liệu (tổng appointment booked, planned vs actual hours).
+
 ## Tester notes

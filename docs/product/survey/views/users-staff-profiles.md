@@ -1,19 +1,28 @@
 ---
 id: users-staff-profiles
 title: Users and Staff Profiles
-roles: [Super Admin GB]
+roles:
+  - Super Admin GB
 environment: dev
 status: Observed
-routes: [/paco/configuration/staff/profiles]
+routes:
+  - /paco/configuration/staff/profiles
 controls:
-  - { name: Active, kind: read-only }
-  - { name: Archived, kind: read-only }
-  - { name: My Profile, kind: navigation }
-  - { name: Add Care Professional, kind: mutation }
-  - { name: Previous, kind: read-only }
-  - { name: Next, kind: read-only }
+  - name: Active
+    kind: read-only
+  - name: Archived
+    kind: read-only
+  - name: My Profile
+    kind: navigation
+  - name: Add Care Professional
+    kind: mutation
+  - name: Previous
+    kind: read-only
+  - name: Next
+    kind: read-only
 verified_by: []
-last_observed: 2026-09-22
+last_observed: 2026-10-01
+relationships: []
 ---
 
 # Users and Staff Profiles
@@ -54,6 +63,12 @@ Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-19. A
 ## Open questions
 
 - Profile detail safety, row actions, additional sort directions/columns, add/edit/archive lifecycle, and access controls remain unverified.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- `/paco/configuration/staff/profiles`: heading `Staff Profiles`, 63 row (dữ liệu cá nhân nhân viên, không ghi lại).
 
 ## Tester notes
 

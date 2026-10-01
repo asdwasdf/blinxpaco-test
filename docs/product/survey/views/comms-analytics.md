@@ -21,7 +21,18 @@ controls:
   - name: Export to CSV
     kind: download
 verified_by: []
-last_observed: 2026-09-21
+last_observed: 2026-10-01
+relationships:
+  - id: run-20261001-085609-comms-analytics-1
+    from: comms-analytics
+    destination_hint: trang login Comms Hub ở host ngoài
+    trigger: Comms Analytics
+    relationship: cross-module handoff
+    context: []
+    classification: Open Question
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Analytics
@@ -58,6 +69,22 @@ Accessibility observation, external Comms Hub dev, authenticated session associa
 
 - Context selector persistence remains unverified.
 - `Export to CSV` returned HTTP 200 JSON rather than an observable workspace `.csv`; whether the response represents an empty export, asynchronous export or UI defect remains unknown.
+
+## Discovery run-20261001-085609
+
+Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
+
+- `Comms Analytics` chuyển tới host ngoài `nhs-comms-hub-dev.blinxhealthcare.com/commshub/login?loggedout=true&msg=error-at-axios-interceptor` (`Welcome Back`).
+
+Gap / Open Question:
+
+- Host ngoài allowlist; không khám phá. Thông báo `error-at-axios-interceptor` cần làm rõ.
+
+## Discovery run-20261001-085609 (part 2)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- Sau khi tester đăng nhập Comms Hub, `Comms Analytics` vẫn rơi về `/commshub/login` (`Welcome Back`), trong khi các menu Comms Hub khác tải được.
 
 ## Tester notes
 
