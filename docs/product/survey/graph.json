@@ -538,6 +538,97 @@
             "test-results/product-survey/run-20261001-085609/outcomes/"
           ],
           "destination_hint": "campaign được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-1",
+          "from": "comms-campaign-manager",
+          "trigger": "Analytics",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "/commshub/analytics (patient-level)"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-2",
+          "from": "comms-campaign-manager",
+          "trigger": "Outbox",
+          "relationship": "navigation",
+          "context": [],
+          "classification": "Observed",
+          "mutation_boundary": false,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "/commshub/campaign-outbox"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-3",
+          "from": "comms-campaign-manager",
+          "trigger": "Edit",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign bị sửa"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-4",
+          "from": "comms-campaign-manager",
+          "trigger": "Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign bị xóa (DELETE)"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-5",
+          "from": "comms-campaign-manager",
+          "trigger": "Restore",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign được khôi phục"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-6",
+          "from": "comms-campaign-manager",
+          "trigger": "Create Campaign",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "campaign mới"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-campaign-manager-7",
+          "from": "comms-campaign-manager",
+          "trigger": "Analytics > Export to CSV",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "file CSV chứa PII (download)"
         }
       ]
     },
@@ -858,6 +949,71 @@
             "test-results/product-survey/run-20261001-085609/outcomes/"
           ],
           "destination_hint": "template được lưu"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-1",
+          "from": "comms-template-manager",
+          "trigger": "Copy",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "bản sao template mới"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-2",
+          "from": "comms-template-manager",
+          "trigger": "Edit",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template bị sửa"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-3",
+          "from": "comms-template-manager",
+          "trigger": "Delete",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template bị xóa (DELETE)"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-4",
+          "from": "comms-template-manager",
+          "trigger": "Set Org. Defaults",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Inferred",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "template mặc định của org thay đổi"
+        },
+        {
+          "id": "run-20261001-085609-p4-comms-template-manager-5",
+          "from": "comms-template-manager",
+          "trigger": "Create New SMS",
+          "relationship": "workflow",
+          "context": [],
+          "classification": "Open Question",
+          "mutation_boundary": true,
+          "evidence": [
+            "test-results/product-survey/run-20261001-085609/outcomes/"
+          ],
+          "destination_hint": "draft SMS (`/template-builder/sms/create`)"
         }
       ]
     },
@@ -5182,6 +5338,162 @@
         "test-results/product-survey/run-20261001-085609/outcomes/"
       ],
       "destination_hint": "import search definition (upload)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-1",
+      "from": "comms-campaign-manager",
+      "trigger": "Analytics",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "/commshub/analytics (patient-level)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-2",
+      "from": "comms-campaign-manager",
+      "trigger": "Outbox",
+      "relationship": "navigation",
+      "context": [],
+      "classification": "Observed",
+      "mutation_boundary": false,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "/commshub/campaign-outbox"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-3",
+      "from": "comms-campaign-manager",
+      "trigger": "Edit",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign bị sửa"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-4",
+      "from": "comms-campaign-manager",
+      "trigger": "Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign bị xóa (DELETE)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-5",
+      "from": "comms-campaign-manager",
+      "trigger": "Restore",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign được khôi phục"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-6",
+      "from": "comms-campaign-manager",
+      "trigger": "Create Campaign",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "campaign mới"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-campaign-manager-7",
+      "from": "comms-campaign-manager",
+      "trigger": "Analytics > Export to CSV",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "file CSV chứa PII (download)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-1",
+      "from": "comms-template-manager",
+      "trigger": "Copy",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "bản sao template mới"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-2",
+      "from": "comms-template-manager",
+      "trigger": "Edit",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template bị sửa"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-3",
+      "from": "comms-template-manager",
+      "trigger": "Delete",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template bị xóa (DELETE)"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-4",
+      "from": "comms-template-manager",
+      "trigger": "Set Org. Defaults",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Inferred",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "template mặc định của org thay đổi"
+    },
+    {
+      "id": "run-20261001-085609-p4-comms-template-manager-5",
+      "from": "comms-template-manager",
+      "trigger": "Create New SMS",
+      "relationship": "workflow",
+      "context": [],
+      "classification": "Open Question",
+      "mutation_boundary": true,
+      "evidence": [
+        "test-results/product-survey/run-20261001-085609/outcomes/"
+      ],
+      "destination_hint": "draft SMS (`/template-builder/sms/create`)"
     },
     {
       "id": "run-20261001-085609-patient-details-report-1",

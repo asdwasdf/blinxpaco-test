@@ -104,8 +104,11 @@ locator.type('text', {delay: 80});
 `Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
 
 - Sidebar `Comms Hub`: `Template Manager`, `Campaign Manager`, `Patient Manager` → host `nhs-comms-hub-dev.blinxhealthcare.com` (đã thêm vào `externalDevHosts` cho read-only theo approval tester).
-- Sau khi tester đăng nhập: cả ba trang tải dữ liệu (9 row) nhưng đồng thời hiện `SESSION EXPIRED`. `Analytics & Reports > Comms Analytics` vẫn rơi về `/commshub/login` (`loggedout=true&msg=error-at-axios-interceptor` ở lần đầu).
-- Approval stop: Template `Create New Email/SMS`, `Create without a Template`, `Save`; Campaign `Create Campaign`, `Resend` (SEND), `Add Selected`, `Save`; Patient `Create List`, `Add to Existing List`, `Upload CSV` (import), `Save`.
+- Sau khi tester đăng nhập: cả ba trang tải dữ liệu bình thường. **Đính chính (deep dive cùng ngày):** `SESSION EXPIRED` là heading của modal ẩn dùng chung, không phải banner đang hiển thị. `Analytics & Reports > Comms Analytics` vẫn rơi về `/commshub/login` (`loggedout=true&msg=error-at-axios-interceptor` ở lần đầu).
+- Approval stop: Template `Create New Email/SMS`, `Create without a Template`, `Save`; Campaign `Create Campaign`, `Resend` (SEND), `Add Selected`, `Save`; Patient Manager: `Create List`, `Add to Existing List`, `Upload CSV` có trong DOM nhưng ẩn trên trang list (chỉ trong modal).
+- Template Manager: nhóm `Shared Templates (418)` / `Non-Shared Templates (2220)`, filter org `Viewing data for:`; shared có `View` (read-only `/template-builder/email/view/<id>`) + `Copy`; non-shared có `Edit`/`Delete`/`Copy`. Mở nhóm bằng icon `.ag-group-contracted`.
+- Campaign Manager: `Non-Shared Campaigns (4115)` / `Shared Campaigns (445)`; action `Analytics` (`/commshub/analytics`, bảng cấp bệnh nhân có PII, `Export to CSV`), `Outbox` (`/commshub/campaign-outbox`, chọn campaign mới hiện bảng), `Edit`/`Delete`/`Restore`.
+- Patient Manager: recipient list `Non-Shared Lists (33)` / `Shared Lists (186)`; ô `Actions` trống trên các dòng quan sát được (`Open Question`).
 - Handoff từ Paco: Patient Analyser `Send to Comms Hub`/`Group Quick Send` (SEND boundary, chưa thực hiện).
 
 ## Tester notes

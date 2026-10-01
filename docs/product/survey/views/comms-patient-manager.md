@@ -115,6 +115,18 @@ Gap / Open Question:
 
 - `Upload CSV` là import (cần approval).
 
+## Discovery run-20261001-085609 (part 4 — Comms Hub deep dive)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- **Đính chính:** `Create List`, `Add to Existing List`, `Upload CSV` tồn tại trong DOM nhưng **ẩn** trên trang này (part 2 ghi nhầm là control hiển thị); `SESSION EXPIRED` cũng là modal ẩn.
+- Trang là danh sách recipient list: nhóm `Non-Shared Lists (33)`, `Shared Lists (186)`; cột `Multi Org List?`, `Recipient List ID`, `List Name`, `Description`, `Tags`, `Created By Organisation`, `Shared To Orgs`, `Created Date`, `Updated Date`, `Actions`.
+
+Gap / Open Question:
+
+- Ô `Actions` của các dòng quan sát được đều trống (AG Grid ảo hoá cột); action trên list chưa xác định.
+- Chi tiết list chứa bệnh nhân (PII) chưa mở.
+
 ## Tester notes
 
 [Protected area]

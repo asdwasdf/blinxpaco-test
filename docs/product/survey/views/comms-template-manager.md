@@ -61,6 +61,56 @@ relationships:
     mutation_boundary: true
     evidence:
       - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-1
+    from: comms-template-manager
+    destination_hint: bản sao template mới
+    trigger: Copy
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-2
+    from: comms-template-manager
+    destination_hint: template bị sửa
+    trigger: Edit
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-3
+    from: comms-template-manager
+    destination_hint: template bị xóa (DELETE)
+    trigger: Delete
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-4
+    from: comms-template-manager
+    destination_hint: template mặc định của org thay đổi
+    trigger: Set Org. Defaults
+    relationship: workflow
+    context: []
+    classification: Inferred
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
+  - id: run-20261001-085609-p4-comms-template-manager-5
+    from: comms-template-manager
+    destination_hint: draft SMS (`/template-builder/sms/create`)
+    trigger: Create New SMS
+    relationship: workflow
+    context: []
+    classification: Open Question
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261001-085609/outcomes/
 ---
 
 # Communications Hub Template Manager
@@ -113,6 +163,22 @@ Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ kh
 Gap / Open Question:
 
 - Banner `SESSION EXPIRED` hiện dù tester đã đăng nhập; trạng thái session chưa rõ.
+
+## Discovery run-20261001-085609 (part 4 — Comms Hub deep dive)
+
+Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
+
+- **Đính chính:** `SESSION EXPIRED`, `Current Password`, `Export Report`, `Upload Media` là heading của modal **ẩn** dùng chung toàn app; phiên Comms Hub hoạt động bình thường (part 1–2 ghi nhầm là banner đang hiện).
+- Bảng AG Grid nhóm theo chia sẻ: `Shared Templates (418)`, `Non-Shared Templates (2220)`; cột `Shared Campaign?`, `Name`, `Type` (`Email`/`SMS`), `Communication Type` (`General News`, `Guidance & Advice`, `Reminder`, `Confirmation`, `Booking Links & Health Forms`), `Created By Organisation`, `Shared To Orgs`, `Actions`.
+- Bộ lọc org `Viewing data for:` (`General Practice (Demo Site)`, `Primary Care 24`, `Select All`, `Apply`); `Search Templates`, `Columns`, `Filters`, `Reset Column Widths`, `Show All Columns`, `Clear Filters`.
+- Actions: template được chia sẻ có `View` (read-only) và `Copy`; template không chia sẻ có `Edit`, `Delete`, `Copy`.
+- `View` → `/commshub/template-builder/email/view/<id>`: `Language Selection`, `Subject line`, `Email Text` khóa read-only, chỉ có nút `Back`.
+- Nhóm phải mở bằng icon `.ag-group-contracted`; click vào chữ tên nhóm không mở.
+
+Gap / Open Question:
+
+- `Show Org. Default Templates` và `Filters` chưa thấy thay đổi quan sát được.
+- `Edit` không mở vì chưa rõ form có tự lưu.
 
 ## Tester notes
 
