@@ -25,17 +25,17 @@ input_snapshot:
 
 fast_path:
   video_ingest: completed
-  graph_lookup: pending
+  graph_lookup: completed
   unresolved_blockers: 7
-  mutation_ledger: null
+  mutation_ledger: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
   durable_evidence:
     - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/PAC2-7786/contact-sheet.webp
     - docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/video/screen-recording-2026-08-27/contact-sheet.webp
 
 workflow:
   status: in_progress
-  current_phase: LOCATE
-  last_completed_phase: ANALYZE
+  current_phase: AUTOMATE
+  last_completed_phase: MANUAL_EXECUTE
   updated_at: "2026-10-01"
   checkpoints:
     - phase: DISCOVER
@@ -55,6 +55,34 @@ workflow:
       updated_at: "2026-10-01"
       artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/requirements.md
       sha256: 06cb1473a6f68381cc995cc8acd1364a6fc068d079b78a60937324416fcc8415
+    - phase: LOCATE
+      status: completed
+      outcome: completed
+      input_revision: 1
+      updated_at: "2026-10-01"
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/feature-location.md
+      sha256: 356c429770c08eca146fd29da303c43130f112b93056c60f8d14d51ecd15be20
+    - phase: EXPLORE
+      status: completed
+      outcome: completed_with_warnings
+      input_revision: 1
+      updated_at: "2026-10-01"
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/exploration.md
+      sha256: d880dbb4d919ce1469615dc535b827b10972e150742c94cc9af23f8edb87c009
+    - phase: TEST_DESIGN
+      status: completed
+      outcome: completed_with_warnings
+      input_revision: 1
+      updated_at: "2026-10-01"
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/test-cases.md
+      sha256: 16dc8a8dc3b52940a70ab53517a4fe142246256d671d3c21bb4d120475aa4604
+    - phase: MANUAL_EXECUTE
+      status: completed
+      outcome: completed_with_warnings
+      input_revision: 1
+      updated_at: "2026-10-01"
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+      sha256: 7dfb3fe9ba315810c96643be479d0685f1bbef6aece961103a720a07e8e5d2f4
 
 phases:
   DISCOVER:
@@ -90,19 +118,63 @@ phases:
       - Role, paired deployment environment, exact booking message, and Block/Delete product rule remain open.
     blockers: []
   LOCATE:
-    status: pending
-    outcome: null
+    status: completed
+    outcome: completed
     input_revision: 1
-    updated_at: ""
-    artifacts: []
-    warnings: []
+    updated_at: "2026-10-01"
+    artifacts:
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/feature-location.md
+        sha256: 356c429770c08eca146fd29da303c43130f112b93056c60f8d14d51ecd15be20
+    warnings:
+      - Earlier attempts used non-feature URLs; rejected evidence retained only as route history.
     blockers: []
     budget:
-      views_used: 0
+      views_used: 3
       views_limit: 12
-      elapsed_minutes: 0
+      elapsed_minutes: 3
       minutes_limit: 15
-  EXPLORE: &pending_phase
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-01"
+    artifacts:
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/exploration.md
+        sha256: d880dbb4d919ce1469615dc535b827b10972e150742c94cc9af23f8edb87c009
+    warnings:
+      - Observed menu contains Block Session and Restore but no Delete Session; expected rule remains disputed.
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-01"
+    artifacts:
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/test-cases.md
+        sha256: 16dc8a8dc3b52940a70ab53517a4fe142246256d671d3c21bb4d120475aa4604
+    warnings:
+      - TC-002 requires approved synthetic booking setup before execution.
+      - TC-005 expected product rule remains disputed; diagnostic observation only.
+    blockers: []
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-01"
+    artifacts:
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+        sha256: 7dfb3fe9ba315810c96643be479d0685f1bbef6aece961103a720a07e8e5d2f4
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/evidence/PAC2-7786-TC-003-005-removed-menu-20261001.png
+        sha256: 45b482cc36694d50027d72bd93f12c6f4bcb203a7e264f6c510395ae7b32f6c3
+      - path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/evidence/PAC2-7786-TC-001-004-005-child-active-menu-20261001.png
+        sha256: 0a1dc9b516330aca5b9b31f81a8695196349e6fef59063cb8621350ed936cf82
+    warnings:
+      - TC-002 blocked because no approved synthetic patient/booking context was available.
+      - TC-005 remains inconclusive because Delete/Block product rule is disputed.
+      - Deployed frontend contains Remove Session hook, but configuration action wiring only exposes restore/cancel/block and never calls startRemoveSession.
+      - Cleanup deletion unavailable; one redacted QA-AUTO active session remains.
+    blockers: []
+  AUTOMATE: &pending_phase
     status: pending
     outcome: null
     input_revision: 1
@@ -110,29 +182,84 @@ phases:
     artifacts: []
     warnings: []
     blockers: []
-  TEST_DESIGN: *pending_phase
-  MANUAL_EXECUTE: *pending_phase
-  AUTOMATE: *pending_phase
   AUTOMATION_EXECUTE: *pending_phase
   REPORT: *pending_phase
   COMPLETE: *pending_phase
 
 outputs:
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: 16dc8a8dc3b52940a70ab53517a4fe142246256d671d3c21bb4d120475aa4604
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: d880dbb4d919ce1469615dc535b827b10972e150742c94cc9af23f8edb87c009
   feature-location.md:
     owner: paco-explore
     path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/feature-location.md
-    state: missing
+    state: valid
     input_revision: 1
-    sha256: null
+    sha256: 356c429770c08eca146fd29da303c43130f112b93056c60f8d14d51ecd15be20
   requirements.md:
     owner: paco-requirements
     path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/requirements.md
     state: valid
     input_revision: 1
     sha256: 06cb1473a6f68381cc995cc8acd1364a6fc068d079b78a60937324416fcc8415
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+    state: valid
+    input_revision: 1
+    sha256: 7dfb3fe9ba315810c96643be479d0685f1bbef6aece961103a720a07e8e5d2f4
 
 execution:
-  case_ids: []
-  manual: {}
+  case_ids:
+    - PAC2-7786-TC-001
+    - PAC2-7786-TC-002
+    - PAC2-7786-TC-003
+    - PAC2-7786-TC-004
+    - PAC2-7786-TC-005
+  manual:
+    PAC2-7786-TC-001:
+      result: Fail
+      input_revision: 1
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+      diagnostics: [same_data, fresh_page, changed_state, control_path]
+      cleanup: leftover
+    PAC2-7786-TC-002:
+      result: Blocked
+      input_revision: 1
+      reason: No approved synthetic patient/booking context.
+      cleanup: not_required
+    PAC2-7786-TC-003:
+      result: Fail
+      input_revision: 1
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+      diagnostics: [removed_state, refresh, restore_control]
+      cleanup: leftover
+    PAC2-7786-TC-004:
+      result: Fail
+      input_revision: 1
+      artifact: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+      diagnostics: [cancel_control, confirm_archive, fresh_page, block_cancel_control]
+      cleanup: leftover
+    PAC2-7786-TC-005:
+      result: Inconclusive
+      input_revision: 1
+      reason: Product rule for Delete Session versus Block Session remains disputed.
+      cleanup: not_required
   automation: {}
-  runs: {}
+  runs:
+    manual-20261001-1510:
+      environment: https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-7786
+      role: Super Admin GB
+      input_revision: 1
+      mutation_ledger: docs/tickets/PAC2-7786-ph1-pbt-265-deleting-a-diary-in-the-appt-book-doesn-t-work/automation.md
+      leftovers:
+        - QA-AUTO-PAC2-7786-TC001-…-1510

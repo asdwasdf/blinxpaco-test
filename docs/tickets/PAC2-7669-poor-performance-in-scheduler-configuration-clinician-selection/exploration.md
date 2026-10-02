@@ -2,32 +2,39 @@
 
 ## Scope và provenance
 
-- Environment: `dev`, `https://blinx.dev.blinxpaco-np.com`.
-- Role hiển thị: `Blinx Deployment`; tester xác nhận quyền tương đương admin trong hội thoại.
-- Browser observation: 2026-10-01, khoảng 13:06–13:07 UTC, Playwright admin tab hiện tại.
-- Mutation: `None`; không chọn campaign, sửa connection hoặc bấm `Save`.
+- Environment: `dev`, `https://pac2-7669.dev.blinxpaco-np.com`.
+- Role hiển thị: `Blinx Deployment`; tester xác nhận quyền tương đương admin.
+- Observation date: 2026-10-01.
+- Route: `/configuration/`.
+- Mutation: `Temporary`; chỉ thay đổi clinician trong unsaved dialog draft.
 
 ## Observed
 
-- Trang `Scheduler Configuration` đã load `Template`, `Slot Type`, `Appointment Types` và `Select Campaign`. Không có cơ sở cho kết luận trước rằng trang bị kẹt loading.
-- Link trong mapper header mở dialog `Edit Connections`. Dialog hiển thị grid với `Template`, `Appointment`, `Slot`, `Min Time`, `Period`; bên dưới có `Timed/Untimed`, `Cancel`, `Save`.
-- Trong state đã quan sát, chưa thấy field chọn clinician. Đã đóng bằng `Cancel`, không lưu.
-- Evidence: `.playwright-mcp/page-2026-10-01T13-06-38-377Z.yml` và targeted dialog snapshot trong tool transcript; chưa promote raw snapshot vào docs vì chưa redact.
+- Trang `Scheduler Configuration` hiển thị `Scheduler Config`, template search, slot list và mapping controls.
+- Chọn existing template rồi bấm `Edit` mở dialog `Edit Connections` có `Select a clinician`.
+- Existing mappings cho phép quan sát cả source `EMIS` và `PACO Connect` trong cùng authorized context; không cần đổi org.
+- Clinician chip xuất hiện sau selection và có thể gỡ khỏi draft.
+- Danh sách clinician có thể còn mở sau multi-select; `Escape` đóng list trước khi bấm `Cancel`.
+- Không bấm `Save`. Mở lại mapping sau `Cancel` xác nhận persisted state không đổi.
 
-## Source hints và giới hạn
+## Performance observations
 
-- Frame video `video/frames/frame-0009.webp` ở `00:00:22.257` hiển thị `Edit Connections` trên branch host khác với configured dev hiện tại. Video là source hint, không chứng minh fix đã deploy trên host hiện tại.
-- Các kết quả và blocker trước trong `automation.md` chưa đáng tin cậy: chưa thực hiện chọn clinician, proxy chưa xác minh, screenshot có nội dung đã load.
-- Không dùng ngưỡng `< 1 giây`: ticket yêu cầu bỏ hoặc giảm đáng kể độ trễ 5–10 giây nhưng chưa cung cấp SLA số cụ thể.
+- `EMIS`: click-to-chip 117.6–149.1 ms qua các diagnostic attempts.
+- `PACO Connect`: click-to-chip 113.3–143.7 ms qua các diagnostic attempts.
+- Không quan sát delay 5–10 giây, popup `waiting for this page to respond`, freeze hoặc crash.
+- Hai số 8.1 và 10.3 giây từ lượt đo ban đầu gồm MCP/tool-call latency, không phải product timing và bị loại. Timing dùng cho kết luận được đo trong cùng browser evaluation.
 
-## Open Question
+## Expected-result boundary
 
-- Connection/template test nào được phép dùng để mở scope chọn clinician, và org hiện tại có proxy enabled không?
-- Entry chọn clinician có cần chọn một connection/template trước không? Chưa thực hiện action này do chưa xác minh persistence và safe test data.
+- Ticket yêu cầu loại bỏ hoặc giảm đáng kể baseline 5–10 giây.
+- Không dùng SLA `< 1 giây` vì ticket không cung cấp benchmark đó.
+- Dev fix comment là source claim; QA `Pass` đến từ manual execution trên branch.
 
-## Next action
+## Cleanup
 
-Xác nhận connection/template test và proxy context; sau đó sửa requirements/test design theo provenance trước khi chạy manual case. Chưa có product `Pass` hoặc `Fail`.
+- `EMIS`: gỡ clinician tạm, đóng bằng `Cancel`, mở lại xác minh không có clinician tạm.
+- `PACO Connect`: đóng bằng `Cancel`, mở lại xác minh baseline clinician không đổi.
+- Không tạo/xóa mapping, gửi SMS hoặc tạo appointment; không có leftover.
 
 ## Tester notes
 

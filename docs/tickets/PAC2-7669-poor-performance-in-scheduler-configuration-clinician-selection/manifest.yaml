@@ -13,37 +13,57 @@ environment:
 
 workflow:
   startedAt: "2026-10-01T12:40:30.000Z"
-  currentPhase: AUTOMATE
+  completedAt: "2026-10-01T14:50:01Z"
+  currentPhase: COMPLETE
+  closeType: artifacts-only
+  jiraTransition: none
   phases:
     - id: ANALYZE
       status: complete
-      warning: requirements artifact contains unsupported <1 second wording; manual execution used ticket baseline instead
+      artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/requirements.md
+      artifactSha256: "2494446421285eebf65b655fb4dfb3c0e2f970aa69c975b42f22623be2b255c2"
     - id: LOCATE
       status: complete
-      warning: feature-location artifact still names the old shared-dev route; branch route is verified in status and manual evidence
+      artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/feature-location.md
+      artifactSha256: "f46b2b9562f107cad96fd541b8d2aadda09493c734ce3d9af78e3480260d6e3e"
     - id: EXPLORE
       status: complete
-      warning: exploration artifact includes superseded shared-dev observation
+      artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/exploration.md
+      artifactSha256: "ba8d5d25ea956acac2edf0f72b1c8dc0a0e410f8b417e812d84642fa3d8100ba"
     - id: TEST_DESIGN
       status: complete
-      warning: test-cases artifact incorrectly classifies draft clinician selection as mutation None
+      artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/test-cases.md
+      artifactSha256: "f25449b00438789b1223b92d51dce012f85af7656da885170561a3885704a20f"
     - id: MANUAL_EXECUTE
       status: complete
       completedAt: "2026-10-01T13:58:20Z"
       artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/automation.md
-      artifactSha256: "efe5c340fc293f3ab137b857fc18b63fdf13f5d96c0dcacad73782f8e539ff01"
+      artifactSha256: "8e5be521ed7698c1d73995b32ea55cc59e55e2201c3d0a991fafbbbd189f7e1c"
     - id: AUTOMATE
-      status: pending
+      status: complete
+      completedAt: "2026-10-01T14:50:01Z"
+      artifact: playwright/tests/tickets/PAC2-7669-TC-001-005.spec.ts
+      artifactSha256: "5108d81daa8bb7eb20ca2d8005ad947e73016d6c6913e159927643ba502f203c"
     - id: AUTOMATION_EXECUTE
-      status: pending
+      status: blocked
+      completedAt: "2026-10-01T14:50:01Z"
+      reason: "Setup or authentication failure: local login browser was not running, so authenticated CLI execution could not start"
+      classification: Setup or authentication failure
+      productResultChanged: false
     - id: REPORT
-      status: pending
+      status: complete
+      completedAt: "2026-10-01T14:50:01Z"
+      artifact: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/report.md
+      artifactSha256: "121c9d5031aa917a96c942a2f75cf306bfa1b9b56b256153b8a97f95a54f9287"
     - id: COMPLETE
-      status: pending
+      status: complete
+      completedAt: "2026-10-01T14:50:01Z"
+      reason: "All cases and artifacts processed; automation CLI technical blocker recorded separately from manual product result"
 
 scope:
   issueType: Performance Bug
   summary: Clinician selection in Scheduler Configuration slow/freeze since proxy
+  expectedBasis: remove or greatly reduce ticket baseline delay of 5-10 seconds; no absolute SLA provided
   rootCauseClaim: Proxy DB views not indexed plus redundant row/session fetching and render work
   fixClaim: Jira comment says memory leak and redundant API fetching were fixed and tested on feature branch
   testerAssigned: Fiona Nguyen
@@ -52,32 +72,45 @@ artifacts:
   - id: requirements.md
     path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/requirements.md
     type: requirements
-    sha256: "1fb943c765c5589714575e41cc05edc8695a105d24cba6747792efdc13513ec0"
+    sha256: "2494446421285eebf65b655fb4dfb3c0e2f970aa69c975b42f22623be2b255c2"
   - id: video-timeline.md
     path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/video/timeline.md
     type: evidence
   - id: feature-location.md
     path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/feature-location.md
     type: feature-location
-    sha256: "9ccfe59bd3faf429857a9b2904e2a58d0e1de15ecd183fe6e1058b4de71761e0"
+    sha256: "f46b2b9562f107cad96fd541b8d2aadda09493c734ce3d9af78e3480260d6e3e"
   - id: exploration.md
     path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/exploration.md
     type: exploration
-    sha256: "06f55f332dbc31af94229114be4a68a278120fa885e6291a5225d075bb47779c"
+    sha256: "ba8d5d25ea956acac2edf0f72b1c8dc0a0e410f8b417e812d84642fa3d8100ba"
   - id: test-cases.md
     path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/test-cases.md
     type: test-cases
-    sha256: "ae88bce7cbfe5bdea773ff76216783b22436ef8f1eb17eab741321f5adbb6f8c"
+    sha256: "f25449b00438789b1223b92d51dce012f85af7656da885170561a3885704a20f"
   - id: automation.md
     path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/automation.md
-    type: manual-results
-    sha256: "efe5c340fc293f3ab137b857fc18b63fdf13f5d96c0dcacad73782f8e539ff01"
-  - id: emis-clinician-selection.png
-    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/emis-clinician-selection.png
+    type: execution-and-automation
+    sha256: "8e5be521ed7698c1d73995b32ea55cc59e55e2201c3d0a991fafbbbd189f7e1c"
+  - id: PAC2-7669-TC-001-005.spec.ts
+    path: playwright/tests/tickets/PAC2-7669-TC-001-005.spec.ts
+    type: playwright-spec
+    sha256: "5108d81daa8bb7eb20ca2d8005ad947e73016d6c6913e159927643ba502f203c"
+    inputRevision: "119562275d74aa7562cfe99a27e0502e86c3716aa377a6e0404f1c14f7bce99f"
+  - id: report.md
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/report.md
+    type: report
+    sha256: "121c9d5031aa917a96c942a2f75cf306bfa1b9b56b256153b8a97f95a54f9287"
+  - id: feature-map.md
+    path: docs/product/feature-map.md
+    type: product-knowledge
+    sha256: "b87ff55e580f74fa88c124f5d7b6ba96e17009e6031d3108f88a36f5d080763d"
+  - id: TC-7669-004-clinician-selection-20261001.png
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/evidence/TC-7669-004-clinician-selection-20261001.png
     type: evidence
     sha256: "3551ebf4722aaaaabd8d7b1b0305ca05146d2e1acbc7cda4d87520fb0f96d832"
-  - id: saved-clinician-state.png
-    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/saved-clinician-state.png
+  - id: TC-7669-005-baseline-state-20261001.png
+    path: docs/tickets/PAC2-7669-poor-performance-in-scheduler-configuration-clinician-selection/evidence/TC-7669-005-baseline-state-20261001.png
     type: evidence
     sha256: "76f134d9e12062a342f8cbdd65085ab24ea78fc9dbc1387256c4664567283c9c"
 
@@ -88,6 +121,7 @@ execution:
     - TC-7669-003
     - TC-7669-004
     - TC-7669-005
+  productResult: Pass
   results:
     TC-7669-001: Pass
     TC-7669-002: Pass
@@ -108,4 +142,11 @@ execution:
     cleanup: removed temporary chips where applicable and closed with Cancel
     cleanupVerified: true
     leftovers: []
+  automation:
+    spec: playwright/tests/tickets/PAC2-7669-TC-001-005.spec.ts
+    validation: Pass
+    cliResult: Blocked
+    classification: Setup or authentication failure
+    reason: local login browser not running
+    productResultChanged: false
   blocker: null

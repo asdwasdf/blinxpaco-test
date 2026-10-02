@@ -5,7 +5,7 @@ import { Readable, Writable } from 'node:stream';
 import path from 'node:path';
 import { test } from 'node:test';
 import { chromium } from '@playwright/test';
-import { downloadFromBrowserUrl, downloadRestAttachment, fetchJiraAttachments, fetchJiraComments, isJiraAuthenticationUrl, isJiraIssueUrl, resolveAttachmentMediaIds, resolveJiraProfileDirectory, saveBrowserDownload, waitForEnter } from '../jira-import.js';
+import { downloadAttachmentWithFallback, downloadFromBrowserUrl, downloadRestAttachment, fetchJiraAttachments, fetchJiraComments, isJiraAuthenticationUrl, isJiraIssueUrl, isRequestedIssueReady, parseImportArgs, resolveAttachmentMediaIds, resolveJiraProfileDirectory, saveBrowserDownload, selectLatest, waitForEnter } from '../jira-import.js';
 import { loadConfig } from '../load-config.js';
 import {
   assertTicketKeyAvailable,
@@ -23,6 +23,28 @@ import {
   relinkCommentMedia,
   mediaIdFromMediaUrl,
 } from '../jira-import-core.js';
+
+test('parses limits for latest Jira comments and attachments', () => {
+  assert.deepEqual(parseImportArgs([
+    'https://blinxsolutions.atlassian.net/browse/PAC2-8241',
+    '--comments', '10',
+    '--attachments', '10',
+  ]), {
+    url: 'https://blinxsolutions.atlassian.net/browse/PAC2-8241',
+    commentLimit: 10,
+    attachmentLimit: 10,
+  });
+  assert.throws(() => parseImportArgs(['url', '--comments', '0']), /positive integer/);
+});
+
+test('selects latest records and preserves chronological order', () => {
+  const items = [
+    { id: 'new', createdAt: '2026-10-03T00:00:00Z' },
+    { id: 'old', createdAt: '2026-10-01T00:00:00Z' },
+    { id: 'middle', createdAt: '2026-10-02T00:00:00Z' },
+  ];
+  assert.deepEqual(selectLatest(items, 2, (item) => item.createdAt).map((item) => item.id), ['middle', 'new']);
+});
 
 test('loads configured Jira origin and browse path', () => {
   assert.deepEqual(loadConfig().jira, {
@@ -45,7 +67,8 @@ test('uses a dedicated local Jira browser profile', async () => {
   assert.match(source, /request\.newContext\(\)/);
   assert.doesNotMatch(source, /downloadFromBrowserUrl\(page, button, context\.request/);
   assert.match(source, /if \(page\.isClosed\(\)\) await reopenIssue\(\)/);
-  assert.match(source, /downloadRestAttachment\(context\.request, attachment\.sourceUrl/);
+  assert.match(source, /downloadAttachmentWithFallback/);
+  assert.match(source, /downloadRestAttachment\(context\.request, item\.sourceUrl/);
   assert.match(source, /throw new Error\('Attachment request failed'\)/);
 });
 
@@ -202,6 +225,14 @@ test('relinks comment media to its issue attachment', () => {
     [{ ...comments[0], body: '[Evidence: evidence.png](attachments/200-evidence.png)' }],
   );
   assert.throws(() => relinkCommentMedia(comments, [{ id: 'missing', fileName: 'missing.png' }], attachments), /unresolved Jira comment media/);
+});
+
+test('marks comment media excluded by attachment limit instead of blocking import', () => {
+  const comments = [{ id: '1', author: 'QA', createdAt: '2026-09-22T10:00:00.000Z', body: '[Evidence: video.mp4](attachments/media-uuid-video.mp4)' }];
+  assert.deepEqual(
+    relinkCommentMedia(comments, [{ id: 'media-uuid', fileName: 'video.mp4' }], [], new Map(), true),
+    [{ ...comments[0], body: '[Evidence not imported due to attachment limit: video.mp4]' }],
+  );
 });
 
 test('renders ADF media without alt as a placeholder filename', () => {
@@ -428,6 +459,48 @@ test('downloads a REST attachment content URL via trusted redirect', async () =>
   assert.equal(await readFile(target, 'utf8'), 'video');
 });
 
+test('falls back to browser download only when REST attachment download fails', async () => {
+  const calls: string[] = [];
+  const attachment = {
+    id: '200', fileName: 'video.mp4', mediaType: 'video/mp4', sizeBytes: null,
+    sourceUrl: 'https://blinxsolutions.atlassian.net/rest/api/3/attachment/content/200',
+    localPath: null, state: 'Pending' as const, error: null,
+  };
+  await downloadAttachmentWithFallback(
+    attachment,
+    'D:/staging/200-video.mp4',
+    async () => { calls.push('rest'); throw new Error('Attachment request failed'); },
+    async () => { calls.push('browser'); },
+  );
+  assert.deepEqual(calls, ['rest', 'browser']);
+
+  calls.length = 0;
+  await downloadAttachmentWithFallback(
+    attachment,
+    'D:/staging/200-video.mp4',
+    async () => { calls.push('rest'); },
+    async () => { calls.push('browser'); },
+  );
+  assert.deepEqual(calls, ['rest']);
+});
+
+test('reports both attachment download failures without exposing details', async () => {
+  const attachment = {
+    id: '200', fileName: 'video.mp4', mediaType: 'video/mp4', sizeBytes: null,
+    sourceUrl: 'https://blinxsolutions.atlassian.net/rest/api/3/attachment/content/200',
+    localPath: null, state: 'Pending' as const, error: null,
+  };
+  await assert.rejects(
+    downloadAttachmentWithFallback(
+      attachment,
+      'D:/staging/200-video.mp4',
+      async () => { throw new Error('REST secret'); },
+      async () => { throw new Error('browser secret'); },
+    ),
+    (error: Error) => error.message === 'Attachment REST and browser downloads failed',
+  );
+});
+
 test('downloads a signed browser URL without waiting for the browser file', async () => {
   const root = await mkdtemp(path.join(tmpdir(), 'jira-signed-download-'));
   const target = path.join(root, 'evidence.png');
@@ -485,6 +558,36 @@ test('rejects an untrusted browser download redirect', async () => {
     downloadFromBrowserUrl(page, button, request, 'evidence.png', 'D:/staging/evidence.png', 'https://blinxsolutions.atlassian.net'),
     /Untrusted attachment URL/,
   );
+});
+
+test('recognizes a loaded requested issue through Jira REST without a DOM heading', async () => {
+  const urls: string[] = [];
+  const page = {
+    url: () => 'https://blinxsolutions.atlassian.net/browse/PAC2-8241',
+    evaluate: async <T>(_callback: unknown, url: string): Promise<T> => {
+      urls.push(url);
+      return ({ key: 'PAC2-8241' } as T);
+    },
+  };
+  assert.equal(await isRequestedIssueReady(
+    page,
+    { url: 'https://blinxsolutions.atlassian.net/browse/PAC2-8241', key: 'PAC2-8241' },
+    'https://blinxsolutions.atlassian.net',
+    '/browse/',
+  ), true);
+  assert.deepEqual(urls, ['/rest/api/3/issue/PAC2-8241?fields=summary']);
+});
+
+test('rejects a different or unavailable Jira issue during readiness check', async () => {
+  const identity = { url: 'https://blinxsolutions.atlassian.net/browse/PAC2-8241', key: 'PAC2-8241' };
+  assert.equal(await isRequestedIssueReady({
+    url: () => 'https://blinxsolutions.atlassian.net/browse/PAC2-9999',
+    evaluate: async <T>(): Promise<T> => ({ key: 'PAC2-8241' } as T),
+  }, identity, 'https://blinxsolutions.atlassian.net', '/browse/'), false);
+  assert.equal(await isRequestedIssueReady({
+    url: () => identity.url,
+    evaluate: async <T>(): Promise<T> => { throw new Error('HTTP 401'); },
+  }, identity, 'https://blinxsolutions.atlassian.net', '/browse/'), false);
 });
 
 test('validates CLI URL states and waits for terminal confirmation', async () => {

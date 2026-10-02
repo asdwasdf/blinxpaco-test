@@ -1,195 +1,82 @@
 # PAC2-7669 — Test Cases
 
 **Ticket:** PAC2-7669 — Poor Performance in Scheduler Configuration Clinician Selection
+**Input revision:** `119562275d74aa7562cfe99a27e0502e86c3716aa377a6e0404f1c14f7bce99f`
 **Date:** 2026-10-01
+**Environment:** `dev` — `https://pac2-7669.dev.blinxpaco-np.com`
+**Role:** `Blinx Deployment` (tester xác nhận quyền tương đương admin)
+
+## Shared setup
+
+- Route: `/configuration/`.
+- Mở existing mapping qua template `Edit` để thấy `Select a clinician`.
+- Expected performance basis: loại bỏ hoặc giảm đáng kể baseline 5–10 giây; không có SLA `< 1 giây`.
+- Mutation: `Temporary` trong unsaved dialog draft.
+- Không bấm `Save`; cleanup bằng gỡ chip khi cần và `Cancel`; mở lại để xác minh persisted state.
 
 ## Test Case Inventory
 
 ### TC-7669-001: Clinician Selection Performance
+
 - **Requirement:** REQ-7669-001
-- **Risk:** Critical
-- **Priority:** High
+- **Risk/Priority:** Critical / High
 - **Maturity:** Ready
-- **Mutation:** None
-
-**Environment:** dev
-**Role:** Super Admin GB
-**Location:** ✓ Verified
-
-**Preconditions:**
-- Logged in as Super Admin GB
-- On Scheduler Configuration page (`/configuration/#scheduler-config`)
-
-**Test Data:**
-- Any available campaign with clinicians
-
-**Steps:**
-1. Open Scheduler Configuration
-2. Select a campaign (wait for load)
-3. Click to open clinician dropdown
-4. Select a clinician
-5. Measure time from click to clinician appearing
-
-**Expected Result:**
-- Clinician appears within 1 second
-- No significant delay (>5 seconds pre-fix behavior)
-
-**Observable:**
-- Selection appears quickly
-- No spinner/loading indicator blocking UI
-
-**Postconditions:** None (read-only)
-
----
+- **Mutation:** `Temporary`
+- **Coverage:** Chọn clinician trên cả mapping `EMIS` và `PACO Connect`; đo từ click đến chip hiển thị.
+- **Expected:** Selection nhanh hơn rõ rệt baseline 5–10 giây.
+- **Postcondition:** Draft bị hủy; persisted mapping không đổi.
 
 ### TC-7669-002: No Page Timeout
+
 - **Requirement:** REQ-7669-002
-- **Risk:** High
-- **Priority:** High
+- **Risk/Priority:** High / High
 - **Maturity:** Ready
-- **Mutation:** None
+- **Mutation:** `Temporary`
+- **Coverage:** Quan sát browser qua từng selection.
+- **Expected:** Không popup `waiting for this page to respond`; UI tiếp tục phản hồi.
+- **Postcondition:** Draft bị hủy.
 
-**Environment:** dev
-**Role:** Super Admin GB
-**Location:** ✓ Verified
+### TC-7669-003: No Freeze or Crash on Repeated Selections
 
-**Preconditions:**
-- Logged in as Super Admin GB
-
-**Test Data:** Any campaign
-
-**Steps:**
-1. Open Scheduler Configuration
-2. Select a campaign
-3. Open clinician dropdown
-4. Select clinician
-
-**Expected Result:**
-- No "waiting for this page to respond" popup
-- UI remains responsive throughout
-
-**Observable:**
-- Browser does not show unresponsive warning
-- Page responds to interactions
-
-**Postconditions:** None
-
----
-
-### TC-7669-003: No Crash on Multiple Selections
 - **Requirement:** REQ-7669-003
-- **Risk:** High
-- **Priority:** Medium
+- **Risk/Priority:** High / Medium
 - **Maturity:** Ready
-- **Mutation:** None
+- **Mutation:** `Temporary`
+- **Steps:** Chọn clinician A, gỡ; chọn B, gỡ; chọn lại A hoặc clinician thứ ba.
+- **Expected:** Mọi selection hoạt động; trang không freeze/crash.
+- **Postcondition:** Draft bị hủy.
 
-**Environment:** dev
-**Role:** Super Admin GB
-**Location:** ✓ Verified
+### TC-7669-004: EMIS Clinician Selection
 
-**Preconditions:**
-- Logged in as Super Admin GB
+- **Requirements:** REQ-7669-001, REQ-7669-002, REQ-7669-003
+- **Risk/Priority:** Medium / Medium
+- **Maturity:** Ready
+- **Mutation:** `Temporary`
+- **Test data category:** Existing non-patient scheduler mapping.
+- **Mapping:** `Blood Test FJ` / `Face to Face` / `Same Day GP Appt` (`EMIS`).
+- **Steps:** Mở mapping, thực hiện ít nhất ba purposeful selections, quan sát timing/responsiveness, gỡ temporary chips, `Cancel`, mở lại.
+- **Expected:** Không thấy baseline delay 5–10 giây, timeout, freeze hoặc crash; mở lại không có clinician tạm.
 
-**Test Data:** Any campaign with multiple clinicians
+### TC-7669-005: PACO Connect Clinician Selection
 
-**Steps:**
-1. Open Scheduler Configuration
-2. Select a campaign
-3. Select Clinician A
-4. Clear selection
-5. Select Clinician B
-6. Clear selection
-7. Select Clinician A again
-
-**Expected Result:**
-- UI remains responsive
-- No page crash or freeze
-- All selections work correctly
-
-**Observable:**
-- Page stays responsive
-- No crash/restart needed
-
-**Postconditions:** None
-
----
-
-### TC-7669-004: EMIS Org Clinician Selection (Cross-Org)
-- **Requirement:** REQ-7669-001, REQ-7669-002
-- **Risk:** Medium
-- **Priority:** Medium
-- **Maturity:** Preliminary (pending PACO Connect org verification)
-- **Mutation:** None
-
-**Environment:** dev
-**Role:** Super Admin GB
-**Location:** ✓ Verified (same route, different org context)
-
-**Preconditions:**
-- Logged in as Super Admin GB
-- Switched to EMIS organization with proxy enabled
-
-**Test Data:** EMIS org with campaign
-
-**Steps:**
-1. Switch to EMIS org
-2. Open Scheduler Configuration
-3. Select campaign
-4. Select clinician
-
-**Expected Result:**
-- Same performance as TC-7669-001
-- No timeout/crash
-
-**Blocked:** Need EMIS org with proxy to test
-
----
-
-### TC-7669-005: PACO Connect Org Clinician Selection (Cross-Org)
-- **Requirement:** REQ-7669-001, REQ-7669-002
-- **Risk:** Medium
-- **Priority:** Medium
-- **Maturity:** Preliminary (pending PACO Connect org verification)
-- **Mutation:** None
-
-**Environment:** dev
-**Role:** Super Admin GB
-**Location:** ✓ Verified (same route, different org context)
-
-**Preconditions:**
-- Logged in as Super Admin GB
-- Access to PACO Connect organization
-
-**Test Data:** PACO Connect org with campaign
-
-**Steps:**
-1. Switch to PACO Connect org
-2. Open Scheduler Configuration
-3. Select campaign
-4. Select clinician
-
-**Expected Result:**
-- Same performance as TC-7669-001
-- No timeout/crash
-
-**Blocked:** Need PACO Connect org to test
-
-## QA Blockers/Warnings
-
-| Case | Blocker | Status |
-|------|---------|--------|
-| TC-7669-004 | Need EMIS org with proxy enabled | Open |
-| TC-7669-005 | Need PACO Connect org access | Open |
+- **Requirements:** REQ-7669-001, REQ-7669-002, REQ-7669-003
+- **Risk/Priority:** Medium / Medium
+- **Maturity:** Ready
+- **Mutation:** `Temporary`
+- **Test data category:** Existing non-patient scheduler mapping.
+- **Mapping:** `Blood Test Due - Boot Camp 240225` / `Face to Face` / `Blood Test` (`PACO Connect`).
+- **Steps:** Ghi baseline clinician, thực hiện ít nhất ba purposeful draft selections, gỡ temporary chips, `Cancel`, mở lại.
+- **Expected:** Không thấy baseline delay 5–10 giây, timeout, freeze hoặc crash; baseline persisted state không đổi.
 
 ## Execution Summary
 
-| Case ID | Requirement | Risk | Priority | Mutation | Status |
-|---------|-------------|------|----------|----------|--------|
-| TC-7669-001 | REQ-7669-001 | Critical | High | None | Ready |
-| TC-7669-002 | REQ-7669-002 | High | High | None | Ready |
-| TC-7669-003 | REQ-7669-003 | High | Medium | None | Ready |
-| TC-7669-004 | REQ-7669-001,002 | Medium | Medium | None | Blocked |
-| TC-7669-005 | REQ-7669-001,002 | Medium | Medium | None | Blocked |
+| Case ID | Requirement | Mutation | Manual result |
+|---|---|---|---|
+| TC-7669-001 | REQ-7669-001 | `Temporary` | `Pass` |
+| TC-7669-002 | REQ-7669-002 | `Temporary` | `Pass` |
+| TC-7669-003 | REQ-7669-003 | `Temporary` | `Pass` |
+| TC-7669-004 | REQ-7669-001/002/003 | `Temporary` | `Pass` |
+| TC-7669-005 | REQ-7669-001/002/003 | `Temporary` | `Pass` |
 
 ## Tester notes
 

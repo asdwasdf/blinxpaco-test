@@ -1,67 +1,55 @@
 # PAC2-7669 — Requirements
 
 **Ticket:** PAC2-7669 — Poor Performance in Scheduler Configuration Clinician Selection
-**Source:** Jira import + video attachment
+**Source revision:** `119562275d74aa7562cfe99a27e0502e86c3716aa377a6e0404f1c14f7bce99f`
 **Date:** 2026-10-01
 
 ## Summary
 
-Khi proxy được bật, việc chọn clinician trong Scheduler Configuration rất chậm (5-10 giây) hoặc gây freeze/crash trang.
+Khi proxy được bật, việc chọn clinician trong `Scheduler Configuration` có thể chậm 5–10 giây, làm trang freeze/crash hoặc hiện `waiting for this page to respond`. Ticket yêu cầu loại bỏ hoặc giảm đáng kể độ trễ cho cả `EMIS` và `PACO Connect`.
 
-## Root Cause (Dev Confirmed)
+## Source claims
 
-- Proxy DB views không được index cho các queries
-- Selection component fetch sessions từng row một
-- Re-compute nặng trên mỗi render
-
-## Fix (Dev Deployed 2026-09-09)
-
-- Memory leak đã được fix
-- Redundant API fetching đã được loại bỏ
+- `[Confirmed]` Ticket mô tả baseline lỗi 5–10 giây và yêu cầu loại bỏ hoặc giảm đáng kể độ trễ.
+- `[Confirmed]` Ticket yêu cầu không xuất hiện popup `waiting for this page to respond` khi chọn clinician.
+- `[Confirmed]` Ticket ghi nhận lỗi có thể freeze/crash và ảnh hưởng cả `EMIS` lẫn `PACO Connect`.
+- `[Confirmed]` Dev comment ngày 2026-09-09 nói đã sửa memory leak và redundant API fetching, rồi test trên feature branch. Đây là fix claim, không phải QA result.
+- `[Inferred]` Comment điều tra nêu proxy DB views thiếu index cùng row-by-row session fetching và render work là root-cause analysis; ticket không xác nhận production diagnosis cuối cùng.
 
 ## Observable Requirements
 
 ### REQ-7669-001: Clinician Selection Performance
-- **Classification:** `Confirmed` (Jira comment + video evidence)
-- **Claim:** Clinician selection trong Scheduler Configuration không còn chậm đáng kể sau khi fix deploy
-- **Trigger:** Mở Scheduler Configuration, chọn một clinician từ dropdown
-- **Expected:** Clinician xuất hiện gần như ngay lập tức (< 1 giây)
-- **Context:** Cả EMIS và PACO Connect slots
+
+- **Classification:** `Confirmed` từ Jira description.
+- **Trigger:** Chọn clinician trong `Scheduler Configuration` khi proxy enabled.
+- **Expected:** Độ trễ 5–10 giây được loại bỏ hoặc giảm đáng kể.
+- **Coverage:** Cả `EMIS` và `PACO Connect` slots.
+- **Lưu ý:** Ticket không đặt SLA `< 1 giây` hoặc benchmark tuyệt đối khác.
 
 ### REQ-7669-002: No Page Timeout
-- **Classification:** `Confirmed` (Jira comment)
-- **Claim:** Không còn popup "waiting for this page to respond"
-- **Trigger:** Chọn clinician trong Scheduler Configuration
-- **Expected:** Trang không bị freeze hoặc timeout
 
-### REQ-7669-003: No Crash
-- **Classification:** `Confirmed` (Jira description)
-- **Claim:** Trang không crash khi chọn clinician
-- **Trigger:** Chọn clinician nhiều lần liên tiếp
-- **Expected:** UI vẫn responsive, không crash
+- **Classification:** `Confirmed` từ Jira description.
+- **Trigger:** Chọn clinician trong `Scheduler Configuration`.
+- **Expected:** Không xuất hiện popup `waiting for this page to respond`; UI tiếp tục phản hồi.
 
-## Known Constraints
+### REQ-7669-003: No Freeze or Crash
 
-- Issue xảy ra khi **proxy được bật** (điều kiện tiên quyết để reproduce)
-- Fix đã deploy trên dev environment
-- Cần verify với cả EMIS và PACO Connect organizations
+- **Classification:** `Confirmed` từ Jira description.
+- **Trigger:** Chọn clinician, gồm nhiều selection liên tiếp.
+- **Expected:** Trang không freeze hoặc crash.
 
-## Missing Information
+## Constraints và scope
 
-- Acceptance Criteria chi tiết từ Jira không được cung cấp
-- Specific performance benchmarks (vd: < 500ms, < 1s) không được nêu
-
-## QA Scope
-
-- Verify fix hoạt động trên dev environment
-- Test với proxy bật
-- Test với cả EMIS và PACO Connect
-- Measure actual response time để xác nhận improvement
+- Target QA: `https://pac2-7669.dev.blinxpaco-np.com`.
+- Role quan sát: `Blinx Deployment`; tester xác nhận quyền tương đương admin.
+- Test cả `EMIS` và `PACO Connect` trên configured dev host.
+- Đo click-to-visible-selection và quan sát browser responsiveness.
+- Draft selection là mutation `Temporary`; không bấm `Save`, đóng bằng `Cancel`, rồi xác minh persisted state không đổi.
 
 ## Open Questions
 
-- Có baseline performance metrics trước fix để so sánh không?
-- Có specific SLA/performance target không?
+- Ticket không cung cấp SLA tuyệt đối ngoài yêu cầu giảm đáng kể baseline 5–10 giây.
+- Proxy-enabled state được nêu trong ticket nhưng không có UI indicator độc lập để QA xác minh.
 
 ## Tester notes
 

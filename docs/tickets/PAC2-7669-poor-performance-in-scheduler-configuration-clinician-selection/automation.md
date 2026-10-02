@@ -29,7 +29,7 @@ Ticket mô tả độ trễ trước fix là 5–10 giây, đôi khi freeze/cras
   3. Chọn lại clinician có availability: 134.5 ms.
   4. Control repeat: 120.8 ms.
 - UI responsive trong toàn bộ lượt; không popup unresponsive, freeze hoặc crash.
-- Evidence: `emis-clinician-selection.png` (SHA-256 `3551ebf4722aaaaabd8d7b1b0305ca05146d2e1acbc7cda4d87520fb0f96d832`).
+- Durable evidence: `evidence/TC-7669-004-clinician-selection-20261001.png` (SHA-256 `3551ebf4722aaaaabd8d7b1b0305ca05146d2e1acbc7cda4d87520fb0f96d832`).
 
 ## PACO Connect
 
@@ -42,7 +42,7 @@ Ticket mô tả độ trễ trước fix là 5–10 giây, đôi khi freeze/cras
   4. Control repeat: 140.0 ms.
   5. Dữ liệu khác: 113.3 ms.
 - UI responsive trong toàn bộ lượt; không popup unresponsive, freeze hoặc crash.
-- Baseline evidence: `saved-clinician-state.png` (SHA-256 `76f134d9e12062a342f8cbdd65085ab24ea78fc9dbc1387256c4664567283c9c`).
+- Durable baseline evidence: `evidence/TC-7669-005-baseline-state-20261001.png` (SHA-256 `76f134d9e12062a342f8cbdd65085ab24ea78fc9dbc1387256c4664567283c9c`).
 
 ## Diagnostic note
 
@@ -59,10 +59,31 @@ Hai phép đo ban đầu được đọc ở lượt tool kế tiếp nên cho 8
 - Không gửi dữ liệu, SMS hoặc appointment.
 - Không có leftover.
 
+## Automation Implementation
+
+- Standalone spec: `playwright/tests/tickets/PAC2-7669-TC-001-005.spec.ts`.
+- Input revision: `119562275d74aa7562cfe99a27e0502e86c3716aa377a6e0404f1c14f7bce99f`.
+- Coverage:
+  - `TC-7669-001/002/003/004`: `EMIS` repeated draft selection và cleanup.
+  - `TC-7669-001/002/003/005`: `PACO Connect` repeated draft selection và baseline preservation.
+- Runtime guards: exact feature-branch hostname, configured dev allowlist, workflow authorization và `PACO_ALLOW_MUTATION=true`.
+- Spec không bấm `Save`; mọi draft đóng bằng `Cancel`.
+- Validation ngày 2026-10-01:
+  - Scoped TypeScript check: `Pass`.
+  - Playwright discovery: `Pass` — 2 tests trong 1 file, map đủ 5 case.
+
+## Automation Verification
+
+- CLI command được chạy scoped với `PACO_ALLOW_MUTATION=true`.
+- Result: `Blocked` — `Setup or authentication failure`.
+- Reason: local login browser không chạy, nên fixture không thể kết nối authenticated browser context.
+- Đây là technical/auth setup blocker, không phải product failure và không thay đổi manual product result `Pass`.
+- Raw runner record: `test-results/.last-run.json` và local `error-context.md`; không promote vì chỉ chứa setup error và temporary path.
+
 ## Warnings
 
-- `requirements.md` và `test-cases.md` hiện còn claim `< 1 giây` không có nguồn và mutation `None`; kết quả này không dùng claim đó làm expected basis.
-- Console có lỗi lịch sử/auth và missing remote asset từ trước; không có bằng chứng các lỗi đó gây lỗi selection trong run này.
+- Full-repository TypeScript check còn lỗi có sẵn ngoài PAC2-7669 trong `playwright/tests/survey-super-admin.spec.ts` và một số `scripts/*`; scoped spec check đã pass.
+- Console có lỗi lịch sử/auth và missing remote asset từ trước; không có bằng chứng các lỗi đó gây lỗi selection trong manual run.
 
 ## Tester notes
 

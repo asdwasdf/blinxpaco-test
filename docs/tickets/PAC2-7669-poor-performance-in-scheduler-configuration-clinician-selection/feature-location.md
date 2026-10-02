@@ -2,39 +2,37 @@
 
 **Ticket:** PAC2-7669
 **Date:** 2026-10-01
-**Role:** Super Admin GB
-**Environment:** dev
+**Role observed:** `Blinx Deployment` (tester xác nhận quyền tương đương admin)
+**Environment:** `dev`
 
 ## Verified Route
 
-1. Click `Configuration` sidebar icon
-2. Click `Appointment Books` menu item (expand)
-3. Click `Scheduler` tree item
+1. Mở trực tiếp feature-branch route `/configuration/`.
+2. Xác nhận page title `Scheduler Configuration` và heading `Scheduler Config`.
 
-**Final URL:** `https://blinx.dev.blinxpaco-np.com/configuration/#scheduler-config`
-**Route fragment:** `#scheduler-config`
+**Final URL:** `https://pac2-7669.dev.blinxpaco-np.com/configuration/`
+**Reusable path:** `/configuration/`
+**Route status:** `Confirmed` cho run PAC2-7669.
 
 ## Landmarks
 
-- Heading: `Scheduler Config`
-- Control: `Select Campaign` combobox
-- Loading indicator: progressbar
+- Page title: `Scheduler Configuration`.
+- Heading: `Scheduler Config`.
+- Control: `Search Templates...`.
+- Mapping action: `Edit` mở dialog `Edit Connections`.
+- Clinician control: `Select a clinician` trong existing mapping.
 
-## Context
+## Required Context
 
-- Current org: `General Practice (Demo Site)`
-- Page loads with `Select Campaign` combobox + progress indicator
-- Clinician selection expected inside this page after campaign selection
+- Chọn existing template mapping trước khi bấm `Edit`; mở dialog global không bảo đảm có clinician field.
+- `EMIS` mapping dùng slot source `emis`.
+- `PACO Connect` mapping dùng slot source `paco-connect`.
+- Draft clinician selection là mutation `Temporary`; không bấm `Save`, cleanup bằng `Cancel`.
 
-## Entry Path (1 meaningful view)
+## Provenance
 
-Dashboard → Configuration → Appointment Books → Scheduler
-
-## QA Notes
-
-- Proxy requirement: ticket mentions issue occurs with proxy enabled (EMIS + PACO Connect)
-- Test org: `General Practice (Demo Site)` may be EMIS
-- PACO Connect org needed for second test scope
+- `[Observed: dev, Blinx Deployment, 2026-10-01]` Route và landmarks được verify trên feature branch `pac2-7669` trong manual execution.
+- Shared-dev route trước đó đã superseded và không dùng để kết luận ticket.
 
 ## Tester notes
 

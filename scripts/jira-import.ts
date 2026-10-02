@@ -11,6 +11,7 @@ import {
   mediaIdFromMediaUrl,
   parseJiraIssueUrl,
   relinkCommentMedia,
+  safeAttachmentName,
   validateSnapshot,
   type JiraIdentity,
 } from './jira-import-core.js';
@@ -49,11 +50,33 @@ export interface JiraCommentPageFetcher {
   evaluate<T>(callback: unknown, arg: string): Promise<T>;
 }
 
+export function parseImportArgs(argv: string[]): { url?: string; commentLimit?: number; attachmentLimit?: number } {
+  const result: { url?: string; commentLimit?: number; attachmentLimit?: number } = {};
+  for (let index = 0; index < argv.length; index++) {
+    const value = argv[index];
+    if (value === '--comments' || value === '--attachments') {
+      const limit = Number(argv[++index]);
+      if (!Number.isInteger(limit) || limit < 1) throw new Error(`${value} must be a positive integer`);
+      if (value === '--comments') result.commentLimit = limit;
+      else result.attachmentLimit = limit;
+    } else if (!result.url) result.url = value;
+    else throw new Error('Usage: npm run jira:import -- [jira-url] [--comments N] [--attachments N]');
+  }
+  return result;
+}
+
+export function selectLatest<T>(items: T[], limit: number | undefined, dateOf: (item: T) => string | null | undefined): T[] {
+  if (!limit || items.length <= limit) return items;
+  return [...items]
+    .sort((left, right) => Date.parse(dateOf(left) ?? '') - Date.parse(dateOf(right) ?? ''))
+    .slice(-limit);
+}
+
 export async function fetchJiraAttachments(
   page: JiraCommentPageFetcher,
   key: string,
 ): Promise<import('./jira-import-core.js').JiraAttachment[]> {
-  const issue = await page.evaluate<{ fields?: { attachment?: Array<{ id?: unknown; filename?: unknown; mimeType?: unknown; size?: unknown; content?: unknown }> } }>(
+  const issue = await page.evaluate<{ fields?: { attachment?: Array<{ id?: unknown; filename?: unknown; created?: unknown; mimeType?: unknown; size?: unknown; content?: unknown }> } }>(
     async (url: string) => {
       const response = await fetch(url, { credentials: 'same-origin' });
       if (!response.ok) throw new Error(`Jira attachments unavailable: HTTP ${response.status}`);
@@ -70,6 +93,7 @@ export async function fetchJiraAttachments(
     return {
       id: item.id,
       fileName: item.filename,
+      ...(typeof item.created === 'string' ? { createdAt: item.created } : {}),
       mediaType: typeof item.mimeType === 'string' ? item.mimeType : null,
       sizeBytes: typeof item.size === 'number' && item.size >= 0 ? item.size : null,
       sourceUrl: item.content,
@@ -102,6 +126,31 @@ export async function waitForEnter(
   await new Promise<void>((resolve) => input.once('data', () => resolve()));
 }
 
+export interface JiraReadyPage {
+  url(): string;
+  evaluate<T>(callback: unknown, arg: string): Promise<T>;
+}
+
+export async function isRequestedIssueReady(
+  page: JiraReadyPage,
+  identity: JiraIdentity,
+  origin: string,
+  browsePath: string,
+): Promise<boolean> {
+  if (!isJiraIssueUrl(page.url(), origin, browsePath)
+    || new URL(page.url()).pathname !== new URL(identity.url).pathname) return false;
+  try {
+    const issue = await page.evaluate<{ key?: unknown }>(async (url: string) => {
+      const response = await fetch(url, { credentials: 'same-origin' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return response.json();
+    }, `/rest/api/3/issue/${encodeURIComponent(identity.key)}?fields=summary`);
+    return issue.key === identity.key;
+  } catch {
+    return false;
+  }
+}
+
 async function waitForIssueReady(
   page: Page,
   identity: JiraIdentity,
@@ -110,19 +159,8 @@ async function waitForIssueReady(
   timeoutMs = 5 * 60_000,
 ): Promise<void> {
   const deadline = Date.now() + timeoutMs;
-  let stableSince = 0;
   while (Date.now() < deadline) {
-    const onIssue = isJiraIssueUrl(page.url(), origin, browsePath)
-      && new URL(page.url()).pathname === new URL(identity.url).pathname;
-    const title = onIssue
-      ? await page.locator('[data-testid="issue.views.issue-base.foundation.summary.heading"], main h1, h1').first().textContent().catch(() => null)
-      : null;
-    if (title?.trim()) {
-      if (!stableSince) stableSince = Date.now();
-      if (Date.now() - stableSince >= 2_000) return;
-    } else {
-      stableSince = 0;
-    }
+    if (await isRequestedIssueReady(page, identity, origin, browsePath)) return;
     await page.waitForTimeout(500);
   }
   throw new Error(`Blocked: Jira issue ${identity.key} chưa sẵn sàng sau khi chờ đăng nhập`);
@@ -259,6 +297,23 @@ export async function downloadRestAttachment(
   await fs.writeFile(destination, Buffer.from(await response.body()));
 }
 
+export async function downloadAttachmentWithFallback(
+  attachment: import('./jira-import-core.js').JiraAttachment,
+  destination: string,
+  downloadRest: (attachment: import('./jira-import-core.js').JiraAttachment, destination: string) => Promise<void>,
+  downloadBrowser: (attachment: import('./jira-import-core.js').JiraAttachment, destination: string) => Promise<void>,
+): Promise<void> {
+  try {
+    await downloadRest(attachment, destination);
+  } catch {
+    try {
+      await downloadBrowser(attachment, destination);
+    } catch {
+      throw new Error('Attachment REST and browser downloads failed');
+    }
+  }
+}
+
 export async function downloadFromBrowserUrl(
   page: BrowserUrlDownloadPage,
   button: BrowserDownloadButton,
@@ -296,12 +351,12 @@ async function saveDiagnostic(page: Page, testResults: string): Promise<void> {
 }
 
 export async function main(argv = process.argv.slice(2)): Promise<void> {
-  if (argv.length > 1) throw new Error('Usage: npm run jira:import -- [jira-url]');
+  const options = parseImportArgs(argv);
   const config = loadConfig();
   const sourceRoot = path.resolve(config.paths.ticketSource);
   let requested: JiraIdentity | null = null;
-  if (argv[0]) {
-    requested = parseJiraIssueUrl(argv[0], config.jira.origin, config.jira.browsePath);
+  if (options.url) {
+    requested = parseJiraIssueUrl(options.url, config.jira.origin, config.jira.browsePath);
     await assertTicketKeyAvailable(sourceRoot, requested.key);
   }
 
@@ -335,10 +390,13 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
     const commentPage = await fetchJiraComments(page, identity.key).catch(() => {
       throw new Error('Jira comments unavailable; refusing partial import');
     });
-    const attachments = await fetchJiraAttachments(page, identity.key).catch(() => {
+    const allAttachments = await fetchJiraAttachments(page, identity.key).catch(() => {
       throw new Error('Jira attachments unavailable; refusing partial import');
     });
-    const namedAlts = new Set(commentPage.media.map((item) => item.fileName).filter((name) => name !== 'media'));
+    const comments = selectLatest(commentPage.comments, options.commentLimit, (item) => item.createdAt);
+    const media = commentPage.media.filter((item) => comments.some((comment) => comment.body?.includes(`attachments/${safeAttachmentName(item.id, item.fileName)}`)));
+    const attachments = selectLatest(allAttachments, options.attachmentLimit, (item) => item.createdAt);
+    const namedAlts = new Set(media.map((item) => item.fileName).filter((name) => name !== 'media'));
     const unresolvedMedia = commentPage.media.filter((item) => item.fileName === 'media' || !attachments.some((attachment) => attachment.fileName === item.fileName));
     const byMediaId = unresolvedMedia.length
       ? await resolveAttachmentMediaIds(
@@ -349,7 +407,7 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       : new Map();
     const snapshot = {
       ...domSnapshot,
-      comments: relinkCommentMedia(commentPage.comments, commentPage.media, attachments, byMediaId),
+      comments: relinkCommentMedia(comments, media, attachments, byMediaId, options.attachmentLimit !== undefined),
       attachments,
     };
     validateSnapshot(snapshot, identity);
@@ -361,15 +419,22 @@ export async function main(argv = process.argv.slice(2)): Promise<void> {
       await expandAndStabilize(page);
     };
     const target = await createTicketAtomically(sourceRoot, snapshot, new Date().toISOString(), async (attachment, destination) => {
-      if (attachment.sourceUrl.startsWith('jira-download:')) {
+      const downloadBrowser = async (): Promise<void> => {
         if (page.isClosed()) await reopenIssue();
-        const id = attachment.sourceUrl.slice('jira-download:'.length);
-        const button = page.locator(`[data-testid*="attachment-id.${id}"] button[data-testid="media-card-primary-action"][aria-label$=" — Download"]`);
-        if (await button.count() !== 1) throw new Error(`Attachment download control unavailable: ${id}`);
+        const button = page.locator(`[data-testid*="attachment-id.${attachment.id}"] button[data-testid="media-card-primary-action"][aria-label$=" — Download"]`);
+        if (await button.count() !== 1) throw new Error(`Attachment download control unavailable: ${attachment.id}`);
         await downloadFromBrowserUrl(page, button, attachmentRequest, attachment.fileName, destination, config.jira.origin);
+      };
+      if (attachment.sourceUrl.startsWith('jira-download:')) {
+        await downloadBrowser();
         return;
       }
-      await downloadRestAttachment(context.request, attachment.sourceUrl, destination, config.jira.origin);
+      await downloadAttachmentWithFallback(
+        attachment,
+        destination,
+        (item, targetPath) => downloadRestAttachment(context.request, item.sourceUrl, targetPath, config.jira.origin),
+        downloadBrowser,
+      );
     });
     console.log(`Imported Jira ticket: ${target}`);
     if (snapshot.unavailableSections.length) console.log(`Unavailable: ${snapshot.unavailableSections.join(', ')}`);

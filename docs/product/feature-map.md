@@ -31,3 +31,15 @@ Chỉ `paco-report` promote route đã verified sau report. Dùng allowlist từ
 - Requirements: N/A
 - Tickets: None
 - Updated: -
+
+### Scheduler Configuration
+- Coverage: Partial
+- Entry: Direct route to `Scheduler Configuration`
+- Route: `/configuration/`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `PAC2-7669`
+- Last verified: `2026-10-01`
+- Aliases: `Scheduler Config`
+- Tickets: `PAC2-7669`

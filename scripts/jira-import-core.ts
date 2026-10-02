@@ -153,13 +153,20 @@ export function relinkCommentMedia(
   media: JiraCommentMedia[],
   attachments: JiraAttachment[],
   byMediaId: ReadonlyMap<string, JiraAttachment> = new Map(),
+  allowExcludedMedia = false,
 ): JiraComment[] {
   const byName = new Map(attachments.map((attachment) => [attachment.fileName, attachment]));
   return comments.map((comment) => ({
     ...comment,
     body: media.reduce((body, item) => {
       const attachment = (item.fileName === 'media' ? undefined : byName.get(item.fileName)) ?? byMediaId.get(item.id.toLowerCase());
-      if (!attachment) throw new Error(`unresolved Jira comment media: ${item.fileName}`);
+      if (!attachment) {
+        if (!allowExcludedMedia) throw new Error(`unresolved Jira comment media: ${item.fileName}`);
+        return body?.replace(
+          `[Evidence: ${item.fileName}](attachments/${safeAttachmentName(item.id, item.fileName)})`,
+          `[Evidence not imported due to attachment limit: ${item.fileName}]`,
+        ) ?? null;
+      }
       const next = body?.replace(
         `attachments/${safeAttachmentName(item.id, item.fileName)}`,
         `attachments/${safeAttachmentName(attachment.id, attachment.fileName)}`,
@@ -207,6 +214,7 @@ export interface JiraLinkedIssue {
 export interface JiraAttachment {
   id: string;
   fileName: string;
+  createdAt?: string | null;
   mediaType: string | null;
   sizeBytes: number | null;
   sourceUrl: string;
