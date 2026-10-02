@@ -11,7 +11,7 @@ Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`S
 
 ## Ownership
 
-Mode `locate` writes only `feature-location.md`; mode `observe` writes only `exploration.md`; mode `survey` writes `docs/product/paco-overview.md`, selected `docs/product/workflows/<feature>.md` files using `docs/templates/workflow.md` and `docs/product/survey/views/*.md`; never discovery checkpoint, ledger or ticket files. Preserve final `## Tester notes` in every managed file. Raw locate evidence stays under `test-results/<ticket-key>/locate/<run-id>/`; raw survey evidence stays under `test-results/product-survey/<run-id>/`; only reviewed/redacted evidence enters docs.
+Mode `locate` writes `feature-location.md` plus its feature entry route fields in `docs/product/feature-map.md`; mode `observe` writes `exploration.md` plus the ticket knowledge sync (`docs/product/feature-map.md` entry + `Ticket → feature` row, `docs/product/workflows/<module>.md` section `## Logic từ ticket`, `docs/product/open-questions.md`, `docs/product/change-log.md`); mode `survey` writes `docs/product/paco-overview.md`, selected `docs/product/workflows/<feature>.md` files using `docs/templates/workflow.md` and `docs/product/survey/views/*.md`; never discovery checkpoint, ledger or ticket files. Preserve final `## Tester notes` in every managed file. Raw locate evidence stays under `test-results/<ticket-key>/locate/<run-id>/`; raw survey evidence stays under `test-results/product-survey/<run-id>/`; only reviewed/redacted evidence enters docs.
 
 ## Mode `locate`
 
@@ -23,6 +23,7 @@ Mode `locate` writes only `feature-location.md`; mode `observe` writes only `exp
 6. Record ordered entry path, context, landmarks, up to three useful candidates, rejected paths with dependency revision, budget and exact next action. Do not assert business behavior.
 7. Keep browser output compact: full `browser_snapshot` once per new state; do not re-snapshot an unchanged known state; `browser_evaluate`/`browser_run_code` return only the values needed (labels, counts, status, error text), never full DOM/HTML. Exploration may still snapshot fully whenever a state is new or unexpected, so unknown behavior is not missed.
 8. Capture only useful milestones: module/context landmark, entry control/menu and opened feature root. Never put unredacted PII/auth data in docs.
+9. **Route sync:** once route status is `Confirmed`, add/update the feature entry in `docs/product/feature-map.md` (ordered `Entry`, `Route`, role, environment, `Classification: Observed`, `Last verified`, source `PAC2-xxxx/feature-location.md`) using allowlisted fields only. Unverified candidates go to `Route hints (chưa verified)`. Return synced file + checksum in outcome.
 
 ## Mode `observe`
 
@@ -30,6 +31,7 @@ Mode `locate` writes only `feature-location.md`; mode `observe` writes only `exp
 2. Record environment, role, scope and timestamp.
 3. Observe behavior using read-only actions; stop at mutation/unknown action.
 4. Separate `Observed` behavior from intent; record unperformed actions, mismatch, possible defect and suggested coverage.
+5. **Ticket knowledge sync (mandatory before `MANUAL_EXECUTE`, also when `EXPLORE` ends `Blocked`/`Inconclusive`):** merge requirements-derived logic (keep `Confirmed`/`Inferred` from `requirements.md`) and observed behavior into `docs/product/workflows/<module>.md` under `## Logic từ ticket` (flow steps, business rules, states, role/permission, possible defects, open questions; every bullet keeps classification tag + `PAC2-xxxx/<file>` provenance; create the module file and index it in `workflows/README.md` if none fits). In `docs/product/feature-map.md` update `Logic chính` (2–4 rules), `Chi tiết:` link and the `Ticket → feature` row (status = current phase). Append unresolved questions to `open-questions.md` and a dated `change-log.md` line. Dedupe; on conflict keep both with provenance; never upgrade to `Confirmed`; no PII/test data/fragile locators; preserve `## Tester notes`. Unsafe merge is a blocker, never a silent skip. List synced files + checksums in the outcome.
 
 ## Mode `survey`
 

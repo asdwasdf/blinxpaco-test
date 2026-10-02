@@ -146,4 +146,48 @@
 - `Patients > Patient Search` → `/paco/patient-search`: sau 6s chỉ thấy header. `Patients > Care Navigation` → `Patient Profile Search` (`/patient-search/`, `A-Z Search`). Hai route patient search khác nhau cần làm rõ.
 - Data dependency: cần bệnh nhân synthetic; tìm kiếm yêu cầu định danh bệnh nhân nên không khám phá.
 
+## Logic từ ticket
+
+Nguồn: `PAC2-4399`, `PAC2-4700`, `PAC2-6763`, `PAC2-7466`, `PAC2-8522`. Quick Send xem `comms-hub.md#quick-send-dialog`.
+
+### Patient Search và patient actions
+
+**Luồng**
+1. `Patient Search` → `Care Navigation` → `/patient-search/` (`Patient Profile Search`, `Search Patients...`, `A-Z Search`); mỗi kết quả có `Quick Form`, `Care Navigator`, `Quick Send`. `[Observed]` — PAC2-4399/exploration.md
+2. Global header search (`Search patients by name or NHS number`) khác module `Patients → Patient Search`; Connect branch placeholder `Search...`. `[Observed]` — PAC2-4700/feature-location.md
+3. `Care Navigator` mở `/care-navigation/` với ngữ cảnh patient. `[Observed]` — PAC2-4399/exploration.md
+4. `Quick Form` (GP branch, patient có dữ liệu đầy đủ) mở `Select Quick Form`, `Health Form`, `Comments`, `SNOMED Code`, `Advanced`. `[Observed]` — PAC2-4700/automation.md
+
+**Business rules**
+- Một số patient demo thiếu NHS number/DOB hoặc patient number nên so sánh giữa host không đáng tin nếu không dùng cùng patient. `[Observed]` — PAC2-4700/exploration.md
+- Connect branch: chọn patient từ branch dashboard điều hướng sang patient profile của baseline (không giữ branch context), tái hiện 2 lần; chưa rõ expected. `[Observed]` — PAC2-4700/report.md
+
+**Defect đã biết**
+- PAC2-4399 · Inconclusive · `Quick Form` từ demo patient lỗi `error` (console báo thiếu patient number) trước khi form render, lặp trên 2 demo patient; có thể do thiếu mapping patient number nội bộ. `[Observed]` — PAC2-4399/exploration.md
+- PAC2-4700 · Pass (TC-004, read-only) · GP `Quick Form` mở được. `[Observed]` — PAC2-4700/automation.md
+- PAC2-4700 · Inconclusive · branch-context retention trên Connect. `[Observed]` — PAC2-4700/report.md
+
+**Open questions**
+- Branch-context retention có phải expected. `[Open Question]` — PAC2-4700/report.md
+
+### Documents tab
+
+**Luồng**
+1. Patient profile → tab `Documents`: khu vực `Upload` trong danh sách, checkbox `No review needed`; filter `All`/`Pending`/`Reviewed`, scope `All`/`Mine`, `Sort By`, `Card view`/`List view`, `Document actions` từng item. `[Observed]` — PAC2-6763/exploration.md (OBS-001..003)
+2. Counter `Showing 50/N documents` (phân trang/lazy); status item `Pending`, `Reviewed`, tooltip `Not seen`. `[Observed]` — PAC2-6763/exploration.md
+3. Video PAC2-7466: lazy loading khi scroll, chuyển loading/empty, mở document detail (sơ bộ, thiếu role provenance). `[Observed]` — PAC2-7466/status.md
+
+**Business rules**
+- Fix 403 của tab `Documents` liên quan permission `View patient documents`: role thiếu permission bị 403. `[Confirmed]` — PAC2-7466/status.md
+- Upload ở patient `Documents` và inbox `Upload & analyse` có thể là hai flow khác nhau; không gộp expected. `[Open Question]` — PAC2-6763/exploration.md
+
+**Role/permission**
+- Permission `View patient documents`; role dùng test chưa biết, cần role có/thiếu permission. `[Open Question]` — PAC2-7466/status.md
+
+**Defect đã biết**
+- PAC2-7466 · Blocked · performance/memory leak của tab `Documents`: ticket mới qua INGEST, chưa ANALYZE, chưa kết luận. `[Observed]` — PAC2-7466/status.md
+
+**Open questions**
+- Role dùng test cho lazy-load và 403. `[Open Question]` — PAC2-7466/status.md
+
 ## Tester notes

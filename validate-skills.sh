@@ -18,6 +18,9 @@ grep -q 'Ask QA early' .claude/skills/paco-ticket/SKILL.md || { echo "FAIL: paco
 grep -q 'Product Result' .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report product result contract"; exit 1; }
 grep -q 'Automation Verification' .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report automation verification contract"; exit 1; }
 grep -q 'docs/tickets/<ticket-folder>/evidence/' .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report durable evidence contract"; exit 1; }
+grep -q "Knowledge sync is mandatory" .claude/skills/paco-report/SKILL.md || { echo "FAIL: paco-report knowledge sync contract"; exit 1; }
+grep -q 'Ticket knowledge sync (mandatory before `MANUAL_EXECUTE`' .claude/skills/paco-explore/SKILL.md || { echo "FAIL: paco-explore knowledge sync contract"; exit 1; }
+grep -q 'Do not enter `MANUAL_EXECUTE` until' .claude/skills/paco-ticket/SKILL.md || { echo "FAIL: paco-ticket pre-manual sync gate"; exit 1; }
 
 grep -q '`survey` strictly read-only' .claude/skills/paco-explore/SKILL.md || { echo "FAIL: paco-explore survey must be read-only"; exit 1; }
 if grep -q 'Riêng `survey` được tự thực hiện mutation' .claude/skills/paco-explore/SKILL.md; then echo "FAIL: paco-explore survey still mutates"; exit 1; fi

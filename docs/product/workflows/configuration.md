@@ -136,4 +136,56 @@
 - Approval stop rủi ro cao: `Users & Staff > Role Groups` (Add New/Edit/Save — quyền), `Integrations > Save` (hệ thống ngoài), `Announcements > Save` (có thể phát tới user), `Risk Strat Builder > Delete Model`, `Org Priorities`/`Dx Priorities`/`Inbound Priority Flow`/`Services` Add/Remove/Save, `General > Save`.
 - Automation: menu item dùng `.p-menuitem` lọc visible (có bản ẩn trùng text); nhóm dùng `.p-panelmenu-header`.
 
+## Logic từ ticket
+
+Nguồn: `PAC2-4399`, `PAC2-7669`; logic cấu hình session xem `appointment-book.md#session-editor-và-khóa-field`.
+
+### Scheduler Configuration — chọn clinician
+
+**Luồng**
+1. Route `/configuration/` → chọn template → `Edit` mở dialog `Edit Connections` có `Select a clinician`; mapping thuộc source `EMIS` hoặc `PACO Connect`. `[Observed]` — PAC2-7669/exploration.md
+2. Chọn clinician → chip hiện, gỡ được khỏi draft; list có thể còn mở sau multi-select (`Escape` đóng). `[Observed]` — PAC2-7669/exploration.md
+3. `Cancel` rồi mở lại: persisted state không đổi (draft chỉ nằm trong dialog chưa save). `[Observed]` — PAC2-7669/exploration.md, automation.md
+
+**Business rules**
+- Khi proxy bật, chọn clinician từng chậm 5–10 giây, có thể freeze/crash hoặc popup `waiting for this page to respond`; yêu cầu bỏ hoặc giảm đáng kể độ trễ cho cả source `EMIS` và `PACO Connect`, không freeze khi chọn liên tiếp; không có SLA tuyệt đối. `[Confirmed]` — PAC2-7669/requirements.md (REQ-001..003)
+- Dev comment: đã sửa memory leak và redundant API fetching (fix claim, không phải kết quả QA). `[Confirmed]` — PAC2-7669/requirements.md
+- Nguyên nhân điều tra (view proxy DB thiếu index, row-by-row session fetching, render). `[Inferred from: dev comment, needs confirmation]` — PAC2-7669/requirements.md
+- Click-to-chip ~110–150 ms cho cả hai source; không thấy delay 5–10 giây/popup/freeze; số 8,1 và 10,3 giây ban đầu là latency của tool nên bị loại. `[Observed]` — PAC2-7669/exploration.md
+
+**Trạng thái**
+- Draft selection (dialog) → `Save` mới persist. `[Observed]` — PAC2-7669/exploration.md
+
+**Role/permission**
+- Role quan sát `Blinx Deployment` (quyền tương đương admin theo tester). `[Observed]` — PAC2-7669/requirements.md
+
+**Defect đã biết**
+- PAC2-7669 · Pass (TC-001..005, 5/5) · không tái hiện độ trễ/freeze sau fix; automation spec tạo và validate nhưng CLI Blocked vì login browser không chạy (blocker kỹ thuật, không đổi product result). `[Observed]` — PAC2-7669/report.md, status.md
+
+**Open questions**
+- Proxy-enabled là precondition nhưng không có UI indicator để QA xác minh; không có SLA tuyệt đối. `[Open Question]` — PAC2-7669/requirements.md
+
+### Code Rule Config và quy tắc clinical code blood-pressure
+
+**Luồng**
+1. `Configuration` → `Organisation` → `Code Rule` → `/configuration/#code-rules-config`; landmark `Code Rule Config`, `Search Snomed Code`, `Create or update rules:`, `Submit`. `[Observed]` — PAC2-4399/feature-location.md
+2. Chọn value tạo draft rule; `Submit` là mutation boundary. `[Observed]` — PAC2-4399/feature-location.md
+
+**Business rules**
+- Mục tiêu ticket: cập nhật SNOMED code Paco dùng khi file blood-pressure reading vào EMIS; code cũ không có trong EMIS selector, code thay thế gần nhất đã deprecated (hết hiệu lực từ 2021). `[Confirmed]` — PAC2-4399/requirements.md
+- Code đích đề xuất là cặp ConceptID/DescriptionID của `Blood pressure (observable entity)` (từ comment dev/BA, không phải AC). `[Inferred from: comment dev/BA, needs confirmation]` — PAC2-4399/requirements.md (REQ-001)
+- Sau đổi code, giá trị SYS/DIA không được đổi, mất, đảo hoặc duplicate. `[Inferred from: REQ-003, needs confirmation]` — PAC2-4399/requirements.md
+- Dữ liệu/config mang code cũ cần migrate/correct, không để mapping hỗn hợp. `[Inferred from: REQ-002, needs confirmation]` — PAC2-4399/requirements.md
+- Chưa có bằng chứng `Code Rule Config` là nơi quyết định mapping blood-pressure của ticket. `[Open Question]` — PAC2-4399/exploration.md, report.md
+
+**Role/permission**
+- `Super Admin GB` truy cập được. `[Observed]` — PAC2-4399/feature-location.md
+
+**Defect đã biết**
+- PAC2-4399 · Blocked (TC-001, 002, 003) · không có quyền EMIS để xem code đã filed, thiếu evidence DB redacted; overall Inconclusive, không tạo defect. `[Observed]` — PAC2-4399/report.md
+
+**Open questions**
+- Ticket mâu thuẫn: Description "likely need hard update in the DB" vs field Jira không cần DB change; phạm vi migrate (mọi record mang code deprecated hay theo `DescriptionID`). `[Open Question]` — PAC2-4399/requirements.md
+- Dev nói code legacy không còn dùng ở bảng cấu hình câu hỏi trên DEV/UAT/PROD (2026-08-07) nhưng chưa có evidence query. `[Open Question]` — PAC2-4399/requirements.md
+
 ## Tester notes

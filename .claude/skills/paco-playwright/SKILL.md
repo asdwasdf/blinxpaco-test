@@ -27,8 +27,10 @@ Own `automation.md`, selected Playwright source, and structured `playwright_case
 1. Tạo standalone `.spec.ts` cho mọi manual `Pass`/`Fail`. `Fail` encode expected requirement nên spec được phép fail đúng product assertion khi defect còn tồn tại.
 2. Intermittent/flaky `Inconclusive` tạo diagnostic repeat spec nhưng không encode unsupported correctness conclusion. `Blocked`/`Not Run` được skip chỉ với reason.
 3. Tái dùng durable route/locator/precondition từ manual record; không dùng MCP khám phá lại. Nếu dữ liệu thiếu/stale, trả blocker để orchestrator quay lại bounded manual investigation.
-4. Prefer Chromium, role locators, observable waits và sourced assertions. Không fixed sleep, private API bypass hoặc assertion chỉ từ `Inferred`.
-5. Đặt spec dưới `playwright/tests/tickets/`; filename phải chứa stable case ID. Trả spec trong artifact list với checksum cùng structured `playwright_cases[].automation` gồm spec path, diagnostic flag, reason và input revision.
+4. Prefer Chromium, role locators, observable waits và sourced assertions. Không private API bypass hoặc assertion chỉ từ `Inferred`.
+   - Pacing (tester yêu cầu 2026-10-02): Paco UI (PrimeReact dropdown/multiselect, modal tải slot) re-render chậm, click quá nhanh làm option detach. Mọi spec có `settle()` = `page.waitForTimeout(Number(process.env.PACO_STEP_MS ?? 1000))` sau mỗi `click`/`fill`/`press`, và chờ thêm ~3s sau khi mở modal/list tải dữ liệu, kết hợp với observable wait (không thay thế assertion).
+5. Page objects: spec sinh ra phải import từ `playwright/pages/` trước (xem `playwright/pages/README.md`); locator mới đã xác minh thì thêm vào page object đúng khu vực kèm comment `Source:`, không viết inline. Page object không assert kết quả nghiệp vụ.
+6. Đặt spec dưới `playwright/tests/tickets/`; filename phải chứa stable case ID. Trả spec trong artifact list với checksum cùng structured `playwright_cases[].automation` gồm spec path, diagnostic flag, reason và input revision.
 
 ### `AUTOMATION_EXECUTE` — mode `cli`
 
