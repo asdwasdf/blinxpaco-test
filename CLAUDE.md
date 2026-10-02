@@ -31,6 +31,14 @@ Ngoại lệ khám phá trực tiếp (tester duyệt 2026-10-01): khi đào sâ
 - Email chỉ gửi tới `fiona.nguyen@blinxsolutions.com`; SMS chưa có recipient được duyệt nên phải hỏi trước.
 - Ghi ledger đã redact (action, đối tượng, kết quả), cleanup bản ghi test khi xong và báo leftovers; báo rõ checkpoint không được cập nhật.
 
+## Context Budget
+
+Ảnh nằm lại trong context đến hết phiên và bị đọc lại ở mọi lượt gọi model, nên rất tốn token.
+
+- Không `Read` ảnh/frame video/screenshot hàng loạt trong phiên chính; giao cho subagent và nhận lại mô tả text (video: `docs/tickets/<ticket>/video/video-notes.md`).
+- Mỗi ảnh đọc tối đa một lần; ưu tiên `browser_snapshot`/text hơn screenshot khi kiểm tra UI.
+- Kết thúc mỗi phase đã checkpoint thì đề xuất tester `/clear` trước phase tiếp theo; resume từ `manifest.yaml`/`status.md`.
+
 ## Ticket Convention
 
 - Pattern: `<TICKET-ID>-<short-title>`

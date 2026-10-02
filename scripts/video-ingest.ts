@@ -4,7 +4,16 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const SCENE_THRESHOLD = 0.2;
-const MAX_FRAME_INTERVAL_SECONDS = 2;
+export const DEFAULT_FRAME_INTERVAL_SECONDS = 1;
+
+export function parseFrameInterval(value: string | undefined): number {
+  if (value === undefined) return DEFAULT_FRAME_INTERVAL_SECONDS;
+  const interval = Number(value);
+  if (!Number.isFinite(interval) || interval <= 0 || interval > 1) {
+    throw new Error('Frame interval must be a number of seconds in (0, 1]');
+  }
+  return interval;
+}
 
 export interface VideoCommand {
   command: 'ffmpeg' | 'ffprobe';
@@ -46,7 +55,7 @@ export function buildContactSheetCommand(framePattern: string, contactSheetPath:
   };
 }
 
-export function buildVideoIngestPlan(inputPath: string, outputDir: string): VideoIngestPlan {
+export function buildVideoIngestPlan(inputPath: string, outputDir: string, frameIntervalSeconds = DEFAULT_FRAME_INTERVAL_SECONDS): VideoIngestPlan {
   validateVideoInput(inputPath);
   const resolvedInput = path.resolve(inputPath);
   const resolvedOutput = path.resolve(outputDir);
@@ -70,7 +79,7 @@ export function buildVideoIngestPlan(inputPath: string, outputDir: string): Vide
     },
     extract: {
       command: 'ffmpeg',
-      args: ['-i', resolvedInput, '-vf', `select='isnan(prev_selected_t)+gt(scene,${SCENE_THRESHOLD})+gte(t-prev_selected_t,${MAX_FRAME_INTERVAL_SECONDS})',showinfo`, '-fps_mode', 'vfr', '-c:v', 'libwebp', framePattern],
+      args: ['-i', resolvedInput, '-vf', `select='isnan(prev_selected_t)+gt(scene,${SCENE_THRESHOLD})+gte(t-prev_selected_t,${frameIntervalSeconds})',showinfo`, '-fps_mode', 'vfr', '-c:v', 'libwebp', framePattern],
     },
     fallback: {
       command: 'ffmpeg',
@@ -109,9 +118,9 @@ export function buildTimeline(plan: VideoIngestPlan, metadata: string, timestamp
   return `# Video timeline\n\n**Source:** \`${path.basename(plan.inputPath)}\`  \n**Duration:** ${parsed.format?.duration ?? 'Unknown'} seconds  \n**Video:** ${stream.codec_name ?? 'Unknown'}, ${stream.width ?? '?'}x${stream.height ?? '?'}\n\n## Contact sheet\n\n![Contact sheet](contact-sheet.webp)\n\n## Timeline\n\n| Frame | Timestamp | Review status | Environment | Role | Visual observation | Evidence |\n|---|---:|---|---|---|---|---|\n${rows}\n\nFrame timestamps are technical extraction aids. Record \`Observed\` only after visual review adds environment, role, observation and evidence reference.\n\n## Open questions\n\n- Review each frame before using it as requirement evidence.\n\n## Tester notes\n\n[Protected area]\n`;
 }
 
-export function ingestVideo(inputPath: string, outputDir: string): VideoIngestPlan {
+export function ingestVideo(inputPath: string, outputDir: string, frameIntervalSeconds = DEFAULT_FRAME_INTERVAL_SECONDS): VideoIngestPlan {
   if (!existsSync(inputPath)) throw new Error(`Video not found: ${inputPath}`);
-  const plan = buildVideoIngestPlan(inputPath, outputDir);
+  const plan = buildVideoIngestPlan(inputPath, outputDir, frameIntervalSeconds);
   if (existsSync(plan.timelinePath) && !readFileSync(plan.timelinePath, 'utf8').includes('## Tester notes')) {
     throw new Error(`Protected timeline missing final ## Tester notes: ${plan.timelinePath}`);
   }
@@ -137,9 +146,9 @@ export function ingestVideo(inputPath: string, outputDir: string): VideoIngestPl
 
 const invokedPath = process.argv[1] ? path.resolve(process.argv[1]) : '';
 if (invokedPath === fileURLToPath(import.meta.url)) {
-  const [inputPath, outputDir] = process.argv.slice(2);
+  const [inputPath, outputDir, frameInterval] = process.argv.slice(2);
   if (!inputPath || !outputDir) {
-    throw new Error('Usage: npm run video:ingest -- <input.mp4|input.webm|input.mov> <docs/tickets/<ticket>/video>');
+    throw new Error('Usage: npm run video:ingest -- <input.mp4|input.webm|input.mov> <docs/tickets/<ticket>/video> [frame-interval-seconds<=1, default 1]');
   }
-  ingestVideo(inputPath, outputDir);
+  ingestVideo(inputPath, outputDir, parseFrameInterval(frameInterval));
 }

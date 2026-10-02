@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import { test } from 'node:test';
-import { buildContactSheetCommand, buildTimeline, buildVideoIngestPlan, parseShowinfoTimestamps, validateVideoInput } from '../video-ingest.js';
+import { buildContactSheetCommand, buildTimeline, buildVideoIngestPlan, parseFrameInterval, parseShowinfoTimestamps, validateVideoInput } from '../video-ingest.js';
 
 test('accepts mp4, webm and mov inputs', () => {
   assert.equal(validateVideoInput('ticket/PAC2-999-demo/demo.mp4'), '.mp4');
@@ -24,7 +24,7 @@ test('builds safe ffmpeg argument arrays under durable ticket output', () => {
   assert.ok(!plan.probe.args.includes('-show_frames'));
   assert.deepEqual(plan.extract.command, 'ffmpeg');
   assert.ok(plan.extract.args.some((arg) => arg.includes('gt(scene')));
-  assert.ok(plan.extract.args.some((arg) => arg.includes('gte(t-prev_selected_t,2)')));
+  assert.ok(plan.extract.args.some((arg) => arg.includes('gte(t-prev_selected_t,1)')));
   assert.ok(plan.extract.args.includes('-fps_mode'));
   assert.equal(plan.extract.args[plan.extract.args.indexOf('-fps_mode') + 1], 'vfr');
   assert.ok(!plan.extract.args.includes('-vsync'));
@@ -94,4 +94,14 @@ test('rejects output outside docs/tickets', () => {
     () => buildVideoIngestPlan(path.resolve('ticket/PAC2-999-demo/demo.mp4'), path.resolve('test-results/video')),
     /docs\/tickets/,
   );
+});
+
+test('frame interval defaults to 1s and accepts denser sampling only', () => {
+  assert.equal(parseFrameInterval(undefined), 1);
+  assert.equal(parseFrameInterval('0.5'), 0.5);
+  assert.throws(() => parseFrameInterval('2'));
+  assert.throws(() => parseFrameInterval('0'));
+  assert.throws(() => parseFrameInterval('abc'));
+  const plan = buildVideoIngestPlan(path.resolve('ticket/PAC2-999-demo/demo.mp4'), path.resolve('docs/tickets/PAC2-999-demo/video'), 0.5);
+  assert.ok(plan.extract.args.some((arg) => arg.includes('gte(t-prev_selected_t,0.5)')));
 });
