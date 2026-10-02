@@ -21,7 +21,8 @@ Mode `locate` writes only `feature-location.md`; mode `observe` writes only `exp
 4. Count only new useful page/module/menu/dialog/drawer/search-result states. Retry, reload and same-state screenshot do not count.
 5. Allow navigate/view/search/filter/sort/paginate and known read-only detail/menu/dialog. Stop before mutation, send/upload/import, adding an item to a draft/template or unknown persistence.
 6. Record ordered entry path, context, landmarks, up to three useful candidates, rejected paths with dependency revision, budget and exact next action. Do not assert business behavior.
-7. Capture only useful milestones: module/context landmark, entry control/menu and opened feature root. Never put unredacted PII/auth data in docs.
+7. Keep browser output compact: full `browser_snapshot` once per new state; do not re-snapshot an unchanged known state; `browser_evaluate`/`browser_run_code` return only the values needed (labels, counts, status, error text), never full DOM/HTML. Exploration may still snapshot fully whenever a state is new or unexpected, so unknown behavior is not missed.
+8. Capture only useful milestones: module/context landmark, entry control/menu and opened feature root. Never put unredacted PII/auth data in docs.
 
 ## Mode `observe`
 

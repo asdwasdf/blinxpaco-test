@@ -37,7 +37,14 @@ Ngoại lệ khám phá trực tiếp (tester duyệt 2026-10-01): khi đào sâ
 
 - Không `Read` ảnh/frame video/screenshot hàng loạt trong phiên chính; giao cho subagent và nhận lại mô tả text (video: `docs/tickets/<ticket>/video/video-notes.md`).
 - Mỗi ảnh đọc tối đa một lần; ưu tiên `browser_snapshot`/text hơn screenshot khi kiểm tra UI.
-- Kết thúc mỗi phase đã checkpoint thì đề xuất tester `/clear` trước phase tiếp theo; resume từ `manifest.yaml`/`status.md`.
+- **Recap rồi nhắc `/clear`** (agent không tự clear được) khi: xong một phase; hoặc phiên đã dài (nhiều lượt browser/đọc file, đã bị auto-compact, ước tính context > ~150k token); hoặc chuyển sang việc/ticket khác. Trước khi nhắc phải:
+  1. Cập nhật `status.md`/`manifest.yaml` (checkpoint, phase tiếp theo, quyết định đã chốt, open question, test data/record `QA-AUTO` còn tồn tại, bước tiếp theo cụ thể).
+  2. In recap ngắn (≤10 dòng) cho tester, kết thúc bằng đúng câu: `Gõ /clear rồi nhập: resume <TICKET-ID>`.
+  Không nhắc giữa chừng một case đang chạy dở hoặc khi còn thay đổi chưa ghi ra file.
+- Giữ một model cho cả phiên; cache gắn theo model nên đổi model giữa phiên phải ghi lại toàn bộ context. Muốn đổi model thì `/clear` trước.
+- Subagent làm việc đọc/xem nhiều (video frame, đọc tài liệu dài, tìm kiếm) dùng `model: sonnet`; chỉ dùng model mạnh hơn khi cần phán đoán khó.
+- Output Playwright vào context phải gọn: `browser_snapshot` đầy đủ khi vào màn/state **mới**, không snapshot lặp lại cùng state đã biết; `browser_run_code`/`browser_evaluate` chỉ `return` giá trị cần cho quyết định (count, text, status, error), không trả nguyên DOM/HTML/log. Dữ liệu lớn cần làm evidence thì ghi file vào `test-results/` hoặc `evidence/` và chỉ trả path + tóm tắt.
+- Script Playwright dài hoặc chạy lặp lại thì viết ra file và chạy file, không dán lại cùng đoạn code dài vào `browser_run_code` nhiều lần.
 
 ## Ticket Convention
 

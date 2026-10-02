@@ -20,6 +20,7 @@ Own `automation.md`, selected Playwright source, and structured `playwright_case
 3. Attempt đầu `Fail` phải chạy lại tối thiểu ba diagnostic attempts: cùng dữ liệu, dữ liệu mới/sạch, fresh page/session; thêm control path gần nhất. Mỗi retry phải có mục đích và evidence. Chỉ ghi `Fail` khi tái hiện ổn định hoặc evidence xác định product cause.
 4. Fail rồi pass/outcome không ổn định là `Inconclusive`, không ép thành `Fail`. `Blocked`/`Not Run` phải có reason. Trước khi hoàn thành, rà acceptance criteria, requirement mapping và toàn bộ case inventory để tránh bỏ case/step.
 5. Trả structured `playwright_cases[].manual`; không tạo spec trong phase này.
+6. Giữ output browser gọn: case đã biết rõ expected thì `browser_run_code`/`browser_evaluate` chỉ `return` giá trị cần assert (text, count, status, error); snapshot đầy đủ khi state mới/không như kỳ vọng hoặc khi điều tra `Fail`. Log/DOM lớn cần làm evidence thì ghi file và chỉ trả path + tóm tắt. Đoạn code dài dùng lại nhiều lần thì viết ra file rồi chạy, không dán lại vào context.
 
 ### `AUTOMATE` — mode `generate`
 
