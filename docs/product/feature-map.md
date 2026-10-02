@@ -414,14 +414,17 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 - Chi tiết: `workflows/appointment-book.md#session-delete--archive`
 
 #### Booking / Cancel appointment (backend, partitioned tables)
-- Coverage: Unknown
-- Entry: chưa verified
-- Route: chưa verified
-- Classification: `Observed`/`Inferred` theo bullet (route chưa quan sát)
-- Source: PAC2-8552 (`logic từ ticket`)
-- Last verified: `-`
+- Coverage: Minimal
+- Entry: `/paco-connect/appointment-book` → toolbar `Quick Book` (booking); filter `Show Cancelled Bookings` (cancel listing)
+- Route: `/paco-connect/appointment-book`; cancel route: `/configuration/#appointments`
+- Role observed: `Super Admin GB`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: PAC2-8552 (`exploration.md`)
+- Last verified: `2026-09-25`
+- Aliases: `Quick Book`, `Cancel booking`, `Show Cancelled Bookings`, `booking`, `cancel`
 - Tickets: `PAC2-8552`
-- Note: Chưa có route; `Quick Book` là route hint chưa mở.
+- Note: Backend fix (partitioned tables, org UUID); UI entry đã observe `Quick Book` button và cancelled-booking filter. Appointment book selector, patient/time search, `Group Send`, `Export` cũng visible.
 - Logic chính:
   - Thêm `bx_organisation_uuid` vào query/write của `appointment`/`appointment_slot` khi org xác định an toàn `[Confirmed]` (PAC2-8552)
   - Cancel multi-slot phải release mọi slot; không success im lặng khi zero rows `[Confirmed]` (PAC2-8552)
@@ -449,13 +452,16 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 
 #### Quick Send — Campaign tags
 - Coverage: Minimal
-- Entry: chưa verified
-- Route: chưa verified
-- Classification: `Observed`/`Inferred` theo bullet (route chưa quan sát)
-- Source: PAC2-8522 (`logic từ ticket`)
-- Last verified: `-`
+- Entry: dashboard → global patient search → result row `Patient actions menu` → `Quick Send` (với query `qs_campaign_tags=true`)
+- Route: `/paco-connect/feature-branch/<ticket-branch>/dashboard/` + `?qs_campaign_tags=true`
+- Role observed: `Super Admin GB`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: PAC2-8522 (`feature-location.md`, `MANUAL_EXECUTE`)
+- Last verified: `2026-09-28`
+- Aliases: `Campaign tags`, `Edit campaign tags`, `tag editor`
 - Tickets: `PAC2-8522`
-- Note: Bật bằng query `qs_campaign_tags=true` trên feature branch; route như `Quick Send`.
+- Note: Bật bằng query `qs_campaign_tags=true` trên feature branch; composer hiển thị campaign header và `Campaign tags:`. Landmark: existing-tag editor controls khi editing permitted.
 - Logic chính:
   - Campaign hiển thị tag; overflow `+N`, hover xem phần còn lại `[Confirmed]` (PAC2-8522)
   - Tag gắn nhưng vắng `getAllTags` vẫn hiển thị và không bị xóa im lặng `[Confirmed]` (PAC2-8522)
@@ -465,14 +471,17 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 - Chi tiết: `workflows/comms-hub.md#campaign-tags-trong-quick-send`
 
 #### Comms Analytics
-- Coverage: Unknown
-- Entry: chưa verified
-- Route: chưa verified
-- Classification: `Observed`/`Inferred` theo bullet (route chưa quan sát)
-- Source: PAC2-3798 (`logic từ ticket`)
-- Last verified: `-`
+- Coverage: Minimal
+- Entry: PACO → sidebar `Analytics & Reports` → `Comms Analytics` (redirect sang Comms Hub login riêng)
+- Route: `/paco/dashboard` → sidebar `Analytics & Reports` → `Comms Analytics`; Comms Hub external `nhs-comms-hub-dev.blinxhealthcare.com` → `Analytics`
+- Role observed: `Super Admin GB`
+- Environment: `dev` (PACO → Comms Hub external)
+- Classification: `Observed`
+- Source: PAC2-3798 (`exploration.md`)
+- Last verified: `2026-09-21`
+- Aliases: `Comms Analytics`, `Campaign Analytics`, `Export to CSV`
 - Tickets: `PAC2-3798`
-- Note: Redirect sang login Comms Hub; route đích chưa verified.
+- Note: PACO session redirect sang Comms Hub login riêng; sau login hiển thị campaign grid. `Export to CSV` trả HTTP 200 JSON, không observable download.
 - Logic chính:
   - Site riêng, ngoài scope ticket `[Confirmed]` (PAC2-3798)
   - `Export to CSV` trả HTTP 200 JSON, không download trực tiếp `[Observed]` (PAC2-3798)
@@ -515,13 +524,16 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 
 #### Document Intelligence (PACO Assist)
 - Coverage: Minimal
-- Entry: chưa verified
-- Route: chưa verified
-- Classification: `Observed`/`Inferred` theo bullet (route chưa quan sát)
-- Source: PAC2-6763 (`logic từ ticket`)
-- Last verified: `-`
+- Entry: `/paco/inbox` → board `Upload a document` button; alternative: `/paco/patient-profile/<id>/documents` → inline upload area
+- Route: `/paco/inbox` (organisation-level inbox); `/paco/patient-profile/<id>/documents` (patient-level)
+- Role observed: `Super Admin GB`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: PAC2-6763 (`exploration.md`)
+- Last verified: `2026-09-28`
+- Aliases: `PACO Assist`, `Document Inbox`, `Upload & analyse`, `Upload a document`
 - Tickets: `PAC2-6763`
-- Note: Scope gốc rộng; chỉ quan sát inbox/dialog upload.
+- Note: Scope gốc rộng; chỉ quan sát upload entry (document analysis pending PAC2-7193). Two upload flows: organisation-level inbox và patient-level documents. Dialog có `Upload & analyse` button disabled đến khi chọn file.
 - Logic chính:
   - Tự xử lý inbound document với HP oversight; nhận diện source, patient khớp, addressee, summary, action `[Confirmed]` (PAC2-6763)
   - Mỗi `SNOMED CT` code gợi ý phải accept/decline trước khi áp dụng `[Confirmed]` (PAC2-6763)
@@ -531,14 +543,17 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 - Chi tiết: `workflows/paco-assist.md#document-inbox`
 
 #### Scheduler link — Book / Reschedule (race, rollback)
-- Coverage: Unknown
-- Entry: chưa verified
-- Route: chưa verified
-- Classification: `Observed`/`Inferred` theo bullet (route chưa quan sát)
-- Source: PAC2-1805 (`logic từ ticket`)
-- Last verified: `-`
+- Coverage: Minimal
+- Entry: PACO → Comms Hub → Campaign Manager → Quick Send campaign → Outbox (lấy scheduler link); patient-facing: `https://dev.blinxscheduler-np.com/feature-branch/<ticket-branch>/` (cần token per patient)
+- Route: PACO `/paco/dashboard` → sidebar `Quick Send` → Campaign Manager; Comms Hub external host `nhs-comms-hub-dev.blinxhealthcare.com`; Patient scheduler `dev.blinxscheduler-np.com`
+- Role observed: `Super Admin GB`
+- Environment: `dev` (PACO + Comms Hub); feature branch `pac2-1805` (scheduler)
+- Classification: `Observed`
+- Source: PAC2-1805 (`feature-location.md`)
+- Last verified: `2026-09-16`
+- Aliases: `scheduler link`, `booking link`, `patient scheduler`, `Quick Send`
 - Tickets: `PAC2-1805`
-- Note: Route patient cần token; chưa verified.
+- Note: Patient-facing scheduler route cần token per patient (lấy từ Comms Hub Outbox `Resend`). `Resend` button trên Outbox hiện lỗi HTTP 400 (defect riêng của Comms Hub, không thuộc PAC2-1805 scope). Route mặc định không có token → "Link Error".
 - Logic chính:
   - Ghi `appointment.appointment` (`Pending` → `Booked`) trước khi gọi EPR `[Confirmed]` (PAC2-1805)
   - `Reschedule`: slot cũ chỉ hủy sau khi slot mới relay thành công; thất bại thì khôi phục `[Confirmed]` (PAC2-1805)

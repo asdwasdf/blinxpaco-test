@@ -1,0 +1,113 @@
+- generic [active] [ref=f18e1]:
+  - banner [ref=f18e4]:
+    - generic [ref=f18e6]:
+      - generic [ref=f18e7]:
+        - generic [ref=f18e9] [cursor=pointer]
+        - img "blinx-logo" [ref=f18e12]
+        - heading "Communications Hub" [level=1] [ref=f18e13]
+      - generic [ref=f18e14]:
+        - generic [ref=f18e15]:
+          - generic [ref=f18e16]: 
+          - textbox "Search Patients..." [ref=f18e18]
+          - text: 
+        - text:            
+      - generic [ref=f18e19]:
+        - generic:
+          - list: 
+        - generic [ref=f18e21] [cursor=pointer]:
+          - generic [ref=f18e22]: General Practice (Demo Site) (YGMQJ)
+          - generic [ref=f18e23]: 
+          - generic [ref=f18e24]: "Your Home Organisation:"
+        - generic [ref=f18e25]: 
+  - navigation [ref=f18e27]:
+    - generic [ref=f18e28]:
+      - img "Blinx Company Logo" [ref=f18e30]
+      - generic [ref=f18e31] [cursor=pointer]
+    - generic [ref=f18e32]:
+      - list [ref=f18e35]:
+        - listitem [ref=f18e36]:
+          - link "Home" [ref=f18e38] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com
+        - listitem [ref=f18e39]:
+          - generic [ref=f18e40] [cursor=pointer]:
+            - link "Analytics" [ref=f18e41]:
+              - /url: https://blinx.dev.blinxpaco-np.com/analytics-home
+            - generic [ref=f18e42]: 
+        - listitem [ref=f18e43]:
+          - generic [ref=f18e44] [cursor=pointer]:
+            - link "Comms Hub" [ref=f18e45]:
+              - /url: /commshub/
+            - generic [ref=f18e46]: 
+        - listitem [ref=f18e47]:
+          - generic [ref=f18e48] [cursor=pointer]:
+            - link "Web Chat & Video" [ref=f18e49]:
+              - /url: https://blinx.dev.blinxpaco-np.com/web-chat
+            - generic [ref=f18e50]: 
+        - listitem [ref=f18e51]:
+          - link "Patient Search" [ref=f18e53] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f18e54]:
+          - generic [ref=f18e55] [cursor=pointer]:
+            - link "Health Forms" [ref=f18e56]:
+              - /url: https://blinx.dev.blinxpaco-np.com/health-forms
+            - generic [ref=f18e57]: 
+        - listitem [ref=f18e58]:
+          - link "Care Navigator" [ref=f18e60] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/patient-search
+        - listitem [ref=f18e61]:
+          - link "Configuration" [ref=f18e63] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/configuration
+      - list [ref=f18e66]:
+        - listitem [ref=f18e67]:
+          - link "Dashboard" [ref=f18e69] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard
+        - listitem [ref=f18e70]:
+          - link "Settings" [ref=f18e72] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/paco-connect/configuration
+      - list [ref=f18e73]:
+        - listitem [ref=f18e74]:
+          - link "User Management" [ref=f18e76] [cursor=pointer]:
+            - /url: https://blinx.dev.blinxpaco-np.com/users
+        - listitem [ref=f18e77]:
+          - generic [ref=f18e78] [cursor=pointer]: Log Out
+        - listitem [ref=f18e80]:
+          - generic [ref=f18e81]: Version 1.0
+  - generic [ref=f18e85]:
+    - generic [ref=f18e86]:
+      - generic [ref=f18e87]: Notifications
+      - generic [ref=f18e88] [cursor=pointer]:
+        - generic [ref=f18e89]: Clear All
+        - generic [ref=f18e90]: 
+    - generic [ref=f18e92]:
+      - generic [ref=f18e93] [cursor=pointer]:
+        - text: Active
+        - generic [ref=f18e94]: "0"
+      - generic [ref=f18e95] [cursor=pointer]:
+        - text: Dismissed
+        - generic [ref=f18e96]: "0"
+      - generic [ref=f18e97] [cursor=pointer]:
+        - text: All
+        - generic [ref=f18e98]: "0"
+    - generic [ref=f18e100]:
+      - generic [ref=f18e101]: You are up to date
+      - generic [ref=f18e102]: You currently have no notifcations to review
+  - generic [ref=f18e103]:  
+  - generic [ref=f18e109]:
+    - heading [level=2] [ref=f18e111]:
+      - strong [ref=f18e112]: Home
+      - text: ", Hi"
+    - link "Template Manager" [ref=f18e115] [cursor=pointer]:
+      - /url: /commshub/commshub/template-builder
+    - link "Patient Manager" [ref=f18e124] [cursor=pointer]:
+      - /url: /commshub/commshub/patient-management
+    - link "Campaign Manager" [ref=f18e133] [cursor=pointer]:
+      - /url: /commshub/commshub/campaign-manager
+    - link "Analytics" [ref=f18e142] [cursor=pointer]:
+      - /url: /commshub/commshub/analytics
+    - link "Configuration" [ref=f18e151] [cursor=pointer]:
+      - /url: /commshub/commshub/configuration
+  - text:    
+  - generic:
+    - generic:
+      - generic [ref=f18e158]: General Practice (Demo Site) (YGMQJ)
+      - generic [ref=f18e161]: Primary Care 24 (Y05825)

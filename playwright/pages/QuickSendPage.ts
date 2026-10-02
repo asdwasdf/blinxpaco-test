@@ -143,4 +143,59 @@ export class QuickSendPage {
     const close = this.closeButton(dialog);
     if (await close.count()) await close.first().click();
   }
+
+  // ─── Campaign Tags ─────────────────────────────────────────────────────────
+
+  /** "Campaign tags:" label in composer header. Source: PAC2-8522 */
+  campaignTagsLabel(dialog: Locator = this.dialog): Locator {
+    return dialog.getByText('Campaign tags:', { exact: true });
+  }
+
+  /** "Edit campaign tags" button/link. Source: PAC2-8522 */
+  editCampaignTagsButton(dialog: Locator = this.dialog): Locator {
+    return dialog.getByText('Edit campaign tags', { exact: true });
+  }
+
+  /** Tag chips rendered in composer header. Source: PAC2-8522 */
+  tagChips(dialog: Locator = this.dialog): Locator {
+    return dialog.locator('[class*="tag"], .chip, [class*="chip"]').filter({ visible: true });
+  }
+
+  /** Overflow chip showing "+N more". Source: PAC2-8522 */
+  overflowChip(dialog: Locator = this.dialog): Locator {
+    return dialog.getByText(/^\+\d+$/).filter({ visible: true });
+  }
+
+  /** Tag editor dialog/modal opened after Edit campaign tags. Source: PAC2-8522 */
+  get tagEditorDialog(): Locator {
+    return this.page.getByRole('dialog');
+  }
+
+  /** Tag search input inside tag editor. Source: PAC2-8522 */
+  tagSearchInput(dialog: Locator = this.tagEditorDialog): Locator {
+    return dialog.getByPlaceholder(/search|tag/i);
+  }
+
+  /** Tag option in editor list (ticked if already selected). Source: PAC2-8522 */
+  tagOption(label: string, dialog: Locator = this.tagEditorDialog): Locator {
+    return dialog.getByText(label, { exact: false }).locator('..').locator('[class*="checkbox"], [class*="check"]').first();
+  }
+
+  /** "Save tags" button in tag editor. Source: PAC2-8522 */
+  saveTagsButton(dialog: Locator = this.tagEditorDialog): Locator {
+    return dialog.getByRole('button', { name: /save tags/i });
+  }
+
+  /** "Cancel" button in tag editor. Source: PAC2-8522 */
+  cancelTagEditorButton(dialog: Locator = this.tagEditorDialog): Locator {
+    return dialog.getByRole('button', { name: /cancel/i }).first();
+  }
+
+  /** Open tag editor and return it. Source: PAC2-8522 */
+  async openTagEditor(dialog: Locator = this.dialog): Promise<Locator> {
+    await this.editCampaignTagsButton(dialog).click();
+    await this.page.waitForTimeout(Number(process.env.PACO_STEP_MS ?? 1000));
+    await expect(this.tagEditorDialog).toBeVisible({ timeout: 10_000 });
+    return this.tagEditorDialog;
+  }
 }

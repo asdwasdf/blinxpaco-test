@@ -1,0 +1,74 @@
+- generic [active] [ref=f33e1]:
+  - generic "Accessibility Menu":
+    - button "Accessibility Menu" [ref=f33e3] [cursor=pointer]
+  - generic [ref=f33e226]:
+    - generic [ref=f33e227]:
+      - button "Expand sidebar" [ref=f33e228] [cursor=pointer]:
+        - img "Paco Logo" [ref=f33e229]
+      - generic [ref=f33e231]:
+        - img "Dashboards" [ref=f33e236] [cursor=pointer]
+        - img "Analytics & Reports" [ref=f33e241] [cursor=pointer]
+        - img "Quick Send" [ref=f33e246] [cursor=pointer]
+        - img "Health Forms" [ref=f33e251] [cursor=pointer]
+        - img "Patient Search" [ref=f33e256] [cursor=pointer]
+        - img "Web Chat & Video" [ref=f33e261] [cursor=pointer]
+        - img "case load management" [ref=f33e266] [cursor=pointer]
+        - img "Appointment Book" [ref=f33e271] [cursor=pointer]
+        - img "Quick Pay" [ref=f33e276] [cursor=pointer]
+        - img "Users" [ref=f33e281] [cursor=pointer]
+        - img "Configuration" [ref=f33e286] [cursor=pointer]
+        - img "Rocket Bar" [ref=f33e291] [cursor=pointer]
+        - generic [ref=f33e293] [cursor=pointer]
+      - button [ref=f33e301] [cursor=pointer]:
+        - img "Switch to dark theme" [ref=f33e302]
+    - generic [ref=f33e303]:
+      - generic [ref=f33e304]:
+        - generic [ref=f33e305]: 1m
+        - generic [ref=f33e310]:
+          - generic [ref=f33e313]:
+            - generic [ref=f33e314] [cursor=pointer]: TFN
+            - generic [ref=f33e316]:
+              - generic [ref=f33e317]: Test Fiona Nguyen
+              - generic [ref=f33e318]: Super Admin GB
+              - generic [ref=f33e320]: General Practice (Demo Site)
+          - textbox "Search patients by name or NHS number" [ref=f33e325]
+          - generic [ref=f33e326]:
+            - button "More options" [ref=f33e328] [cursor=pointer]
+            - generic [ref=f33e332] [cursor=pointer]: "0"
+      - generic [ref=f33e337]:
+        - generic [ref=f33e340]:
+          - generic [ref=f33e341]:
+            - heading "Configuration" [level=1] [ref=f33e343]
+            - generic [ref=f33e346]:
+              - button "Organisation" [ref=f33e348] [cursor=pointer]:
+                - link "Organisation" [ref=f33e350]:
+                  - /url: "#"
+              - button "Patient" [ref=f33e355] [cursor=pointer]:
+                - link "Patient" [ref=f33e357]:
+                  - /url: "#"
+              - button "Appointment Books" [ref=f33e362] [cursor=pointer]:
+                - link "Appointment Books" [ref=f33e364]:
+                  - /url: "#"
+              - button "Quick Pay" [ref=f33e369] [cursor=pointer]:
+                - link "Quick Pay" [ref=f33e371]:
+                  - /url: "#"
+              - button "Patients & Proxy" [ref=f33e376] [cursor=pointer]:
+                - link "Patients & Proxy" [ref=f33e378]:
+                  - /url: "#"
+              - button "Users & Staff" [ref=f33e383] [cursor=pointer]:
+                - link "Users & Staff" [ref=f33e385]:
+                  - /url: "#"
+              - button "Clinical Config" [ref=f33e390] [cursor=pointer]:
+                - link "Clinical Config" [ref=f33e392]:
+                  - /url: "#"
+              - button "Case Prioritisation" [ref=f33e397] [cursor=pointer]:
+                - link "Case Prioritisation" [ref=f33e399]:
+                  - /url: "#"
+          - generic [ref=f33e401] [cursor=pointer]
+        - generic [ref=f33e405]:
+          - generic [ref=f33e407]:
+            - heading "Case Prioritisation" [level=1] [ref=f33e408]
+            - button "View audit" [ref=f33e409] [cursor=pointer]
+          - generic [ref=f33e413]:
+            - button "Add Another" [ref=f33e414] [cursor=pointer]
+            - button "Save" [ref=f33e415] [cursor=pointer]

@@ -50,13 +50,23 @@
 
 | Test Case | Source | Diagnostic | Input Revision | Status/Reason |
 |---|---|---|---:|---|
-| PAC2-8522-TC-001 | N/A | No | 1 | Chờ `AUTOMATE`. |
+| PAC2-8522-TC-001 | `playwright/tests/tickets/PAC2-8522-TC-001-003-004.spec.ts` | No | 1 | Spec generated; needs test data env vars. |
 | PAC2-8522-TC-002 | N/A | No | 1 | Blocked — editing-off context unavailable. |
-| PAC2-8522-TC-003 | N/A | No | 1 | Chờ `AUTOMATE`. |
-| PAC2-8522-TC-004 | N/A | No | 1 | Chờ `AUTOMATE`. |
+| PAC2-8522-TC-003 | `playwright/tests/tickets/PAC2-8522-TC-001-003-004.spec.ts` | No | 1 | Spec generated; needs test data env vars. |
+| PAC2-8522-TC-004 | `playwright/tests/tickets/PAC2-8522-TC-001-003-004.spec.ts` | No | 1 | Spec generated; needs test data env vars; cleanup pending. |
 | PAC2-8522-TC-005 | N/A | No | 1 | Blocked — missing-option fixture unavailable. |
 | PAC2-8522-TC-006 | N/A | No | 1 | Blocked — account unavailable. |
 | PAC2-8522-TC-007 | N/A | No | 1 | Blocked — expected behavior disputed. |
+
+## Environment Variables Required
+
+```bash
+PACO_BASE_URL=https://dev.blinxpaco-np.com
+PACO_TEST_PATIENT_NHS=NHS 000000  # Replace with actual from tester
+PACO_TEST_PATIENT_SEARCH=TEST_PATIENT
+PACO_TEST_TAG=[Bootcamp] QOF [AST007]
+PACO_STEP_MS=1000
+```
 
 ## CLI Verification
 

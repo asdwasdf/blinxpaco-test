@@ -1,0 +1,404 @@
+schema_version: 2
+ticket:
+  key: PAC2-8241
+  folder_name: PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document
+  source_directory: ticket/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document
+  primary_source: ticket.md
+input_snapshot:
+  revision: 1
+  generated_at: 2026-10-02T02:26:40.686Z
+  files:
+    - path: attachments/127697-image-20260922-070814.png
+      role: supporting
+      type: png
+      sha256: edc1454a3ce040f8de016603b9b14837ed2703db4947662294eba3dfb853d1aa
+    - path: attachments/127698-image-20260922-070956.png
+      role: supporting
+      type: png
+      sha256: 71253ab005c98e28a5a6d1063a5ef568f2017a7bb176170bd09929754a5591aa
+    - path: attachments/127699-Screen Recording 2026-09-22 at 1.43.24 PM.mov
+      role: supporting
+      type: mov
+      sha256: c510c825073df9146c00036874ca54896a5c1753ddf26aa941e5ba6f5315a841
+    - path: attachments/127700-image-20260922-070911.png
+      role: supporting
+      type: png
+      sha256: 271e4bad2535c05ad2741b09bc706f8d7a59f3ed0bbb635dad00ebfe65d02538
+    - path: attachments/127701-Screen Recording 2026-09-22 at 1.45.38 PM.mov
+      role: supporting
+      type: mov
+      sha256: c2c12adb8c59c0ac33271cae42277c4a25e282fdb8995f2272a1278229f378a5
+    - path: attachments/127702-image-20260922-070713.png
+      role: supporting
+      type: png
+      sha256: fc96d57a1d4bbf8cc7f5fcd3fa2194a5e60c3d1ffa554877a51076fa40677858
+    - path: attachments/127715-Screen Recording 2026-09-22 at 3.04.54 PM.mov
+      role: supporting
+      type: mov
+      sha256: d20b2713b15475806045fe94c10b94b21bec2a3a43530aaebbc2e908010b93bb
+    - path: attachments/127717-Screen Recording 2026-09-22 at 3.10.40 PM.mov
+      role: supporting
+      type: mov
+      sha256: a9ae5cf4400aa96e13d2d34144e6cd3d8f3562105e84c91b2f30b395989b074b
+    - path: attachments/127720-Screen Recording 2026-09-22 at 4.17.37 PM.mov
+      role: supporting
+      type: mov
+      sha256: 5c0ff6b9e5596bf40cf7c2305c168925780fc70c9fa8ab52bee3f40b9685ff76
+    - path: attachments/128798-8241 DEV Not work.mp4
+      role: supporting
+      type: mp4
+      sha256: 0ca96a0a2e7668e9c96e952004363cb224c6bd6c15715c5a19e75e70251bb582
+    - path: ticket.md
+      role: primary_source
+      type: md
+      sha256: 01a3c25cb8cee7716911d85fb495b6dc091cfc930b1733c1315d1dbf4aa49d8d
+workflow:
+  status: in_progress
+  current_phase: AUTOMATION_EXECUTE
+  last_completed_phase: AUTOMATE
+  updated_at: 2026-10-02T04:00:00.000Z
+  checkpoints:
+    - at: 2026-10-02T02:26:40.686Z
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Ticket PAC2-8241 resolved; sources hashed
+    - at: 2026-10-02T02:26:40.686Z
+      phase: INGEST
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: 1fps timeline of PASSED QA video
+    - at: 2026-10-02T02:27:25.457Z
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: requirements.md refreshed with 1fps timeline; REQ-005..007 added
+    - at: 2026-10-02T02:35:02.521Z
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Slot editor + Configuration editor located on DEV main; Time Range
+        drawer missing
+    - at: 2026-10-02T02:36:22.254Z
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Read-only observe on DEV main; Time Range entry missing
+    - at: 2026-10-02T02:40:46.883Z
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: 6 cases designed
+    - at: 2026-10-02T03:18:10.535Z
+      phase: MANUAL_EXECUTE
+      outcome: inconclusive
+      input_revision: 1
+      message: "Partial: TC-001 Fail, TC-002 Pass, TC-003 Pass, TC-007 Fail;
+        TC-005/006 pending"
+    - at: 2026-10-02T03:30:35.589Z
+      phase: MANUAL_EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: TC-001 Fail, TC-002 Pass, TC-003 Pass, TC-005 Blocked, TC-006 Blocked,
+        TC-007 Fail; cleanup done
+    - at: 2026-10-02T04:00:00.000Z
+      phase: AUTOMATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Spec PAC2-8241-TC-001-002-003-007.spec.ts for TC-001/002/003/007
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-02T02:26:40.686Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T02:26:40.686Z
+    artifacts:
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/video/timeline-1s.md
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/video/sheets-1s/
+    warnings:
+      - "127720 PASSED video: 01:36–05:08 reviewed per frame; 00:00–01:35 ~50%
+        sampled"
+      - Video recorded on feature-branch path
+        /paco-connect/feature-branch/pac2-8241, not DEV main
+      - 128798 "8241 DEV Not work.mp4" not ingested — tester scoped ticket to
+        PASSED video
+      - Other attachment videos (127699,127701,127715,127717) not re-ingested
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T02:27:25.457Z
+    artifacts:
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/requirements.md
+    warnings:
+      - No formal AC; 7 REQ (Confirmed 3, Observed 2, Inferred 1, Disputed 2)
+      - Prior evidence is FB only; DEV URL/role unconfirmed
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T02:35:02.521Z
+    artifacts:
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/feature-location.md
+      - test-results/PAC2-8241/locate/r1/
+    warnings:
+      - "DEV main: pencil→Edit Session drawer (Time Range) seen on FB is absent;
+        only Add a note"
+      - Routes return HTTP 404 document but SPA renders
+      - Configuration Edit Session drawer lacks visible Time Range (unverified
+        scroll)
+    blockers: []
+    budget:
+      views_used: 7
+      views_limit: 12
+      elapsed_minutes: 6
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T02:36:22.254Z
+    artifacts:
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/exploration.md
+    warnings:
+      - Session-level Time Range editor absent on DEV main (Configuration
+        template drawer has no Time Range); REQ-001(partial)/003/005 likely
+        Blocked on DEV
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T02:40:46.883Z
+    artifacts:
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/test-cases.md
+    warnings:
+      - TC-007 expected Blocked on DEV (Time Range entry absent); TC-006 partial
+      - TC-004 ID not used
+    blockers: []
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T03:30:35.589Z
+    artifacts:
+      - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/automation.md
+      - test-results/PAC2-8241/manual/r1/
+    warnings:
+      - TC-005/006 Blocked (test data)
+      - LOCATE/EXPLORE Time Range conclusion corrected
+      - Cleanup done; no leftovers
+    blockers: []
+  AUTOMATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: 2026-10-02T04:00:00.000Z
+    artifacts:
+      - playwright/tests/tickets/PAC2-8241-TC-001-002-003-007.spec.ts
+    checksums:
+      playwright/tests/tickets/PAC2-8241-TC-001-002-003-007.spec.ts: 9e11a8f348a79e85e1f44202c996a9b5c5ef20d672ebad6acfeaaed159f4f059
+    warnings:
+      - "Spec revised in CLI debug: pacing settle(), DOM click speed-dial, multiselect aria-busy, verified cleanup + TC-003 single-slot panel"
+      - TC-005/006 skipped (Blocked test data)
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: blocked
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-02T02:26:40.686Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-02T02:26:40.686Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: 2026-10-02T02:26:40.686Z
+    artifacts: []
+    warnings: []
+    blockers: []
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 8797ba615517e41e3d0084b92e80d5500ca7c546e82f2ed71c8bf30f2a3a9174
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: fee9c57162ca424ad164f0272ba7ea05f43e77d10408869acbe722ebdcd3ada7
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 62f7151893dcf910aedc2ffabe7819efad94416564ac516c456ef881163fa4db
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: e3cea5503491aa2bca691f23e45e4c3cc3ed034718d11ebaf9f0fb7aa44580c6
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/automation.md
+    state: valid
+    input_revision: 1
+    sha256: 72dae0bd00592be27e89dc609812cbd45a9acd9c9734b8fac401097325635a0e
+execution:
+  case_ids:
+    - PAC2-8241-TC-001
+    - PAC2-8241-TC-002
+    - PAC2-8241-TC-003
+    - PAC2-8241-TC-005
+    - PAC2-8241-TC-006
+    - PAC2-8241-TC-007
+  manual:
+    PAC2-8241-TC-001:
+      result: Fail
+      expected_basis: Confirmed
+      attempts:
+        - id: a1
+          result: Fail
+          data_variant: initial
+          evidence: &a1
+            - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/automation.md
+            - test-results/PAC2-8241/manual/r1/
+        - id: a2
+          result: Fail
+          data_variant: same
+          evidence: *a1
+        - id: a3
+          result: Fail
+          data_variant: clean
+          evidence: *a1
+        - id: a3b
+          result: Fail
+          data_variant: fresh_session
+          evidence: *a1
+        - id: c
+          result: Pass
+          data_variant: control
+          evidence: *a1
+      control_path_checked: true
+      route: /paco-connect/appointment-book → session slot right-click → Edit Session
+        (?preview=true)
+      locators: &a2
+        - getByRole(button,{name:/Session Name QA-AUTO/})
+        - getByRole(region,{name:/QA-AUTO/}).getByRole(button,{name:"slots span"})
+        - getByRole(menuitem,{name:"Edit Session"})
+        - getByRole(dialog)
+        - getByLabel("slot-item")
+        - getByRole(checkbox,{name:"Bookable"})
+        - getByRole(button,{name:"submit-changes"})
+        - getByRole(textbox,{name:"Hours (To)"})
+      skip_or_block_reason: null
+    PAC2-8241-TC-002:
+      result: Pass
+      expected_basis: Confirmed
+      attempts:
+        - id: a1
+          result: Pass
+          data_variant: initial
+          evidence: *a1
+      control_path_checked: false
+      route: /paco-connect/appointment-book → session slot right-click → Edit Session
+        (?preview=true)
+      locators: *a2
+      skip_or_block_reason: null
+    PAC2-8241-TC-003:
+      result: Pass
+      expected_basis: Confirmed
+      attempts:
+        - id: a1
+          result: Pass
+          data_variant: initial
+          evidence: *a1
+        - id: a2
+          result: Pass
+          data_variant: fresh_session
+          evidence: *a1
+      control_path_checked: false
+      route: /paco-connect/appointment-book → session slot right-click → Edit Session
+        (?preview=true)
+      locators: *a2
+      skip_or_block_reason: null
+    PAC2-8241-TC-005:
+      result: Blocked
+      expected_basis: Confirmed
+      attempts: []
+      control_path_checked: false
+      route: /paco-connect/appointment-book → session slot right-click → Edit Session
+        (?preview=true)
+      locators: []
+      skip_or_block_reason: Past date disabled; self-created session cannot get care
+        professional (No Match / Required Attributes)
+    PAC2-8241-TC-006:
+      result: Blocked
+      expected_basis: Confirmed
+      attempts: []
+      control_path_checked: false
+      route: /paco-connect/appointment-book → session header pencil (unnamed button) →
+        Edit Session drawer → Time Range
+      locators: []
+      skip_or_block_reason: Requires booking from TC-005
+    PAC2-8241-TC-007:
+      result: Fail
+      expected_basis: Confirmed
+      attempts:
+        - id: a1
+          result: Fail
+          data_variant: initial
+          evidence: *a1
+        - id: a2
+          result: Fail
+          data_variant: same
+          evidence: *a1
+        - id: a3
+          result: Fail
+          data_variant: clean
+          evidence: *a1
+        - id: a4
+          result: Fail
+          data_variant: fresh_session
+          evidence: *a1
+        - id: c
+          result: Pass
+          data_variant: control
+          evidence: *a1
+      control_path_checked: true
+      route: /paco-connect/appointment-book → session header pencil (unnamed button) →
+        Edit Session drawer → Time Range
+      locators: *a2
+      skip_or_block_reason: null
+  automation: {}
+  runs: {}
+fast_path:
+  video_ingest: completed_with_warnings
+  graph_lookup: pending
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence:
+    - docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/video/timeline-1s.md

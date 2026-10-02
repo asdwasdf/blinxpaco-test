@@ -2,6 +2,7 @@
 
 **Input Revision:** 1  
 **Generated:** 2026-10-01  
+**Refreshed:** 2026-10-02 (timeline 1 fps)  
 **Status:** Active with disputed fix status
 
 ## Source Summary
@@ -13,7 +14,7 @@ Ticket không có `Description` hoặc Acceptance Criteria chính thức. Scope 
 **Timeline:** `docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/video/timeline.md`  
 **Contact Sheet:** `docs/tickets/PAC2-8241-paco-connect-appointment-book-session-editor-fixes-from-practice-issue-document/video/contact-sheet.webp`
 
-Đã review 161/161 frame. Video cover `Quick Book Appointment`, `Edit Session`, bulk slot change, boundary validation, save toast và navigation sang Configuration. Video không hiển thị role và có vài transition không đủ rõ, nên chỉ dùng làm prior observation/procedure hint.
+Timeline cũ 161 frame (~2s) không có observation. Timeline mới `video/timeline-1s.md` (308 frame, 1 fps): 01:36–05:08 đã review từng frame, 00:00–01:35 lấy mẫu ~50%. URL trong video là `/paco-connect/feature-branch/pac2-8241/...` → evidence thuộc **FB**, không phải DEV main. Role không hiển thị (user `Johnny (2255) Bravo`). Video là prior observation/procedure hint, không phải current result.
 
 ## Atomic Requirements
 
@@ -124,21 +125,106 @@ Các thay đổi hợp lệ phải tồn tại sau reopen và fresh reload; UI k
 - **First Recorded:** 2026-10-01
 - **Last Verified:** Chưa verify trên dev hiện tại
 
-**Evidence:** prior video timeline `00:04:48–00:05:07`; `attachments/128798-8241 DEV Not work.mp4` chưa ingest/review trong focused request  
+**Evidence:** `video/timeline-1s.md` 03:27–04:05 và 04:19–04:31 (reopen `Edit Session` giữ state đã lưu trên FB); video không có bước fresh reload; `attachments/128798-8241 DEV Not work.mp4` chưa ingest (ngoài scope tester)  
 **Related Tests:** TBD tại `TEST_DESIGN`  
 **Notes:** Cần manual run để resolve, không dùng prior `PASSED QA` làm current result.
+
+---
+
+### REQ-PAC2-8241-005
+
+**Classification:** Observed  
+**Lifecycle:** Active  
+**Feature/Scope:** `Edit Session` drawer — extend `Time Range` cập nhật ngay  
+**Search Terms/Aliases:** `Edit Session`, `Hours (To)`, `Time Range`, session header time, slot count  
+**Known Location:** Unknown trên DEV; FB clue `Appointment Book` → `Day` → session menu → `Edit Session`  
+**Actor/Role:** User có quyền edit session; role Unknown  
+**Acceptance Criteria Status:** Missing; derived từ FAILED 2026-09-20 + PASSED video
+
+**Preconditions:**
+- Session không có booking.
+
+**Expected Behavior:**
+Đổi `Hours (To)` (vd 04:00 PM → 05:00 PM) rồi `Save` một lần: toast `Session updated successfully.`, header session đổi sang range mới và slot mới hiển thị ngay, không cần save lần hai.
+
+**Provenance:**
+- **Source:** `ticket.md` comment Sean Huynh 2026-09-20 (bullet 2); video 127720
+- **Input Revision:** 1
+- **First Recorded:** 2026-10-02
+- **Last Verified:** Chỉ trên FB (video 01:36–01:53)
+
+**Evidence:** `video/timeline-1s.md` 01:36–01:53 (header `08:00 - 16:00`→`08:00 - 17:00`, slot count 144→150)  
+**Related Tests:** TBD tại `TEST_DESIGN`
+
+---
+
+### REQ-PAC2-8241-006
+
+**Classification:** Observed  
+**Lifecycle:** Active  
+**Feature/Scope:** `EDIT SESSION` slot modal — slot type/bookable/empty changes persist khi reopen  
+**Search Terms/Aliases:** `Select All`, `Actions`, `SLOT TYPE`, `Empty Slot Type`, `Bookable`, `NON-BOOKABLE`, `Save will change N slots`, `Undo`  
+**Known Location:** Unknown trên DEV; FB clue session slot menu → `Edit Session` (`?preview=true`)  
+**Actor/Role:** User có quyền edit session; role Unknown  
+**Acceptance Criteria Status:** Missing; derived từ FAILED 2026-09-21 (stale slot types khi reopen)
+
+**Preconditions:**
+- Session không có booking.
+
+**Expected Behavior:**
+Bulk/single đổi slot type, set `Empty Slot`, bỏ/tick `Bookable` rồi `Save`: dashboard phản ánh thay đổi; reopen `Edit Session` hiển thị đúng state đã lưu (không stale/revert); counter `Available` cập nhật tương ứng.
+
+**Provenance:**
+- **Source:** `ticket.md` comments 2026-09-21 (2 comment FAILED); video 127720
+- **Input Revision:** 1
+- **First Recorded:** 2026-10-02
+- **Last Verified:** Chỉ trên FB
+
+**Evidence:** `video/timeline-1s.md` 02:08–04:49 (Available 944→942→890→944; reopen 03:59, 04:29)  
+**Related Tests:** TBD tại `TEST_DESIGN`  
+**Notes:** Fresh reload không có trong video → kết hợp REQ-004.
+
+---
+
+### REQ-PAC2-8241-007
+
+**Classification:** Confirmed  
+**Lifecycle:** Disputed  
+**Feature/Scope:** Cancel rồi book lại slot trong past session phải persist sau reload  
+**Search Terms/Aliases:** `Quick Book Appointment`, `Recommended Appointment`, `Cancel only`, `Appointment Cancelled`, `This appointment time is in the past!`  
+**Known Location:** Unknown trên DEV; FB clue `Appointment Book` → `Day` past date  
+**Actor/Role:** User có quyền book/cancel; role Unknown  
+**Acceptance Criteria Status:** Missing
+
+**Preconditions:**
+- Past session có slot bookable; patient test an toàn.
+
+**Expected Behavior:**
+Cancel appointment rồi book lại cùng slot: toast success và UI cập nhật; sau reload page, state mới vẫn giữ (không revert).
+
+**Provenance:**
+- **Source:** `ticket.md` comment Sean Huynh 2026-09-22 08:10 (Issue 1); tony.do "Issue 1 ✅"
+- **Input Revision:** 1
+- **First Recorded:** 2026-10-02
+- **Last Verified:** FB video chỉ thấy book (00:12–00:41) và cancel (01:00–01:05); không thấy reload trong phần đã review
+
+**Evidence:** `video/timeline-1s.md` 00:12–01:05  
+**Related Tests:** TBD tại `TEST_DESIGN`  
+**Notes:** Disputed vì dev xác nhận ✅ nhưng không có evidence reload; mutation cần safe patient + cleanup.
 
 ## Ambiguities and Conflicts
 
 - `PASSED QA on FB` ngày 2026-09-22 mâu thuẫn evidence mới `8241 DEV Not work.mp4` ngày 2026-10-01; current fix status là `Disputed`.
 - Video prior cho thấy error boundary và preview slots trong cùng flow; chưa đủ chứng minh partial save hay rollback.
 - Prior video `Session ends at` đổi `17:00` → `16:55`; thao tác gây thay đổi không đủ rõ.
-- Ticket không chỉ rõ `FB` là feature branch host nào; configured default dev hiện là `https://blinx.dev.blinxpaco-np.com`.
+- `FB` = path `/paco-connect/feature-branch/pac2-8241/` trên host `blinx.dev.blinxpaco-np.com` (Observed từ URL video); DEV target là path chính `/paco-connect/...` — cần xác nhận URL DEV chính xác.
+- Sau khi xóa slot cuối, footer `Session ends at: 16:55` trong khi header vẫn `08:00 - 17:00` (video 03:14–04:05) — chưa rõ thiết kế.
 
 ## Open Questions
 
 - Test data nào trên current dev có thể dùng an toàn cho hai trạng thái: session có booking và session không booking?
-- Evidence `8241 DEV Not work.mp4` tái hiện requirement/case nào cụ thể?
+- Evidence `8241 DEV Not work.mp4` tái hiện requirement/case nào cụ thể? (ngoài scope tester hiện tại)
+- URL DEV chính xác để re-check (path không `feature-branch`) và role sử dụng?
 - Có cần assert server rejection trực tiếp, hay UI rejection + no persistence đủ cho acceptance?
 
 ---
