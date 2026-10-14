@@ -1,68 +1,49 @@
 ---
 id: web-chat-video-submenu
-title: Web Chat & Video Navigation
+title: Web Chat & Video
 roles:
   - Super Admin GB
 environment: dev
 status: Observed
-routes:
-  - dashboard
-controls:
-  - name: Virtual Appointments
-    kind: navigation
-  - name: Media Library
-    kind: navigation
+routes: []
+controls: []
 verified_by: []
-last_observed: 2026-10-01
-relationships:
-  - id: run-20261001-085609-web-chat-video-submenu-1
-    from: web-chat-video-submenu
-    to: virtual-appointments-auth
-    trigger: Virtual Appointments
-    relationship: cross-module handoff
-    context:
-      - Web Chat & Video app
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
+last_observed: 2026-10-06
+relationships: []
 ---
 
-# Web Chat & Video Navigation
+# Web Chat & Video
 
 ## Purpose and context
 
-`Observed`: expanding `Web Chat & Video` exposes `Virtual Appointments` and `Media Library`.
+`Observed`: Web chat and video communications module.
 
-## Entry and transitions
+## Entry
 
-`Virtual Appointments` opens `/web-chat/appointments/`, then redirects to Microsoft authentication after the page shell loads. `Media Library` was not reached before session expiry.
+1. Dashboard → Web Chat & Video submenu
 
-## Execution guidance
+## Submenu Items
 
-- Authentication is manual in the Playwright tab.
-- Do not store Microsoft or PACO credentials.
-- Confirm approved test appointment/media data before mutations.
+1. **Virtual Appointments** — navigates to `/web-chat/appointments/`
+2. **Media Library** — not clicked
+3. **Outstanding Reviews** — not clicked
 
-## Automation guidance
+## Virtual Appointments
 
-- Stable landmarks: submenu labels and `/web-chat/appointments/` route.
-- Keep SSO manual; do not automate credentials.
+- URL: `/web-chat/appointments/`
+- Page title: "Web Chat & Video"
+- Loading indicator visible
+- 187 console warnings
 
-## Evidence
+## Gap
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII retained.
+- Media Library, Outstanding Reviews not explored
+- Virtual Appointments still loading
 
-## Open questions
+## Provenance
 
-- Virtual appointment and media workflows remain blocked by expired SSO session.
-
-## Discovery run-20261001-085609
-
-Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
-
-- Submenu `Web Chat & Video`: `Virtual Appointments`, `Media Library`, `Outstanding Reviews`.
+- Environment: dev
+- Role: Super Admin GB
+- Observed at: 2026-10-06T04:11:24Z
 
 ## Tester notes
-
-[Protected area]

@@ -1,0 +1,57 @@
+ticket: PAC2-8611
+title: "Assist Chat (Patient Records Agent) bypasses paco24 consent, sharing-agreement and per-domain RBAC checks"
+createdAt: 2026-10-02T11:36:51.022Z
+currentPhase: LOCATE
+targetPhase: REPORT
+
+sourceChecksum: 3766ba2f91932e1ebc6f57f30689ebacbce0b2c1c35acfb6998a6e885b265aba
+
+phases:
+  DISCOVER:
+    status: in_progress
+    startedAt: 2026-10-02T11:36:51.022Z
+  INGEST:
+    status: pending
+  ANALYZE:
+    status: completed
+    completedAt: 2026-10-02
+    artifactChecksum: e03037b094ef3c852c837e9d87cc41b4d923351918f2909f2003070fcdf194d4
+  LOCATE:
+    status: blocked
+    completedAt: 2026-10-02
+    environment: dev
+    role: Test Fiona Nguyen (Super Admin GB)
+    featureRoute: null
+    artifact: docs/tickets/PAC2-8611-assist-chat-patient-records-agent-bypasses-paco24-consent-sharing-agreement-and/feature-location.md
+    artifactChecksum: 67bb32e64321dc50857c7a49d9dda2c26a2704c9041dc7052e6957ec85b180b8
+    outcome: inconclusive
+    blocker: "Feature-branch /paco-talk returns Page Not Found; API execution contract and limited-permission fixtures required"
+  EXPLORE:
+    status: blocked
+  TEST_DESIGN:
+    status: pending
+  MANUAL_EXECUTE:
+    status: pending
+  AUTOMATE:
+    status: pending
+  AUTOMATION_EXECUTE:
+    status: pending
+  REPORT:
+    status: pending
+  COMPLETE:
+    status: pending
+
+inputs:
+  ticketSource:
+    path: ticket/PAC2-8611-assist-chat-patient-records-agent-bypasses-paco24-consent-sharing-agreement-and/ticket.md
+    checksum: 3766ba2f91932e1ebc6f57f30689ebacbce0b2c1c35acfb6998a6e885b265aba
+
+environment: dev
+role: null
+authStrategy: manual
+
+notes:
+  - Security issue: Assist Chat bypasses 3 paco24 controls (consent, sharing-agreement, per-domain RBAC)
+  - Static code review ticket, not validated against running system
+  - Target: Assist Chat must respect per-domain permissions and refuse answers for unauthorized domains
+  - Safe domain: Risk stratification (routes through paco24's token-authenticated API)

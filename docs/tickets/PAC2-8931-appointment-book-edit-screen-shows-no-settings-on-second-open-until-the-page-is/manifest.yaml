@@ -1,0 +1,37 @@
+ticket: PAC2-8931
+title: Appointment book edit screen shows no settings on second open until the page is refreshed
+created: 2026-10-07T02:31:37Z
+phase: EXPLORE
+phase_index: 3
+
+ticket_source:
+  path: ticket/PAC2-8931-appointment-book-edit-screen-shows-no-settings-on-second-open-until-the-page-is/ticket.md
+  sha256: 39f9581d4f0586a72afa2aff6403762ba0b49ccbe6a8b7d1aacbc97419727206
+
+execution: {}
+knowledge:
+  feature_map_synced: true
+artifacts:
+  - path: requirements.md
+    sha256: 0cf5ec2fecb6f61a7f94760d6d58ab7c7e69d3781e277533cd3a00b9ecb23f7c
+  - path: video/video-notes.md
+    sha256: null
+  - path: video/timeline.md
+    sha256: null
+  - path: video/contact-sheet.webp
+    sha256: null
+  - path: feature-location.md
+    sha256: 1fa9c02e33ca879bbbdc5216162027f988422a75e09ec44c969f20820781b4e9
+
+workflow_phases:
+  ANALYZE: { status: completed, started: 2026-10-07T02:31:37Z, completed: 2026-10-07T03:18:00Z }
+  LOCATE: { status: completed, started: 2026-10-07T04:15:00Z, completed: 2026-10-07T04:25:00Z }
+  EXPLORE: { status: pending, started: null, completed: null }
+  TEST_DESIGN: { status: pending, started: null, completed: null }
+  MANUAL_EXECUTE: { status: pending, started: null, completed: null }
+  AUTOMATE: { status: pending, started: null, completed: null }
+  AUTOMATION_EXECUTE: { status: pending, started: null, completed: null }
+  REPORT: { status: pending, started: null, completed: null }
+  COMPLETE: { status: pending, started: null, completed: null }
+
+checkpoint: EXPLORE

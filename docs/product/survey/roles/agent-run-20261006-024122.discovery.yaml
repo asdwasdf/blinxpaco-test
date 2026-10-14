@@ -1,0 +1,189 @@
+schema_version: 1
+run_id: run-20261006-024122
+environment: dev
+role: Agent
+revision: 3
+status: exhausted
+current_task: null
+queue:
+  - state:
+      role: Agent
+      url: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+      heading: ""
+      tab: ""
+      overlay: ""
+      context: ""
+      variant: unverified-auth
+    action: Verify authenticated dashboard
+    category: module
+    provenance:
+      kind: bootstrap
+      ref: https://blinx.dev.blinxpaco-np.com/paco/dashboard
+    id: 995f272cd66b0825eed74aca6853cd0dccd0d1c4f068661608e6161c6f124e33
+    status: explored
+    attempts: 1
+visited_states:
+  - df71bd931e90b6915e75519715b44182bef6f093cf561aa752b8d2e50535a203
+  - ebad226816dc526df994702d32a53cc9d2b75403f62d99eecadfe6ace6539e51
+  - c893b5c226610ec8227d5aefa8206b66fce4a73c8a8353fefc0b73cbc61f88bf
+attempted_transitions:
+  - 995f272cd66b0825eed74aca6853cd0dccd0d1c4f068661608e6161c6f124e33
+evidence:
+  - test-results/product-survey/run-20261006-024122/snapshots/dashboard-collapsed.md
+  - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - test-results/product-survey/run-20261006-024122/snapshots/dashboard-analytics-submenu.md
+discovered_edges:
+  - id: run-20261006-024122-dashboard-1
+    from: dashboard
+    to: health-forms-submenu
+    trigger: Health Forms
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-2
+    from: dashboard
+    to: comms-hub-submenu
+    trigger: Comms Hub
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-3
+    from: dashboard
+    to: analytics-reports-submenu
+    trigger: Analytics & Reports
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-analytics-submenu.md
+  - id: run-20261006-024122-dashboard-4
+    from: dashboard
+    to: case-load-management-submenu
+    trigger: Case Load Management
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-5
+    from: dashboard
+    to: patient-search
+    trigger: Patient Search
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-6
+    from: dashboard
+    to: appointment-book
+    trigger: Appointment Book
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-7
+    from: dashboard
+    to: configuration
+    trigger: Configuration
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-8
+    from: dashboard
+    to: quick-pay
+    trigger: Quick Pay
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-9
+    from: dashboard
+    to: users
+    trigger: User Portal
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-10
+    from: dashboard
+    to: rocket-bar
+    trigger: Rocket Bar
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: false
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+  - id: run-20261006-024122-dashboard-11
+    from: dashboard
+    to: null
+    trigger: Sign Out
+    relationship: navigation
+    context: []
+    classification: Observed
+    environment: dev
+    role: Agent
+    mutation_boundary: true
+    evidence:
+      - test-results/product-survey/run-20261006-024122/snapshots/dashboard-expanded.md
+mutation_candidates: []
+mutations: []
+consumed_mutations: []
+blocked_tasks: []
+known_gaps:
+  - Agent-specific dashboard content variants not observed (e.g., case load,
+    agent-specific metrics)
+  - Exact submenu items for each navigation group not enumerated
+  - Patient search behavior not tested with real patient data
+applied_outcomes:
+  - outcome-001
+legacy_notes: []
+budget:
+  max_states: 30
+  max_actions: 100
+  max_minutes: 30
+  max_retries: 2
+  actions: 1
+  elapsed_ms: 0
+  active_since: 1791254482624
+checkpoint_time: 2026-10-06T02:45:03.506Z
+allow_mutation: false

@@ -1,0 +1,30 @@
+ticket_key: PAC2-8873
+title: "New slot outside the session time range inherits the Slot Type from the first slot"
+imported_at: "2026-10-07T01:47:31.947Z"
+source_md5: "10868777805732920289ebfc7032b2831ccce66b232b104fba934182cce79e6b"
+phases:
+  - id: INGEST
+    status: complete
+  - id: LOCATE
+    status: complete
+    environment: dev
+    role: Blinx Deployment
+    host: blinx.dev.blinxpaco-np.com
+    notes: Bug location confirmed in Session Editor. Test case documented.
+  - id: EXPLORE
+    status: pending
+  - id: TEST_DESIGN
+    status: pending
+  - id: MANUAL_EXECUTE
+    status: complete
+    notes: Bug CONFIRMED on FB. Slot 13:00-13:10 (outside range) inherits "Test Slot Type - Phlebotomy" from first slot instead of session default "Test Billable". User provided screenshot evidence.
+  - id: AUTOMATE
+    status: pending
+  - id: AUTOMATION_EXECUTE
+    status: pending
+  - id: REPORT
+    status: pending
+  - id: COMPLETE
+    status: pending
+workflow_version: "2026-09-09"
+feature_location_stale: true

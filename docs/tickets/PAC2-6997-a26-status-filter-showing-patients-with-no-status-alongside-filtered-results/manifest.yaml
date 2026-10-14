@@ -1,0 +1,32 @@
+ticket: PAC2-6997
+title: A26 - Status filter showing patients of no status alongside filtered results
+folder: PAC2-6997-a26-status-filter-showing-patients-with-no-status-alongside-filtered-results
+source:
+  path: ticket/PAC2-6997-a26-status-filter-showing-patients-with-no-status-alongside-filtered-results/ticket.md
+  sha256: null
+  importedAt: 2026-10-07T15:50:46.729Z
+workflow:
+  startedAt: 2026-10-07
+  targetPhase: MANUAL_EXECUTE
+  phases:
+    DISCOVER: complete
+    INGEST: complete
+    ANALYZE: complete
+    LOCATE: complete
+    EXPLORE: complete
+    TEST_DESIGN: complete
+    MANUAL_EXECUTE: complete
+    AUTOMATE: not_needed
+    AUTOMATION_EXECUTE: not_needed
+    REPORT: pending
+    COMPLETE: pending
+artifacts:
+  - path: docs/tickets/PAC2-6997-a26-status-filter-showing-patients-with-no-status-alongside-filtered-results/feature-location.md
+    sha256: null
+qualityGate:
+  blocker: null
+  warnings: []
+lastCheckpoint:
+  phase: MANUAL_EXECUTE
+  outcome: Complete
+  message: Fix verified — Patient Status filter working correctly

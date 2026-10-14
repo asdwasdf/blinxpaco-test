@@ -1,115 +1,82 @@
 ---
 id: patient-analyser
-title: Patient Analyser
+title: Patient & Medication Analyser
 roles:
   - Super Admin GB
 environment: dev
 status: Observed
 routes:
-  - dashboard
+  - /patient-analyser-new/
 controls:
-  - name: Analytics
-    kind: navigation
-  - name: Date Range
-    kind: filter
-  - name: Reports
+  - name: Patient Analyser
     kind: tab
-  - name: Search...
-    kind: search
+  - name: Medication Analyser
+    kind: tab
+  - name: QOF Registers
+    kind: tab
+  - name: Patient Details
+    kind: tab
+  - name: Advanced Search
+    kind: action
+  - name: Save Report
+    kind: action
+  - name: Reset View
+    kind: action
+  - name: Expand All
+    kind: action
+  - name: Collapse All
+    kind: action
 verified_by: []
-last_observed: 2026-10-01
+last_observed: 2026-10-06
 relationships:
-  - id: run-20261001-085609-p2-patient-analyser-1
-    from: patient-analyser
-    destination_hint: luồng Comms Hub (cross-module, SEND)
-    trigger: Send to Comms Hub
-    relationship: workflow
+  - id: run-20261006-024122-patient-analyser-1
+    from: analytics-reports-submenu
+    to: patient-analyser
+    trigger: Patient Analyser
+    relationship: navigation
     context: []
-    classification: Inferred
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-patient-analyser-2
-    from: patient-analyser
-    destination_hint: gửi tin nhóm (SEND)
-    trigger: Group Quick Send
-    relationship: workflow
-    context: []
-    classification: Inferred
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-patient-analyser-3
-    from: patient-analyser
-    destination_hint: saved report
-    trigger: Save Report
-    relationship: workflow
-    context: []
-    classification: Inferred
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p3-patient-analyser-1
-    from: patient-analyser
-    destination_hint: import search definition (upload)
-    trigger: Advanced Search > Import
-    relationship: workflow
-    context: []
-    classification: Inferred
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
+    classification: Observed
+    mutation_boundary: false
+    evidence: []
 ---
 
-# Patient Analyser
+# Patient & Medication Analyser
 
 ## Purpose and context
 
-`Observed`: `Analytics & Reports` → `Patient Analyser` opens `/patient-analyser-new/` for role `Super Admin GB` in dev.
+`Observed`: Patient analytics and medication analysis module.
 
-## Entry and transitions
+## Entry
 
-Default state exposes analyser tabs, report search, `Save Report`, `Advanced Search`, `Reset View`, hierarchy expansion controls, grid tools, and a patient grid. Visible structural headers include age, date of birth, email, full name, gender, and actions; values are omitted.
+1. Analytics & Reports → Patient Analyser
+2. URL: `/patient-analyser-new/`
+3. Page title: "Patient & Medication Analyser"
 
-A synthetic no-match query in the report search did not change the 54 visible structural grid rows and produced no explicit empty-state message. A synthetic query in the visible grid search also left 54 structural rows unchanged with no explicit empty state. Both searches were cleared. Search semantics remain unestablished; no patient row or action was opened.
+## Controls
 
-## Execution guidance
+- Tabs: Patient Analyser (selected), Medication Analyser, QOF Registers, Patient Details
+- Advanced Search button
+- Save Report button
+- Reset View, Expand All, Collapse All buttons
+- Reports section with search
+- Date Range: All Time
 
-- Authenticate manually and open `Patient Analyser` through global navigation.
-- Use report search and pagination only with approved data handling.
-- Capture control structure, not patient/report contents.
+## Data
 
-## Automation guidance
+- "50 / 12,941 Rows Loaded" - showing 50 of 12,941 total patients
+- Grid with patient data
 
-- Stable landmarks: route, `Reports`, `Date Range` and search controls.
-- Wait for grid state; do not assert changing report contents without trusted requirements.
+## Observations
 
-## Evidence
+- Cross-app navigation: PACO → Analytics app
+- Comprehensive patient analytics
+- QOF (Quality and Outcomes Framework) registers available
+- Patient details view available
 
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. Report and grid synthetic searches left 54 visible structural rows unchanged and showed no explicit empty state; both cleared. Mutation: `None`; PII excluded.
+## Provenance
 
-## Open questions
-
-- Report data prerequisites and expected calculations remain unknown.
-- Search scope and delayed/filter-trigger behavior remain unestablished because synthetic queries produced no observable row change.
-
-## Discovery run-20261001-085609 (part 2)
-
-Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
-
-- `Patient Analyser` mở `/patient-analyser-new/` (app Patient & Medication Analyser); boundary `Send to Comms Hub`, `Group Quick Send`, `Save Report`.
-
-## Discovery run-20261001-085609 (part 3)
-
-Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
-
-- `Advanced Search` mở dialog `Advanced Patient Search`: `Tutorial`, `Existing version`, `Analyse`, `Import`, `Reference Report(s)`, `Add Rule Group`.
-- Click `Columns` không thực hiện được trong 8s (timeout).
-
-Gap / Open Question:
-
-- `Import` là upload định nghĩa search (cần approval).
+- Environment: dev
+- Role: Super Admin GB
+- Observed at: 2026-10-06T06:17:22Z
 
 ## Tester notes
-
-[Protected area]

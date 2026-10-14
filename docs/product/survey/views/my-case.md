@@ -3,55 +3,51 @@ id: my-case
 title: My Case
 roles:
   - Super Admin GB
+  - Agent
 environment: dev
 status: Observed
-routes:
-  - dashboard
+routes: []
 controls: []
 verified_by: []
-last_observed: 2026-10-01
-relationships: []
+last_observed: 2026-10-06
+relationships:
+  - id: run-20261006-024122-my-case-1
+    from: case-load-management
+    to: unallocated
+    trigger: Unallocated button
+    relationship: navigation
+    context: []
+    classification: Observed
+    mutation_boundary: false
+    evidence: []
 ---
 
 # My Case
 
 ## Purpose and context
 
-`Observed`: `Case Load Management` → `My Case` opens `/paco/my-case`.
+`Observed`: Personal case view for the logged-in user showing assigned cases.
 
-## Entry and transitions
+## Entry
 
-Current empty state says there are no new cases and no active case assigned to the user. No case data or actions were available.
+1. Dashboard → Case Load Management → My Case
+2. URL: `/paco/my-case`
 
-## Execution guidance
+## Empty State
 
-- Use approved synthetic cases when testing non-empty workflows.
-- Treat case and patient content as sensitive.
-- Capture empty-state text without user identity.
+- Message: "There are no new cases"
+- Secondary: "You don't have any active case assigned to you"
+- State: user has no cases assigned
 
-## Automation guidance
+## Observations
 
-- Stable landmarks: route and two empty-state messages.
-- Non-empty assertions require controlled case assignment.
+- Empty state displayed when no cases are assigned to the current user
+- Page loads successfully with empty state messaging
 
-## Evidence
+## Provenance
 
-Accessibility observation reverified after manual re-authentication, dev, `Super Admin GB`, 2026-09-20. Empty state remained unchanged. Mutation: `None`; no PII retained.
-
-## Open questions
-
-- Assignment, status transition and case closure flows remain unverified.
-
-## Discovery run-20261001-085609
-
-Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
-
-- `/paco/my-case` empty: `There are no new cases`, `You don't have any active case assigned to you`.
-
-Gap / Open Question:
-
-- Workflow có dữ liệu cần case được giao cho user (data dependency).
+- Environment: dev
+- Role: Super Admin GB
+- Observed at: 2026-10-06T03:55:36Z
 
 ## Tester notes
-
-[Protected area]

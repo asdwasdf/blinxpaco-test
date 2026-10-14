@@ -1,0 +1,42 @@
+ticket_id: PAC2-7165
+title: "Live appointment filter does not update correctly in Year View"
+workflow:
+  current_phase: LOCATE
+  started_at: 2026-10-07T15:39:35Z
+import_sha256: null
+phases:
+  DISCOVER:
+    status: complete
+    completed_at: 2026-10-07T15:39:35Z
+    artifacts:
+      - ticket/PAC2-7165-live-appointment-filter-does-not-update-correctly-in-year-view/ticket.md
+  INGEST:
+    status: complete
+    completed_at: 2026-10-07T15:42:00Z
+    artifacts:
+      - docs/tickets/PAC2-7165-live-appointment-filter-does-not-update-correctly-in-year-view/feature-location.md
+  ANALYZE:
+    status: complete
+    completed_at: 2026-10-07T15:43:00Z
+    artifacts:
+      - docs/tickets/PAC2-7165-live-appointment-filter-does-not-update-correctly-in-year-view/requirements.md
+  LOCATE:
+    status: in_progress
+    environment: dev
+    role: Super Admin GB
+  EXPLORE:
+    status: pending
+  TEST_DESIGN:
+    status: pending
+  MANUAL_EXECUTE:
+    status: pending
+  AUTOMATE:
+    status: pending
+  AUTOMATION_EXECUTE:
+    status: pending
+  REPORT:
+    status: pending
+  COMPLETE:
+    status: pending
+feature_map_sync: false
+knowledge_sync: false

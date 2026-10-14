@@ -177,5 +177,83 @@ Kết quả test: TC-001/002/003/005 `Pass`; TC-004 `Fail`. — PAC2-7137/automa
 - Build dev chứa commit nào; fixture/role/approval cho Book/Cancel/session edit; DB owner chạy `EXPLAIN ANALYZE`; error contract khi guard fail; reschedule có trong scope; `appointment_status` có semantics organisation khác nhau (follow-up). `[Open Question]` — PAC2-8552/requirements.md
 
 
+### Appointment audit trail
+
+**Luồng**
+1. Trên feature branch, mở `Appointment Book` → chọn ngày/book có booking → bật `Booked` → right-click appointment. `[Observed]` — PAC2-8381/feature-location.md, exploration.md
+2. Context menu có hai `View Audit Log`: một dưới nhóm `Appointment`, một dưới `Slot manage`; audit appointment phải chọn item trong nhóm `Appointment`. `[Observed]` — PAC2-8381/exploration.md (OBS-002)
+3. `View Audit Log` mở dialog `Audit | Activity Log`, filter `All time`, columns `Description`/`Date`/`Time`/`Patient`/`NHS Number`/`Appt Name`. `[Observed]` — PAC2-8381/exploration.md (OBS-003)
+
+**Business rules**
+- Booking audit phải mô tả rõ `<user> booked this appointment`, không dùng `created this slot`; đúng actor và booking time. `[Confirmed]` — PAC2-8381/requirements.md (REQ-001, 002)
+- Booking trực tiếp trong Connect và qua `Care Navigation` đều phải có appointment audit ở Connect FE. `[Confirmed]` — PAC2-8381/requirements.md (REQ-003, 004)
+- Đổi `Slot Type` sau booking và cancellation phải tạo audit đúng actor/time. `[Confirmed]` — PAC2-8381/requirements.md (REQ-005, 006)
+- Appointment slide panel phải populate attribution `Booked By`/`Actioned By`; label cuối còn ambiguous. `[Confirmed]` — PAC2-8381/requirements.md (REQ-007)
+
+**Trạng thái quan sát**
+- Historical appointment trên branch PAC2-8381 có `Booked By` populate. `[Observed]` — PAC2-8381/exploration.md (OBS-001)
+- Rows audit nhìn thấy là field-level events `set Planned start/end date/time` và `set Appointment name`; chưa thấy concise booking sentence trong viewport đã quan sát. Không phải verdict vì record cũ và chưa kiểm tra toàn bộ rows/pagination. `[Observed]` — PAC2-8381/exploration.md (OBS-003)
+
+**Mutation boundary**
+- `Quick Book`, `Edit Slot`, `Cancel Appointment`, status/session actions đều mutation; chỉ chạy với appointment `QA-AUTO` do run tạo và có cleanup. `[Observed]` — PAC2-8381/exploration.md (OBS-004)
+
+**Possible defect**
+- Có thể thiếu concise booking event trên current branch, nhưng chưa đủ kết luận `Fail` cho tới khi tạo controlled appointment trên build hiện tại và xem toàn bộ audit. `[Inferred from: historical audit rows, needs confirmation]` — PAC2-8381/exploration.md
+
+**Open questions**
+- Sentence booking là row bổ sung hay thay field-level rows; label `Booked By` hay `Actioned By`; timestamp tolerance; amendment có cần old/new value; tile `Care Navigation` và fixture/cleanup an toàn. `[Open Question]` — PAC2-8381/requirements.md, exploration.md
+
+### Session cancel RBAC (P7032)
+
+Ticket scope: tách quyền cancel session khỏi `Appointment Book User`, tạo activity mới `P7032 - Appointment Book Cancel Session`. 3 PR đã merge: `paco-connect-be #792`, `paco-one-db #1022`, `connect-fe #2875`. Video self-test từ tester: `attachments/129284-pac2-9001-browser-qa.mp4` (456.7s, 1600x960, no audio, 6 captioned steps).
+
+**Luồng**
+1. Open `Appointment Book` → Day view → session card (e.g. `Dan E2E test` 09:00-16:00, 3 booked). Entry point for "Cancel session appointments" NOT Confirmed in browser (OQ-4). Video skips entry control — jumps from board to resulting dialog. `[Observed]` — PAC2-9001/feature-location.md (R-2), `video-notes.md` step 4/6
+2. User without P7032 invokes Cancel session: `Access Denied` modal opens — `You do not have permissions to perform this action. Contact your administrator.` + `OK` button. Same generic copy used across RBAC blocks in Paco. `[Observed]` — `video-notes.md` step 1/6, `extra-42s.jpg`/`extra-50s.jpg`
+3. User with P7032 invokes Cancel session: `Cancel session appointments` modal opens — `This will cancel N appointments for N patients in this session.`, required `Cancellation Reason` select, two pill actions `Cancel only` / `Cancel & notify`. `[Observed]` — `video-notes.md` step 4/6, `frame-230s.jpg`
+4. `Cancel & notify` opens Quick Send for affected patients; save happens only on Send; closing Quick Send saves nothing. `[Confirmed]` — PAC2-9001/requirements.md (REQ-001, scenario 2)
+5. Block Session on empty session (any role): dialog `No patients are booked into this session. This will make all 48 bookable slots non-bookable. No appointments will be cancelled.` + `Cancel` (outlined) / `Block Session` (filled). `[Observed]` — `video-notes.md` step 2/6, `frame-070s.jpg`/`extra-60s.jpg`
+6. Configuration > Sessions: list page reachable for User +P7032 (NOT Admin); each row has `…` kebab under Actions. Row-kebab content not captured in video (OQ-3). `[Observed]` — `video-notes.md` step 6/6, `frame-350s.jpg`
+7. Edit Session modal (right-side `Session settings` form): Session name, Assigned Locations, Assigned Staff. Warning `This session has 3 booked patients — Changing location or staff moves their appointments with it. Nobody is notified automatically.` — covers location/staff change, NOT time-edit cancellation dialog. `[Observed]` — `video-notes.md` step 5/6, `extra-260s.jpg`
+
+**Business rules**
+- Permission triplet `canEdit / canAdmin / canCancelSession` (per video caption step 4/6 — `canEdit:true, canAdmin:false, canCancelSession:true`); triplet quoted from caption, not directly read from visible console/network. `[Inferred from video caption, needs confirmation]` — `video-notes.md` step 4/6
+- Permissions matrix 7 actions x 3 roles (per AC tony.do comment 14:31:47Z 2026-10-13): `[Confirmed]` — PAC2-9001/requirements.md (REQ-001..REQ-007)
+  - Cancel a single future appointment: User / User+P7032 / Admin — all 3 allow
+  - Cancel a past appointment: only Admin
+  - Cancel session (appt book): only User+P7032 / Admin
+  - Block an empty session: all 3 allow (no P7032 needed)
+  - Change session details / times: all 3 allow
+  - Remove (archive) session: only Admin
+  - Cancel session from Configuration > Sessions: only Admin
+- 9 expected behaviour scenarios per AC table. `[Confirmed]` — PAC2-9001/requirements.md (REQ-001 scenarios 1-9)
+- Pre-existing limitation: session times locked in EDIT SESSION modal when session has bookings — only template edits whose generated sessions hold bookings outside template times can trigger time-edit cancellation dialog. `[Confirmed]` — PAC2-9001/requirements.md (REQ-008, QA notes)
+- Server rule (Plan approved 2026-10-12): if RBAC gate cancels `appointments/cancel` on session-level endpoint for users without `canCancelSession`, server returns 403 with message consumed as "Access Denied" dialog. `[Confirmed]` — PAC2-9001/requirements.md (REQ-001, Plan approved)
+- Appointment Book Admin auto-includes P7032 (P7032 granted to Admin role at backend). `[Confirmed]` — PAC2-9001/requirements.md (REQ-009, tony.do comment 14:31Z)
+- P7032 only visible in Role Management UI after `paco-one-db #1022` deploys. `[Confirmed]` — PAC2-9001/requirements.md (REQ-009, QA notes)
+- Pre-existing `appointments/cancel` org-check split to REQ-010 (out of scope for PAC2-9001). `[Confirmed]` — PAC2-9001/requirements.md (REQ-010)
+
+**Trạng thái**
+- Session card buttons verified (rev 2 attempt-4 16:00Z): Edit pencil + Note icon. Cancel/Block/Remove session entry NOT on session card. `[Observed]` — PAC2-9001/feature-location.md (R-2)
+- EDIT SESSION drawer verified: 8 buttons, no Cancel/Block/Remove session entry in drawer. `[Observed]` — PAC2-9001/feature-location.md (R-2)
+- Right-click on session name: no context menu opens. `[Observed]` — PAC2-9001/feature-location.md (R-2)
+- P7032 not visible in RBAC list (max P7507, has P7030 prerequisite, missing P7032). Inferred paco-one-db #1022 not yet deployed on dev. `[Inferred from: RBAC list scan, needs confirmation]` — PAC2-9001/feature-location.md (R-4)
+
+**Role/permission**
+- 3 test personas: `Appointment Book User` (no P7032), `User + P7032` (QA-AUTO role), `Appointment Book Admin` (auto-include P7032). `[Confirmed]` — PAC2-9001/requirements.md (REQ-001..REQ-009)
+- P7032 grant path: `Super Admin` (e.g. Fiona Nguyen GB) → `/paco/configuration/staff/role-groups` → create/grant `Appt Book User` + P7032 to QA-AUTO test role. Mutation required; deferred to MANUAL_EXECUTE setup. `[Confirmed]` — PAC2-9001/requirements.md (REQ-009)
+
+**Defect đã biết**
+- PAC2-9001 · Inconclusive (video review 80% coverage) · entry-point for "Cancel session appointments" NOT captured in video; tester jumps from Day board to dialog. OQ-4 open for MANUAL_EXECUTE. `[Observed]` — `video-notes.md` Open questions
+- PAC2-9001 · Inconclusive (LOCATE attempt-4) · session card UI verified has NO direct Cancel/Block/Remove button. EDIT SESSION drawer has NO Cancel/Block/Remove session entry. Right-click = no-op. Entry point must be at patient slot row level (untested). `[Observed]` — PAC2-9001/feature-location.md (R-2, OQ-4)
+- PAC2-9001 · OQ-1 open · P7032 not visible in Role Groups list (max P7507). Inferred paco-one-db #1022 not deployed. `[Inferred from: RBAC list scan]` — PAC2-9001/feature-location.md (R-4)
+
+**Open questions**
+- OQ-1: paco-one-db #1022 đã deploy dev chưa? RBAC list max P7507, no P7032 visible. `[Open Question]` — PAC2-9001/requirements.md (OQ-1)
+- OQ-2: Block session trên session có ≥1 booking có gate bằng P7032 không? Video chỉ test trên empty session. `[Open Question]` — PAC2-9001/requirements.md (OQ-2)
+- OQ-3: Configuration > Sessions row-kebab menu content cho User +P7032 (NOT Admin): Cancel option visible hay hidden? Tester reached page trong step 6 nhưng không mở kebab. `[Open Question]` — PAC2-9001/requirements.md (OQ-3)
+- OQ-4: Entry-point shape cho "Cancel session appointments" (right-click vs kebab vs menu icon)? Video KHÔNG capture. Session card + EDIT drawer + right-click đều không có. Cần test patient slot row level trong MANUAL_EXECUTE. `[Open Question]` — PAC2-9001/requirements.md (OQ-4)
+- OQ-5: Time-edit cancellation dialog (REQ-008) trigger bằng template edit (per QA notes) — có sẵn test data trên dev không? `[Open Question]` — PAC2-9001/requirements.md (OQ-5)
+
 ## Tester notes
 

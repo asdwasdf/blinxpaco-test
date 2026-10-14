@@ -209,6 +209,19 @@ Cùng patient fixture trên baseline (`PAC2-4683`), OS và GP. Chỉ mở `Quick
 8. Connect `Send as`: visual selected trên `Email` disabled — Observed, không Fail `REQ-004`.
 9. Tab riêng bắt buộc; cùng-tab host switch hết session.
 
+## Recheck 2026-10-05 — actual execution, chưa sign-off
+
+- Scope: Connect/OS/GP Quick Send; GP Quick Form; không Send Now/Schedule. Fixture tester chỉ định và control test. Không sửa contact/consent/template nguồn.
+- Location gate thực chạy trả `allowed: true`; runtime mutation guard đọc được `true`, không do agent bật. Không mutation vì chưa xác minh Save lưu draft hay shared campaign và cleanup route; guard không thay thế safe-data/persistence basis.
+- Connect: composer control test mở/reopen/Close được. Patient Details báo thiếu NHS nên không có full clinical tabs. Health Forms picker search có 19 listitems, no-match 0, clear về 19. Campaign sort Z - A hiển thị đúng. Preview/Edit click được; chưa chứng minh rendered preview correctness.
+- Connect Files: click từ Health Forms nhiều lần vẫn giữ heading Health Forms; reopen vẫn như vậy; từ Campaign click Files sau 15s không thấy Files heading/Select Attachment/loading. Booking Link chuyển được, sáu selectors; Face to Face list có tám options. Candidate Inconclusive: thiếu clean fixture có Patient Number và baseline cùng prerequisites; không confirmed Fail.
+- OS: Beth fixture mở được. Health Forms/Files/Booking Link/Campaign chuyển đúng panel; Files có Select Attachment, picker có listitems. Search no-match global count 9 xuống 5 rồi clear về 9; không dùng global count làm assertion attachment filtering Pass. Patient Details có Search all tabs, Personal Info/Significant Info mở được; exact name locator timeout được sửa regex, không product Fail. Preview/Edit click được; Save disabled ở unchanged state.
+- OS actionability: status reminder che composer; dismiss Remind me later. Button center có lúc bị dialog mask intercept; click vị trí thật trong button thành công, không force/DOM bypass. Không quy timeout thành product failure.
+- GP-host: `/paco/dashboard` session chuyển qua login rồi root NHS; không coi hai consumer là cùng build. Root Beth Quick Send không hiện dialog sau30s; control test mở được. Health Forms/Booking Link/Campaign chuyển được; Files giữ panel trước đó. Quick Form mở, bốn tabs click được; picker có một option chưa xác minh safe form definition, không select/submit clinical record.
+- Supplemental select/remove/channel/editor typing/Save persistence/Quick Form submit: Blocked do chưa có verified dedicated draft/form/campaign, Save semantics và cleanup; không dùng existing records để đoán rồi ghi đè. Mapped campaign/slot vẫn thiếu trusted precondition; Rocket Bar handler chưa xác minh.
+- Manual hiện tại chưa hoàn tất 12-case gate; chưa standalone specs/CLI. Không thay manual historical results. Không claim full flow Pass hoặc COMPLETE.
+- Cleanup: mọi composer/Quick Form do run này mở đã Close và wait hidden. Không Save/send/upload/create; không test record mới hoặc leftovers. Browser observations 2026-10-05 khoảng09:34–10:00Z; raw MCP snapshots local có PII, không share nguyên bản.
+
 ## Tester notes
 
 [Protected area]

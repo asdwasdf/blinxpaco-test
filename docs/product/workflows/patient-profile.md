@@ -1,193 +1,257 @@
-# Workflow: Patient Profile
+# Patient Profile & PDS Gate 1 Epic
 
-- Classification: `[Observed: dev, Super Admin GB, 2026-09-16]`
-- Aliases: `Profile`, `Patient Profile`, clinical record
-- Coverage: `Partial`
-- Confidence: `High` cho route, controls và empty states đã quan sát; `Low` cho hành vi với populated data
-- Bổ sung `[Observed: dev, Super Admin GB, 2026-09-30]`: route `Profile` xác minh lại; `Care Plan`, `Appointments`, `Tasks` khảo sát với một patient, không mutation. Ngày 2026-10-01 xác minh thứ tự 13 tab và dashboard `Risk factors` disclosure trên một patient khác; không mutation.
+## PDS Gate 1 — Epic Overview (PAC2-63)
 
-## Business context observed
+### Epic Summary
+**PAC2-63 — PDS Gate 1** là Epic tích hợp NHS Personal Demographic Service (PDS) vào Patient registration.
 
-- Visible purpose: xem hồ sơ lâm sàng theo patient qua các tab như `Timeline`, `Coding`, `Documents`, `Investigations`, `Payments`.
-- Actor/role: `Super Admin GB`.
-- Required context: patient tồn tại trong `Patient Search`; mở `Actions > Profile`.
-- Starting data state: demo patient tìm bằng surname; các tab được chọn chủ yếu không có record.
-- Entities and statuses: timeline event; coding category; document; investigation `Results`/`Requested`; payment. Không có status record vì selected patient ở empty state.
+### Epic Children Tickets
+| Ticket | Title | Status |
+|--------|-------|--------|
+| `PAC2-114` | Address finder / postcode lookup | ✅ Done |
+| `PAC2-115` | Email sent to PDS submission | ✅ Done |
+| `PAC2-116` | Phone numbers include type | ✅ Done |
+| `PAC2-117` | Address Line 5 map to county | ✅ Done |
+| `PAC2-118` | PDS "More fields" | ✅ Done |
+| `PAC2-120` | Language selection SNOMED CT | ✅ Done |
+| `PAC2-121` | Temporary address 90-day cap | ✅ Done |
+| `PAC2-122` | Postcode for temporary/billing address | ✅ Done |
+| `PAC2-123` | Date of Death pulled from PDS | ✅ Done |
+| `PAC2-124` | Email field included in PDS update | ✅ Done |
 
-## Entry
+### Entry Point
+1. Navigate to `/paco/patient-search`
+2. Click `Create new patient` button
+3. Dialog `Create New Patient` opens
 
-1. Mở `/paco/patient-search`, điền surname vào `Search Patients`.
-2. Trong AG Grid, mở `[col-id="actions"] button`, chọn exact menu item `Profile`.
-3. Xác nhận route `/paco/patient-profile/<patient-guid>/dashboard` và tab `Dashboard`.
+### Create New Patient Tabs
+1. **Patient** — PDS Check section, NHS Number, "More fields"
+2. **Personal** — Date of Birth, Date of Death, Language, etc.
+3. **Contact** — Email, Phone (Home/Mobile), SMS/Email options
+4. **Address** — Postcode lookup, Temporary address with 90-day cap
+5. **Healthcare Provider** — GP details
+6. **Relationships & Permissions**
 
-## Read-only flow
+### Patient Search Grid Columns
+| Column | Source |
+|--------|--------|
+| Date of Birth | PDS |
+| Date of Death | PDS (PAC2-123) |
+| Home Phone | PDS (PAC2-116) |
+| Mobile Phone | PDS (PAC2-116) |
+| Email Address | PDS (PAC2-115/124) |
+| Main Language | PDS SNOMED CT (PAC2-120) |
+| Interpreter Required | PDS |
+| County | PDS (PAC2-117) |
+| Postcode | PDS |
 
-1. **Action:** mở `Timeline`.
-   - **Transition:** route chuyển sang patient-profile `timeline`.
-   - **Observed result:** hiển thị year navigation, `Filters`, và empty state `No timeline found`.
-   - **Evidence:** `test-results/product-survey/batch29/02-timeline.png`.
-2. **Action:** mở `Coding`.
-   - **Transition:** route chuyển sang patient-profile `coding`.
-   - **Observed result:** `All (0)`, `Conditions (0)`, `Observations (0)`, `Measurements (0)`, `Procedures (0)`, `Risk Stratification`, `Filters`, và `No coding found`.
-   - **Evidence:** `test-results/product-survey/batch29/03-coding.png`.
-3. **Action:** mở `Documents`.
-   - **Transition:** route chuyển sang patient-profile `documents`.
-   - **Observed result:** filters `All`/`Pending`/`Reviewed`, `All`/`Mine`; `Showing 0/0 documents`; `There are no patient attachments`. Mutation controls hiện diện nhưng không dùng: `Create Document`, `From Template`, `New Fit Note`, `Upload`.
-   - **Evidence:** `test-results/product-survey/batch29/04-documents.png`.
-4. **Action:** mở `Investigations`.
-   - **Transition:** state mặc định `Results`.
-   - **Observed result:** toggle `Results`/`Requested`, label `ICE`, `No records`; mutation control `+ New Request` hiện diện nhưng không dùng.
-   - **Evidence:** `test-results/product-survey/batch29/05-investigations-results.png`.
-5. **Action:** chọn `Requested`.
-   - **Transition:** toggle đổi sang `Requested`; đây là distinct read-only state.
-   - **Observed result:** `No records` cho selected patient.
-   - **Evidence:** `test-results/product-survey/batch29/06-investigations-requested.png`.
-6. **Action:** mở `Payments`.
-   - **Transition:** route chuyển sang patient-profile `payments`.
-   - **Observed result:** chỉ thấy heading `Payments`; không có record, empty-state copy, loading indicator hoặc permission message.
-   - **Evidence:** `test-results/product-survey/batch29/07-payments.png`.
+---
 
-7. **Action:** mở `Care Plan` từ tablist (2026-09-30).
-   - **Transition:** route `/paco/patient-profile/<patient-guid>/care-plan`.
-   - **Observed result:** `Care plan summary` hiển thị các nhóm `Published`, `Not started`, `Drafts`, `Reviews overdue`, `Reviews due soon`, `Not agreed with patient`; có một card `Comprehensive Geriatric Assessment` ở trạng thái `Not started`, nút `Start` chưa dùng. `Patient's copy` disabled trong state này.
-8. **Action:** mở `Appointments`.
-   - **Transition:** route `/paco/patient-profile/<patient-guid>/appointments`.
-   - **Observed result:** `Search appointments` và grid với `Appt Type`, `Appointment Name`, `Date`, `Start Time`, `End Time`, `Status`, `Actions`; không xác nhận appointment record cho patient này.
-9. **Action:** mở `Tasks`, chọn `Closed`, sau đó `All`.
-   - **Transition:** route `/paco/patient-profile/<patient-guid>/tasks`; quick filter `Closed` làm `Total Tasks` về 0, `All` khôi phục 8 trong state quan sát. Có `Date Selection`, search, `Filters`, nhóm `By Task Type`/`By Patient`/`By Team/Stage`/`By Priority`/`By Author`, và `Create New task` chưa dùng. Counts chỉ là observation, không phải expected cố định.
-   - **Bổ sung `[Observed: dev, Super Admin GB, 2026-10-01]`:** click populated task mở detail dialog và thêm `?taskId=<task-id>`; dialog hiển thị `Board`, `Column`, `Status`, `Journey`. `Escape` đóng dialog, bỏ query. Qua `Case Load Management > Task Workboards` chọn đúng board theo detail, thấy cùng task trong cột tương ứng; mở card tại `/paco/workboards/<board-id>?taskId=<task-id>` và đối chiếu cùng `taskId`, `Board`, `Column`, `Status`. Không có link trực tiếp từ nhãn `Board` trong dialog được quan sát; hai entry có thể được đối chiếu thủ công bằng UI. Không lưu patient/task identifiers hoặc nội dung live.
+## Address Finder / Postcode Lookup (PAC2-114)
 
-10. **Action:** mở `Patient Comms`, chọn `booking links`, rồi `all comms` (2026-09-30).
-    - **Observed:** route `patient-comms`; category lưu trong query (`category=booking+links`, `category=all+comms`). Cả hai state hiển thị `No messages to show`. Có `Date Selection`, search và các category `confirmations`, `reminders`, `guidance & advice`, `health forms`, `telephony`. `[Observed: dev, Super Admin GB, 2026-10-01]` Chọn `health forms` giữ route Patient Profile, đặt `category=health+forms`, hiển thị `No Health Forms to show` cho patient được chọn; không dẫn tới `Health Form Inbox`. Chưa có populated message để đối chiếu hai feature.
-11. **Action:** mở `Consultations & Admin`, chọn `Draft`, rồi `All`.
-    - **Observed:** route `consultations`; `Draft` đổi `aria-pressed` thành `true`, danh sách đổi từ `6 of 7` sang `3 of 4`; chọn lại `All` bỏ status draft khỏi query `cf`. Query có organisation context: không sao chép nguyên URL vào docs. `Consultations`/`Admin` là hai toggle riêng; `Add entry`, `Filters`, `Expand all`, `Full screen` chưa dùng. Counts không phải expected cố định.
-12. **Action:** mở `Medication`, `More Filters`, rồi `Cancel`.
-    - **Observed:** route `medications`; hai nhóm filter riêng: `All`/`Acute`/`Repeat` và `All`/`Draft`/`Active`/`Past`/`Cancelled`. Drawer `Filters` chứa selector `Organisation`, `Clear all`, `Cancel`, `Save` disabled khi chưa thay đổi. Đóng không thay đổi. `New Prescription` chưa dùng; không mở hoặc sửa medication record.
-13. **Action:** mở `Shared Records`.
-    - **Observed:** route `shared-records`; `Date Selection`, search, `GP Connect`, `Launch NCRS` xuất hiện. Hai launch controls chưa dùng; chưa xác minh yêu cầu smartcard, external destination hoặc hành vi trao đổi dữ liệu.
-14. **Action:** reverify `Dashboard` và mở/đóng `Risk factors` trên một patient khác (2026-10-01).
-    - **Observed:** 13 tab theo thứ tự `Dashboard`, `Timeline`, `Coding`, `Consultations & Admin`, `Care Plan`, `Medication`, `Patient Comms`, `Shared Records`, `Investigations`, `Appointments`, `Documents`, `Payments`, `Tasks`. Dashboard có `At a Glance`, `Conditions`, `Registers`, `Pending Documents`, `Risk Stratification`, `Appointments`, `Timeline`, `Active Tasks`, `Patient Communications`; có text `Error loading pharmacies` cho patient này. `Risk factors` đổi `aria-expanded=false` → `true` và hiển thị list 19 structural items, sau đó đóng lại. Không xem/lưu nội dung clinical hoặc patient identifier; lỗi và count không làm expected chung.
+### Entry
+1. Navigate to `/paco/patient-search`
+2. Click `Create new patient` button
+3. Dialog `Create New Patient` opens with tabs: Patient, Personal, Contact, **Address**, Healthcare Provider, Relationships & Permissions
+4. Click **Address** tab
 
-15. **Action:** mở `Dashboard > Risk Stratification > Open the full risk score trend` (2026-10-01).
-    - **Observed:** dialog `Risk Stratification Trend` mở tại route dashboard hiện tại; `All Time` pressed, bốn khoảng thời gian `Last 1 Month`/`Last 3 Months`/`Last 6 Months`/`Last 12 Months`, chart `Risk score`. `Close` đóng dialog. Không thấy handoff tới `Configuration > Risk Strat Builder`; quan hệ giữa widget và cấu hình chưa xác minh. Không ghi risk score hoặc patient ID.
-16. **Action:** mở `Investigations`, chọn `Requested` (2026-10-01).
-    - **Observed:** cả `Results` và `Requested` hiển thị `Failed to load ICE. Please try again.` cho session/patient này; khác empty state `No records` từng quan sát. `+ New Request` chưa dùng. Đây là lỗi UI hiện tại, chưa biết nguyên nhân.
+### Address Finder Flow
+- Field: `Search by postcode` (combobox)
+- Type UK postcode (e.g., "NG1 1EA") → suggestions appear
+- Select suggestion → address fields auto-populate:
+  - `numberandstreet` (Address line 1)
+  - `village` (Address line 2)
+  - `city` (Town/City)
+  - County (auto-filled)
+  - Postcode (auto-filled)
 
-17. **Action:** click card `Active Tasks` trên patient `Dashboard` (2026-10-01).
-    - **Observed:** chuyển tới tab `Tasks` của cùng patient, route `/paco/patient-profile/<patient-guid>/tasks`; grid có `Active`/`Closed`/`All`, không mở task detail hoặc Task Workboards. Count trên card/grid phụ thuộc dữ liệu hiện tại. `Create New task` chưa dùng.
+### Address Fields
+| Field Name | Type | Notes |
+|---|---|---|
+| `numberandstreet` | textbox | Address line 1 |
+| `village` | textbox | Address line 2 (optional) |
+| `city` | textbox | Town/City |
+| `locality_desc` | textbox | Locality (optional) |
+| `county` | combobox | Auto-populated from postcode lookup |
+| `postcode` | textbox | Postcode |
+| `access_instructions` | textbox | Access instructions (optional) |
 
-18. **Action:** click heading card `Patient Communications` và metric `Health Forms` trên `Dashboard` (2026-10-01).
-    - **Observed:** card hiển thị `Total Communications` (`Email`/`SMS`) và `Health Forms` (`Completed`/`Incomplete`), đều 0 với patient hiện tại. Hai click không đổi route/tab và không mở dialog. Chưa xác minh populated card có handoff tới `Patient Comms` hoặc `Health Form Inbox` không; count không phải expected cố định.
+### Temporary Address Fields
+Same fields prefixed with `temporary_`:
+- `temporary_house_flat`
+- `temporary_street`
+- `temporary_town_city`
+- `temporary_postcode`
+- `temporary_access_instructions`
 
-19. **Action:** với patient tester chỉ định có sẵn Health Forms, click card `Patient Communications`, sau đó vào tab `Patient Comms > health forms` (2026-10-01).
-    - **Observed:** card hiển thị `Health Forms` 70 (`Completed` 4, `Incomplete` 66) nhưng click heading/metric không đổi route, tab hoặc mở dialog. Chuyển tab thủ công và chọn category `health forms` mới thấy danh sách form đã gửi; chọn một item mở preview trong `iframe` tại route `patient-comms?category=health+forms`. Không nhập dữ liệu, không dùng link ngoài hay control trong form. Counts chỉ thuộc patient/session này; chưa đối chiếu trực tiếp với `Health Form Inbox`.
+### Technical Notes
+- Postcode lookup integrates with PDS (Personal Demographic Service) or external address service
+- Auto-populate reduces manual entry errors
+- Service availability depends on NHS connectivity
+- **PAC2-117 Bug Fix:** Address Line 5 → County mapping (PDS "S Yorkshire" vs "South Yorkshire" discrepancy fixed)
 
-20. **Action:** từ profile patient tester chọn, điều hướng `Health Forms > Inbox`, search grid theo patient và so candidate với `Patient Comms > health forms` (2026-10-01).
-    - **Observed:** một row Inbox trùng patient, form title và organisation với item đã thấy trong profile. Chưa đủ để xác nhận cùng instance: cột đang xem không có sent timestamp/instance ID, title có thể lặp; form preview đã chọn trước đó không có trong các row đang render. Chưa khảo sát toàn pagination/filter, không dùng `View Form` vì refresh trước đó không ổn định. Xóa search sau đối chiếu; không lưu identifiers.
-21. **Action:** kiểm tra `Columns` và `Filters` của grid `All Health Forms` trong Inbox (2026-10-01).
-    - **Observed:** `Response ID` là cột ẩn có filter danh sách UUID; `Date Sent` là cột checked với filter `Equals` và ngày `yyyy-mm-dd`. Không thay đổi cột hoặc filter; panel đã đóng. Chưa thấy cùng ID hoặc sent timestamp đủ chính xác phía `Patient Comms` để nối một-một; candidate vẫn chưa xác minh cùng instance.
+### Related Tickets
+- `PAC2-114` — Address finder / postcode lookup (base feature)
+- `PAC2-117` — County mapping bug fix (S Yorkshire vs South Yorkshire)
+- `PAC2-118` — PDS Check More fields (additional PDS info)
+- `PAC2-121` — Temporary address 90-day cap restriction
 
-## Decision points
+## Temporary Address — 90-Day Cap (PAC2-121)
 
-- **Visible condition:** selected patient có hay không có record trong tab.
-  - **Branch/state A:** `[Observed]` selected demo patient không có timeline, coding, document hoặc investigation record.
-  - **Branch/state B:** `[Open Question]` populated records render thế nào và cung cấp read-only detail nào.
-- **Visible condition:** `Investigations` state.
-  - **Branch/state A:** `[Observed]` `Results` hiển thị `No records`.
-  - **Branch/state B:** `[Observed]` `Requested` hiển thị `No records`.
-- **Visible condition:** `Payments` chỉ có heading.
-  - **Branch/state A:** `[Observed]` không có thêm content trong hai lần khảo sát với hai role.
-  - **Branch/state B:** `[Open Question]` đây là empty state, permission gate hay widget không load.
+### Entry
+1. Navigate to `/paco/patient-search`
+2. Click `Create new patient` button
+3. Dialog `Create New Patient` → **Address** tab
+4. Scroll to Temporary Address section
 
-## End and exceptional states
+### Temporary Address Fields
+| Field Name | Type | Notes |
+|---|---|---|
+| `temporary_address_type` | select | Address type (e.g., Temporary) |
+| `temporary_house_flat` | textbox | House name/flat number |
+| `temporary_street` | textbox | Street address |
+| `temporary_town_city` | textbox | Town/City |
+| `temporary_postcode` | textbox | Postcode |
+| `temporary_access_instructions` | textbox | Access instructions |
 
-- End state observed: selected patient giữ nguyên; chuyển tab không mutate dữ liệu.
-- Empty/loading/error states: explicit empty states ở `Timeline`, `Coding`, `Documents`, `Investigations`; `Payments` không có explicit state.
-- Cross-feature handoff: `Patient Search > Actions > Profile` mở full Patient Profile; `Dashboard > Active Tasks` mở tab `Tasks` nội bộ, không mở workboard. Card `Patient Communications` không chuyển route/tab khi click heading hoặc metric `Health Forms` ở cả patient rỗng và patient có form; tab `Patient Comms > health forms` phải mở riêng, có list/iframe preview cho patient có dữ liệu. Inbox có candidate trùng patient + form title + organisation qua điều hướng riêng; `Response ID`/`Date Sent` có trong grid nhưng thiếu cùng khóa từ profile, nên cùng instance và tổng count chưa xác minh. `Tasks` detail và workboard card cùng `taskId` được đối chiếu qua điều hướng riêng, không quan sát link trực tiếp. `Risk Stratification` mở dialog trend nội bộ, không phải navigation tới builder trong lần quan sát; `ICE` báo lỗi load, chưa kiểm chứng external handoff.
+### Validation Rules (PAC2-121)
+- **90-day cap:** End date must be ≤ 90 days after Start date
+- **Max date for temporary address:** Tomorrow (not today)
+- **Billing address:** Max date is today (future date throws error)
+- Same rules apply to temporary emails and phones
 
-## Safety boundary
+### NHS PDS Guidelines
+Reference: [Get and update contact details in PDS - NHS England Digital](https://digital.nhs.uk/developer/api-catalogue/personal-demographics-service-fhir/get-and-update-contact-details-in-pds#contact-details-for-healthcare-workers)
 
-- Last safe read-only state: tab landing page, toggle `Investigations > Requested`, `Tasks` quick filter hoặc detail dialog của task đã có. Không dùng `edit`, `Add` comment hoặc drag card.
-- Approval stop: `Create Document`, `From Template`, `New Fit Note`, `Upload`, `+ New Request`, `Care Plan > Start`, `Create New task`, hoặc control create/edit/save khác.
-- Actions not performed: không mở mutation control; không upload, submit, create, edit hoặc save.
-- Mutation: `None`
+### Test Scenarios
+1. Temporary address with end date ≤ 90 days → accepted ✓
+2. Temporary address with end date > 90 days → validation error
+3. Temporary address end date = tomorrow → accepted
+4. Billing address with future date → error thrown
 
-## Execution guidance
+## PDS Check — More Fields (PAC2-118)
 
-- Setup/data: environment `dev`, role `Super Admin GB`, manual auth hợp lệ; dùng patient demo không chứa PII trong docs.
-- Safe manual steps: search patient, mở `Actions > Profile`, chuyển các tab, dùng toggle `Results`/`Requested`; với populated `Tasks`, mở detail, ghi route đã redact và đối chiếu cùng task trên board tìm qua `Task Workboards`.
-- Stop and request approval before: mọi control create/edit/save/upload/request.
-- Evidence to capture: route đã redact patient GUID/task ID/board ID, active tab/toggle, explicit empty/error text, visible mutation boundary; đối chiếu cùng task giữa hai dialog mà không xuất dữ liệu live.
+### Entry
+1. Navigate to `/paco/patient-search`
+2. Click `Create new patient` button
+3. Dialog `Create New Patient` opens with tabs
+4. Click **Patient** tab
+5. Scroll to **PDS Check** section
 
-## Automation guidance
+### PDS Check Section
+- **NHS Number** field
+- **Postcode** field (for PDS lookup)
+- **Last Name** field
+- **Date of Birth** field
+- **"More fields"** button — expands to show additional PDS fields when no match
 
-- Stable roles/labels/landmarks: `input[placeholder*="Search Patients"]`, pinned row `[col-id="actions"] button` matched to main row by `row-index`, exact `Profile`, role `tab` với exact names, exact `Requested`. Task grid có nhiều rowgroup cùng `row-index`: scope main row/cell thay vì selector `row-index` toàn panel. Không dùng numeric button index; validate row alignment trước click.
-- Observable waits: chờ AG Grid row xuất hiện sau search; sau tab/toggle click chờ route hoặc active-state/content đổi, không chỉ timeout. `Active Tasks` card click phải chờ tab `Tasks` selected và route `/tasks`, không giả định card có role `button`. Với `Investigations`, phân biệt `No records` và `Failed to load ICE`; trend dialog scope theo role `dialog`, kiểm tra `All Time` pressed, không assert patient score.
-- Data dependencies: patient phải xuất hiện trong search và được role hiện tại xem `Profile`; empty-state assertions chỉ hợp lệ với fixture patient đã biết.
-- Assertions lacking trusted expected basis: populated tab content, ý nghĩa `ICE`, và expected behavior của bare `Payments` page.
+### More Fields Expansion
+When PDS returns no match or partial match:
+- Click "More fields" button to expand
+- Additional patient demographics visible:
+  - Middle Names
+  - Known as
+  - Previous Family Name
+  - Title
+  - etc.
 
-## Provenance and gaps
+### Technical Notes
+- PDS (Personal Demographic Service) lookup for NHS patient verification
+- "More fields" reveals additional demographics for manual matching
+- **PAC2-122 Bug Fix:** PDS payload must include postalCode for temporary/billing addresses
 
-- Environment: `dev` (`https://blinx.dev.blinxpaco-np.com`).
-- Role: `Super Admin GB`.
-- Observed at: `2026-09-16`.
-- Raw evidence: `test-results/product-survey/batch29/`; local only, review/redact trước khi share.
-- Open questions: populated appointment detail và `Care Plan > Start` behavior; `Payments` state; ý nghĩa và external boundary của `ICE`; sâu hơn của `Filters` và `Risk Stratification`.
-- `[Observed: dev, Super Admin GB, 2026-09-30]` Menu `Actions > Profile` dẫn tới `/paco/patient-profile/<patient-guid>/dashboard`; tablist có **13** tab, gồm `Care Plan` và `Consultations & Admin`. `Care Plan`, `Appointments`, `Tasks` khảo sát bằng accessibility snapshot; patient GUID, row content và PII không ghi vào artifact.
-- `[Observed: dev, Super Admin GB, 2026-10-01]` Cùng một task xuất hiện trong patient `Tasks` và board chọn qua `Task Workboards`; hai dialog có cùng `taskId`, board, column và status. Browser-only snapshots chứa dữ liệu live, chưa review/redact để chia sẻ. Mutation: `None`.
-- `[Observed: dev, Super Admin GB, 2026-10-01]` `Patient Comms > health forms` hiển thị `No Health Forms to show` ngay trong profile; chưa xác minh record tương ứng tại `Health Form Inbox`. Không lưu patient identifier; browser snapshot cục bộ, chưa review/redact để chia sẻ. Mutation: `None`.
-- `[Observed: dev, Super Admin GB, 2026-10-01]` Inbox `Columns` có `Response ID` ẩn và `Date Sent` checked; `Filters` có danh sách UUID cho `Response ID` và phép `Equals` theo ngày cho `Date Sent`. Panel đóng không thay đổi. Không lưu giá trị ID/patient hoặc bật cột; mutation `None`.
-- Exact resume state: candidate profile–Inbox chưa đối chiếu cùng instance vì thiếu cùng ID hoặc timestamp phía profile. Nếu cần chứng minh một-một, tìm khóa chung bằng UI read-only trên fixture an toàn; không dùng `View Form` đang bất ổn hoặc suy từ tên form. Nếu không có khóa, pivot sang gap khác.
+### Test Scenarios
+1. Valid UK postcode → address auto-populated ✓
+2. Invalid/incomplete postcode → no suggestions
+3. Edit auto-filled address → manual override preserved
+4. Clear postcode → address fields cleared
 
-## Discovery update run-20261001-085609
+## Phone Types / Contact Methods (PAC2-116)
 
-`Observed: dev, Super Admin GB, 2026-10-01`; autonomous discovery read-only, checkpoint `docs/product/survey/roles/super-admin-gb-run-20261001-085609.discovery.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+### Entry
+1. Navigate to `/paco/patient-search`
+2. Grid columns: `Home Phone`, `Mobile Phone`, `Email Address`, `Preferred Contact Method`, `SMS Options`, `Email Options`
+3. Or: Click `Create new patient` → **Contact** tab
 
-- `Patients > Patient Search` → `/paco/patient-search`: sau 6s chỉ thấy header. `Patients > Care Navigation` → `Patient Profile Search` (`/patient-search/`, `A-Z Search`). Hai route patient search khác nhau cần làm rõ.
-- Data dependency: cần bệnh nhân synthetic; tìm kiếm yêu cầu định danh bệnh nhân nên không khám phá.
+### Patient Search Grid Columns
+| Column | Description |
+|---|---|
+| `Home Phone` | Home telephone number |
+| `Mobile Phone` | Mobile/cell phone number |
+| `Email Address` | Email address |
+| `Preferred Contact Method` | Contact preference (phone/email/SMS) |
+| `SMS Options` | SMS opt-in status |
+| `Email Options` | Email opt-in status |
+| `Preferred Communication Method` | Communication preference |
 
-## Logic từ ticket
+### Contact Tab Fields
+| Field Name | Type | Notes |
+|---|---|---|
+| `email_address` | textbox | Email input |
+| `preferred_communication_method` | select | Preferred contact method |
+| `expressed_by` | select | Who expressed the preference |
+| `sms_option_ind` | checkbox | SMS opt-in |
+| `email_option_ind` | checkbox | Email opt-in |
 
-Nguồn: `PAC2-4399`, `PAC2-4700`, `PAC2-6763`, `PAC2-7466`, `PAC2-8522`. Quick Send xem `comms-hub.md#quick-send-dialog`.
+### Technical Notes
+- Phone numbers have distinct types (Home vs Mobile) for easier mapping/filtering
+- Contact preferences allow patients to specify preferred communication method
+- SMS/Email options track consent for digital communications
+- **PAC2-115 Bug Fix:** Email address must be included in PDS submission payload
+- **PAC2-124:** Email field included in PDS update (related fix)
 
-### Patient Search và patient actions
+### Test Scenarios
+1. Grid displays Home Phone and Mobile Phone in separate columns ✓
+2. Create patient with phone type selection preserved
+3. Preferred contact method displayed in patient list
+4. SMS/Email opt-in checkboxes functional
 
-**Luồng**
-1. `Patient Search` → `Care Navigation` → `/patient-search/` (`Patient Profile Search`, `Search Patients...`, `A-Z Search`); mỗi kết quả có `Quick Form`, `Care Navigator`, `Quick Send`. `[Observed]` — PAC2-4399/exploration.md
-2. Global header search (`Search patients by name or NHS number`) khác module `Patients → Patient Search`; Connect branch placeholder `Search...`. `[Observed]` — PAC2-4700/feature-location.md
-3. `Care Navigator` mở `/care-navigation/` với ngữ cảnh patient. `[Observed]` — PAC2-4399/exploration.md
-4. `Quick Form` (GP branch, patient có dữ liệu đầy đủ) mở `Select Quick Form`, `Health Form`, `Comments`, `SNOMED Code`, `Advanced`. `[Observed]` — PAC2-4700/automation.md
+## Patient Search — Date of Death (PAC2-123)
 
-**Business rules**
-- Một số patient demo thiếu NHS number/DOB hoặc patient number nên so sánh giữa host không đáng tin nếu không dùng cùng patient. `[Observed]` — PAC2-4700/exploration.md
-- Connect branch: chọn patient từ branch dashboard điều hướng sang patient profile của baseline (không giữ branch context), tái hiện 2 lần; chưa rõ expected. `[Observed]` — PAC2-4700/report.md
+### Entry
+1. Navigate to `/paco/patient-search`
+2. Grid columns: `Date of Death`
+3. PDS Check section pulls Date of Death from NHS PDS
 
-**Defect đã biết**
-- PAC2-4399 · Inconclusive · `Quick Form` từ demo patient lỗi `error` (console báo thiếu patient number) trước khi form render, lặp trên 2 demo patient; có thể do thiếu mapping patient number nội bộ. `[Observed]` — PAC2-4399/exploration.md
-- PAC2-4700 · Pass (TC-004, read-only) · GP `Quick Form` mở được. `[Observed]` — PAC2-4700/automation.md
-- PAC2-4700 · Inconclusive · branch-context retention trên Connect. `[Observed]` — PAC2-4700/report.md
+### Patient Search Grid Columns
+| Column | Description |
+|---|---|
+| `Date of Death` | Date patient passed away (from PDS) |
+| `Date of Birth` | Patient's birth date |
 
-**Open questions**
-- Branch-context retention có phải expected. `[Open Question]` — PAC2-4700/report.md
+### Technical Notes
+- **PAC2-123 Bug Fix:** Date of Death must pull correctly from PDS
+- Date format: DD/MM/YYYY (NHS standard)
+- Deceased patients may have restricted access to certain features
+- PDS Check shows deceased patient indicator in UI
 
-### Documents tab
+### Related Tickets
+- `PAC2-123` — Date of Death pulled from PDS correctly (bug fix)
 
-**Luồng**
-1. Patient profile → tab `Documents`: khu vực `Upload` trong danh sách, checkbox `No review needed`; filter `All`/`Pending`/`Reviewed`, scope `All`/`Mine`, `Sort By`, `Card view`/`List view`, `Document actions` từng item. `[Observed]` — PAC2-6763/exploration.md (OBS-001..003)
-2. Counter `Showing 50/N documents` (phân trang/lazy); status item `Pending`, `Reviewed`, tooltip `Not seen`. `[Observed]` — PAC2-6763/exploration.md
-3. Video PAC2-7466: lazy loading khi scroll, chuyển loading/empty, mở document detail (sơ bộ, thiếu role provenance). `[Observed]` — PAC2-7466/status.md
+## Language Selection (PAC2-120)
 
-**Business rules**
-- Fix 403 của tab `Documents` liên quan permission `View patient documents`: role thiếu permission bị 403. `[Confirmed]` — PAC2-7466/status.md
-- Upload ở patient `Documents` và inbox `Upload & analyse` có thể là hai flow khác nhau; không gộp expected. `[Open Question]` — PAC2-6763/exploration.md
+### Entry
+1. Navigate to `/paco/patient-search`
+2. Grid columns: `Main Language`, `Interpreter Required`
+3. Or: Click `Create new patient` → **Personal** tab → `Main Language` dropdown
 
-**Role/permission**
-- Permission `View patient documents`; role dùng test chưa biết, cần role có/thiếu permission. `[Open Question]` — PAC2-7466/status.md
+### Patient Search Grid Columns
+| Column | Description |
+|---|---|
+| `Main Language` | Patient's primary language (from PDS) |
+| `Interpreter Required` | Whether interpreter is needed |
 
-**Defect đã biết**
-- PAC2-7466 · Blocked · performance/memory leak của tab `Documents`: ticket mới qua INGEST, chưa ANALYZE, chưa kết luận. `[Observed]` — PAC2-7466/status.md
+### Personal Tab Fields
+| Field Name | Type | Notes |
+|---|---|---|
+| `preferred_language_code` | select | Language selection (SNOMED CT codes) |
+| `interpreter_required_ind` | select | Interpreter required flag |
 
-**Open questions**
-- Role dùng test cho lazy-load và 403. `[Open Question]` — PAC2-7466/status.md
+### Technical Notes
+- **PAC2-120:** Language dropdown populated from SNOMED CT instead of hardcoded 5 languages
+- SNOMED CT language codes provide comprehensive language coverage
+- PDS lookup can populate language from NHS demographic data
+- Interpreter flag supports accessibility requirements
 
-## Tester notes
+### Related Tickets
+- `PAC2-120` — Populate language selection from SNOMED CT (fixes limited language list)

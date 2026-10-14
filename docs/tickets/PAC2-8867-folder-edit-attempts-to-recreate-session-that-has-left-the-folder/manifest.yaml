@@ -1,0 +1,25 @@
+ticket: PAC2-8867
+title: "Folder edit attempts to recreate session that has left the folder"
+created: 2026-10-06T13:58:47Z
+sourceHash: "31503ed7b074df62"
+phase: MANUAL_EXECUTE
+environment: dev
+role: Admin (Johnny Bravo)
+baseline: ""
+execution: {}
+knowledge:
+  requirementsHash: "9af29ac99f5220e2"
+  featureLocationHash: "8d089427022eb57c"
+  explorationHash: "2e48512d90b85ed4"
+warnings:
+  - DB dependency paco-one-db #1000 must deploy before BE fix
+  - "Edit Session dialog Session Name blank: Disputed — observed normal Session Name for child session"
+  - "No feature branch available — testing on dev shared environment"
+  - "Bug status unknown: may or may not be present depending on DB deployment"
+artifacts:
+  - ticket.md
+  - attachments/128874-Dupe session.mp4
+  - video/video-notes.md
+  - requirements.md
+  - feature-location.md
+  - exploration.md

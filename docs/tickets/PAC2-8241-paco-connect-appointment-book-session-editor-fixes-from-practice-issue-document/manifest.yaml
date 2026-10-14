@@ -56,8 +56,13 @@ workflow:
   status: in_progress
   current_phase: AUTOMATION_EXECUTE
   last_completed_phase: AUTOMATE
-  updated_at: 2026-10-02T04:00:00.000Z
+  updated_at: 2026-10-05
   checkpoints:
+    - at: 2026-10-05
+      phase: MANUAL_EXECUTE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: 'Tester xác nhận product result tổng thể Pass; xem tester-result.md. Giữ lịch sử từng case; automation chưa hoàn tất, cleanup lần tester chạy chưa xác nhận.'
     - at: 2026-10-02T02:26:40.686Z
       phase: DISCOVER
       outcome: completed

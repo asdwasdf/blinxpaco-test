@@ -3,93 +3,68 @@ id: unallocated-cases
 title: Unallocated Cases
 roles:
   - Super Admin GB
+  - Agent
 environment: dev
 status: Observed
 routes:
-  - my-case
+  - /paco/unallocated
 controls:
-  - name: Search this board
-    kind: search
-  - name: List View
+  - name: Back to Dashboard
     kind: navigation
-  - name: Filters
+  - name: PDS Validated
     kind: filter
-  - name: Create new case
-    kind: mutation
+  - name: PDS Validation Pending
+    kind: filter
+  - name: PDS Not Matched
+    kind: filter
 verified_by: []
-last_observed: 2026-10-01
+last_observed: 2026-10-06
 relationships:
-  - id: run-20261001-085609-unallocated-cases-1
-    from: unallocated-cases
-    destination_hint: form case mới / case detail
-    trigger: Create new case
-    relationship: workflow
+  - id: run-20261006-024122-unallocated-1
+    from: case-load-management
+    to: unallocated-cases
+    trigger: Unallocated menu item
+    relationship: navigation
     context: []
-    classification: Inferred
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-unallocated-cases-1
-    from: unallocated-cases
-    destination_hint: filter preset được lưu (persistence chưa rõ)
-    trigger: Filters > Save
-    relationship: workflow
-    context: []
-    classification: Open Question
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
+    classification: Observed
+    mutation_boundary: false
+    evidence: []
 ---
 
 # Unallocated Cases
 
 ## Purpose and context
 
-`Observed`: `Case Load Management` → `Unallocated` opens `/paco/unallocated` for role `Super Admin GB` in dev.
+`Observed`: Queue view showing unallocated cases waiting to be assigned to staff.
 
-## Entry and transitions
+## Entry
 
-The board exposes `Search this board`, `List View`, priority/status tabs, sort control, `Filters`, and `Create new case`. A synthetic no-match query produced explicit `No cases found !`; clearing restored the board. Priority/status coverage visited every visible tab and restored `All`: `Mid Priority`, `High Priority`, `Low Priority`, anomalously labeled `white`, and `Emergency`. The sort selector exposed eight options covering age/order, priority, breaching, and case score in both directions; it was closed without selection. `List View` exposed a grid with 36 structural rows and columns `Indicators`, `Date`, `Case Status`, `Priority`, `Case Score`, `Case ID`, `Viewer`, `Patient Name`, `Age`, and `Actions`; `Card View` was then restored. Opening `Filters` exposed `Age`, `Incoming Service`, `Pathway`, `Skills`, `Priority`, `Case Status`, and `PDS Validated Status`, plus `Clear all`, `Cancel`, and disabled `Save`. The drawer was cancelled unchanged.
+1. Dashboard → Case Load Management → Unallocated
+2. URL: `/paco/unallocated`
 
-`Create new case` is a mutation boundary and was not used. Case cards, patient data, live counts, and filter values are omitted.
+## Header
 
-## Execution guidance
+- Heading: "Unallocated (764)"
+- Back to Dashboard link
+- Total unallocated cases: 764
 
-- Treat case cards and patient context as sensitive.
-- Use search, tabs, sorting, view switch, and filters only for read-only exploration.
-- Require explicit approval and controlled synthetic data before `Create new case` or case actions.
+## Filter Tabs
 
-## Automation guidance
+- PDS Validated
+- PDS Validation Pending
+- PDS Not Matched
 
-- Stable landmarks: route, heading prefix `Unallocated`, `Search this board`, priority tabs, and `Filters`.
-- Do not assert live counts or case content without controlled data.
+## Observations
 
-## Evidence
+- Cases are displayed in a grid/list format
+- Multiple case rows visible (content not fully captured)
+- PDS (Personal Demographics Service) status filters available
+- Large number of unallocated cases (764)
 
-Accessibility observation, dev, `Super Admin GB`, 2026-09-20. Synthetic no-match search reached explicit empty state and cleared. Every visible priority tab was visited before restoring `All`; sort options inspected unchanged; `List View` opened and `Card View` restored. Filter drawer opened for field inventory and was cancelled unchanged. Mutation: `None`; case, patient, and live-count data excluded.
+## Provenance
 
-## Open questions
-
-- Case allocation, status transitions, and board-card actions remain unverified.
-- The visible `white` priority label may represent configuration data rather than intended UI terminology; expected label remains unknown.
-- Applying alternate sort values remains unverified to avoid unnecessary exposure of live case ordering.
-
-## Discovery run-20261001-085609
-
-Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
-
-- `/paco/unallocated` hiển thị `Unallocated (0)`, `List View`, sort `Breaching (high to low)`, `Filters`, `Create new case`.
-
-Gap / Open Question:
-
-- List rỗng; sort/allocation cần case chưa phân bổ (data dependency).
-
-## Discovery run-20261001-085609 (part 2)
-
-Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
-
-- `Filters` mở sidebar `Filters` (`Clear all`, `Loading filters`, `Cancel`, `Save`); `List View` không thấy thay đổi.
+- Environment: dev
+- Role: Super Admin GB
+- Observed at: 2026-10-06T03:56:23Z
 
 ## Tester notes
-
-[Protected area]

@@ -1,0 +1,67 @@
+ticket: PAC2-8659
+title: Issues Creating Sessions with Multiple Slot Types
+created: 2026-10-07T16:21:00Z
+phase: LOCATE
+source:
+  ticket_md_sha256: be458c320ec8c9781f73951e1f33399b5c4b3e31ac3382ffd9718743aed6e461
+  jira_url: https://blinxsolutions.atlassian.net/browse/PAC2-8659
+environment:
+  target: dev
+  base_url: https://blinx.dev.blinxpaco-np.com
+workflow:
+  LOCATE:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  ANALYZE:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  EXPLORE:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  TEST_DESIGN:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  MANUAL_EXECUTE:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  AUTOMATE:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  AUTOMATION_EXECUTE:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+  REPORT:
+    status: pending
+    started: null
+    completed: null
+    artifact: null
+issues:
+  - id: ISSUE-001
+    description: Save fails when session has multiple appointment types
+    severity: high
+  - id: ISSUE-002
+    description: Save works with single appointment type only
+    severity: medium
+  - id: ISSUE-003
+    description: Created session not visible in "My Sessions" search
+    severity: high
+feature_area: Appointment Book / Session Creation
+known_routes:
+  - path: /paco-connect/configuration
+    landmark: Appointment Settings
+  - path: /paco/dashboard
+    landmark: Dashboard

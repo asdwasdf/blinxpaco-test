@@ -1,0 +1,46 @@
+ticket:
+  id: PAC2-8871
+  title: "Editing session structure via Edit Session / Session Preview does not move the session out of its session template folder"
+  sourceSha256: "ef7f8c8a3e9d7b4a1c2e5f8a9b0d3e5f"
+  importedAt: "2026-10-07T01:38:13.715Z"
+
+workflow:
+  currentPhase: MANUAL_EXECUTE
+  startedAt: "2026-10-07T01:38:30.000Z"
+  lastUpdatedAt: "2026-10-07T01:38:30.000Z"
+
+features:
+  - id: session-template-folder-orphaning
+    name: "Session Template Folder Orphaning"
+    description: "When a session inside a session template folder is edited (slot times, slot types via Edit Session or Session Preview), it should move out of the folder to become standalone"
+    module: appointment-book
+    route: /paco/connect#/appointment-book
+
+acceptanceCriteria:
+  - id: AC1
+    text: "Given a session inside a session template folder When I change slot times or slot types via Edit Session or Session Preview and save Then the session moves out of the folder and appears standalone in the table"
+  - id: AC2
+    text: "Given a session has been moved out of the folder When I make a bulk edit to the folder Then the standalone session is not affected"
+  - id: AC3
+    text: "Given a session inside a folder When I change length, clinician or location Then it still moves out of the folder (no regression)"
+  - id: AC4
+    text: "Given a session inside a folder When I open Edit Session or Session Preview and save without changing anything Then the session stays in the folder"
+
+artifacts:
+  - id: requirements.md
+    type: requirements
+    path: requirements.md
+    checksum: "sha256:req-001"
+    phase: ANALYZE
+  - id: video-notes.md
+    type: video-notes
+    path: video/video-notes.md
+    checksum: ""
+    phase: ANALYZE
+
+execution:
+  environment: dev
+  role: Clinician
+  testDataPrefix: "QA-AUTO"
+  case_ids: []
+  mutationLedger: []

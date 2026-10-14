@@ -1,0 +1,91 @@
+ticket: PAC2-4837-blank-patient-record-status-causing-failure-to-resync-hf
+ticket_jira: https://blinxsolutions.atlassian.net/browse/PAC2-4837
+source_revision: 5c0d8311c10f94927b29426793ff7e66a6306b185cc9f705f0560d56ef18cc18
+created: 2026-10-06
+phase: LOCATE
+phase_index: 4
+product: Paco
+environment: dev
+role: Super Admin GB
+baseline: General Practice (Demo Site)
+mutation_approved: false
+
+phases:
+  DISCOVER: {status: not_applicable, date: null}
+  INGEST: {status: complete, date: 2026-10-06}
+  ANALYZE: {status: complete, date: 2026-10-06, artifact: requirements.md}
+  LOCATE: {status: complete, date: 2026-10-06, artifact: feature-location.md}
+  EXPLORE: {status: complete, date: 2026-10-06, artifact: exploration.md}
+  TEST_DESIGN: {status: complete, date: 2026-10-06, artifact: test-cases.md}
+  MANUAL_EXECUTE: {status: complete, date: 2026-10-06, artifact: test-results-final.md}
+  AUTOMATE: {status: pending, date: null}
+  AUTOMATION_EXECUTE: {status: pending, date: null}
+  REPORT: {status: pending, date: null}
+  COMPLETE: {status: pending, date: null}
+
+execution:
+  case_ids: []
+
+requirements:
+  - id: REQ-4837-001
+    classification: Confirmed
+    scope: Health Form Inbox resync of blank-status forms
+  - id: REQ-4837-002
+    classification: Confirmed
+    scope: Bulk stuck-form clearing tool
+  - id: REQ-4837-003
+    classification: Inferred
+    scope: System treatment of blank patient record status
+
+artifacts:
+  - path: requirements.md
+    owner: paco-requirements
+    checksum: fresh
+  - path: feature-location.md
+    owner: paco-explore
+    checksum: fresh
+
+feature_location_stale: false
+open_questions:
+  - id: OQ-001
+    question: Bulk tool access point: admin UI hay script?
+    priority: High
+  - id: OQ-002
+    question: Patient Record Status field display location in HF Inbox?
+    priority: High
+    note: "Partially resolved — visible as Synced/not synced badge; exact blank-status field TBD"
+  - id: OQ-003
+    question: Resync action: per-form button hay batch action?
+    priority: High
+    note: "Not found — needs further investigation in REVIEWED (not synced) filter"
+  - id: OQ-004
+    question: Exact error message "already been submitted"?
+    priority: Medium
+  - id: OQ-005
+    question: Dev environment có sẵn stuck form data không?
+    priority: Medium
+    note: "New inbox Not Saved bucket có 6,155 forms; có thể chứa blank-status forms"
+  - id: OQ-006
+    question: Auth role nào có quyền resync?
+    priority: Medium
+    note: "Super Admin GB có quyền truy cập HF Inbox"
+
+warnings:
+  - Resync action chưa tìm thấy trên UI
+  - Patient Record Status blank field chưa locate được trong form detail dialog
+  - Bulk tool access point chưa biết
+  - Dev data state (có sẵn forms với blank status) chưa rõ
+
+blockers:
+  - type: Missing
+    detail: Bulk tool access point chưa biết
+  - type: Missing
+    detail: Resync action chưa tìm thấy trên UI
+  - type: Missing
+    detail: Patient Record Status blank field chưa locate được trong form detail
+  - type: Missing
+    detail: Dev data state (có sẵn stuck forms với blank status) chưa rõ
+
+feature_map_sync:
+  route: complete
+  workflows_sync: pending

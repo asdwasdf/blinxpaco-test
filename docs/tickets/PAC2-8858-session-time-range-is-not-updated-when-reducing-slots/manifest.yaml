@@ -1,0 +1,55 @@
+ticket: PAC2-8858
+shortTitle: session-time-range-is-not-updated-when-reducing-slots
+createdAt: 2026-10-06T14:21:47Z
+sourceChecksum: sha256:2e4a1f4989af1c3cf0890869b85e55ddfe27d562c7a0e0821ad9a34d9a666cb5
+
+phases:
+  INGEST: complete
+  ANALYZE: complete
+  LOCATE: complete
+  EXPLORE: pending
+  TEST_DESIGN: pending
+  MANUAL_EXECUTE: pending
+  AUTOMATE: pending
+  AUTOMATION_EXECUTE: pending
+  REPORT: pending
+  COMPLETE: pending
+
+sourceFiles:
+  - ticket/PAC2-8858-session-time-range-is-not-updated-when-reducing-slots/ticket.md
+
+attachments:
+  - ticket/PAC2-8858-session-time-range-is-not-updated-when-reducing-slots/attachments/128884-Remove slots time update fail.mp4
+  - ticket/PAC2-8858-session-time-range-is-not-updated-when-reducing-slots/attachments/128899-8858 confirm fail qa.mp4
+  - ticket/PAC2-8858-session-time-range-is-not-updated-when-reducing-slots/attachments/128920-8858 Third QA.mp4
+
+artifacts:
+  - path: requirements.md
+    checksum: sha256:77aee888ac086cb62be05acf1dad1c4defeeca85bfa220b415197f34affaf7f8
+    phase: ANALYZE
+  - path: feature-location.md
+    checksum: sha256:32e104b5ea2c52fa96cff5b3ce7b3020819af18d5b98879ebb3dd08891f139e6
+    phase: LOCATE
+
+execution: {}
+
+qaHistory:
+  - tester: Daniel Farley
+    date: 2026-10-06
+    result: Fail
+    note: Session time remained the same when deleting slots and making session shorter.
+  - tester: Sean Huynh
+    date: 2026-10-06
+    result: Passed QA on DEV
+  - tester: Alexander Paul
+    date: 2026-10-06
+    result: Fail
+    note: Incognito + hard reload confirmed. Start time does not update when deleting slots from start.
+  - tester: Alexander Paul
+    date: 2026-10-06
+    result: Pass (partial)
+    note: Start time fix passes. New issue: "Slots run past the session end" popup appears on every later edit after extending session.
+  - tester: tony.do
+    date: 2026-10-06
+    result: Tested again on FB
+    note: Latest test on FB.

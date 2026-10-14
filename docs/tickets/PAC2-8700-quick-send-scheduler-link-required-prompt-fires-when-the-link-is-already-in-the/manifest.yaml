@@ -1,0 +1,33 @@
+ticket: PAC2-8700
+title: Quick Send: Scheduler Link Required prompt fires when link already present
+status: in_progress
+current_phase: DISCOVER
+created: 2026-10-05T15:11:02+07:00
+
+source:
+  ticket_md: ticket/PAC2-8700-quick-send-scheduler-link-required-prompt-fires-when-the-link-is-already-in-the/ticket.md
+  sha256: a733168b19a9edefa71c78ca63b788c40f2fd4aa97e9ea3956c2afb2062f9a68
+
+supersedes: PAC2-5776
+
+artifacts:
+  - requirements.md
+
+feature_map_sync:
+  feature: Quick Send
+  route: /paco-connect/feature-branch/pac2-8700/dashboard/ (Connect branch)
+  role: Super Admin GB
+  source: feature-map.md, PAC2-5776, PAC2-4700, PAC2-8522
+
+environment:
+  name: dev
+  base_url: https://blinx.dev.blinxpaco-np.com
+  target_branch: /paco-connect/feature-branch/pac2-8700
+  allowed_host: blinx.dev.blinxpaco-np.com
+
+workflow:
+  locale: vi
+  ui_terms: en
+  auth_strategy: manual
+  mutation_enabled: true
+  browser: chromium

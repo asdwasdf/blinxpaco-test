@@ -1,51 +1,36 @@
 ---
 id: connect-dashboard
-title: Connect Dashboard
+title: Connect Dashboard - Route Failure
 roles:
-  - Super Admin GB
+  - Unknown
 environment: dev
-status: Open Question
-routes:
-  - dashboard
+status: Observed
+routes: []
 controls: []
 verified_by: []
-last_observed: 2026-09-19
+last_observed: 2026-10-06
+relationships: []
 ---
 
-# Connect Dashboard
+# Connect Dashboard - Route Failure
 
 ## Purpose and context
 
-`Observed`: `Dashboard` → `Connect` navigates to `/paco-connect/dashboard` in dev for role `Super Admin GB`.
+`Observed`: Connect Dashboard route returns "Page Not Found".
 
-## Entry and transitions
+## Entry
 
-1. Expand `Dashboards` from the global navigation.
-2. Select `Connect`.
-3. Target displays an HTTP 404/loading state.
+1. `/paco/dashboard/connect-dashboards/overview` → "Page Not Found"
+2. Message: "Sorry, the page you are looking for does not exist."
 
-No product behavior was available for observation.
+## Gap
 
-## Execution guidance
+- Connect dashboard not accessible
+- Consistent with PACO Connect features returning 404
 
-- Authenticate manually as the required role.
-- Open `Connect` from `Dashboards`.
-- Capture HTTP/error state without entering patient or staff data.
+## Provenance
 
-## Automation guidance
-
-- Do not automate product assertions while target remains unavailable.
-- A route availability check may be useful after expected behavior is confirmed.
-
-## Evidence
-
-Accessibility observation, dev, `Super Admin GB`, 2026-09-19. No mutation or PII retained.
-
-## Open questions
-
-- Is `/paco-connect/dashboard` the intended dev route?
-- Is the HTTP 404 expected for this role or environment?
+- Environment: dev
+- Observed at: 2026-10-06T06:26:18Z
 
 ## Tester notes
-
-[Protected area]

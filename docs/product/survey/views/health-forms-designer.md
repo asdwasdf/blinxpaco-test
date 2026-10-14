@@ -1,88 +1,42 @@
 ---
 id: health-forms-designer
-title: Health Forms Designer
+title: Health Forms Designer - Route Failure
 roles:
-  - Super Admin GB
+  - Unknown
 environment: dev
 status: Observed
-routes:
-  - dashboard
-controls:
-  - name: New Health Form
-    kind: mutation
-  - name: Search
-    kind: read-only
-  - name: Columns
-    kind: read-only
-  - name: Filters
-    kind: read-only
+routes: []
+controls: []
 verified_by: []
-last_observed: 2026-10-01
-relationships:
-  - id: run-20261001-085609-health-forms-designer-1
-    from: health-forms-designer
-    destination_hint: health form builder cho form mới
-    trigger: New Health Form
-    relationship: workflow
-    context: []
-    classification: Open Question
-    mutation_boundary: true
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
+last_observed: 2026-10-06
+relationships: []
 ---
 
-# Health Forms Designer
+# Health Forms Designer - Route Failure
 
 ## Purpose and context
 
-`Observed`: `Health Forms` → `Designer` opens `/health-forms/builder/`.
+`Observed`: Health Forms Designer routes return 404 errors.
 
-## Entry and transitions
+## Entry
 
-Page displays existing health forms in sortable grid with columns: `Health Form type`, `Health Form Reviewer`, `Updated By`, `Health Form Name`, `Created Date`, `Created By`, `Created By Organisation`, `Shared To Organisation(s)`, `Updated Date`, `Archived`, `Archived Date`, `Editable`.
+1. `/health-forms/designer` → HTTP 404
+2. `/health-forms/designer-v2` → HTTP 404
 
-Existing shared forms are visible; names, creators, and organisation values are omitted. `New Health Form` is a mutation boundary. Search, column configuration, filters, and row actions are exposed.
+## Observations
 
-A synthetic no-match search reduced 56 visible structural `role=row` elements to two structural rows without an explicit empty-state message. Clearing search restored the populated grid. Structural counts are not form totals. `Columns` exposed one hidden and thirteen visible column toggles. `Filters` exposed fields for form identity/type/reviewer, creation/update provenance, organisation sharing, archive state, and editability. Both panels were closed unchanged.
+- Designer V1: 404 Not Found
+- Designer V2: 404 Not Found
+- Routes may require specific configuration or permissions
 
-Sorting changed the active column from date-based descending order to `Health Form Name` ascending, then restored `Created Date` descending. No form row or action was opened.
+## Gap
 
-## Execution guidance
+- Health Forms Designer not accessible
 
-- Treat existing forms as shared production data; do not edit/delete without explicit approval and rollback plan.
-- New form creation persists immediately; requires unique synthetic name and cleanup verification.
-- Search/filter/sort are read-only and safe for general survey.
+## Provenance
 
-## Automation guidance
-
-- Stable landmarks: route, page title `Health Forms`, `New Health Form` button, grid structure.
-- Mutation tests require controlled synthetic form with known cleanup path.
-
-## Evidence
-
-Accessibility and targeted DOM observation, dev, `Super Admin GB`, 2026-09-20. Synthetic no-match search changed structural rows to header-only content and cleared cleanly; no explicit empty state. `Columns` and `Filters` panels opened and closed unchanged. Sort changed to `Health Form Name` ascending and restored to `Created Date` descending. Mutation: `None`; form names, creators, and organisation values excluded.
-
-## Open questions
-
-- New form creation workflow steps and mandatory fields remain unverified.
-- Archive/restore semantics and whether deletion is permanent remain unspecified.
-
-## Discovery run-20261001-085609
-
-Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
-
-- `Designer` mở `/health-forms/builder/` (Health Forms app): danh sách form với cột type, reviewer, name, created/updated, shared organisations, archived, editable, actions.
-
-Gap / Open Question:
-
-- `New Health Form` có thể mở draft chưa lưu; persistence chưa rõ nên coi là boundary.
-
-## Discovery run-20261001-085609 (part 3)
-
-Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
-
-- `Filters`/`Columns` không click được trong 8s; menu hàng (row actions) chưa quan sát được (probe bấm nhầm `More options` của top bar: `PaComms`, `Quick View`, `PACO Assist`).
+- Environment: dev
+- Role: Unknown
+- Observed at: 2026-10-06T06:12:03Z
 
 ## Tester notes
-
-[Protected area]

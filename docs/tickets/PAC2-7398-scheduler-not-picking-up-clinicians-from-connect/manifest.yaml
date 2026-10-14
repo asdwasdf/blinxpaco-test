@@ -1,0 +1,43 @@
+ticket: PAC2-7398
+title: "Scheduler Not Picking Up Clinicians from Connect"
+created: 2026-10-08T14:00:45Z
+source: ticket/PAC2-7398-scheduler-not-picking-up-clinicians-from-connect/ticket.md
+sourceChecksum: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+workflow:
+  phases:
+    - id: LOCATE
+      status: complete
+      created: 2026-10-08T14:00:45Z
+      completed: 2026-10-08T14:05:00Z
+    - id: ANALYZE
+      status: complete
+      created: 2026-10-08T14:00:45Z
+      completed: 2026-10-08T14:10:00Z
+    - id: EXPLORE
+      status: pending
+      created: 2026-10-08T14:00:45Z
+    - id: TEST_DESIGN
+      status: pending
+      created: 2026-10-08T14:00:45Z
+    - id: MANUAL_EXECUTE
+      status: pending
+      created: 2026-10-08T14:00:45Z
+    - id: AUTOMATE
+      status: pending
+      created: 2026-10-08T14:00:45Z
+    - id: AUTOMATION_EXECUTE
+      status: pending
+      created: 2026-10-08T14:00:45Z
+    - id: REPORT
+      status: pending
+      created: 2026-10-08T14:00:45Z
+
+environment:
+  default: dev
+  configured: dev
+
+bug:
+  description: "Scheduler không hiển thị/gợi ý clinicians khi template được map với CONNECT slot. Booking bị giới hạn bởi clinician trong EMIS dù template có map cả EMIS và Connect."
+  expected: "Clinicians từ Connect phải xuất hiện trong scheduler filter và có thể restrict được như các platform khác."
+  severity: high

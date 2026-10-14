@@ -1,0 +1,104 @@
+ticket:
+  id: PAC2-7384
+  title: Health form patient inbox - scheduler enhancement
+  sourcePath: ticket/PAC2-7384-health-form-patient-inbox-scheduler-enhancement/ticket.md
+  jiraUrl: https://blinxsolutions.atlassian.net/browse/PAC2-7384
+  importedAt: 2026-10-13T15:48:28.332Z
+
+input_snapshot:
+  revision: 1
+  sourceSha256: 0d33b40e549e446b3e5df28bfe48ea6fcd9dcf9b202dc1c3cf4b5a843d13a7d5
+  capturedAt: 2026-10-13T15:48:28.332Z
+  notes: |
+    Description summary:
+    1. Expandable HF for detail view (scheduler)
+    2. Remove confusing HF views; prefer conversational view of HF alongside chat
+    3. Bug: mobile view of submitted HF shows thick bar instead of chat bubble
+    Acceptance criteria: not provided.
+    No linked issues / comments / attachments captured at import time.
+    User-provided target host: dev.blinxscheduler-np.com/feature-branch/pac2-7384/
+    Host is NOT in paco.config.yaml safety.allowedHosts / externalDevHosts as imported.
+    Awaiting tester confirmation before LOCATE/MANUAL_EXECUTE.
+
+environment:
+  targetHost: dev.blinxscheduler-np.com
+  basePath: /feature-branch/pac2-7384/
+  inAllowedList: true
+  allowlistSource: paco.config.yaml safety.allowedHosts (added 2026-10-13, uncommitted)
+  awaitingHostApproval: false
+
+scope:
+  surfaces:
+    - patient-facing-scheduler-booking
+    - paco-connect-inbox
+    - mobile-responsive-cross-surface
+  acceptanceSource: ticket description (3 bullets used as AC; tester confirmed 2026-10-13)
+
+execution:
+  case_ids: []
+  manual: {}
+  automation: {}
+
+phases:
+  discover: completed
+  ingest: completed
+  analyze: completed
+  locate: in_progress
+  explore: pending
+  test_design: pending
+  manual_execute: pending
+  automate: pending
+  automation_execute: pending
+  report: pending
+  complete: pending
+
+artifacts:
+  - path: docs/tickets/PAC2-7384-health-form-patient-inbox-scheduler-enhancement/requirements.md
+    owner: paco-requirements
+    sha256: 1d281ea877f9d8b55d9ff7bd4c4c3aadda35d2583ebc10cf4cf73705829f6d9e
+    counts:
+      requirements: 3
+      confirmed: 3
+      observed: 0
+      inferred: 0
+      open_questions: 7
+      ambiguities: 3
+    inputSha256: 0d33b40e549e446b3e5df28bfe48ea6fcd9dcf9b202dc1c3cf4b5a843d13a7d5
+    inputRevision: 1
+    generatedAt: 2026-10-13T15:55:00Z
+  - path: docs/tickets/PAC2-7384-health-form-patient-inbox-scheduler-enhancement/feature-location.md
+    owner: paco-explore (mode=locate)
+    sha256: 59cc9a26e649f6676e0da931e66fda3a40a91d5c7d7d221c76b48c42b2ee9e93
+    routeStatus: inconclusive
+    routesProbed: 2
+    mutation: None
+    evidencePaths:
+      - test-results/PAC2-7384/locate/run-20261013-1602/01-scheduler-link-error.png
+      - test-results/PAC2-7384/locate/run-20261013-1602/02-scheduler-patient-self-booking-link-error.png
+    inputRevision: 1
+    generatedAt: 2026-10-13T16:02:00Z
+    note: |
+      Status inconclusive — feature branch requires per-patient token; tester is
+      preparing token/recipient. PACO Connect inbox location still TODO.
+
+blockers:
+  - id: B1
+    type: host-allowlist
+    status: resolved
+    resolvedBy: tester confirm 2026-10-13
+    description: |
+      dev.blinxscheduler-np.com added to paco.config.yaml safety.allowedHosts
+      (change is uncommitted — to be committed in a separate PR when tester is
+      ready; not required for ticket workflow completion, only for runtime safety
+      gating).
+  - id: B2
+    type: missing-acceptance-criteria
+    status: resolved
+    resolvedBy: tester confirm 2026-10-13 (use 3 description bullets as AC)
+  - id: B3
+    type: unclear-scope
+    status: resolved
+    resolvedBy: tester confirm 2026-10-13 (all three surfaces: scheduler + connect + mobile)
+    surfaces: [patient-facing-scheduler-booking, paco-connect-inbox, mobile-responsive-cross-surface]
+
+warnings: []

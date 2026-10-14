@@ -27,6 +27,7 @@ Registry cho flow nhiều page/state đã quan sát trực tiếp. Mỗi file m�
 | `paco-assist.md` | PACO Assist (Document Inbox/Intelligence) | Mới 2026-10-02; logic từ ticket |
 | `patient-facing-scheduler.md` | Patient-facing Scheduler | Mới 2026-10-02; logic từ ticket |
 | `patient-profile.md` | Patient (search, profile, Documents) | Có `## Logic từ ticket` |
+| `patient-search.md` | Patient Search (top-bar dropdown + PDS page) | Mới 2026-10-13; logic từ ticket (tokenise, cap 50) |
 | `web-chat-video.md` | Web Chat & Video | Chưa có logic từ ticket |
 
 Section `## Logic từ ticket` tổng hợp theo từng feature (`Luồng`, `Business rules`, `Trạng thái`, `Role/permission`, `Defect đã biết`, `Open questions`); mỗi bullet có tag `Confirmed`/`Observed`/`Inferred`/`Open Question` kèm provenance. Tag `Confirmed` ở đây là ý định ghi trong ticket/comment, không phải spec đầy đủ. Tra cứu ngược từ ticket: `docs/product/feature-map.md` mục `Ticket → feature`.

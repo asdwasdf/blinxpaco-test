@@ -1,0 +1,281 @@
+schema_version: 2
+ticket:
+  key: PAC2-8998
+  folder_name: PAC2-8998-pbt-331-patient-search-not-working-in-way-expected
+  source_directory: ticket/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected
+  primary_source: ticket.md
+input_snapshot:
+  revision: 1
+  generated_at: 2026-10-13T13:38:49.388Z
+  files:
+    - path: ticket.md
+      role: primary_source
+      type: md
+      sha256: a1babc1bb1c5375e91fd07844cbc4f13ed0a387b42e5365b22329f509642298d
+workflow:
+  status: complete
+  current_phase: COMPLETE
+  last_completed_phase: COMPLETE
+  updated_at: 2026-10-13
+  checkpoints:
+    - at: 2026-10-13
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Ticket resolved, sources hashed; single primary source, no attachments, no video
+    - at: 2026-10-13
+      phase: INGEST
+      outcome: no_change
+      input_revision: 1
+      message: No video/attachments to ingest; skip
+    - at: 2026-10-13
+      phase: ANALYZE
+      outcome: completed
+      input_revision: 1
+      message: 9 REQ (Confirmed 7, Inferred 2 within disputed/notes); 6 open questions
+    - at: 2026-10-13
+      phase: LOCATE
+      outcome: completed
+      input_revision: 1
+      message: Patient Search page + top-bar search located on feature-branch; dev patient PHOEBE EILEEN SMITHAM verified findable; 2 views, 3 min
+    - at: 2026-10-13
+      phase: EXPLORE
+      outcome: completed
+      input_revision: 1
+      message: 9 query forms tested; top-bar 'Results (50)' cap confirmed; no search-related console errors; PHOEBE EILEEN SMITHAM covers REQ-001..005,008,009; REQ-003 (2-word first name) needs create-data or skip
+    - at: 2026-10-13
+      phase: TEST_DESIGN
+      outcome: completed
+      input_revision: 1
+      message: 13 TC designed; 12 active + TC-006 skipped (no 2-word first name in dev data, read-only scope); all UI-dependent with Confirmed location; mutation None
+    - at: 2026-10-13
+      phase: MANUAL_EXECUTE
+      outcome: completed
+      input_revision: 1
+      message: 12/12 active TC Pass, 1 Skipped; 0 retry; AG Grid virtual scroll on PDS, hard cap 50 on top-bar; no search-related console errors
+    - at: 2026-10-13
+      phase: REPORT
+      outcome: completed
+      input_revision: 1
+      message: Overall Pass; defects 0; durable evidence promoted; knowledge synced (feature-map, workflows/patient-search.md new, open-questions OQ-026..029, change-log)
+    - at: 2026-10-13
+      phase: COMPLETE
+      outcome: completed
+      input_revision: 1
+      message: Workflow complete; status.md finalized; no unresolved blockers; OQ-029 Open low-impact (AG Grid buffer); automation recommended in report but out of scope here
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: no_change
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts: []
+    warnings:
+      - "No video/attachments in source folder; phase no_change"
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/requirements.md
+    warnings:
+      - "Acceptance Criteria Missing in ticket; tóm tắt từ Tony comments"
+      - "6 Open Questions: role access, top-bar identity, total count UI, two-word first name data, broad search literal, risk-score ordering"
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/feature-location.md
+      - test-results/PAC2-8998/locate/r1/evidence.json
+    warnings:
+      - "Feature-branch URL has /paco/feature-branch/<key>/<route> prefix; survey gốc ghi /paco/patient-search (no prefix)"
+      - "Dev test patient PHOEBE EILEEN SMITHAM tồn tại; 1 match cho query 'Smitham'"
+    blockers: []
+    budget:
+      views_used: 2
+      views_limit: 12
+      elapsed_minutes: 3
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/exploration.md
+    warnings:
+      - "Console errors during explore: 8x webchat/agent/appointments 403, 1x phone-calling asset 404 — pre-existing, NOT search-related"
+      - "Dev data KHONG co patient voi 2-word first name; REQ-003 phai create moi (tester confirm read-only) hoac skip with reason"
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/test-cases.md
+    warnings:
+      - "TC-006 (REQ-003 two-word first name) Skipped: no dev data, read-only scope"
+      - "Role access chưa verify Receptionist/Clinician/Admin; test với Super Admin GB only"
+    blockers: []
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/evidence/manual-r1.json
+      - test-results/PAC2-8998/manual/r1/automation.md
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: not_run
+    outcome: not_run
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts: []
+    warnings:
+      - "Automation recommended in report §Automation Decision but not executed in this workflow scope"
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: not_run
+    outcome: not_run
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/report.md
+      - docs/product/workflows/patient-search.md
+      - docs/product/feature-map.md
+      - docs/product/open-questions.md
+      - docs/product/change-log.md
+    warnings:
+      - "OQ-029 Open: AG Grid virtual-scroll buffer semantics — low impact, not blocking"
+    blockers: []
+  COMPLETE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: 2026-10-13
+    artifacts:
+      - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/status.md
+    warnings: []
+    blockers: []
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 870fde3467e1503750314bb455066f658b213c6abb0bb0414cfe591b92010866
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 457dc1ff232191857b5eae340e0392361ca16906b40b1808b21db872224ca31a
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: 36ef166de1dcf6a27fb2bdc2227d9b3e5d858d8ea558da752c1ad85d3e84ef7a
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: f13de1c19b3de0d6f488624f40d3ca3b606e4064df22c33e2634d16bfb28d942
+  manual-r1.json:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/evidence/manual-r1.json
+    state: valid
+    input_revision: 1
+    sha256: ef8f4e3ab7c98876486578d85cb9fe2a79270dca236cbe60ae93d27b56d04627
+  report.md:
+    owner: paco-report
+    path: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/report.md
+    state: valid
+    input_revision: 1
+    sha256: c6556b4995798311d4ec9a5d35ba86764ca80ba6812ed916dadc3b625baee6c2
+  patient-search.md:
+    owner: paco-report
+    path: docs/product/workflows/patient-search.md
+    state: valid
+    input_revision: 1
+    sha256: 8bd5756e60aa6f320bb1f3cc6336b0cc2bb407134585e44fcbad8af612f9c40b
+execution:
+  case_ids:
+    - PAC2-8998-TC-001
+    - PAC2-8998-TC-002
+    - PAC2-8998-TC-003
+    - PAC2-8998-TC-004
+    - PAC2-8998-TC-005
+    - PAC2-8998-TC-006
+    - PAC2-8998-TC-007
+    - PAC2-8998-TC-008
+    - PAC2-8998-TC-009
+    - PAC2-8998-TC-010
+    - PAC2-8998-TC-011
+    - PAC2-8998-TC-012
+    - PAC2-8998-TC-013
+  manual:
+    PAC2-8998-TC-001: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-002: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-003: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-004: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-005: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-006: { result: Skipped, reason: "No dev data with 2-word first name; read-only scope; covered by Tony 15k prod sweep" }
+    PAC2-8998-TC-007: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-008: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-009: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-010: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-011: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+    PAC2-8998-TC-012: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json, sub_results: { a: Pass, b: Pass, c: Pass, d: Pass } }
+    PAC2-8998-TC-013: { result: Pass, attempt: 1, evidence: evidence/manual-r1.json }
+  automation: {}
+  runs:
+    PAC2-8998/manual/r1:
+      mode: manual
+      env: dev
+      host: blinx.dev.blinxpaco-np.com
+      role: Super Admin GB
+      user: Test Fiona Nguyen
+      org: General Practice (Demo Site)
+      patient_total_initial: 78974
+      mutation: None
+      pass: 12
+      fail: 0
+      skipped: 1
+      inconclusive: 0
+      blocked: 0
+      evidence: docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/evidence/manual-r1.json
+      raw: test-results/PAC2-8998/manual/r1/
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: complete
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence:
+    - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/evidence/locate-r1.json
+    - docs/tickets/PAC2-8998-pbt-331-patient-search-not-working-in-way-expected/evidence/manual-r1.json

@@ -1,0 +1,209 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-8999
+  folder_name: PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252
+  source_directory: ticket/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-10-13T12:56:30.000Z"
+  files:
+    - path: ticket/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/ticket.md
+      sha256: 749bd73a15d9c5a6bbf98e18fe6eea3e3d13d1be42a9a130c78b8e87fc79f175
+
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: pending
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: in_progress
+  current_phase: EXPLORE
+  last_completed_phase: LOCATE
+  updated_at: "2026-10-13T13:25:00.000Z"
+  checkpoints:
+    - at: "2026-10-13T13:05:00.000Z"
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Dev confirmed two feature branches: PACO Connect for book/cancel (/paco-connect/feature-branch/pac2-8999/) and PACO for patient audit (/paco/feature-branch/pac2-8999/). Booking part did not reproduce; only cancellation was requested.
+    - at: "2026-10-13T13:15:00.000Z"
+      phase: ANALYZE
+      outcome: blocked
+      input_revision: 1
+      message: Tester 2026-10-13: dev review found one more change required for cancellation to show in patient audit; waiting for fix + PR approval + new feature branch links before resuming. Requirements artifact already written and preserved; do not resume phases until tester re-pings.
+    - at: "2026-10-13T13:25:00.000Z"
+      phase: ANALYZE
+      outcome: unblocked
+      input_revision: 1
+      message: Tester 2026-10-13 13:25 re-pinged with dev reply confirming branch URLs unchanged and test path. Blocks lifted; proceed to LOCATE with same branches. Requirements preserved at 6 (4 Confirmed + 2 Inferred).
+    - at: "2026-10-13T13:25:00.000Z"
+      phase: LOCATE
+      outcome: in_progress
+      input_revision: 1
+      message: Starting locate phase against PACO Connect (book/cancel) and PACO (audit view). Both feature branches already known from DISCOVER; will verify in 1-3 views then proceed to EXPLORE.
+    - at: "2026-10-14T00:10:00.000Z"
+      phase: LOCATE
+      outcome: completed
+      input_revision: 1
+      message: Route Confirmed — PACO Patient Audit modal from Patient Search (View Audit), PACO Connect Appointment Book (book/cancel). Audit dialog has AG Grid columns Date/Time/Summary/Field/Previous Value/New Value/Details. feature-location.md written + feature-map.md synced. Ready for EXPLORE.
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-13T13:05:00.000Z"
+    artifacts: []
+    warnings:
+      - Ticket không có section `Acceptance Criteria`; dev bổ sung trong reply 2026-10-13.
+      - Dev confirms only the "cancellation not logged" part reproduces on dev; "booking not logged" did not reproduce.
+    blockers: []
+  INGEST:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-13T13:25:00.000Z"
+    artifacts:
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/requirements.md
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/dev-reply.md
+    warnings:
+      - Original Jira ticket still lacks Acceptance Criteria section; wording from dev reply only.
+      - "Booking not logged" did not reproduce on dev per dev reply; smoke test booking as well to capture independent verdict.
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-14T00:10:00.000Z"
+    artifacts:
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/feature-location.md
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/feature-location.md → synced to docs/product/feature-map.md
+    warnings: []
+    blockers: []
+  LOCATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  EXPLORE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  MANUAL_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-13T12:56:30.000Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 86bfac31ba590d542ee2cbaced030485a2c809748aad3222a8f00b0ee4cffe57
+  dev-reply.md:
+    owner: paco-ticket
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/dev-reply.md
+    state: valid
+    input_revision: 1
+    sha256: bf15de984b0f70a91b87f17f3bad780d3575791e0f95cac7f6fea874a00f55e8
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 38daea68b64aac3d44c8d7b10f6d27dd692fa277d37e8f5de228aca0316e7073
+    owner: paco-explore
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/feature-location.md
+    state: pending
+    input_revision: 1
+    sha256: null
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/exploration.md
+    state: pending
+    input_revision: 1
+    sha256: null
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/test-cases.md
+    state: pending
+    input_revision: 1
+    sha256: null
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/automation.md
+    state: pending
+    input_revision: 1
+    sha256: null
+
+execution:
+  case_ids: []
+  scope_note: null
+  manual: {}
+  automation: {}
+  runs: {}

@@ -430,6 +430,149 @@ Tester 2026-09-23: live `/paco/dashboard` = `PAC2-4683` đã merge. Oracle visua
 9. Không Fail lại bug PAC2-4683 (scheduler prompt persist, Files freeze Rocketbar) trừ regression vs 4683 cùng state.
 10. Không Fail: pixel/centered title/GP grey; Escape đóng dialog; `Files` disabled khi `Select Campaign` mở; default `SMS` khi `email not on file`; empty chip `6 July - Test Case 1`; must-popup; must-persist.
 
+## Manual recording guide — full flow cho tester (2026-10-05)
+
+Hướng dẫn này bổ sung cách thực hiện/quay evidence; không thay stable IDs, lịch sử hoặc biến expected `Inferred` thành `Confirmed`. Full flow có mutation là coverage bổ sung ngoài 12 cases read-only hiện tại. Không dùng kết quả smoke để sign-off toàn bộ ứng dụng.
+
+### A. Điều kiện an toàn và checklist trước quay
+
+1. Chỉ dùng 4 dev URLs phía dưới; dừng nếu redirect sang production/host lạ.
+2. Role `Super Admin GB`; login thủ công, bắt đầu quay sau login. Không quay password, cookies, tokens, URL scheduler có token.
+3. Dùng patient test chuyên biệt, không PII thật. Tên test mới tiền tố `QA-AUTO-PAC2-4700-<run>`. Không sửa contact, gửi hoặc tạo clinical record trên patient có sẵn chỉ vì tên chứa `test`.
+4. Email đích duy nhất đã duyệt: `fiona.nguyen@blinxsolutions.com`. SMS chưa có recipient duyệt: KHÔNG gửi SMS. Không dùng số/email hiện có nếu chưa được xác nhận là safe.
+5. Trước `Save`, `Send`, `Schedule`, submit Quick Form, upload hoặc thêm booking: chốt rõ đối tượng test, action, recipient, expected persisted state và cleanup. Thiếu điều kiện thì quay tới boundary và ghi `Blocked`; yêu cầu full-flow không phải lý do gửi tới contact có sẵn.
+6. Nếu agent/CLI thực thi mutation: runtime gate/hostname allowlist và `PACO_ALLOW_MUTATION=true` phải do tester cấp; destructive cần guard riêng. Tester thao tác thủ công vẫn giữ cùng safe-data/recipient/cleanup scope.
+7. Tạo ledger local không PII: thời gian, environment, action, test alias, kết quả, cleanup, leftovers. Không xóa patient/campaign/message nền để cleanup.
+8. Cửa sổ desktop cùng kích thước, zoom 100%, cùng theme. Mỗi environment tab riêng; cùng patient alias/campaign/config đã đối chiếu trước so sánh.
+9. Quay state trước click 2s; sau click chờ observable loaded state rồi giữ 2–3s. Không cắt bỏ loading/error/retry. Redact patient identifiers/contact trước Jira.
+
+| Environment | URL |
+|---|---|
+| Baseline | `https://blinx.dev.blinxpaco-np.com/paco/dashboard` |
+| Connect | `https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-4700-qs-only/dashboard` |
+| OS branch | `https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-4700-qs-only/dashboard` |
+| GP | `https://pac2-4700-qs-only.dev.blinxpaco-np.com/` |
+
+**Fixture sheet trước chạy:** patient alias từng backend; có mobile/email không; documents đã biết; campaign alias; campaign có scheduler placeholder không; EMIS mapping/slot/clinician/location; Quick Form alias; safe recipient; cleanup được phép. Chỉ lưu alias/state, không NHS/contact thật. Không assume cùng tên là cùng dataset.
+
+### B. Video 1–4: Quick Send, lặp baseline → Connect → OS → GP
+
+#### B1. Entry và visual — TC-001, TC-005
+
+1. Quay URL branch và authenticated header; che patient/contact khi cần.
+2. Global search patient test → quay result phù hợp → `Patient actions menu` → `Quick Send`. Không click patient row.
+3. Quay toàn dialog trước thao tác: title, patient context, message/editor, `Send as`, buttons, bốn tabs.
+4. Quan sát input/textarea/dropdown/multiselect/avatar: text có đọc được, border/control có bị mất, cắt, đè, không click được không. So cùng baseline; không fail chỉ vì khác màu/spacing nhỏ.
+5. Hover và focus bằng Tab một control enabled; quay focus state và keyboard navigation. Không nhập vào field có thể autosave nếu chưa rõ persistence.
+6. Chuyển `Health Forms` → chờ load; `Files` → chờ load; `Booking Link` → chờ load; `Campaign`. Quay list/empty/error/loading kết thúc. Không tự lấy empty state làm lỗi khi fixture chưa có dữ liệu.
+7. `Close`, quay dialog biến mất; mở lại bằng cùng entry để chứng minh reopen hoạt động.
+
+#### B2. Sort và dropdown — TC-002, TC-011
+
+1. `Campaign` → `(click to change)` → chờ campaign tree/picker loaded.
+2. Mở sort, giữ video thấy options. Ghi unique options và selected value trước đổi.
+3. Chọn `A - Z`; chờ render xong; quay label mới và vài item để thấy list đáp ứng. Không chọn campaign ở bước này.
+4. Chọn `Z - A`; quay label/list. Thử các options date/message type để kiểm tra selection/display, không assume ordering nghiệp vụ khi timestamp/grouping không rõ.
+5. OS: quay ít nhất reopen rồi chọn lại; lần đầu label không đổi phải giữ thêm 5s và ghi actual, không chỉ quay lần Pass.
+6. Option-set consistency TC-011 chỉ `Inferred`; label selection/display TC-002 có Confirmed basis.
+
+#### B3. Channel — TC-003, TC-010
+
+1. Quay `Send as` default, enabled/disabled và selected indicator với fixture đã biết contact state.
+2. Hover/focus enabled control. Nếu channel đã selected, re-click theo case read-only và quay indicator; không chuyển channel trong stable TC-003.
+3. Same-patient fixture TC-010: quay default/listed recipient trên cả hosts, redact địa chỉ. Dataset/contact khác nhau thì ghi mismatch setup, không product Fail.
+4. Coverage bổ sung trên draft test đã duyệt: toggle Email/SMS qua lại, quay selected indicator và preview format. Không gửi SMS. Đóng bỏ draft; verify không persist nếu đã chốt đây là discard behavior. Nếu chưa biết auto-save, dừng trước toggle.
+
+#### B4. Overlay — TC-015
+
+1. Mở campaign picker + sort dropdown; click vùng trống ngoài panel, quay đóng/còn.
+2. Mở lại; click `Files`; chờ 3s, quay overlay state và tab có phản hồi không.
+3. Quay `Close`; chờ dialog hidden. Không dùng Escape làm assertion must-close-overlay vì behavior giữa hosts chưa Confirmed.
+4. Khác nhau chỉ là observation trừ khi cùng-state baseline chứng minh functional regression.
+
+### C. Full composition trên draft test — coverage bổ sung, không thay stable read-only cases
+
+Chỉ thực hiện khi draft mutation scope/test data/cleanup đã chốt. Nếu control tên khác hoặc không có, quay actual rồi ghi `Blocked`, không tìm cách bypass bằng API.
+
+1. Mở Quick Send trên patient test dedicated.
+2. Chọn campaign test đã duyệt từ picker; quay selected campaign/header, message preview và recipients. Chờ loading kết thúc.
+3. Nếu `Edit` có: sửa một đoạn nhận diện `QA-AUTO-PAC2-4700-<run>` trong draft test. Quay editor nhập được và preview phản ánh thay đổi. Không sửa campaign template nguồn nếu action này chỉnh shared template.
+4. `Health Forms`: chọn đúng form test đã duyệt vào draft; quay item/badge và preview. Bỏ chọn lại để chứng minh toggle; thêm lại nếu chuẩn bị Send. Không gửi form có nội dung bệnh nhân thật.
+5. `Files` — TC-012: với fixture documents tồn tại, quay loaded list, chọn file test không PII, quay attachment/badge/preview; remove rồi thêm lại. Không upload tài liệu thật; upload test riêng cần scope được duyệt. Không có fixture thì TC-012 Blocked dù picker mở được.
+6. `Booking Link` — TC-013: chọn campaign có EMIS mapping đã xác minh; quay mapped slot/config trước thay đổi. Quay slot-type/clinician/location dropdown loaded. Chỉ chọn slot/config test được phép. Refresh Availability nếu scope được duyệt; ghi thời gian tải/error. Không đặt appointment chỉ để kiểm tra dropdown.
+7. Nếu có Add/Insert booking link: thêm vào draft test, quay preview có link/placeholder được resolve theo expected đã chốt. Không copy token/link đầy đủ vào docs/video chia sẻ.
+8. TC-014: quay scheduler prompt trước/sau add link nếu campaign có placeholder. Ghi popup present/absent, `I'll Choose Where`/`Add at End` nếu có. Không assume must-popup; không click prompt nếu side effect chưa rõ. Bug đã có trên baseline không tự gọi regression mới PAC2-4700.
+9. Kiểm tra preview cuối: test recipient đúng, message alias đúng, attachments/forms/booking đúng, không dữ liệu thật. Nếu khác, STOP trước Send.
+10. Quay Close/discard flow với draft test riêng; reopen kiểm tra persisted/discarded state theo expected được tester chốt. Không assume Close luôn xóa draft.
+
+### D. Save, Send, Schedule — full end-to-end bổ sung
+
+**Dừng trước action nếu không có dedicated test data, safe recipient hoặc cleanup.** Không dùng patient đang search bất kỳ để gửi.
+
+#### D1. Save draft
+
+1. Chuẩn bị draft test có marker, safe recipient và campaign test.
+2. Quay trước click `Save`; click đúng một lần; quay notification/error/disabled/loading tới terminal state.
+3. Reload/reopen qua route lưu draft đã xác minh. Nếu không có route đã biết, ghi chưa verify persisted state, không claim Save Pass chỉ nhờ toast.
+4. Kiểm tra marker/items còn đúng, không duplicate. Ghi expected Save là draft/message/campaign gì trước test; chưa biết thì Open Question.
+5. Cleanup draft test bằng action đã được duyệt; quay terminal state và reopen/list xác nhận không còn. Không delete shared campaign.
+
+#### D2. Send email ngay
+
+1. Dùng draft test mới; Email recipient phải đúng `fiona.nguyen@blinxsolutions.com`, không CC/BCC/recipient khác.
+2. Preview trước Send: marker, channel, recipient, content, attachment/form/booking test; redact contact trong evidence shareable.
+3. Bấm action Send thực tế trong UI đúng một lần; không retry khi chưa biết lần đầu đã gửi hay chưa.
+4. Quay processing tới success/error; vào message/outbox/history route đã xác minh, quay record/status/timestamp/channel. Không coi toast là delivery proof.
+5. Tester kiểm tra inbox recipient: subject/body marker, link mở đúng dev destination, attachment/form đúng. Không quay inbox cá nhân khác; redact email metadata.
+6. Nếu delivery chưa tới, ghi Submitted/Sent status observed và delivery chưa xác minh; không tự quy product Fail trước khi domain SLA/status meaning rõ.
+7. Email đã gửi không undo được: ledger ghi permanent side effect. Cleanup draft/record chỉ nếu được phép; không claim email đã thu hồi bằng xóa record.
+
+#### D3. Schedule email
+
+1. Dùng draft test mới + cùng safe email. Xác minh timezone của UI và thời gian intended với tester.
+2. Chọn Schedule action nếu có, giờ tương lai đủ thời gian kiểm tra/cancel; quay displayed date/time/timezone và confirm dialog.
+3. Confirm một lần; quay pending/scheduled record qua route đã xác minh và thời gian sau reload.
+4. Cancel test schedule trước due time nếu scope cancellation đã duyệt; quay canceled/removed và reload verify. Không assume delete draft hủy scheduled job.
+5. Nếu mục tiêu kiểm tra scheduled delivery, để một schedule test có chủ đích chạy rồi verify inbox/history giống D2. Không vừa cancel vừa claim delivery đã test.
+6. Nếu không tìm thấy cancel hoặc cancel fail: ghi leftover ngay với test alias/due time; báo tester, không để gửi ngoài ý muốn.
+
+### E. GP Quick Form full flow — TC-004 smoke + submission bổ sung
+
+1. Patient test → Patient actions menu → Quick Form. Quay Select Quick Form + toàn dialog.
+2. Smoke: chuyển Health Form/Comments/SNOMED Code/Advanced, hover/focus, Close/reopen. Accessible names có thể `tab-*`; không dùng timeout locator làm product Fail.
+3. Full flow chỉ trên dedicated patient test và form test được duyệt: chọn form, chờ fields load; quay input/textarea/dropdown/multiselect/checkbox/radio thật sự có trong form.
+4. Với mỗi loại control: nhập giá trị test, đổi selection, chọn/bỏ chọn, keyboard focus; quay selected values/ticks và validation. Không assume form có đủ mọi loại control.
+5. Nếu có required fields, thử submit thiếu field trên dữ liệu test để quay validation; chốt expected từ form definition, không tự bịa required rule.
+6. Hoàn thiện các required fields bằng giá trị giả; Comments dùng marker QA-AUTO. Không thêm SNOMED/clinical coding trừ khi đã duyệt riêng đúng code/test patient/cleanup.
+7. Preview/review rồi submit bằng button thực tế nếu được duyệt. Quay response; reload/mở record qua verified route để xác minh persisted state.
+8. Cleanup record test theo quyền đã duyệt. Nếu không thể hoàn tác clinical submission, dừng trước submit hoặc ghi rõ approved irreversible test record; không xóa clinical data nền.
+
+### F. Rocket Bar — TC-006
+
+1. Tester xác nhận desktop handler đã cài và build thuộc ticket. Sidebar Rocket Bar/Launch Rocket Bar là route hint lịch sử, chưa đủ chứng minh desktop consumer đúng build.
+2. Quay launch, application/version/environment không chứa secrets.
+3. Trong consumer đúng build, lặp B1–B4 bằng test fixture; full composition/send chỉ theo C–D và safe recipient.
+4. Không handler/build không rõ: Blocked. Không gọi mainline browser smoke là Rocket Bar Pass.
+
+### G. Khi có candidate Fail: quay diagnostic đủ
+
+1. Giữ video attempt gốc, actual + state trước lỗi.
+2. Retry cùng data, mục đích xác minh reproducibility.
+3. Retry data sạch khác nhưng đáp ứng cùng prerequisites.
+4. Fresh page/session sau tester auth, retry cùng scenario.
+5. Baseline cùng data/config/control path để phân biệt existing bug và regression.
+6. Mỗi attempt ghi timestamp/environment/action/expected basis/actual/evidence. Mixed Pass/Fail = Inconclusive. Không lặp Send khi delivery lần trước chưa rõ.
+
+### H. Evidence và checklist kết thúc
+
+- File: `PAC2-4700-<run>-<environment>-<flow>.mp4`; riêng videos QuickSend, QuickForm, Save, Send, Schedule; dùng một run ID nhất quán.
+- Evidence shareable phải redact names/NHS/mobile/email ngoài safe-recipient context, clinical content, auth/token URLs; giữ raw local, không upload nguyên raw có PII.
+- Ghi timestamps của các lỗi/loading/selection thay vì chỉ nói video dài.
+- Result mỗi stable ID dùng Pass/Fail/Blocked/Not Run/Inconclusive. Supplemental mutation flows ghi riêng, không thay đổi stable case mutation class ngầm.
+- Close dialogs; verify drafts/schedules/records test cleanup; ledger leftovers + cancellation due times. Email sent là side effect còn tồn tại.
+- Matrix 12 IDs: TC-001/002/003/004/005/006/010/011/012/013/014/015. Blocked phải ghi prerequisite thiếu. Không sign-off full application khi chỉ test Quick Send/Quick Form.
+- Gửi reviewed videos + result sheet để tổng hợp comment Jira sau, chưa comment Passed QA trước review.
+
 ## Tester notes
 
 [Protected area]

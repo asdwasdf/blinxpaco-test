@@ -4,14 +4,24 @@
       "command": "npx",
       "args": [
         "@playwright/mcp@latest",
-        "--isolated"
+        "--storage-state",
+        "playwright/.auth/admin-session.json"
       ]
     },
     "playwright-user": {
       "command": "npx",
       "args": [
         "@playwright/mcp@latest",
-        "--isolated"
+        "--storage-state",
+        "playwright/.auth/user-session.json"
+      ]
+    },
+    "playwright-plugin": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest",
+        "--storage-state",
+        "playwright/.auth/plugin-session.json"
       ]
     }
   }

@@ -42,5 +42,23 @@ File tạo ngày 2026-10-02 để gom logic ticket `PAC2-6763` (scope gốc rộ
 **Open questions**
 - Định dạng/dung lượng tối đa, tín hiệu thành công (toast/counter/card), SLA phân tích, cleanup an toàn, role/feature flag upload, `PAC2-7193` đã hoàn thành chưa. `[Open Question]` — PAC2-6763/requirements.md, report.md
 
+### PACO Assist Chat — per-domain permission boundary
+
+**Luồng**
+1. Feature-branch patient profile → top-bar `More options` → `PACO Assist`. `[Observed]` — PAC2-8611/feature-location.md
+2. Side panel mặc định ở summary; `Switch to Chat` mở textbox `Ask a question about this patient...`. `[Observed]` — PAC2-8611/exploration.md
+
+**Business rules**
+- PACO Assist Chat chỉ được answer trong permission scope của current user. `[Confirmed]` — PAC2-8611/requirements.md (REQ-8611-003)
+- Thiếu appointments permission: câu `Does this patient have any upcoming appointments?` phải bị chặn và không trả appointment data. `[Confirmed]` — PAC2-8611/requirements.md
+- Thiếu medicines/prescribing permission: câu `Does this patient have any active permissions?` hoặc `Is this patient on any NSAIDs?` phải bị chặn và không trả medication data. `[Confirmed]` — PAC2-8611/requirements.md
+
+**Role/permission**
+- Tester xác nhận `Super User` truy cập được patient/chat nhưng thiếu medication permission. `[Confirmed]` — tester clarification, PAC2-8611/requirements.md
+
+**Possible defects / open questions**
+- Summary UI vẫn hiển thị shortcut `Medications`; chưa biết backend có từ chối đúng khi submit prompt. `[Observed / Open Question]` — PAC2-8611/exploration.md
+- Cần xác nhận `Super User` có thiếu appointments permission và permitted domain nào dùng làm control. `[Open Question]` — PAC2-8611/exploration.md
+
 ## Tester notes
 

@@ -117,6 +117,17 @@ Elapsed ~7/15 phút. Mutation: None. Đóng dialog bằng `Close`.
 - Warning: screenshots chứa patient identifiers — không share
 - Next action: EXPLORE read-only trên baseline + Connect + OS từ dialog đã Confirmed. GP/Rocketbar cần auth/allowlist/URL trước khi locate tiếp. Không `Save`/`Send`/`Schedule`
 
+## Revalidation 2026-10-05 — GP và Quick Form
+
+- Classification: `Observed`; input revision 1. GP authenticated tại `https://pac2-4700-qs-only.dev.blinxpaco-np.com/` sau tester login thủ công. Host hiện nằm `allowedHosts`; các blocker allowlist/login phía trên là lịch sử 2026-09-23, không còn áp dụng cho run này.
+- Role: `Super Admin GB` do tester xác nhận; GP header chỉ thấy avatar, chưa xác minh role label riêng.
+- GP `Quick Send` route: global top-bar `Search...` → query `test` → `Patient actions menu` của result trong viewport → `Quick Send` → dialog. Bốn button Campaign/Health Forms/Files/Booking Link hoạt động; Close đóng dialog. Không chọn campaign/file/form/slot; mutation None.
+- GP `Quick Form` route: cùng global search → Patient actions menu → Quick Form → dialog có Select Quick Form, View Profile, Close; buttons có accessible names `tab-Health Form`, `tab-Comments`, `tab-SNOMED Code`, `tab-Advanced`. Đã mở từng tab, Close đóng dialog; không chọn form hay sửa field.
+- Route status hai feature roots: Confirmed. Ba meaningful views mới: search results/menu, Quick Form dialog, Quick Send dialog; không tính retry/locator timeout.
+- Runtime locator caveat: GP result list có 124 menu triggers; first trigger có thể nằm ngoài viewport. Chọn result thực sự trong viewport, không force click. Quick Form dùng `tab-*`; Quick Send dùng button text có thể có badge số, không dùng cùng exact accessible name giữa hai dialogs.
+- Provenance: browser tool observations 2026-10-05, GP tab 3, URL giữ đúng configured dev host. Không copy patient identifiers vào artifact; chưa promote durable evidence.
+- Rocket Bar route/desktop-handler prerequisite chưa revalidate; không kết luận consumer đã chạy.
+
 ## Tester notes
 
 [Protected area]

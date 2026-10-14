@@ -300,3 +300,168 @@ Gap / Open Question:
 ## Tester notes
 
 [Protected area]
+
+## Discovery run-20261006-024122 (Agent survey)
+
+Role `Super Admin GB`, environment `dev`, 2026-10-06. Read-only; claim là `Observed` trừ khi ghi khác.
+
+### Additional navigation items explored
+
+- Health Forms → Inbox: navigates to `/health-forms/responses/` (cross-app)
+- Health Forms → Designer: not explored
+- Health Forms → Designer V2: not explored
+- Comms Hub → Template Manager: requires Microsoft SSO (gap)
+- Comms Hub → Campaign Manager: not explored
+- Comms Hub → Patient Manager: not explored
+- Appointment Book: returns 404 `/paco-connect/appointment-book`
+- Configuration: navigates to `/paco/configuration/organisation/general`
+- Patient Search: navigates to `/paco/patient-search` (495,069 patients)
+- Case Load Management → My Case: navigates to `/paco/my-case` (empty state)
+- Case Load Management → Unallocated: navigates to `/paco/unallocated` (764 cases, PDS filters)
+- Case Load Management → Case Workboards: navigates to `/paco/workboards/58` (Master Case Board)
+- Case Load Management → Task Workboards: navigates to `/paco/workboards/57` (Master Task Board)
+
+### Gaps / Open Questions
+
+- Comms Hub sub-items require separate SSO - cannot test without separate auth
+- Appointment Book returns 404 - possibly requires specific configuration
+- Designer, Designer V2 not explored
+- Campaign Manager, Patient Manager not explored
+- Exact content of workboards not captured in detail
+
+## Tester notes
+
+## Discovery run-20261006-024122 (Agent survey - part 2)
+
+Role `Super Admin GB`, environment `dev`, 2026-10-06. Read-only; claim là `Observed` trừ khi ghi khác.
+
+### Additional navigation items explored
+
+- Rocket Bar → Launch Rocket Bar (active state, no nav), Download Rocket Bar
+- Users → 404 `/paco-connect/user-training-portal`
+- Quick Pay → 404 `/paco-connect/quick-pay/invoices`
+- Dashboards → Dashboard (same page), Manager (7 tabs), Connect, Clinician
+- Analytics & Reports → Capacity & Demand (`/capacity-demand/`), Patient Analyser, Medication Analyser, QOF Registers, Patient Details, Comms Analytics, Reports
+- Web Chat & Video → Virtual Appointments (`/web-chat/appointments/`), Media Library, Outstanding Reviews
+
+### Routes returning 404
+- Appointment Book → `/paco-connect/appointment-book`
+- Users → `/paco-connect/user-training-portal`
+- Quick Pay → `/paco-connect/quick-pay/invoices`
+
+### Gap summary
+- Comms Hub sub-items require separate SSO
+- Designer, Designer V2 not explored
+- Health Forms sub-items partially explored
+- Rocket Bar exact behavior unclear
+- Some analytics items not explored
+
+## Tester notes
+
+---
+
+# Final Survey Summary - run-20261006-024122
+
+## Environment
+- **Base URL:** https://blinx.dev.blinxpaco-np.com
+- **Role:** Super Admin GB
+- **Date:** 2026-10-06
+
+## Navigation Map
+
+### Sidebar Items (14)
+| Item | Route | Status | Notes |
+|------|-------|--------|-------|
+| Dashboards | submenu | ✓ | Dashboard, Manager, Connect, Clinician |
+| Analytics & Reports | submenu | ✓ | 7 items, cross-app nav |
+| Quick Send | ? | ⚠ | not explored |
+| Health Forms | submenu | ⚠ | Inbox ✓, Designer 404 |
+| Patient Search | /paco/patient-search | ✓ | 495k patients |
+| Web Chat & Video | submenu | ⚠ | Virtual Appointments loading |
+| case load management | submenu | ✓ | My Case, Unallocated, Boards |
+| Appointment Book | /paco-connect/... | ❌ | 404 |
+| Quick Pay | /paco-connect/... | ❌ | 404 |
+| Users | /paco-connect/... | ❌ | 404 |
+| Configuration | /paco/configuration/... | ✓ | Tabs visible |
+| Rocket Bar | submenu | ⚠ | Launch behavior unclear |
+
+### Key Routes Explored
+- `/paco/dashboard` ✓
+- `/paco/patient-search` ✓ (495k)
+- `/paco/my-case` ✓ (empty)
+- `/paco/unallocated` ✓ (764)
+- `/paco/workboards/57` ✓ (Task Boards)
+- `/paco/workboards/58` ✓ (Case Boards)
+- `/paco/workboards/57` ✓ (Task Boards)
+- `/capacity-demand/` ✓
+- `/patient-analyser-new/` ✓ (12,941 patients)
+- `/web-chat/appointments/` ⚠ (loading)
+
+### NHS Comms Hub (externalDevHosts)
+- **URL:** https://nhs-comms-hub-dev.blinxhealthcare.com
+- **Auth:** Microsoft SAML2 SSO
+- **Sub-pages:**
+  - Template Manager ✓ (2 templates)
+  - Patient Manager ✓
+  - Campaign Manager ✓
+  - Analytics ✓
+  - Configuration (not explored)
+
+## Verify Flow Results
+
+| Candidate | Status | Blocker |
+|-----------|--------|---------|
+| Create New Task | BLOCKED | Date validation bug + no column options |
+| Create New Board | BLOCKED | Save doesn't complete |
+| Set User Status | NO_CHANGE | Control not found |
+
+## 404 Routes Identified
+- `/paco-connect/appointment-book`
+- `/paco-connect/quick-pay/invoices`
+- `/paco-connect/user-training-portal`
+- `/health-forms/designer`
+- `/health-forms/designer-v2`
+- `/paco/reports`
+
+## Test Artifacts
+- 25+ view documents in `docs/product/survey/views/`
+- 3 verify flow results in `test-results/product-survey/run-20261006-024122/verify-flow/`
+
+## Gaps (not explored)
+- Quick Send
+- Health Forms Designer
+- Rocket Bar behavior
+- PACO Connect (all 404)
+- Web Chat & Video sub-pages
+- Connect/Clinician dashboards
+
+---
+
+# Additional Discoveries - 2026-10-06T06:30
+
+## Status Control Found
+User status control is in a popup dialog (not TFN dropdown as initially searched).
+- Triggered by "Show" button in top bar or first-login prompt
+- Available statuses: Admin, Available, Away from Desk, Logged Out, Lunch options, etc.
+
+## Additional Views Documented
+| View | Status |
+|------|--------|
+| Quick Send | ✓ Comms Hub menu (Template/Campaign/Patient Manager) |
+| Rocket Bar | ✓ Desktop launcher (Launch/Download) |
+| Connect Dashboard | ❌ 404 |
+| Clinician Dashboard | ❌ 404 |
+
+## 404 Routes (Updated)
+- PACO Connect features (Appointment Book, Quick Pay, Users)
+- Health Forms Designer V1/V2
+- PACO Reports
+- Connect Dashboard
+- Clinician Dashboard
+
+## Gaps Remaining
+- Web Chat & Video sub-pages (Media Library, Outstanding Reviews)
+- PACO Connect features (all 404)
+- Rocket Bar desktop behavior
+
+## Final View Count: 28+

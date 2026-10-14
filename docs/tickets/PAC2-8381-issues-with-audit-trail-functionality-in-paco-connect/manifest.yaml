@@ -1,0 +1,255 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-8381
+  folder_name: PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect
+  source_directory: ticket/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-10-02T20:30:35.8492917+07:00"
+  files:
+    - path: ticket/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/ticket.md
+      sha256: e6ff2e6b06c867c58bbb0c904be27b40bfac76921decfdc58c7caf580a1dfe8e
+
+fast_path:
+  video_ingest: completed
+  graph_lookup: pending
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: in_progress
+  current_phase: MANUAL_EXECUTE
+  last_completed_phase: TEST_DESIGN
+  updated_at: "2026-10-05T14:14:46.426Z"
+  checkpoints:
+    - at: "2026-10-02T20:30:35.8492917+07:00"
+      phase: DISCOVER
+      outcome: completed
+      input_revision: 1
+      message: Exact ticket folder and required ticket.md validated; two downloaded video attachments require ingest and review.
+    - at: "2026-10-02T20:35:43.6011161+07:00"
+      phase: INGEST
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Two videos ingested and reviewed; direct Connect audit wording issue observed, while Care Navigation and amendment scenarios remain unshown.
+    - at: "2026-10-02T20:38:17.3353828+07:00"
+      phase: ANALYZE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Seven atomic requirements extracted; target branch, role, safe test data and several wording details remain open.
+    - at: "2026-10-02T20:56:59.3077055+07:00"
+      phase: LOCATE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Confirmed PAC2-8381 feature-branch Appointment Book route and appointment details entry; exact Audit control remains a coverage gap.
+    - at: "2026-10-02T21:04:09.4217467+07:00"
+      phase: EXPLORE
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Identified appointment-level View Audit Log and field-level historical audit rows; mutation verification remains pending controlled QA-AUTO data.
+    - at: "2026-10-02T21:08:07.4188678+07:00"
+      phase: TEST_DESIGN
+      outcome: completed_with_warnings
+      input_revision: 1
+      message: Four stable cases designed for direct booking, Care Navigation, amendment and cancellation with QA-AUTO data contract and cleanup.
+    - at: "2026-10-02T21:26:13.8382110+07:00"
+      phase: MANUAL_EXECUTE
+      outcome: blocked
+      input_revision: 1
+      message: Browser authentication expired before fixture and Care Navigation inspection; destructive runtime guard is not true, so no mutation occurred.
+    - at: "2026-10-05T14:14:46.426Z"
+      phase: MANUAL_EXECUTE
+      outcome: blocked
+      input_revision: 1
+      message: Authentication active; PACO_ALLOW_MUTATION=true, PACO_ALLOW_DESTRUCTIVE=false; approved synthetic patient mapping not supplied; owned QA-AUTO-PAC2-8381 book/session/slot unknown; no mutation occurred.
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-02T20:30:35.8492917+07:00"
+    artifacts: []
+    warnings:
+      - Ticket has no Acceptance Criteria section content.
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-02T20:35:43.6011161+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/video/video-notes.md
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/video/timeline.md
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/video/contact-sheet.webp
+    warnings:
+      - Care Navigation video does not show a booking or click attempt.
+      - Videos do not show appointment amendment audit behavior.
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-02T20:38:17.3353828+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/requirements.md
+    warnings:
+      - Ticket has no Acceptance Criteria section content.
+      - Target feature branch, role, safe test data and audit wording details remain open.
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-02T20:56:59.3077055+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/feature-location.md
+      - docs/product/feature-map.md
+    warnings:
+      - Exact visible Audit control was not exposed on the historical appointment inspected; no product verdict made.
+    blockers: []
+    budget:
+      views_used: 3
+      views_limit: 12
+      elapsed_minutes: 6
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-02T21:04:09.4217467+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/exploration.md
+      - docs/product/feature-map.md
+      - docs/product/workflows/appointment-book.md
+      - docs/product/open-questions.md
+      - docs/product/change-log.md
+    warnings:
+      - Historical appointment observations do not establish current build pass or fail.
+      - Mutation coverage requires controlled QA-AUTO appointment data.
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-02T21:08:07.4188678+07:00"
+    artifacts:
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/test-cases.md
+    warnings:
+      - TC-002 requires exact safe Care Navigation tile and mapping.
+      - Timestamp, final attribution label and amendment detail format remain open.
+    blockers: []
+  MANUAL_EXECUTE:
+    status: blocked
+    outcome: blocked
+    input_revision: 1
+    updated_at: "2026-10-05T14:14:46.426Z"
+    artifacts:
+      - docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/automation.md
+    warnings:
+      - No mutations executed; all four cases remain unverified for current build.
+    blockers:
+      - Approved synthetic patient mapping not supplied; required patient identifier for controlled QA-AUTO-PAC2-8381 booking.
+      - Owned QA-AUTO-PAC2-8381 appointment book/session/slot mapping unknown.
+      - TC-002 (Care Navigation) and TC-004 (cancellation) out of scope per tester 2026-10-07.
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-02T20:30:35.8492917+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-02T20:30:35.8492917+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-02T20:30:35.8492917+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-02T20:30:35.8492917+07:00"
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/requirements.md
+    state: valid
+    input_revision: 1
+    sha256: 2d098bccdebdafa2b321bdd7284e4ea63aa1c87a6eb6dfb9c299ce9f0b92e68b
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/feature-location.md
+    state: valid
+    input_revision: 1
+    sha256: 5721b2e22837d9fc5e7d56fe68057c015b1e43b7ea1c699b0743cb5be5db9c19
+  product-feature-map.md:
+    owner: paco-explore
+    path: docs/product/feature-map.md
+    state: valid
+    input_revision: 1
+    sha256: 33801668d72b049edb3de6efe0637cbfec9b4c60408a9f031e11e6255eed64eb
+  exploration.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/exploration.md
+    state: valid
+    input_revision: 1
+    sha256: d7e701778f9bd758dfd55d44e0c43e6b95d07bfc16b918c299653de2abea9406
+  product-workflow-appointment-book.md:
+    owner: paco-explore
+    path: docs/product/workflows/appointment-book.md
+    state: valid
+    input_revision: 1
+    sha256: ab254133a742fcb7048a8a806538bb6be507523987ac034770cdb9d56edbc275
+  product-open-questions.md:
+    owner: paco-explore
+    path: docs/product/open-questions.md
+    state: valid
+    input_revision: 1
+    sha256: 201ad247e119e6eec0d49bf7b3d8a1cd36ab3e7ae0cbaa0a56e8170b543c633f
+  product-change-log.md:
+    owner: paco-explore
+    path: docs/product/change-log.md
+    state: valid
+    input_revision: 1
+    sha256: 03240038cc5537899e2848e31a64433ccc54a79837685251b266c05793e819a1
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/test-cases.md
+    state: valid
+    input_revision: 1
+    sha256: 6fe28e763c04116c4c8ffb1e08477e396605735b84dbcd888559e296b1588465
+  automation.md:
+    owner: paco-playwright
+    path: docs/tickets/PAC2-8381-issues-with-audit-trail-functionality-in-paco-connect/automation.md
+    state: valid
+    input_revision: 1
+    sha256: 9ce9ee124ed4a004c306aa4bc2a1471e75feab37548a4560926bf5bad4498ef8
+
+execution:
+  case_ids:
+    - PAC2-8381-TC-001
+    - PAC2-8381-TC-003
+  scope_note: TC-002 (Care Navigation) and TC-004 (cancellation) out of scope per tester 2026-10-07
+  manual: {}
+  automation: {}
+  runs: {}

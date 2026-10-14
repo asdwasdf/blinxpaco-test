@@ -6,243 +6,128 @@ roles:
 environment: dev
 status: Observed
 routes:
-  - dashboard
+  - /paco/configuration/organisation/general
 controls:
-  - name: Organisation
-    kind: navigation
-  - name: Patient
-    kind: navigation
-  - name: Appointment Books
-    kind: navigation
-  - name: Patients & Proxy
-    kind: navigation
-  - name: Users & Staff
-    kind: navigation
-  - name: Clinical Config
-    kind: navigation
-  - name: Case Prioritisation
-    kind: navigation
-  - name: Quick Pay
-    kind: navigation
+  - name: Save
+    kind: action
+    mutation: true
+  - name: Edit Address
+    kind: action
+    mutation: true
+  - name: Remove Photo
+    kind: action
+    mutation: true
+  - name: Add Special Opening Hours
+    kind: action
+    mutation: true
 verified_by: []
-last_observed: 2026-10-01
+last_observed: 2026-10-06
 relationships:
-  - id: run-20261001-085609-p2-configuration-1
-    from: configuration
-    to: users-staff-teams
-    trigger: Users & Staff > Teams
+  - id: run-20261006-024122-config-1
+    from: dashboard
+    to: configuration
+    trigger: Configuration
     relationship: navigation
     context: []
     classification: Observed
     mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-2
-    from: configuration
-    to: users-staff-role-groups
-    trigger: Users & Staff > Role Groups
-    relationship: navigation
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-3
-    from: configuration
-    to: users-staff-profiles
-    trigger: Users & Staff > Staff Profiles
-    relationship: navigation
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-4
-    from: configuration
-    to: patient-dfd-route-failure
-    trigger: Patient > DFD
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-5
-    from: configuration
-    to: patient-care-navigation
-    trigger: Patient > Care Navigation
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-6
-    from: configuration
-    to: appointment-books-scheduler
-    trigger: Appointment Books > Scheduler
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-7
-    from: configuration
-    to: appointment-books-sessions
-    trigger: Appointment Books > Sessions
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-8
-    from: configuration
-    to: appointment-books-slot-types
-    trigger: Appointment Books > Slot Types
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-9
-    from: configuration
-    to: appointment-books-appointments
-    trigger: Appointment Books > Appointments
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-10
-    from: configuration
-    to: appointment-books-external-reminders
-    trigger: Appointment Books > External Appt Reminders
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-11
-    from: configuration
-    to: appointment-books
-    trigger: Appointment Books > Appointment Books
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-12
-    from: configuration
-    to: quick-pay-product-catalogue
-    trigger: Quick Pay > Product Catalogue
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-13
-    from: configuration
-    to: quick-pay-accounts
-    trigger: Quick Pay > Accounts
-    relationship: cross-module handoff
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-14
-    from: configuration
-    to: patients-proxy-role-groups
-    trigger: Patients & Proxy > Role Groups
-    relationship: navigation
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-15
-    from: configuration
-    to: risk-strat-builder
-    trigger: Clinical Config > Risk Strat Builder
-    relationship: navigation
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
-  - id: run-20261001-085609-p2-configuration-16
-    from: configuration
-    to: template-library-route-failure
-    trigger: Clinical Config > Template Library
-    relationship: navigation
-    context: []
-    classification: Observed
-    mutation_boundary: false
-    evidence:
-      - test-results/product-survey/run-20261001-085609/outcomes/
+    evidence: []
 ---
 
 # Configuration
 
 ## Purpose and context
 
-`Observed`: global `Configuration` opens `/paco/configuration`.
+`Observed`: Organisation configuration and settings management.
 
-## Entry and transitions
+## Entry
 
-Default state asks the user to select a menu item. Categories are `Organisation`, `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, `Users & Staff`, `Clinical Config` and `Case Prioritisation`.
+1. Dashboard → Configuration
+2. URL: `/paco/configuration/organisation/general`
 
-Observed read-only child navigation:
+## Configuration Sidebar Items
 
-- `Organisation`: `General`, `Practice Profiles`, `Locations`, `Skills`, `Code Rule`, `Sharing Agreements`, `Pathways Config`, `Services`, `Dx Priority`, `Org Priority`, `Inbound Priority Flow`, `Announcements`, `Integrations`.
-- `Patient`: `DFD`, `Care Navigation`.
-- `Appointment Books`: `Scheduler`, `Appointment Books`, `Sessions`, `Slot Types`, `Appointments`, `External Appt Reminders`.
-- `Quick Pay`: `Product Catalogue`, `Accounts`.
-- `Patients & Proxy`: `Role Groups`.
-- `Users & Staff`: `Staff Profiles`, `Role Groups`, `Teams`.
-- `Clinical Config`: `Risk Strat Builder`, `Template Library`.
-- `Case Prioritisation`: dedicated route `/paco/configuration/case-prioritisation` with `View audit`, `Add Another` and `Save`.
+1. Organisation (expanded) - General sub-page
+2. Patient
+3. Appointment Books
+4. Quick Pay
+5. Patients & Proxy
+6. Users & Staff
+7. Clinical Config
+8. Case Prioritisation
 
-No editor form was changed or saved. `Add Another`/`Save` require a valid prioritisation rule and cleanup plan; mutation permission alone does not provide domain-safe values.
+## Organisation General Page
 
-## Execution guidance
+### Basic Information
+- Photo (with Remove Photo button)
+- Organisation name
 
-- Confirm exact category, expected setting and cleanup before editing.
-- Treat organisation, user, staff and patient settings as sensitive.
-- Capture menu structure only during general survey.
+### Location & Contact
+- Address: Warrington, Halton 5, WA4 4AB
+- Edit Address link
+- Contact Number field
+- Email Address: contact@blinxsolutions.com
+- Website URL: https://www.blinxhealthcare.com/
 
-## Automation guidance
+### Opening Hours
+- Regular Opening Hours (Mon-Fri with From/To comboboxes)
+- Special Opening Hours: "+ Add Special Opening Hours" button
 
-- Stable landmarks: route, heading and category labels.
-- Configuration assertions require controlled setup and restoration.
+### Communications
+- Standard Header (rich text editor)
+- Standard Footer (rich text editor)
 
-## Evidence
+## Observations
 
-Accessibility observation reverified, dev, `Super Admin GB`, 2026-09-20. `Patient`, `Appointment Books`, `Quick Pay`, `Patients & Proxy`, `Users & Staff`, and `Clinical Config` categories expanded successfully and exposed the documented children. Mutation: `None`; no PII retained.
+- Read-only view of organisation configuration
+- Save button present (mutation boundary)
+- Special Opening Hours addable (mutation boundary)
 
-## Open questions
+## Provenance
 
-- Mutation behavior and permission boundaries inside child pages remain unverified.
-
-## Discovery run-20261001-085609
-
-Role `Super Admin GB`, environment `dev`, 2026-10-01. Read-only; mọi claim là `Observed` trừ khi ghi khác.
-
-- Nhóm `Users & Staff` trong Configuration gồm `Staff Profiles`, `Role Groups`, `Teams`.
-
-## Discovery run-20261001-085609 (part 2)
-
-Role `Super Admin GB`, dev, 2026-10-01. Read-only; claim là `Observed` trừ khi ghi khác.
-
-- Nhóm `Patient`: `DFD`, `Care Navigation`. Nhóm `Appointment Books`: `Scheduler`, `Appointment Books`, `Sessions`, `Slot Types`, `Appointments`, `External Appt Reminders`. Nhóm `Quick Pay`: `Product Catalogue`, `Accounts`. Nhóm `Patients & Proxy`: `Role Groups`. Nhóm `Clinical Config`: `Risk Strat Builder`, `Template Library`.
+- Environment: dev
+- Role: Super Admin GB
+- Observed at: 2026-10-06T03:27:14Z
 
 ## Tester notes
 
-[Protected area]
+## Status Options Discovered
+
+Status dialog shows available statuses:
+- Admin
+- Screening
+- Activity status test
+- Lunch - 30 mins
+- Lunch - 50 mins
+- Lunch - 20 mins
+- TEST STATUS
+- Available
+- Away from Desk
+- Logged Out
+
+User can set status to control visibility to colleagues.
+
+---
+
+# Configuration Sub-pages Discovered
+
+## Menu Items (8 categories)
+1. **Organisation** - General (expanded by default)
+   - Basic Information, Location & Contact, Opening Hours, Communications
+   - Standard Header/Footer for communications
+2. **Patient** - (expanded shows region, content not loaded)
+3. **Appointment Books** - 404 link
+4. **Quick Pay** - 404 link
+5. **Patients & Proxy** - link
+6. **Users & Staff** - link
+7. **Clinical Config** - link
+8. **Case Prioritisation** - link
+
+## Opening Hours Configuration
+- Regular Opening Hours (Mon-Fri): 09:00 - 17:00
+- Thursday: 09:00 - 19:00
+- Special Opening Hours: Add button available
+
+## Communications
+- Standard Header (rich text editor)
+- Standard Footer (4 words)

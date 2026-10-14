@@ -203,6 +203,97 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Created:** 2026-10-02
 **Answered:** -
 
+**ID:** OQ-024
+**Status:** Open
+**Question:** Với role `Super User` của PAC2-8611, ngoài medicines/prescribing thì appointments permission có bị thiếu không; domain nào được phép dùng làm control path; patient test có đủ restricted data để phát hiện leak không?
+**Impact:** High
+**Evidence:** PAC2-8611/requirements.md, exploration.md
+**Created:** 2026-10-02
+**Answered:** -
+
+**ID:** OQ-025
+**Status:** Open
+**Question:** Appointment audit PAC2-8381: concise `booked this appointment` là row bổ sung hay thay field-level rows; label cuối `Booked By` hay `Actioned By`; timestamp tolerance; amendment có cần old/new value; `Care Navigation` tile/fixture/cleanup nào an toàn?
+**Impact:** High
+**Evidence:** PAC2-8381/requirements.md, feature-location.md, exploration.md
+**Created:** 2026-10-02
+**Answered:** -
+
+**ID:** OQ-026
+**Status:** Answered
+**Question:** PAC2-8998 top-bar dropdown có phải global header search (vs. `Rocket Bar` desktop app launcher) không
+**Impact:** Low
+**Evidence:** PAC2-8998/exploration.md (LOCATE + EXPLORE)
+**Created:** 2026-10-13
+**Answered:** 2026-10-13
+**Answer:** Yes. Top-bar = global header `Search patients by name or NHS number` (placeholder); `Rocket Bar` icon trong sidebar là desktop app launcher, không phải search. Route cùng backend PDS.
+
+**ID:** OQ-027
+**Status:** Answered
+**Question:** PAC2-8998 UI affordance nào báo total match (Tony mô tả "X of Y" hoặc tương đương)
+**Impact:** Low
+**Evidence:** PAC2-8998/requirements.md (Open Question), exploration.md
+**Created:** 2026-10-13
+**Answered:** 2026-10-13
+**Answer:** Top-bar dropdown dùng label `Results (50)` (cap cố định, không hiện total). PDS page dùng heading `Patient Search (N)` với N = total match. Hai cách khác nhau giữa hai surface.
+
+**ID:** OQ-028
+**Status:** Answered
+**Question:** PAC2-8998 dev data có patient nào với 2-word first name để test REQ-003 không
+**Impact:** Medium
+**Evidence:** PAC2-8998/exploration.md
+**Created:** 2026-10-13
+**Answered:** 2026-10-13
+**Answer:** Không. Dev seed `PHOEBE EILEEN SMITHAM` có `EILEEN` ở middle name (không phải first). Test đã chọn read-only scope (không tạo data) → TC-006 Skipped với reason; Tony đã cover qua 15,000 patient prod sweep.
+
+**ID:** OQ-029
+**Status:** Open
+**Question:** PAC2-8998 AG Grid virtual scroll "buffer" rows (~48 unique first names) có vi phạm cap 50 không, hay là implementation detail không quan trọng (user chỉ thấy tối đa ~21 rows tại viewport)
+**Impact:** Low
+**Evidence:** PAC2-8998/evidence/manual-r1.json (TC-011)
+**Created:** 2026-10-13
+**Answered:** -
+
+**ID:** OQ-030
+**Status:** Open
+**Question:** PAC2-9001 paco-one-db #1022 đã deploy trên dev host chưa? RBAC activity list tại `/paco/configuration/staff/role-groups` max P7507, có P7030 prerequisite nhưng P7032 (`Appointment Book Cancel Session`) không visible. Nếu P7032 chưa deploy, REQ-009 setup bị Blocked và REQ-001/006/007/008 không test được trên dev
+**Impact:** Critical
+**Evidence:** PAC2-9001/feature-location.md (R-4), PAC2-9001/requirements.md (REQ-009), PAC2-9001/requirements.md (OQ-1)
+**Created:** 2026-10-13
+**Answered:** -
+
+**ID:** OQ-031
+**Status:** Open
+**Question:** PAC2-9001 `Block Session` trên session có ≥1 booking có gate bằng P7032 không? Video (step 2/6) test trên empty session (Conflict test 48 slots) → PASS. Chưa test trên session có booking. AC matrix chỉ nói `Block an empty session: all roles allow`, ambiguous khi session có booking
+**Impact:** Medium
+**Evidence:** PAC2-9001/requirements.md (REQ-004), PAC2-9001/video-notes.md (step 2/6), PAC2-9001/requirements.md (OQ-2)
+**Created:** 2026-10-13
+**Answered:** -
+
+**ID:** OQ-032
+**Status:** Open
+**Question:** PAC2-9001 `Configuration > Sessions` row-kebab menu content cho `User + P7032` (NOT Admin): Cancel option có visible (UI gate hidden) hay click visible nhưng ra Access Denied (server gate)? Video step 6/6 PASS = page reachable cho User+P7032, không phải Cancel option visible. Tester did not open kebab
+**Impact:** Medium
+**Evidence:** PAC2-9001/requirements.md (REQ-007), PAC2-9001/video-notes.md (step 6/6), PAC2-9001/requirements.md (OQ-3)
+**Created:** 2026-10-13
+**Answered:** -
+
+**ID:** OQ-033
+**Status:** Open
+**Question:** PAC2-9001 Entry-point shape cho `Cancel session appointments` (right-click context menu / kebab dropdown / menu icon)? Video KHÔNG capture. LOCATE attempt-4 verified session card chỉ có 2 buttons (Edit pencil + Note icon), EDIT SESSION drawer không có Cancel/Block/Remove entry, right-click session name = no-op. Có thể ở patient slot row level (untested)
+**Impact:** Critical
+**Evidence:** PAC2-9001/feature-location.md (R-2), PAC2-9001/video-notes.md (Open questions), PAC2-9001/requirements.md (OQ-4)
+**Created:** 2026-10-13
+**Answered:** -
+
+**ID:** OQ-034
+**Status:** Open
+**Question:** PAC2-9001 Time-edit cancellation dialog (REQ-008 scenarios 6-10) trigger bằng template edit (per QA notes rev 2) — có session template nào trên dev có generated sessions hold bookings outside template times? Video không capture dialog. Trực tiếp session edit khi có bookings thì times locked, không trigger
+**Impact:** High
+**Evidence:** PAC2-9001/requirements.md (REQ-008, QA notes), PAC2-9001/video-notes.md (step 5/6), PAC2-9001/requirements.md (OQ-5)
+**Created:** 2026-10-13
+**Answered:** -
+
 
 ### Example Format
 
