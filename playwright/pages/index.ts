@@ -4,3 +4,4 @@ export { HealthFormsPage } from './HealthFormsPage.js';
 export { AppointmentBookPage } from './AppointmentBookPage.js';
 export { SchedulerConfigPage } from './SchedulerConfigPage.js';
 export { CommsHubPage } from './CommsHubPage.js';
+export { ConfigurationSessionsPage } from './ConfigurationSessionsPage.js';

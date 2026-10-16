@@ -1,0 +1,207 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-8575
+  folder_name: PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status
+  source_directory: ticket/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-10-15T15:43:22.496Z"
+  files:
+    - path: ticket/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/ticket.md
+      sha256: 597a86c583979c496842e2db38f17cb14f2913db487ed9ef679df808064a50b1
+      size_bytes: 1006
+
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: pending
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: in_progress
+  current_phase: TEST_DESIGN
+  last_completed_phase: EXPLORE
+  updated_at: "2026-10-15T16:20:00.000Z"
+  checkpoints:
+    - phase: DISCOVER
+      completed_at: "2026-10-15T15:43:22.496Z"
+      outcome: completed
+    - phase: ANALYZE
+      completed_at: "2026-10-15T15:50:00.000Z"
+      outcome: completed
+    - phase: LOCATE
+      completed_at: "2026-10-15T16:00:00.000Z"
+      outcome: completed
+    - phase: EXPLORE
+      completed_at: "2026-10-15T16:20:00.000Z"
+      outcome: completed_with_warnings
+
+phases:
+  DISCOVER:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-15T15:43:22.496Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-15T15:43:22.496Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-15T15:50:00.000Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/requirements.md
+        sha256: 56f308e6a96e1d56ce21fa75e9d702bcfdcb6aa9b843d421a1d07a72b0ee7e97
+    warnings:
+      - "Acceptance criteria ticket = 'Not provided'; expected behavior dựa trên UX inference"
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-15T16:00:00.000Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/feature-location.md
+        sha256: 744f0786d599bd3a3f439005295d257055c2cb5afbccc80ecc4318603895b008
+    warnings: []
+    blockers: []
+    budget:
+      views_used: 1
+      views_limit: 12
+      elapsed_minutes: 3
+      minutes_limit: 15
+  EXPLORE:
+    status: completed
+    outcome: completed_with_warnings
+    input_revision: 1
+    updated_at: "2026-10-15T16:20:00.000Z"
+    artifacts:
+      - path: docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/exploration.md
+        sha256: f847cae6d09cad035eed0ffb0c2a24d4ada01d39058b9c9172e6d1a3f722243a
+    warnings:
+      - "Arrive transition end-to-end chưa xác minh được do thiếu QA-AUTO future booked slot (6/6 booked slots đều past)."
+      - "`Select Patient Status` chevron-down trong sidebar không có onClick; cơ chế arrive trigger chưa rõ (right-click? keyboard? drag? button ẩn?)."
+    blockers: []
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  MANUAL_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/feature-location.md"
+    state: present
+    input_revision: 1
+    sha256: 744f0786d599bd3a3f439005295d257055c2cb5afbccc80ecc4318603895b008
+  requirements.md:
+    owner: paco-requirements
+    path: "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/requirements.md"
+    state: present
+    input_revision: 1
+    sha256: 56f308e6a96e1d56ce21fa75e9d702bcfdcb6aa9b843d421a1d07a72b0ee7e97
+  exploration.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/exploration.md"
+    state: present
+    input_revision: 1
+    sha256: f847cae6d09cad035eed0ffb0c2a24d4ada01d39058b9c9172e6d1a3f722243a
+  test-cases.md:
+    owner: paco-test-design
+    path: "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/test-cases.md"
+    state: missing
+    input_revision: 1
+    sha256: null
+  automation.md:
+    owner: paco-playwright
+    path: "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/automation.md"
+    state: missing
+    input_revision: 1
+    sha256: null
+  report.md:
+    owner: paco-report
+    path: "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/report.md"
+    state: missing
+    input_revision: 1
+    sha256: null
+
+execution:
+  case_ids: []
+  manual: {}
+  automation: {}
+  runs: {}
+
+environment:
+  base_url: https://blinx.dev.blinxpaco-np.com
+  feature_branch_path: /paco-connect/feature-branch/pac2-8575/appointment-book
+  role: reception
+  target_host: blinx.dev.blinxpaco-np.com
+  approved_hosts:
+    - blinx.dev.blinxpaco-np.com
+
+mutation_policy:
+  approved: true
+  scope: blanket
+  approved_by: tester
+  approved_at: "2026-10-15T15:43:22.496Z"
+  test_data_prefix: QA-AUTO
+  email_recipient: fiona.nguyen@blinxsolutions.com
+  sms_recipient: null
+  notes: "Blanket approve cho toàn bộ scope ticket (Arrive/Create/Update trên QA-AUTO test data trên dev host). SMS chưa có recipient được duyệt, phải hỏi trước."

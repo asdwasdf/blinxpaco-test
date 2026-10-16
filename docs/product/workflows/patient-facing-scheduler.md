@@ -64,5 +64,44 @@ File tạo ngày 2026-10-02 để gom logic từ ticket. Route/landmark xem `doc
 **Open questions**
 - Phương thức xác thực scheduler, thông báo lỗi, cách lấy link an toàn, recipient test an toàn. `[Open Question]` — PAC2-6982/requirements.md (OQ-003)
 
+### Booking link generation & Access Denied error (PAC2-7727)
+
+**Luồng**
+1. PACO user mở `Configuration > Patient > DFD` → load page `https://blinx.dev.blinxpaco-np.com/configuration/#dfd-config` (org-chart các campaign DFD). `[Observed]` — PAC2-7727/feature-location.md
+2. Mỗi campaign có button `+` (class `org-chart__add`) mở menu 2 options: `Campaign` (thêm sub-campaign) hoặc `Button` (thêm button action). `[Observed]` — PAC2-7727/exploration.md
+3. Network requests tới `nhs-comms-hub-be-dev.blinxhealthcare.com/CommsHub/Campaigns/getCampaignsByType` xác nhận page gọi Comms Hub backend. `[Observed]` — PAC2-7727/exploration.md
+4. Mở `https://dev.blinxscheduler-np.com/patient-self-booking/` (không có token) → render Welcome page (heading + button `Get started!`); click `Get started!` → list services `PACO DEMO DFD`, `Blinx Surgery`; click service → sub-services. `[Observed]` — PAC2-7727/exploration.md
+5. `Link Error / "No token found"` page chỉ trigger khi URL có token không hợp lệ/hết hạn. Mở base URL không có token KHÔNG ra Link Error. `[Observed]` — PAC2-7727/exploration.md
+6. Mở booking link có JWT hợp lệ (`#eyJhbG...`) từ video Fiona 2026-08-19: scheduler page `Request an appointment` load với patient pre-fill (Michael Ramella, NHS 70986); transition sang web form có thể gặp `Link Error` ở giây thứ ~10–30, sau đó auto-recovery sang `https://dev.blinxscheduler-np.com/web-form/?wf=...`. `[Observed]` — PAC2-7727/video-notes.md
+
+**Business rules**
+- Mỗi campaign trong DFD Config có thể generate nhiều button action (sub-campaigns) và mỗi button sinh một booking link tokenized riêng. `[Inferred]` — PAC2-7727/exploration.md
+- Booking link mang theo patient identifier trong JWT → scheduler page tự pre-fill patient context (name, NHS, DOB) không cần patient nhập lại. `[Observed]` — PAC2-7727/video-notes.md
+- Workflow "PACO Connect exception" cho phép test trực tiếp trên dev (theo Priscilla Hancock 2026-08-19), không cần pre-prod/staging. `[Confirmed]` — PAC2-7727/ticket.md comment 4
+
+**Possible defects**
+- PAC2-7727 (Inconclusive 2026-10-16): `Link Error / "No token found"` xuất hiện intermittent khi transition scheduler → web form dù JWT token trong URL fragment vẫn hợp lệ (`#eyJhbG...`); flow sau đó tự recovery trong ~30s. Bug nằm ở token validation/parsing hoặc routing race condition. `[Inferred]` — PAC2-7727/video-notes.md, exploration.md
+- Entry "Copy DFD link" được mô tả trong memory `paco-scheduler-booking-link-flow` đã tìm thấy ở **page-level 3-dot ellipsis menu** (không phải node-level) — click ellipsis (`<svg data-icon="ellipsis">`) → `p-overlaypanel` → 2 items: `Copy DFD link`, `Copy to Care Navigator`. Click `Copy DFD link` → copy URL `https://dev.blinxscheduler-np.com/patient-self-booking/#<jwt>` vào clipboard. JWT payload chỉ chứa `otId` (organization ID) → org-level link, không có patient pre-fill. Cần patient-level link từ Comms Hub Outbox `Resend` để vào flow `Request an appointment` với patient context. `[Observed]` (OQ-039 Answered) — PAC2-7727/exploration.md O-5
+
+**Test results (2026-10-16)**
+- TC-001 (DFD entry): **Pass** — `Configuration > Patient > DFD` → `https://blinx.dev.blinxpaco-np.com/configuration/#dfd-config` loads đúng
+- TC-002 (scheduler load with JWT): **Pass** — Mở org-level JWT link trong incognito → `Welcome` page, không có `Link Error`
+- TC-003 (reproduce defect 3x): **Blocked** — Chỉ có org-level link; cần patient-level link
+- TC-004 (recovery path diagnostic): **Blocked** — Same as TC-003
+- TC-005 (patient context persistence): **Blocked** — Same as TC-003
+- TC-006 (process gate PACO Connect on dev): **Pass** — Rule confirmed
+- Tally: 3/6 Pass / 0 Fail / 0 Inconclusive / 3 Blocked / 0 Not Run
+
+**Open questions inherited**
+- OQ-040 (open): Comms Hub SSO cần Super Admin GB role; clinic role `blinx_johnny.bravo` không đủ quyền. Workaround để lấy patient-level link bị chặn.
+- OQ-041 (open): Sidebar Quick Send trong PACO không trigger navigation cho clinic role.
+- OQ-042 (open 2026-10-16): DFD Config "Copy DFD link" chỉ sinh organization-level link; cần patient-level link để reproduce defect transition.
+
+**Suggested coverage**
+- Generate booking link mới với patient QA-AUTO test data → mở trong incognito 3 lần liên tiếp để verify intermittent
+- Capture Network/Console log khi gặp `Link Error` để xác định token validation endpoint fail
+- Test trên Chrome/Firefox/Safari để check cross-browser hash fragment parser
+- Test với link từ Comms Hub Outbox `Resend` vs link từ DFD Config trực tiếp
+
 ## Tester notes
 

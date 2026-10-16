@@ -1,0 +1,99 @@
+{
+  "run_id": "manual-exec-20261015T162817Z",
+  "ticket": "PAC2-8575",
+  "mode": "manual",
+  "environment": "dev (feature-branch host)",
+  "role": "Blinx Deployment",
+  "auth": "active (login đã thực hiện ở phase LOCATE; tab fresh ở 16:33Z reuses session)",
+  "date_executed": "2026-10-15T16:33:00Z - 16:35:30Z",
+  "feature_location": "docs/tickets/PAC2-8575-have-to-double-click-slots-in-appointment-book-to-change-patient-status/feature-location.md (Confirmed)",
+  "route": "https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-8575/appointment-book",
+  "cases": [
+    {
+      "case_id": "PAC2-8575-TC-001",
+      "title": "Single click mở Appointment Details sidebar",
+      "type": "Smoke",
+      "expected_basis": "UX inference + exploration OBS-PAC2-8575-001",
+      "attempts": [
+        {
+          "attempt": 1,
+          "action": "navigate to /paco-connect/feature-branch/pac2-8575/appointment-book (in existing tab)",
+          "timestamp": "2026-10-15T16:27:49Z",
+          "result": "FAIL precondition - Booked 0, summary: Booked 0 / Available 2,080",
+          "diagnostic": "data not present in current tab state (cookie/local storage possibly stale; date rolled to 21 Oct 2026)"
+        },
+        {
+          "attempt": 2,
+          "action": "navigate Next 5 days (17-21 Oct 2026)",
+          "timestamp": "2026-10-15T16:28:55Z",
+          "result": "FAIL - 5/5 dates have 0 booked, 0 total slots (no sessions)"
+        },
+        {
+          "attempt": 3,
+          "action": "navigate to /paco-connect/feature-branch/pac2-9001/appointment-book (control path - known route PAC2-9001)",
+          "timestamp": "2026-10-15T16:32:00Z",
+          "result": "FAIL - 0 booked, 1793 total; control path cũng không có data (cross-confirm: data issue not location)"
+        },
+        {
+          "attempt": 4,
+          "action": "browser_tabs new + navigate to pac2-8575/appointment-book (fresh tab)",
+          "timestamp": "2026-10-15T16:33:44Z",
+          "result": "PASS precondition - Booked 6, 1024 total slots, 15 October 2026 (matches EXPLORE OBS-003)"
+        }
+      ],
+      "execution": {
+        "step_1_navigate": "PASS - page title 'PACO Connect', Day view, summary Sessions 23, Booked 6, Available 1,018, date '15 October 2026'",
+        "step_2_identify_slot": "PASS - Mr Floy adhoc slot 15:00-15:10 (synthetic test patient, NHS 76835143) found at .appointment-slot.appointment-booked",
+        "step_3_single_click": "PASS - single click on slot parent .session-slot-button → Appointment Details sidebar opens; sidebar text contains 'Appointment' / 'Mr Floy adhoc' / 'NHS Number: 76835143' / 'Mark as:' / 'Select Patient Status' / 'PACO Assist' / 'Slot Count:' / 'Reason Code(s):' / 'Booking Notes:'",
+        "step_4_verify_class_unchanged": "PASS - floy class remains 'appointment-slot ... appointment-booked', floyIsArrived=false, Booked count 6→6"
+      },
+      "verdict": "Pass",
+      "evidence": [
+        "test-results/PAC2-8575/manual/manual-exec-20261015T162817Z/tc-001-001-baseline.yml (initial failed attempt)",
+        "test-results/PAC2-8575/manual/manual-exec-20261015T162817Z/tc-001-002-fresh-tab-baseline.yml (fresh tab baseline, 6 booked)",
+        "inline browser_run_code_unsafe output 2026-10-15T16:34:29Z: before/after state with floyClass, bookedCount, aside text, markAsText"
+      ],
+      "sensitive_data_review": "Redacted: patient name 'Mr Floy adhoc' NHS 76835143 là synthetic (cùng pattern PAC2-8999 manual test 2026-10-15); other 5 booked slots không reveal"
+    },
+    {
+      "case_id": "PAC2-8575-TC-002",
+      "title": "Double click KHÔNG mutate status (regression guard)",
+      "type": "Regression",
+      "expected_basis": "UX inference + exploration OBS-PAC2-8575-002",
+      "preconditions": "satisfied by TC-001 fresh tab (Booked 6, 15 Oct 2026)",
+      "execution": {
+        "step_1_navigate": "PASS - same tab, route preserved",
+        "step_2_note_booked": "PASS - Booked 6 noted before",
+        "step_3_native_dblclick": "PASS - page.locator(...).dblclick() on slot parent .session-slot-button; aside opens for same Mr Floy adhoc",
+        "step_4_verify_booked_unchanged": "PASS - Booked count 6→6, floyClass remains 'appointment-slot ... appointment-booked'",
+        "step_5_verify_no_modal_outside_aside": "PASS - aside is the only side effect; no extra modal/popover/toast"
+      },
+      "verdict": "Pass",
+      "evidence": "inline browser_run_code_unsafe output 2026-10-15T16:35:19Z: before{bookedCount:6, floyClass:'appointment-booked', modals:0} after{bookedCount:6, floyClass:'appointment-booked', floyIsArrived:false, asideOpen:true, asideText matches Mr Floy}",
+      "sensitive_data_review": "Redacted (same as TC-001)"
+    }
+  ],
+  "diagnostics_summary": {
+    "min_attempts_requirement": 3,
+    "attempts_used": 4,
+    "precondition_resolution": "Diagnostic #1 (initial navigate) failed - data not in tab state; #2 (multi-date) failed - same data issue; #3 (cross-branch control) failed - same; #4 (fresh tab) succeeded - confirms data exists in fresh session; data issue was stale tab state not actual data absence"
+  },
+  "consistency_with_explore": {
+    "explore_observation_001": "single click → sidebar open (Observed 2026-10-15T16:08:00Z)",
+    "manual_tc_001": "single click → sidebar open, slot class unchanged (Pass 2026-10-15T16:34:29Z)",
+    "consistency": "Stable - manual execution confirms exploration observation"
+  },
+  "outstanding_blockers": [
+    "TC-003/TC-004 cần QA-AUTO test data với appointment future (current 6/6 booked slots đều isBeforeNow); chưa chạy được",
+    "TC-005/TC-006 chưa chạy (cùng blocker + exploratory)",
+    "TC-007 cross-host cần manual ngoài scope hiện tại"
+  ],
+  "mutation_summary": {
+    "mutations_performed": 0,
+    "data_created": 0,
+    "data_modified": 0,
+    "data_deleted": 0,
+    "cleanup_required": false,
+    "leftovers": []
+  }
+}

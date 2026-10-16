@@ -22,9 +22,9 @@ fast_path:
 
 workflow:
   status: in_progress
-  current_phase: EXPLORE
-  last_completed_phase: LOCATE
-  updated_at: "2026-10-13T13:25:00.000Z"
+  current_phase: MANUAL_EXECUTE
+  last_completed_phase: MANUAL_EXECUTE
+  updated_at: "2026-10-15T07:50:00.000Z"
   checkpoints:
     - at: "2026-10-13T13:05:00.000Z"
       phase: DISCOVER
@@ -51,6 +51,26 @@ workflow:
       outcome: completed
       input_revision: 1
       message: Route Confirmed — PACO Patient Audit modal from Patient Search (View Audit), PACO Connect Appointment Book (book/cancel). Audit dialog has AG Grid columns Date/Time/Summary/Field/Previous Value/New Value/Details. feature-location.md written + feature-map.md synced. Ready for EXPLORE.
+    - at: "2026-10-15T00:00:00.000Z"
+      phase: EXPLORE
+      outcome: blocked
+      input_revision: 1
+      message: Auth expired — admin Playwright plugin tab on `/paco/login` with `signed out due to inactivity` banner; LOCATE memo "auth already live" no longer valid. Tester must re-auth in current admin tab; orchestrator will resume `paco-explore` (observe) with same scope after tester confirmation.
+    - at: "2026-10-15T01:00:00.000Z"
+      phase: EXPLORE
+      outcome: blocked
+      input_revision: 1
+      message: Re-resume (2026-10-15 01:00): browser MCP lock still held by prior session (`Browser is already in use for ... mcp-chrome-1c4cc5b`) — orchestrator could not verify auth state. No new tester confirmation received since 2026-10-15T00:00. Same blocker stands: admin tab must be re-authed; on next resume, re-verify URL lands on `/paco/feature-branch/pac2-8999/dashboard` then re-route to `paco-explore` (observe).
+    - at: "2026-10-15T07:50:00.000Z"
+      phase: MANUAL_EXECUTE
+      outcome: completed
+      input_revision: 1
+      message: Manual test executed 2026-10-15 14:49 against dev build `pac2-8999` with pre-existing test patient `Floy adhoc` NHS 76835143 on session `PAC2-7786 Temi PCN`. 8 step runbook executed: REQ-002 (book) Pass (2 audit rows `Booked appointment` actor Johnny Bravo with window 1s); REQ-001 (cancel) Fail (menuitem Cancel reproducible no-op ×3 attempts, 4 indicator (dialog/network/sidebar state/calendar slot) all no-op, no audit row). Evidence at manual-test.md. 4 suspected cause (a/b/c/d) for dev investigate. Orphan appointment `Mr Floy adhoc` 15:00–15:10 15/10/2026 left on dev (cancel no-op didn't reach backend) — dev/admin cleanup required. Auth expired mid-session; tester re-auth attempted but browser MCP context (`user` + `admin`) returns ENOENT for `playwright/.auth/user-session.json` — wrapper-up applied. Workflow paused at AUTOMATE gate: requires tester decision whether to (a) wait for dev fix on cancel handler then re-run cancel test, or (b) proceed with `AUTOMATE` writing standalone specs for the 2 confirmed behaviors (Book+Audit observed Pass, Cancel+Audit observed Fail) + 1 diagnostic spec for Cancel no-op reproduction.
+    - at: "2026-10-15T08:05:00.000Z"
+      phase: MANUAL_EXECUTE
+      outcome: paused_waiting_tester_decision
+      input_revision: 1
+      message: Re-prompted tester (2026-10-15 08:05 on resume): tester must choose AUTOMATE direction (1) wait dev fix, (2) proceed AUTOMATE on current state, (3) skip → REPORT. Independent prereq: Playwright auth state `playwright/.auth/user-session.json` ENOENT — tester must re-init auth before any MCP-driven phase. status.md updated 2026-10-15 08:05 with refreshed decision prompt + prereq note.
 
 phases:
   DISCOVER:
@@ -93,21 +113,19 @@ phases:
       - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/feature-location.md → synced to docs/product/feature-map.md
     warnings: []
     blockers: []
-  LOCATE:
-    status: pending
-    outcome: null
-    input_revision: 1
-    updated_at: "2026-10-13T12:56:30.000Z"
-    artifacts: []
-    warnings: []
-    blockers: []
   EXPLORE:
-    status: pending
-    outcome: null
+    status: completed
+    outcome: completed
     input_revision: 1
-    updated_at: "2026-10-13T12:56:30.000Z"
-    artifacts: []
-    warnings: []
+    updated_at: "2026-10-15T07:50:00.000Z"
+    artifacts:
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/exploration.md
+      - test-results/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/explore/attempt-1/evidence.md
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/manual-test.md
+    warnings:
+      - Original Jira ticket still lacks Acceptance Criteria section; wording from dev reply only.
+      - "Booking not logged" did not reproduce on dev per dev reply; smoke test booking as well to capture independent verdict.
+      - Auth assumed live at LOCATE (2026-10-13) but admin tab on `/paco/login` with `signed out due to inactivity` banner at EXPLORE attempt-1 (2026-10-15). Tester re-auth attempted 2026-10-15 14:49 in user Chrome session; manual test executed successfully. Browser MCP context (`user` + `admin`) returned ENOENT for `playwright/.auth/user-session.json` at wrapper-up; orchestrator cannot continue into AUTOMATE via MCP without tester re-initializing Playwright auth state.
     blockers: []
   TEST_DESIGN:
     status: pending
@@ -118,12 +136,16 @@ phases:
     warnings: []
     blockers: []
   MANUAL_EXECUTE:
-    status: pending
-    outcome: null
+    status: completed
+    outcome: completed
     input_revision: 1
-    updated_at: "2026-10-13T12:56:30.000Z"
-    artifacts: []
-    warnings: []
+    updated_at: "2026-10-15T07:50:00.000Z"
+    artifacts:
+      - docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/manual-test.md
+    warnings:
+      - Cancel menuitem reproducible no-op ×3 attempts (regular click, browser_click by id, dispatchEvent MouseEvent) — 4 indicator (dialog/network/sidebar state/calendar slot) all no-op.
+      - Booking flow Pass (201 Created, 2 audit rows) but cancel flow Fail (no API call, no audit row).
+      - Orphan appointment `Mr Floy adhoc` 15:00–15:10 15/10/2026 left on dev (cancel didn't reach backend) — dev/admin cleanup required.
     blockers: []
   AUTOMATE:
     status: pending
@@ -185,9 +207,10 @@ outputs:
   exploration.md:
     owner: paco-explore
     path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/exploration.md
-    state: pending
+    state: skipped
     input_revision: 1
     sha256: null
+    note: EXPLORE merged into MANUAL_EXECUTE — see manual-test.md for full 8 step evidence including surface verification (calendar Day view, Quick Book dialog, Appointment Details sidebar, Mark as menu, Audit Trail dialog columns/grid behavior).
   test-cases.md:
     owner: paco-test-design
     path: docs/tickets/PAC2-8999-pbt-332-appointments-not-logging-in-patient-audit-regression-pbt-252/test-cases.md
@@ -202,8 +225,44 @@ outputs:
     sha256: null
 
 execution:
-  case_ids: []
-  scope_note: null
-  manual: {}
+  case_ids:
+    - TC-PAC2-8999-001
+    - TC-PAC2-8999-002
+    - TC-PAC2-8999-003
+    - TC-PAC2-8999-004
+    - TC-PAC2-8999-005
+  scope_note: Manual run on dev build `pac2-8999` with pre-existing test patient `Floy adhoc` NHS 76835143 and session `PAC2-7786 Temi PCN` (15/10/2026, 08:00–16:00). Slot 15:00–15:10 (`Home Visit FJ`, `Face to Face`, HCP `ammar 01022295446`). Actor `Johnny (2255) Bravo` role `Super Admin GB`. 5 manual test cases covering book flow (2 cases, Pass), cancel flow (2 cases, Fail with diagnostic), audit verification (1 case, mixed verdict).
+  manual:
+    TC-PAC2-8999-001:
+      requirement: REQ-PAC2-8999-002
+      title: Book appointment via Quick Book creates patient audit entry
+      verdict: Pass
+      evidence: manual-test.md Step 2+3 — POST /api/appointments/create 201, 2 audit rows (appointment-create + appointment-book-appointment-create) actor Johnny Bravo, window 1s.
+      attempts: 1
+    TC-PAC2-8999-002:
+      requirement: REQ-PAC2-8999-002
+      title: Booking audit actor matches authenticated user
+      verdict: Pass
+      evidence: manual-test.md Step 3 — actor `Johnny (2255) Bravo` matches JWT user.
+      attempts: 1
+    TC-PAC2-8999-003:
+      requirement: REQ-PAC2-8999-001
+      title: Cancel appointment via sidebar menuitem creates patient audit entry
+      verdict: Fail
+      evidence: manual-test.md Step 6+7+8 — 3 attempts, 0 API call, 0 state change, 0 audit row.
+      attempts: 3
+      diagnostic_notes: 4 suspected cause (a/b/c/d) for dev investigate; not confirmed.
+    TC-PAC2-8999-004:
+      requirement: REQ-PAC2-8999-001
+      title: Cancel appointment shows confirmation dialog before mutating
+      verdict: Fail
+      evidence: manual-test.md Step 6+7 — no p-confirm-dialog / p-dialog / dialog element appears after click.
+      attempts: 3
+    TC-PAC2-8999-005:
+      requirement: REQ-PAC2-8999-005
+      title: Audit timestamp near action time
+      verdict: Pass
+      evidence: manual-test.md Step 3 — booking timestamps 14:23:19/14:23:20 match click window; cancel not measurable (no event).
+      attempts: 1
   automation: {}
   runs: {}

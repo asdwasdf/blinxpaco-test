@@ -263,12 +263,13 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Answered:** -
 
 **ID:** OQ-031
-**Status:** Open
+**Status:** Answered (with UX gap finding)
 **Question:** PAC2-9001 `Block Session` trên session có ≥1 booking có gate bằng P7032 không? Video (step 2/6) test trên empty session (Conflict test 48 slots) → PASS. Chưa test trên session có booking. AC matrix chỉ nói `Block an empty session: all roles allow`, ambiguous khi session có booking
 **Impact:** Medium
 **Evidence:** PAC2-9001/requirements.md (REQ-004), PAC2-9001/video-notes.md (step 2/6), PAC2-9001/requirements.md (OQ-2)
 **Created:** 2026-10-13
-**Answered:** -
+**Answered:** 2026-10-15
+**Answer source:** PAC2-9001 MANUAL_EXECUTE rev-2 (15 Oct, Booked=2): Block Session enabled in slot context menu (no P7032 gate observed at slot-menu level), click non-functional. UX gap on both empty and booked sessions — see DEF-PAC2-9001-01.
 
 **ID:** OQ-032
 **Status:** Open
@@ -279,12 +280,13 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Answered:** -
 
 **ID:** OQ-033
-**Status:** Open
+**Status:** Answered
 **Question:** PAC2-9001 Entry-point shape cho `Cancel session appointments` (right-click context menu / kebab dropdown / menu icon)? Video KHÔNG capture. LOCATE attempt-4 verified session card chỉ có 2 buttons (Edit pencil + Note icon), EDIT SESSION drawer không có Cancel/Block/Remove entry, right-click session name = no-op. Có thể ở patient slot row level (untested)
 **Impact:** Critical
 **Evidence:** PAC2-9001/feature-location.md (R-2), PAC2-9001/video-notes.md (Open questions), PAC2-9001/requirements.md (OQ-4)
 **Created:** 2026-10-13
-**Answered:** -
+**Answered:** 2026-10-15
+**Answer source:** PAC2-9001 MANUAL_EXECUTE rev-2 (TC-009) — entry point = `Configuration → Appointment Books → Sessions → row kebab → Cancel session appointments`. 8-item kebab confirmed. NOT in Appointment Book Day view slot menu (19-item slot menu has Block Session, Cancel Appointment, etc. but no Cancel session appointments).
 
 **ID:** OQ-034
 **Status:** Open
@@ -295,6 +297,42 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Answered:** -
 
 
+### Từ PAC2-8575 (2026-10-15)
+
+**ID:** OQ-035
+**Status:** Open
+**Question:** Single click trên patient slot mở `Appointment Details sidebar` (fix observable), nhưng trong sidebar `Select Patient Status` chevron-down không có onClick (chain 6 levels). Cơ chế arrive/change status thực sự nằm ở đâu? Right-click context menu? Keyboard? Drag? Button arrive ẩn?
+**Impact:** High
+**Evidence:** PAC2-8575/exploration.md OBS-001, OBS-004; PAC2-8575/manual-execution.md TC-001 (aside mở, chevron không clickable)
+**Created:** 2026-10-15
+**Answered:** -
+
+**ID:** OQ-036
+**Status:** Open
+**Question:** Bug PAC2-8575 (double click để arrive) có ảnh hưởng status transition khác ngoài `Arrive` không? Reception chỉ nói "arrive"; cần test `In consultation`, `No show`, `Cancelled`.
+**Impact:** Medium
+**Evidence:** PAC2-8575/requirements.md OQ-002, PAC2-8575/exploration.md OQ-2; PAC2-8575/manual-execution.md TC-006 Blocked
+**Created:** 2026-10-15
+**Answered:** -
+
+**ID:** OQ-037
+**Status:** Open
+**Question:** Trên production/mainline/dev chung, behavior có còn là double click arrive không? Hay fix đã promote? Có thể branch host `pac2-8575` mới có fix, mainline chưa.
+**Impact:** Medium
+**Evidence:** PAC2-8575/requirements.md OQ-003, PAC2-8575/exploration.md OQ-3; PAC2-8575/manual-execution.md TC-007 Blocked
+**Created:** 2026-10-15
+**Answered:** -
+
+**ID:** OQ-038
+**Status:** Partially Answered
+**Question:** Data volatile — sau page refresh `Booked` từ 6 xuống 0. Session test có cache; automation cần handle data setup robust hoặc dùng QA-AUTO fixture test patient future booked.
+**Impact:** Medium
+**Evidence:** PAC2-8575/exploration.md OBS-003, OQ-5; PAC2-8575/manual-execution.md attempts 1-3 (existing tab) vs attempt 4 (fresh tab → Booked 6)
+**Created:** 2026-10-15
+**Answered:** 2026-10-15
+**Answer:** Data KHÔNG volatile; chỉ là stale tab state. 4 diagnostic attempts cho thấy: existing tab sau navigate lại nhiều lần trả `Booked 0`; fresh tab (`browser_tabs new`) trả `Booked 6` đúng. Nguyên nhân: cookie/date persistence trong existing tab hoặc API cache per-tab. Automation cần fresh-tab context hoặc explicit session reload để đảm bảo data visibility.
+
+
 ### Example Format
 
 **ID:** OQ-001
@@ -303,4 +341,21 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Impact:** Medium
 **Evidence:** Ticket PAC2-XXXX mentions duplication but no expected behavior
 **Created:** 2026-09-09
+**Answered:** -
+
+**ID:** OQ-039
+**Status:** Answered
+**Question:** Entry "Copy DFD link" được mô tả trong memory `paco-scheduler-booking-link-flow` không tìm thấy ở level root campaign trong DFD Config hiện tại (2026-10-16) — chỉ thấy button `+` (class `org-chart__add`) để thêm Campaign/Button. Có thể UI đã refactor, copy action nằm trong sub-row không capture được, hoặc cần double-click vào campaign name?
+**Impact:** High — nếu không tìm được copy entry, không thể generate booking link để reproduce defect `Link Error / No token found` trong test execution.
+**Evidence:** PAC2-7727/exploration.md O-1, O-5; memory `paco-scheduler-booking-link-flow.md` mô tả flow `Configuration → DFD Config → Copy DFD link`
+**Created:** 2026-10-16
+**Answered:** 2026-10-16
+**Answer:** Entry **không** ở level node card mà ở **page-level 3-dot menu** (`<svg data-icon="ellipsis">` ở `absolute right-[25px] top-[17px]` của page container DFD Config). Click ellipsis → `p-overlaypanel` mở với 2 items: `Copy DFD link` và `Copy to Care Navigator`. Click `Copy DFD link` → copy URL `https://dev.blinxscheduler-np.com/patient-self-booking/#<jwt>` vào clipboard. JWT payload chứa `otId` (organization ID) → đây là **organization-level scheduler link** (org-level DFD entry, không phải patient-level booking link với patient pre-fill như trong video Fiona). Em xác nhận trên dev 2026-10-16 với campaign `MAR GB Copy Test`.
+
+**ID:** OQ-040
+**Status:** Open
+**Question:** Comms Hub SSO yêu cầu Super Admin GB role; clinic role `blinx_johnny.bravo` (Blinx Deployment) không đủ quyền. Sidebar `Quick Send` trong PACO cũng không trigger navigation cho role này. Cần user Super Admin GB riêng để access Comms Hub Outbox `Resend` workflow.
+**Impact:** Critical — Workaround chính để generate JWT scheduler link bị chặn. Cần QA cấp Super Admin GB account.
+**Evidence:** PAC2-7727/exploration.md O-4 (2026-10-16 retry); feature-map.md Comms Hub role observed `Super Admin GB`
+**Created:** 2026-10-16
 **Answered:** -

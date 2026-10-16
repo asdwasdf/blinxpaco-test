@@ -2,7 +2,9 @@ import type { Locator, Page } from '@playwright/test';
 
 /**
  * Appointment Book (`/paco-connect/appointment-book`) and the session slot editor dialog.
- * Source for all: PAC2-8241-TC-001-002-003-007.spec.ts. Pure page object.
+ * Source for editor/session locators: PAC2-8241-TC-001-002-003-007.spec.ts.
+ * Source for Day view + Audit dialog + Mark-as-menu locators: PAC2-8999 manual-test.md.
+ * Pure page object.
  */
 export class AppointmentBookPage {
   constructor(readonly page: Page) {}
@@ -81,5 +83,66 @@ export class AppointmentBookPage {
   /** Actions panel `Save` (first). */
   get actionsSaveButton(): Locator {
     return this.page.getByRole('button', { name: 'Save' }).first();
+  }
+
+  // ─── Day view / Quick Book / Appointment Details sidebar / Audit dialog ───
+  // Source: PAC2-8999 manual-test.md (2026-10-15 14:49)
+
+  /** `Quick Book Appointment` dialog. */
+  get quickBookDialog(): Locator {
+    return this.page.getByRole('dialog', { name: /Quick Book Appointment/i });
+  }
+
+  /** Patient search input inside Quick Book dialog. */
+  get quickBookPatientSearch(): Locator {
+    return this.quickBookDialog.getByPlaceholder(/search patient/i);
+  }
+
+  /** Quick Book dialog `Book Appointment` confirmation button. */
+  get quickBookConfirmButton(): Locator {
+    return this.quickBookDialog.getByRole('button', { name: 'Book Appointment', exact: true });
+  }
+
+  /** Quick Book dropdown row matching exact NHS display text. */
+  quickBookPatientRow(nhsDisplay: string): Locator {
+    return this.quickBookDialog
+      .locator('[role="option"], li, .p-dropdown-item')
+      .filter({ hasText: nhsDisplay })
+      .filter({ visible: true });
+  }
+
+  /** Appointment Details sidebar (PrimeVue `p-sidebar`). */
+  get appointmentSidebar(): Locator {
+    return this.page.locator('.p-sidebar');
+  }
+
+  /** `Mark as:` chevron trigger on appointment sidebar. */
+  get markAsButton(): Locator {
+    return this.page.locator('[aria-label="patient-status-button"]');
+  }
+
+  /** Patient-status menuitems (Patient Arrived / Consultation Started / Consultation Ended / Patient Left / Did Not Attend / Cancel). */
+  get statusMenuItems(): Locator {
+    return this.page.getByRole('menuitem').filter({ visible: true });
+  }
+
+  /** `Cancel` menuitem in Mark-as menu (accessible name `Cancel Appointment`). */
+  get cancelMenuItem(): Locator {
+    return this.page.getByRole('menuitem', { name: /Cancel Appointment|^Cancel$/ });
+  }
+
+  /** PACO Patient Audit modal opened from Patient Search row action menu. */
+  get auditDialog(): Locator {
+    return this.page.getByRole('dialog', { name: /Audit Trail/i });
+  }
+
+  /** Audit dialog search input. */
+  get auditSearch(): Locator {
+    return this.auditDialog.getByPlaceholder(/Search by category, user, event/i);
+  }
+
+  /** Audit AG Grid rows (Date/Time + Summary columns). */
+  get auditRows(): Locator {
+    return this.auditDialog.locator('.ag-row, [role="row"]').filter({ has: this.page.locator('[col-id]') });
   }
 }

@@ -2,8 +2,8 @@ ticket: PAC2-4837-blank-patient-record-status-causing-failure-to-resync-hf
 ticket_jira: https://blinxsolutions.atlassian.net/browse/PAC2-4837
 source_revision: 5c0d8311c10f94927b29426793ff7e66a6306b185cc9f705f0560d56ef18cc18
 created: 2026-10-06
-phase: LOCATE
-phase_index: 4
+phase: MANUAL_EXECUTE
+phase_index: 5
 product: Paco
 environment: dev
 role: Super Admin GB
@@ -17,14 +17,14 @@ phases:
   LOCATE: {status: complete, date: 2026-10-06, artifact: feature-location.md}
   EXPLORE: {status: complete, date: 2026-10-06, artifact: exploration.md}
   TEST_DESIGN: {status: complete, date: 2026-10-06, artifact: test-cases.md}
-  MANUAL_EXECUTE: {status: complete, date: 2026-10-06, artifact: test-results-final.md}
+  MANUAL_EXECUTE: {status: complete, date: 2026-10-15, artifact: test-results-manual.md}
   AUTOMATE: {status: pending, date: null}
   AUTOMATION_EXECUTE: {status: pending, date: null}
   REPORT: {status: pending, date: null}
   COMPLETE: {status: pending, date: null}
 
 execution:
-  case_ids: []
+  case_ids: [TC-001, TC-002, TC-003, TC-004, TC-005, TC-006]
 
 requirements:
   - id: REQ-4837-001
@@ -43,6 +43,9 @@ artifacts:
     checksum: fresh
   - path: feature-location.md
     owner: paco-explore
+    checksum: fresh
+  - path: test-results-manual.md
+    owner: paco-playwright
     checksum: fresh
 
 feature_location_stale: false

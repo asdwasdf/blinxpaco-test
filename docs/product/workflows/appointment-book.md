@@ -203,6 +203,31 @@ Kết quả test: TC-001/002/003/005 `Pass`; TC-004 `Fail`. — PAC2-7137/automa
 **Open questions**
 - Sentence booking là row bổ sung hay thay field-level rows; label `Booked By` hay `Actioned By`; timestamp tolerance; amendment có cần old/new value; tile `Care Navigation` và fixture/cleanup an toàn. `[Open Question]` — PAC2-8381/requirements.md, exploration.md
 
+### Patient-profile audit (booking/cancel)
+
+**Luồng**
+1. PACO `/paco/feature-branch/<ticket-branch>/patient-search` → search patient (vd `adhoc` → `Floy adhoc` NHS `76835143`) → row action menu (`cell-renderers--actions`, `aria-controls="popup_menu_left"`) → menuitem `View Audit`. `[Observed]` — PAC2-8999/feature-location.md
+2. Dialog `Audit Trail` mở overlay (không đổi URL). Search `Search by category, user, event, NHS number, details…`, filter `Filter audit by date` → `Date & Time`, AG Grid cols `Date/Time`/`Summary`/`Field`/`Previous Value`/`New Value`/`Details`. `[Observed]` — PAC2-8999/feature-location.md
+3. Sau `Quick Book` qua PACO Connect, mở lại dialog → có 2 row top: `Booked appointment` actor = JWT user, rawAction `appointment-create` + `appointment-book-appointment-create`, categoryLabel `Appointment Create` / `Appointment Book Appointment Create`. `[Observed]` — PAC2-8999/manual-test.md Step 3
+4. Cancel qua Calendar Day view Appointment Details sidebar `Mark as:` → menuitem `Cancel` KHÔNG tạo audit row; click là no-op (không dialog, không API call, không state change, không audit row). `[Confirmed]` — PAC2-8999/manual-test.md Step 6+7+8
+
+**Business rules**
+- Sau `book` appointment, patient profile audit phải có entry với actor = authenticated user, timestamp gần đúng click time (window 1s). `[Confirmed]` — PAC2-8999/manual-test.md Step 3
+- Sau `cancel` appointment, patient profile audit phải có entry dạng `<user> cancelled appointment` (dev's hint). `[Confirmed from dev reply 2026-10-13, NOT verified due to cancel no-op]` — PAC2-8999/dev-reply.md
+- Wording booking: `Booked appointment` (noun phrase) thay vì `<user> booked appointment` (full sentence). Dev chỉ confirm cancel wording, booking wording chưa dev-confirm. `[Observed, Open Question]` — PAC2-8999/manual-test.md Step 3 + dev-reply.md
+
+**Defect đã biết**
+- `PAC2-8999` REQ-001 Fail: Cancel menuitem trong Calendar Day view Appointment Details sidebar `Mark as:` menu là no-op. Reproducible ×3 attempts (regular click + `browser_click` by id + `dispatchEvent` MouseEvent sequence). 4 indicator: dialog (none), network (no PATCH/PUT/DELETE/POST to `/api/appointments/.../cancel`), sidebar state (`Mark as:` còn `<Select Patient Status>`), calendar slot (còn `Mr Floy adhoc`). 4 suspected cause (chưa confirm): (a) React onClick bound sai element `<a>` vs `<li>`; (b) `Reason Code` required server-side; (c) menubar portal event chain broken; (d) handler onMouseDown thay vì onClick. PAC2-8999/manual-test.md Step 6+7+8. Booking vẫn work (REQ-002 Pass) — bug scope dừng ở cancel path.
+
+**Open questions**
+- Wording chính xác cho booking entry (`Booked appointment` noun phrase observed, dev chưa confirm expected).
+- Cancel có confirm dialog thiết kế không, hay cancel 1-step?
+- Try cancel qua path khác (right-click slot context menu / Group Send / Appointment Book list view) — bug scoped hay systemic?
+- Timestamp tolerance chính xác cho audit (window 1s observed với booking; cancel không có event để measure).
+
+**Mutation boundary**
+- Book + cancel qua PACO Connect Calendar Day view; chỉ chạy với test patient `QA-AUTO` hoặc pre-existing non-PII (vd `Floy adhoc` NHS 76835143) và có cleanup orphan appointment. `[Observed]` — PAC2-8999/manual-test.md Step 2+6+7+8
+
 ### Session cancel RBAC (P7032)
 
 Ticket scope: tách quyền cancel session khỏi `Appointment Book User`, tạo activity mới `P7032 - Appointment Book Cancel Session`. 3 PR đã merge: `paco-connect-be #792`, `paco-one-db #1022`, `connect-fe #2875`. Video self-test từ tester: `attachments/129284-pac2-9001-browser-qa.mp4` (456.7s, 1600x960, no audio, 6 captioned steps).
@@ -244,16 +269,55 @@ Ticket scope: tách quyền cancel session khỏi `Appointment Book User`, tạo
 - P7032 grant path: `Super Admin` (e.g. Fiona Nguyen GB) → `/paco/configuration/staff/role-groups` → create/grant `Appt Book User` + P7032 to QA-AUTO test role. Mutation required; deferred to MANUAL_EXECUTE setup. `[Confirmed]` — PAC2-9001/requirements.md (REQ-009)
 
 **Defect đã biết**
-- PAC2-9001 · Inconclusive (video review 80% coverage) · entry-point for "Cancel session appointments" NOT captured in video; tester jumps from Day board to dialog. OQ-4 open for MANUAL_EXECUTE. `[Observed]` — `video-notes.md` Open questions
-- PAC2-9001 · Inconclusive (LOCATE attempt-4) · session card UI verified has NO direct Cancel/Block/Remove button. EDIT SESSION drawer has NO Cancel/Block/Remove session entry. Right-click = no-op. Entry point must be at patient slot row level (untested). `[Observed]` — PAC2-9001/feature-location.md (R-2, OQ-4)
-- PAC2-9001 · OQ-1 open · P7032 not visible in Role Groups list (max P7507). Inferred paco-one-db #1022 not deployed. `[Inferred from: RBAC list scan]` — PAC2-9001/feature-location.md (R-4)
+- PAC2-9001 · **DEF-PAC2-9001-01 Block Session UX gap** (Medium) · slot context menu `Block Session` enabled but click produces no dialog, no error, no effect on empty or booked sessions. Possible regression. `[Observed]` — PAC2-9001/defects/DEF-PAC2-9001-01-block-session-ux-gap.md (TC-006 diagnostic, 14 Oct + 15 Oct 2026)
+- PAC2-9001 · **Partial-complete 2026-10-15** · 3 Pass (TC-007/008/009), 6 Blocked (P7032 deploy + test data + UX), 2 Not Run (data-dependent). `[Confirmed]` — PAC2-9001/report.md
+- PAC2-9001 · Inconclusive (video review 80% coverage) · entry-point for "Cancel session appointments" NOT captured in video. `[Observed]` — `video-notes.md` Open questions
+- PAC2-9001 · OQ-1 open · P7032 not visible in Role Groups list (max P7507, 181 P-codes scanned P0001–P9000). Confirmed paco-one-db #1022 not deployed. `[Confirmed via diagnostic spec TC-011]` — PAC2-9001/automation.md
 
 **Open questions**
-- OQ-1: paco-one-db #1022 đã deploy dev chưa? RBAC list max P7507, no P7032 visible. `[Open Question]` — PAC2-9001/requirements.md (OQ-1)
-- OQ-2: Block session trên session có ≥1 booking có gate bằng P7032 không? Video chỉ test trên empty session. `[Open Question]` — PAC2-9001/requirements.md (OQ-2)
-- OQ-3: Configuration > Sessions row-kebab menu content cho User +P7032 (NOT Admin): Cancel option visible hay hidden? Tester reached page trong step 6 nhưng không mở kebab. `[Open Question]` — PAC2-9001/requirements.md (OQ-3)
-- OQ-4: Entry-point shape cho "Cancel session appointments" (right-click vs kebab vs menu icon)? Video KHÔNG capture. Session card + EDIT drawer + right-click đều không có. Cần test patient slot row level trong MANUAL_EXECUTE. `[Open Question]` — PAC2-9001/requirements.md (OQ-4)
-- OQ-5: Time-edit cancellation dialog (REQ-008) trigger bằng template edit (per QA notes) — có sẵn test data trên dev không? `[Open Question]` — PAC2-9001/requirements.md (OQ-5)
+- OQ-1 / OQ-030: paco-one-db #1022 đã deploy dev chưa? RBAC list max P7507, no P7032 visible. Escalate to dev. `[Open Question]` — PAC2-9001/requirements.md (OQ-1)
+- OQ-2: Block session trên session có ≥1 booking có gate bằng P7032 không? Video chỉ test trên empty session. `[Answered via OQ-031]` — 15 Oct attempt với Booked=2: Block Session enabled in slot menu, click non-functional (UX gap).
+- OQ-3: Configuration > Sessions row-kebab menu content cho User +P7032 (NOT Admin): Cancel option visible hay hidden? Tester reached page trong step 6 nhưng không mở kebab. `[Open Question]` — chưa test (P7032 deploy gate). Admin verification: 8-item kebab bao gồm Cancel session appointments (TC-009).
+- OQ-4: Entry-point shape cho "Cancel session appointments"? Video KHÔNG capture. Session card + EDIT drawer + right-click đều không có. **RESOLVED 2026-10-15** = `Configuration → Appointment Books → Sessions → row kebab → Cancel session appointments`. `[Resolved]` — PAC2-9001/manual/rev-2/final-report.md (TC-009)
+- OQ-5 / OQ-034: Time-edit cancellation dialog (REQ-008) trigger bằng template edit — không có test data phù hợp trên dev. `[Open Question]` — PAC2-9001/requirements.md (OQ-5). TC-010 Not Run.
+- OQ-033: Cancel session appointments entry point shape (kebab vs menu icon vs right-click). **RESOLVED 2026-10-15** = row kebab in Configuration → Sessions table. `[Resolved]`
+
+### Single-click arrive (PAC2-8575)
+
+Ticket scope: reception report rằng phải double click slot patient mới arrive được. Fix mong đợi: single click trigger arrive hoặc mở UI arrive. Acceptance criteria ticket = "Not provided"; expected behavior dựa trên UX inference (REQ-001 Confirmed từ description, REQ-002 Inferred).
+
+**Luồng (branch host `pac2-8575`)**
+1. Open `Appointment Book` → Day view (default) tại ngày `15 October 2026` — 6 booked slots, 23 sessions, 1,018 available. `[Observed]` — PAC2-8575/feature-location.md, PAC2-8575/exploration.md OBS-003
+2. **Single click** lên patient slot parent `.session-slot-button` → mở `Appointment Details sidebar` ở phải màn hình với thông tin patient + `Mark as: Select Patient Status` (chevron-down). Slot class KHÔNG mutate (`appointment-booked` giữ nguyên). KHÔNG no-op — fix có vẻ đã apply. `[Observed]` — PAC2-8575/exploration.md OBS-001
+3. Sidebar có `Mark as:`, `Select Patient Status` chevron-down, `Save` buttons (slot count, reason codes, booking notes) — một số disabled cho past appointments. `[Observed]` — PAC2-8575/exploration.md OBS-001
+4. **Double click** native (Playwright `dblclick()`) cùng slot → sidebar vẫn mở cùng patient, slot class KHÔNG đổi, `Booked 6` summary KHÔNG đổi. **Double click KHÔNG còn là cơ chế arrive/change status** trên branch. `[Observed]` — PAC2-8575/exploration.md OBS-002
+5. 6/6 booked slots trên Day view đều `isBeforeNow` (past appointments, time `08:00-08:10` ... `15:50-16:00`) → KHÔNG test được arrive transition trực tiếp trong session này. `[Observed]` — PAC2-8575/exploration.md OBS-003
+6. Sau page refresh, `Booked 0` — data volatile; session test có thể cache. `[Observed]` — PAC2-8575/exploration.md OBS-003
+
+**Business rules (inferred từ UX)**
+- Arrive trigger mong đợi: single click mở sidebar + trong sidebar có action arrive (vd chọn status trong dropdown, hoặc click icon trạng thái). Hiện tại `Select Patient Status` chevron-down inside sidebar KHÔNG có onClick (chain parent 6 levels) — có thể UX gap hoặc trigger nằm chỗ khác. `[Inferred, needs confirmation]` — PAC2-8575/exploration.md OBS-004
+- Reception report nói double click mới arrive; trên branch này double click không mutate. Có thể fix đã move arrive sang sidebar (single click → sidebar → arrive action) hoặc fix chưa hoàn chỉnh. `[Open Question]` — PAC2-8575/exploration.md OQ-1
+- Trên mainline/dev chung, behavior có thể vẫn là double click (chưa promote fix). `[Open Question]` — PAC2-8575/requirements.md OQ-003
+
+**Trạng thái**
+- TC-001 Single click mở `Appointment Details sidebar`: **Pass**. Single click KHÔNG no-op; slot class `appointment-booked` giữ nguyên (không mutate); aside mở với patient details + `Mark as: Select Patient Status` chevron-down. `[Confirmed: Pass]` — PAC2-8575/manual-execution.md TC-001 (4 diagnostic attempts; precondition resolved bằng fresh tab)
+- TC-002 Double click benign regression: **Pass**. Native dblclick cùng slot → aside mở cùng patient; `Booked 6→6`; no extra modal/popover/toast. `[Confirmed: Pass regression]` — PAC2-8575/manual-execution.md TC-002
+- TC-003..007: **Blocked** — cần QA-AUTO test data với appointment future (6/6 booked slots hiện tại đều `isBeforeNow`); TC-003/004 (arrive end-to-end), TC-005 (right-click), TC-006 (status transition khác), TC-007 (cross-host) chưa thực thi. `[Blocked]` — PAC2-8575/manual-execution.md
+- Arrive transition thực tế chưa xác minh được (TC-003 Blocked). Overall ticket: **Inconclusive** — partial coverage; reception report "double click arrive" không còn tái hiện trên branch, nhưng chưa confirm single click mới có thực sự trigger arrive. `[Inconclusive]` — PAC2-8575/exploration.md Status + PAC2-8575/manual-execution.md Verdict
+
+**Role/permission**
+- Test ở role `Blinx Deployment` (Johnny Bravo 2255, Super Admin GB equivalent) tại org `General Practice (Demo Site)`, location `test again - old location`. `[Observed]` — PAC2-8575/feature-location.md
+- Reception role cũng cần test (reception là reporter chính) — chưa xác minh trong scope này. `[Open Question]`
+
+**Defect đã biết**
+- Chưa có defect confirmed. Diagnostic note (TC-001 attempts 1-3): data `Booked 6` chỉ có ở fresh tab; existing tab state trả `Booked 0` do stale state — KHÔNG phải product bug, là tab state issue. Có thể do cookie/date persistence trong tab. Automation cần navigate trong fresh tab hoặc trigger session reload. `[Observed]` — PAC2-8575/manual-execution.md
+- Limit chưa confirm: TC-003..006 không chạy được → arrive transition end-to-end chưa xác minh. Cần QA-AUTO test data future booked.
+
+**Open questions**
+- OQ-1: Single click mở sidebar. Trong sidebar có arrive action thực sự không? Chevron-down không clickable → cần explore thêm (right-click context menu, keyboard, drag, button arrive ẩn). `[Open Question]` — PAC2-8575/exploration.md OQ-4, OQ-035
+- OQ-2: Scope status transition ngoài `Arrive` (vd `In consultation`, `No show`) — chưa test. `[Open Question]` — PAC2-8575/requirements.md OQ-002, OQ-036
+- OQ-3: Cross-host behavior (production/mainline có còn double click?). `[Open Question]` — PAC2-8575/requirements.md OQ-003, OQ-037
+- OQ-4: Data volatile — Booked 6 → 0 sau page refresh ở existing tab. **Partially answered**: 4 diagnostic attempts cho thấy chỉ là stale tab state (cookie/date persistence), KHÔNG phải product data issue. Fresh tab vẫn có `Booked 6`. Automation cần handle fresh-tab context. `[Partially Answered]` — PAC2-8575/manual-execution.md, OQ-038
 
 ## Tester notes
 

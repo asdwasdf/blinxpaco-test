@@ -1,0 +1,162 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-7727
+  folder_name: PAC2-7727-paco-connect-access-denied-booking-error
+  source_directory: ticket/PAC2-7727-paco-connect-access-denied-booking-error
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: "2026-10-16T12:15:00Z"
+  files:
+    - path: ticket/PAC2-7727-paco-connect-access-denied-booking-error/ticket.md
+      sha256: pending
+      size_bytes: pending
+
+fast_path:
+  video_ingest: required
+  graph_lookup: pending
+  unresolved_blockers: 0
+  mutation_ledger: null
+  durable_evidence: []
+
+workflow:
+  status: in_progress
+  current_phase: TEST_DESIGN
+  last_completed_phase: EXPLORE
+  updated_at: "2026-10-16T12:40:00Z"
+  checkpoints: []
+
+phases:
+  DISCOVER:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: ok
+    input_revision: 1
+    updated_at: "2026-10-16T12:15:00Z"
+    artifacts: []
+    warnings:
+      - "Source ticket.md thiếu Summary/Description/Acceptance criteria (Not provided)"
+      - "Có video từ Fiona (20260819) Pass trên dev — Sean vừa nhận regression nhưng reassign lại cho Fiona"
+    blockers: []
+  ANALYZE:
+    status: in_progress
+    outcome: null
+    input_revision: 1
+    updated_at: "2026-10-16T12:15:00Z"
+    artifacts: []
+    warnings: []
+    blockers: []
+  LOCATE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-16T12:30:00Z"
+    artifacts:
+      - path: docs/tickets/PAC2-7727-paco-connect-access-denied-booking-error/feature-location.md
+        sha256: pending
+    warnings: []
+    blockers: []
+  EXPLORE:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-16T12:40:00Z"
+    artifacts:
+      - path: docs/tickets/PAC2-7727-paco-connect-access-denied-booking-error/exploration.md
+        sha256: pending
+    warnings:
+      - "Không reproduce được defect transition do thiếu JWT token thật (cần Comms Hub workflow)"
+      - "OQ-039: entry 'Copy DFD link' không tìm thấy ở level root campaign"
+    blockers: []
+  TEST_DESIGN:
+    status: completed
+    outcome: completed
+    input_revision: 1
+    updated_at: "2026-10-16T13:00:00Z"
+    artifacts:
+      - path: docs/tickets/PAC2-7727-paco-connect-access-denied-booking-error/test-cases.md
+        sha256: pending
+    warnings:
+      - "OQ-039 blocker cho TC-002..005: entry 'Copy DFD link' không tìm thấy trong DFD Config"
+    blockers:
+      - "Cần generate booking link thật (workaround: Comms Hub Quick Send Outbox Resend) trước MANUAL_EXECUTE"
+  MANUAL_EXECUTE:
+    status: completed
+    outcome: inconclusive
+    input_revision: 1
+    updated_at: "2026-10-16T13:08:00Z"
+    artifacts:
+      - path: docs/tickets/PAC2-7727-paco-connect-access-denied-booking-error/manual-execution.md
+        sha256: pending
+    warnings:
+      - "3/6 Pass (TC-001 entry, TC-002 scheduler load, TC-006 process gate), 3/6 Blocked (TC-003..005 cần patient-level link)"
+      - "OQ-039 resolved (page-level ellipsis menu); OQ-040, OQ-041, OQ-042 open"
+    blockers:
+      - "Cần Super Admin GB account để access Comms Hub Outbox và lấy patient-level JWT link"
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  feature-location.md:
+    owner: paco-explore
+    path: "docs/tickets/PAC2-7727-paco-connect-access-denied-booking-error/feature-location.md"
+    state: missing
+    input_revision: 1
+    sha256: null
+
+execution:
+  case_ids:
+    - PAC2-7727-TC-001
+    - PAC2-7727-TC-002
+    - PAC2-7727-TC-003
+    - PAC2-7727-TC-004
+    - PAC2-7727-TC-005
+    - PAC2-7727-TC-006
+  manual:
+    PAC2-7727-TC-001: Pass
+    PAC2-7727-TC-002: Pass
+    PAC2-7727-TC-003: Blocked
+    PAC2-7727-TC-004: Blocked
+    PAC2-7727-TC-005: Blocked
+    PAC2-7727-TC-006: Pass
+  automation: {}
+  runs: {}
