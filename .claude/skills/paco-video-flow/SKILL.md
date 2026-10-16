@@ -44,6 +44,7 @@ Read before starting:
 | Artifact | Path | Owner |
 |---|---|---|
 | Frame images | `docs/tickets/<ticket>/video/frames/frame_NNNNN.png` | this skill |
+| Per-chunk markdown | `docs/tickets/<ticket>/video/chunk_<NN>.md` (deleted after `video-notes.md` is written) | this skill |
 | `video-notes.md` | `docs/tickets/<ticket>/video/video-notes.md` | this skill |
 | Standalone Playwright spec | `playwright/tests/tickets/<ticket>/<case-id>-video-flow.spec.ts` | this skill (proposal; `paco-playwright` owns) |
 | `ChildSkillOutcome` v1 | returned to caller | this skill |
@@ -63,18 +64,48 @@ Confirm frame count and total duration before analysis. If ffmpeg fails, return 
 
 **Do not** read frames into the main session at this point.
 
-### 2. Dispatch frame analysis subagent
+### 2. Dispatch frame analysis (split into small chunks)
 
-Dispatch a fresh subagent with `model: kr|claude-sonnet-4-5` (Sonnet 4.5 via 9router). Pass:
+**Why split:** Sonnet 4.5 via 9router has a small context window. The baseline test (RED) showed that a single subagent reading all frames overflowed the context within three compaction cycles. Split the work into N small subagents, each handling one chunk of frames, plus one synthesis subagent that only reads markdown.
 
-- The list of frame paths (sorted).
+#### 2a. Decide chunk size
+
+- Default: 30 frames per chunk.
+- Lower the chunk size to 10 if frames are dense (e.g. heavy text, error overlays).
+- Never exceed 30 frames per subagent — that already saturates the context.
+
+Example for a 90-frame video: 3 chunk subagents (frames 0-29, 30-59, 60-89) + 1 synthesis subagent.
+
+#### 2b. Dispatch per-frame subagents (one per chunk)
+
+For each chunk, dispatch a fresh subagent with `model: kr|claude-sonnet-4-5`. Pass:
+
+- The list of frame paths in that chunk (sorted).
 - The relevant excerpt of `ticket.md` (description + acceptance criteria).
-- The format spec from Step 3.
-- A clear instruction: read every frame, return only the markdown content, do not echo frames back.
+- The format spec from Step 3, **Section 1 only** (per-frame table).
+- A hard instruction: read every frame in the chunk, return the markdown table rows, do not echo frames, do not write any prose summary.
 
-Subagent returns one markdown body. The main session writes that body verbatim to `video-notes.md`.
+Subagent returns plain markdown rows (one row per frame). The main session writes each chunk's rows to a temporary file `docs/tickets/<ticket>/video/chunk_<NN>.md` and discards the subagent.
 
-**Why this rule:** the baseline test (RED) showed that reading frames in the main session or in a general-purpose subagent without a fresh context overflows the context window within three compaction cycles. A dedicated subagent with a fresh context and a clear "return only markdown" instruction is the only sustainable path.
+#### 2c. Dispatch synthesis subagent
+
+After all chunks return, dispatch one final subagent with `model: kr|claude-sonnet-4-5`. Pass:
+
+- The chunk markdown files (`chunk_00.md`, `chunk_01.md`, ...). Do NOT pass frame paths.
+- The relevant `ticket.md` excerpt.
+- The format spec from Step 3, **Section 2 only** (synthesized flow).
+- A hard instruction: read the chunk files, return one numbered Vietnamese flow list, do not read any frame, do not echo chunk files.
+
+The synthesis subagent only sees text — its context stays small and survives.
+
+#### 2d. Combine
+
+The main session concatenates:
+
+1. Header + Section 1 (chunk rows merged in order).
+2. Section 2 (synthesis subagent output).
+
+Writes the result to `docs/tickets/<ticket>/video/video-notes.md`. The main session never reads a frame image.
 
 ### 3. `video-notes.md` format
 
@@ -126,6 +157,7 @@ Return a `ChildSkillOutcome` v1 containing:
 
 - `artifact_paths` for the frames folder, `video-notes.md`, spec file.
 - `frame_count` and `video_duration_seconds`.
+- `chunk_count` (number of per-frame subagents dispatched).
 - `flow_steps` count from the synthesized flow.
 - `mutation_authorization`: `none` (this skill did not mutate) or `delegated_to_paco-playwright`.
 - `blockers`, `warnings`, `recommended_next_phase` (usually `MANUAL_EXECUTE` or `AUTOMATE`).
@@ -133,7 +165,10 @@ Return a `ChildSkillOutcome` v1 containing:
 ## Red flags — stop and re-dispatch
 
 - The main session read a frame directly. The frame must never enter main-session context.
-- The subagent was given `model: opus` or `model: haiku`. It must be Sonnet 4.5 (`kr|claude-sonnet-4-5`).
+- A single subagent was given all frames. With Sonnet 4.5 via 9router the context overflows within 3 compactions. Split into chunks of 30 frames max.
+- The synthesis subagent was given frame paths. It must see only chunk markdown files, never frames.
+- A chunk subagent was given `model: opus` or `model: haiku`. It must be Sonnet 4.5 (`kr|claude-sonnet-4-5`).
+- A chunk subagent wrote prose flow instead of just table rows. Restrict its output to Section 1 rows.
 - The spec was written inline as a `browser_run_code` snippet instead of a standalone `.spec.ts` under `playwright/tests/tickets/<ticket>/`.
 - The spec was run by this skill, not handed to `paco-playwright` mode `cli`.
 - Frames were not deleted after the spec result was finalized, and the tester did not ask to keep them.
@@ -143,8 +178,10 @@ Return a `ChildSkillOutcome` v1 containing:
 | Mistake | Fix |
 |---|---|
 | Reading all frames in main to "verify" | Stop. Re-dispatch subagent. Main only sees `video-notes.md`. |
+| Giving one subagent the full frame list | Split into chunks of 30 frames max. Synthesis subagent sees only markdown. |
 | Sampling at 30 fps | Use 1 fps; increase only if a sub-second transition is the bug. |
 | Skipping the synthesized flow section | Both sections are required. The flow is what the tester will cite in `status.md`. |
 | Writing the spec with XPath or text-only selectors | Use role locators; promote new locators to the page object. |
 | Forgetting `PACO_STEP_MS` settle after every interaction | Required by `paco-playwright` pacing rule (2026-10-02). |
 | Auto-running the spec on a host outside `paco.config.yaml` | Hard block; return `Blocked: host not in allowlist`. |
+| Letting the synthesis subagent read frames | Pass only the chunk markdown files. Synthesis = text only. |
