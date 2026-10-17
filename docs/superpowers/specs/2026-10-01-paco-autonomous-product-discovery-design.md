@@ -50,7 +50,22 @@ Markdown survey view tiếp tục là nguồn chuẩn. Frontmatter mở rộng b
 
 `SURVEY` tạo candidate gồm ID, feature, source fingerprint, observed action, class (`CREATE`, `UPDATE`, `SEND`, `DELETE`, `EXTERNAL_SIDE_EFFECT`), destination hint **chỉ là giả thuyết**, reason, required owned/synthetic data, recipient requirement, source evidence, status. Mapping vào `MutationClass` hiện tại (`Temporary`, `Persistent`, `Destructive`, `Unknown`) phụ thuộc hậu quả cụ thể; unknown persistence luôn block cho đến khi có phân loại đáng tin. Không đổi semantics gate của ticket.
 
-Authorization run/action/test-data phải được cung cấp bên ngoài agent, không sinh từ candidate, không lưu reusable authorization vào checkpoint. Ngoài `paco-explore-survey` workflow authorization tương thích gate hiện hành, `VERIFY_FLOW` xác minh rõ mutation class và, với destructive, authorization destructive riêng; gate hiện tại chỉ kiểm tra class của `MutationApproval` chứ không kiểm tra class của workflow authorization, nên executor **không** được dựa riêng vào `workflowMatches` để chứng minh destructive authorization. Mỗi action, kể cả cleanup, cần `PACO_ALLOW_MUTATION=true`, URL hiện tại đúng explicit dev hostname allowlist trong `paco.config.yaml`, safe owned/synthetic data, action/run/fingerprint match, `evaluateMutationGate()` pass. Destructive thêm `PACO_ALLOW_DESTRUCTIVE=true`. `SEND` yêu cầu recipient được approve rõ; external side effect yêu cầu destination dev được cấu hình và hiểu được tác động. Production/unknown host luôn block. Không tự bật flags hoặc tự cấp authorization.
+### Auto mode = mặc định trên configured dev host
+
+Khi `manifest.yaml:mutationMode === 'auto'` (set bởi `applyTicketMutationMode()` khi host thuộc `safety.allowedHosts` hoặc `safety.externalDevHosts` trong dev environment), mutations là exploration operation bình thường:
+
+- Reservation là authorization: `VERIFY_FLOW` chạy reserved candidate, `paco-playwright` standalone spec chạy CRUD/submit/send/cleanup trên owned test data (`QA-test` prefix) — không hỏi lại từng action.
+- Manifest authorization là primary gate. Mỗi mutation vẫn pass `evaluateMutationGate()` runtime check.
+- Safety thật vẫn enforce: hostname allowlist, safe owned/synthetic data, approved recipient (`fiona.nguyen@blinxsolutions.com` cho email; SMS cần explicit tester confirmation từng lần), production/unknown host blocked, mutation ledger đã redact, cleanup owned records, leftover log on cleanup fail.
+- Destructive mutation vẫn cần authorization destructive riêng (qua `Mutation Policy: APPROVED` trong `status.md` cho ticket, qua tester-provided authorization cho discovery). Gate hiện tại chỉ kiểm tra class của `MutationApproval` chứ không kiểm tra class của workflow authorization, nên executor **không** được dựa riêng vào `workflowMatches` để chứng minh destructive authorization.
+
+### Manual mode (legacy fallback)
+
+Khi `manifest.yaml:mutationMode` vắng mặt hoặc bằng `manual` (host ngoài allowlist, hoặc tester/intake force), giữ legacy behavior: hỏi tester per case cho mỗi mutation class khác `None`; env var guards (`PACO_ALLOW_MUTATION`, `PACO_ALLOW_DESTRUCTIVE`) còn là runtime gate.
+
+### Còn lại
+
+`SEND` yêu cầu recipient được approve rõ; external side effect yêu cầu destination dev được cấu hình và hiểu được tác động. Production/unknown host luôn block. Không tự bật flags hoặc tự cấp authorization.
 
 Trước click mutation: ghi durable ledger `pending` gồm run/candidate/action, hash không chứa PII cho mutation fingerprint, redacted before-state, ownership proof reference, gate decision, timestamp. Reserve fingerprint trước side effect để crash không gây click lại. Sau click: ghi observed after-state, result, evidence, side effects, cleanup status/leftovers; graph chỉ thêm edge `Verified-by-Mutation` khi outcome thực sự quan sát. Resume gặp `pending` phải đối chiếu ledger và UI read-only; nếu không xác định chắc action chưa xảy ra, không retry tự động. Blocker không chặn task an toàn khác. Cleanup chỉ khi chứng minh đối tượng thuộc run và cleanup riêng được phép; thất bại hoặc không an toàn thì ghi leftovers, không xóa dữ liệu nền. Mutation nhằm mở state khám phá, không phải test assertion/correctness.
 

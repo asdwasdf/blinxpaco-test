@@ -31,12 +31,14 @@ Only this skill writes `manifest.yaml` and `status.md`. `ticket/**` is read-only
 12. Ask QA early when role, test data, domain rule, expected result, readable video, auth or baseline is missing. Include blocker, observation, evidence/timestamp, decision, concrete choices and affected cases.
 
 ## Mutation Mode
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
-- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
-- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+Read `manifest.yaml:mutationMode` before any side effect. Default is `auto` whenever the host is in `paco.config.yaml: safety.allowedHosts` or `externalDevHosts` (set by `applyTicketMutationMode()` on intake). Mutations are normal QA operations, not exceptional actions requiring per-action approval.
 
-If `manual` or missing: legacy behavior — ask the tester per case.
+`auto` (default on configured dev host):
+- Manifest authorization is the primary gate. Do not re-prompt per CRUD action, form submit, validation test, or cleanup of own test data.
+- Still enforce: hostname matches allowlist, safe test data (no real PII, `QA-test` prefix on records this run creates/updates; historical `QA-AUTO` accepted), approved recipient (`fiona.nguyen@blinxsolutions.com` for email; SMS requires explicit tester confirmation each time), production/unknown host is blocked, mutation ledger written, cleanup on pass/fail, leftover log on cleanup fail.
+- `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env vars are an optional local safety guard, not the primary gate. Do not require them when manifest says `auto`.
+
+`manual` (only when tester or intake forces it): legacy behavior — ask tester per case; env var guards still apply.
 
 ## Safety
 Auto-mutation only on configured dev hosts via `mutationMode: auto` in `manifest.yaml`. Still enforce `evaluateMutationGate()` (with `mutationMode` param), runtime guards, safe data/recipient, redacted ledger and cleanup. Production/unknown host remains blocked. Never persist credentials, auth state or reusable approval.

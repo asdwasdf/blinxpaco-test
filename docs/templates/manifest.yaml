@@ -60,6 +60,7 @@ outputs:
     sha256: null
 
 execution:
+  mode: cli_first
   case_ids: []
   manual: {}
   automation: {}

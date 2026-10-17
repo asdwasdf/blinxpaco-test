@@ -6,12 +6,7 @@ description: Use when creating risk-based Paco test cases from valid versioned r
 # Paco Test Design
 
 ## Mutation Mode
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
-- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
-- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
-
-If `manual` or missing: legacy behavior — ask the tester per case.
+`TEST_DESIGN` is read-only by design. `manifest.yaml:mutationMode` is informational here. The skill writes test cases only; the assigned mutation class on each case (`None`/`Temporary`/`Persistent`/`Destructive`/`Unknown`) drives gate behavior in `MANUAL_EXECUTE` / `AUTOMATE` / `AUTOMATION_EXECUTE` where `auto` mode lets the spec run CRUD/submit/send/cleanup on owned test data without per-action approval.
 
 ## Scope and dependencies
 `TEST_DESIGN` only. Require selected ticket, revision, valid `requirements.md`; exploration is optional. For each UI-dependent case require valid `feature-location.md` or keep the case preliminary and blocked for automation. Read feature-location/traceability/data-safety standards and `docs/templates/test-cases.md`. Do not execute, browse, write Playwright, or orchestrate phases.

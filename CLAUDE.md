@@ -81,6 +81,7 @@ Ngoại lệ khám phá trực tiếp (tester duyệt 2026-10-01): khi đào sâ
 - `MANUAL_EXECUTE` phải kiểm tra kỹ từng case. Attempt đầu `Fail` cần tối thiểu ba diagnostic retries (same data, clean data, fresh page/session), control path và evidence; fail/pass không ổn định là `Inconclusive`.
 - `AUTOMATE` bắt buộc tạo standalone `.spec.ts` cho mọi manual `Pass`/`Fail`; intermittent `Inconclusive` cần diagnostic spec hoặc blocker.
 - `AUTOMATION_EXECUTE` chạy Playwright CLI ngay. Product result và automation verification luôn tách biệt; CLI không được ghi đè manual result.
+- Workflow mặc định từ 2026-10-17: `cli_first`. Ticket cũ (mcp_first) giữ flow cũ (xem plan 2026-09-28). Xem `.superpowers/refator.md` và `docs/superpowers/specs/2026-09-28-paco-execution-first-playwright-design.md` cho chi tiết.
 
 ## Knowledge và Result
 

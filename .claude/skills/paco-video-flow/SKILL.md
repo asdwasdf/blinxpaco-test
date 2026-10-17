@@ -9,6 +9,13 @@ description: Use when a Paco ticket has a video attachment and the tester needs 
 
 Ingest one Paco ticket that has a video attachment. Produce (1) per-frame + flow notes, (2) a standalone Playwright spec that re-runs the flow. Never read frames in the main session.
 
+## Mutation Mode
+Read `manifest.yaml:mutationMode` before any side effect. Default is `auto` whenever the host is in `paco.config.yaml: safety.allowedHosts` or `externalDevHosts`. In `auto` mode the spec produced by this skill can `Create`/`Update`/`Save`/`Send`/`Delete`/`Restore`/`Upload`/`Import`/`Download` on owned test data without per-action approval: the spec is the authorization.
+
+Still enforce in `auto` mode: `evaluateMutationGate()` with the `mutationMode` param; hostname matches allowlist; safe test data only (no real PII, `QA-test` prefix; historical `QA-AUTO` accepted); approved recipient (`fiona.nguyen@blinxsolutions.com` for email; SMS requires explicit tester confirmation each time); production/unknown host is blocked; mutation ledger written; cleanup in `finally { cleanup() }`; leftover log on cleanup fail. `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env vars are an optional local safety guard, not the primary gate.
+
+`manual` (only when tester or intake forces it): legacy behavior — ask tester per case; env var guards still apply.
+
 ## When to use
 
 - `ticket/<TICKET-ID>-<short-title>/` contains `*.mp4` / `*.webm` / `*.mov`.
@@ -170,12 +177,16 @@ A spec that hits a missing fixture (no template, no health form, no recipient) M
 
 ### 5. Auto-run policy
 
-Do not run the spec in the main flow of this skill. Hand the spec back to `paco-playwright` mode `cli` for execution.
+Auto-run the spec directly when ALL of the following are true:
+- `manifest.yaml:mutationMode === 'auto'` (default on configured dev host).
+- `status.md` has `Mutation Policy: APPROVED` for the matching test data.
+- The spec passed `evaluateMutationGate()` (hostname, `QA-test` data, recipient, ledger, cleanup, production block).
 
-- If `status.md` contains `APPROVED` for the matching test data, `paco-playwright` may auto-run.
-- Otherwise the spec is delivered as a proposal; the tester runs it.
+Auto-run path: invoke `npm run paco:cli -- <ticket> <case-id>` from this skill in `auto` mode, then merge the outcome into `execution.runs[]` via `applyPlaywrightOutcome()` so the result flows back into `paco-playwright` and `paco-ticket` the same as a delegated run. Report the final spec result in the `ChildSkillOutcome` and surface leftovers from `test-results/<spec>/leftovers.txt` if cleanup failed.
 
-This skill never runs Playwright directly. The single-execution-first exception in `CLAUDE.md` belongs to `paco-verify-flow` and the in-skill mutation of `paco-playwright`, not to this skill.
+In all other cases (manual mode, missing `APPROVED`, gate rejection) this skill is read-only: hand the spec back to `paco-playwright` mode `cli` for execution, never to MCP. The tester runs it.
+
+`paco-verify-flow` is the only other path that may mutate outside the spec; both rely on the same safety rules.
 
 ## Safety
 

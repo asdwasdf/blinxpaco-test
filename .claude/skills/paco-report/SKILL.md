@@ -6,12 +6,7 @@ description: Use when compiling versioned Paco QA product results, automation ve
 # Paco Report
 
 ## Mutation Mode
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
-- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
-- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
-
-If `manual` or missing: legacy behavior — ask the tester per case.
+`REPORT` is read-only by design. `manifest.yaml:mutationMode` is informational here. The skill only compiles verified manual records, automation results, evidence, defects and safe knowledge proposals; it does not mutate.
 
 ## Scope and dependencies
 `REPORT` only. Require selected ticket/revision, versioned requirements, completed manual records, automation implementation/CLI records or explicit blockers, environment/role, durable evidence and cleanup state. Read traceability/evidence/knowledge standards and report/defect/open-question templates. Do not rerun tests, resolve unsupported conflicts, publish externally or silently promote facts.
@@ -21,7 +16,7 @@ Own `report.md`, `defects/**`, curated `evidence/**`, product change log, and th
 
 ## Workflow
 1. Report scope using only `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive`.
-2. Include separate `## Product Result` and `## Automation Verification` sections. Product Result comes from verified manual execution. Automation Verification states whether each spec ran, matched observation, exposed product mismatch, had automation defect, or was blocked by setup/auth.
+2. Include separate `## Product Result` and `## Automation Verification` sections. Product Result comes from verified manual execution; với `execution.mode === 'cli_first'` và thiếu manual evidence, product result được dẫn xuất từ `execution.runs[]` với `verification === 'Matched product result'` (Pass) hoặc `'Product behavior mismatch'` (Fail). Locator/auth/setup failure KHÔNG chứng minh product `Fail`. Automation Verification states whether each spec ran, matched observation, exposed product mismatch, had automation defect, or was blocked by setup/auth.
 3. Never overwrite or reinterpret manual product result from CLI result. CLI `Fail` on the expected product assertion supports reproduction of manual `Fail`; it is not an automation failure. Locator/auth/setup failure does not prove product `Fail`.
 4. Link requirement basis, revision, environment, role, attempt/control-path evidence, standalone spec, CLI evidence, mutation ledger, cleanup and leftovers. Promote reviewed/redacted evidence from `test-results/` to `docs/tickets/<ticket-folder>/evidence/`; final report must not depend on temporary raw paths.
 5. Create defect only with clear expected basis, met precondition and verified product evidence. Otherwise record limitation/open question or `Inconclusive`.

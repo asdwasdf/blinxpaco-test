@@ -6,12 +6,9 @@ description: Use when locating or observing selected Paco scope, or surveying on
 # Paco Explore
 
 ## Mutation Mode
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
-- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
-- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+Read `manifest.yaml:mutationMode` before any side effect. Default is `auto` whenever the host is in `paco.config.yaml: safety.allowedHosts` or `externalDevHosts`. For `locate` and `observe` this section is informational: those modes stay read-only. For `survey` the parent `paco-discover` reserves a mutation candidate and dispatches `paco-verify-flow`; this skill does not mutate.
 
-If `manual` or missing: legacy behavior — ask the tester per case.
+When this skill is asked to record observation only, it stays read-only regardless of mode. If a `survey` task surfaces a candidate that this skill must hand back, the parent reserves the mutation, and `paco-verify-flow` runs it with the same safety rules as ticket `auto` mode: hostname allowlist, safe test data, approved recipient, production/unknown host blocked, ledger written, cleanup on pass/fail, leftover log on cleanup fail.
 
 ## Scope and dependencies
 

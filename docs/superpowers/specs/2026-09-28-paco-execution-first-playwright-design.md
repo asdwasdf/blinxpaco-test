@@ -4,6 +4,8 @@
 - **Trạng thái:** Đã được người dùng duyệt ngày 2026-09-28
 - **Phạm vi:** Thay đổi workflow và bộ skill QA Paco
 
+> **Superseded in part (2026-10-17):** `MANUAL_EXECUTE` gate bị bỏ cho ticket mới (`execution.mode: cli_first`); spec được sinh trước product execution. Xem `.superpowers/refator.md` và `docs/superpowers/plans/2026-10-17-paco-cli-first.md`.
+
 ## 1. Mục tiêu
 
 Giảm việc Claude Playwright MCP phải đọc và khám phá lại flow ở mỗi lần test. MCP được dùng để khám phá và chạy manual kỹ một lần; sau đó workflow phải tạo Playwright test chạy độc lập bằng CLI cho mọi test case có manual result đủ điều kiện.

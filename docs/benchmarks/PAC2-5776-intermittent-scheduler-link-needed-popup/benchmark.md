@@ -3,25 +3,25 @@
 **Ticket:** `PAC2-5776` (`PAC2-5776-intermittent-scheduler-link-needed-popup`)
 **Spec:** `playwright/tests/tickets/PAC2-5776-TC-004.guided.spec.ts` (204 lines)
 **Environment:** dry-run (no browser), fake Playwright runner returning a passed JSON report
-**Date:** 2026-10-17T13:32:34.164Z
+**Date:** 2026-10-17T15:26:24.193Z
 
 ## Headline
 
-CLI-first completes the same spec in **53 ms** with **0 MCP tool calls**.
+CLI-first completes the same spec in **56 ms** with **0 MCP tool calls**.
 MCP-first estimates **1.4 min** over **42 MCP tool calls** for the same spec.
-Speedup: **~158.5×** wall time, with deterministic binary outcomes.
+Speedup: **~150×** wall time, with deterministic binary outcomes.
 
 ## Comparison
 
 | Metric | CLI-first | MCP-first | Notes |
 |---|---|---|---|
-| Total wall time | 53 ms | ~1.4 min (42 tool calls × 2s) | ~158.5× faster |
+| Total wall time | 56 ms | ~1.4 min (42 tool calls × 2s) | ~150× faster |
 | MCP browser tool calls | 0 | 42 | ~42 fewer |
 | Spec actions executed | 26 | 26 | Identical coverage |
 | Assertions evaluated | 12 | 12 | Identical assertions |
 | Outcome determinism | binary (Playwright JSON) | flaky (per-call model variance) | CLI is reproducible |
 | Manifest load + gate (cli_first) | 27 ms | n/a | One-shot via runBatch |
-| Runner + write-back (cli_first) | 26 ms | n/a | Saves to execution.runs atomically |
+| Runner + write-back (cli_first) | 29 ms | n/a | Saves to execution.runs atomically |
 | Product result | Pass | Pass/Fail/Inconclusive (per-step) | CLI aggregates to single result |
 | Verification classification | Matched product result | manual triage | CLI auto-classifies |
 
@@ -29,11 +29,11 @@ Speedup: **~158.5×** wall time, with deterministic binary outcomes.
 
 | Stage | Duration |
 |---|---|
-| buildManifest + write | 14 ms |
-| loadManifest + gate | 13 ms |
-| runBatch (fake runner + classify) | 20 ms |
+| buildManifest + write | 15 ms |
+| loadManifest + gate | 12 ms |
+| runBatch (fake runner + classify) | 23 ms |
 | write-back + reload verify | 6 ms |
-| **total** | **53 ms** |
+| **total** | **56 ms** |
 
 Result: `Pass` / `Matched product result`. Summary: {"total":1,"pass":1,"fail":0,"blocked":0,"not_run":0,"inconclusive":0}.
 

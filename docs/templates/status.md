@@ -23,6 +23,7 @@
 
 ## Execution Summary
 
+- Mode: cli_first
 - Manual results: Pass 0, Fail 0, Inconclusive 0, Blocked 0, Not Run 0
 - Automation: Implemented 0, Executed 0, Blocked 0
 

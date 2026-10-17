@@ -6,12 +6,7 @@ description: Use when analyzing selected Paco ticket sources into atomic require
 # Paco Requirements
 
 ## Mutation Mode
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
-- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
-- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
-
-If `manual` or missing: legacy behavior — ask the tester per case.
+`ANALYZE` is read-only by design. `manifest.yaml:mutationMode` is informational here. When the workflow is in `auto` mode the agent may continue working without per-action approval in later phases; this phase produces requirements only.
 
 ## Scope and dependencies
 `ANALYZE` only. Require selected ticket, `ticket.md`, revision, output directory, and valid `INGEST`. Read knowledge/traceability standards and `docs/templates/requirements.md`. Do not browse Paco, design full tests, conclude fix status, or orchestrate later phases.

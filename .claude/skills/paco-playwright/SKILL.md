@@ -20,13 +20,13 @@ Own `automation.md`, selected Playwright source, and structured `playwright_case
 3. Attempt đầu `Fail` phải chạy lại tối thiểu ba diagnostic attempts: cùng dữ liệu, dữ liệu mới/sạch, fresh page/session; thêm control path gần nhất. Mỗi retry phải có mục đích và evidence. Chỉ ghi `Fail` khi tái hiện ổn định hoặc evidence xác định product cause.
 4. Fail rồi pass/outcome không ổn định là `Inconclusive`, không ép thành `Fail`. `Blocked`/`Not Run` phải có reason. Trước khi hoàn thành, rà acceptance criteria, requirement mapping và toàn bộ case inventory để tránh bỏ case/step.
 5. Trả structured `playwright_cases[].manual`; không tạo spec trong phase này.
-6. Giữ output browser gọn: case đã biết rõ expected thì `browser_run_code`/`browser_evaluate` chỉ `return` giá trị cần assert (text, count, status, error); snapshot đầy đủ khi state mới/không như kỳ vọng hoặc khi điều tra `Fail`. Log/DOM lớn cần làm evidence thì ghi file và chỉ trả path + tóm tắt. Đoạn code dài dùng lại nhiều lần thì viết ra file rồi chạy, không dán lại vào context.
+6. Giữ output browser gọn: case đã biết rõ expected thì `browser_run_code`/`browser_evaluate` chỉ `return` Giá trị cần assert (text, count, status, error); snapshot đầy đủ khi state mới/không như kỳ vọng hoặc khi điều tra `Fail`. Log/DOM lớn cần làm evidence thì ghi file và chỉ trả path + tóm tắt. Đoạn code dài dùng lại nhiều lần thì viết ra file rồi chạy, không dán lại vào context.
 
 ### `AUTOMATE` — mode `generate`
 
-1. Tạo standalone `.spec.ts` cho mọi manual `Pass`/`Fail`. `Fail` encode expected requirement nên spec được phép fail đúng product assertion khi defect còn tồn tại.
+1. Tạo standalone `.spec.ts` cho mọi case trong `execution.case_ids` mà chưa có spec. `Pass`/`Fail` encode expected requirement nên spec được phép fail đúng product assertion khi defect còn tồn tại. Với `execution.mode === 'cli_first'`, spec sinh ra từ `requirements.md` + `feature-location.md` + `playwright/pages/*.ts` + `docs/product/workflows/<module>.md` mà không cần manual record trước. Với `mcp_first`, manual `Pass`/`Fail` là gate.
 2. Intermittent/flaky `Inconclusive` tạo diagnostic repeat spec nhưng không encode unsupported correctness conclusion. `Blocked`/`Not Run` được skip chỉ với reason.
-3. Tái dùng durable route/locator/precondition từ manual record; không dùng MCP khám phá lại. Nếu dữ liệu thiếu/stale, trả blocker để orchestrator quay lại bounded manual investigation.
+3. Tái dùng durable route/locator/precondition từ `playwright/pages/` và feature-location; không dùng MCP khám phá lại. Nếu locator/page object thiếu/stale, route về bounded manual investigation (MCP) thay vì suy đoán.
 4. Prefer Chromium, role locators, observable waits và sourced assertions. Không private API bypass hoặc assertion chỉ từ `Inferred`.
    - Pacing (tester yêu cầu 2026-10-02): Paco UI (PrimeReact dropdown/multiselect, modal tải slot) re-render chậm, click quá nhanh làm option detach. Mọi spec có `settle()` = `page.waitForTimeout(Number(process.env.PACO_STEP_MS ?? 1000))` sau mỗi `click`/`fill`/`press`, và chờ thêm ~3s sau khi mở modal/list tải dữ liệu, kết hợp với observable wait (không thay thế assertion).
 5. Page objects: spec sinh ra phải import từ `playwright/pages/` trước (xem `playwright/pages/README.md`); locator mới đã xác minh thì thêm vào page object đúng khu vực kèm comment `Source:`, không viết inline. Page object không assert kết quả nghiệp vụ.
@@ -34,19 +34,18 @@ Own `automation.md`, selected Playwright source, and structured `playwright_case
 
 ### `AUTOMATION_EXECUTE` — mode `cli`
 
-1. Chạy Playwright CLI ngay, đúng ticket/test scope; không dùng MCP.
+1. Chạy Playwright CLI ngay, đúng ticket/test scope; không dùng MCP. Với `execution.mode === 'cli_first'`, gọi `npm run paco:cli -- <ticket> <case-id>` thay cho MCP orchestration; với `mcp_first`, giữ legacy CLI invocation manual.
 2. Ghi exit status, case result và phân loại: `Matched product result`, `Product behavior mismatch`, `Automation defect`, `Setup or authentication failure`, hoặc `Inconclusive`.
 3. CLI fail đúng expected product assertion tái hiện manual `Fail`; không phải automation defect. Locator/auth/setup failure không chứng minh product `Fail`. Không sửa product result từ automation result.
-4. Trả structured `playwright_cases[].run`; evidence cần report phải durable/redacted.
+4. Trả structured `playwright_cases[].run`; evidence cần report phải durable/redacted. Khi gọi `--diagnose`, runner ghi `run.diagnostic_attempts[]` hợp lệ schema; cap ba attempts.
 
 ## Mutation Mode
 
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
-- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe recipient/data (no real PII), SMS requires explicit tester confirmation, production/unknown host is blocked, mutation ledger, cleanup khi khả thi và ghi `leftover` khi cleanup fail.
-- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+Read `manifest.yaml:mutationMode` before any side effect. Default is `auto` whenever the host is in `paco.config.yaml: safety.allowedHosts` or `externalDevHosts`. In `auto` mode the standalone spec can `Create`/`Update`/`Save`/`Submit`/`Send`/`Delete`/`Restore`/`Upload`/`Import`/`Download` on owned test data without per-action approval: the spec is the authorization.
 
-If `manual` or missing: pass `mutationMode` (read from `manifest.yaml`) into `evaluateMutationGate()`; legacy behavior — require `PACO_ALLOW_MUTATION=true` and `PACO_ALLOW_DESTRUCTIVE=true` for destructive actions and ask the tester per case.
+Still enforce in `auto` mode: `evaluateMutationGate()` with the `mutationMode` param; hostname matches allowlist; safe test data only (no real PII, `QA-test` prefix on records the spec creates/updates; historical `QA-AUTO` accepted); approved recipient (`fiona.nguyen@blinxsolutions.com` for email; SMS requires explicit tester confirmation each time); production/unknown host is blocked; mutation ledger written with redacted before/after state; cleanup in `finally { cleanup() }`; leftover log on cleanup fail. `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env vars are an optional local safety guard, not the primary gate.
+
+`manual` (only when tester or intake forces it): pass `mutationMode` into `evaluateMutationGate()`; legacy behavior — require `PACO_ALLOW_MUTATION=true` and `PACO_ALLOW_DESTRUCTIVE=true` for destructive actions and ask the tester per case.
 
 Record result chỉ bằng `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive`. Raw output ở `test-results/`; không lưu credential, cookie, token, header hoặc auth state.
 

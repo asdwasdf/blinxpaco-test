@@ -14,7 +14,20 @@ Trên environment `dev` và hostname nằm trong `paco.config.yaml` safety allow
 
 `Send` cần test recipient/destination đã xác minh. Thiếu domain rule, expected result hoặc safe test data phải Ask QA early; không đoán. Mọi mutation ghi ledger đã redact và cleanup khi không phá dữ liệu nền.
 
-Authorization đã duyệt cho execution-first workflow cho phép `MANUAL_EXECUTE` và standalone Playwright spec thực hiện side effect đúng ticket/case/action/test-data scope mà không hỏi lại từng lần. Authorization này chỉ bỏ prompt lặp; không bỏ hostname/environment allowlist, runtime guard, safe test data, mutation ledger hoặc cleanup. Production/unknown host vẫn hard block. Action ngoài test case hoặc khác scope cần approval mới.
+### `auto` mutation mode (default trên configured dev host)
+
+Khi `manifest.yaml:mutationMode === 'auto'` (set by `applyTicketMutationMode()` on intake khi host thuộc `safety.allowedHosts` hoặc `safety.externalDevHosts` của dev), mutations là QA operation bình thường, không phải action cần approval từng case:
+
+- `MANUAL_EXECUTE`, standalone Playwright spec, `paco-verify-flow` reserved mutation, `paco-video-flow` direct run, `paco-discover` survey mutation — tất cả chạy CRUD/submit/send/cleanup trên owned test data (`QA-test` prefix) mà không cần hỏi lại từng action.
+- Manifest authorization là primary gate. Mỗi mutation vẫn phải pass `evaluateMutationGate()` runtime check.
+- Safety thật vẫn enforce: hostname allowlist, safe test data (no real PII, `QA-test` prefix), approved recipient (`fiona.nguyen@blinxsolutions.com` cho email; SMS cần explicit tester confirmation từng lần), production/unknown host blocked, mutation ledger đã redact, cleanup on pass/fail, leftover log on cleanup fail.
+- Destructive mutation, bulk delete, hay side effect ngoài test scope vẫn cần reservation riêng (qua `paco-verify-flow` cho discovery, qua `Mutation Policy: APPROVED` trong `status.md` cho ticket).
+
+### `manual` mutation mode (legacy fallback)
+
+Khi `manifest.yaml:mutationMode` vắng mặt hoặc bằng `manual` (host ngoài allowlist, hoặc tester/intake force), giữ legacy behavior:
+- Hỏi tester per case cho mỗi mutation class khác `None`.
+- Env var guards còn áp dụng như runtime safety.
 
 ## Safety Gates
 
@@ -23,11 +36,15 @@ Authorization đã duyệt cho execution-first workflow cho phép `MANUAL_EXECUT
 - Automation assessment ghi approval status
 
 ### Runtime
-- Environment variable guards:
-  - `PACO_ALLOW_MUTATION=true` cho persistent
-  - `PACO_ALLOW_DESTRUCTIVE=true` cho destructive
+Trong `auto` mode: `manifest.yaml:mutationMode === 'auto'` là authorization chính. Gate `evaluateMutationGate()` enforce hostname, data, recipient, ledger, cleanup. Env var guards là optional local safety override, không phải primary gate.
+
+Trong `manual` mode: env var guards còn là primary runtime gate:
+- `PACO_ALLOW_MUTATION=true` cho persistent
+- `PACO_ALLOW_DESTRUCTIVE=true` cho destructive
 - Mặc định: tắt
 - Không thay thế approval; chỉ là guard bổ sung
+
+Cả hai mode: production/unknown host luôn hard block bất kể env var.
 
 ## Approval Request Template
 

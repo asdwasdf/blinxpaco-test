@@ -94,6 +94,17 @@ function validateAutomationExecution(value: Record<string, unknown>, caseId: str
   if (!testResults.includes(value.result as typeof testResults[number]) ||
       !automationVerifications.includes(value.verification as typeof automationVerifications[number]) || !strings(value.evidence) ||
       value.product_result_changed !== false) issues.push(`${caseId}: automation run payload is invalid`);
+  if (value.diagnostic_attempts !== undefined) {
+    if (!Array.isArray(value.diagnostic_attempts)) { issues.push(`${caseId}: diagnostic_attempts must be an array`); return; }
+    for (const attempt of value.diagnostic_attempts) {
+      if (!record(attempt) || typeof attempt.id !== 'string' || !testResults.includes(attempt.result as typeof testResults[number]) ||
+          !dataVariants.includes(attempt.data_variant as typeof dataVariants[number]) || !strings(attempt.evidence) || !attempt.evidence.length ||
+          !automationVerifications.includes(attempt.verification as typeof automationVerifications[number])) {
+        issues.push(`${caseId}: diagnostic_attempts entry is invalid`); break;
+      }
+    }
+    if (value.result !== 'Inconclusive' && value.result !== 'Fail') issues.push(`${caseId}: diagnostic_attempts only valid for Inconclusive or Fail result`);
+  }
 }
 
 function validatePlaywrightCases(value: Record<string, unknown>, issues: string[]): void {
