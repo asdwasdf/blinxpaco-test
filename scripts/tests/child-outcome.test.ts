@@ -98,6 +98,20 @@ test('rejects malformed playwright payload values', () => {
   assert.equal(validateChildOutcome(playwrightOutcome('AUTOMATION_EXECUTE', [{ case_id: 'TC-1', run: malformedRun as never }]), playwrightExpected('AUTOMATION_EXECUTE')).ok, false);
 });
 
+test('accepts diagnostic_attempts for Inconclusive cli_first runs', () => {
+  const run = { result: 'Inconclusive' as const, verification: 'Inconclusive' as const, evidence: ['trace.zip'], product_result_changed: false as const,
+    diagnostic_attempts: [{ id: 'd-1', data_variant: 'fresh_session' as const, result: 'Inconclusive' as const, evidence: ['trace-2.zip'], verification: 'Inconclusive' as const }] };
+  assert.equal(validateChildOutcome(playwrightOutcome('AUTOMATION_EXECUTE', [{ case_id: 'TC-1', run }]), playwrightExpected('AUTOMATION_EXECUTE')).ok, true);
+});
+
+test('rejects diagnostic_attempts on a Pass result', () => {
+  const run = { result: 'Pass' as const, verification: 'Matched product result' as const, evidence: ['trace.zip'], product_result_changed: false as const,
+    diagnostic_attempts: [{ id: 'd-1', data_variant: 'fresh_session' as const, result: 'Pass' as const, evidence: ['trace-2.zip'], verification: 'Matched product result' as const }] };
+  const result = validateChildOutcome(playwrightOutcome('AUTOMATION_EXECUTE', [{ case_id: 'TC-1', run }]), playwrightExpected('AUTOMATION_EXECUTE'));
+  assert.equal(result.ok, false);
+  if (!result.ok) assert.match(result.issues.join(' '), /diagnostic_attempts only valid for Inconclusive or Fail/);
+});
+
 test('requires reasons for manual Blocked and Not Run results', () => {
   for (const result of ['Blocked', 'Not Run'] as const) {
     const execution = manual(result);

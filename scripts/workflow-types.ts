@@ -57,6 +57,8 @@ export interface ManualAttempt {
   evidence: string[];
 }
 
+export type ExecutionMode = 'cli_first' | 'mcp_first';
+
 export interface ManualCaseExecution {
   result: TestResult;
   expected_basis: ExpectedBasis;
@@ -74,14 +76,24 @@ export interface AutomationCaseImplementation {
   input_revision: number;
 }
 
+export interface DiagnosticAttempt {
+  id: string;
+  data_variant: 'same' | 'clean' | 'fresh_session' | 'control' | 'initial';
+  result: TestResult;
+  evidence: string[];
+  verification: AutomationVerification;
+}
+
 export interface AutomationCaseExecution {
   result: TestResult;
   verification: AutomationVerification;
   evidence: string[];
   product_result_changed: false;
+  diagnostic_attempts?: DiagnosticAttempt[];
 }
 
 export interface ExecutionState {
+  mode: ExecutionMode;
   case_ids: string[];
   manual: Record<string, ManualCaseExecution>;
   automation: Record<string, AutomationCaseImplementation>;

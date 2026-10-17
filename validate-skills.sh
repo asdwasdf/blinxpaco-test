@@ -28,6 +28,8 @@ grep -q 'DiscoveryChildOutcome' .claude/skills/paco-explore/SKILL.md || { echo "
 grep -q 'npm run paco:discover' .claude/skills/paco-discover/SKILL.md || { echo "FAIL: paco-discover CLI protocol"; exit 1; }
 grep -q '/paco/login' .claude/skills/paco-discover/SKILL.md || { echo "FAIL: paco-discover auth pause"; exit 1; }
 grep -q 'Không tự bật' .claude/skills/paco-discover/SKILL.md || { echo "FAIL: paco-discover guard ownership"; exit 1; }
+grep -q 'cli_first' .claude/skills/paco-ticket/SKILL.md || { echo "FAIL: paco-ticket CLI-first contract"; exit 1; }
+grep -q 'cli_first' .claude/skills/paco-playwright/SKILL.md || { echo "FAIL: paco-playwright CLI-first contract"; exit 1; }
 grep -q 'evaluateMutationGate' .claude/skills/paco-verify-flow/SKILL.md || { echo "FAIL: paco-verify-flow gate"; exit 1; }
 grep -q 'reservation_id' .claude/skills/paco-verify-flow/SKILL.md || { echo "FAIL: paco-verify-flow reservation"; exit 1; }
 
