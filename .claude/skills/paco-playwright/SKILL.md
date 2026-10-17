@@ -39,18 +39,14 @@ Own `automation.md`, selected Playwright source, and structured `playwright_case
 3. CLI fail đúng expected product assertion tái hiện manual `Fail`; không phải automation defect. Locator/auth/setup failure không chứng minh product `Fail`. Không sửa product result từ automation result.
 4. Trả structured `playwright_cases[].run`; evidence cần report phải durable/redacted.
 
-## Mutation, cleanup và evidence
-
-Read `manifest.yaml:mutationMode` before any side effect. If `auto`: skip approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks. Still enforce: hostname matches allowlist, safe recipient/data, mutation ledger, cleanup khi khả thi và leftovers khi cleanup fail. Production/unknown host hard block. If `manual` or missing: legacy behavior — pass `mutationMode` (read from `manifest.yaml`) into `evaluateMutationGate()` and require `PACO_ALLOW_MUTATION=true` and `PACO_ALLOW_DESTRUCTIVE=true` for destructive actions as before.
-
 ## Mutation Mode
 
 Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
 - Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
-- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
+- Still enforce: hostname matches allowlist, safe recipient/data (no real PII), SMS requires explicit tester confirmation, production/unknown host is blocked, mutation ledger, cleanup khi khả thi và ghi `leftover` khi cleanup fail.
 - If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
 
-If `manual` or missing: legacy behavior — ask the tester per case.
+If `manual` or missing: pass `mutationMode` (read from `manifest.yaml`) into `evaluateMutationGate()`; legacy behavior — require `PACO_ALLOW_MUTATION=true` and `PACO_ALLOW_DESTRUCTIVE=true` for destructive actions and ask the tester per case.
 
 Record result chỉ bằng `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive`. Raw output ở `test-results/`; không lưu credential, cookie, token, header hoặc auth state.
 
