@@ -47,6 +47,7 @@ Read before starting:
 | Per-chunk markdown | `docs/tickets/<ticket>/video/chunk_<NN>.md` (deleted after `video-notes.md` is written) | this skill |
 | `video-notes.md` | `docs/tickets/<ticket>/video/video-notes.md` | this skill |
 | Standalone Playwright spec | `playwright/tests/tickets/<ticket>/<case-id>-video-flow.spec.ts` | this skill (proposal; `paco-playwright` owns) |
+| Spec execution | Với `execution.mode === 'cli_first'`, spec chạy qua `npm run paco-cli -- <ticket> <case-id>`; outcome merge vào `execution.runs[]` thay vì `execution.manual[]`. Với `mcp_first`, giữ legacy flow. | this skill + `paco-ticket` |
 | `ChildSkillOutcome` v1 | returned to caller | this skill |
 
 ## Steps

@@ -60,6 +60,15 @@ DISCOVER → INGEST → ANALYZE → LOCATE → EXPLORE → TEST_DESIGN
 
 Không có timebox cứng để đổi correctness lấy tốc độ. Budget/ceiling chỉ chống runaway và tạo checkpoint. Khi thiếu role, test data, domain rule, expected result, auth, readable video hoặc baseline, dùng **Ask QA early**: blocker, observation, evidence/timestamp, decision, concrete choices và affected cases.
 
+## Execution Modes
+
+Từ 2026-10-17, mỗi ticket có `execution.mode` ∈ {`cli_first`, `mcp_first`}. Default cho intake mới là `cli_first`.
+
+- `cli_first`: skip `MANUAL_EXECUTE` bắt buộc; `AUTOMATE` sinh spec từ durable knowledge (requirements.md + feature-location.md + page objects); `AUTOMATION_EXECUTE` chạy `npm run paco:cli`. `MANUAL_EXECUTE` trở thành optional fallback khi CLI fails hoặc `expected_basis` chưa đủ.
+- `mcp_first`: giữ flow cũ từ plan 2026-09-28; manual evidence gate trước `AUTOMATE`. Ticket với `execution.mode === 'mcp_first'` giữ nguyên qua intake.
+
+Phân loại này giữ backward compat: ticket ongoing với `mode: mcp_first` không tự rewrite execution history.
+
 ## Idempotency Rules
 
 - Không cấp ID mới cho knowledge tương đương.

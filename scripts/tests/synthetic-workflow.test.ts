@@ -79,6 +79,7 @@ test('runs LOCATE state mechanics without Paco access or source mutation', async
   manifest.phases.EXPLORE.status = 'completed';
   manifest.phases.TEST_DESIGN.status = 'completed';
   manifest.workflow.current_phase = 'TEST_DESIGN';
+  manifest.execution.mode = 'mcp_first';
   const testCasesPath = path.join(outputDirectory, 'test-cases.md');
   await saveManagedMarkdown(testCasesPath, '# Test Cases\n\nSynthetic cases.');
   manifest.outputs['test-cases.md'] = { owner: 'paco-test-design', path: path.relative(root, testCasesPath), state: 'valid', input_revision: 1, sha256: await calculateFileChecksum(testCasesPath) };

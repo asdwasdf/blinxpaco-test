@@ -3,6 +3,7 @@
 **Input Revision:** [revision]
 **Environment:** [environment]
 **Role:** [role]
+**Execution Mode:** [cli_first/mcp_first]
 **Updated:** [timestamp]
 
 ## Feature Location Gate
@@ -13,9 +14,9 @@
 
 ## Execution Summary
 
-| Test case | Manual result | Attempts | Spec path | CLI result | Match | Skip/block reason |
-|---|---|---:|---|---|---|---|
-| [TC-ID] | [Pass/Fail/Blocked/Not Run/Inconclusive] | [count] | [path/N/A] | [result/N/A] | [classification/N/A] | [reason/N/A] |
+| Test case | Manual result | Attempts | Spec path | CLI result | Match | Skip/block reason | Source |
+|---|---|---:|---|---|---|---|---|
+| [TC-ID] | [Pass/Fail/Blocked/Not Run/Inconclusive] | [count] | [path/N/A] | [result/N/A] | [classification/N/A] | [reason/N/A] | [CLI/Manual/Hybrid/N/A] |
 
 ## Manual Execution Evidence
 
@@ -38,6 +39,12 @@
 | Run | Test Case | Result | Verification | Evidence |
 |---|---|---|---|---|
 | [run-id] | [TC-ID] | [Pass/Fail/Blocked/Not Run/Inconclusive] | [Matched product result/Product behavior mismatch/Automation defect/Setup or authentication failure/Inconclusive] | [refs] |
+
+## Diagnostic Attempts
+
+| Run | Test Case | Attempt | Data Variant | Result | Verification | Evidence |
+|---|---|---|---|---|---|---|
+| [run-id] | [TC-ID] | [attempt-id] | [initial/same/clean/fresh_session/control] | [Pass/Fail/Inconclusive] | [Matched product result/Product behavior mismatch/Automation defect/Setup or authentication failure/Inconclusive] | [refs] |
 
 ## Mutation and Cleanup
 

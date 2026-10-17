@@ -28,6 +28,7 @@ Write only `test-cases.md`; preserve final `## Tester notes`.
 6. Missing/stale/non-`Confirmed` location keeps the case `Preliminary` and automation `Blocked`; never add a guessed locator.
 7. Mark preliminary automation candidate; unknown rule becomes open question, never fabricated expected result. Ask QA early với blocker, observation, evidence/timestamp, concrete choices và affected cases.
 8. If exploration is absent, mark maturity `Preliminary`.
+9. Với `execution.mode === 'cli_first'`, ưu tiên executable case (happy path + negative + boundary) từ requirements + product knowledge. Case cần UI exploration chưa xác minh → đánh dấu `Preliminary` với `expected_basis: Open Question` để orchestrator route về `MANUAL_EXECUTE` optional. Mỗi case phải có đủ precondition + locator scope cho `npm run paco:cli` chạy standalone.
 
 ## Direct invocation, stop, outcome
 Write only owned artifact and return proposal; never update manifest/status or call next skill. Invalid/stale requirements are `Blocked`; merge/write error is `Failed`. Preserve IDs/history and avoid irrelevant cases. Return `ChildSkillOutcome` v1 with counts, checksum, mutation summary, blockers/warnings, and next phase.

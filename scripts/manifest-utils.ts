@@ -18,7 +18,7 @@ export interface Manifest { schema_version: 2; ticket: ManifestTicket; input_sna
 
 const transitions: Record<Phase, readonly Phase[]> = {
   DISCOVER: ['INGEST'], INGEST: ['ANALYZE'], ANALYZE: ['LOCATE'], LOCATE: ['EXPLORE', 'TEST_DESIGN'],
-  EXPLORE: ['TEST_DESIGN'], TEST_DESIGN: ['MANUAL_EXECUTE'], MANUAL_EXECUTE: ['AUTOMATE'],
+  EXPLORE: ['TEST_DESIGN'], TEST_DESIGN: ['MANUAL_EXECUTE', 'AUTOMATE'], MANUAL_EXECUTE: ['AUTOMATE'],
   AUTOMATE: ['AUTOMATION_EXECUTE'], AUTOMATION_EXECUTE: ['REPORT'], REPORT: ['COMPLETE'], COMPLETE: [],
 };
 const requiredOutput: Partial<Record<Phase, string>> = {
@@ -36,7 +36,15 @@ export function createManifest(
   now = new Date().toISOString(),
 ): Manifest {
   const phases = Object.fromEntries(PHASES.map((phase) => [phase, emptyPhase(snapshot.revision, now)])) as Record<Phase, PhaseRecord>;
-  return { schema_version: 2, ticket, input_snapshot: snapshot, workflow: { status: 'pending', current_phase: 'DISCOVER', last_completed_phase: null, updated_at: now, checkpoints: [] }, phases, outputs: {}, execution: { case_ids: [], manual: {}, automation: {}, runs: {} } };
+  return {
+    schema_version: 2,
+    ticket,
+    input_snapshot: snapshot,
+    workflow: { status: 'pending', current_phase: 'DISCOVER', last_completed_phase: null, updated_at: now, checkpoints: [] },
+    phases,
+    outputs: {},
+    execution: { mode: 'cli_first', case_ids: [], manual: {}, automation: {}, runs: {} },
+  };
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {
@@ -68,6 +76,7 @@ export function validateManifest(value: unknown): { ok: true; value: Manifest } 
   if (!Number.isInteger(snapshot.revision) || Number(snapshot.revision) < 1) issues.push('input_snapshot.revision must be a positive integer');
   if (!Array.isArray(snapshot.files)) issues.push('input_snapshot.files must be an array');
   const execution = isRecord(value.execution) ? value.execution : {};
+  if (!['cli_first', 'mcp_first'].includes(String(execution.mode))) issues.push('execution.mode must be cli_first or mcp_first');
   if (!Array.isArray(execution.case_ids) || execution.case_ids.some((caseId) => typeof caseId !== 'string' || !caseId.trim()) || new Set(execution.case_ids).size !== execution.case_ids.length) issues.push('execution.case_ids must contain unique case ids');
   for (const field of ['manual', 'automation', 'runs']) if (!isRecord(execution[field])) issues.push(`execution.${field} must be an object`);
   const manual = isRecord(execution.manual) ? execution.manual : {};
@@ -100,21 +109,34 @@ export function validateExecutionGate(manifest: Manifest, next: Phase): string[]
   const issues: string[] = [];
   if (next === 'AUTOMATE') {
     if (!manifest.execution.case_ids.length) issues.push('designed case inventory is required');
-    for (const caseId of manifest.execution.case_ids) if (!manifest.execution.manual[caseId]) issues.push(`${caseId}: manual result is required`);
-    for (const caseId of Object.keys(manifest.execution.manual)) if (!manifest.execution.case_ids.includes(caseId)) issues.push(`${caseId}: manual result is not in designed case inventory`);
+    if (manifest.execution.mode === 'cli_first') {
+      const location = manifest.outputs['feature-location.md'];
+      if (!location || location.state !== 'valid') issues.push('feature-location.md is required for cli_first execution');
+    } else {
+      for (const caseId of manifest.execution.case_ids) if (!manifest.execution.manual[caseId]) issues.push(`${caseId}: manual result is required`);
+      for (const caseId of Object.keys(manifest.execution.manual)) if (!manifest.execution.case_ids.includes(caseId)) issues.push(`${caseId}: manual result is not in designed case inventory`);
+    }
   }
   if (next === 'AUTOMATION_EXECUTE') {
-    for (const [caseId, manual] of Object.entries(manifest.execution.manual)) {
-      const automated = manifest.execution.automation[caseId];
-      if (manual.result === 'Pass' || manual.result === 'Fail') {
-        if (!automated?.spec_path) issues.push(`${caseId}: .spec.ts is required for ${manual.result}`);
-      } else if (manual.result === 'Inconclusive') {
-        if (!automated?.spec_path && !automated?.reason?.trim()) issues.push(`${caseId}: diagnostic spec or blocker is required for Inconclusive`);
-        if (automated?.spec_path && !automated.diagnostic) issues.push(`${caseId}: Inconclusive spec must be diagnostic`);
-      } else if (!automated?.spec_path && !automated?.reason?.trim()) {
-        issues.push(`${caseId}: ${manual.result} without spec requires a reason`);
+    if (manifest.execution.mode === 'cli_first') {
+      for (const caseId of manifest.execution.case_ids) {
+        const automated = manifest.execution.automation[caseId];
+        if (!automated?.spec_path) issues.push(`${caseId}: .spec.ts is required for cli_first execution`);
+        if (automated && automated.input_revision !== manifest.input_snapshot.revision) issues.push(`${caseId}: automation revision is stale`);
       }
-      if (automated && automated.input_revision !== manifest.input_snapshot.revision) issues.push(`${caseId}: automation revision is stale`);
+    } else {
+      for (const [caseId, manual] of Object.entries(manifest.execution.manual)) {
+        const automated = manifest.execution.automation[caseId];
+        if (manual.result === 'Pass' || manual.result === 'Fail') {
+          if (!automated?.spec_path) issues.push(`${caseId}: .spec.ts is required for ${manual.result}`);
+        } else if (manual.result === 'Inconclusive') {
+          if (!automated?.spec_path && !automated?.reason?.trim()) issues.push(`${caseId}: diagnostic spec or blocker is required for Inconclusive`);
+          if (automated?.spec_path && !automated.diagnostic) issues.push(`${caseId}: Inconclusive spec must be diagnostic`);
+        } else if (!automated?.spec_path && !automated?.reason?.trim()) {
+          issues.push(`${caseId}: ${manual.result} without spec requires a reason`);
+        }
+        if (automated && automated.input_revision !== manifest.input_snapshot.revision) issues.push(`${caseId}: automation revision is stale`);
+      }
     }
   }
   if (next === 'REPORT') {
@@ -233,29 +255,41 @@ export function planResume(manifest: Manifest, requestedPhase?: Phase): { ok: tr
 }
 
 export function reconcileManifest(value: unknown, now: string): unknown {
-  if (!isRecord(value) || value.schema_version !== 1 || !isRecord(value.phases) || !isRecord(value.workflow) || !isRecord(value.input_snapshot)) return value;
+  if (!isRecord(value) || !isRecord(value.phases) || !isRecord(value.workflow) || !isRecord(value.input_snapshot)) return value;
   const result = structuredClone(value);
   if (!isRecord(result.phases) || !isRecord(result.workflow) || !isRecord(result.input_snapshot)) return value;
-  const oldPhases = result.phases;
-  const current = String(result.workflow.current_phase ?? 'DISCOVER');
-  const legacyOrder = ['DISCOVER', 'INGEST', 'ANALYZE', 'LOCATE', 'EXPLORE', 'TEST_DESIGN', 'AUTOMATION_REVIEW', 'AUTOMATE', 'EXECUTE', 'REPORT', 'COMPLETE'];
-  const revision = Number(result.input_snapshot.revision) || 1;
-  if (!isRecord(oldPhases.LOCATE)) {
-    const passedLocate = legacyOrder.indexOf(current) > legacyOrder.indexOf('LOCATE');
-    oldPhases.LOCATE = passedLocate
-      ? { ...emptyPhase(revision, now), status: 'skipped', outcome: 'no_change', warnings: ['Legacy v1 reconciliation: LOCATE was not recorded'] }
-      : emptyPhase(revision, now);
+  if (value.schema_version === 1) {
+    const oldPhases = result.phases;
+    const current = String(result.workflow.current_phase ?? 'DISCOVER');
+    const legacyOrder = ['DISCOVER', 'INGEST', 'ANALYZE', 'LOCATE', 'EXPLORE', 'TEST_DESIGN', 'AUTOMATION_REVIEW', 'AUTOMATE', 'EXECUTE', 'REPORT', 'COMPLETE'];
+    const revision = Number(result.input_snapshot.revision) || 1;
+    if (!isRecord(oldPhases.LOCATE)) {
+      const passedLocate = legacyOrder.indexOf(current) > legacyOrder.indexOf('LOCATE');
+      oldPhases.LOCATE = passedLocate
+        ? { ...emptyPhase(revision, now), status: 'skipped', outcome: 'no_change', warnings: ['Legacy v1 reconciliation: LOCATE was not recorded'] }
+        : emptyPhase(revision, now);
+    }
+    const migrated = Object.fromEntries(PHASES.map((phase) => [phase, isRecord(oldPhases[phase]) ? oldPhases[phase] : emptyPhase(revision, now)])) as Record<Phase, PhaseRecord>;
+    if (legacyOrder.indexOf(current) >= legacyOrder.indexOf('AUTOMATION_REVIEW')) {
+      migrated.MANUAL_EXECUTE = { ...emptyPhase(revision, now), warnings: ['Legacy v1 workflow requires manual execution reconciliation'] };
+      result.workflow.current_phase = 'MANUAL_EXECUTE';
+      result.workflow.status = 'in_progress';
+    }
+    result.schema_version = 2;
+    result.phases = migrated;
+    result.execution = { mode: 'mcp_first', case_ids: [], manual: {}, automation: {}, runs: {} };
+    return result;
   }
-  const migrated = Object.fromEntries(PHASES.map((phase) => [phase, isRecord(oldPhases[phase]) ? oldPhases[phase] : emptyPhase(revision, now)])) as Record<Phase, PhaseRecord>;
-  if (legacyOrder.indexOf(current) >= legacyOrder.indexOf('AUTOMATION_REVIEW')) {
-    migrated.MANUAL_EXECUTE = { ...emptyPhase(revision, now), warnings: ['Legacy v1 workflow requires manual execution reconciliation'] };
-    result.workflow.current_phase = 'MANUAL_EXECUTE';
-    result.workflow.status = 'in_progress';
+  // v2: normalize missing execution.mode to mcp_first for back-compat with v2 manifests predating cli_first default
+  if (value.schema_version === 2) {
+    if (!isRecord(result.execution)) {
+      result.execution = { mode: 'mcp_first', case_ids: [], manual: {}, automation: {}, runs: {} };
+    } else if (!['cli_first', 'mcp_first'].includes(String((result.execution as Record<string, unknown>).mode))) {
+      (result.execution as Record<string, unknown>).mode = 'mcp_first';
+    }
+    return result;
   }
-  result.schema_version = 2;
-  result.phases = migrated;
-  result.execution = { case_ids: [], manual: {}, automation: {}, runs: {} };
-  return result;
+  return value;
 }
 
 /** @deprecated Use reconcileManifest. */

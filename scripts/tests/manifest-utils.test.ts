@@ -35,7 +35,7 @@ test('creates workflow v2 with split execution phases', () => {
     'DISCOVER', 'INGEST', 'ANALYZE', 'LOCATE', 'EXPLORE', 'TEST_DESIGN',
     'MANUAL_EXECUTE', 'AUTOMATE', 'AUTOMATION_EXECUTE', 'REPORT', 'COMPLETE',
   ]);
-  assert.deepEqual(value.execution, { case_ids: [], manual: {}, automation: {}, runs: {} });
+  assert.deepEqual(value.execution, { mode: 'cli_first', case_ids: [], manual: {}, automation: {}, runs: {} });
   assert.equal(validateManifest(value).ok, true);
   assert.equal(validateManifest({}).ok, false);
 });
@@ -108,7 +108,7 @@ for (const oldPhase of ['AUTOMATION_REVIEW', 'AUTOMATE', 'EXECUTE', 'COMPLETE'] 
     const reconciled = reconcileManifest(legacy, now) as ReturnType<typeof manifest>;
     assert.equal(reconciled.schema_version, 2);
     assert.equal(reconciled.workflow.current_phase, 'MANUAL_EXECUTE');
-    assert.deepEqual(reconciled.execution, { case_ids: [], manual: {}, automation: {}, runs: {} });
+    assert.deepEqual(reconciled.execution, { mode: 'mcp_first', case_ids: [], manual: {}, automation: {}, runs: {} });
     assert.equal(reconciled.workflow.checkpoints.length, 1);
     assert.match(reconciled.phases.MANUAL_EXECUTE.warnings.join(' '), /Legacy v1/);
   });
@@ -206,6 +206,7 @@ test('blocks AUTOMATE without a designed case inventory', () => {
 
 test('blocks AUTOMATE until every designed case has a manual result', () => {
   const value = manifest();
+  value.execution.mode = 'mcp_first';
   value.workflow.current_phase = 'MANUAL_EXECUTE';
   value.execution.case_ids = ['TC-1', 'TC-2'];
   value.execution.manual['TC-1'] = manualExecution('Pass');
@@ -216,6 +217,7 @@ test('blocks AUTOMATE until every designed case has a manual result', () => {
 
 test('requires specs for every manual Pass and Fail', () => {
   const value = readyAt('AUTOMATE');
+  value.execution.mode = 'mcp_first';
   value.execution.manual = {
     'TC-1': manualExecution('Pass'),
     'TC-2': manualExecution('Fail'),
@@ -232,6 +234,7 @@ test('requires specs for every manual Pass and Fail', () => {
 
 test('requires diagnostic spec or blocker for intermittent Inconclusive', () => {
   const value = readyAt('AUTOMATE');
+  value.execution.mode = 'mcp_first';
   const unstable = manualExecution('Inconclusive');
   unstable.attempts = [
     { id: 'attempt-1', result: 'Fail', data_variant: 'initial', evidence: ['evidence/1.png'] },
@@ -246,6 +249,7 @@ test('requires diagnostic spec or blocker for intermittent Inconclusive', () => 
 
 test('allows Blocked and Not Run without specs only with reasons', () => {
   const value = readyAt('AUTOMATE');
+  value.execution.mode = 'mcp_first';
   value.execution.manual['TC-1'] = manualExecution('Blocked', 'Missing safe data');
   value.execution.manual['TC-2'] = manualExecution('Not Run', 'Out of scope');
   value.execution.automation['TC-1'] = implementation(null, 'Missing safe data');
@@ -255,6 +259,7 @@ test('allows Blocked and Not Run without specs only with reasons', () => {
 
 test('rejects stale automation revision', () => {
   const value = readyAt('AUTOMATE');
+  value.execution.mode = 'mcp_first';
   value.execution.manual['TC-1'] = manualExecution('Pass');
   value.execution.automation['TC-1'] = implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts', null, 0);
   assert.equal(transitionPhase(value, 'AUTOMATION_EXECUTE', now).ok, false);
@@ -262,6 +267,7 @@ test('rejects stale automation revision', () => {
 
 test('blocks REPORT until every implemented spec has a CLI result or technical blocker', () => {
   const value = readyAt('AUTOMATION_EXECUTE');
+  value.execution.mode = 'mcp_first';
   value.execution.manual['TC-1'] = manualExecution('Fail');
   value.execution.automation['TC-1'] = implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts');
   assert.equal(transitionPhase(value, 'REPORT', now).ok, false);
@@ -271,6 +277,7 @@ test('blocks REPORT until every implemented spec has a CLI result or technical b
 
 test('keeps manual Fail when CLI fails the expected product assertion', () => {
   const value = readyAt('AUTOMATION_EXECUTE');
+  value.execution.mode = 'mcp_first';
   value.execution.manual['TC-1'] = manualExecution('Fail');
   value.execution.automation['TC-1'] = implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts');
   value.execution.runs['TC-1'] = { result: 'Fail', verification: 'Matched product result', evidence: ['trace.zip'], product_result_changed: false };
@@ -282,6 +289,7 @@ test('keeps manual Fail when CLI fails the expected product assertion', () => {
 test('accepts automation and setup failures without changing product result', () => {
   for (const verification of ['Automation defect', 'Setup or authentication failure'] as const) {
     const value = readyAt('AUTOMATION_EXECUTE');
+    value.execution.mode = 'mcp_first';
     value.execution.manual['TC-1'] = manualExecution('Pass');
     value.execution.automation['TC-1'] = implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts');
     value.execution.runs['TC-1'] = { result: 'Blocked', verification, evidence: ['trace.zip'], product_result_changed: false };
@@ -304,6 +312,52 @@ test('applies Playwright child outcome without changing workflow state', () => {
   assert.equal(applied.workflow.current_phase, value.workflow.current_phase);
 });
 
+test('migrates legacy v2 default to mcp_first when mode missing', () => {
+  const value = manifest() as unknown as Record<string, unknown>;
+  value.schema_version = 2;
+  delete (value.execution as Record<string, unknown>).mode;
+  const reconciled = reconcileManifest(value, now) as ReturnType<typeof manifest>;
+  assert.equal(reconciled.execution.mode, 'mcp_first');
+  assert.deepEqual(reconciled.execution, { mode: 'mcp_first', case_ids: [], manual: {}, automation: {}, runs: {} });
+});
+
+test('allows AUTOMATE without manual evidence when execution mode is cli_first', () => {
+  const value = manifest();
+  value.execution.case_ids = ['TC-1'];
+  value.outputs['feature-location.md'] = { owner: 'paco-explore', path: 'docs/tickets/PAC9-101-test/feature-location.md', state: 'valid', input_revision: 1, sha256: null };
+  value.outputs['test-cases.md'] = { owner: 'paco-test-design', path: 'docs/tickets/PAC9-101-test/test-cases.md', state: 'valid', input_revision: 1, sha256: null };
+  value.phases.LOCATE.status = 'completed';
+  value.phases.TEST_DESIGN.status = 'completed';
+  value.workflow.current_phase = 'TEST_DESIGN';
+  assert.equal(transitionPhase(value, 'AUTOMATE', now).ok, true);
+});
+
+test('rejects cli_first AUTOMATE without feature-location', () => {
+  const value = manifest();
+  value.execution.case_ids = ['TC-1'];
+  value.phases.TEST_DESIGN.status = 'completed';
+  value.workflow.current_phase = 'TEST_DESIGN';
+  const result = transitionPhase(value, 'AUTOMATE', now);
+  assert.equal(result.ok, false);
+  if (!result.ok) assert.match(result.reason, /feature-location\.md/);
+});
+
+test('keeps mcp_first AUTOMATE requiring manual evidence', () => {
+  const value = manifest();
+  value.execution.mode = 'mcp_first';
+  value.execution.case_ids = ['TC-1'];
+  value.outputs['test-cases.md'] = { owner: 'paco-test-design', path: 'docs/tickets/PAC9-101-test/test-cases.md', state: 'valid', input_revision: 1, sha256: null };
+  value.outputs['automation.md'] = { owner: 'paco-playwright', path: 'docs/tickets/PAC9-101-test/automation.md', state: 'valid', input_revision: 1, sha256: null };
+  value.phases.TEST_DESIGN.status = 'completed';
+  value.workflow.current_phase = 'TEST_DESIGN';
+  const blocked = transitionPhase(value, 'AUTOMATE', now);
+  assert.equal(blocked.ok, false);
+  if (!blocked) return;
+  value.execution.manual['TC-1'] = manualExecution('Pass');
+  const ready = transitionPhase(value, 'AUTOMATE', now);
+  assert.equal(ready.ok, true);
+});
+
 test('saves atomically and skips unchanged content', async () => {
   const root = await mkdtemp(path.join(tmpdir(), 'paco-manifest-'));
   const file = path.join(root, 'manifest.yaml');
@@ -311,4 +365,36 @@ test('saves atomically and skips unchanged content', async () => {
   assert.equal(await saveManifest(file, manifest()), 'unchanged');
   assert.equal((await loadManifest(file)).ticket.key, 'PAC9-101');
   assert.match(await readFile(file, 'utf8'), /schema_version: 2/);
+});
+
+test('allows cli_first AUTOMATION_EXECUTE without manual evidence when spec present', () => {
+  const value = readyAt('AUTOMATE');
+  value.execution.case_ids = ['TC-1'];
+  value.execution.automation = {
+    'TC-1': implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts'),
+  };
+  assert.equal(transitionPhase(value, 'AUTOMATION_EXECUTE', now).ok, true);
+});
+
+test('blocks cli_first AUTOMATION_EXECUTE when any case lacks spec', () => {
+  const value = readyAt('AUTOMATE');
+  value.execution.case_ids = ['TC-1', 'TC-2'];
+  value.execution.automation = {
+    'TC-1': implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts'),
+    'TC-2': implementation(null, 'Pending spec generation'),
+  };
+  const result = transitionPhase(value, 'AUTOMATION_EXECUTE', now);
+  assert.equal(result.ok, false);
+  if (!result.ok) assert.match(result.reason, /TC-2.*spec/i);
+});
+
+test('blocks cli_first REPORT until every implemented spec has a CLI result', () => {
+  const value = readyAt('AUTOMATION_EXECUTE');
+  value.execution.case_ids = ['TC-1'];
+  value.execution.automation = { 'TC-1': implementation('playwright/tests/tickets/PAC9-101-TC-1.spec.ts') };
+  const result = transitionPhase(value, 'REPORT', now);
+  assert.equal(result.ok, false);
+  if (!result.ok) assert.match(result.reason, /TC-1.*CLI result/i);
+  value.execution.runs['TC-1'] = { result: 'Pass', verification: 'Matched product result', evidence: ['trace.zip'], product_result_changed: false };
+  assert.equal(transitionPhase(value, 'REPORT', now).ok, true);
 });
