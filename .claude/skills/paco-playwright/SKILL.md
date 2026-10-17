@@ -41,7 +41,16 @@ Own `automation.md`, selected Playwright source, and structured `playwright_case
 
 ## Mutation, cleanup và evidence
 
-Execution-first workflow authorization cho phép side effect đúng ticket/case/action/test-data scope trên configured dev host mà không hỏi lại từng lần. Vẫn bắt buộc hostname-aware `evaluateMutationGate()`, `PACO_ALLOW_MUTATION=true`, destructive guard riêng, safe recipient/data, mutation ledger, cleanup khi khả thi và leftovers khi cleanup fail. Production/unknown host hard block. Không thực hiện destructive action không cần cho expected result.
+Read `manifest.yaml:mutationMode` before any side effect. If `auto`: skip approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks. Still enforce: hostname matches allowlist, safe recipient/data, mutation ledger, cleanup khi khả thi và leftovers khi cleanup fail. Production/unknown host hard block. If `manual` or missing: legacy behavior — pass `mutationMode` (read from `manifest.yaml`) into `evaluateMutationGate()` and require `PACO_ALLOW_MUTATION=true` and `PACO_ALLOW_DESTRUCTIVE=true` for destructive actions as before.
+
+## Mutation Mode
+
+Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
+- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
+- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
+- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+
+If `manual` or missing: legacy behavior — ask the tester per case.
 
 Record result chỉ bằng `Pass`, `Fail`, `Blocked`, `Not Run`, `Inconclusive`. Raw output ở `test-results/`; không lưu credential, cookie, token, header hoặc auth state.
 

@@ -20,6 +20,9 @@ jira:
   browsePath: /browse/
 
 safety:
+  # Hostnames use exact match or `*` wildcard on a single segment
+  # (e.g. `*.blinxpaco-np.com` matches `pac2-8575.dev.blinxpaco-np.com`).
+  # Production hosts are expected NOT to contain `-np`; review if that changes.
   mutationEnabledEnvironments: [dev]
   allowedHosts: [blinx.dev.blinxpaco-np.com, pac2-3798.dev.blinxpaco-np.com, pac2-4700-qs-only.dev.blinxpaco-np.com, pac2-7786.dev.blinxpaco-np.com]
   externalDevHosts: [pac2-6763-send-key.dev.blinxpaco-np.com, nhs-comms-hub-dev.blinxhealthcare.com]

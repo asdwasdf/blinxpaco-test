@@ -14,7 +14,15 @@ Từ `paco-discover`: `run_id`, environment, role, `task_id`, checkpoint `revisi
 ## Thực hiện
 
 1. Dùng tab Claude Playwright plugin hiện tại. Xác minh trang authenticated, đúng role, URL hiện tại thuộc configured dev host trong `paco.config.yaml`. Không browser riêng, không private API, không đọc auth state.
-2. Ngay trước click, đánh giá lại `evaluateDiscoveryMutation()` (bao gồm `evaluateMutationGate()`) với URL hiện tại và guard từ môi trường; mọi điều kiện phải pass: `PACO_ALLOW_MUTATION=true`, destructive thêm `PACO_ALLOW_DESTRUCTIVE=true` và authorization destructive riêng, `SEND` chỉ tới recipient đã approve, external side effect chỉ tới destination dev đã approve. Không tự bật guard, không tự cấp authorization.
+2. Ngay trước click, đánh giá lại `evaluateDiscoveryMutation()` (bao gồm `evaluateMutationGate()`) với URL hiện tại và guard từ môi trường; mọi điều kiện phải pass: khi `manifest.yaml:mutationMode=auto` thì skip các env var check; khi `manual` hoặc thiếu thì cần `PACO_ALLOW_MUTATION=true`, destructive thêm `PACO_ALLOW_DESTRUCTIVE=true` và authorization destructive riêng, `SEND` chỉ tới recipient đã approve, external side effect chỉ tới destination dev đã approve. Không tự bật guard, không tự cấp authorization.
+
+## Mutation Mode
+Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
+- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
+- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
+- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+
+If `manual` or missing: legacy behavior — ask the tester per case.
 3. Xác minh mutation thực sự cần thiết: state đích không đạt được read-only. Không cần → trả `no_change` kèm lý do, không click.
 4. Ghi redacted before-state, thực hiện đúng một action của candidate, chờ bằng observable wait, ghi after-state, side effects và evidence. Không lặp click khi kết quả không chắc chắn; trả `indeterminate`.
 5. Cleanup là action riêng: chỉ khi ownership thuộc run được chứng minh và có candidate/authorization/reservation cleanup riêng. Không xóa dữ liệu nền. Không cleanup được → ghi `leftovers`.

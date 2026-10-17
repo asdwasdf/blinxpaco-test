@@ -5,6 +5,14 @@ description: Use when compiling versioned Paco QA product results, automation ve
 
 # Paco Report
 
+## Mutation Mode
+Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
+- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
+- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
+- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+
+If `manual` or missing: legacy behavior — ask the tester per case.
+
 ## Scope and dependencies
 `REPORT` only. Require selected ticket/revision, versioned requirements, completed manual records, automation implementation/CLI records or explicit blockers, environment/role, durable evidence and cleanup state. Read traceability/evidence/knowledge standards and report/defect/open-question templates. Do not rerun tests, resolve unsupported conflicts, publish externally or silently promote facts.
 

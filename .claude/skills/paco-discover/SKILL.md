@@ -11,7 +11,7 @@ Orchestrator cấp cha cho product discovery ngoài ticket. Chỉ skill này đi
 
 - Cần `environment`, `role`, `run_id` và tab Claude Playwright plugin đã đăng nhập thủ công. Dùng plugin-first; không mở browser riêng, không CDP fallback, không private API. Không đọc, copy, ghi hoặc report credentials, cookies, tokens, headers hay auth state.
 - CLI `npm run paco:discover` chỉ quản lý state. CLI không xác nhận đăng nhập; skill phải tự xác minh trang authenticated và đúng role trên tab trước task đầu và sau mỗi resume.
-- Không tự bật `PACO_ALLOW_MUTATION`/`PACO_ALLOW_DESTRUCTIVE` và không tự tạo, sửa hay copy authorization. Mutation chỉ khả dụng khi tester đặt authorization JSON trong `playwright/.auth/discovery-authorizations/` (Git ignored, hiệu lực tối đa 24 giờ) và bật guard từ ngoài. Run migrate từ checkpoint legacy có mutation history thì authorization phải có `legacy_reviewed: true` sau khi tester review ledger cũ.
+- Auto-mutation is enabled by `mutationMode: auto` in the discovery task's `manifest.yaml`, written by `applyTicketMutationMode()`. Do not edit env vars or write `manifest.yaml` directly. External authorization from tester is still required for destructive mutations and SMS.
 
 ## Vòng lặp
 

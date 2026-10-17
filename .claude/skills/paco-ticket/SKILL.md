@@ -16,6 +16,7 @@ Only this skill writes `manifest.yaml` and `status.md`. `ticket/**` is read-only
 
 ## Workflow
 1. Resolve exactly one ticket; validate regex, confinement, duplicate key and `ticket.md`.
+1a. Read `paco.config.yaml` `safety.allowedHosts` and `safety.externalDevHosts`; call `applyTicketMutationMode(ticketKey, env, host, 'paco-ticket')` to stamp `mutationMode` into `manifest.yaml` before any child skill runs. If the host is unknown at intake, default to `manual` and re-evaluate when the child first reports URL.
 2. Hash raw sources; run `reconcileManifest()`, reconcile artifact checksums, classify semantic location changes, call `markFeatureLocationStale()` then propagate stale state. Preserve checkpoint/execution history.
 3. Resume first valid unfinished phase or validate requested phase. `LOCATE` is required unless non-UI scope has an exact skip reason. Video input must have contact sheet/timeline reviewed (via subagent → `video/video-notes.md`) before `ANALYZE`.
 4. Route one child: `ANALYZE` → `paco-requirements`; `LOCATE` → `paco-explore` mode `locate`; `EXPLORE` → `paco-explore` mode `observe`; `TEST_DESIGN` → `paco-test-design`; `MANUAL_EXECUTE` → `paco-playwright` mode `manual`; `AUTOMATE` → `paco-playwright` mode `generate`; `AUTOMATION_EXECUTE` → `paco-playwright` mode `cli`; `REPORT` → `paco-report`.
@@ -27,8 +28,16 @@ Only this skill writes `manifest.yaml` and `status.md`. `ticket/**` is read-only
 10. Never alter manual product result from CLI result. Keep product behavior, automation defect and auth/setup failure distinct.
 11. Ask QA early when role, test data, domain rule, expected result, readable video, auth or baseline is missing. Include blocker, observation, evidence/timestamp, decision, concrete choices and affected cases.
 
+## Mutation Mode
+Read `manifest.yaml:mutationMode` before any side effect. If `auto`:
+- Skip all approval prompts and skip the legacy `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env var checks for this ticket.
+- Still enforce: hostname matches allowlist, safe test data (no real PII), recipient is approved, SMS requires explicit tester confirmation, production/unknown host is blocked, and ledger is written.
+- If both `manifest.yaml:mutationMode=auto` and `status.md:Mutation Policy=APPROVED` exist, prefer manifest and record ledger `source=manifest` once.
+
+If `manual` or missing: legacy behavior — ask the tester per case.
+
 ## Safety
-Execution-first workflow authorization permits selected test side effects without repeated prompts only on configured dev hosts and exact ticket/case/action/test-data scope. Enforce `evaluateMutationGate()`, runtime guards, safe data/recipient, redacted ledger and cleanup. Production/unknown host remains blocked. Never persist credentials, auth state or reusable approval.
+Auto-mutation only on configured dev hosts via `mutationMode: auto` in `manifest.yaml`. Still enforce `evaluateMutationGate()` (with `mutationMode` param), runtime guards, safe data/recipient, redacted ledger and cleanup. Production/unknown host remains blocked. Never persist credentials, auth state or reusable approval.
 
 ## Stop, idempotency, outcome
 `Blocked` for missing source/auth/input/safe data; `Failed` for technical/artifact errors. Never expand scope, rerun valid phases, reassign stable IDs, delete history, duplicate sources/questions, overwrite notes or auto-migrate existing ticket artifacts. Return ticket/revision/phase/outcome, artifacts, blockers/warnings and exact next action.
