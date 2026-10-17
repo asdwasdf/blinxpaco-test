@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { evaluateMutationGate, type MutationApproval, type MutationRunScope, type WorkflowMutationAuthorization } from '../mutation-gate.js';
+import { hostMatchesPattern } from '../mutation-gate-helpers.js';
 import type { PacoConfig } from '../workflow-types.js';
 
 const scope: MutationRunScope = { run_id: 'run-1', environment: 'dev', current_url: 'https://blinx.dev.blinxpaco-np.com/paco/dashboard', ticket_key: 'PAC9-101', case_id: 'PAC9-101-TC-001', action: 'Update synthetic record', test_data_fingerprint: 'sha256:test', mutation_class: 'Persistent' };
@@ -133,4 +134,25 @@ test('requires destructive guard for workflow authorization', () => {
     evaluateMutationGate(destructive, null, { PACO_ALLOW_MUTATION: 'true', PACO_ALLOW_DESTRUCTIVE: 'true' }, '2026-09-10T01:00:00Z', safety, workflowAuthorization),
     { allowed: true, reason: 'workflow_authorized_destructive' },
   );
+});
+
+test('hostMatchesPattern supports exact and wildcard entries', () => {
+  assert.equal(hostMatchesPattern('blinx.dev.blinxpaco-np.com', ['blinx.dev.blinxpaco-np.com']), true);
+  assert.equal(hostMatchesPattern('pac2-8575.dev.blinxpaco-np.com', ['*.blinxpaco-np.com']), true);
+  assert.equal(hostMatchesPattern('prod.example.com', ['*.blinxpaco-np.com']), false);
+  assert.equal(hostMatchesPattern('nonprod.example.com', ['*.blinxpaco-np.com']), false);
+  assert.equal(hostMatchesPattern('blinx.dev.blinxpaco-np.com', ['*.dev.blinxpaco-np.com']), true);
+});
+
+test('evaluateMutationGate allows mutation when mutationMode=auto on configured dev host without env var', () => {
+  const result = evaluateMutationGate(
+    scope,
+    null,
+    {},
+    '2026-09-10T01:00:00Z',
+    safety,
+    undefined,
+    'auto',
+  );
+  assert.deepEqual(result, { allowed: true, reason: 'auto_mode' });
 });

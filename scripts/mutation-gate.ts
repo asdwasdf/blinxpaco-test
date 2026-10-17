@@ -1,4 +1,5 @@
 import type { MutationClass, PacoConfig } from './workflow-types.js';
+import { hostMatchesPattern } from './mutation-gate-helpers.js';
 
 export interface MutationApproval {
   run_id: string;
@@ -38,7 +39,7 @@ export interface MutationRunScope {
 }
 
 export type MutationGateDecision =
-  | { allowed: true; reason: 'read_only' | 'approved_mutation' | 'approved_destructive' | 'workflow_authorized_mutation' | 'workflow_authorized_destructive' }
+  | { allowed: true; reason: 'read_only' | 'approved_mutation' | 'approved_destructive' | 'workflow_authorized_mutation' | 'workflow_authorized_destructive' | 'auto_mode' }
   | { allowed: false; reason: string };
 
 export function evaluateMutationGate(
@@ -48,6 +49,7 @@ export function evaluateMutationGate(
   now: string,
   safety?: PacoConfig['safety'],
   workflowAuthorization?: WorkflowMutationAuthorization,
+  mutationMode?: 'auto' | 'manual',
 ): MutationGateDecision {
   if (scope.mutation_class === 'None') return { allowed: true, reason: 'read_only' };
   if (!safety) return { allowed: false, reason: 'Mutation blocked without configured dev host safety' };
@@ -61,9 +63,12 @@ export function evaluateMutationGate(
     } catch {
       return { allowed: false, reason: 'Mutation blocked outside configured dev hosts' };
     }
-    if (![...safety.allowedHosts, ...safety.externalDevHosts].includes(hostname)) {
+    if (!hostMatchesPattern(hostname, [...safety.allowedHosts, ...safety.externalDevHosts])) {
       return { allowed: false, reason: 'Mutation blocked outside configured dev hosts' };
     }
+  }
+  if (mutationMode === 'auto') {
+    return { allowed: true, reason: 'auto_mode' };
   }
   const requiredClass = scope.mutation_class === 'Unknown' ? 'Persistent' : scope.mutation_class;
   const workflowMatches = workflowAuthorization?.product === 'Paco' &&
@@ -88,9 +93,13 @@ export function evaluateMutationGate(
       return { allowed: false, reason: 'Approval has expired' };
     }
   }
-  if (guards.PACO_ALLOW_MUTATION !== 'true') return { allowed: false, reason: 'PACO_ALLOW_MUTATION=true is required' };
+  if (!guards.PACO_ALLOW_MUTATION) {
+    return { allowed: false, reason: 'PACO_ALLOW_MUTATION=true is required' };
+  }
+  if (requiredClass === 'Destructive' && !guards.PACO_ALLOW_DESTRUCTIVE) {
+    return { allowed: false, reason: 'PACO_ALLOW_DESTRUCTIVE=true is required for destructive mutations' };
+  }
   if (requiredClass === 'Destructive') {
-    if (guards.PACO_ALLOW_DESTRUCTIVE !== 'true') return { allowed: false, reason: 'PACO_ALLOW_DESTRUCTIVE=true is required' };
     return { allowed: true, reason: workflowMatches ? 'workflow_authorized_destructive' : 'approved_destructive' };
   }
   return { allowed: true, reason: workflowMatches ? 'workflow_authorized_mutation' : 'approved_mutation' };
