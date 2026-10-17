@@ -20,7 +20,7 @@ Trên Paco Dev đã allowlist, agent **tự chạy mutation** cho mọi action p
 1. Chọn ticket / discovery task.
 2. Đăng nhập thủ công.
 3. Phê duyệt test recipient ngoài agent (nếu cần gửi email/SMS).
-4. Cleanup bản ghi `QA-AUTO` khi xong.
+4. Cleanup bản ghi `QA-test` khi xong.
 
 ## 3. Ranh giới authorization (giữ nguyên từ spec 09-21)
 
@@ -67,7 +67,7 @@ flowchart TD
     I -- Không --> J[CHẶN runtime:<br/>ghi ledger, dừng]
     I -- Có --> K[Auto-run mutation<br/>không hỏi]
     K --> L[Ghi mutation ledger<br/>action + đối tượng + kết quả]
-    L --> M{Cleanup bản ghi<br/>QA-AUTO?}
+    L --> M{Cleanup bản ghi<br/>QA-test?}
     M -- Còn --> N[Cleanup tự chạy]
     M -- Xong --> O[Báo leftovers cho tester]
 ```
@@ -138,16 +138,16 @@ Ghi vào `docs/tickets/<ticket>/mutation-ledger.md` (ticket workflow) hoặc `do
 | action class | ✓ | `Create` / `Update` / `Delete` / `Send` / `Upload` / `Import` / `Download` / `Approve` / `Reject` / `Restore` |
 | target | ✓ | URL, selector, ID, record name |
 | scope ref | ✓ | run id, case id, hoặc discovery sub-task id |
-| test data | ✓ | Tên bản ghi (vd `QA-AUTO-patient-2026-10-16-001`) |
+| test data | ✓ | Tên bản ghi (vd `QA-test-patient-2026-10-16-001`) |
 | source | ✓ | `manifest` hoặc `status` (ghi nguồn policy quyết định auto-run, tránh log đúp nếu cả 2 cùng bật) |
 | result | ✓ | `executed` / `blocked` / `failed` / `cleanup-done` |
-| leftover | nếu còn | Bản ghi `QA-AUTO` chưa cleanup |
+| leftover | nếu còn | Bản ghi `QA-test` chưa cleanup |
 
 ## 9. Cleanup
 
 - Tự chạy khi không xoá dữ liệu nền hoặc làm mất evidence cần báo cáo.
 - Skill phụ trách phase cuối cùng chạm record (`paco-playwright` cho ticket, `paco-verify-flow` cho discovery) chịu trách nhiệm cleanup trong scope của nó.
-- Cuối phase: in số leftover, danh sách record `QA-AUTO` còn tồn tại.
+- Cuối phase: in số leftover, danh sách record `QA-test` còn tồn tại.
 
 ## 10. Tiêu chí chấp nhận
 
@@ -163,7 +163,7 @@ Ghi vào `docs/tickets/<ticket>/mutation-ledger.md` (ticket workflow) hoặc `do
 |---|---|
 | Allowlisted Dev + `Save` button | Auto-click, ghi ledger, không hỏi |
 | Allowlisted Dev + `Send email` tới `fiona.nguyen@blinxsolutions.com` | Auto-send, ghi ledger |
-| Allowlisted Dev + `Delete` record `QA-AUTO-X` | Auto-delete, ghi ledger, cleanup |
+| Allowlisted Dev + `Delete` record `QA-test-X` | Auto-delete, ghi ledger, cleanup |
 | Allowlisted Dev + `Send SMS` | **Dừng hỏi** (chưa có recipient) |
 | Production host | **Chặn** trước khi load page |
 | Real PII trong form | **Dừng hỏi** |
@@ -182,6 +182,8 @@ Ghi vào `docs/tickets/<ticket>/mutation-ledger.md` (ticket workflow) hoặc `do
 1. `paco-discover` có cần `manifest.yaml` riêng cho mỗi task, hay đọc từ `docs/discovery/<task>/status.md`? (Hiện chưa rõ convention.)
 2. Static scan chạy ở `pre-commit` hay `npm run check`? (Tester tự quyết khi implement.)
 3. Khi skill con phát hiện sensitive data, có nên auto-redact trước khi hỏi, hay bắt buộc hỏi thô? (Nghiêng về hỏi vì an toàn hơn.)
+
+**Assumption cần xác nhận khi implement:** Production host không chứa `-np` trong hostname, nên wildcard `*.blinxpaco-np.com` không lọt vào production. Nếu sai, đổi thành `*.dev.blinxpaco-np.com`.
 
 ## 13. Lịch sử
 
