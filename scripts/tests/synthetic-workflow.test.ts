@@ -165,3 +165,99 @@ test('runs LOCATE state mechanics without Paco access or source mutation', async
   assert.equal(evaluateMutationGate({ run_id: 'run', environment: 'dev', ticket_key: 'PAC9-201', case_id: 'TC-1', action: 'Update', test_data_fingerprint: 'x', mutation_class: 'Persistent' }, null, {}, now).allowed, false);
   assert.equal(await calculateFileChecksum(path.join(sourceDirectory, 'ticket.md')), before);
 });
+
+test('runs cli_first flow without manual evidence', async () => {
+  const root = await mkdtemp(path.join(tmpdir(), 'paco-synthetic-cli-'));
+  const sourceDirectory = path.join(root, 'ticket', 'PAC9-202-cli-first');
+  await mkdir(sourceDirectory, { recursive: true });
+  await writeFile(path.join(sourceDirectory, 'ticket.md'), '# CLI-first ticket\n');
+
+  const discovery = await discoverTicket({ selection: 'PAC9-202-cli-first', projectRoot: root, sourceRoot: 'ticket', outputRoot: 'docs/tickets', folderPattern: pattern, primarySourceFile: 'ticket.md' });
+  assert.equal(discovery.ok, true);
+  if (!discovery.ok) return;
+  const files = await snapshotFiles(sourceDirectory, discovery.ticket.sources);
+  const revision1 = reconcileRevision(null, files, now);
+  const manifest = createManifest({ key: discovery.ticket.key, folder_name: discovery.ticket.folder_name, source_directory: discovery.ticket.source_directory, primary_source: discovery.ticket.primary_source }, revision1.snapshot, now);
+  manifest.phases.DISCOVER.status = 'completed';
+  manifest.phases.INGEST.status = 'completed';
+  manifest.phases.ANALYZE.status = 'completed';
+  manifest.execution.mode = 'cli_first';
+
+  const outputDirectory = path.join(root, discovery.ticket.output_directory);
+  const locationPath = path.join(outputDirectory, 'feature-location.md');
+  await saveManagedMarkdown(locationPath, '# Feature Location: PAC9-202\n\n**Status:** Confirmed\n\n## Confirmed entry path\n\nDashboard to feature.');
+  const locationChecksum = await calculateFileChecksum(locationPath);
+  const locate: ChildSkillOutcome = { schema_version: 1, skill: 'paco-explore', phase: 'LOCATE', ticket: { key: discovery.ticket.key, folder_name: discovery.ticket.folder_name }, input_revision: 1, outcome: 'completed', artifacts: [{ path: path.relative(root, locationPath), action: 'created', sha256: locationChecksum }], summary: { message: 'Route verified', counts: { meaningful_views: 2 } }, location: { mode: 'locate', route_status: 'Confirmed', budget: { views_used: 2, views_limit: 12, elapsed_minutes: 3, minutes_limit: 15 }, next_action: 'Run EXPLORE' }, mutation: { class: 'None', occurred: false, cleanup: 'not_applicable', leftover_identifiers: [] }, sensitive_data: { detected: false, redacted: false, details: [] }, blockers: [], warnings: [], recommended_next_phase: 'EXPLORE' };
+  manifest.outputs['feature-location.md'] = { owner: 'paco-explore', path: path.relative(root, locationPath), state: 'valid', input_revision: 1, sha256: locationChecksum };
+  manifest.phases.LOCATE = { status: 'completed', outcome: 'completed', input_revision: 1, updated_at: now, artifacts: [path.relative(root, locationPath)], budget: locate.location!.budget, warnings: [], blockers: [] };
+  manifest.workflow.current_phase = 'EXPLORE';
+  manifest.workflow.last_completed_phase = 'LOCATE';
+
+  manifest.phases.EXPLORE.status = 'completed';
+  manifest.phases.TEST_DESIGN.status = 'completed';
+  manifest.workflow.current_phase = 'TEST_DESIGN';
+
+  const testCasesPath = path.join(outputDirectory, 'test-cases.md');
+  await saveManagedMarkdown(testCasesPath, '# Test Cases\n\nCase A, Case B.');
+  manifest.outputs['test-cases.md'] = { owner: 'paco-test-design', path: path.relative(root, testCasesPath), state: 'valid', input_revision: 1, sha256: await calculateFileChecksum(testCasesPath) };
+
+  // Skip MANUAL_EXECUTE: transition directly to AUTOMATE
+  manifest.execution.case_ids = ['CASE-A', 'CASE-B']; // Must be set before transition
+  const automateTransition = transitionPhase(manifest, 'AUTOMATE', now);
+  if (!automateTransition.ok) console.log('DEBUG: transition FAILED:', automateTransition.reason);
+  assert.equal(automateTransition.ok, true);
+  if (!automateTransition.ok) return;
+  let executionManifest = automateTransition.manifest;
+  executionManifest.execution.case_ids = ['CASE-A', 'CASE-B'];
+  executionManifest.phases.AUTOMATE.status = 'completed';
+
+  // Apply automation specs directly (no manual outcome needed for cli_first)
+  const specPaths = ['CASE-A', 'CASE-B'].map((id) => path.join(outputDirectory, 'playwright', `${id}.spec.ts`));
+  for (const specPath of specPaths) {
+    await mkdir(path.dirname(specPath), { recursive: true });
+    await writeFile(specPath, `// cli_first synthetic ${path.basename(specPath)}\n`);
+  }
+  const automationPath = path.join(outputDirectory, 'automation.md');
+  await saveManagedMarkdown(automationPath, '# Automation\n\nSynthetic mapping.');
+  executionManifest.outputs['automation.md'] = { owner: 'paco-playwright', path: path.relative(root, automationPath), state: 'valid', input_revision: 1, sha256: await calculateFileChecksum(automationPath) };
+
+  const automateOutcome: ChildSkillOutcome = {
+    schema_version: 1, skill: 'paco-playwright', phase: 'AUTOMATE', ticket: { key: discovery.ticket.key, folder_name: discovery.ticket.folder_name }, input_revision: 1, outcome: 'completed',
+    artifacts: [
+      { path: path.relative(root, automationPath), action: 'created', sha256: await calculateFileChecksum(automationPath) },
+    ],
+    playwright_cases: [
+      { case_id: 'CASE-A', automation: { spec_path: path.relative(root, specPaths[0]), diagnostic: false, reason: null, input_revision: 1 } },
+      { case_id: 'CASE-B', automation: { spec_path: path.relative(root, specPaths[1]), diagnostic: false, reason: null, input_revision: 1 } },
+    ],
+    summary: { message: 'Specs generated', counts: { specs: 2 } }, mutation: { class: 'None', occurred: false, cleanup: 'not_applicable', leftover_identifiers: [] }, sensitive_data: { detected: false, redacted: false, details: [] }, blockers: [], warnings: [], recommended_next_phase: 'AUTOMATION_EXECUTE'
+  };
+  executionManifest = applyPlaywrightOutcome(executionManifest, automateOutcome);
+
+  // Transition to AUTOMATION_EXECUTE
+  const cliTransition = transitionPhase(executionManifest, 'AUTOMATION_EXECUTE', now);
+  if (!cliTransition.ok) console.log('DEBUG: cliTransition failed:', cliTransition.reason);
+  assert.equal(cliTransition.ok, true);
+  if (!cliTransition.ok) return;
+  executionManifest = cliTransition.manifest;
+
+  // Apply CLI runner results (no manual results needed)
+  const cliOutcome: ChildSkillOutcome = {
+    ...automateOutcome, phase: 'AUTOMATION_EXECUTE', recommended_next_phase: 'REPORT',
+    playwright_cases: [
+      { case_id: 'CASE-A', run: { result: 'Pass', verification: 'Matched product result', evidence: ['trace-a.zip'], product_result_changed: false } },
+      { case_id: 'CASE-B', run: { result: 'Fail', verification: 'Matched product result', evidence: ['trace-b.zip'], product_result_changed: false } },
+    ],
+  };
+  executionManifest = applyPlaywrightOutcome(executionManifest, cliOutcome);
+
+  // Transition to REPORT - manual results empty but still valid for cli_first
+  assert.equal(Object.keys(executionManifest.execution.manual).length, 0);
+  const reportTransition = transitionPhase(executionManifest, 'REPORT', now);
+  assert.equal(reportTransition.ok, true);
+
+  // Verify cli_first mode
+  assert.equal(executionManifest.execution.mode, 'cli_first');
+  assert.equal(executionManifest.execution.runs['CASE-A'].result, 'Pass');
+  assert.equal(executionManifest.execution.runs['CASE-B'].result, 'Fail');
+});

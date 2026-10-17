@@ -65,7 +65,7 @@ async function measureCliFirst(): Promise<CliTiming> {
   const manifest = await loadManifest(manifestPath);
   const t2 = Date.now();
   const decision = evaluateUiLocationGate({ ui_dependent: true, location_state: 'valid', route_status: 'Confirmed', has_entry_path: true, has_context: true, has_role: true, has_test_data_category: true });
-  if (!decision.allowed) throw new Error(`gate blocked: ${decision.reason}`);
+  if (!decision.allowed) throw new Error(`gate blocked: ${decision.blockers.join('; ')}`);
   const fakeRunner = async (args: string[]) => {
     if (!args.includes(SPEC_PATH)) throw new Error(`unexpected args: ${args.join(' ')}`);
     return { stdout: JSON.stringify({ suites: [{ specs: [{ title: CASE_ID, tests: [{ results: [{ status: 'passed' }] }] }] }] }), stderr: '', exitCode: 0 };
