@@ -132,7 +132,40 @@ Read `paco-playwright` mode `generate`. Produce a standalone spec at `playwright
 - Sourced assertions only — no claims based purely on inference from the video.
 - The filename contains the stable case ID.
 
-If the spec needs destructive or mutation actions, mark them with the `evaluateMutationGate()` pattern from `paco-playwright` and require safe test data (`QA-AUTO` prefix).
+#### 4a. Replay scope (smoke vs full)
+
+Two scopes, decided from `ticket.md` + tester intent (default = full):
+
+| Scope | When to use | What spec covers |
+|---|---|---|
+| **smoke** | Tester only wants to confirm dev host + locator work; ticket has no mutation | Steps 1-N until first observable defect state; assert visible/invisible; no mutation |
+| **full** | Tester wants to replay the whole video, including mutation actions to reproduce the bug | Every step in Section 2 of `video-notes.md` from frame 0 to final state; asserts final state; mutation allowed via 4b |
+
+**Default to `full`** unless the tester explicitly says "smoke" or the ticket has no mutation context. A smoke spec that doesn't reproduce the bug is evidence the pipeline works, not evidence about the product.
+
+#### 4b. Mutation gate for full replay
+
+If the spec needs to create / update / save / send / delete / import, the spec MUST:
+
+1. Call `evaluateMutationGate()` (from `paco-playwright`) at the top of each test, before any side effect.
+2. Use test data prefixed `QA-test` (per CLAUDE.md). New records created by the spec must follow this prefix. Historical tickets may still reference `QA-AUTO` from before the rename — gate accepts both prefixes to preserve audit trail.
+3. Resolve recipient to `fiona.nguyen@blinxsolutions.com` for any email; SMS requires explicit tester confirmation.
+4. Add a cleanup block that runs after the test (or after `Pass` / `Fail`) to remove the test records. Use `try { ... } finally { await cleanup(); }`.
+5. On cleanup failure, log the leftover record IDs into `test-results/<spec>/leftovers.txt` and never silently drop.
+6. Encode the expected product outcome in the spec assertions: if the ticket says "this should fail", the spec asserts fail; if it says "this should pass", the spec asserts pass. The spec is allowed to fail on a known defect.
+7. Never use real patient PII. Search/create with `QA-test` only.
+
+`evaluateMutationGate()` checks:
+- `PACO_ALLOW_MUTATION=true` in env
+- Host in `paco.config.yaml` `allowedHosts` + `externalDevHosts`
+- No production host
+- A test record marker is present (e.g. `QA-test` prefix on data being created/updated; historical `QA-AUTO` accepted)
+
+If any check fails, the test is `Blocked: <reason>` and stops. The spec must NOT bypass the gate.
+
+#### 4c. Skips and Blocked
+
+A spec that hits a missing fixture (no template, no health form, no recipient) MUST `test.skip(true, '<reason>')` with a clear reason, not `test.fail()`. Skips are surfaced as `Setup or authentication failure` in the run result and let the orchestrator route back to bounded manual investigation.
 
 ### 5. Auto-run policy
 
@@ -147,7 +180,7 @@ This skill never runs Playwright directly. The single-execution-first exception 
 
 - Read-only on the Paco dev host unless the action is part of the spec and authorized.
 - Hostname gate: never point the spec at a host outside `paco.config.yaml`.
-- No PII, no real patient data. Test data must be `QA-AUTO` prefixed.
+- No PII, no real patient data. Test data must be `QA-test` prefixed (historical `QA-AUTO` accepted).
 - Cleanup: delete `docs/tickets/<ticket>/video/frames/` after `paco-playwright` runs the spec to `Pass` or `Fail`, unless the tester asks to keep them.
 - The main session MUST NOT read any frame image. If you find yourself about to `Read` a PNG from `frames/`, stop and re-dispatch the subagent.
 
@@ -185,3 +218,8 @@ Return a `ChildSkillOutcome` v1 containing:
 | Forgetting `PACO_STEP_MS` settle after every interaction | Required by `paco-playwright` pacing rule (2026-10-02). |
 | Auto-running the spec on a host outside `paco.config.yaml` | Hard block; return `Blocked: host not in allowlist`. |
 | Letting the synthesis subagent read frames | Pass only the chunk markdown files. Synthesis = text only. |
+| Defaulting to smoke when the ticket is a defect repro | Use `full` scope; smoke cannot reproduce a defect, only verifies the pipeline. |
+| Skipping `evaluateMutationGate()` in full replay | Gate is mandatory; missing gate = spec is `Blocked` at runtime. |
+| Creating test data without `QA-test` prefix | CLAUDE.md requires prefix; missing prefix = mutation gate refuses. |
+| Skipping cleanup | Add a `finally { cleanup() }` block; on failure, log leftovers to `test-results/<spec>/leftovers.txt`. |
+| Encoding expected `Fail` as `test.fail()` | Use `expect(...).toBeVisible()` etc; `test.fail()` is for intentionally skipping a known-broken case, not for asserting product outcome. |
