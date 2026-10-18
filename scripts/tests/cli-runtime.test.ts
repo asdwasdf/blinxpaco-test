@@ -111,6 +111,92 @@ test('classifies auth failure as Setup or authentication failure', async () => {
   assert.equal(out.runs['TC-1'].verification, 'Setup or authentication failure');
 });
 
+// ─── New (plan §3) ──────────────────────────────────────────────────────────
+
+test('diagnostic loop records up to 4 attempts across same/clean/fresh_session/control', async () => {
+  const ticketKey = 'PAC9-810';
+  await writeCliFirstManifest(ticketKey, [{ id: 'TC-1', specPath: 'playwright/tests/tickets/PAC9-810-TC-1.spec.ts' }]);
+  let attempt = 0;
+  const fakeRunner = async () => {
+    attempt += 1;
+    if (attempt <= 3) return { stdout: JSON.stringify({ suites: [{ specs: [{ title: 'TC-1', tests: [{ results: [{ status: 'failed' }] }] }] }] }), stderr: '', exitCode: 1 };
+    return { stdout: JSON.stringify({ suites: [{ specs: [{ title: 'TC-1', tests: [{ results: [{ status: 'passed' }] }] }] }] }), stderr: '', exitCode: 0 };
+  };
+  const out = await runBatch({ ticketKey, diagnose: true, writeBack: true }, now, fakeRunner);
+  const diag = out.runs['TC-1'].diagnostic_attempts;
+  assert.ok(diag, 'diagnostic_attempts should be present');
+  assert.equal(diag.length, 4, 'four attempts should run when first three fail');
+  assert.deepEqual(diag.map((a) => a.data_variant), ['same', 'clean', 'fresh_session', 'control']);
+  assert.equal(diag[0].result, 'Fail');
+  assert.equal(diag[3].result, 'Pass');
+  for (const item of diag) {
+    assert.ok(item.evidence.length >= 1);
+    assert.ok(item.evidence[0].includes(item.data_variant));
+  }
+});
+
+test('diagnostic loop stops early on first Pass', async () => {
+  const ticketKey = 'PAC9-811';
+  await writeCliFirstManifest(ticketKey, [{ id: 'TC-1', specPath: 'playwright/tests/tickets/PAC9-811-TC-1.spec.ts' }]);
+  const fakeRunner = async () => ({ stdout: JSON.stringify({ suites: [{ specs: [{ title: 'TC-1', tests: [{ results: [{ status: 'passed' }] }] }] }] }), stderr: '', exitCode: 0 });
+  const out = await runBatch({ ticketKey, diagnose: true }, now, fakeRunner);
+  const diag = out.runs['TC-1'].diagnostic_attempts!;
+  assert.equal(diag.length, 1);
+  assert.equal(diag[0]?.data_variant, 'same');
+  assert.equal(diag[0]?.result, 'Pass');
+});
+
+test('manual vs CLI mismatch sets Product behavior mismatch', async () => {
+  const ticketKey = 'PAC9-812';
+  const p = await writeCliFirstManifest(ticketKey, [{ id: 'TC-1', specPath: 'playwright/tests/tickets/PAC9-812-TC-1.spec.ts' }]);
+  // Pre-seed manual result so compareToManual emits Product behavior mismatch.
+  const manifest = await loadManifest(p);
+  manifest.execution.manual['TC-1'] = { result: 'Pass', expected_basis: 'Confirmed', control_path_checked: false, route: '/paco/dashboard', locators: [], attempts: [], skip_or_block_reason: null };
+  await saveManifest(p, manifest);
+  const fakeRunner = async () => ({ stdout: JSON.stringify({ suites: [{ specs: [{ title: 'TC-1', tests: [{ results: [{ status: 'failed' }] }] }] }] }), stderr: '', exitCode: 1 });
+  const out = await runBatch({ ticketKey, writeBack: true }, now, fakeRunner);
+  assert.equal(out.runs['TC-1'].result, 'Fail');
+  assert.equal(out.runs['TC-1'].verification, 'Product behavior mismatch');
+});
+
+test('mutation class Temporary with auto mode appends to ledger and keeps verification', async () => {
+  const ticketKey = 'PAC9-813';
+  const p = await writeCliFirstManifest(ticketKey, [{ id: 'TC-1', specPath: 'playwright/tests/tickets/PAC9-813-TC-1.spec.ts' }]);
+  const manifest = await loadManifest(p);
+  // ponytail: mutation_class is an optional property on the automation entry;
+  // validateManifest does not reject unknown keys, so reading is safe.
+  (manifest.execution.automation['TC-1'] as { mutation_class?: string }).mutation_class = 'Temporary';
+  await saveManifest(p, manifest);
+  const { setMutationMode } = await import('../manifest-mutation-mode.js');
+  await setMutationMode(p, 'auto', 'test');
+  const fakeRunner = async () => ({ stdout: JSON.stringify({ suites: [{ specs: [{ title: 'TC-1', tests: [{ results: [{ status: 'passed' }] }] }] }] }), stderr: '', exitCode: 0 });
+  const out = await runBatch({ ticketKey, writeBack: true, env: 'dev', host: 'blinx.dev.blinxpaco-np.com' }, now, fakeRunner);
+  assert.equal(out.runs['TC-1'].result, 'Pass');
+  assert.equal(out.runs['TC-1'].verification, 'Matched product result');
+  const { readLedger } = await import('../mutation-ledger.js');
+  const entries = await readLedger(ticketKey);
+  assert.equal(entries.length, 1, 'one ledger entry should be appended');
+  assert.equal(entries[0].source, 'manifest');
+  assert.equal(entries[0].action_class, 'Temporary');
+  assert.equal(entries[0].target, 'playwright/tests/tickets/PAC9-813-TC-1.spec.ts');
+});
+
+test('loadConfig base URL is propagated to RunnerContext child env', async () => {
+  const ticketKey = 'PAC9-814';
+  await writeCliFirstManifest(ticketKey, [{ id: 'TC-1', specPath: 'playwright/tests/tickets/PAC9-814-TC-1.spec.ts' }]);
+  // Inject a Runner-shaped fake directly so we can capture RunnerContext.
+  const { runCaseRuntime } = await import('../paco-cli-runtime.js');
+  let captured: Record<string, string> | undefined;
+  const fakeRunner = async (ctx: { childEnv: Record<string, string> }) => {
+    captured = ctx.childEnv;
+    return { stdout: JSON.stringify({ suites: [{ specs: [{ title: 'TC-1', tests: [{ results: [{ status: 'passed' }] }] }] }] }), stderr: '', exitCode: 0 };
+  };
+  await runCaseRuntime({ ticketKey, caseId: 'TC-1' }, { now, runner: fakeRunner as never });
+  assert.ok(captured, 'runner should have been called with context');
+  assert.match(captured!.BASE_URL, /^https?:\/\//);
+  assert.ok(typeof captured!.PACO_ALLOWED_HOSTS === 'string' && captured!.PACO_ALLOWED_HOSTS.length > 0);
+});
+
 test.after(async () => {
   rmSync(tmp, { recursive: true, force: true });
 });
