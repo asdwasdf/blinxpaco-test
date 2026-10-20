@@ -1,0 +1,49 @@
+ticket: PAC2-7579
+title: PACO Assist Copying Campaign Tag Configuration
+importedAt: 2026-10-19T13:24:04.615Z
+sourceChecksum: ""
+execution:
+  mode: cli_first
+  case_ids: []
+  runs: {}
+  history: []
+mutationMode: auto
+featureLocation:
+  route: "/paco-connect/dashboard → Quick Send → Campaign Manager (redirects to Comms Hub)"
+  stale: false
+phases:
+  - phase: ANALYZE
+    status: complete
+    completedAt: 2026-10-19T20:30:00Z
+  - phase: LOCATE
+    status: complete
+    completedAt: 2026-10-19T16:30:00Z
+  - phase: EXPLORE
+    status: complete
+    completedAt: 2026-10-20T09:10:00Z
+  - phase: TEST_DESIGN
+    status: pending
+  - phase: AUTOMATE
+    status: pending
+  - phase: AUTOMATION_EXECUTE
+    status: pending
+  - phase: REPORT
+    status: pending
+  - phase: COMPLETE
+    status: pending
+currentPhase: LOCATE
+artifacts:
+  - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/requirements.md
+    checksum: ""
+  - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/video/video-notes.md
+    checksum: ""
+  - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/feature-location.md
+    checksum: ""
+blockers:
+  - type: technical
+    phase: EXPLORE
+    description: PACO Connect Quick Send → Campaign Manager redirects to Comms Hub (externalDevHost). Comms Hub uses Microsoft SSO (multiple auth steps). PACO Assist entry not found in PACO Connect UI. Requires tester guidance on exact entry point or credentials for Comms Hub SSO flow.
+warnings: []
+video:
+  source: ticket/PAC2-7579-paco-assist-copying-campaign-tag-configuration/attachments/126650-20260911-1530-05.8922959.mp4
+  status: reviewed
