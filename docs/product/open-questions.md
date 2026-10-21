@@ -384,3 +384,13 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Evidence:** PAC2-3934/feature-location.md 2026-10-18; linked issue PAC2-5445
 **Created:** 2026-10-18
 **Answered:** -
+
+**ID:** OQ-046
+**Status:** Open
+**Question:** Context dev nào được cấp license cho `PACO Assist` trong `Quick Send` composer, và luồng chọn tagged campaign A làm base rồi tạo campaign B bằng Assist ở đâu khi prerequisites hợp lệ? `Super Admin GB` / `Haringey Demo Org` hiện `Premium Feature` / `Upgrade your license to unlock`; context cuối `Primary Care 24` / `PAC2-6186 SUPER ADMIN` chưa được kiểm chứng license.
+**Impact:** High — chặn kiểm tra Comms Hub tag inheritance PAC2-7579; panel `Generate Templates` riêng chưa chứng minh luồng A → B.
+**Evidence:** `[Observed / Open Question]` PAC2-7579/feature-location.md, test-data-ledger.md (2026-10-21). Tab `Campaigns` lặp frontend HTTP `404`; chưa kết luận root cause hoặc không có inventory. Khác OQ-016 (quyền update campaign tags), không dùng license gate làm product `Fail`.
+**Created:** 2026-10-21
+**Answered:** -
+
+## Tester notes

@@ -1,7 +1,7 @@
 ticket: PAC2-7579
 title: PACO Assist Copying Campaign Tag Configuration
 importedAt: 2026-10-19T13:24:04.615Z
-sourceChecksum: ""
+sourceChecksum: e5c74238a90e357cc1e871c2ac409b4c36acd3c0c26784c27a30673c489ea12a
 execution:
   mode: cli_first
   case_ids: []
@@ -9,18 +9,26 @@ execution:
   history: []
 mutationMode: auto
 featureLocation:
-  route: "/paco-connect/dashboard → Quick Send → Campaign Manager (redirects to Comms Hub)"
-  stale: false
+  route: "/paco/quick-send → global patient search → Patient actions menu → Quick Send → PACO Assist (license blocked; full campaign-base flow unverified)"
+  stale: true
+  routeStatus: Blocked
+  verifiedAt: 2026-10-21
+  roleObserved: Super Admin GB
+  organisationObserved: Haringey Demo Org
 phases:
   - phase: ANALYZE
     status: complete
     completedAt: 2026-10-19T20:30:00Z
   - phase: LOCATE
-    status: complete
+    status: blocked
+    updatedAt: 2026-10-21
     completedAt: 2026-10-19T16:30:00Z
+    note: Prior completion retained as history only; current campaign-base workflow unavailable at PACO Assist license gate.
   - phase: EXPLORE
-    status: complete
+    status: stale
+    updatedAt: 2026-10-21
     completedAt: 2026-10-20T09:10:00Z
+    note: Prior completion retained as history only; tag inheritance has not been exercised.
   - phase: TEST_DESIGN
     status: pending
   - phase: AUTOMATE
@@ -34,16 +42,58 @@ phases:
 currentPhase: LOCATE
 artifacts:
   - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/requirements.md
-    checksum: ""
+    checksum: fb10350588236b6b27dcbedc850437756698a6789613d1b594da911d373bbfb0
   - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/video/video-notes.md
-    checksum: ""
+    checksum: 72c1bc6874951974082e08094483de08bb0c1f9594d9fa24e806aceb36a35dc7
   - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/feature-location.md
-    checksum: ""
+    checksum: cc887b60426d6a732b57d390a67466e1ac3e7205c128cc97855f5e858d820260
+  - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/test-data-ledger.md
+    checksum: 2c25548ab6cf7084475239aaac6cdd33732ef38ce5fdbb82531af7a305eba1e6
+  - path: docs/product/feature-map.md
+    checksum: 9a676686d5651698d731b00c9b6a1bbe9b185ddf54ddb7b28b0586d81b80b759
+  - path: docs/product/workflows/comms-hub.md
+    checksum: 8be9c379b1973bc8479d66269d6e22585c9b40b9f31f8ea700f68fe4175ff697
+  - path: docs/product/open-questions.md
+    checksum: eb4075e00a54df3e81a7e873f4660d913bb0f4a7c3a2f9feb725bc9ddbb70762
+  - path: docs/product/change-log.md
+    checksum: 68b6775133a7886dd33c0f172c5ba27f998a023e87c6467f5167c7a5faa4ef7c
 blockers:
+  - type: permission
+    phase: LOCATE
+    description: Quick Send composer PACO Assist displays Premium Feature / Upgrade your license to unlock for Super Admin GB at Haringey Demo Org. Campaign-base to new-campaign flow not completed; no tag inheritance result.
   - type: technical
+    phase: LOCATE
+    description: Fresh navigation to /paco/quick-send Campaigns repeats frontend getAllCreatedCampaigns HTTP 404; source cannot be selected from this grid. Do not infer empty inventory or absent deployment.
+  - type: authentication
     phase: EXPLORE
-    description: PACO Connect Quick Send → Campaign Manager redirects to Comms Hub (externalDevHost). Comms Hub uses Microsoft SSO (multiple auth steps). PACO Assist entry not found in PACO Connect UI. Requires tester guidance on exact entry point or credentials for Comms Hub SSO flow.
-warnings: []
+    description: Comms Hub dev session expired. Owned source QA-test-7579-source1 awaits tag read-back and cleanup; no campaign copy, recipient or send.
+  - type: technical
+    phase: LOCATE
+    description: Unversioned legacy manifest fails validateManifest; reconcileManifest is a no-op for this shape. No automatic migration or invented input revision; CLI workflow remains blocked.
+warnings:
+  - Prior all-Connect-routes-missing and SSO-only assumptions are superseded by live observations; do not use them as blockers.
+  - PACO Assist template-generation panel at /paco/quick-send/campaign is not evidence that campaign-base copying was exercised.
+  - Current browser context changed to Primary Care 24 / PAC2-6186 SUPER ADMIN outside the completed agent selection sequence; cause unknown and license not checked there.
+  - LOCATE continuation exceeded default 15-minute ceiling; investigation stopped with documented candidates and exact next action.
+  - MCP run manager reports no active allocation; existing plugin session has no tracked run ID. No retroactive allocation or process cleanup performed.
+  - Raw browser output remains local and is not approved for sharing; auth-bearing response file generated earlier was removed.
+  - Browser servers playwright-plugin and playwright-user reported CONNECTION_CLOSED at checkpoint; no fresh auth/license verification was performed.
+  - Global docs validation failed because PAC2-7398 reached EXPLORE/REPORT but is missing from docs/product/feature-map.md; unrelated ticket was not changed.
+  - Artifact checksums record current bytes only; they do not establish a historical input revision or make the legacy manifest schema valid.
+checkpointHistory:
+  - date: 2026-10-21
+    phase: LOCATE
+    outcome: blocked
+    previousPhaseStatus: complete
+    previousExploreStatus: complete
+    message: Replaced unsupported location completion with verified Quick Send composer entry plus license/load blockers; no product Pass/Fail and no schema migration.
+leftovers:
+  - name: QA-test-7579-source1
+    host: nhs-comms-hub-dev.blinxhealthcare.com
+    state: Last observed in campaign list; tag read-back and cleanup pending, session expired.
+nextAction: Restore browser connection, verify dev session and licensed PACO Assist context; read back own source tag, then complete A-to-B flow and cleanup only when prerequisites are available.
 video:
   source: ticket/PAC2-7579-paco-assist-copying-campaign-tag-configuration/attachments/126650-20260911-1530-05.8922959.mp4
   status: reviewed
+mutationModeSetBy: paco-ticket
+mutationModeSetAt: 2026-10-21T09:45:16.855Z

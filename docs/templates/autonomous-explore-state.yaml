@@ -1,0 +1,43 @@
+# Autonomous paco-explore checkpoint (owner: paco-explore mode `autonomous`).
+# Separate from ticket manifests and paco-discover checkpoints. Redacted only: no PII/auth data.
+version: 1
+roles:
+  "<role>":
+    environment: dev
+    map_last_built: null          # YYYY-MM-DD
+    modules:
+      - module: "<Module>"
+        features:
+          - feature: "<Feature>"
+            entry: "<nav path>"
+            route: "<path>"
+            workflow_doc: docs/product/workflows/<feature>.md
+            status: unmapped        # unmapped | mapped | partial-interactive | deep | blocked
+            needs_reverify: false
+            last_verified: null
+            coverage:               # none | partial | done | n/a (+ note)
+              navigation: none
+              main_workflow: none
+              branches_states: none
+              mutation: none
+              validation: none
+              persistence: none
+              relationships: none
+              errors_edge: none
+            blocker: null
+    frontier:                       # pending exploration targets
+      - target: "<Module/Feature or branch>"
+        reason: "<why>"
+        provenance: "<run-id/ledger ref/state>"
+        priority: 0
+    open_questions: []
+    leftovers: []                   # { name: QA-test-..., feature, reason }
+    active_run:
+      run_id: null
+      started_at: null
+      budget: { max_features: 6, max_minutes: 120, max_meaningful_states: 80 }
+      used: { features: 0, minutes: 0, meaningful_states: 0 }
+      current_target: null
+      stage: done                   # mapping | exploring | cleanup | paused | done
+    runs: []                        # { run_id, date, features, outcome_path }
+    next_steps: []

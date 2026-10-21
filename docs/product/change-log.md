@@ -13,6 +13,11 @@ Entries chronological, newest first:
 
 ## Log
 
+**2026-10-21 — PAC2-7579, checkpoint `LOCATE`**
+- Updated: `feature-map.md` thêm campaign-base route hint và ticket row `LOCATE Blocked`; `workflows/comms-hub.md` thêm logic không kế thừa Comms Hub tag; `open-questions.md` thêm OQ-046 về license/context và full A → B flow.
+- Source: `PAC2-7579/ticket.md` Description, `requirements.md`, `feature-location.md`, `test-data-ledger.md`, `status.md`.
+- Impact: phân biệt composer `PACO Assist` bị license gate, panel `Generate Templates` riêng và campaign list load HTTP `404`; đính chính kết luận tổng quát về Connect routes. Không có B hoặc product `Pass`/`Fail`; tag read-back và cleanup source còn pending. `EXPLORE` stale; legacy manifest chưa được migrate. Browser servers báo `CONNECTION_CLOSED` cuối checkpoint, chưa có recheck mới.
+
 **2026-10-15**
 - Updated: PAC2-9001 MANUAL_EXECUTE rev-2 + AUTOMATE rev-2 reconciliation — added `Configuration → Sessions row kebab 8 items` to Logic (TC-009); added `Slot context menu 19 items + Block Session UX gap` (TC-006 diagnostic, OQ-031, DEF-PAC2-9001-01); `Last verified: 2026-10-15T09:00:00Z`; defect row updated with DEF-PAC2-9001-01.
 - Source: `PAC2-9001/manual/rev-2/final-report.md`, `execution-log.md`, `PAC2-9001/automation.md`, `PAC2-9001/defects/DEF-PAC2-9001-01-block-session-ux-gap.md`
@@ -136,3 +141,5 @@ Entries chronological, newest first:
 - Browser: navigated `https://pac2-3934.dev.blinxpaco-np.com/` → redirect `/login/` page (NHS Patient and Care Optimiser, GP Supergrid style)
 - Source: PAC2-3934/status.md 2026-10-18T03:20:00Z
 - Impact: ticket reopened for retry on dedicated host; blocker PAC2-5445 (consultation mode not opening) vẫn chưa release — sẽ verify trong LOCATE
+
+## Tester notes

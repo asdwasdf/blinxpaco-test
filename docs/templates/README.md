@@ -6,7 +6,7 @@ Ticket artifacts giữ `## Tester notes` được bảo vệ. Survey dùng `surv
 |---|---|
 | `manifest.yaml`, `status.md` | `paco-ticket` |
 | `requirements.md` | `paco-requirements` |
-| `feature-location.md`, `exploration.md` | `paco-explore` |
+| `feature-location.md`, `exploration.md`, `workflow.md`, `autonomous-explore-state.yaml` | `paco-explore` |
 | `test-cases.md` | `paco-test-design` |
 | `automation.md` | `paco-playwright` |
 | `report.md`, `defect.md`, `open-question.md` | `paco-report` |

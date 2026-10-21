@@ -113,7 +113,7 @@ locator.type('text', {delay: 80});
 
 ## Logic từ ticket
 
-Nguồn: `PAC2-1805`, `PAC2-3798`, `PAC2-4399`, `PAC2-4700`, `PAC2-5776`, `PAC2-6540`, `PAC2-6982`, `PAC2-7201`, `PAC2-8522`.
+Nguồn: `PAC2-1805`, `PAC2-3798`, `PAC2-4399`, `PAC2-4700`, `PAC2-5776`, `PAC2-6540`, `PAC2-6982`, `PAC2-7201`, `PAC2-7579`, `PAC2-8522`.
 
 ### Quick Send dialog
 
@@ -191,6 +191,23 @@ Nguồn: `PAC2-1805`, `PAC2-3798`, `PAC2-4399`, `PAC2-4700`, `PAC2-5776`, `PAC2-
 
 **Open questions**
 - Role/account đại diện user có/không có quyền; campaign/tag test an toàn; fixture tag shared/removed đang attached; `Save as new Campaign` trong scope; feature branch riêng hay dev mặc định đã chứa thay đổi. `[Open Question]` — PAC2-8522/requirements.md
+
+### PACO Assist — không kế thừa Comms Hub tag (PAC2-7579)
+
+**Luồng và expected**
+- Quick Send A có Comms Hub tag được dùng làm base trong `Quicksend v2.0`; tạo campaign B bằng `PACO Assist` thì B không tự kế thừa Comms Hub tag của A. Không yêu cầu xóa tag trên A hoặc mở rộng sang mọi loại tag. `[Confirmed]` — PAC2-7579/ticket.md Description, requirements.md
+- Trên dev chung, `/paco/quick-send` → global patient search → `Patient actions menu` → `Quick Send` mở composer có `PACO Assist`. Chỉ xác minh entry/control, chưa hoàn tất chọn A → Assist → tạo B. `[Observed: 2026-10-21]` — PAC2-7579/feature-location.md#quick-send-composer
+- NHS Comms Hub cho tạo source `Quick Send`, kênh `Email`, chọn `Campaign Tags`; source test xuất hiện trong list sau navigation. Tag mới chỉ được chọn lúc tạo, chưa read-back trong detail sau lưu; chưa chứng minh handoff sang PACO. `[Observed: 2026-10-21]` — PAC2-7579/test-data-ledger.md#2026-10-21--nhs-comms-hub
+
+**Role, trạng thái và blockers**
+- Context `Super Admin GB` / `Haringey Demo Org`: control composer hiện `Premium Feature` / `Upgrade your license to unlock`. Chưa biết context được cấp license; không bypass hoặc coi đây là defect tag inheritance. `[Observed: 2026-10-21]` — PAC2-7579/feature-location.md#quick-send-composer
+- Tab `Campaigns` trên `/paco/quick-send` không có data row, request frontend `getAllCreatedCampaigns` trả HTTP `404` lặp qua navigation mới. Không suy ra inventory thật sự rỗng hoặc root cause deployment. `[Observed: 2026-10-21]` — PAC2-7579/feature-location.md#candidate-và-rejected-paths
+- `/paco/quick-send/campaign` → `PACO Assist` mở panel prompt + `Generate Templates`; chưa thấy bước chọn campaign nguồn. Topbar `More options` → `PACO Assist` không mở UI. Hai entry này không chứng minh full flow ticket. `[Observed: 2026-10-21]` — PAC2-7579/feature-location.md#candidate-và-rejected-paths
+- `/paco-connect/dashboard` render dashboard sau auth dù document HTTP `404`; `/paco-connect/campaigns/create` sau SPA load vẫn hiện UI `404`. Không dùng document status riêng lẻ để kết luận feature thiếu hoặc cần branch. `[Observed: 2026-10-21]` — PAC2-7579/feature-location.md#candidate-và-rejected-paths
+- Comms Hub session hết hạn; source test chờ tag read-back và cleanup. Không có B/recipient/send; kết quả `Blocked`, chưa có `Pass`/`Fail` cho tag inheritance. `[Observed: 2026-10-21]` — PAC2-7579/test-data-ledger.md#tiếp-tục-2026-10-21--tìm-entry-paco-assist, status.md
+
+**Open questions**
+- Context dev nào có license cho composer `PACO Assist`; full luồng chọn tagged A → tạo B nằm ở đâu khi prerequisites hợp lệ? Chưa kiểm chứng license ở context cuối `Primary Care 24` / `PAC2-6186 SUPER ADMIN`. `[Open Question]` — PAC2-7579/feature-location.md#blockers-và-safety; open-questions.md OQ-046
 
 ### Campaign Manager và Campaign Outbox
 

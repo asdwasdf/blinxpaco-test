@@ -503,16 +503,17 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 - Source: `PAC2-8522`, `PAC2-4700` (`feature-location.md`)
 - Last verified: `2026-09-28`
 - Aliases: `QS`, `Quick Send`, `Rocketbar` (chưa locate), `patient actions`
-- Tickets: `PAC2-8522`, `PAC2-4700`
+- Tickets: `PAC2-8522`, `PAC2-4700`, `PAC2-7579`
 - Note: dialog có tab `Campaign`, `Health Forms`, `Files`, `Booking Link`; composer hiển thị campaign header và `Campaign tags:`. Dừng trước `Save`/send/schedule/`Edit`/thêm campaign vào draft. Click patient row mở patient profile, không phải entry này. Sidebar icon `Quick Send` thực chất là launcher `Comms Hub`. Placeholder search khác nhau theo host: baseline/OS `Search patients by name or NHS number`, Connect `Search...`.
 - Logic chính:
   - Composer mở từ `Patient actions` menu; sidebar icon `Quick Send` chỉ là launcher `Comms Hub` `[Observed]` (PAC2-8522, PAC2-4700)
   - `Send as` bị disable khi patient thiếu contact tương ứng `[Observed]` (PAC2-4700, PAC2-4399)
   - Popup `Scheduler Link Required` không ổn định/bị che sau hộp `Quick Send` `[Confirmed]` (PAC2-5776)
+  - Tạo campaign mới bằng `PACO Assist` từ Quick Send có Comms Hub tag không được tự kế thừa Comms Hub tag nguồn `[Confirmed]` (PAC2-7579/requirements.md; expected từ ticket Description, chưa có kết quả live)
 - Defect đã biết:
   - `PAC2-5776` Inconclusive: popup intermittent, không tái hiện được
   - `PAC2-4700` Inconclusive: `Escape` đóng cả dialog (OS), default channel, sort, attachments; Blocked: TC-006, TC-013
-- Chi tiết: `workflows/comms-hub.md#quick-send-dialog`; `workflows/comms-hub.md#popup-scheduler-link-required`
+- Chi tiết: `workflows/comms-hub.md#quick-send-dialog`; `workflows/comms-hub.md#popup-scheduler-link-required`; `workflows/comms-hub.md#paco-assist--không-kế-thừa-comms-hub-tag-pac2-7579`
 
 ### Module: Analytics & Reports
 
@@ -791,6 +792,7 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 - `Appointment Settings`: `PAC2-7786` loại `/paco-connect/configuration` trên shared host vì không chứng minh build feature-branch; `PAC2-8241` xác nhận route đó là DEV main. Hai kết luận không mâu thuẫn (khác mục đích); dùng route feature-branch khi test ticket branch.
 - `Scheduler Configuration` (entry đã có bên dưới, `PAC2-7669`): `/configuration/` cũng là gốc của `/configuration/#appointments`, `#clinics`, `#code-rules-config`; `PAC2-8552` ghi `/configuration/#scheduler-config` là cấu hình campaign/template/slot type, chưa verify độc lập.
 - `Quick Send`: `PAC2-1805` mô tả sidebar icon `Quick Send` dẫn tới `Comms Hub`; `PAC2-4700`/`PAC2-8522` xác nhận đó là launcher, không phải composer. Composer dùng patient actions menu.
+- `PACO Connect` dev chung: `PAC2-7579/feature-location.md` quan sát `/paco-connect/dashboard` render dashboard sau auth ngày 2026-10-21 dù document HTTP `404`; không tổng quát hóa nhận định route thiếu từ survey cũ. `/paco-connect/campaigns/create` vẫn hiện UI `404` sau SPA load trong context đã kiểm tra; không suy ra cần branch.
 - Role: `PAC2-6982` ghi role `Admin` do QA xác nhận, chưa verify trên UI.
 
 ### Route hints (chưa verified)
@@ -809,6 +811,7 @@ Chưa đủ điều kiện làm entry chuẩn; không dùng làm automation gate
 - `Patient Analyser` tab và `Advanced Search` dialog trong `/patient-analyser/`: visible, chưa mở (`PAC2-3798`).
 - `/paco-connect/dashboard` (mainline): survey ghi 404, không reusable; feature-branch `/dashboard` hoạt động (`PAC2-4700`, `PAC2-7786`).
 - `PACO Assist` qua `More options`: rejected cho scope upload của `PAC2-6763`.
+- `PACO Assist` campaign-base flow (`PAC2-7579`): `/paco/quick-send` → global patient search → `Patient actions menu` → `Quick Send` xác minh composer/control, nhưng `Super Admin GB` / `Haringey Demo Org` bị chặn bởi `Premium Feature` / `Upgrade your license to unlock` (2026-10-21). Full chọn tagged A → Assist → tạo B chưa verified, không dùng làm automation gate. Tab `Campaigns` lặp frontend HTTP `404`; panel `Generate Templates` tại `/paco/quick-send/campaign` chưa chứng minh campaign-base copying. `[Observed]` — `PAC2-7579/feature-location.md`.
 - `Consultation screen` (cross-org filing entry point): 2026-10-18 dev chung survey: `/paco-connect/dashboard` 404, `/paco/health-forms/inbox` 404; consultation template tồn tại nhưng thiếu entry point. 2026-10-18 retry: host `pac2-3934.dev.blinxpaco-np.com` được add vào `paco.config.yaml` `allowedHosts`; root URL redirect `https://pac2-3934.dev.blinxpaco-np.com/login/` (page title "NHS Patient and Care Optimiser" — GP Supergrid, không phải PACO Connect mainline). Cần user login manual để verify consultation screen + cross-org filing entry (`PAC2-3934/feature-location.md`).
 
 ### Entries đã có (giữ nguyên)
@@ -894,6 +897,7 @@ Lookup tổng hợp 2026-10-02 từ 17 ticket. `Final status` là phase/kết qu
 | `PAC2-7137` | Session slot count lệch với top view | Appointment Book (count `Day`/`Week`, `Non-bookable`) | MANUAL_EXECUTE xong; TC-001/002/003/005 Pass, TC-004 Fail |
 | `PAC2-7201` | Shared campaign issue (PCN) | Comms Hub (Shared Campaign quyền view/edit) | AUTOMATE; chưa execute chính thức, defect pattern quan sát trên dev |
 | `PAC2-7466` | Documents tab performance/memory leak | Patient (Documents) | INGEST; Blocked, chưa ANALYZE |
+| `PAC2-7579` | PACO Assist copying campaign tag configuration | Comms Hub (`Quick Send`, `PACO Assist`, campaign tags) | LOCATE Blocked; EXPLORE stale; chưa tạo B, chưa có Pass/Fail tag inheritance |
 | `PAC2-7669` | Chậm chọn clinician ở Scheduler Configuration | Configuration (`Scheduler Configuration`) | COMPLETE; Pass 5/5, automation CLI Blocked |
 | `PAC2-7727` | PACO Connect - Access Denied Booking Error | Patient DFD Config, Patient-facing Scheduler | REPORT; 3/6 Pass (TC-001, TC-002, TC-006), 3/6 Blocked (TC-003..005 cần patient-level JWT link từ Comms Hub SSO gap OQ-040) |
 | `PAC2-7786` | Xóa diary/session trong Appointment Book không hoạt động | Appointment Book (Settings: session delete/archive) | AUTOMATE; TC-001/003/004 Fail, TC-002 Blocked, TC-005 Inconclusive |
@@ -904,3 +908,5 @@ Lookup tổng hợp 2026-10-02 từ 17 ticket. `Final status` là phase/kết qu
 | `PAC2-8998` | Full-name patient search không trả về một số trường hợp | Patient (`Patient Search`, top-bar search) | REPORT; 12 Pass / 1 Skipped (REQ-003 2-word first name — no dev data) |
 | `PAC2-9001` | Cancel session cần RBAC admin-type (`P7032`) | Appointment Book (session cancel RBAC) | EXPLORE; routes R-1/R-2/R-3/R-4 Confirmed, entry-point (OQ-4) + P7032 deploy (OQ-1) still open |
 | `PAC2-8575` | Double click slot để arrive patient trong Appointment Book | Appointment Book (slot click → arrive / sidebar detail) | MANUAL_EXECUTE; TC-001+TC-002 Pass (single click mở sidebar, double click benign), TC-003..007 Blocked (cần QA-AUTO future booked); partial coverage |
+
+## Tester notes

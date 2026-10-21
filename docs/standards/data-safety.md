@@ -18,7 +18,7 @@ Trên environment `dev` và hostname nằm trong `paco.config.yaml` safety allow
 
 Khi `manifest.yaml:mutationMode === 'auto'` (set by `applyTicketMutationMode()` on intake khi host thuộc `safety.allowedHosts` hoặc `safety.externalDevHosts` của dev), mutations là QA operation bình thường, không phải action cần approval từng case:
 
-- `MANUAL_EXECUTE`, standalone Playwright spec, `paco-verify-flow` reserved mutation, `paco-video-flow` direct run, `paco-discover` survey mutation — tất cả chạy CRUD/submit/send/cleanup trên owned test data (`QA-test` prefix) mà không cần hỏi lại từng action.
+- `MANUAL_EXECUTE`, standalone Playwright spec, `paco-verify-flow` reserved mutation, `paco-video-flow` direct run, `paco-discover` survey mutation, `paco-explore` mode `observe` và mode `interact` (khám phá trực tiếp ngoài ticket, theo ngoại lệ trong `CLAUDE.md`) — tất cả chạy CRUD/submit/send/cleanup trên owned test data (`QA-test` prefix) mà không cần hỏi lại từng action.
 - Manifest authorization là primary gate. Mỗi mutation vẫn phải pass `evaluateMutationGate()` runtime check.
 - Safety thật vẫn enforce: hostname allowlist, safe test data (no real PII, `QA-test` prefix), approved recipient (`fiona.nguyen@blinxsolutions.com` cho email; SMS cần explicit tester confirmation từng lần), production/unknown host blocked, mutation ledger đã redact, cleanup on pass/fail, leftover log on cleanup fail.
 - Destructive mutation, bulk delete, hay side effect ngoài test scope vẫn cần reservation riêng (qua `paco-verify-flow` cho discovery, qua `Mutation Policy: APPROVED` trong `status.md` cho ticket).

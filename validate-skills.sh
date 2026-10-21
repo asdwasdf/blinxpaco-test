@@ -25,6 +25,8 @@ grep -q 'Do not enter `MANUAL_EXECUTE` until' .claude/skills/paco-ticket/SKILL.m
 grep -q '`survey` strictly read-only' .claude/skills/paco-explore/SKILL.md || { echo "FAIL: paco-explore survey must be read-only"; exit 1; }
 if grep -q 'Riêng `survey` được tự thực hiện mutation' .claude/skills/paco-explore/SKILL.md; then echo "FAIL: paco-explore survey still mutates"; exit 1; fi
 grep -q 'DiscoveryChildOutcome' .claude/skills/paco-explore/SKILL.md || { echo "FAIL: paco-explore discovery outcome contract"; exit 1; }
+grep -q '## Mode `autonomous`' .claude/skills/paco-explore/SKILL.md || { echo "FAIL: paco-explore autonomous mode"; exit 1; }
+grep -qF 'never reads/writes `docs/product/survey/roles/*.discovery.yaml`' .claude/skills/paco-explore/SKILL.md || { echo "FAIL: autonomous must not touch discovery checkpoint"; exit 1; }
 grep -q 'npm run paco:discover' .claude/skills/paco-discover/SKILL.md || { echo "FAIL: paco-discover CLI protocol"; exit 1; }
 grep -q '/paco/login' .claude/skills/paco-discover/SKILL.md || { echo "FAIL: paco-discover auth pause"; exit 1; }
 grep -q 'Không tự bật' .claude/skills/paco-discover/SKILL.md || { echo "FAIL: paco-discover guard ownership"; exit 1; }

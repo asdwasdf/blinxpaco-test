@@ -19,3 +19,4 @@ Reusable knowledge về Paco product, tích lũy qua nhiều ticket.
 - `glossary.md` - Terms và aliases
 - `open-questions.md` - Knowledge gaps
 - `change-log.md` - Updates với timestamp
+- `explore/` - Autonomous exploration checkpoint (`autonomous-state.yaml`) và `relationships.md` (owner `paco-explore` mode `autonomous`)

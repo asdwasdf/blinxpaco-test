@@ -100,6 +100,10 @@ Phase skills: `paco-requirements`, `paco-explore`, `paco-test-design`, `paco-pla
 
 Product discovery ngoài ticket: orchestrator `paco-discover` (state qua `npm run paco:discover`), child `paco-explore` mode `survey` (read-only) và `paco-verify-flow` (mutation đã reserve). Child chỉ trả `DiscoveryChildOutcome`; chỉ `paco-discover` cập nhật discovery checkpoint.
 
+Khám phá tương tác một feature/module không cần ticket: `paco-explore` mode `interact` (CRUD/validation/persistence trên dữ liệu `QA-test` tự tạo, theo ngoại lệ khám phá trực tiếp); ghi `docs/product/workflows/` + `test-results/product-explore/<run-id>/`, không đụng ticket hay discovery checkpoint.
+
+Khám phá tự động toàn Paco (không ticket/feature): `paco-explore` mode `autonomous` — tự map, ưu tiên, chạy vòng `interact` từng feature theo cùng ngoại lệ khám phá trực tiếp; checkpoint riêng `docs/product/explore/autonomous-state.yaml`, relationships ở `docs/product/explore/relationships.md`; không đụng discovery checkpoint. Resume: `resume autonomous paco-explore`.
+
 Child skill gọi trực tiếp chỉ ghi artifact thuộc ownership và trả checkpoint proposal; chỉ `paco-ticket` cập nhật manifest/status.
 
 **IMPORTANT**: NEVER spawn Paco skills với `isolation: "worktree"`. Tất cả artifacts và Playwright tests phải viết vào main working tree của repo hiện tại (`D:\blinxpaco-test` trên Windows, `/home/nhatpham/blinxpaco-test` trên Unix; tự detect từ `process.cwd()`), không vào `.claude/worktrees/`.
