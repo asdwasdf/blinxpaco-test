@@ -1,0 +1,42 @@
+schema_version: 1
+batch_id: pac2-6996-replay
+created_at: 2026-10-18T04:33:25.706Z
+updated_at: 2026-10-18T04:47:19.466Z
+environment: dev
+status: completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-6996
+    summary: A25 - Blank filter appearing under Patient Name in filter menu
+    status: Done
+    labels:
+      - Appointment_Book
+    components: []
+    linked_issues:
+      - PAC2-7081
+    attachments_count: 4
+    has_video: true
+    video_count: 3
+    processed: true
+    result: verified
+    result_reason: Fix deployed 2026-10-07. Live browser replay on dev confirmed Patient filter renders as search input + "No results found" — no blank filter option. Michael Ramella's failed smoke test captured the pre-fix bug state; all subsequent passes confirm the fix.
+    evidence_refs:
+      - docs/paco/tickets/PAC2-6996-a25-blank-filter-appearing-under-patient-name-in-filter-menu/replay.md
+      - docs/paco/tickets/PAC2-6996-a25-blank-filter-appearing-under-patient-name-in-filter-menu/requirements.md
+      - docs/paco/tickets/PAC2-6996-a25-blank-filter-appearing-under-patient-name-in-filter-menu/scenarios.md
+      - docs/paco/tickets/PAC2-6996-a25-blank-filter-appearing-under-patient-name-in-filter-menu/evidence/pac2-6996-patient-filter-search.png
+    flow_slug: pac2-6996-appointment-book-patient-filter
+    linked_existing_flow: false
+processed_count: 1
+verified_count: 1
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 0
+new_flows:
+  - pac2-6996-appointment-book-patient-filter
+deduplicated_flows: []
+revision: 2
+mutation_mode: auto

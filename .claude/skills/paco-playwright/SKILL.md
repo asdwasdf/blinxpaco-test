@@ -6,7 +6,30 @@ description: Use when manually executing, generating, or running standalone Paco
 # Paco Playwright
 
 ## Scope and dependencies
-Only `MANUAL_EXECUTE`, `AUTOMATE`, or `AUTOMATION_EXECUTE`. Require selected valid cases, environment, role, current revision, valid local browser-auth state, and a valid `feature-location.md` for every UI-dependent case. Call `evaluateUiLocationGate()` before UI work. Read feature-location, workflow, data-safety and evidence standards plus `docs/templates/automation.md`. Missing/expired auth is `Blocked: Authentication expired`; direct tester to `npm run auth:login`. Never request credentials, read serialized auth state, infer expected behavior, broaden scope, or automate assertions based only on `Inferred`/`Open Question` knowledge.
+Only `MANUAL_EXECUTE`, `AUTOMATE`, or `AUTOMATION_EXECUTE`. Require selected valid cases, environment, role, current revision, valid local browser-auth state, and a valid `feature-location.md` for every UI-dependent case. Call `evaluateUiLocationGate()` before UI work. Read feature-location, workflow, data-safety and evidence standards plus `docs/templates/automation.md`.
+
+**Auth pre-flight (mode `manual`):**
+1. Run `CHECK_AUTH_SCRIPT` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. If `authenticated: true` → proceed.
+2. If `authenticated: false`, call `buildFullLoginScript()` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. Retry `CHECK_AUTH_SCRIPT`.
+3. If still unauthenticated, return `Blocked: Authentication expired`; direct tester to `npm run auth:login`. Do not proceed until auth confirmed.
+
+Never request credentials, read serialized auth state, infer expected behavior, broaden scope, or automate assertions based only on `Inferred`/`Open Question` knowledge.
+
+## Concurrent Execution Isolation
+
+When running multiple tickets in parallel, use isolated browser resources:
+
+1. **Before MCP work**: Create isolated run via `npm run mcp:run:create <ticket-id>`
+2. **Check port allocation**: `npm run mcp:run:ports` to verify no conflicts
+3. **After completion**: Cleanup with `npm run mcp:run:cleanup <run-id>`
+
+For code integration:
+```typescript
+import { getMcpLaunchConfig, cleanupRun } from './scripts/mcp-run-helper.js';
+const config = await getMcpLaunchConfig('PAC2-1234');
+// Use config.port, config.userDataDir, config.storageState
+await cleanupRun(config.runId);
+```
 
 ## Ownership
 Own `automation.md`, selected Playwright source, and structured `playwright_cases` proposals. Raw runner output stays in `test-results/`; durable reviewed/redacted evidence is promoted for `REPORT`. Preserve final `## Tester notes`. Never update `manifest.yaml` or `status.md`.

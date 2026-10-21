@@ -12,7 +12,24 @@ When this skill is asked to record observation only, it stays read-only regardle
 
 ## Scope and dependencies
 
-Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`SURVEY`), environment, valid auth in the current Claude Playwright plugin browser tab and role. `locate` and `observe` also require selected ticket and valid requirements; `survey` does not. Read feature-location/product-survey/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. Dùng Claude Playwright plugin-first. If auth is missing or expired, navigate the current plugin tab to `/paco/login`, return `Blocked: Authentication expired`, and ask the tester to complete login/SSO/MFA manually in that tab. After the tester reports completion, verify the tab reached `/paco/dashboard` or another authenticated Paco page before resuming. Never request credentials or read, copy, persist, or report cookies, tokens, headers, or browser auth state. Không probe private APIs, infer intent, design suites hoặc orchestrate phases.
+Require explicit mode `locate` (`LOCATE`), `observe` (`EXPLORE`) or `survey` (`SURVEY`), environment, valid auth in the current Claude Playwright plugin browser tab and role. `locate` and `observe` also require selected ticket and valid requirements; `survey` does not. Read feature-location/product-survey/data-safety/evidence/knowledge standards and `scripts/manual-login.md`. Dùng Claude Playwright plugin-first.
+
+**Auth pre-flight:**
+1. Run `CHECK_AUTH_SCRIPT` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. If `authenticated: true` → proceed.
+2. If `authenticated: false`, call `buildFullLoginScript()` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. Retry `CHECK_AUTH_SCRIPT`.
+3. If still unauthenticated, return `Blocked: Authentication expired` and ask tester to run `npm run auth:login`. After tester reports completion, verify `authenticated: true` before resuming.
+
+Never request credentials or read, copy, persist, or report cookies, tokens, headers, or browser auth state. Không probe private APIs, infer intent, design suites hoặc orchestrate phases.
+
+## Concurrent Execution Isolation
+
+When running multiple tickets in parallel, ensure isolated browser resources:
+
+1. **Check port allocation**: `npm run mcp:run:ports` before starting
+2. **Create isolated run**: `npm run mcp:run:create <ticket-id>` for new tickets
+3. **Cleanup**: `npm run mcp:run:cleanup <run-id>` after completion
+
+Port conflicts cause MCP sessions to crash. Use unique ports 3200-3209 for concurrent runs.
 
 ## Ownership
 

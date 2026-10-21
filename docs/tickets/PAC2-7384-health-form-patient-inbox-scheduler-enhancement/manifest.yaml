@@ -24,8 +24,9 @@ environment:
   targetHost: dev.blinxscheduler-np.com
   basePath: /feature-branch/pac2-7384/
   inAllowedList: true
-  allowlistSource: paco.config.yaml safety.allowedHosts (added 2026-10-13, uncommitted)
+  allowlistSource: paco.config.yaml safety.allowedHosts (added 2026-10-21, uncommitted)
   awaitingHostApproval: false
+  secondaryHost: blinx.dev.blinxpaco-np.com (PACO + Comms Hub, in allowedHosts)
 
 scope:
   surfaces:
@@ -43,8 +44,8 @@ phases:
   discover: completed
   ingest: completed
   analyze: completed
-  locate: in_progress
-  explore: pending
+  locate: completed_with_warnings
+  explore: in_progress
   test_design: pending
   manual_execute: pending
   automate: pending
@@ -100,5 +101,34 @@ blockers:
     status: resolved
     resolvedBy: tester confirm 2026-10-13 (all three surfaces: scheduler + connect + mobile)
     surfaces: [patient-facing-scheduler-booking, paco-connect-inbox, mobile-responsive-cross-surface]
+  - id: B4
+    type: missing-recipient
+    status: open
+    description: |
+      Chưa có approved recipient cho scheduler link. Ứng viên tìm thấy trên dev
+      (Blinx Demo Site): Gareth Bartlett (gareth@blinxsolutions.com), Ellie Bartlett
+      (egittins@doctors.org.uk), Gareth Bartlett-TestPatient (không contact),
+      Autoqa Tester* synthetic (chỉ SMS). Email duyệt duy nhất theo memory là
+      fiona.nguyen@blinxsolutions.com — không khớp ứng viên nào. SMS chưa có
+      recipient được duyệt.
+    affectedPhases: [EXPLORE, TEST_DESIGN, MANUAL_EXECUTE]
+    nextAction: >
+      Tester chốt: (a) dùng email nào cho synthetic patient, hoặc (b) cho phép SMS tới
+      +447961858340 (Gareth Bartlett) hoặc +447764247318 (Ellie Bartlett), hoặc
+      (c) cung cấp sẵn tokenized scheduler link để bỏ qua bước send.
 
-warnings: []
+warnings:
+  - id: W1
+    type: allowlist-drift
+    description: |
+      dev.blinxscheduler-np.com chưa có trong paco.config.yaml safety.allowedHosts khi
+      bắt đầu run 2026-10-21 (manifest cũ ghi "added 2026-10-13" nhưng file thực tế
+      không có). Đã thêm vào allowedHosts ngày 2026-10-21 (thay đổi uncommitted).
+  - id: W2
+    type: test-data-blocked
+    description: |
+      Chưa có patient-level scheduler link để test scheduler surface. Các path đã
+      khám phá: Comms Hub Outbox Resend (cần campaign đã send), DFD Config Copy DFD
+      link (chỉ org-level, không patient pre-fill), Quick Send dialog (cần Save+Send).
+      Cần tester chốt recipient đã duyệt.
+

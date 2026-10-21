@@ -3,7 +3,7 @@
 **Input Revision:** 1
 **Current Phase:** MANUAL_EXECUTE
 **Last Completed Phase:** TEST_DESIGN
-**Updated:** 2026-10-01T13:35:41.481Z
+**Updated:** 2026-10-21T03:20:00.000Z
 
 ## Progress
 
@@ -42,6 +42,7 @@
 - EXPLORE: Exact form ownership and safe patient remain execution inputs.
 - TEST_DESIGN: Execution blocked until exact child-owned form and safe test patient are verified.
 - MANUAL_EXECUTE: Need exact child-owned form without Shared To and safe test patient/recipient before persistent campaign creation/send.
+- MANUAL_EXECUTE (2026-10-21): child-owned form đã verify qua GraphQL — `test by mw1`, owner 3ST, `shared_to_org_names` = null. Cờ `includeShared` không làm form của child hiện với parent PCN. Blocker mới: account Comms Hub thiếu role/module (401 `No Access to Module`) nên không tạo được campaign; safe patient và control form vẫn thiếu.
 
 ## Feature Location
 
@@ -55,6 +56,7 @@
 - feature-location.md
 - exploration.md
 - test-cases.md
+- data-relationship-findings.md
 
 ## Stale Artifacts
 
@@ -62,7 +64,10 @@
 
 ## Next Action
 
-QA xác minh safe test patient thuộc Primary Care 24 hoặc 3ST; sau đó MANUAL_EXECUTE tạo campaign test riêng với runtime guard.
+1. QA cấp Comms Hub role/module cho account test (hiện 401 `No Access to Module` trên `getUserInfo`/`getAllCreatedCampaigns`) — hoặc cấp user khác có role Comms Hub + org Redmoor.
+2. QA xác minh safe test patient thuộc Primary Care 24 hoặc 3ST.
+3. QA chỉ ra một form có `shared_to_org_ids` thật để làm control cho TC-002.
+4. Sau đó MANUAL_EXECUTE tạo campaign test riêng với runtime guard.
 
 ## Checkpoint History
 
@@ -76,5 +81,6 @@ QA xác minh safe test patient thuộc Primary Care 24 hoặc 3ST; sau đó MANU
 - - 2026-10-01T13:35:41.481Z | revision 1 | EXPLORE | completed_with_warnings | Read-only setup surfaces and mutation boundary recorded.
 - - 2026-10-01T13:35:41.481Z | revision 1 | TEST_DESIGN | completed_with_warnings | Two stable cases designed; inventory persisted.
 - - 2026-10-01T13:35:41.481Z | revision 1 | MANUAL_EXECUTE | blocked | Exact form relationship and safe patient required before mutation.
+- - 2026-10-21T03:20:00.000Z | revision 1 | MANUAL_EXECUTE | blocked | Child-owned form + no-Shared-To verified via PACO GraphQL; includeShared does not surface child forms to parent PCN. Comms Hub 401 No Access to Module blocks campaign creation. Safe patient and control form outstanding.
 
 ## Tester notes

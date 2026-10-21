@@ -359,3 +359,28 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Evidence:** PAC2-7727/exploration.md O-4 (2026-10-16 retry); feature-map.md Comms Hub role observed `Super Admin GB`
 **Created:** 2026-10-16
 **Answered:** -
+
+**ID:** OQ-041
+**Status:** Answered
+**Question:** Host `pac2-3934.dev.blinxpaco-np.com` có cần add vào `paco.config.yaml` `allowedHosts` không, để chạy live replay AC1–AC4 (cross-org health form filing)?
+**Impact:** High
+**Evidence:** PAC2-3934/feature-location.md 2026-10-18; ticket `Multiple Test URL` field
+**Created:** 2026-10-18
+**Answered:** 2026-10-18
+**Answer:** Tester chọn KHÔNG add host riêng; chạy trên dev chung `blinx.dev.blinxpaco-np.com`. Kết quả survey 2026-10-18: consultation screen không accessible trên dev chung (`/paco-connect/dashboard` 404, `/paco/health-forms/inbox` 404, không có menu Consultation top-level). Blocker thật là PAC2-5445 (consultation mode not opening, Ready to Release). Ticket closed Blocked.
+
+**ID:** OQ-044
+**Status:** Open
+**Question:** Backend fix `nhs-supergrid-be#2752` (full-PK patient lookup, no fallback, fix tautology) đã deploy lên host nào chưa?
+**Impact:** High — nếu fix chỉ deploy trên host riêng PAC2-3934, mainline/dev chung vẫn ở pre-fix.
+**Evidence:** PAC2-3934/requirements.md Mustafa review; ticket snapshot ticket.md
+**Created:** 2026-10-18
+**Answered:** -
+
+**ID:** OQ-045
+**Status:** Open
+**Question:** PAC2-5445 (consultation mode not opening) sẽ release khi nào? PAC2-3934 cross-org filing phụ thuộc consultation mode accessible trên PACO Connect.
+**Impact:** Critical — không thể chạy AC1–AC4 ở bất kỳ dev host nào nếu consultation mode chưa work.
+**Evidence:** PAC2-3934/feature-location.md 2026-10-18; linked issue PAC2-5445
+**Created:** 2026-10-18
+**Answered:** -

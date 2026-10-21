@@ -1,4 +1,4 @@
-import type { Locator, Page } from '@playwright/test';
+import type { Locator, Page, Response } from '@playwright/test';
 
 /**
  * Health Forms / Booking Link tabs inside the Quick Send dialog.
@@ -93,5 +93,10 @@ export class HealthFormsPage {
   /** Resync action menu item. Accepts "Resync" / "Re-sync to Patient Record" / "Re-sync". Source: PAC2-4837/test-results-manual.md */
   resyncMenuItem(): Locator {
     return this.page.getByRole('menuitem', { name: /^(Resync|Re-sync to Patient Record|Re-sync)$/i });
+  }
+
+  /** Navigate to a URL. Source: PAC2-4837 spec */
+  goto(url: string): Promise<Response | null> {
+    return this.page.goto(url) as Promise<Response | null>;
   }
 }

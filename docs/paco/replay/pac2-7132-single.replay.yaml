@@ -1,0 +1,26 @@
+schema_version: 1
+batch_id: pac2-7132-single
+created_at: 2026-10-18T10:04:15.489Z
+updated_at: 2026-10-18T10:08:21.690Z
+environment: dev
+status: partially_completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-114
+    summary: PAC2-114 — Add an address finder / postcode look up integration.
+    status: Done
+    labels: []
+    components: []
+    linked_issues: []
+processed_count: 0
+verified_count: 0
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 0
+new_flows: []
+deduplicated_flows: []
+revision: 2
+mutation_mode: auto

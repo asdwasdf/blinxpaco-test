@@ -10,11 +10,23 @@ description: Use when a Paco ticket has a video attachment and the tester needs 
 Ingest one Paco ticket that has a video attachment. Produce (1) per-frame + flow notes, (2) a standalone Playwright spec that re-runs the flow. Never read frames in the main session.
 
 ## Mutation Mode
+
 Read `manifest.yaml:mutationMode` before any side effect. Default is `auto` whenever the host is in `paco.config.yaml: safety.allowedHosts` or `externalDevHosts`. In `auto` mode the spec produced by this skill can `Create`/`Update`/`Save`/`Send`/`Delete`/`Restore`/`Upload`/`Import`/`Download` on owned test data without per-action approval: the spec is the authorization.
 
 Still enforce in `auto` mode: `evaluateMutationGate()` with the `mutationMode` param; hostname matches allowlist; safe test data only (no real PII, `QA-test` prefix; historical `QA-AUTO` accepted); approved recipient (`fiona.nguyen@blinxsolutions.com` for email; SMS requires explicit tester confirmation each time); production/unknown host is blocked; mutation ledger written; cleanup in `finally { cleanup() }`; leftover log on cleanup fail. `PACO_ALLOW_MUTATION` / `PACO_ALLOW_DESTRUCTIVE` env vars are an optional local safety guard, not the primary gate.
 
 `manual` (only when tester or intake forces it): legacy behavior — ask tester per case; env var guards still apply.
+
+## Auto-login pre-flight
+
+Before any browser step (frame extraction probe, spec re-run), verify auth in the current tab:
+
+1. Run `CHECK_AUTH_SCRIPT` from `scripts/paco-auth-helper.ts` via `browser_evaluate`: return `{ authenticated: boolean, url: string }`.
+2. If `authenticated: true` → proceed.
+3. If `authenticated: false`:
+   a. Try auto-login: call `buildFullLoginScript()` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. If `.env` lacks credentials, fall through to step 4.
+   b. If auto-login returns `{ step: 'login_failed' }`, fall through to step 4.
+4. If auto-login was skipped or failed, direct tester to `npm run auth:login`. Do not proceed with browser steps until auth is confirmed.
 
 ## When to use
 
@@ -31,31 +43,32 @@ Still enforce in `auto` mode: `evaluateMutationGate()` with the `mutationMode` p
 ## Required background
 
 Read before starting:
+
 - `paco-ticket` — for ticket conventions, checkpoint, safety policy.
 - `paco-playwright` (mode `generate` + `cli`) — for spec convention, page objects, pacing.
 - Memory `paco-video-ingestion` — model + frame extraction policy.
 
 ## Inputs
 
-| Input | Source | Required |
-|---|---|---|
-| Ticket folder | `ticket/<TICKET-ID>-<short-title>/` | yes |
-| Video file | `<folder>/*.{mp4,webm,mov}` | yes |
-| `ticket.md` | same folder | yes |
-| Dev host | `paco.config.yaml` `allowedHosts` + `externalDevHosts` | yes |
-| Test data | from `status.md` or tester | yes (for spec re-run) |
-| `APPROVED` flag in `status.md` | `docs/tickets/<ticket>/status.md` | yes (for auto-run, see Step 5) |
+| Input                          | Source                                                 | Required                       |
+| ------------------------------ | ------------------------------------------------------ | ------------------------------ |
+| Ticket folder                  | `ticket/<TICKET-ID>-<short-title>/`                    | yes                            |
+| Video file                     | `<folder>/*.{mp4,webm,mov}`                            | yes                            |
+| `ticket.md`                    | same folder                                            | yes                            |
+| Dev host                       | `paco.config.yaml` `allowedHosts` + `externalDevHosts` | yes                            |
+| Test data                      | from `status.md` or tester                             | yes (for spec re-run)          |
+| `APPROVED` flag in `status.md` | `docs/tickets/<ticket>/status.md`                      | yes (for auto-run, see Step 5) |
 
 ## Output
 
-| Artifact | Path | Owner |
-|---|---|---|
-| Frame images | `docs/tickets/<ticket>/video/frames/frame_NNNNN.png` | this skill |
-| Per-chunk markdown | `docs/tickets/<ticket>/video/chunk_<NN>.md` (deleted after `video-notes.md` is written) | this skill |
-| `video-notes.md` | `docs/tickets/<ticket>/video/video-notes.md` | this skill |
-| Standalone Playwright spec | `playwright/tests/tickets/<ticket>/<case-id>-video-flow.spec.ts` | this skill (proposal; `paco-playwright` owns) |
-| Spec execution | Với `execution.mode === 'cli_first'`, spec chạy qua `npm run paco-cli -- <ticket> <case-id>`; outcome merge vào `execution.runs[]` thay vì `execution.manual[]`. Với `mcp_first`, giữ legacy flow. | this skill + `paco-ticket` |
-| `ChildSkillOutcome` v1 | returned to caller | this skill |
+| Artifact                   | Path                                                                                                                                                                                               | Owner                                         |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
+| Frame images               | `docs/tickets/<ticket>/video/frames/frame_NNNNN.png`                                                                                                                                               | this skill                                    |
+| Per-chunk markdown         | `docs/tickets/<ticket>/video/chunk_<NN>.md` (deleted after `video-notes.md` is written)                                                                                                            | this skill                                    |
+| `video-notes.md`           | `docs/tickets/<ticket>/video/video-notes.md`                                                                                                                                                       | this skill                                    |
+| Standalone Playwright spec | `playwright/tests/tickets/<ticket>/<case-id>-video-flow.spec.ts`                                                                                                                                   | this skill (proposal; `paco-playwright` owns) |
+| Spec execution             | Với `execution.mode === 'cli_first'`, spec chạy qua `npm run paco:cli -- <ticket> <case-id>`; outcome merge vào `execution.runs[]` thay vì `execution.manual[]`. Với `mcp_first`, giữ legacy flow. | this skill + `paco-ticket`                    |
+| `ChildSkillOutcome` v1     | returned to caller                                                                                                                                                                                 | this skill                                    |
 
 ## Steps
 
@@ -122,7 +135,7 @@ Two sections, in this order.
 **Section 1 — Per-frame table.**
 
 | timestamp | frame | UI text | error | URL | behavior | note |
-|---|---|---|---|---|---|---|
+| --------- | ----- | ------- | ----- | --- | -------- | ---- |
 
 Empty cells are allowed; mark unreadable text `[không chắc]`.
 
@@ -144,10 +157,10 @@ Read `paco-playwright` mode `generate`. Produce a standalone spec at `playwright
 
 Two scopes, decided from `ticket.md` + tester intent (default = full):
 
-| Scope | When to use | What spec covers |
-|---|---|---|
-| **smoke** | Tester only wants to confirm dev host + locator work; ticket has no mutation | Steps 1-N until first observable defect state; assert visible/invisible; no mutation |
-| **full** | Tester wants to replay the whole video, including mutation actions to reproduce the bug | Every step in Section 2 of `video-notes.md` from frame 0 to final state; asserts final state; mutation allowed via 4b |
+| Scope     | When to use                                                                             | What spec covers                                                                                                      |
+| --------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| **smoke** | Tester only wants to confirm dev host + locator work; ticket has no mutation            | Steps 1-N until first observable defect state; assert visible/invisible; no mutation                                  |
+| **full**  | Tester wants to replay the whole video, including mutation actions to reproduce the bug | Every step in Section 2 of `video-notes.md` from frame 0 to final state; asserts final state; mutation allowed via 4b |
 
 **Default to `full`** unless the tester explicitly says "smoke" or the ticket has no mutation context. A smoke spec that doesn't reproduce the bug is evidence the pipeline works, not evidence about the product.
 
@@ -164,6 +177,7 @@ If the spec needs to create / update / save / send / delete / import, the spec M
 7. Never use real patient PII. Search/create with `QA-test` only.
 
 `evaluateMutationGate()` checks:
+
 - `PACO_ALLOW_MUTATION=true` in env
 - Host in `paco.config.yaml` `allowedHosts` + `externalDevHosts`
 - No production host
@@ -178,6 +192,7 @@ A spec that hits a missing fixture (no template, no health form, no recipient) M
 ### 5. Auto-run policy
 
 Auto-run the spec directly when ALL of the following are true:
+
 - `manifest.yaml:mutationMode === 'auto'` (default on configured dev host).
 - `status.md` has `Mutation Policy: APPROVED` for the matching test data.
 - The spec passed `evaluateMutationGate()` (hostname, `QA-test` data, recipient, ledger, cleanup, production block).
@@ -212,7 +227,7 @@ Return a `ChildSkillOutcome` v1 containing:
 - The main session read a frame directly. The frame must never enter main-session context.
 - A single subagent was given all frames. With Sonnet 4.5 via 9router the context overflows within 3 compactions. Split into chunks of 30 frames max.
 - The synthesis subagent was given frame paths. It must see only chunk markdown files, never frames.
-- A chunk subagent was given `model: opus` or `model: haiku`. It must be Sonnet 4.5 (`kr|claude-sonnet-4-5`).
+<!-- - A chunk subagent was given `model: opus` or `model: haiku`. It must be Sonnet 4.5 (`kr|claude-sonnet-4-5`). -->
 - A chunk subagent wrote prose flow instead of just table rows. Restrict its output to Section 1 rows.
 - The spec was written inline as a `browser_run_code` snippet instead of a standalone `.spec.ts` under `playwright/tests/tickets/<ticket>/`.
 - The spec was run by this skill, not handed to `paco-playwright` mode `cli`.
@@ -220,18 +235,18 @@ Return a `ChildSkillOutcome` v1 containing:
 
 ## Common mistakes
 
-| Mistake | Fix |
-|---|---|
-| Reading all frames in main to "verify" | Stop. Re-dispatch subagent. Main only sees `video-notes.md`. |
-| Giving one subagent the full frame list | Split into chunks of 30 frames max. Synthesis subagent sees only markdown. |
-| Sampling at 30 fps | Use 1 fps; increase only if a sub-second transition is the bug. |
-| Skipping the synthesized flow section | Both sections are required. The flow is what the tester will cite in `status.md`. |
-| Writing the spec with XPath or text-only selectors | Use role locators; promote new locators to the page object. |
-| Forgetting `PACO_STEP_MS` settle after every interaction | Required by `paco-playwright` pacing rule (2026-10-02). |
-| Auto-running the spec on a host outside `paco.config.yaml` | Hard block; return `Blocked: host not in allowlist`. |
-| Letting the synthesis subagent read frames | Pass only the chunk markdown files. Synthesis = text only. |
-| Defaulting to smoke when the ticket is a defect repro | Use `full` scope; smoke cannot reproduce a defect, only verifies the pipeline. |
-| Skipping `evaluateMutationGate()` in full replay | Gate is mandatory; missing gate = spec is `Blocked` at runtime. |
-| Creating test data without `QA-test` prefix | CLAUDE.md requires prefix; missing prefix = mutation gate refuses. |
-| Skipping cleanup | Add a `finally { cleanup() }` block; on failure, log leftovers to `test-results/<spec>/leftovers.txt`. |
-| Encoding expected `Fail` as `test.fail()` | Use `expect(...).toBeVisible()` etc; `test.fail()` is for intentionally skipping a known-broken case, not for asserting product outcome. |
+| Mistake                                                    | Fix                                                                                                                                      |
+| ---------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Reading all frames in main to "verify"                     | Stop. Re-dispatch subagent. Main only sees `video-notes.md`.                                                                             |
+| Giving one subagent the full frame list                    | Split into chunks of 30 frames max. Synthesis subagent sees only markdown.                                                               |
+| Sampling at 30 fps                                         | Use 1 fps; increase only if a sub-second transition is the bug.                                                                          |
+| Skipping the synthesized flow section                      | Both sections are required. The flow is what the tester will cite in `status.md`.                                                        |
+| Writing the spec with XPath or text-only selectors         | Use role locators; promote new locators to the page object.                                                                              |
+| Forgetting `PACO_STEP_MS` settle after every interaction   | Required by `paco-playwright` pacing rule (2026-10-02).                                                                                  |
+| Auto-running the spec on a host outside `paco.config.yaml` | Hard block; return `Blocked: host not in allowlist`.                                                                                     |
+| Letting the synthesis subagent read frames                 | Pass only the chunk markdown files. Synthesis = text only.                                                                               |
+| Defaulting to smoke when the ticket is a defect repro      | Use `full` scope; smoke cannot reproduce a defect, only verifies the pipeline.                                                           |
+| Skipping `evaluateMutationGate()` in full replay           | Gate is mandatory; missing gate = spec is `Blocked` at runtime.                                                                          |
+| Creating test data without `QA-test` prefix                | CLAUDE.md requires prefix; missing prefix = mutation gate refuses.                                                                       |
+| Skipping cleanup                                           | Add a `finally { cleanup() }` block; on failure, log leftovers to `test-results/<spec>/leftovers.txt`.                                   |
+| Encoding expected `Fail` as `test.fail()`                  | Use `expect(...).toBeVisible()` etc; `test.fail()` is for intentionally skipping a known-broken case, not for asserting product outcome. |

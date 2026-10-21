@@ -1,6 +1,8 @@
 node_modules/
 dist/
 playwright/.auth/
+playwright/.mcp-browsers/
+playwright/.mcp-runs/
 playwright/.profiles/
 playwright-report/
 /test-results/
@@ -9,3 +11,5 @@ playwright-report/
 .claude/worktrees/
 .playwright-mcp/
 ticket/
+# Transient replay state files (writer temp artifacts)
+docs/paco/replay/.*.tmp

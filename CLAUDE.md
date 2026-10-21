@@ -102,7 +102,7 @@ Product discovery ngoài ticket: orchestrator `paco-discover` (state qua `npm ru
 
 Child skill gọi trực tiếp chỉ ghi artifact thuộc ownership và trả checkpoint proposal; chỉ `paco-ticket` cập nhật manifest/status.
 
-**IMPORTANT**: NEVER spawn Paco skills với `isolation: "worktree"`. Tất cả artifacts và Playwright tests phải viết vào main repo (`/home/nhatpham/blinxpaco-test/`), không vào `.claude/worktrees/`.
+**IMPORTANT**: NEVER spawn Paco skills với `isolation: "worktree"`. Tất cả artifacts và Playwright tests phải viết vào main working tree của repo hiện tại (`D:\blinxpaco-test` trên Windows, `/home/nhatpham/blinxpaco-test` trên Unix; tự detect từ `process.cwd()`), không vào `.claude/worktrees/`.
 
 Chi tiết: `docs/standards/`
 

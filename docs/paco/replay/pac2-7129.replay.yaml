@@ -1,0 +1,36 @@
+schema_version: 1
+batch_id: pac2-7129
+created_at: 2026-10-18T09:52:32.301Z
+updated_at: 2026-10-18T10:02:05.452Z
+environment: dev
+status: completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-114
+    summary: PAC2-114 — Add an address finder / postcode look up integration.
+    status: Done
+    labels: []
+    components: []
+    linked_issues: []
+    result: not_reproducible
+    reason: Old feature request (2020); integration point no longer identifiable; OUT_OF_SCOPE
+  - key: PAC2-7129
+    summary: PAC2-7129 — Menu opening below screen level.
+    status: Done
+    labels: [PACO_OS]
+    components: []
+    linked_issues: [PAC2-7081]
+    result: verified
+    reason: Menu renders at correct viewport position; PAC2-7081 Epic mop-up; DEV 2026-10-18
+processed_count: 2
+verified_count: 1
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 1
+new_flows: []
+deduplicated_flows: []
+revision: 3
+mutation_mode: auto

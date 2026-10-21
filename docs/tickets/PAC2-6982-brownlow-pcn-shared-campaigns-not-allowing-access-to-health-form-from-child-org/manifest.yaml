@@ -16,7 +16,7 @@ workflow:
   status: blocked
   current_phase: MANUAL_EXECUTE
   last_completed_phase: TEST_DESIGN
-  updated_at: 2026-10-01T13:35:41.481Z
+  updated_at: 2026-10-21T03:20:00.000Z
   checkpoints:
     - at: 2026-10-01T12:41:17.879Z
       phase: DISCOVER
@@ -42,15 +42,13 @@ workflow:
       phase: LOCATE
       outcome: blocked
       input_revision: 1
-      message: Auth hiện tại verified; Health Forms Designer route mở được, full
-        campaign/patient route chưa đủ.
+      message: Auth hiện tại verified; Health Forms Designer route mở được, full campaign/patient route chưa đủ.
     - at: 2026-10-01T13:22:57.850Z
       phase: LOCATE
       outcome: blocked
       input_revision: 1
-      message: External host/auth blocker resolved. QA approved separate test
-        campaign; no mutation. Candidate/context unresolved; bounded scan
-        stopped.
+      message: External host/auth blocker resolved. QA approved separate test campaign; no mutation. Candidate/context
+        unresolved; bounded scan stopped.
     - at: 2026-10-01T13:35:41.481Z
       phase: LOCATE
       outcome: completed_with_warnings
@@ -71,6 +69,13 @@ workflow:
       outcome: blocked
       input_revision: 1
       message: Exact form relationship and safe patient required before mutation.
+    - at: 2026-10-21T03:20:00.000Z
+      phase: MANUAL_EXECUTE
+      outcome: blocked
+      input_revision: 1
+      message: Child-owned form with null Shared To verified via PACO GraphQL; includeShared does not
+        surface child forms to parent PCN. Comms Hub blocked by missing role/module on test account
+        (401 No Access to Module). Safe patient and control form still missing.
 phases:
   DISCOVER:
     status: completed
@@ -96,8 +101,7 @@ phases:
     artifacts:
       - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/requirements.md
     warnings:
-      - AC nằm trong Description; thiếu role, safe test data, patient auth và
-        control context.
+      - AC nằm trong Description; thiếu role, safe test data, patient auth và control context.
     blockers: []
   LOCATE:
     status: completed
@@ -107,8 +111,7 @@ phases:
     artifacts:
       - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/feature-location.md
     warnings:
-      - Campaign/form setup roots confirmed; patient scheduler route deferred to
-        execution.
+      - Campaign/form setup roots confirmed; patient scheduler route deferred to execution.
     blockers: []
     budget:
       views_used: 12
@@ -133,19 +136,24 @@ phases:
     artifacts:
       - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/test-cases.md
     warnings:
-      - Execution blocked until exact child-owned form and safe test patient are
-        verified.
+      - Execution blocked until exact child-owned form and safe test patient are verified.
     blockers: []
   MANUAL_EXECUTE:
     status: blocked
     outcome: blocked
     input_revision: 1
-    updated_at: 2026-10-01T13:35:41.481Z
-    artifacts: []
-    warnings: []
+    updated_at: 2026-10-21T03:20:00.000Z
+    artifacts:
+      - docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/data-relationship-findings.md
+    warnings:
+      - Exact child-owned form without Shared To is now verified via GraphQL (form test by mw1, owner 3ST,
+        shared_to_org_names null).
     blockers:
-      - Need exact child-owned form without Shared To and safe test
-        patient/recipient before persistent campaign creation/send.
+      - Comms Hub account blinx_fiona.nguyen has no Comms Hub role/module; getUserInfo and
+        getAllCreatedCampaigns return 401 Permission Denied - No Access to Module, so no campaign can be
+        created.
+      - Safe test patient/recipient in 3ST or Primary Care 24 still unverified.
+      - Control form with a real shared_to_org_ids relation still unselected.
   AUTOMATE:
     status: pending
     outcome: null
@@ -203,6 +211,12 @@ outputs:
     state: valid
     input_revision: 1
     sha256: 4ca2236b98bb3a6ec925bc28c6393c395f3d9f36959cb84c39ae12485619144b
+  data-relationship-findings.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-6982-brownlow-pcn-shared-campaigns-not-allowing-access-to-health-form-from-child-org/data-relationship-findings.md
+    state: valid
+    input_revision: 1
+    sha256: 3169c75699ae23cfc904904a0608bda021fd05726874d7b7f141008be19f9178
 execution:
   case_ids:
     - PAC2-6982-TC-001
@@ -210,3 +224,9 @@ execution:
   manual: {}
   automation: {}
   runs: {}
+  mode: mcp_first
+  modeSetBy: paco-ticket
+  modeSetAt: 2026-10-20T14:17:43.086Z
+mutationMode: auto
+mutationModeSetBy: paco-ticket
+mutationModeSetAt: 2026-10-20T14:17:43.073Z

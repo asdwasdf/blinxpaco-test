@@ -1,0 +1,44 @@
+schema_version: 1
+batch_id: pac2-3934-replay
+created_at: 2026-10-18T02:22:23.180Z
+updated_at: 2026-10-18T02:23:05.251Z
+environment: dev
+status: partially_completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-3934
+    summary: Allow Health Form Filing Across Different Organisations in PACO Connect
+    status: Open
+    labels:
+      - Appointment_Book
+    components: []
+    linked_issues:
+      - PAC2-5445
+    processed: false
+    result: blocked
+    result_reason: >
+      Live replay blocked — host pac2-3934.dev.blinxpaco-np.com chưa có trong
+      paco.config.yaml allowedHosts. Reconstructed flow + requirements đã có;
+      scenarios S1-S5 sẵn sàng chạy khi host whitelist.
+    evidence_refs:
+      - docs/paco/replay/pac2-3934-initial-snapshot.yml
+      - docs/paco/replay/pac2-3934-testing-snapshot.yml
+      - docs/paco/tickets/PAC2-3934/requirements.md
+      - docs/paco/tickets/PAC2-3934/scenarios.md
+      - docs/paco/tickets/PAC2-3934/replay.md
+      - docs/paco/flows/cross-org-health-form-filing.md
+    flow_slug: cross-org-health-form-filing
+    linked_existing_flow: false
+processed_count: 0
+verified_count: 0
+failed_count: 0
+blocked_count: 1
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 0
+new_flows:
+  - cross-org-health-form-filing
+deduplicated_flows: []
+revision: 3
+mutation_mode: auto

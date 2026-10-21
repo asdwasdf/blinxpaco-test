@@ -1,0 +1,182 @@
+schema_version: 2
+
+ticket:
+  key: PAC2-3934
+  folder_name: PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect
+  source_directory: ticket/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect
+  primary_source: ticket.md
+
+input_snapshot:
+  revision: 1
+  generated_at: 2026-10-18T02:17:00Z
+  files:
+    - path: ticket.md
+      sha256: 2f273a250514f367730e87e45a5a96a2904e26b615cd82e2190a17e019cc19e6
+
+fast_path:
+  video_ingest: not_applicable
+  graph_lookup: not_applicable
+  unresolved_blockers: 1
+  mutation_ledger: null
+  durable_evidence:
+    - docs/paco/replay/pac2-3934-initial-snapshot.yml
+    - docs/paco/replay/pac2-3934-testing-snapshot.yml
+
+workflow:
+  status: in_progress
+  current_phase: ANALYZE
+  last_completed_phase: INGEST
+  updated_at: 2026-10-18T03:20:00Z
+  checkpoints: []
+
+mutationMode: auto
+
+phases:
+  DISCOVER:
+    status: skipped
+    outcome: not_applicable
+    input_revision: 1
+    updated_at: 2026-10-18T03:00:00Z
+    artifacts: []
+    warnings: []
+    blockers: []
+  INGEST:
+    status: completed
+    outcome: ingested
+    input_revision: 1
+    updated_at: 2026-10-18T03:00:00Z
+    artifacts:
+      - docs/paco/replay/pac2-3934-initial-snapshot.yml
+      - docs/paco/replay/pac2-3934-testing-snapshot.yml
+      - docs/paco/tickets/PAC2-3934/replay.md
+    warnings: []
+    blockers: []
+  ANALYZE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts:
+      - docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/requirements.md
+    warnings: []
+    blockers: []
+  LOCATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+    budget:
+      views_used: 0
+      views_limit: 12
+      elapsed_minutes: 0
+      minutes_limit: 15
+  EXPLORE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  TEST_DESIGN:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  MANUAL_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  AUTOMATION_EXECUTE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  REPORT:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+  COMPLETE:
+    status: pending
+    outcome: null
+    input_revision: 1
+    updated_at: ""
+    artifacts: []
+    warnings: []
+    blockers: []
+
+outputs:
+  requirements.md:
+    owner: paco-requirements
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/requirements.md
+    state: present
+    input_revision: 1
+    sha256: 488FC1698D4140DBCD055E06A9AEE5754A4D0652C06EB765D3388A7A1AF262B8
+  scenarios.md:
+    owner: paco-ticket
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/scenarios.md
+    state: present
+    input_revision: 1
+    sha256: A74B78C38AC5839DAA82FC22F873C8EC2D8D8B74654767EB2DFDFB5903626BA3
+  workflow.md:
+    owner: paco-ticket
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/workflow.md
+    state: present
+    input_revision: 1
+    sha256: DE4C81DBC9711314A63D7BACF91E183FCCEEDDAE2BCA79CD4CE21FE317E87E92
+  replay.md:
+    owner: paco-ticket
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/replay.md
+    state: present
+    input_revision: 1
+    sha256: 8CE102BFAD40BB60CA89840BB7C815D9574DB42E1EECBBEB7736936EC6EC9A05
+  feature-location.md:
+    owner: paco-explore
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/feature-location.md
+    state: present
+    input_revision: 1
+    sha256: 1CCD5D95A627E736CE4A81974EBB5490B2E96A68CE29306E428A227AFA50AAB3
+  test-cases.md:
+    owner: paco-test-design
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/test-cases.md
+    state: missing
+    input_revision: 1
+    sha256: null
+  report.md:
+    owner: paco-report
+    path: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/report.md
+    state: stale
+    input_revision: 1
+    sha256: C9549DEAB9E6896CB13218655499D099A354E6EF3268A518787541FF51F04186
+
+execution:
+  mode: cli_first
+  case_ids: []
+  manual: {}
+  automation: {}
+  runs: {}

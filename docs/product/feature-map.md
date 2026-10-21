@@ -61,6 +61,48 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - `PAC2-7137` Blocked: control trên route mặc định bị HTTP 404 rồi redirect login
 - Chi tiết: `workflows/appointment-book.md#count-summary-dayweek`
 
+#### PACO Connect — Tab selector (Dashboard ↔ Appointment Book)
+
+- Coverage: Partial
+- Entry: `https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard`
+- Route: `/paco-connect/dashboard` (Dashboard tab, default) ↔ `/paco-connect/appointment-book` (Appointment Book tab)
+- Role observed: `Super Admin GB`, `Blinx Deployment` (Johnny Bravo 2255)
+- Environment: `dev`
+- Classification: `Confirmed` (live browser + video evidence)
+- Source: `PAC2-6983` (`replay.md`, live replay 2026-10-18)
+- Last verified: `2026-10-18T04:20:00Z` (DOM measurement: Dashboard 26px, Appointment Book 28px)
+- Aliases: `connect dashboard`, `connect tab`, `connect tabs`, `tab selector`
+- Tickets: `PAC2-6983`
+- Note: tab row gồm 2 button `Dashboard` | `Appointment Book`; selected tab có pink background. URL swap là SPA route, không full navigation. Spacing giữa tab row và content area phải nhất quán (pixel-perfect ~27px cho cả 2 states). Bug pre-fix: Dashboard có spacing, Appointment Book flush to tabs.
+- Logic chính:
+  - Dashboard tab: spacing ~26px (tab bottom y=135 → content top y=161); content = dashboard cards (Total Capacity, Utilisation, Capacity Breakdown, By Slot Type, Demand by Hour/Day, Clinician table, etc.)
+  - Appointment Book tab: spacing ~28px (tab bottom y=135 → content top y=163); content = calendar grid (Sessions, Booked, Available summary, day view slots)
+  - Spacing consistent ~27px sau fix (diff 2px do rounding + container class khác nhau) `[Confirmed]` (PAC2-6983 replay.md)
+- Defect đã biết:
+  - `PAC2-6983` Resolved: pre-fix — Dashboard có spacing, Appointment Book flush to tabs. Fix deployed 2026-10-08. Live regression verified 2026-10-18.
+- Chi tiết: `flows/paco-connect-tab-selector.md`
+
+#### Appointment Book — Patient Status Filter (PAC2-6997)
+- Coverage: Partial
+- Entry: `/paco/dashboard` → Rocket Bar `Appointment Book` → toolbar `Filters` button
+- Route: `/paco-connect/appointment-book` (filter sidebar opens as right-side panel)
+- Role observed: `Blinx Deployment` (Johnny Bravo 2255)
+- Environment: `dev`
+- Classification: `Confirmed` (unit tests + smoke data + filter UI verified live)
+- Source: `PAC2-6997` (replay.md, live replay 2026-10-18)
+- Last verified: `2026-10-18T05:00:00Z`
+- Aliases: `Patient Status filter`, `Patient Status whitelist`, `Patient Status accordions`
+- Tickets: `PAC2-6997`
+- Note: HTTP 404 on initial load is expected — SPA renders after 10-15s. Filter panel: Appointment Status (`Booked`, `Available`, `Non-Bookable`) is **separate** accordion from Patient Status (`Patient Arrived`, `Consultation Started`, `Consultation Ended`, `Patient Left`, `Did Not Attend`, `Appointment Cancelled`). Demo site had 0 bookings on Oct 7/8; actual filtering verified via unit tests (9 filter cases) + smoke data from ticket.
+- Logic chính:
+  - Patient Status is a whitelist: a booking with no patient status appears only when `Booked` ticked AND none of Patient Arrived/Consultation Started/Consultation Ended/Patient Left/DNA unticked `[Confirmed]` (PR #2810, 46a458593)
+  - Unticking only `Appointment Cancelled` keeps no-status bookings visible (cancelled appointments unlinked from slots) `[Confirmed]`
+  - Deselecting every patient status hides all bookings; session actions read full session including hidden bookings `[Confirmed]`
+- Defect đã biết:
+  - `PAC2-6997` Fixed: pre-fix — patients with no patient status shown alongside filtered results when specific status selected. Fix deployed 2026-10-07 (commit 46a458593, PR #2810). Unit: 9 filter cases + 431 tests pass.
+  - `PAC2-6997` Fixed: pre-fix — deselecting patient status removed booked row from session, causing "Block Session" instead of "Cancel session appointments" in context menu.
+- Chi tiết: `flows/pac2-6997-appointment-book-patient-status-filter.md`
+
 #### Appointment Book — feature-branch route (PAC2-8575)
 - Coverage: Minimal
 - Entry: authenticated session → navigate trực tiếp tới `https://blinx.dev.blinxpaco-np.com/paco-connect/feature-branch/pac2-8575/appointment-book`
@@ -84,6 +126,27 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 - Defect đã biết:
   - PAC2-8575 · **Limit chưa confirm** · arrive transition end-to-end chưa xác minh được (TC-003..006 Blocked do thiếu QA-AUTO future booked test data) · không có defect confirmed
 - Chi tiết: `workflows/appointment-book.md#single-click-arrive-pac2-8575`
+
+#### Appointment Book — Patient Status Change / Consultation Ended Reset (PAC2-7127)
+- Coverage: Partial
+- Entry: `https://blinx.dev.blinxpaco-np.com/paco-connect/appointment-book` → single-click on patient slot → sidebar
+- Route: `/paco-connect/appointment-book` (Day or Week view)
+- Role observed: `Blinx Deployment` (Johnny Bravo 2255)
+- Environment: `dev` (feature branch used for QA)
+- Classification: `Observed` (verified on FB, dev main regression not tested)
+- Source: `PAC2-7127` (replay.md, 2026-10-18)
+- Last verified: `2026-10-07T15:43:00Z` (QA pass on feature branch)
+- Aliases: `reset Consultation Ended`, `patient status reset`, `clear status`, `change patient status`
+- Tickets: `PAC2-7127`
+- Note: Single-click patient slot → Appointment Details sidebar with `Mark as: Select Patient Status`. Status options: `Patient Arrived`, `Consultation Started`, `Consultation Ended`, `Patient Left`, `Did Not Attend`, `Appointment Cancelled`. Original bug: error "Reset failed, but status cleared locally" when removing Consultation Ended; status not actually cleared. Fix deployed 2026-10-07. Dev main regression unverified (booked slots off-screen in Week view).
+- Logic chính:
+  - Single click on patient slot opens sidebar with `Mark as: Select Patient Status` `[Confirmed: Pass]` (PAC2-8575/manual-execution.md TC-001, PAC2-7127 QA pass)
+  - Selecting different status + Save → status persists `[Confirmed: Pass]` (PAC2-7127 QA pass)
+  - Original bug (pre-fix): error "Reset failed, but status cleared locally" on Consultation Ended reset; status NOT cleared `[Confirmed]` (bug video 2026-07-03)
+- Defect đã biết:
+  - `PAC2-7127` Resolved: pre-fix — "Reset failed, but status cleared locally" error on Consultation Ended reset. Fix deployed 2026-10-07 on feature branch. QA passed (Sean Huynh + Abbi Russell).
+  - `PAC2-7127` Regression: dev main not verified — booked slots off-screen in Week view prevents direct testing.
+- Chi tiết: `flows/pac2-7127-consultation-ended-status-reset.md`
 
 #### Appointment Book — feature-branch route (PAC2-9001)
 - Coverage: Minimal
@@ -131,6 +194,26 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - `PAC2-8384` Fail (DEF-001): chọn hai book cùng location thì `Location` trả `No results found`
 - Chi tiết: `workflows/appointment-book.md#filter-trong-appointment-book`
 
+#### Appointment Book — Patient filter (PAC2-6996)
+- Coverage: Minimal
+- Entry: `Appointment Book` root → toolbar `Filters` button (icon, title="Filters", right edge of toolbar) → sidebar `Patient` accordion
+- Route: `/paco-connect/appointment-book` (filter sidebar right-side panel)
+- Role observed: `Blinx Deployment` (Johnny Bravo 2255)
+- Environment: `dev`
+- Classification: `Observed` (live replay 2026-10-18)
+- Source: `PAC2-6996` (`replay.md`, live replay 2026-10-18)
+- Last verified: `2026-10-18T04:45:00Z`
+- Aliases: `Patient filter`, `Patient Name filter`, `blank filter bug`
+- Tickets: `PAC2-6996`
+- Note: Filter sidebar has 6 accordions — Healthcare Professional, Patient, Appointment Type, Slot Type, Session Name, Location. Patient accordion renders as live-search input + filtered list (no static options). Pre-fix bug: blank filter option appeared under Patient Name. Post-fix: "No results found" when no match.
+- Logic chính:
+  - Filter sidebar opens via toolbar `Filters` button; close via Escape or click outside `[Observed]` (PAC2-6996)
+  - Patient accordion content = search input + item list (live-filtered, no blank options) `[Observed]` (PAC2-6996)
+  - Sidebar header: "Filters" + "Reset all" button + "All Appts" / "My Appts" toggle `[Observed]` (PAC2-6996)
+- Defect đã biết:
+  - `PAC2-6996` Resolved: pre-fix — blank filter option under Patient Name. Fix deployed 2026-10-07. Live regression verified 2026-10-18.
+- Chi tiết: `flows/pac2-6996-appointment-book-patient-filter.md`
+
 #### Appointment Book — Session slot editor (`Edit Session`)
 - Coverage: Minimal
 - Entry: `Appointment Book` root (Day view) → right-click slot trong cột session → `Edit Session`
@@ -151,6 +234,28 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - `PAC2-8241` Fail (TC-001): slot ngoài range trả 500, UI im lặng, stale pending slot
   - `PAC2-8241` Fail (TC-007): extend `Hours (To)` toast success nhưng không sinh slot, slot đã chỉnh revert
 - Chi tiết: `workflows/appointment-book.md#session-editor-và-khóa-field`
+
+#### Session — extend earlier (PAC2-7150)
+- Coverage: Minimal
+- Entry: `Appointment Book` (Day view) → session card → `Edit` (pencil icon) **HOẶC** `Configuration` → `Sessions` → row → `Edit`
+- Route: `/paco-connect/appointment-book` (Day view) → Edit Session drawer
+- Role observed: `Super Admin GB` / session holder
+- Environment: `dev`
+- Classification: `Confirmed`
+- Source: `PAC2-7150` (replay.md, Sean Huynh QA PASSED 2026-10-07)
+- Last verified: `2026-10-18`
+- Aliases: `start session earlier`, `extend session start`, `shaded hour`, `earlier slot`
+- Tickets: `PAC2-7150`
+- Note: Shaded hour phía trên session start cho phép thêm slot ở thời điểm trước start time. Prompt "Start session at [time]" xuất hiện khi thêm slot trong shaded zone. Extend cả hai đầu → prompt "Run session [start]–[end]". Clash detection nếu earlier time trùng session khác.
+- Logic chính:
+  - Shaded hour zone trong Edit Session cho phép thêm slot trước start `[Confirmed]` (PAC2-7150/TC-001)
+  - Single-direction prompt "Start session at [time]" khi thêm slot trong shaded zone; Accept → session start cập nhật + slot mới `[Confirmed]` (PAC2-7150/TC-001)
+  - Dual-direction prompt "Run session [start]–[end]" khi extend cả hai đầu; Cancel → giữ nguyên, Accept → cập nhật cả start và end `[Confirmed]` (PAC2-7150/TC-002)
+  - Start earlier từ Appointment Book settings panel → cập nhật cả settings panel và board `[Confirmed]` (PAC2-7150/TC-003)
+  - Clash detection khi earlier time trùng session khác `[Confirmed]` (PAC2-7150/TC-003)
+- Defect đã biết:
+  - `PAC2-7150` Resolved: pre-fix — không thể thêm slot trong shaded hour phía trên session start. Fix deployed + QA passed 2026-10-07.
+- Chi tiết: `flows/pac2-7150-session-extend-earlier.md`
 
 #### Appointment Settings — Sessions configuration
 - Coverage: Partial
@@ -267,11 +372,11 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 - Role observed: `Admin` (QA xác nhận trong hội thoại, chưa độc lập xác minh trên UI)
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-6982` (`feature-location.md`)
-- Last verified: `2026-10-01`
-- Aliases: `Designer`, `Health Forms`, `form builder`
-- Tickets: `PAC2-6982`
-- Note: grid có cột `Health Form Name`, `Created By Organisation`, `Shared To Organisation(s)`, `Archived`, `Editable`, `Actions`. Chỉ xem; không mở row/`Actions`.
+- Source: `PAC2-6982` (`feature-location.md`); cross-org scope `PAC2-3934` (Blocked 2026-10-18)
+- Last verified: `2026-10-18` (PAC2-3934 survey on dev chung; encounter `AutoTest Consultation Form` × N template, không có consultation submit route)
+- Aliases: `Designer`, `Health Forms`, `form builder`, `Consultation Form`
+- Tickets: `PAC2-6982`, `PAC2-3934` (Blocked)
+- Note: grid có cột `Health Form Name`, `Created By Organisation`, `Shared To Organisation(s)`, `Archived`, `Editable`, `Actions`. Chỉ xem; không mở row/`Actions`. PAC2-3934 survey 2026-10-18 trên dev chung tìm `AutoTest Consultation Form` template (consultation form type), không có UI consultation screen để submit/file form.
 - Logic chính:
   - Component `Blood Pressure`: `SYS`/`DIA`, ghi nhận combined hoặc `Separate Diastolic and Systolic entries` `[Observed]` (PAC2-4399)
   - Form có `Created by` và `Shared To`; Shared Campaign cho child org truy cập form `[Confirmed]` (PAC2-6982)
@@ -303,6 +408,29 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - `PAC2-4399` Inconclusive: `Quick Form` lỗi thiếu patient number trên demo patient
   - `PAC2-8998` Pass: fix PR #7376 tokenise `,`/space + match từng token với first/middle/surname ở bất kỳ thứ tự nào; cap 50 dropdown + PDS panel
 - Chi tiết: `workflows/patient-profile.md#patient-search-và-patient-actions`
+
+#### Care Navigator — Patient View (PAC2-7144)
+- Coverage: Minimal
+- Entry: `https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard` → `Care Navigation` button → `patient-search/` → search patient → Care Navigator view
+- Route: `/patient-search/` → Care Navigator patient view
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `PAC2-7144` (replay.md, video evidence)
+- Last verified: `2026-10-18T11:27Z`
+- Aliases: `Care Navigation`, `care nav buttons`, `care navigator`
+- Tickets: `PAC2-7144`
+- Note: Care Nav buttons (Care Plan, Investigations, VTE, Resus, Handover) in patient view sidebar. Bug: greyed out pre-fix despite config active. Fix: buttons clickable post-fix. Dashboard `Care Navigation` button appears conditionally (session/org/role dependent).
+- Logic chính:
+  - Dashboard: `Patient Search` + `Care Navigation` buttons in `[ref=f8e413]` container; appear conditionally
+  - Patient search: `/patient-search/` with `Search Patients...` + `A-Z Search`
+  - Bug (pre-fix): patient loaded but left rail greyed out; patient header shows lightbulb/warning indicator
+  - Fix (post-fix): left rail fully functional; Care Plan, Investigations, VTE, Resus, Handover all accessible
+  - Category views: VTE Assessment, Discharge, Summary — forms render correctly
+- Defect đã biết:
+  - `PAC2-7144` Resolved: buttons greyed out despite config active; fix deployed 2026-10-07 on feature branch. QA passed on FB (Sean Huynh).
+  - `PAC2-7144` Regression dev main: PARTIAL — Care Nav buttons intermittent (session/org-dependent); no test patient in current org scope.
+- Chi tiết: `flows/pac2-7144-care-nav-buttons-inactive.md`
 
 #### Patient Profile — Documents
 - Coverage: Minimal
@@ -455,19 +583,23 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 
 #### Health Form Inbox
 - Coverage: Minimal
-- Entry: chưa verified
-- Route: chưa verified
-- Classification: `Observed`/`Inferred` theo bullet (route chưa quan sát)
-- Source: PAC2-4399, PAC2-5776 (`logic từ ticket`)
-- Last verified: `-`
-- Tickets: `PAC2-4399`, `PAC2-5776`
-- Note: `/health-forms/responses/` (workflow `health-forms.md`) — chưa được paco-report promote.
+- Entry: `/paco/dashboard` → sidebar `Health Forms` → `Inbox` (v2.0) HOẶC `/health-forms/inbox-2.0`
+- Route: `/health-forms/inbox-2.0` (v2.0, bucket `Not Saved`), `/health-forms/responses/` (classic với filter `Not Synced to PR`)
+- Role observed: `Super Admin GB`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `PAC2-4399`, `PAC2-5776`, `PAC2-4837` (`feature-location.md`, `exploration.md`)
+- Last verified: `2026-10-06`
+- Tickets: `PAC2-4399`, `PAC2-5776`, `PAC2-4837`
+- Note: v2.0 `Not Saved` bucket chứa form chưa lưu vào patient record. Classic Inbox `/health-forms/responses/` có filter `Not Synced to PR`. Patient Record Status field không hiển thị trong form detail dialog. Resync action không tìm thấy trong form detail `More Actions` menu.
 - Logic chính:
   - `View Form` read-only; response đang được người khác review bị lock, có `Click Here to Take Over` `[Observed]` (PAC2-4399)
   - Summary phân biệt `Reviewed (synced)`/`Reviewed (not synced)` `[Observed]` (PAC2-4399)
   - `Quick Send` là follow-up action từ Inbox `[Confirmed]` (PAC2-5776)
+  - v2.0 form detail: Patient Record Status field không visible; `Finish` lưu và đóng; `More Actions` menu không chứa resync `[Observed]` (PAC2-4837)
 - Defect đã biết:
   - `PAC2-4399` Inconclusive: modal kẹt loading (3/6 response); trùng accessible label; Blocked: filing EMIS HTTP 403
+  - `PAC2-4837` Blocked: resync action không tìm thấy; Patient Record Status blank gây failure to resync health form
 - Chi tiết: `workflows/health-forms.md#health-form-inbox`
 
 #### Session delete / archive (`Cancel Session`, `Block Session`, `Restore`)
@@ -677,6 +809,7 @@ Chưa đủ điều kiện làm entry chuẩn; không dùng làm automation gate
 - `Patient Analyser` tab và `Advanced Search` dialog trong `/patient-analyser/`: visible, chưa mở (`PAC2-3798`).
 - `/paco-connect/dashboard` (mainline): survey ghi 404, không reusable; feature-branch `/dashboard` hoạt động (`PAC2-4700`, `PAC2-7786`).
 - `PACO Assist` qua `More options`: rejected cho scope upload của `PAC2-6763`.
+- `Consultation screen` (cross-org filing entry point): 2026-10-18 dev chung survey: `/paco-connect/dashboard` 404, `/paco/health-forms/inbox` 404; consultation template tồn tại nhưng thiếu entry point. 2026-10-18 retry: host `pac2-3934.dev.blinxpaco-np.com` được add vào `paco.config.yaml` `allowedHosts`; root URL redirect `https://pac2-3934.dev.blinxpaco-np.com/login/` (page title "NHS Patient and Care Optimiser" — GP Supergrid, không phải PACO Connect mainline). Cần user login manual để verify consultation screen + cross-org filing entry (`PAC2-3934/feature-location.md`).
 
 ### Entries đã có (giữ nguyên)
 
@@ -752,6 +885,7 @@ Lookup tổng hợp 2026-10-02 từ 17 ticket. `Final status` là phase/kết qu
 | `PAC2-1805` | Scheduler cho book nhiều appointment liên tiếp (race) | Patient-facing Scheduler, Comms Hub (`Campaign Outbox` `Resend`) | LOCATE Blocked (không có token link); defect `Resend` ngoài scope |
 | `PAC2-3798` | Refactor supergrid backend | Analytics (`Patient & Medication Analyser`), Comms Analytics | Manual 8 Pass / 1 Not Run; automation CLI Blocked |
 | `PAC2-4399` | Update O/E blood pressure codes | Configuration (`Code Rule Config`), Health Forms (Designer, Inbox), Patient | COMPLETE; overall Inconclusive (TC-001..003 Blocked) |
+| `PAC2-4837` | Blank patient record status causing failure to resync HF | Health Forms (Inbox v2.0), Patient (profile) | EXPLORE; Blocked — resync action not found in Inbox UI |
 | `PAC2-4700` | Refactor UI component library (branching) | Comms Hub (`Quick Send`), Patient (`Quick Form`), UI `Bx*` | COMPLETE; 5 Pass / 2 Blocked / 5 Inconclusive, 0 Fail |
 | `PAC2-5776` | Popup `Scheduler Link Required` intermittent | Comms Hub (`Quick Send`), Health Forms (Inbox) | AUTOMATION_REVIEW; Inconclusive, cases Blocked |
 | `PAC2-6540` | Deleted patients trong Comms Hub/Analytics | Analytics (Advanced Search), Comms Hub (`Campaign Outbox`) | EXPLORE; TC-001 Pass, TC-002 Inconclusive, TC-003 Not Run |

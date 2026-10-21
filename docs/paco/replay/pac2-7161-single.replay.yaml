@@ -1,0 +1,33 @@
+schema_version: 1
+batch_id: pac2-7161-single
+created_at: 2026-10-18T15:11:19.819Z
+updated_at: 2026-10-18T15:31:30.865Z
+environment: dev
+status: completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-7161
+    summary: Tooltip in connect to small
+    status: Done
+    labels: []
+    components: []
+    linked_issues: []
+    processed: true
+    result: verified
+    result_reason: Sidebar tooltip/label expand verified on dev host; QA pass via
+      video evidence
+    evidence_refs:
+      - evidence/PAC2-7161-sidebar-tooltip-verified.png
+      - docs/paco/tickets/PAC2-7161/replay.md
+processed_count: 1
+verified_count: 1
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 0
+new_flows: []
+deduplicated_flows: []
+revision: 3
+mutation_mode: auto

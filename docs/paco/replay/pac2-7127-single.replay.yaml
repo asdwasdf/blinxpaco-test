@@ -1,0 +1,37 @@
+schema_version: 1
+batch_id: pac2-7127-single
+created_at: 2026-10-18T05:50:00.000Z
+updated_at: 2026-10-18T08:57:33.504Z
+environment: dev
+status: completed
+batch_size: 1
+skip_imported: false
+tickets:
+  - key: PAC2-7127
+    summary: PACO Connect - Unable to remove "Consultation Ended" Status once selected.
+    status: Done
+    labels: []
+    components: []
+    linked_issues: []
+    processed: true
+    result: partially_replayed
+    result_reason: Booked slots off-screen in Week view; calendar picker
+      non-functional; Quick Book not completed. Dev main regression unverified.
+    evidence_refs:
+      - docs/paco/tickets/PAC2-7127/replay.md
+      - ticket/PAC2-7127-paco-connect-unable-to-remove-consultation-ended-status-once-selected/attachments/117324-20260703-0837-49.5047989.mp4
+      - ticket/PAC2-7127-paco-connect-unable-to-remove-consultation-ended-status-once-selected/attachments/128962-Screen
+        Recording 2026-10-07 at 3.43.53 PM.mov
+      - ticket/PAC2-7127-paco-connect-unable-to-remove-consultation-ended-status-once-selected/attachments/129060-save.mp4
+    linked_existing_flow: false
+processed_count: 1
+verified_count: 0
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 1
+not_reproducible_count: 0
+new_flows: []
+deduplicated_flows: []
+revision: 3
+mutation_mode: auto

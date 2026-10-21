@@ -13,6 +13,10 @@ Từ `paco-discover`: `run_id`, environment, role, `task_id`, checkpoint `revisi
 
 ## Thực hiện
 
+**Auto-login pre-flight:**
+1. Run `CHECK_AUTH_SCRIPT` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. If `authenticated: true` → proceed.
+2. If `authenticated: false`, call `buildFullLoginScript()` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. Retry `CHECK_AUTH_SCRIPT`. If still unauthenticated → return `blocked, auth_expired: true`.
+
 1. Dùng tab Claude Playwright plugin hiện tại. Xác minh trang authenticated, đúng role, URL hiện tại thuộc configured dev host trong `paco.config.yaml`. Không browser riêng, không private API, không đọc auth state.
 2. Ngay trước click, đánh giá lại `evaluateDiscoveryMutation()` (bao gồm `evaluateMutationGate()`) với URL hiện tại và guard từ môi trường; mọi điều kiện phải pass: khi `manifest.yaml:mutationMode=auto` thì skip các env var check; khi `manual` hoặc thiếu thì cần `PACO_ALLOW_MUTATION=true`, destructive thêm `PACO_ALLOW_DESTRUCTIVE=true` và authorization destructive riêng, `SEND` chỉ tới recipient đã approve, external side effect chỉ tới destination dev đã approve. Không tự bật guard, không tự cấp authorization.
 

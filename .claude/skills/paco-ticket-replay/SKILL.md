@@ -214,7 +214,6 @@ Symptoms: summary counts report existing appointments but UI elements have zero 
 2. Switch view modes (Day/Week/Month) to reset layout
 3. Filter to reduce visible records and see if any become interactable
 4. Attempt to create fresh test data via Quick Book if auth+mutation permits
-5. Compare on feature-branch host if available and ticket was QA'd on feature branch
 
 **Escalation:** If recovery exhausted and appointment data genuinely stale (expired/cancelled), classify as `ENVIRONMENT_ISSUE` with evidence from DOM/network. Do not report as product `FAIL`.
 
@@ -251,7 +250,6 @@ Symptoms: patient selection succeeds, session template narrowing works, location
 2. Try a different location
 3. Attempt Quick Book with a different patient
 4. Check whether session templates need configuration (PACO Configuration → Sessions)
-5. Compare on feature-branch host if ticket was QA'd on feature branch
 
 **Escalation:** If slot search consistently returns empty for all valid configurations, classify as `ENVIRONMENT_ISSUE` (no available slots) or `BLOCKED: Quick Book slot search broken` with API evidence. Do not report as product `FAIL` unless configuration is correct and slots should exist.
 
@@ -349,15 +347,15 @@ CLI:
 - Resume: `npm run paco:replay -- resume --batch-id <id>`
 - Only reprocess tickets whose content changed (checksum comparison) or whose linked flow changed
 - Explicit `--force` flag required to revisit processed tickets
-- **Resuming PARTIAL/BLOCKED tickets:** Re-run knowledge discovery (Section 3) before replay. Prior recovery attempts may have resolved the blocker. Check whether the feature-branch host is now available or test data has changed.
+- **Resuming PARTIAL/BLOCKED tickets:** Re-run knowledge discovery (Section 3) before replay. Prior recovery attempts may have resolved the blocker. Check whether test data has changed.
 
 ## Environment strategy
 
-- Prioritize the environment specified by the ticket (feature-branch host if QA was on feature branch)
-- Use `pac2-8575.dev.blinxpaco-np.com` or `blinx.dev.blinxpaco-np.com` as comparison environments when necessary
-- Record actual host, branch/build, execution timestamp and user role in replay.md
-- **Do not mix results between hosts.** A pass on an alternate host is not proof that the target host passes.
-- If feature-branch host is not in `paco.config.yaml: allowedHosts`, record as `ENVIRONMENT_ISSUE: feature-branch host not whitelisted`
+- **Always replay on `blinx.dev.blinxpaco-np.com` (dev chung).** Feature-branch hosts are out of scope for replay.
+- Jira comments mentioning feature-branch hosts (e.g. "PASSED QA on FB <url>") are historical context only — they describe where original QA was done, not where replay must run.
+- Use `blinx.dev.blinxpaco-np.com` for all replay, regardless of which host the ticket was originally QA'd on.
+- Record actual host (`blinx.dev.blinxpaco-np.com`), execution timestamp and user role in replay.md.
+- If a feature's behaviour depends on code not yet merged to dev chung, report as `ENVIRONMENT_ISSUE: feature not available on dev chung`.
 
 ## Mutation Mode
 

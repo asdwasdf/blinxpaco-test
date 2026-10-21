@@ -117,3 +117,22 @@ Entries chronological, newest first:
 - Added: OQ-042 — DFD Config "Copy DFD link" chỉ sinh org-level link; cần patient-level link từ Comms Hub để reproduce defect transition
 - Source: PAC2-7727/exploration.md O-5, PAC2-7727/manual-execution.md TC-002, screenshot từ tester
 - Impact: TC-002 smoke scheduler load OK với org-level JWT link. TC-003..005 vẫn Blocked vì cần patient-level link (Comms Hub SSO gap OQ-040)
+
+**2026-10-18 (REPORT) — PAC2-3934**
+- Created: docs/tickets/PAC2-3934-allow-health-form-filing-across-different-organisations-in-paco-connect/{manifest.yaml, status.md, requirements.md, scenarios.md, workflow.md, replay.md, feature-location.md, report.md}
+- Reused from replay skill: docs/paco/tickets/PAC2-3934/{requirements.md, scenarios.md, replay.md}
+- Updated: feature-map.md — added "Consultation screen" route hint (blocked by PAC2-5445); Health Forms Designer entry now references PAC2-3934 Blocked; Last verified 2026-10-18
+- Added: OQ-041 (Answered) — host pac2-3934.dev.blinxpaco-np.com whitelist decision; tester declined
+- Added: OQ-044 (Open) — nhs-supergrid-be#2752 deployment state
+- Added: OQ-045 (Open) — PAC2-5445 release timeline
+- Survey: 4 views on dev chung blinx.dev.blinxpaco-np.com (dashboard, paco-connect/dashboard 404, health-forms, health-forms/inbox 404); consultation screen not accessible; AC1–AC4 Not Run
+- Source: PAC2-3934/feature-location.md, PAC2-3934/report.md, ticket PAC2-3934
+- Impact: ticket closed Blocked (technical dependency, không phải tooling). Resume yêu cầu unblock PAC2-5445 hoặc whitelist host riêng
+
+**2026-10-18 (RESUME) — PAC2-3934**
+- Updated: paco.config.yaml — added `pac2-3934.dev.blinxpaco-np.com` to `safety.allowedHosts` (tester approved)
+- Updated: status.md — Resumed workflow from INGEST → ANALYZE/LOCATE; flag `report.md` stale from previous blocked run
+- Updated: feature-map.md — consultation screen hint reflects retry attempt on dedicated host
+- Browser: navigated `https://pac2-3934.dev.blinxpaco-np.com/` → redirect `/login/` page (NHS Patient and Care Optimiser, GP Supergrid style)
+- Source: PAC2-3934/status.md 2026-10-18T03:20:00Z
+- Impact: ticket reopened for retry on dedicated host; blocker PAC2-5445 (consultation mode not opening) vẫn chưa release — sẽ verify trong LOCATE

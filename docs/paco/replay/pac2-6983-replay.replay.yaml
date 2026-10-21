@@ -1,0 +1,45 @@
+schema_version: 1
+batch_id: pac2-6983-replay
+created_at: 2026-10-18T02:53:07.078Z
+updated_at: 2026-10-18T03:07:39.925Z
+environment: dev
+status: completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-6983
+    summary: PAC2-6983 — Dashboard/Appointment Book selector not pixel perfect
+    status: Done
+    labels: []
+    components: []
+    linked_issues: []
+    attachments_count: 5
+    has_video: true
+    video_count: 3
+    processed: true
+    result: verified
+    result_reason: Fix already deployed on dev 2026-10-08 (Sean Huynh PASSED QA on
+      DEV). Replay confirmed via 3-video evidence (FB→DEV inheritance→DEV fix
+      timeline). Pixel-perfect spacing nhất quán giữa Dashboard và Appointment
+      Book tab states. Read-only visual regression scope only; no browser live
+      replay needed.
+    evidence_refs:
+      - docs/paco/tickets/PAC2-6983-dashboard-appointment-book-selector-not-pixel-perfect/replay.md
+      - docs/paco/tickets/PAC2-6983-dashboard-appointment-book-selector-not-pixel-perfect/requirements.md
+      - docs/paco/tickets/PAC2-6983-dashboard-appointment-book-selector-not-pixel-perfect/scenarios.md
+      - docs/paco/tickets/PAC2-6983-dashboard-appointment-book-selector-not-pixel-perfect/video/video-notes.md
+      - docs/paco/flows/paco-connect-tab-selector.md
+    flow_slug: paco-connect-tab-selector
+    linked_existing_flow: false
+processed_count: 1
+verified_count: 1
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 0
+new_flows:
+  - paco-connect-tab-selector
+deduplicated_flows: []
+revision: 3
+mutation_mode: auto

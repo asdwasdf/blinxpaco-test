@@ -1,0 +1,30 @@
+schema_version: 1
+batch_id: pac2-7136-replay
+created_at: 2026-10-18T10:09:28.413Z
+updated_at: 2026-10-18T10:50:22.875Z
+environment: dev
+status: completed
+batch_size: 1
+skip_imported: true
+tickets:
+  - key: PAC2-7136
+    summary: PACO Connect - Dark Mode Text is too dark on Group Quick Send
+    status: Done
+    labels: []
+    components: []
+    linked_issues: []
+    resolution_date: 2026-10-07
+    processed: true
+    result: verified
+    result_reason: Dark mode text contrast verified on Comms Hub
+processed_count: 0
+verified_count: 1
+failed_count: 0
+blocked_count: 0
+skipped_count: 0
+partially_replayed_count: 0
+not_reproducible_count: 0
+new_flows: []
+deduplicated_flows: []
+revision: 6
+mutation_mode: auto

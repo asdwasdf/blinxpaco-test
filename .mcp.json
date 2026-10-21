@@ -1,27 +1,27 @@
 {
   "mcpServers": {
-    "playwright-admin": {
-      "command": "npx",
-      "args": [
-        "@playwright/mcp@latest",
-        "--storage-state",
-        "playwright/.auth/admin-session.json"
-      ]
-    },
     "playwright-user": {
       "command": "npx",
       "args": [
         "@playwright/mcp@latest",
+        "--user-data-dir",
+        "playwright/.mcp-browsers/user",
         "--storage-state",
-        "playwright/.auth/user-session.json"
+        "playwright/.auth/user-session.json",
+        "--port",
+        "3101"
       ]
     },
     "playwright-plugin": {
       "command": "npx",
       "args": [
         "@playwright/mcp@latest",
+        "--user-data-dir",
+        "playwright/.mcp-browsers/plugin",
         "--storage-state",
-        "playwright/.auth/plugin-session.json"
+        "playwright/.auth/plugin-session.json",
+        "--port",
+        "3102"
       ]
     }
   }

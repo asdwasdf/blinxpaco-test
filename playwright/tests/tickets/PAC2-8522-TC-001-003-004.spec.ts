@@ -1,11 +1,11 @@
-import { test as base, expect, type Page } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { QuickSendPage } from '../../pages/QuickSendPage';
-import { AppShell } from '../../pages/AppShell';
 
 /**
  * PAC2-8522: Quick Send — Campaign tags display and edit
  * Specs: TC-001 (display tags), TC-003 (search existing tag), TC-004 (add/remove/persist)
  * Source: PAC2-8522 MANUAL_EXECUTE results (3 Pass)
+ * Note: uses authenticatedPage from auth-fixtures, not raw page.
  */
 
 const TICKET = 'PAC2-8522';
@@ -17,12 +17,6 @@ const SETTLE_MS = Number(process.env.PACO_STEP_MS ?? 1000);
 const featureBranchUrl = (path: string) =>
   `${BASE_URL}/paco-connect/feature-branch/${TICKET.toLowerCase()}${path}?qs_campaign_tags=true`;
 
-interface CampaignTagFixtures {
-  qs: QuickSendPage;
-  shell: AppShell;
-  testTag: string;
-}
-
 // Environment vars (set in .env or CI):
 // PACO_TEST_PATIENT_NHS=NHS 000000
 // PACO_TEST_PATIENT_SEARCH=TEST_PATIENT
@@ -30,12 +24,6 @@ interface CampaignTagFixtures {
 const testPatientNhs = process.env.PACO_TEST_PATIENT_NHS ?? 'NHS 000000';
 const testPatientSearch = process.env.PACO_TEST_PATIENT_SEARCH ?? 'TEST_PATIENT';
 const testTag = process.env.PACO_TEST_TAG ?? '[Bootcamp] QOF [AST007]';
-
-const campaignFixture = base.extend<CampaignTagFixtures>({
-  qs: ({ page }, use) => use(new QuickSendPage(page)),
-  shell: ({ page }, use) => use(new AppShell(page)),
-  testTag,
-});
 
 // ─── TC-001: Campaign tags display ───────────────────────────────────────────
 

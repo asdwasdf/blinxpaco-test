@@ -9,8 +9,13 @@ Orchestrator cấp cha cho product discovery ngoài ticket. Chỉ skill này đi
 
 ## Điều kiện bắt đầu
 
-- Cần `environment`, `role`, `run_id` và tab Claude Playwright plugin đã đăng nhập thủ công. Dùng plugin-first; không mở browser riêng, không CDP fallback, không private API. Không đọc, copy, ghi hoặc report credentials, cookies, tokens, headers hay auth state.
+- Cần `environment`, `role`, `run_id` và tab Claude Playwright plugin đã đăng nhập. Dùng plugin-first; không mở browser riêng, không CDP fallback, không private API. Không đọc, copy, ghi hoặc report credentials, cookies, tokens, headers hay auth state.
 - CLI `npm run paco:discover` chỉ quản lý state. CLI không xác nhận đăng nhập; skill phải tự xác minh trang authenticated và đúng role trên tab trước task đầu và sau mỗi resume.
+
+**Auto-login pre-flight (before init/resume):**
+1. Run `CHECK_AUTH_SCRIPT` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. If `authenticated: true` → proceed.
+2. If `authenticated: false`, call `buildFullLoginScript()` from `scripts/paco-auth-helper.ts` via `browser_evaluate`. Retry `CHECK_AUTH_SCRIPT`.
+3. If still unauthenticated, direct tester to `npm run auth:login`; stop until tester confirms.
 - Auto-mutation is enabled by `mutationMode: auto` in the discovery task's `manifest.yaml`, written by `applyTicketMutationMode()` on intake. Default is `auto` whenever the host is in `paco.config.yaml: safety.allowedHosts` or `externalDevHosts`. Mutations are normal exploration operations: the agent should run tests, create/update/delete owned test data, submit forms and trigger workflows without per-action approval. Do not edit env vars or write `manifest.yaml` directly.
 
 Safety still enforced in `auto` mode: hostname allowlist, safe test data (no real PII, `QA-test` prefix on records this run creates; historical `QA-AUTO` accepted), approved recipient for `SEND` (`fiona.nguyen@blinxsolutions.com` for email; SMS requires explicit tester confirmation each time), production/unknown host blocked, mutation ledger written with redacted before/after state, cleanup owned records on success, leftover log on cleanup fail. External authorization from tester is still required for destructive mutations and for SMS.
