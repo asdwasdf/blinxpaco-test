@@ -13,6 +13,21 @@ Entries chronological, newest first:
 
 ## Log
 
+**2026-10-21 — PAC2-7579, bounded diagnostic generation 403**
+- Updated: restore own source và persisted tag read-back; fresh PAC admin login, cùng prompt vẫn `403`. UI-triggered `POST /paco/feature-branch/pac2-7579/undefined/v1/chat/completions` trên frontend host trả `403` `[Observed]`; nghi AI base URL thiếu/sai config `[Inferred]`, exact variable/root cause reject chưa biết. Không endpoint rewrite/bypass.
+- Source: `PAC2-7579/test-data-ledger.md#chẩn-đoán-403-theo-tester--2026-10-21`; evidence local `test-results/PAC2-7579-403-diagnosis-20261021.json`.
+- Impact: owner deployment cần kiểm tra URL config trước retry; không B/Save/Send/verdict tag inheritance. Cancel/Close dialogs `0`; source cleanup lại deleted/restore state sau reload. Giữ `LOCATE Blocked`, legacy schema và discovery checkpoint.
+
+**2026-10-21 — PAC2-7579, source mới và generation blocker**
+- Updated: NHS own tagged SMS Quick Send persisted qua reopen detail; source mới chọn được trong PACO branch. `Generate Templates` trả UI `HTTP error! status: 403` với hai cấu hình options, chưa có B/Save/Send hoặc verdict tag inheritance. Không suy root cause quyền/backend/channel.
+- Source: `PAC2-7579/test-data-ledger.md#source2-paco-handoff-và-assist--2026-10-21`, `feature-location.md`, `status.md`; evidence local `test-results/PAC2-7579-source2-assist-20261021.json`.
+- Impact: OQ-046 trả lời một phần persisted tag/source mới availability; generation là blocker hiện tại. Cleanup source mới tới deleted/restore state sau reload, không hard absence; source cũ retained. `LOCATE Blocked`, `EXPLORE stale`; legacy schema/discovery checkpoint không đổi.
+
+**2026-10-21 — PAC2-7579, retry deployed feature branch**
+- Updated: tester cung cấp `/paco/feature-branch/pac2-7579`; branch dashboard → patient actions `Quick Send` → `PACO Assist` → `Write my templates` mở form `Create Campaign with PACO Assist`. Route entry/form và OQ-046 được cập nhật, không nâng full campaign-base flow thành verified.
+- Source: `PAC2-7579/feature-location.md`, `test-data-ledger.md`, `status.md`; form evidence local `test-results/PAC2-7579-featurebranch-assist-form.yml`.
+- Impact: browser connection hoạt động và SMS Assist form mở được; mainline license/connection observations không phải blocker hiện tại cho entry này. Own source không có trong picker, NHS auth recheck `false`; persisted tag/cleanup pending. Đã cancel/close, không mutation/B/send hoặc product `Pass`/`Fail`. `LOCATE Blocked`, `EXPLORE stale`; legacy schema không tự migrate. Locate budget vượt ceiling, dừng scan.
+
 **2026-10-21 — PAC2-7579, checkpoint `LOCATE`**
 - Updated: `feature-map.md` thêm campaign-base route hint và ticket row `LOCATE Blocked`; `workflows/comms-hub.md` thêm logic không kế thừa Comms Hub tag; `open-questions.md` thêm OQ-046 về license/context và full A → B flow.
 - Source: `PAC2-7579/ticket.md` Description, `requirements.md`, `feature-location.md`, `test-data-ledger.md`, `status.md`.

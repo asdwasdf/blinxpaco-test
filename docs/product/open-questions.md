@@ -386,11 +386,12 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Answered:** -
 
 **ID:** OQ-046
-**Status:** Open
-**Question:** Context dev nào được cấp license cho `PACO Assist` trong `Quick Send` composer, và luồng chọn tagged campaign A làm base rồi tạo campaign B bằng Assist ở đâu khi prerequisites hợp lệ? `Super Admin GB` / `Haringey Demo Org` hiện `Premium Feature` / `Upgrade your license to unlock`; context cuối `Primary Care 24` / `PAC2-6186 SUPER ADMIN` chưa được kiểm chứng license.
-**Impact:** High — chặn kiểm tra Comms Hub tag inheritance PAC2-7579; panel `Generate Templates` riêng chưa chứng minh luồng A → B.
-**Evidence:** `[Observed / Open Question]` PAC2-7579/feature-location.md, test-data-ledger.md (2026-10-21). Tab `Campaigns` lặp frontend HTTP `404`; chưa kết luận root cause hoặc không có inventory. Khác OQ-016 (quyền update campaign tags), không dùng license gate làm product `Fail`.
+**Status:** Open (partially answered)
+**Question:** Dependency nào chặn `Generate Templates` trên branch `pac2-7579` với UI `HTTP error! status: 403`, và full tagged A → `PACO Assist` → B có bỏ Comms Hub tag đúng expected không? Source cũ unavailable chưa rõ nguyên nhân; không suy ra do org/channel/license.
+**Impact:** High — generation chặn tạo B và kiểm tra tag inheritance PAC2-7579; không phải product `Fail`.
+**Evidence:** `[Observed / Open Question]` PAC2-7579/test-data-ledger.md#source2-paco-handoff-và-assist--2026-10-21; `test-results/PAC2-7579-source2-assist-20261021.json`. NHS admin home/viewing `Haringey Demo Org`: source mới SMS Quick Send persisted tag và chọn được trong branch picker dưới `Super Admin GB` / `test again - old location`. Generate với synthetic prompt trả UI `403` cả SMS-only và default options; không B/Save/Send. Cancel/Close dialogs `0`; source mới Delete/Confirm rồi reload có Restore action, không hard absence. Không suy root cause từ UI. Khác OQ-016 (quyền update campaign tags).
+**Diagnostic:** Fresh PAC admin login không khắc phục. UI-triggered `POST /paco/feature-branch/pac2-7579/undefined/v1/chat/completions` trên frontend host trả `403` `[Observed]`; literal `undefined` gợi ý AI base URL thiếu/sai config `[Inferred]`, exact build/runtime variable và nguyên nhân reject chưa biết. Cần owner deployment kiểm tra; không rewrite endpoint/bypass. — PAC2-7579/test-data-ledger.md#chẩn-đoán-403-theo-tester--2026-10-21; `test-results/PAC2-7579-403-diagnosis-20261021.json`.
 **Created:** 2026-10-21
-**Answered:** -
+**Answered:** Một phần 2026-10-21 — persisted source tag/source mới availability và request sai target đã quan sát; full A → B vẫn Open do generation `403`.
 
 ## Tester notes

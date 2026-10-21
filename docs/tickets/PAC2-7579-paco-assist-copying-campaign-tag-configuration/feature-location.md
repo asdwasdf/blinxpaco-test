@@ -3,10 +3,22 @@
 **Scope:** `dev`, `blinx.dev.blinxpaco-np.com`; Comms Hub dev trong allowlist.
 **Role/context đã quan sát:** `Super Admin GB`, `Haringey Demo Org`.
 **Updated:** 2026-10-21.
-**Route status cho toàn bộ ticket:** `Blocked` — chưa hoàn tất Quick Send A → `PACO Assist` → campaign B.
-**Budget:** ceiling `12` meaningful views / `15` phút; lần tiếp tục đã vượt thời gian. Không có counter đủ tin cậy để ghi tổng views; dừng, không tiếp tục scan.
+**Route status cho toàn bộ ticket:** `Blocked` — chọn được own tagged source2 và mở `Create Campaign with PACO Assist` trên branch; generation trả UI `403`, chưa tạo B.
+**Budget:** ceiling `12` meaningful views / `15` phút. Mainline và lần retry branch bắt đầu khoảng `10:41 UTC` đều vượt thời gian; không reset budget sau compaction. Không có counter đủ tin cậy để ghi tổng views. Đã dừng scan và đóng form/composer.
 
-## Entry đã xác minh
+## Feature branch PAC2-7579 — entry form đã xác minh
+
+- Tester cung cấp `https://blinx.dev.blinxpaco-np.com/paco/feature-branch/pac2-7579`; UI chuyển tới `/paco/feature-branch/pac2-7579/dashboard`. Đây là route ứng dụng, không phải Git branch. `[Tester-provided / Observed: 2026-10-21]`
+- Context đọc từ UI: `Super Admin GB` / `Haringey Demo Org`. Browser plugin hoạt động trong retry này; thông báo `CONNECTION_CLOSED` ở checkpoint cũ không còn là blocker hiện tại. `[Observed]`
+- Ordered entry: branch dashboard → global patient search → `Patient actions menu` → `Quick Send` → `PACO Assist` → `Write my templates` → `Create Campaign with PACO Assist`. Menu còn có `Optimise message`; chưa dùng option này. `[Observed]`
+- Composer đang ở `SMS`; `Enable Email` disabled trong patient context đã mở. Không sửa patient, contact, campaign có sẵn hoặc tài nguyên gắn sẵn. Không suy ra Email Assist/license toàn hệ thống thay đổi. `[Observed]`
+- `Select Campaign`: search chính xác `QA-test-7579-source1` trả `No available options`; đã clear search, không chọn campaign vào draft. Không kết luận source bị xóa hoặc nguyên nhân do org mismatch. `[Observed]`
+- Form có required `What is this campaign for?`, hướng dẫn `Minimum 10 characters. Do not include any patient names or personal information.`; `Tone` mặc định `Friendly`; `Email` và `SMS (Optimised)` checked; `Booking Link` checked, `Health Form` unchecked; `Additional Details (Optional)`; `Generate Templates` disabled khi prompt trống. Đây là trạng thái UI, chưa kiểm thử validation hoặc generate. `[Observed]`
+- Đã `Cancel` form rồi `Close` composer; kiểm tra còn `0` visible dialogs. Không nhập prompt, generate, save, tạo B, recipient, send hoặc schedule. `[Observed]`
+- Recheck NHS tại `11:00 UTC`: mở `/commshub/campaign-manager` chuyển tới `/commshub/login`; auth check trả `false`. Chưa read-back tag hoặc cleanup own source. Helper auth hiện chỉ export functions, không có CLI login runner cho tab plugin; không đưa credentials vào tool args hoặc đọc auth state. `[Observed: URL/UI; Inferred: cần khôi phục auth trước read-back]`
+- Evidence local: `test-results/PAC2-7579-featurebranch-assist-form.yml` (chỉ form, đã đọc/review); search/menu/dialog counts từ live browser tools. Raw evidence khác chưa duyệt để chia sẻ. Full A → B và tag inheritance vẫn chưa được kiểm tra.
+
+## Entry mainline đã xác minh trước retry branch
 
 ### Quick Send composer
 
@@ -33,17 +45,25 @@
 - Sidebar `Comms Hub` → `Campaign Manager`: tới `nhs-comms-hub-dev.blinxhealthcare.com/commshub/campaign-manager`, rồi `/commshub/login`; UI báo `You were signed out due to inactivity. Please sign in again.` Không khẳng định chỉ có SSO; password login đã dùng được trước đó. `[Observed: 2026-10-21 khoảng 09:12 UTC]`
 - Cuối lần tiếp tục, UI chuyển sang `Primary Care 24` / `PAC2-6186 SUPER ADMIN` ngoài chuỗi chọn context đã hoàn tất của agent; nguyên nhân chưa rõ. Query `test` không có kết quả. Chưa kiểm chứng license hoặc Assist trong context này. `[Observed: 2026-10-21 khoảng 09:39–09:41 UTC]`
 
+## Admin-account source recheck — 2026-10-21 12:21 UTC
+
+- `[Observed]` `PAC_ADMIN_*` account login được đúng `Super Admin GB` / `Haringey Demo Org` / `test again - old location`; role unavailable trước đó chỉ quan sát trên PAC account khác. Branch dashboard authenticated. Không thay env hoặc cấp quyền.
+- `[Observed]` Known route patient search → `Quick Send` → `(click to change)` → `Select Campaign`, exact `QA-test-7579-source1` + `Enter` trả `No available options`. Recheck ở hai test patient contexts: một `email not on file`, một `email on file`; source matches `0` ở cả hai. `Enable Email` disabled cả hai; nguyên nhân chưa xác định. Không chọn campaign hoặc sửa patient/shared data.
+- `[Observed]` Đã clear search/close composer; `0` visible dialogs, auth `true`. Không B/generate/save/send. Evidence: `test-results/PAC2-7579-admin-picker-recheck-20261021T1221.json`. Không reset exhausted scan budget; chỉ kiểm tra lại dependency admin-account tại route đã biết.
+
 ## Blockers và safety
 
-- `PACO Assist` trong composer chặn tại thông báo license của context đã kiểm tra. Chưa biết context được cấp license phù hợp; không sửa quyền/license để vượt gate.
-- Campaign list load HTTP `404` là blocker quan sát được, chưa đủ xác định root cause backend/deployment hoặc phân loại thành defect riêng.
-- Comms Hub session hết hạn; chưa read-back tag sau save hoặc cleanup own source `QA-test-7579-source1`. Last observed source có trong list; xem `test-data-ledger.md`.
+- Branch `pac2-7579` đã mở form Assist; license gate mainline không phải blocker cho entry SMS đã kiểm tra trên branch. Không thay quyền/license hoặc suy rộng sang context khác.
+- `[Observed: 2026-10-21, source2 retry]` Tester yêu cầu tạo source khác. NHS home/viewing `Haringey Demo Org`; own source2 SMS `Quick Send`, persisted read-back `1` tag `Test tag - no codes`. PAC admin branch cùng role/org/location tìm đúng `1` match source2 và chọn được. Source1 unavailable là lịch sử riêng, chưa xác định nguyên nhân. Evidence: `test-data-ledger.md#source2-paco-handoff-và-assist--2026-10-21`, `test-results/PAC2-7579-source2-assist-20261021.json`.
+- `[Observed]` Blocker mới: `Generate Templates` trả `HTTP error! status: 403` với synthetic prompt, SMS-only options và retry default options. Không có generated template/B/Save/Send; không suy ra root cause quyền/backend. `Cancel`/`Close`, xác minh `0` visible dialogs. Source2 cleanup qua Delete/Confirm; reload/expand vẫn listed với `Restore` thay `Delete` (deleted/restore state, không hard absence). Source1 retained.
+- `[Observed: diagnostic 2026-10-21]` Restore/read-back source2, fresh PAC admin login rồi cùng prompt vẫn `403`. UI-triggered `POST /paco/feature-branch/pac2-7579/undefined/v1/chat/completions` trên frontend host trả HTTP `403`, không transport failure. `[Inferred]` AI base URL thiếu/sai cấu hình; chưa biết exact variable hoặc nguyên nhân reject, không kết luận quyền/license. Không rewrite endpoint/probe/bypass. Cancel/Close dialogs `0`, cleanup source2 lại deleted/restore sau reload. Evidence: `test-results/PAC2-7579-403-diagnosis-20261021.json`.
+- Campaign list load HTTP `404` chỉ được quan sát trên mainline; chưa recheck grid trên branch. Chưa đủ xác định root cause backend/deployment hoặc phân loại thành defect riêng.
 - Không có campaign B, recipient hoặc send; không có kết luận `Pass`/`Fail` về tag inheritance.
 - Legacy manifest thiếu schema/revision hợp lệ; không tự đánh dấu downstream phase complete. Raw browser evidence chỉ local, chưa duyệt để chia sẻ.
 
 ## Next action
 
-Khi session/license dependency thay đổi: xác minh role/org từ UI → mở composer theo entry trên → kiểm tra Assist gate → đọc lại tag của own source trong Comms Hub → chỉ chạy A → B trên owned `QA-test` data nếu gate cho phép. Kiểm tra tag trước save và sau reopen, không send; cleanup source/copy và ghi leftovers nếu không xóa được. Không lặp rejected routes với dependency không đổi.
+Khôi phục khả năng `Generate Templates` trên branch sau UI `403`; không scan lại route hoặc tạo thêm source khi dependency chưa đổi. Khi tiếp tục: recheck auth/gate, reconcile own source2 hiện deleted/restore state trước khi restore có ledger; chạy A → Assist → B, kiểm tra tag trước Save New và sau reopen, không Send. Cleanup own source/copy, báo source1 retained và deleted source2 record; không claim hard absence.
 
 Ghi chú tester phía dưới giữ nguyên lịch sử; nhận định cần branch trong ghi chú chưa được xác minh và không dùng làm quyết định hiện tại.
 

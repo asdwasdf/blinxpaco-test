@@ -9,7 +9,7 @@ execution:
   history: []
 mutationMode: auto
 featureLocation:
-  route: "/paco/quick-send → global patient search → Patient actions menu → Quick Send → PACO Assist (license blocked; full campaign-base flow unverified)"
+  route: "/paco/feature-branch/pac2-7579/dashboard → global patient search → Patient actions menu → Quick Send → PACO Assist → Write my templates → Create Campaign with PACO Assist (owned tagged source2 selected; Generate Templates UI 403, full campaign-base flow unverified)"
   stale: true
   routeStatus: Blocked
   verifiedAt: 2026-10-21
@@ -23,7 +23,7 @@ phases:
     status: blocked
     updatedAt: 2026-10-21
     completedAt: 2026-10-19T16:30:00Z
-    note: Prior completion retained as history only; current campaign-base workflow unavailable at PACO Assist license gate.
+    note: Prior completion retained as history only; branch selects newly created owned tagged source2, but Generate Templates returns UI 403 in two option configurations. No B or tag inheritance verdict; source2 cleaned to deleted/restore state.
   - phase: EXPLORE
     status: stale
     updatedAt: 2026-10-21
@@ -46,38 +46,33 @@ artifacts:
   - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/video/video-notes.md
     checksum: 72c1bc6874951974082e08094483de08bb0c1f9594d9fa24e806aceb36a35dc7
   - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/feature-location.md
-    checksum: cc887b60426d6a732b57d390a67466e1ac3e7205c128cc97855f5e858d820260
+    checksum: bad0da9fb9baa9d656cf194ba6cdef4d892977c96b9ed1d5debecfa864237376
   - path: docs/tickets/PAC2-7579-paco-assist-copying-campaign-tag-configuration/test-data-ledger.md
-    checksum: 2c25548ab6cf7084475239aaac6cdd33732ef38ce5fdbb82531af7a305eba1e6
+    checksum: bde19af94a46d3264b807560fe3a5a0ed44b575e7a8902b6c7f94e579ef34e01
   - path: docs/product/feature-map.md
-    checksum: 9a676686d5651698d731b00c9b6a1bbe9b185ddf54ddb7b28b0586d81b80b759
+    checksum: 3eac5e0f1c142952c480836c23725806b25c7ac3b8323759a044f6428a5f65ec
   - path: docs/product/workflows/comms-hub.md
-    checksum: 8be9c379b1973bc8479d66269d6e22585c9b40b9f31f8ea700f68fe4175ff697
+    checksum: 665317c284e40a6669e993cd451ad823f442131102ab097568b5b5c3186ab23f
   - path: docs/product/open-questions.md
-    checksum: eb4075e00a54df3e81a7e873f4660d913bb0f4a7c3a2f9feb725bc9ddbb70762
+    checksum: 40072056cc158b1b3829fc814cea321534489fce9d3e411056e83273190f0b46
   - path: docs/product/change-log.md
-    checksum: 68b6775133a7886dd33c0f172c5ba27f998a023e87c6467f5167c7a5faa4ef7c
+    checksum: 610924ad4bec6b752ae41758c5db19e2a0415d5095a98c8594a0fac4d8ee533f
 blockers:
-  - type: permission
-    phase: LOCATE
-    description: Quick Send composer PACO Assist displays Premium Feature / Upgrade your license to unlock for Super Admin GB at Haringey Demo Org. Campaign-base to new-campaign flow not completed; no tag inheritance result.
   - type: technical
     phase: LOCATE
-    description: Fresh navigation to /paco/quick-send Campaigns repeats frontend getAllCreatedCampaigns HTTP 404; source cannot be selected from this grid. Do not infer empty inventory or absent deployment.
-  - type: authentication
-    phase: EXPLORE
-    description: Comms Hub dev session expired. Owned source QA-test-7579-source1 awaits tag read-back and cleanup; no campaign copy, recipient or send.
+    description: Fresh PAC admin login still reproduces generation 403. UI-triggered POST to /paco/feature-branch/pac2-7579/undefined/v1/chat/completions on frontend host returns HTTP 403; literal undefined suggests missing/malformed AI base URL config, exact variable and rejection cause unverified. No endpoint rewrite/API replay/bypass, B/Save/Send or tag inheritance verdict. Source2 restored/read-back for diagnosis then cleaned to deleted/restore state.
   - type: technical
     phase: LOCATE
     description: Unversioned legacy manifest fails validateManifest; reconcileManifest is a no-op for this shape. No automatic migration or invented input revision; CLI workflow remains blocked.
 warnings:
   - Prior all-Connect-routes-missing and SSO-only assumptions are superseded by live observations; do not use them as blockers.
   - PACO Assist template-generation panel at /paco/quick-send/campaign is not evidence that campaign-base copying was exercised.
-  - Current browser context changed to Primary Care 24 / PAC2-6186 SUPER ADMIN outside the completed agent selection sequence; cause unknown and license not checked there.
-  - LOCATE continuation exceeded default 15-minute ceiling; investigation stopped with documented candidates and exact next action.
+  - Mainline context previously changed to Primary Care 24 / PAC2-6186 SUPER ADMIN outside the completed agent selection sequence; cause unknown. Current branch header verified Super Admin GB / Haringey Demo Org.
+  - Mainline LOCATE and branch retry starting around 10:41 UTC exceeded default 15-minute ceiling; no reliable total view count, no timer reset after compaction. Form/composer closed; scan stopped with exact next action.
   - MCP run manager reports no active allocation; existing plugin session has no tracked run ID. No retroactive allocation or process cleanup performed.
   - Raw browser output remains local and is not approved for sharing; auth-bearing response file generated earlier was removed.
-  - Browser servers playwright-plugin and playwright-user reported CONNECTION_CLOSED at checkpoint; no fresh auth/license verification was performed.
+  - Browser servers reported CONNECTION_CLOSED at the prior checkpoint; current branch retry successfully used tabs/click/evaluate/snapshot and opened the Assist form. Connection is not a current blocker; no new login or entitlement change was made.
+  - Mainline license tooltip and repeated getAllCreatedCampaigns HTTP 404 remain historical observations only; branch SMS Assist form opened and branch Campaigns grid was not rechecked. Do not generalize across branch/channel/context.
   - Global docs validation failed because PAC2-7398 reached EXPLORE/REPORT but is missing from docs/product/feature-map.md; unrelated ticket was not changed.
   - Artifact checksums record current bytes only; they do not establish a historical input revision or make the legacy manifest schema valid.
 checkpointHistory:
@@ -87,11 +82,49 @@ checkpointHistory:
     previousPhaseStatus: complete
     previousExploreStatus: complete
     message: Replaced unsupported location completion with verified Quick Send composer entry plus license/load blockers; no product Pass/Fail and no schema migration.
+  - date: 2026-10-21
+    phase: LOCATE
+    outcome: blocked
+    dependencyChange: Tester supplied deployed application route /paco/feature-branch/pac2-7579.
+    message: Branch dashboard and Super Admin GB / Haringey Demo Org verified. PACO Assist / Write my templates opens Create Campaign with PACO Assist in SMS composer; exact owned-source search returns No available options and NHS auth check is false. Cancelled form and closed composer, no app-data mutation, B or product Pass/Fail. Legacy schema unchanged; discovery checkpoint untouched.
+  - date: 2026-10-21
+    checkedAt: 2026-10-21T11:25:59Z
+    phase: LOCATE
+    outcome: blocked
+    message: Resume auth recheck only; browser plugin works, NHS dev Campaign Manager redirects to login and CHECK_AUTH_SCRIPT returns false. Manual login requested; no scan restart, mutation, B, source recreation, cleanup or schema migration. Source checksum unchanged; mcp run ports lists no allocation.
+    evidence: test-results/PAC2-7579-auth-resume-20261021T1125.json
+  - date: 2026-10-21
+    phase: LOCATE
+    outcome: blocked
+    dependencyChange: Tester explicitly allowed env read and specified NHS admin login credentials.
+    message: NHS authenticated true after admin login; exact search plus Enter and expansion of Non-Shared Campaigns found owned source row 558. Campaign Details read-back confirmed one persisted tag Copied from Template QOF Cervical Smear; Cancel closed detail with no Save or app-data mutation. PACO tab at login; branch picker and legacy schema still block A-to-B. No credentials or auth state recorded.
+    evidence: test-results/PAC2-7579-nhs-source-readback-20261021T1136.json
+  - date: 2026-10-21
+    phase: LOCATE
+    outcome: blocked
+    dependencyChange: PAC_ADMIN account checked instead of PAC account; Super Admin GB available and selected with configured org/location.
+    message: PACO branch authenticated. Known-route source picker rechecks in two test patient contexts, email absent and email on file, both return No available options for exact owned source. Enable Email disabled in both, cause unknown. Composer closed, zero visible dialogs; no app-data mutation, B, send or cleanup. Legacy schema unchanged; no scan reset.
+    evidence: test-results/PAC2-7579-admin-picker-recheck-20261021T1221.json
+  - date: 2026-10-21
+    phase: LOCATE
+    outcome: blocked
+    dependencyChange: Tester authorized another owned source; new tagged SMS Quick Send persisted and selectable in branch.
+    message: Created source2 row 4467, reopened detail confirms one tag Test tag - no codes. Selected in branch as Super Admin GB; Assist generation UI 403 in SMS-only and default option attempts. No B/Save/Send. Cancel/Close verified zero dialogs. NHS Delete/Confirm cleanup followed by reload/search/expand shows source2 with Restore action, deleted/restore state not hard absence. Source1 unchanged; legacy schema and discovery checkpoint unchanged.
+    evidence: test-results/PAC2-7579-source2-assist-20261021.json
+  - date: 2026-10-21
+    phase: LOCATE
+    outcome: blocked
+    dependencyChange: Tester requested diagnosis and retry of generation 403.
+    message: Restored owned source2, read back persisted tag/type, fresh PAC admin login and source selection. Same synthetic SMS prompt reproduced 403; response metadata shows POST to branch /undefined/v1/chat/completions on frontend host. Missing/malformed AI base URL inferred, exact config and rejection cause unverified. No auth data/body/headers read, endpoint rewrite or bypass. Cancel/Close zero dialogs; Delete/Confirm cleanup, reload shows Restore 1 and Delete 0. No B/Save/Send; schema/discovery unchanged.
+    evidence: test-results/PAC2-7579-403-diagnosis-20261021.json
 leftovers:
   - name: QA-test-7579-source1
     host: nhs-comms-hub-dev.blinxhealthcare.com
-    state: Last observed in campaign list; tag read-back and cleanup pending, session expired.
-nextAction: Restore browser connection, verify dev session and licensed PACO Assist context; read back own source tag, then complete A-to-B flow and cleanup only when prerequisites are available.
+    state: Reverified in campaign list and detail; persisted tag Copied from Template QOF Cervical Smear. Cancelled without Save; retained for pending A-to-B, cleanup pending.
+  - name: QA-test-7579-source2-20261021
+    host: nhs-comms-hub-dev.blinxhealthcare.com
+    state: Restored and persisted tag/type reverified for 403 diagnostic, then UI Delete/Confirm cleanup. Reload/search/expand lists row 4467 with Restore 1 and Delete 0; deleted/restore state, not hard absence.
+nextAction: Deployment owner checks branch AI base URL config because UI generation POST targets /paco/feature-branch/pac2-7579/undefined/v1/chat/completions and gets 403 after fresh login. Exact variable/rejection cause unverified. Retry UI only after deployment dependency changes; no endpoint substitution/bypass or further source creation. Recheck auth/gate and reconcile deleted source2 before ledgered restore; generate B then check tag before Save New and after reopen, no Send. Source1 retained, source2 deleted record disclosed; legacy migration needs approval before CLI.
 video:
   source: ticket/PAC2-7579-paco-assist-copying-campaign-tag-configuration/attachments/126650-20260911-1530-05.8922959.mp4
   status: reviewed
