@@ -20,7 +20,8 @@
     "validate:static": "bash validate-config.sh && bash validate-standards.sh && bash validate-docs-structure.sh && bash validate-skills.sh && bash validate-playwright.sh",
     "type-check": "tsc --noEmit",
     "test:synthetic": "node --loader ts-node/esm/transpile-only --test scripts/tests/synthetic-workflow.test.ts",
-    "test:fixtures": "node --loader ts-node/esm/transpile-only --test scripts/tests/*.test.ts"
+    "test:fixtures": "node --loader ts-node/esm/transpile-only --test scripts/tests/*.test.ts",
+    "explore:run": "node --loader ts-node/esm scripts/explore-run.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

@@ -47,8 +47,11 @@ roles:
       run_id: null
       started_at: null
       budget: { max_features: 6, max_minutes: 120, max_meaningful_states: 80 }
-      used: { features: 0, minutes: 0, meaningful_states: 0 }
+      used: { features: 0, minutes: 0, meaningful_states: 0 }   # minutes = active minutes (npm run explore:run)
+      locked_role: null             # set by explore:run start; header role khác → role_drift
+      last_tick_at: null
+      pending_mutation: null        # ledger line đang chạy; xóa khi đã ghi kết quả
       current_target: null
-      stage: done                   # mapping | exploring | cleanup | paused | done
+      stage: done                   # running | paused | done
     runs: []                        # one line per run: { run_id, date, stage, progress, outcome_path }
     next_steps: []                  # ≤5 items, ≤1 sentence each
