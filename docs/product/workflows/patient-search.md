@@ -132,6 +132,37 @@
 - **0/1 bounded branch**, `Partial (read-only)`: offline open/map/close `Skipped`, result `Blocked`; validation/transitions/persistence `Not Run`, cleanup `N/A`. Không offline control click, patient selection, download, enable hoặc Save.
 - Không tạo record, new relationship hoặc mutation; saved-patient decision OQ-065 vẫn pending. Chỉ retry offline entry khi OS context prerequisite thay đổi.
 
+## Super Admin GB saved lifecycle — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#2–4`. Authorization `DEC-patient-fixture` đã answered; historical breadth và offline boundary giữ riêng, không cộng denominators.
+
+### Main workflow, validation và persistence
+
+1. Mở `Create new patient`, điền owned synthetic surname letters-only và Date of Birth; `Personal` chọn offered `Title`, `Gender`, First Name, giữ English. Không cần `PDS Check` để đi tiếp.
+2. `Contact` để email/phone trống và SMS/Email consent off. `Address` yêu cầu `Postcode`: invalid synthetic text và special postcode hiện `Please enter a valid UK postcode`; ordinary-format non-residential postcode bỏ message và bật `Create`. Chưa có trusted contract cho special postcode nên không kết luận defect.
+3. `Create` một lần đóng form và hiện `New patient created.`; exact owned list search trước/sau reload đều một row với identity/DOB đúng. NHS Number trống vẫn Create thành công trong flow này, không suy server-wide optional rule.
+4. Owned `Edit` → `Personal` → `Known As`: header Close bỏ draft, separate reopen readback blank. Sau đổi value synthetic khác và `Save` một lần, reload exact query giữ `known_as` cell mới.
+5. Owned row `Actions` → `Profile` tới `/paco/patient-profile/:id/dashboard`; actual role, owned identity và updated `Known As` đều visible. Đây two-sided source/update → Profile receiver edge, không clinical mutation.
+
+### Mutation coverage — saved pass
+
+| Branch | Status | Observed end state / reason | Persistence | Cleanup |
+|---|---|---|---|---|
+| Owned Create / submit | Performed | Form closed, owned result verified | Reload verified | Retained (approved) |
+| Invalid / accepted Postcode gate | Performed | Exact message rồi enabled Create | Draft only | Done |
+| Exact search / reload readback | Performed | Một owned row, identity/DOB giữ | Verified | Retained (approved) |
+| Edit Known As / Close | Performed | Separate owned reopen giữ blank | Discard verified | Done |
+| Edit Known As / Save | Performed | Exact updated cell sau reload | Verified | Retained (approved) |
+| Profile handoff | Performed | Owned identity và updated field tại receiver | Receiver readback | Retained (approved) |
+| Duplicate / server-required validation | Skipped | Chưa attempt duplicate hoặc bypass client gate | Not Run | N/A |
+| Archive / Restore | Skipped | Fixture được duyệt giữ cho booking/media | Not Run | N/A |
+| PDS / NHS / offline / relationship creation | Skipped | Independent scopes chưa chạy | Not Run | N/A |
+
+- **6/9 bounded branches**, 2 persisted mutations trên 1 owned patient, 1 two-sided relationship. Dimensions navigation `done`; main_workflow, branches_states, mutation, validation, persistence, relationships, errors_edge `partial` vì các lifecycle còn lại chưa exercise.
+- Automation: hidden tab controls vẫn mounted; scope visible panel hoặc exact label. Pinned Actions row dùng cùng row index với exact owned result, không assume tên nằm trong pinned row. Native pointer/menu geometry có delayed/stale end state; chờ specific heading trước action tiếp, không replay full batch sau timeout.
+- `patient-edit.js` Inconclusive do unexpected blank Create ở reopen; reconciliation độc lập verified discard, riêng Save continuation và reload verified update. Script execution khác branch outcome; không đổi full script thành Pass.
+- Cleanup: không unsaved draft còn lại, patient cố ý retained theo approval; historical Session occurrence uncertainty không đổi. Duplicate, server rules, audit và clinical filing chưa verified.
+
 ## Lịch sử ticket / feature-branch (2026-10-13)
 
 Các phần dưới mô tả scope read-only cũ, không phải safety policy cho autonomous hiện tại.

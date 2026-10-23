@@ -97,6 +97,18 @@ Preflight không mở business workflow; 0 business branch end states, validatio
 
 3/8 bounded branches, `Partial (read-only)`. Validation và saved transitions/persistence `Not Run`; UI reload baseline verified, cleanup `Done`, không record/draft/leftover. Historical role coverage giữ riêng. Locator timeout không chứng minh product failure; phải đọc settled UI trước khi retry.
 
+## Owned Role và Role Group Add — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#12–13`. Tester đã cho tạo group `QA-test`, chỉ sửa quyền chính group đó; historical pending decision phía trên giữ theo ngày.
+
+- Hai `Add New` riêng: cột `Role` và `Role Group`; overlay cùng `Name`, `50 characters max`, `Add`. Name input có maxlength 50; blank Add enabled nhưng chưa blank-submit. Phải scope theo cột, không dùng first Add New để suy ra group Create.
+- First Add tạo owned Role draft; footer Save disabled. Reload/exact search không còn draft. Second Add thuộc Role Group đóng overlay, không exact owned text/input; search trước/sau reload hiện `Showing 1-0 of 0`, Save disabled. Saved Create persistence `Inconclusive`; không repeat Add hoặc force disabled Save.
+- Không sửa existing role/group permission, không footer Save. Query clear, overlay absent; potential owned group leftover cần independent Staff Profiles picker lookup trước retry. Chưa có source/receiver proof, không two-sided relationship mới.
+
+### Mutation coverage
+
+**2/5 bounded branches**, `Partial`: Role draft/discard và Group Add→reload/search end state `Performed`; saved group persistence, own permission Edit/Save và Staff Profiles handoff `Skipped` vì chưa có independently verified target. Validation mới maxlength/blank enabled observations; duplicate/server/boundary chưa thử. Saved transitions/persistence chưa verified; cleanup draft `Done`, possible group leftover `Inconclusive`.
+
 ## Logic từ ticket
 
 ### SSO không tự tạo user khi thiếu organisation assignment (PAC2-191)

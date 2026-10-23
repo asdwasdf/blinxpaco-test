@@ -13,6 +13,92 @@ Entries chronological, newest first:
 
 ## Log
 
+**2026-10-23 — Run 0819 done, Trends/Shared Records**
+- Added: Trends mode/search/reset 3/5 và Shared Records Smartcard boundary 2/5; không clinical mutation/handoff.
+- Source `product-explore/auto-20261023-0819/ledger.md#5–6`; run 6/6, 17/28 bounded groups, 7 persisted changes và một Download; own template leftover unchanged, generated documents cleaned.
+
+**2026-10-23 — Explicit review, pointer Download và template prerequisite**
+- Updated: checkbox checked/unchecked đều Pending Review sau reload; OQ-076 narrowed. Pointer Download thành công, prior native-dispatch timeout không reproduced.
+- Added: own template Save/fresh picker/preview và generated document Save/Delete; template leftover vì Template Library menu chưa tới root, OQ-077 Open.
+- Source: `product-explore/auto-20261023-0819/ledger.md#1–4`; 7 persisted changes, một Download, generated documents cleanup Done; run paused 4/6, còn hai slots.
+
+**2026-10-23 — Profile continuation, run 0713 done**
+- Updated: Timeline fullscreen enter/exit và filter/reset 2/4; Dashboard customisation search/open/close 3/5, selection unchanged.
+- Added: Documents Download diagnostic 2/3; Create/readback và Delete/reload verified, Download Inconclusive do native-dispatch confounder; cleanup Done.
+- Source: `product-explore/auto-20261023-0713/ledger.md#5–7`; 6/6 bounded workflows, hai persisted changes, không new relationship/leftover. Supersedes paused checkpoint bên dưới.
+
+**2026-10-23 — Timeline root/auth checkpoint**
+- Added: Timeline No data và filter/fullscreen controls mapped; 1/4 bounded branches, auth hết hạn trước action end state, helper khôi phục đúng role Dashboard.
+- Source: `product-explore/auto-20261023-0713/ledger.md#5`; không mutation, tiếp cùng run còn hai feature slots.
+
+**2026-10-23 — Profile Payments placeholder**
+- Added: current-role root only `Payments`, no controls; 1/3 bounded branches, no transaction or mutation.
+- Source: `product-explore/auto-20261023-0713/ledger.md#4`; interrupted navigation reconciled read-only.
+
+**2026-10-23 — Patient Comms empty receiver**
+- Added: category/query/empty-label transition, empty search/clear, date open/Cancel; 4/7 read-only branches, no source-send fixture or mutation.
+- Source: `product-explore/auto-20261023-0713/ledger.md#3`; `workflows/patient-profile.md`.
+
+**2026-10-23 — Patient Profile Tasks draft**
+- Added: patient-prefilled Create, Free text title/description validation gate và Cancel/reopen/reload discard; 4/8 branches, cleanup Done, no saved task.
+- Source: `product-explore/auto-20261023-0713/ledger.md#1–2`; saved task cần safe Board notification mapping.
+
+**2026-10-23 — Dx Priority own draft và run checkpoint**
+- Updated: `Super Admin GB` appended pair Add/Remove, dirty Save state và settled reload discard/role continuity; 3/6 branches, không saved mapping, cleanup Done.
+- Source: `product-explore/auto-20261023-0506/ledger.md#12`; run done feature budget 6/6, 13 persisted mutations và một unique Team receiver edge trong toàn run.
+
+**2026-10-23 — Announcements saved Service Updates**
+- Updated: `Super Admin GB` own no-location Create/Update/Delete+Save verified qua reload/reopen; 3/7 current-role branches, ba persisted changes, cleanup Done. Saved order thay đổi; scope exact owned text.
+- Source: `product-explore/auto-20261023-0506/ledger.md#11`; không location/delivery/receiver evidence.
+
+**2026-10-23 — Services saved lifecycle**
+- Updated: `Super Admin GB` Create with `Not set`, rename/`Community` update và confirmed Delete đều verified qua reload; ba persisted mutations, cleanup Done, không consumer edge.
+- Source: `product-explore/auto-20261023-0506/ledger.md#10`; current-role coverage 4/7 tách historical draft pass. Shared Save authorization có; write footprint/server rules vẫn chưa chứng minh.
+
+**2026-10-23 — Teams saved source và Work Board receiver**
+- Updated: authorized owned Team Create/Rename qua page Save/reload; fresh Assign Staff/Team picker theo source name rồi edited name, không board Save.
+- Added: một unique edge/hai triggers; hai persisted source mutations; own no-member Team retained theo approval, drafts closed.
+- Source: `product-explore/auto-20261023-0506/ledger.md#8–9`; `staff-teams.md`, `case-load-management.md`, relationships và feature map.
+
+**2026-10-23 — Patient Documents TXT Upload**
+- Updated: native chooser single-file; synthetic TXT auto-upload và detail/reload persistence, Delete cleanup verified; 3/6 independent branches, không new leftover/edge.
+- Source: `product-explore/auto-20261023-0506/ledger.md#6–7`; extension/size/download còn Not Run.
+
+**2026-10-23 — Documents draft và Patient Appointments receiver**
+- Updated: Preview render synthetic body; Close/Keep Editing giữ draft, Discard & Exit/reload empty; không saved mutation mới.
+- Added: owned Patient Appointments settled empty grid, chưa booking fixture hoặc relationship; OQ-076 chưa đổi.
+- Source: `product-explore/auto-20261023-0506/ledger.md#4–5`; checkpoint cùng run, không discovery update.
+
+**2026-10-23 — Owned Patient Documents lifecycle**
+- Updated: required title/content gates; synthetic Document Create, Pending Review → Reviewed và Delete verified qua settled UI/reload; cleanup Done.
+- Added: OQ-076 cho default `No review needed` và saved review semantics; không defect verdict hoặc cross-feature edge.
+- Source: `product-explore/auto-20261023-0506/ledger.md#1–3`; workflow `patient-profile.md`, feature-map và autonomous checkpoint.
+
+**2026-10-23 — Owner identity prerequisite và đóng autonomous run**
+- Updated: My Profile email equality với approved recipient false; exact-email search empty chưa đủ identity mapping, auth redirect trước query restore. Không Save/send.
+- Source: `product-explore/auto-20261023-0223/ledger.md#18`.
+- Impact: Work Board owner prerequisite chưa unlocked; run đóng ở feature budget 6/6, active 54 phút, tổng 2 persisted patient mutations và 1 Profile edge, 2 potential leftovers. Resume tạo run mới sau env auth, không replay blocked owner/group/search branches khi basis chưa đổi.
+
+**2026-10-23 — Staff Profiles validation và Work Board prerequisites**
+- Updated: Super Admin GB Staff Profiles 5/7 bounded branches với role picker no-result, required/invalid-email gates và fresh draft discard; Work Board 3/5 với required owner/type/name, Case draft và Cancel.
+- Source: `product-explore/auto-20261023-0223/ledger.md#14–17`.
+- Impact: 0 saved staff/board, không notification; valid board Save chờ UI identity mapping của approved recipient. Workflow và autonomous checkpoint cập nhật; không repeat Role Group Add khi existence chưa rõ.
+
+**2026-10-23 — Autonomous auth recovery, Quick Book và Role Groups**
+- Updated: env login verified actual `Super Admin GB`; Quick Book fresh search vẫn Inconclusive, draft cleanup Done, patient source reload control có 1 own row. Role/Role Group Add được phân biệt; Role draft discarded, group persistence chưa verified.
+- Source: `product-explore/auto-20261023-0223/ledger.md#10–13`.
+- Impact: 0 persisted mutations hoặc relationships mới trong resume; không sửa existing permission, potential owned group cần independent picker reconciliation trước retry. Workflow/checkpoint cập nhật, không ticket/discovery checkpoint.
+
+**2026-10-23 — Quick Book owned patient attempt bị ngắt connector**
+- Updated: saved patient prerequisite có sẵn; root/form và actual role verified, owned query entered nhưng settled result chưa nhận.
+- Source: `product-explore/auto-20261023-0223/ledger.md#5`.
+- Impact: plugin result wait và cheap probe unresponsive; paused để reconnect/read-only reconciliation, không booking submit, 0/3 business branches; search draft cleanup Inconclusive.
+
+**2026-10-23 — Autonomous Patient Search saved lifecycle và Profile receiver**
+- Updated: independent 6/9 bounded branches sau answered fixture decision; owned Create, Postcode gate, exact list/reload, Known As Close discard và Save/reload verified.
+- Source: `product-explore/auto-20261023-0223/ledger.md#2–4`.
+- Impact: 2 persisted mutations trên 1 patient intentionally retained; Profile nhận owned identity/updated field, 1 new two-sided edge. Không NHS/PDS/contact send hoặc clinical mutation; duplicate/server rules/offline chưa exercise, historical Session occurrence uncertainty giữ nguyên.
+
 **2026-10-23 — Autonomous Health Forms unsaved Preview**
 - Updated: independent 5/7 bounded draft branches; native Text Input placement, Required/recording config reopen, Preview answer/blur/clear/reopen và discard/fresh editor verified.
 - Source: `product-explore/auto-20261023-0000/ledger.md#7–8`.

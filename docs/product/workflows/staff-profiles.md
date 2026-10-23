@@ -7,6 +7,26 @@
 - Last verified: `2026-10-21`
 - Provenance: `product-explore/auto-20261021-1359/ledger.md#10`–`#11`.
 
+## Super Admin GB validation và role receiver — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#14–15`.
+
+- Fresh `User Role` picker có 15 options; filter exact owned Role Group candidate trả `No results found`. Clear rồi đóng; không chọn existing role, chưa chứng minh global group absence hoặc two-sided relationship.
+- Blank `Create` tại `Roles & Permissions` hiện `At least one role must be selected`, `At least one location must be selected`. General blank Create hiện `Field is required.` ở First Name, Last Name, Email; Gender default unknown không bị required gate trong attempt.
+- Owned synthetic draft và invalid email hiện `Please enter a valid email address.`; form giữ mở. Close/reopen xác minh ba identity/email inputs blank; đóng lần cuối. Không saved staff hoặc send.
+
+### Mutation coverage
+
+**5/7 bounded branches**: picker no-result/clear, role/location required, General required, invalid-email và draft discard `Performed`. Valid Create/persistence và saved role assignment `Skipped` khi own group source chưa verified. Duplicate/server/boundary validation chưa thử; saved transitions/persistence `Not Run`; cleanup `Done`, không staff leftover. Historical role scope giữ riêng.
+
+## My Profile owner identity check — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#18`.
+
+- `My Profile` mở current-account editor; populated Email sau normalize không khớp approved recipient. Chỉ equality boolean được lưu, không email thực; không sửa field/Save.
+- Exact approved-email list search trả `Showing 0–0 of 0`; email search semantics chưa verified, không kết luận account absence. Clear attempt gặp auth redirect Login, không connector loss; query restore chưa proven.
+- Mutation coverage **2/3 bounded branches**: own-profile readback và exact-email empty end state Performed; safe owner mapping/valid board Save Skipped. 0 persisted changes, không new relationship; editor không thay đổi, không staff draft/record mới. Work Board owner vẫn chưa safe để chọn chỉ bằng tên.
+
 ## Business context observed
 
 - `[Observed; #10]` Staff list có `Active`/`Archived`, `Search...`, `My Profile`, pagination và menu `Add Care Professional`.

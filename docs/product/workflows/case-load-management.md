@@ -5,6 +5,26 @@
 - Coverage: `Partial`
 - Confidence: `Medium`
 
+## Super Admin GB owned board draft — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#16–17`.
+
+- `Create new board` mở `/paco/workboards/new-workboard`. Name, Assign Staff/Team, Board Owner, Organisation, Type, Add Actioned Cases, task permission, resolved-card interval, Home Visit, consultation template và Columns visible.
+- Blank Save giữ form: name `String must contain at least 1 character(s)`, Board Owner và Type `Required`. Type có `Case`/`Task`; Case selected trên own draft.
+- Board Owner search trả nhiều identities tên giống current account; chưa verified approved-email identity. Không chọn owner hoặc valid Save; Cancel trở `/paco/workboards`, 0 dialogs. Board retained được tester duyệt nhưng chưa tạo, không notification/leftover mới.
+
+### Mutation coverage
+
+**3/5 bounded branches**: blank required gate, Type Case draft và Cancel `Performed`; valid Create/reload và downstream case/board workflow `Skipped` vì owner identity/recipient chưa verified. Duplicate/server/boundary validation, saved transitions/persistence `Not Run`; 0 new relationships. Cleanup draft `Done`; bước tiếp xác minh account qua Staff Profiles UI, không sửa identity/email hoặc chọn owner chỉ dựa tên.
+
+### Owner prerequisite follow-up
+
+`[Observed: dev, Super Admin GB, 2026-10-23]` — `product-explore/auto-20261023-0223/ledger.md#18`: Staff Profiles `My Profile` email không khớp approved recipient; exact-email list search empty nhưng semantics chưa verified. Không chọn owner dựa tên, không valid Save/invite. Chờ identity mapping mới; không lặp same lookup hoặc sửa account email để vượt gate.
+
+## Teams receiver availability — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0506/ledger.md#8–9`: owned Team source Create/Save/reload cho exact name trong fresh `Assign Staff/Team` treeselect; source rename/Save/reload cho edited name và old absent trong fresh picker. Một two-sided availability edge, không chọn team/owner hoặc Save board. Hai receiver branches Performed, saved assignment Skipped vì owner prerequisite chưa đổi; Cancel đóng cả hai drafts, cleanup Done.
+
 ## Business context observed
 
 - Visible purpose: phân loại case chưa phân bổ, xem case/task theo board và xem case gắn với người dùng.

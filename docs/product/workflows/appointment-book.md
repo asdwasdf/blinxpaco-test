@@ -134,6 +134,24 @@ Dùng dev host đã cấu hình, role visible và loaded root. Chỉ read-only b
 
 Validation chỉ disabled gate; duplicate/format/server và saved booking transitions untested. Dimensions: navigation `done`; main_workflow, branches_states, validation, persistence, errors_edge `partial`; mutation/relationships `none`. Matching correctness, Reset intended scope và changed preference server persistence chưa established.
 
+## Owned patient prerequisite attempt — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#5`.
+
+- Saved synthetic patient đã có; fixture approval không còn chặn attempt này. Loaded root và actual role verified; mở `Quick Book Appointment`, nhập exact owned surname; immediate `Find Appointment` disabled, chưa settled matching/empty result.
+- Result wait và cheap `browser_tabs` probe đều không trả trong tool timeout, đã stop; connector `Blocked`, không no-match proof hoặc patient-search defect.
+- Mutation coverage **0/3**: patient selection, slot/communication gate và booking persistence `Skipped` vì connector unresponsive; validation/server rules và booking transitions `Not Run`, không booking mutation/new relationship. Form navigation không tính thành completed business branch.
+- Cleanup `Inconclusive`: unsaved search draft có thể còn mở; patient retained theo approval, không booking submit. Reconnect rồi shared preflight, read-only reconcile query/result và đóng draft; không replay patient Create/Update, OQ-073 unchanged.
+
+## Quick Book reconciliation — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#11`.
+
+- Auth đã phục hồi bằng env helper; fresh root không còn draft cũ. Surname suffix, full owned surname và `QA-test`, Enter, hierarchy scope và fresh form không cho recognized match/empty end state; `Find Appointment` giữ disabled. Search matching `Inconclusive`, không còn connector blocker.
+- Control Patient Search có đúng 1 owned row trước/sau reload. Không kết luận Quick Book defect hoặc relationship từ source persistence; POST `/dev/graphql` 200 chỉ supporting diagnostic, không result proof.
+- Mutation coverage **1/4 bounded branches**: draft reconcile/discard `Performed`, result/selection, slot/communication gate và booking persistence `Skipped` do matching chưa resolved. Disabled gate observed; saved validation/transitions/persistence `Not Run`; 0 booking mutations. Cleanup `Done`: query cleared hoặc form discarded, dialog detached; patient retained theo approval.
+- Resume không replay cùng queries nếu không có basis mới; không replay patient Create/Update. Chuyển feature có owned mutation scope đã được duyệt.
+
 ## Cross-feature relationships
 
 - `[Observed: dev, Super Admin GB, 2026-10-22]` `Appointment Books source` → `Select Appointment Books`: owned Create xuất hiện unselected; rename thay original bằng edited; Archive làm cả hai absent trong fresh picker với `No appointment books found`. Selection baseline unchanged, query cleared và picker đóng; không booking/clinical relationship. Một unique relationship với ba trigger observations. Source lifecycle xem `appointment-books-settings.md`; evidence `product-explore/auto-20261022-1742/ledger.md#3`.

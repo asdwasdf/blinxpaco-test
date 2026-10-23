@@ -20,3 +20,4 @@ Mục tiêu: không viết lại cùng một thao tác ở mỗi run. Mọi file
 | Script | Mục đích | Tham số `P` |
 |---|---|---|
 | `preflight.js` | Host allowlist, auth, đóng dialog `Set your status` (chọn `Admin`), role trên header, số dialog/tab | — |
+| `actions/announcements/check-owned-absent.js` | Kiểm owned text absent trong accordion đang mở, sau reload/reopen | `prefix`, `role` |

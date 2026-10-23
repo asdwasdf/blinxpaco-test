@@ -4,358 +4,967 @@ roles:
   Blinx Deployment:
     environment: dev
     map_last_built: '2026-10-21'
-    map_scope: Sidebar + Configuration > Organisation and Users & Staff submenus; other modules are route hints, not reverified.
+    map_scope: Sidebar + Configuration > Organisation and Users & Staff submenus;
+      other modules are route hints, not reverified.
     modules:
-    - module: Patients
-      features:
-      - feature: Patient Search
-        entry: Sidebar > Patients; direct route reverified
-        route: /paco/patient-search
-        workflow_doc: docs/product/workflows/patient-search.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: partial, validation: partial, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: '6/15 nhánh: search, filter Cancel, Create draft gate/validation/steps/discard và Actions menu. Persistence chỉ draft discard; chưa saved patient.'
-        blocker: Safe synthetic registration fixture và saved-patient cleanup chưa xác minh, chờ DEC-patient-fixture.
-        decision: DEC-patient-fixture
-      tier: 1
-    - module: Appointment Book
-      features:
-      - feature: Root
-        entry: Sidebar > Appointment Book > Appointment Book (historical); direct route reverified
-        route: /paco-connect/appointment-book
-        workflow_doc: docs/product/workflows/appointment-book.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: partial, persistence: none, relationships: none, errors_edge: none}
-        coverage_note: '4/15 nhánh/candidate: Filters, All/My restore, blank Quick Book gate và Day/Week restore. Read-only; chưa saved booking lifecycle.'
-        blocker: Saved booking chờ DEC-patient-fixture và owned slot/cleanup; các nhánh read-only độc lập vẫn chạy được.
-        decision: DEC-patient-fixture
-      tier: 2
-    - module: Comms Hub
-      features:
-      - feature: Root
-        entry: Dashboard > expand sidebar > Comms Hub > Campaign Manager
-        route: /commshub/login
-        route_scope: External login boundary; authenticated campaign root chưa verified
-        external_host: nhs-comms-hub-dev.blinxhealthcare.com
-        workflow_doc: docs/product/workflows/comms-hub.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: partial, main_workflow: none, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: '1/7 bounded nhánh/candidate: handoff tới Login; campaign root và CRUD/Send chưa tới.'
-        blocker: Auth riêng chưa qua sau helper; cần tester hoàn tất SSO hoặc xác minh cách login dev.
-        open_questions: [OQ-040]
-      tier: 3
-    - module: Web Chat & Video
-      features:
-      - feature: Virtual Appointments
-        entry: Dashboard > Web Chat & Video > Virtual Appointments
-        route: /web-chat/appointments/
-        workflow_doc: docs/product/workflows/web-chat-video.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: '4/8 bounded nhánh: root, Video/All empty response và Date Range Cancel/Apply/restore. Read-only; chưa owned appointment action hoặc saved persistence.'
-        blocker: Owned appointment action chờ patient/booking fixture và slot/cleanup; các nhánh read-only độc lập còn trong frontier.
-        decision: DEC-patient-fixture
-      - feature: Media Library
-        entry: Web Chat & Video > Media Library; direct route reverified
-        route: /web-chat/media-library/
-        workflow_doc: docs/product/workflows/web-chat-video.md
-        status: blocked
-        needs_reverify: true
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: none, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: '1/3 bounded nhánh: No Patient Selected; exact intended label observed, active-role header chưa independently verified. Media list và media-type results chưa tới.'
-        blocker: Cần owned patient và media fixture; patient prerequisite chờ DEC-patient-fixture.
-        decision: DEC-patient-fixture
-      - feature: Outstanding Reviews
-        entry: Web Chat & Video > Outstanding Reviews; direct route reverified
-        route: /web-chat/review/
-        workflow_doc: docs/product/workflows/web-chat-video.md
-        status: partial-interactive
-        needs_reverify: true
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: '2/7 bounded nhánh: empty queue và Date Range Cancel; exact intended label observed, active-role header chưa independently verified. Owned review lifecycle chưa tới.'
-        blocker: Owned consultation/review fixture và cleanup chưa map.
-      tier: 3
-    - module: Health Forms
-      features:
-      - feature: Designer
-        entry: Sidebar > Health Forms > Designer
-        route: /health-forms/builder/
-        workflow_doc: docs/product/workflows/health-forms.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: done, branches_states: partial, mutation: partial, validation: partial, persistence: done, relationships: partial, errors_edge: partial}
-        coverage_note: '8/18 branches observed: create, component config, rename and Archive/restore persist after reload. Not covered: Clone from Active source, server validation, scheduling/sharing (OQ-053, OQ-054, OQ-056).'
-        blocker: null
-      - feature: Designer V2
-        entry: Sidebar > Health Forms > Designer V2
-        route: /paco/health-forms/
-        workflow_doc: docs/product/workflows/health-forms.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: none, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: partial, errors_edge: partial}
-        coverage_note: Root renders but no data rows load, so the link to Designer is unproven.
-        blocker: 'OQ-055: data loading condition unknown; retry only when context changes.'
-      tier: 4
-    - module: Role Groups
-      tier: 5
-      features:
-      - feature: Users & Staff / Role Groups
-        entry: Configuration > Users & Staff > Role Groups (historical hint)
-        route: /paco/configuration/staff/role-groups
-        route_scope: Root observed; exact role label checked before navigation, not independently at root; ledger auto-20261022-0714#6–7
-        workflow_doc: docs/product/workflows/admin-sso.md
-        status: partial-interactive
-        needs_reverify: true
-        last_verified: '2026-10-22'
-        last_attempted: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: '3/8 bounded nhánh: root, Search empty/restore và pagination/restore. Partial read-only; chưa saved role hoặc permission change.'
-        blocker: Footer Save trên shared configuration có write footprint chưa verified, giữ DEC-shared-list-save gate.
-        decision: DEC-shared-list-save
-    - module: Dashboards
-      features:
-      - feature: Dashboard
-        entry: /paco/dashboard
-        route: /paco/dashboard
-        workflow_doc: null
-        status: mapped
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}
-        blocker: null
-      tier: 6
-    - module: Analytics & Reports
-      features:
-      - feature: Root
-        entry: Sidebar > Analytics & Reports > Reports
-        route: /paco/analytics-reports/scr-reports
-        route_scope: Observed boundary under Config Admin header; intended Blinx Deployment not verified
-        workflow_doc: docs/product/workflows/analytics-reports.md
-        status: blocked
-        needs_reverify: true
-        last_verified: null
-        last_attempted: '2026-10-22'
-        coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: Reports boundary observed, không count intended-role workflow hoặc branch.
-        blocker: Intended role/context chưa verified ở Reports và Dashboard header, OQ-063.
-        open_questions: [OQ-063]
-      tier: 6
-    - module: Case Load Management
-      features:
-      - feature: Root
-        entry: Sidebar > Case Load Management > Case Workboards
-        route: /paco/workboards?tab=case
-        route_scope: Existing /paco/workboards/:id and blank new form observed; intended destination role/context unverified
-        workflow_doc: docs/product/workflows/case-load-management.md
-        status: partial-interactive
-        needs_reverify: true
-        last_verified: null
-        last_observed: '2026-10-22'
-        coverage: {navigation: partial, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}
-        coverage_note: '3/9 bounded nhánh có end state, context-unverified: root, blank form Type/Cancel và My Case handoff. Reverify intended role trước dùng làm access evidence.'
-        blocker: Intended role/context chưa verified; owned board visibility, write footprint và cleanup chờ DEC-workboard-create.
-        decision: DEC-workboard-create
-      tier: 6
-    - module: Quick Pay
-      features:
-      - {feature: Root, entry: Sidebar > Quick Pay, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: Payment/external irreversible actions không trong scope tự chạy.}
-      tier: 6
-    - module: User Portal
-      features:
-      - {feature: Root, entry: Sidebar > User Portal (Users), route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      tier: 6
-    - module: Rocket Bar
-      features:
-      - {feature: Root, entry: Sidebar > Rocket Bar, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      tier: 6
-    - module: Configuration
-      features:
-      - feature: Organisation / General
-        entry: Configuration > Organisation > General
-        route: /paco/configuration/organisation/general
-        workflow_doc: docs/product/workflows/configuration.md
-        status: mapped
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}
-        blocker: 'Shared organisation settings: không sửa trên dữ liệu có sẵn.'
-      - feature: Organisation / Skills
-        entry: Configuration > Organisation > Skills
-        route: /paco/configuration/organisation/skills
-        workflow_doc: docs/product/workflows/organisation-skills.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: done, branches_states: partial, mutation: partial, validation: partial, persistence: done, relationships: partial, errors_edge: partial}
-        coverage_note: '8/14 branches observed: create, rename and archive persist and show up in the Staff Profile skill picker. Not yet covered: saved staff assignment, Pathways/RBAC mapping, audit and server-side Name rules (OQ-048).'
-        blocker: null
-      - feature: Organisation / Practice Profiles
-        entry: Configuration > Organisation > Practice Profiles
-        route: /paco/configuration/organisation/practice-profiles
-        workflow_doc: docs/product/workflows/practice-profiles.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: partial, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: done}
-        coverage_note: Root only; the visible menu route renders Page Not Found.
-        blocker: 'OQ-057: route or role context for Practice Profiles is unknown. Retry only if the route or role changes.'
-      - feature: Organisation / Locations
-        entry: Configuration > Organisation > Locations
-        route: /paco/configuration/organisation/locations
-        workflow_doc: docs/product/workflows/organisation-locations.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: done, branches_states: partial, mutation: partial, validation: partial, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: '7/12 branches observed: owned create, update, discard and UI Archive persist after reload. Audit, staff/sharing assignment, server validation and Restore are not covered (OQ-058, OQ-059).'
-        blocker: null
-      - {feature: Organisation / Code Rule, entry: Configuration > Organisation > Code Rule, route: /configuration/#code-rules-config, workflow_doc: docs/product/workflows/configuration.md, status: unmapped, needs_reverify: true, last_verified: '2026-09-22', coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none,
-          errors_edge: none}, blocker: null}
-      - feature: Organisation / Sharing Agreements
-        entry: Configuration > Organisation > Sharing Agreements
-        route: /paco/configuration/organisation/sharing-agreements
-        workflow_doc: docs/product/workflows/organisation-sharing-agreements.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: none}
-        coverage_note: 'Read-only, 4/5 branches: root, column menu and column layout; layout changes do not persist after reload.'
-        blocker: 'OQ-060: no owned create path or prerequisites known yet, so agreement CRUD is not explored.'
-      - feature: Organisation / Pathways Config
-        entry: Configuration > Organisation > Pathways Config
-        route: /paco/configuration/organisation/pathways
-        workflow_doc: docs/product/workflows/organisation-pathways.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: partial, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: done}
-        blocker: 'OQ-049: route or role context is unknown. Retry only if the route or role changes.'
-        coverage_note: Root only; the visible menu route renders Page Not Found.
-      - feature: Organisation / Services
-        entry: Configuration > Organisation > Services
-        route: /paco/configuration/organisation/services
-        workflow_doc: docs/product/workflows/organisation-services.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: partial, persistence: partial, relationships: none, errors_edge: partial}
-        blocker: Saving requires the shared list Save, pending DEC-shared-list-save.
-        coverage_note: '2/7 branches: unsaved owned row add/remove and reload discard; ID numeric max 15, Name max 255.'
-        decision: DEC-shared-list-save
-      - feature: Organisation / Dx Priority
-        entry: Configuration > Organisation > Dx Priority
-        route: /paco/configuration/organisation/dx-priorities
-        workflow_doc: docs/product/workflows/organisation-dx-priorities.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: 'Read-only, 4/7 branches: root, search and Service/Priority pickers open and close.'
-        blocker: Add/Remove/Save are shared configuration writes, pending DEC-shared-list-save; OQ-063 role label missing after reload.
-        decision: DEC-shared-list-save
-      - {feature: Organisation / Org Priority, entry: Configuration > Organisation > Org Priority, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - {feature: Organisation / Inbound Priority Flow, entry: Configuration > Organisation > Inbound Priority Flow, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - feature: Organisation / Announcements
-        entry: Configuration > Organisation > Announcements
-        route: /paco/configuration/organisation/announcements
-        workflow_doc: docs/product/workflows/organisation-announcements.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: partial, validation: none, persistence: partial, relationships: none, errors_edge: none}
-        coverage_note: '4/8 branches: accordions, read-only location picker, owned unsaved Service Updates draft add/delete/discard.'
-        blocker: Saving requires the page-level shared Save, pending DEC-shared-list-save.
-        decision: DEC-shared-list-save
-      - {feature: Organisation / Integrations, entry: Configuration > Organisation > Integrations, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - {feature: Patient, entry: Configuration > Patient, route: null, workflow_doc: docs/product/workflows/configuration.md, status: unmapped, needs_reverify: true, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - {feature: Appointment Books, entry: Configuration > Appointment Books, route: null, workflow_doc: docs/product/workflows/appointment-book.md, status: unmapped, needs_reverify: true, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - {feature: Quick Pay, entry: Configuration > Quick Pay, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - {feature: Patients & Proxy, entry: Configuration > Patients & Proxy, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - feature: Users & Staff
-        entry: Configuration > Users & Staff
-        route: null
-        workflow_doc: docs/product/workflows/admin-sso.md
-        status: mapped
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}
-        blocker: null
-      - feature: Users & Staff / Staff Profiles
-        entry: Configuration > Users & Staff > Staff Profiles
-        route: /paco/configuration/staff/profiles
-        workflow_doc: docs/product/workflows/staff-profiles.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: partial, persistence: partial, relationships: partial, errors_edge: partial}
-        coverage_note: '4/9 branches: unsaved General/Skill Capabilities forms and skill picker updates from Skills.'
-        blocker: 'OQ-051: Create may create an identity or send an invite; safe Email and cleanup are unknown.'
-      - feature: Users & Staff / Teams
-        entry: Configuration > Users & Staff > Teams
-        route: /paco/configuration/staff/teams
-        workflow_doc: docs/product/workflows/staff-teams.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-21'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: partial, persistence: partial, relationships: none, errors_edge: partial}
-        blocker: Saving requires the shared list Save, pending DEC-shared-list-save.
-        coverage_note: '1/6 branches: unsaved owned team draft is discarded on reload.'
-        decision: DEC-shared-list-save
-      - {feature: Clinical Config, entry: Configuration > Clinical Config, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      - {feature: Case Prioritisation, entry: Configuration > Case Prioritisation, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: null}
-      tier: 7
-    - module: Dev Menu Item
-      features:
-      - {feature: Root, entry: Sidebar > Dev Menu Item, route: null, workflow_doc: null, status: unmapped, needs_reverify: false, last_verified: null, coverage: {navigation: none, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}, blocker: Chưa mở; không đoán persistence của dev tooling.}
-      tier: 7
+      - module: Patients
+        features:
+          - feature: Patient Search
+            entry: Sidebar > Patients; direct route reverified
+            route: /paco/patient-search
+            workflow_doc: docs/product/workflows/patient-search.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '6/15 nhánh: search, filter Cancel, Create draft
+              gate/validation/steps/discard và Actions menu. Persistence chỉ
+              draft discard; chưa saved patient.'
+            blocker: Safe synthetic registration fixture và saved-patient cleanup chưa xác
+              minh, chờ DEC-patient-fixture.
+            decision: DEC-patient-fixture
+        tier: 1
+      - module: Appointment Book
+        features:
+          - feature: Root
+            entry: Sidebar > Appointment Book > Appointment Book (historical); direct route
+              reverified
+            route: /paco-connect/appointment-book
+            workflow_doc: docs/product/workflows/appointment-book.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: partial,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: '4/15 nhánh/candidate: Filters, All/My restore, blank Quick Book
+              gate và Day/Week restore. Read-only; chưa saved booking
+              lifecycle.'
+            blocker: Saved booking chờ DEC-patient-fixture và owned slot/cleanup; các nhánh
+              read-only độc lập vẫn chạy được.
+            decision: DEC-patient-fixture
+        tier: 2
+      - module: Comms Hub
+        features:
+          - feature: Root
+            entry: Dashboard > expand sidebar > Comms Hub > Campaign Manager
+            route: /commshub/login
+            route_scope: External login boundary; authenticated campaign root chưa verified
+            external_host: nhs-comms-hub-dev.blinxhealthcare.com
+            workflow_doc: docs/product/workflows/comms-hub.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '1/7 bounded nhánh/candidate: handoff tới Login; campaign root và
+              CRUD/Send chưa tới.'
+            blocker: Auth riêng chưa qua sau helper; cần tester hoàn tất SSO hoặc xác minh
+              cách login dev.
+            open_questions: [ OQ-040 ]
+        tier: 3
+      - module: Web Chat & Video
+        features:
+          - feature: Virtual Appointments
+            entry: Dashboard > Web Chat & Video > Virtual Appointments
+            route: /web-chat/appointments/
+            workflow_doc: docs/product/workflows/web-chat-video.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '4/8 bounded nhánh: root, Video/All empty response và Date Range
+              Cancel/Apply/restore. Read-only; chưa owned appointment action
+              hoặc saved persistence.'
+            blocker: Owned appointment action chờ patient/booking fixture và slot/cleanup;
+              các nhánh read-only độc lập còn trong frontier.
+            decision: DEC-patient-fixture
+          - feature: Media Library
+            entry: Web Chat & Video > Media Library; direct route reverified
+            route: /web-chat/media-library/
+            workflow_doc: docs/product/workflows/web-chat-video.md
+            status: blocked
+            needs_reverify: true
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '1/3 bounded nhánh: No Patient Selected; exact intended label
+              observed, active-role header chưa independently verified. Media
+              list và media-type results chưa tới.'
+            blocker: Cần owned patient và media fixture; patient prerequisite chờ
+              DEC-patient-fixture.
+            decision: DEC-patient-fixture
+          - feature: Outstanding Reviews
+            entry: Web Chat & Video > Outstanding Reviews; direct route reverified
+            route: /web-chat/review/
+            workflow_doc: docs/product/workflows/web-chat-video.md
+            status: partial-interactive
+            needs_reverify: true
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '2/7 bounded nhánh: empty queue và Date Range Cancel; exact
+              intended label observed, active-role header chưa independently
+              verified. Owned review lifecycle chưa tới.'
+            blocker: Owned consultation/review fixture và cleanup chưa map.
+        tier: 3
+      - module: Health Forms
+        features:
+          - feature: Designer
+            entry: Sidebar > Health Forms > Designer
+            route: /health-forms/builder/
+            workflow_doc: docs/product/workflows/health-forms.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: done,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: done,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: '8/18 branches observed: create, component config, rename and
+              Archive/restore persist after reload. Not covered: Clone from
+              Active source, server validation, scheduling/sharing (OQ-053,
+              OQ-054, OQ-056).'
+            blocker: null
+          - feature: Designer V2
+            entry: Sidebar > Health Forms > Designer V2
+            route: /paco/health-forms/
+            workflow_doc: docs/product/workflows/health-forms.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: Root renders but no data rows load, so the link to Designer is
+              unproven.
+            blocker: 'OQ-055: data loading condition unknown; retry only when context
+              changes.'
+        tier: 4
+      - module: Role Groups
+        tier: 5
+        features:
+          - feature: Users & Staff / Role Groups
+            entry: Configuration > Users & Staff > Role Groups (historical hint)
+            route: /paco/configuration/staff/role-groups
+            route_scope: Root observed; exact role label checked before navigation, not
+              independently at root; ledger auto-20261022-0714#6–7
+            workflow_doc: docs/product/workflows/admin-sso.md
+            status: partial-interactive
+            needs_reverify: true
+            last_verified: '2026-10-22'
+            last_attempted: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '3/8 bounded nhánh: root, Search empty/restore và
+              pagination/restore. Partial read-only; chưa saved role hoặc
+              permission change.'
+            blocker: Footer Save trên shared configuration có write footprint chưa verified,
+              giữ DEC-shared-list-save gate.
+            decision: DEC-shared-list-save
+      - module: Dashboards
+        features:
+          - feature: Dashboard
+            entry: /paco/dashboard
+            route: /paco/dashboard
+            workflow_doc: null
+            status: mapped
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            blocker: null
+        tier: 6
+      - module: Analytics & Reports
+        features:
+          - feature: Root
+            entry: Sidebar > Analytics & Reports > Reports
+            route: /paco/analytics-reports/scr-reports
+            route_scope: Observed boundary under Config Admin header; intended Blinx
+              Deployment not verified
+            workflow_doc: docs/product/workflows/analytics-reports.md
+            status: blocked
+            needs_reverify: true
+            last_verified: null
+            last_attempted: '2026-10-22'
+            coverage:
+              {
+                navigation: none,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: Reports boundary observed, không count intended-role workflow
+              hoặc branch.
+            blocker: Intended role/context chưa verified ở Reports và Dashboard header,
+              OQ-063.
+            open_questions: [ OQ-063 ]
+        tier: 6
+      - module: Case Load Management
+        features:
+          - feature: Root
+            entry: Sidebar > Case Load Management > Case Workboards
+            route: /paco/workboards?tab=case
+            route_scope: Existing /paco/workboards/:id and blank new form observed; intended
+              destination role/context unverified
+            workflow_doc: docs/product/workflows/case-load-management.md
+            status: partial-interactive
+            needs_reverify: true
+            last_verified: null
+            last_observed: '2026-10-22'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: '3/9 bounded nhánh có end state, context-unverified: root, blank
+              form Type/Cancel và My Case handoff. Reverify intended role trước
+              dùng làm access evidence.'
+            blocker: Intended role/context chưa verified; owned board visibility, write
+              footprint và cleanup chờ DEC-workboard-create.
+            decision: DEC-workboard-create
+        tier: 6
+      - module: Quick Pay
+        features:
+          - {
+              feature: Root,
+              entry: Sidebar > Quick Pay,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: Payment/external irreversible actions không trong scope tự chạy.
+            }
+        tier: 6
+      - module: User Portal
+        features:
+          - {
+              feature: Root,
+              entry: Sidebar > User Portal (Users),
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+        tier: 6
+      - module: Rocket Bar
+        features:
+          - {
+              feature: Root,
+              entry: Sidebar > Rocket Bar,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+        tier: 6
+      - module: Configuration
+        features:
+          - feature: Organisation / General
+            entry: Configuration > Organisation > General
+            route: /paco/configuration/organisation/general
+            workflow_doc: docs/product/workflows/configuration.md
+            status: mapped
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            blocker: 'Shared organisation settings: không sửa trên dữ liệu có sẵn.'
+          - feature: Organisation / Skills
+            entry: Configuration > Organisation > Skills
+            route: /paco/configuration/organisation/skills
+            workflow_doc: docs/product/workflows/organisation-skills.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: done,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: done,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: '8/14 branches observed: create, rename and archive persist and
+              show up in the Staff Profile skill picker. Not yet covered: saved
+              staff assignment, Pathways/RBAC mapping, audit and server-side
+              Name rules (OQ-048).'
+            blocker: null
+          - feature: Organisation / Practice Profiles
+            entry: Configuration > Organisation > Practice Profiles
+            route: /paco/configuration/organisation/practice-profiles
+            workflow_doc: docs/product/workflows/practice-profiles.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: done
+              }
+            coverage_note: Root only; the visible menu route renders Page Not Found.
+            blocker: 'OQ-057: route or role context for Practice Profiles is unknown. Retry
+              only if the route or role changes.'
+          - feature: Organisation / Locations
+            entry: Configuration > Organisation > Locations
+            route: /paco/configuration/organisation/locations
+            workflow_doc: docs/product/workflows/organisation-locations.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: done,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '7/12 branches observed: owned create, update, discard and UI
+              Archive persist after reload. Audit, staff/sharing assignment,
+              server validation and Restore are not covered (OQ-058, OQ-059).'
+            blocker: null
+          - {
+              feature: Organisation / Code Rule,
+              entry: Configuration > Organisation > Code Rule,
+              route: /configuration/#code-rules-config,
+              workflow_doc: docs/product/workflows/configuration.md,
+              status: unmapped,
+              needs_reverify: true,
+              last_verified: '2026-09-22',
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - feature: Organisation / Sharing Agreements
+            entry: Configuration > Organisation > Sharing Agreements
+            route: /paco/configuration/organisation/sharing-agreements
+            workflow_doc: docs/product/workflows/organisation-sharing-agreements.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: 'Read-only, 4/5 branches: root, column menu and column layout;
+              layout changes do not persist after reload.'
+            blocker: 'OQ-060: no owned create path or prerequisites known yet, so agreement
+              CRUD is not explored.'
+          - feature: Organisation / Pathways Config
+            entry: Configuration > Organisation > Pathways Config
+            route: /paco/configuration/organisation/pathways
+            workflow_doc: docs/product/workflows/organisation-pathways.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: done
+              }
+            blocker: 'OQ-049: route or role context is unknown. Retry only if the route or
+              role changes.'
+            coverage_note: Root only; the visible menu route renders Page Not Found.
+          - feature: Organisation / Services
+            entry: Configuration > Organisation > Services
+            route: /paco/configuration/organisation/services
+            workflow_doc: docs/product/workflows/organisation-services.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            blocker: Saving requires the shared list Save, pending DEC-shared-list-save.
+            coverage_note: '2/7 branches: unsaved owned row add/remove and reload discard;
+              ID numeric max 15, Name max 255.'
+            decision: DEC-shared-list-save
+          - feature: Organisation / Dx Priority
+            entry: Configuration > Organisation > Dx Priority
+            route: /paco/configuration/organisation/dx-priorities
+            workflow_doc: docs/product/workflows/organisation-dx-priorities.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Read-only, 4/7 branches: root, search and Service/Priority
+              pickers open and close.'
+            blocker: Add/Remove/Save are shared configuration writes, pending
+              DEC-shared-list-save; OQ-063 role label missing after reload.
+            decision: DEC-shared-list-save
+          - {
+              feature: Organisation / Org Priority,
+              entry: Configuration > Organisation > Org Priority,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - {
+              feature: Organisation / Inbound Priority Flow,
+              entry: Configuration > Organisation > Inbound Priority Flow,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - feature: Organisation / Announcements
+            entry: Configuration > Organisation > Announcements
+            route: /paco/configuration/organisation/announcements
+            workflow_doc: docs/product/workflows/organisation-announcements.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: '4/8 branches: accordions, read-only location picker, owned
+              unsaved Service Updates draft add/delete/discard.'
+            blocker: Saving requires the page-level shared Save, pending
+              DEC-shared-list-save.
+            decision: DEC-shared-list-save
+          - {
+              feature: Organisation / Integrations,
+              entry: Configuration > Organisation > Integrations,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - {
+              feature: Patient,
+              entry: Configuration > Patient,
+              route: null,
+              workflow_doc: docs/product/workflows/configuration.md,
+              status: unmapped,
+              needs_reverify: true,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - {
+              feature: Appointment Books,
+              entry: Configuration > Appointment Books,
+              route: null,
+              workflow_doc: docs/product/workflows/appointment-book.md,
+              status: unmapped,
+              needs_reverify: true,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - {
+              feature: Quick Pay,
+              entry: Configuration > Quick Pay,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - {
+              feature: Patients & Proxy,
+              entry: Configuration > Patients & Proxy,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - feature: Users & Staff
+            entry: Configuration > Users & Staff
+            route: null
+            workflow_doc: docs/product/workflows/admin-sso.md
+            status: mapped
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            blocker: null
+          - feature: Users & Staff / Staff Profiles
+            entry: Configuration > Users & Staff > Staff Profiles
+            route: /paco/configuration/staff/profiles
+            workflow_doc: docs/product/workflows/staff-profiles.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: partial,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: '4/9 branches: unsaved General/Skill Capabilities forms and skill
+              picker updates from Skills.'
+            blocker: 'OQ-051: Create may create an identity or send an invite; safe Email
+              and cleanup are unknown.'
+          - feature: Users & Staff / Teams
+            entry: Configuration > Users & Staff > Teams
+            route: /paco/configuration/staff/teams
+            workflow_doc: docs/product/workflows/staff-teams.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-21'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            blocker: Saving requires the shared list Save, pending DEC-shared-list-save.
+            coverage_note: '1/6 branches: unsaved owned team draft is discarded on reload.'
+            decision: DEC-shared-list-save
+          - {
+              feature: Clinical Config,
+              entry: Configuration > Clinical Config,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+          - {
+              feature: Case Prioritisation,
+              entry: Configuration > Case Prioritisation,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: null
+            }
+        tier: 7
+      - module: Dev Menu Item
+        features:
+          - {
+              feature: Root,
+              entry: Sidebar > Dev Menu Item,
+              route: null,
+              workflow_doc: null,
+              status: unmapped,
+              needs_reverify: false,
+              last_verified: null,
+              coverage:
+                {
+                  navigation: none,
+                  main_workflow: none,
+                  branches_states: none,
+                  mutation: none,
+                  validation: none,
+                  persistence: none,
+                  relationships: none,
+                  errors_edge: none
+                },
+              blocker: Chưa mở; không đoán persistence của dev tooling.
+            }
+        tier: 7
     frontier:
-    - {target: Web Chat & Video remaining branches, reason: 'Media Library chờ owned patient/media; Outstanding Reviews chờ owned consultation/review, independent filters còn trong frontier.', provenance: 'auto-20261022-0714/ledger.md#8–9', priority: 50}
-    - {target: Role Groups remaining branches, reason: 'T5 root/search/pagination observed; owned draft and saved lifecycle await scoped Save authorization.', provenance: 'auto-20261022-0714/ledger.md#7', priority: 55}
-    - {target: Analytics & Reports, reason: Reports boundary only; reverify exact intended header context before breadth., provenance: 'auto-20261022-0714/ledger.md#11–12', priority: 70}
-    - {target: Case Load Management remaining branches, reason: 'Owned board lifecycle chờ DEC-workboard-create; search/view/filter độc lập chưa chạy.', provenance: 'auto-20261022-0714/ledger.md#10', priority: 50}
-    - {target: Health Forms / Designer remaining branches, reason: 'T4 partial; Clone from Active source, server validation.', provenance: auto-20261021-1626/ledger.md, priority: 60}
-    - {target: 'Configuration remaining (Org Priority, Inbound Priority Flow, Integrations, Code Rule)', reason: T7; only after T1–T5 breadth pass., provenance: app map 2026-10-21, priority: 30}
+      - {
+          target: Web Chat & Video remaining branches,
+          reason: 'Media Library chờ owned patient/media; Outstanding Reviews chờ owned
+            consultation/review, independent filters còn trong frontier.',
+          provenance: 'auto-20261022-0714/ledger.md#8–9',
+          priority: 50
+        }
+      - {
+          target: Role Groups remaining branches,
+          reason: 'T5 root/search/pagination observed; owned draft and saved lifecycle
+            await scoped Save authorization.',
+          provenance: 'auto-20261022-0714/ledger.md#7',
+          priority: 55
+        }
+      - {
+          target: Analytics & Reports,
+          reason: Reports boundary only; reverify exact intended header context before
+            breadth.,
+          provenance: 'auto-20261022-0714/ledger.md#11–12',
+          priority: 70
+        }
+      - {
+          target: Case Load Management remaining branches,
+          reason: 'Owned board lifecycle chờ DEC-workboard-create; search/view/filter độc
+            lập chưa chạy.',
+          provenance: 'auto-20261022-0714/ledger.md#10',
+          priority: 50
+        }
+      - {
+          target: Health Forms / Designer remaining branches,
+          reason: 'T4 partial; Clone from Active source, server validation.',
+          provenance: auto-20261021-1626/ledger.md,
+          priority: 60
+        }
+      - {
+          target: 'Configuration remaining (Org Priority, Inbound Priority Flow,
+            Integrations, Code Rule)',
+          reason: T7; only after T1–T5 breadth pass.,
+          provenance: app map 2026-10-21,
+          priority: 30
+        }
     open_questions:
-    - OQ-047
-    - OQ-048
-    - OQ-049
-    - OQ-050
-    - OQ-051
-    - OQ-052
-    - OQ-053
-    - OQ-054
-    - OQ-055
-    - OQ-056
-    - OQ-057
-    - OQ-058
-    - OQ-059
-    - OQ-060
-    - OQ-061
-    - OQ-062
-    - OQ-063
-    - OQ-064
-    - OQ-065
-    - OQ-066
+      - OQ-047
+      - OQ-048
+      - OQ-049
+      - OQ-050
+      - OQ-051
+      - OQ-052
+      - OQ-053
+      - OQ-054
+      - OQ-055
+      - OQ-056
+      - OQ-057
+      - OQ-058
+      - OQ-059
+      - OQ-060
+      - OQ-061
+      - OQ-062
+      - OQ-063
+      - OQ-064
+      - OQ-065
+      - OQ-066
     leftovers: []
     retained_records:
-    - {name: QA-test-auto-20261021-1626-1-edited, feature: Health Forms / Designer, state: Archived via UI; hard delete not verified., ledger: auto-20261021-1626/ledger.md}
+      - {
+          name: QA-test-auto-20261021-1626-1-edited,
+          feature: Health Forms / Designer,
+          state: Archived via UI; hard delete not verified.,
+          ledger: auto-20261021-1626/ledger.md
+        }
     active_run:
       run_id: auto-20261022-0714
       started_at: '2026-10-22T07:14:33.121Z'
-      budget: {max_features: 6, max_minutes: 120, max_meaningful_states: 80}
-      used: {features: 5, minutes: 123, meaningful_states: 11}
+      budget: { max_features: 6, max_minutes: 120, max_meaningful_states: 80 }
+      used: { features: 5, minutes: 123, meaningful_states: 11 }
       usage_measured_at: '2026-10-22T09:17:40.758Z'
       current_target: Dashboard / role-context checkpoint
       current_origin: https://blinx.dev.blinxpaco-np.com
@@ -363,19 +972,75 @@ roles:
       stage: done
       stop_reason: budget_exhausted
       pending_navigation: null
-      context_blocker: Header shows Config Admin; intended Blinx Deployment label exists outside header, not active-role proof; OQ-063.
+      context_blocker: Header shows Config Admin; intended Blinx Deployment label
+        exists outside header, not active-role proof; OQ-063.
       pending_mutation: null
       ledger_path: test-results/product-explore/auto-20261022-0714/ledger.md
       outcome_path: test-results/product-explore/auto-20261022-0714/outcome.json
     runs:
-    - {run_id: auto-20261021-1359, date: '2026-10-21', stage: done, progress: 5 Configuration features; Skills owned CRUD + picker relationship., outcome_path: test-results/product-explore/auto-20261021-1359/outcome.json}
-    - {run_id: auto-20261021-1626, date: '2026-10-21', stage: done, progress: Health Forms Designer 8/18 branches; Practice Profiles blocked., outcome_path: test-results/product-explore/auto-20261021-1626/outcome.json}
-    - {run_id: auto-20261021-1844, date: '2026-10-21', stage: done, progress: Locations owned CRUD 7/12; Sharing Agreements read-only., outcome_path: test-results/product-explore/auto-20261021-1844/outcome.json}
-    - {run_id: auto-20261021-2259, date: '2026-10-21', stage: done, progress: 'Announcements 4/8, Sharing Agreements 4/5 read-only.', outcome_path: test-results/product-explore/auto-20261021-2259/outcome.json}
-    - {run_id: auto-20261022-0158, date: '2026-10-22', stage: done, progress: 'Dx Priority 4/7 read-only; closed early on a false connector notice (project .mcp.json servers, not the plugin). No pending mutation.', outcome_path: test-results/product-explore/auto-20261022-0158/outcome.json}
-    - {run_id: auto-20261022-0236, date: '2026-10-22', stage: done, progress: '2 T1–T2 workflows, 10/30 bounded branches; no saved mutation or two-sided edge, cleanup Done; T3 root chưa tới.', outcome_path: test-results/product-explore/auto-20261022-0236/outcome.json}
-    - {run_id: auto-20261022-0500, date: '2026-10-22', stage: done, progress: '3 targets, 1 authenticated workflow investigated, 5/16 bounded nhánh/candidate; không saved mutation, two-sided edge, blocker unlocked hoặc OQ closed.', outcome_path: test-results/product-explore/auto-20261022-0500/outcome.json}
-    - {run_id: auto-20261022-0714, date: '2026-10-22', stage: done, progress: '5 targets; 2 read-only workflows, patient boundary và 9/27 bounded end states với role-context qualifications; 0 saved persistence/relationships/OQs closed; budget hết, role_context_unverified.', outcome_path: test-results/product-explore/auto-20261022-0714/outcome.json}
+      - {
+          run_id: auto-20261021-1359,
+          date: '2026-10-21',
+          stage: done,
+          progress: 5 Configuration features; Skills owned CRUD + picker relationship.,
+          outcome_path: test-results/product-explore/auto-20261021-1359/outcome.json
+        }
+      - {
+          run_id: auto-20261021-1626,
+          date: '2026-10-21',
+          stage: done,
+          progress: Health Forms Designer 8/18 branches; Practice Profiles blocked.,
+          outcome_path: test-results/product-explore/auto-20261021-1626/outcome.json
+        }
+      - {
+          run_id: auto-20261021-1844,
+          date: '2026-10-21',
+          stage: done,
+          progress: Locations owned CRUD 7/12; Sharing Agreements read-only.,
+          outcome_path: test-results/product-explore/auto-20261021-1844/outcome.json
+        }
+      - {
+          run_id: auto-20261021-2259,
+          date: '2026-10-21',
+          stage: done,
+          progress: 'Announcements 4/8, Sharing Agreements 4/5 read-only.',
+          outcome_path: test-results/product-explore/auto-20261021-2259/outcome.json
+        }
+      - {
+          run_id: auto-20261022-0158,
+          date: '2026-10-22',
+          stage: done,
+          progress: 'Dx Priority 4/7 read-only; closed early on a false connector notice
+            (project .mcp.json servers, not the plugin). No pending mutation.',
+          outcome_path: test-results/product-explore/auto-20261022-0158/outcome.json
+        }
+      - {
+          run_id: auto-20261022-0236,
+          date: '2026-10-22',
+          stage: done,
+          progress: '2 T1–T2 workflows, 10/30 bounded branches; no saved mutation or
+            two-sided edge, cleanup Done; T3 root chưa tới.',
+          outcome_path: test-results/product-explore/auto-20261022-0236/outcome.json
+        }
+      - {
+          run_id: auto-20261022-0500,
+          date: '2026-10-22',
+          stage: done,
+          progress: '3 targets, 1 authenticated workflow investigated, 5/16 bounded
+            nhánh/candidate; không saved mutation, two-sided edge, blocker
+            unlocked hoặc OQ closed.',
+          outcome_path: test-results/product-explore/auto-20261022-0500/outcome.json
+        }
+      - {
+          run_id: auto-20261022-0714,
+          date: '2026-10-22',
+          stage: done,
+          progress: '5 targets; 2 read-only workflows, patient boundary và 9/27 bounded
+            end states với role-context qualifications; 0 saved
+            persistence/relationships/OQs closed; budget hết,
+            role_context_unverified.',
+          outcome_path: test-results/product-explore/auto-20261022-0714/outcome.json
+        }
     resume_preflight:
       id: resume-preflight-20261022-0946
       date: '2026-10-22'
@@ -385,333 +1050,1231 @@ roles:
       current_origin: https://blinx.dev.blinxpaco-np.com
       current_path: /paco/dashboard
       intended_role: Blinx Deployment
-      offered_roles: [Super Admin GB]
+      offered_roles: [ Super Admin GB ]
       selected_role: Super Admin GB
-      role_decision: Tester chọn Dùng Super Admin GB, cho phép hoàn tất picker và dùng checkpoint riêng; không mở rộng mutation scope.
+      role_decision: Tester chọn Dùng Super Admin GB, cho phép hoàn tất picker và dùng
+        checkpoint riêng; không mở rộng mutation scope.
       pending_navigation: null
       pending_mutation: null
       ledger_path: test-results/product-explore/resume-preflight-20261022-0946/ledger.md
       outcome_path: test-results/product-explore/resume-preflight-20261022-0946/outcome.json
     next_steps:
-    - 'Tester đã chốt Super Admin GB; tiếp role block riêng, không thêm coverage vào Blinx Deployment.'
-    - 'Không gửi lại credentials khi đang ở context picker; chỉ hoàn tất role được tester chốt rồi verify actual header.'
-    - 'Run auto-20261022-0714 giữ done; chỉ tạo run mới sau auth/role preflight và dùng checkpoint riêng nếu đổi role.'
-    - 'Reverify destination role trước dùng historical observations làm role-access evidence; Comms Hub giữ blocked khi auth riêng chưa đổi.'
-    - 'Không retry nhánh thuộc bốn pending mutation decisions khi chưa có câu trả lời tester.'
+      - 'Tester đã chốt Super Admin GB; tiếp role block riêng, không thêm
+        coverage vào Blinx Deployment.'
+      - 'Không gửi lại credentials khi đang ở context picker; chỉ hoàn tất role
+        được tester chốt rồi verify actual header.'
+      - 'Run auto-20261022-0714 giữ done; chỉ tạo run mới sau auth/role
+        preflight và dùng checkpoint riêng nếu đổi role.'
+      - 'Reverify destination role trước dùng historical observations làm
+        role-access evidence; Comms Hub giữ blocked khi auth riêng chưa đổi.'
+      - 'Không retry nhánh thuộc bốn pending mutation decisions khi chưa có câu
+        trả lời tester.'
     decisions:
-    - id: DEC-shared-list-save
-      question: 'Được phép bấm page/footer `Save` trên list dùng chung (Teams, Services, Announcements, Dx Priority, Role Groups) khi chỉ thêm rồi xoá một dòng `QA-test` không? Nếu được: chỉ khi diff chỉ có dòng owned, hay cần cách tạo/xoá scoped riêng?'
-      scope: whole-list
-      open_questions:
-      - OQ-050
-      - OQ-052
-      - OQ-061
-      - OQ-062
-      - OQ-064
-      affected:
-      - Users & Staff / Teams
-      - Organisation / Services
-      - Organisation / Announcements
-      - Organisation / Dx Priority
-      - Users & Staff / Role Groups
-      status: answered
-      answer: 'Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.'
-    - id: DEC-staff-create
-      question: Có email test an toàn và cách dọn dẹp cho `Staff Profiles` → `Create` (có tạo identity/invite) không?
-      scope: unknown-scope
-      open_questions:
-      - OQ-051
-      affected:
-      - Users & Staff / Staff Profiles
-      status: answered
-      answer: 'Tester duyệt 2026-10-23: cho tạo staff QA-test với email fiona.nguyen@blinxsolutions.com (invite/identity gửi tới email này OK); không cần xóa, giữ lại để tái sử dụng cho lần sau.'
-    - id: DEC-patient-fixture
-      question: Có fixture đăng ký patient hoàn toàn synthetic với required values hợp lệ, scope không external identity/notification và UI cleanup đã duyệt không?
-      scope: unknown-scope
-      open_questions: [OQ-065]
-      dependency_note: Decision chỉ giải quyết patient fixture; owned booking/slot/session và cleanup là prerequisite riêng chưa map.
-      affected:
-      - Patients / Patient Search
-      - Appointment Book / Quick Book
-      - Web Chat & Video / Virtual Appointments
-      - Web Chat & Video / Media Library
-      status: answered
-      answer: 'Tester duyệt 2026-10-23: cho tạo patient synthetic tên QA-test-*, NHS number random hợp lệ mod-11 trong dải test 999xxxxxxx; email chỉ fiona.nguyen@blinxsolutions.com, phone để trống (không SMS); không cần cleanup, để lại trên dev; được dùng patient đó như bình thường (booking/media) và được dùng patient có sẵn trên dev.'
-    - id: DEC-workboard-create
-      question: Có được tạo board QA-test không gán staff/team hoặc organisation, không notify, chỉ owned scope, và có đường UI cleanup an toàn không?
-      scope: unknown-scope
-      open_questions: [OQ-066]
-      affected: [Case Load Management / Work Boards]
-      status: answered
-      answer: 'Tester duyệt 2026-10-23: cho tạo board QA-test, không cần xóa. Notification nếu có chỉ tới fiona.nguyen@blinxsolutions.com. Tester chưa rõ màn này; gán case/task/staff theo policy CLAUDE.md (dữ liệu có sẵn trên dev được dùng).'
+      - id: DEC-shared-list-save
+        question: 'Được phép bấm page/footer `Save` trên list dùng chung (Teams,
+          Services, Announcements, Dx Priority, Role Groups) khi chỉ thêm rồi
+          xoá một dòng `QA-test` không? Nếu được: chỉ khi diff chỉ có dòng
+          owned, hay cần cách tạo/xoá scoped riêng?'
+        scope: whole-list
+        open_questions:
+          - OQ-050
+          - OQ-052
+          - OQ-061
+          - OQ-062
+          - OQ-064
+        affected:
+          - Users & Staff / Teams
+          - Organisation / Services
+          - Organisation / Announcements
+          - Organisation / Dx Priority
+          - Users & Staff / Role Groups
+        status: answered
+        answer: 'Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên
+          shared list Teams, Services, Announcements, Dx Priority thoải mái như
+          manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ
+          tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG
+          sửa quyền role group có sẵn.'
+      - id: DEC-staff-create
+        question: Có email test an toàn và cách dọn dẹp cho `Staff Profiles` → `Create`
+          (có tạo identity/invite) không?
+        scope: unknown-scope
+        open_questions:
+          - OQ-051
+        affected:
+          - Users & Staff / Staff Profiles
+        status: answered
+        answer: 'Tester duyệt 2026-10-23: cho tạo staff QA-test với email
+          fiona.nguyen@blinxsolutions.com (invite/identity gửi tới email này
+          OK); không cần xóa, giữ lại để tái sử dụng cho lần sau.'
+      - id: DEC-patient-fixture
+        question: Có fixture đăng ký patient hoàn toàn synthetic với required values hợp
+          lệ, scope không external identity/notification và UI cleanup đã duyệt
+          không?
+        scope: unknown-scope
+        open_questions: [ OQ-065 ]
+        dependency_note: Decision chỉ giải quyết patient fixture; owned
+          booking/slot/session và cleanup là prerequisite riêng chưa map.
+        affected:
+          - Patients / Patient Search
+          - Appointment Book / Quick Book
+          - Web Chat & Video / Virtual Appointments
+          - Web Chat & Video / Media Library
+        status: answered
+        answer: 'Tester duyệt 2026-10-23: cho tạo patient synthetic tên QA-test-*, NHS
+          number random hợp lệ mod-11 trong dải test 999xxxxxxx; email chỉ
+          fiona.nguyen@blinxsolutions.com, phone để trống (không SMS); không cần
+          cleanup, để lại trên dev; được dùng patient đó như bình thường
+          (booking/media) và được dùng patient có sẵn trên dev.'
+      - id: DEC-workboard-create
+        question: Có được tạo board QA-test không gán staff/team hoặc organisation,
+          không notify, chỉ owned scope, và có đường UI cleanup an toàn không?
+        scope: unknown-scope
+        open_questions: [ OQ-066 ]
+        affected: [ Case Load Management / Work Boards ]
+        status: answered
+        answer: 'Tester duyệt 2026-10-23: cho tạo board QA-test, không cần xóa.
+          Notification nếu có chỉ tới fiona.nguyen@blinxsolutions.com. Tester
+          chưa rõ màn này; gán case/task/staff theo policy CLAUDE.md (dữ liệu có
+          sẵn trên dev được dùng).'
   Super Admin GB:
     environment: dev
     map_last_built: '2026-10-22'
-    map_scope: Current-role sidebar labels observed; destination routes and access require per-feature verification.
+    map_scope: Current-role sidebar labels observed; destination routes and access
+      require per-feature verification.
     modules:
-    - module: Patients
-      tier: 1
-      features:
-      - feature: Patient Search
-        entry: Sidebar > Patients > Patient Search
-        route: /paco/patient-search
-        workflow_doc: docs/product/workflows/patient-search.md
-        status: partial-interactive
-        needs_reverify: true
-        last_verified: '2026-10-22'
-        last_attempted: '2026-10-22'
-        coverage: {navigation: partial, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: 'Historical 4/7 read-only giữ riêng; later offline entry 0/1 Blocked tại OS role picker, chưa feature body. Persistence chỉ historical transient filter reset.'
-        blocker: Offline entry cần OS context prerequisite thay đổi; saved lifecycle giữ DEC-patient-fixture và filter intent OQ-067.
-        decision: DEC-patient-fixture
-      - feature: Care Navigation
-        entry: Sidebar > Patients > Care Navigation
-        route: /patient-search/?careRoute
-        workflow_doc: docs/product/workflows/care-navigation.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: partial, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: 'Historical 4/7 và A-Z result experiment 2/3 giữ riêng; First Name+A/fresh Last Name+A populated, reload baseline reset. Same-letter field-switch completion Inconclusive.'
-        blocker: Clinical handoff/lifecycle chờ DEC-patient-fixture; dataset correctness và field-switch timing chưa established.
-        decision: DEC-patient-fixture
+      - module: Patients
+        tier: 1
+        features:
+          - feature: Patient Search
+            entry: Sidebar > Patients > Patient Search
+            route: /paco/patient-search
+            workflow_doc: docs/product/workflows/patient-search.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            last_attempted: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: 'Saved pass 6/9 giữ riêng historical breadth/offline. Owned
+              Create và Known As Update giữ qua reload; Profile nhận
+              identity/updated field, patient retained theo approval.'
+            blocker: Duplicate/server rules và offline chưa exercise; filter intent OQ-067
+              chưa đổi.
+            decision: DEC-patient-fixture
+          - feature: Patient Profile Documents
+            entry: Owned Patient Search result > Profile > Documents
+            route: /paco/patient-profile/:id/documents
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Saved lifecycle 6/10, draft 3/4, TXT Upload 3/6 và Download
+              diagnostic 2/3 giữ riêng; tổng 7 persisted changes, cleanup Done.'
+            blocker: Review checkbox checked/unchecked đều Pending Review; OQ-076 semantics
+              Open, OQ-077 template cleanup route chưa tới.
+            current_run_coverage: 'Review 4/5, pointer Download 3/4, own template 4/6; 7
+              persisted changes, one Download; own template leftover, generated
+              documents cleaned.'
+            open_questions: [ OQ-076 ]
+          - feature: Patient Profile Appointments
+            entry: Owned Patient Profile > Appointments
+            route: /paco/patient-profile/:id/appointments
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '1/3 bounded branches; owned patient settled empty grid, không
+              direct create button.'
+            blocker: Matching và row lifecycle cần owned appointment fixture; không retry
+              unchanged Quick Book queries.
+          - feature: Patient Profile Tasks
+            entry: Owned Patient Profile > Tasks
+            route: /paco/patient-profile/:id/tasks
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '4/8 draft branches; Free text required gates and
+              Cancel/reopen/reload verified, cleanup Done.'
+            blocker: Saved task needs safe Board notification mapping; no saved fixture for
+              lifecycle/receiver.
+          - feature: Patient Profile Patient Comms
+            entry: Owned Patient Profile > Patient Comms
+            route: /paco/patient-profile/:id/patient-comms
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '4/7 read-only branches; category empty states, empty
+              search/clear and date Cancel observed.'
+            blocker: Populated detail/filter correctness và source correlation need safe
+              comms fixture.
+          - feature: Patient Profile Payments
+            entry: Owned Patient Profile > Payments
+            route: /paco/patient-profile/:id/payments
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: mapped
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: 'Root placeholder observed; no payment controls, no transaction
+              tested.'
+            blocker: History/transaction workflow not exposed in observed tabpanel.
+          - feature: Patient Profile Timeline
+            entry: Owned Patient Profile > Timeline
+            route: /paco/patient-profile/:id/timeline
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: '2/4 bounded groups: root, fullscreen enter/exit và Document
+              filter selection; reload resets pickers.'
+            blocker: Populated events/source correlation need fixture; filtering correctness
+              unverified.
+          - feature: Patient Profile Trends
+            entry: Owned Profile Dashboard > View all trends
+            route: /paco/patient-profile/:id/dashboard
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '3/5 read-only groups: root/back, mode toggle,
+              search/clear/reopen.'
+            blocker: Populated measurements needed for detail/range correctness.
+          - feature: Patient Profile Shared Records
+            entry: Owned Profile > Shared Records
+            route: /paco/patient-profile/:id/shared-records
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: blocked
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '2/5 groups: root and Smartcard Login Required dismiss; controls
+              restored.'
+            blocker: NHS Smartcard prerequisite absent; no external login/handoff attempted.
+          - feature: Patient Profile Dashboard customisation
+            entry: Owned Patient Profile > Dashboard > Customise Dashboard
+            route: /paco/patient-profile/:id/dashboard
+            workflow_doc: docs/product/workflows/patient-profile.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '3/5 read-only groups: picker, unmatched/matching search và
+              clear/reopen; 14 Selected unchanged.'
+            blocker: Selection và Reset persistence/scope chưa rõ; chưa mutation.
+          - feature: Care Navigation
+            entry: Sidebar > Patients > Care Navigation
+            route: /patient-search/?careRoute
+            workflow_doc: docs/product/workflows/care-navigation.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Historical 4/7 và A-Z result experiment 2/3 giữ riêng; First
+              Name+A/fresh Last Name+A populated, reload baseline reset.
+              Same-letter field-switch completion Inconclusive.'
+            blocker: Clinical handoff/lifecycle chờ DEC-patient-fixture; dataset correctness
+              và field-switch timing chưa established.
+            decision: DEC-patient-fixture
 
-    - module: Appointment Book
-      tier: 2
-      features:
-      - feature: Root
-        entry: Authenticated session > direct known route
-        route: /paco-connect/appointment-book
-        workflow_doc: docs/product/workflows/appointment-book.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-23'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: partial, persistence: partial, relationships: partial, errors_edge: partial}
-        coverage_note: 'Breadth 7/15, selector 4/7 và draft/filter 5/6 giữ riêng. Quick Book Reset selection khác search/scope; drawer filter giữ qua reopen, reload reset baseline.'
-        blocker: Saved booking chờ DEC-patient-fixture và owned slot/cleanup; count correctness chưa kiểm.
-        decision: DEC-patient-fixture
-      - feature: Appointment Books source
-        entry: Configuration > hover Appointment Books > child Appointment Books
-        route: /paco-connect/configuration/#appointment-books
-        workflow_doc: docs/product/workflows/appointment-books-settings.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: partial, validation: partial, persistence: partial, relationships: partial, errors_edge: partial}
-        coverage_note: 'Historical 8/12 source branches và later 3/3 prerequisite pass giữ riêng. Fresh Book Create/Archive reflected trong saved Session editor và fresh pickers; availability cleanup Done.'
-        blocker: Search semantics OQ-071; sharing footprint, Export scope và remaining validation chưa established.
-      - feature: Appointment Sessions source
-        entry: Configuration root / Appointment Books > Sessions
-        route: /paco-connect/configuration/
-        workflow_doc: docs/product/workflows/appointment-sessions-settings.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: partial, validation: partial, persistence: partial, relationships: partial, errors_edge: partial}
-        coverage_note: 'Historical draft 5/9 và saved lifecycle 9/15 giữ riêng. Create/owned assignments, Edit discard, Archive gate/CSV và template Delete có end states; rename và occurrence cleanup Inconclusive.'
-        blocker: Rename OQ-072 chưa root cause; generated-occurrence cleanup OQ-073 cần independent safe UI readback, không replay Delete.
-      - feature: Slot Types source
-        entry: Configuration > Appointment Books button > Slot Types
-        route: /paco-connect/configuration/#service-types
-        workflow_doc: docs/product/workflows/appointment-slot-types-settings.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: partial, validation: none, persistence: partial, relationships: partial, errors_edge: partial}
-        coverage_note: 'Historical 7/14 lifecycle và later 3/3 prerequisite pass giữ riêng. Fresh Create/Archive và saved Session assignment retention reverified; availability cleanup Done.'
-        blocker: Search readiness OQ-071; validation, service classification và assignment prerequisites chưa established.
-    - module: Comms Hub
-      tier: 3
-      features:
-      - feature: Root
-        entry: External dev Login > Home > Campaign Manager
-        route: /commshub/campaign-manager
-        workflow_doc: docs/product/workflows/comms-hub.md
-        status: partial-interactive
-        needs_reverify: true
-        last_verified: '2026-10-22'
-        context: Source Paco Super Admin GB; external organisation visible, role unverified.
-        coverage: {navigation: partial, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: '4/12 bounded branches read-only; authenticated campaign/Outbox roots và synthetic search/clear observed. Persistence chỉ restored UI baseline qua reload.'
-        blocker: External role và owned campaign cleanup chưa verified; OQ-040 role requirement giữ Open.
-    - module: Web Chat & Video
-      tier: 3
-      features:
-      - feature: Root
-        entry: Dashboard > Web Chat & Video > Virtual Appointments
-        route: /web-chat/appointments/
-        workflow_doc: docs/product/workflows/web-chat-video.md
-        status: blocked
-        needs_reverify: true
-        last_verified: '2026-10-22'
-        coverage: {navigation: partial, main_workflow: none, branches_states: none, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: 'Module auth gate observed; 0/1 bounded authenticated-root branch, chưa access feature body.'
-        blocker: Paco header verified nhưng module Login riêng; OQ-068 cần approved session prerequisite.
-    - module: Health Forms
-      tier: 4
-      features:
-      - feature: Root
-        entry: Sidebar > Health Forms > Designer
-        route: /health-forms/builder/
-        workflow_doc: docs/product/workflows/health-forms.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-23'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: partial, validation: partial, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: 'Saved lifecycle 8/14 và unsaved Preview 5/7 giữ riêng. Required/recording config giữ qua draft reopen; answer và blur không ẩn Required marker, draft đã discard.'
-        blocker: V2 chờ OQ-055 và Preview semantics chờ OQ-075; list matching Inconclusive, server validation và response lifecycle chưa kiểm.
-        open_questions: [OQ-055, OQ-075]
-    - module: Role Groups
-      tier: 5
-      features:
-      - feature: Root
-        entry: Authenticated session > direct known route
-        route: /paco/configuration/staff/role-groups
-        workflow_doc: docs/product/workflows/admin-sso.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: '3/8 bounded read-only branches; search/clear và paging markers restored qua reload. Data accuracy và saved persistence chưa verified.'
-        blocker: Shared Save giữ DEC-shared-list-save pending; không owned source cho staff receiver.
-        decision: DEC-shared-list-save
-    - {module: Dashboards, tier: 6, features: [{feature: Dashboard, entry: Auth context Next, route: /paco/dashboard, status: mapped, needs_reverify: false, last_verified: '2026-10-22'}]}
-    - module: Analytics & Reports
-      tier: 6
-      features:
-      - feature: Root
-        entry: Authenticated session > known SCR route > Reporting
-        route: /paco/analytics-reports
-        workflow_doc: docs/product/workflows/analytics-reports.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: partial}
-        coverage_note: '2/6 bounded read-only branches; SCR và Patient Cases denial end states verified. Saved report persistence chưa chạy.'
-        blocker: OQ-069 report permission prerequisite chưa rõ; Analytics alternate navigation Inconclusive.
-      - feature: Patient Analyser
-        entry: Authenticated session > direct known route > Advanced Search
-        route: /patient-analyser/
-        workflow_doc: docs/product/workflows/analytics-reports.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: '5/11 bounded branches; synthetic query apply/reopen, reload retention và owned-rule cleanup verified. Persistence chỉ UI query preference.'
-        blocker: Cohort correctness Inconclusive do pager blank; Save Report target và cleanup chưa established.
-    - module: Case Load Management
-      tier: 6
-      features:
-      - feature: Root
-        entry: Authenticated session > Case Workboards
-        route: /paco/workboards?tab=case
-        workflow_doc: docs/product/workflows/case-load-management.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-23'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: 'Breadth 3/8 và independent search/presentation 4/6 giữ riêng. Current-board no-match, mode clear và List URL/reload observed; Card/Board/blank baseline restored.'
-        blocker: Matching completion còn Inconclusive; owned board lifecycle chờ DEC-workboard-create.
-        decision: DEC-workboard-create
-    - module: Capacity & Demand
-      tier: 6
-      features:
-      - feature: Root
-        entry: Authenticated session > direct known route > CLINICIAN CAPACITY
-        route: /capacity-demand/
-        workflow_doc: docs/product/workflows/capacity-demand.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: 'Historical date 4/9 và independent role/card 2/5 giữ riêng. Doctor grey/non-grey reload retention và info hover/dismiss observed; exact initial marker chưa capture.'
-        blocker: Session/observation controls hidden và chart tooltip Inconclusive; tiếp depth cần naturally visible path hoặc diagnostic basis mới.
-    - {module: Quick Pay, tier: 6, features: [{feature: Root, entry: Sidebar > Quick Pay, route: null, status: unmapped, needs_reverify: true, blocker: Payment actions outside autonomous scope.}]}
-    - module: User Portal
-      tier: 6
-      features:
-      - feature: Root
-        entry: Sidebar > Users > User Portal
-        route: /paco-connect/user-training-portal
-        workflow_doc: docs/product/workflows/user-training-portal.md
-        status: partial-interactive
-        needs_reverify: false
-        last_verified: '2026-10-23'
-        coverage: {navigation: done, main_workflow: partial, branches_states: partial, mutation: none, validation: none, persistence: partial, relationships: none, errors_edge: partial}
-        coverage_note: 'Historical 6/10 và independent viewer/FAQ 6/8 giữ riêng. Video/progress/pop-out và FAQ search/category/reload reset verified, media/tab baseline restored.'
-        blocker: Embedded guide content Blocked OQ-074; Technical Support destination/request scope chưa kiểm.
-        open_questions: [OQ-074]
-    - module: Rocket Bar
-      tier: 6
-      features:
-      - feature: Root
-        entry: Sidebar > Rocket Bar
-        route: null
-        workflow_doc: docs/product/workflows/rocket-bar.md
-        status: blocked
-        needs_reverify: false
-        last_verified: '2026-10-22'
-        coverage: {navigation: partial, main_workflow: none, branches_states: partial, mutation: none, validation: none, persistence: none, relationships: none, errors_edge: none}
-        coverage_note: '1/3 bounded launcher branches; menu open/close verified, source page không đổi.'
-        blocker: Client runtime/destination và approved launch/install scope chờ OQ-070.
-    - {module: Configuration, tier: 7, features: [{feature: Root, entry: Sidebar > Configuration, route: null, status: unmapped, needs_reverify: true}]}
+      - module: Appointment Book
+        tier: 2
+        features:
+          - feature: Root
+            entry: Authenticated session > direct known route
+            route: /paco-connect/appointment-book
+            workflow_doc: docs/product/workflows/appointment-book.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: partial,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: 'Breadth 7/15, selector 4/7 và draft/filter 5/6 giữ riêng. Quick
+              Book Reset selection khác search/scope; drawer filter giữ qua
+              reopen, reload reset baseline.'
+            blocker: Saved booking chờ DEC-patient-fixture và owned slot/cleanup; count
+              correctness chưa kiểm.
+            decision: DEC-patient-fixture
+          - feature: Appointment Books source
+            entry: Configuration > hover Appointment Books > child Appointment Books
+            route: /paco-connect/configuration/#appointment-books
+            workflow_doc: docs/product/workflows/appointment-books-settings.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: 'Historical 8/12 source branches và later 3/3 prerequisite pass
+              giữ riêng. Fresh Book Create/Archive reflected trong saved Session
+              editor và fresh pickers; availability cleanup Done.'
+            blocker: Search semantics OQ-071; sharing footprint, Export scope và remaining
+              validation chưa established.
+          - feature: Appointment Sessions source
+            entry: Configuration root / Appointment Books > Sessions
+            route: /paco-connect/configuration/
+            workflow_doc: docs/product/workflows/appointment-sessions-settings.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: 'Historical draft 5/9 và saved lifecycle 9/15 giữ riêng.
+              Create/owned assignments, Edit discard, Archive gate/CSV và
+              template Delete có end states; rename và occurrence cleanup
+              Inconclusive.'
+            blocker: Rename OQ-072 chưa root cause; generated-occurrence cleanup OQ-073 cần
+              independent safe UI readback, không replay Delete.
+          - feature: Slot Types source
+            entry: Configuration > Appointment Books button > Slot Types
+            route: /paco-connect/configuration/#service-types
+            workflow_doc: docs/product/workflows/appointment-slot-types-settings.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: none,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: 'Historical 7/14 lifecycle và later 3/3 prerequisite pass giữ
+              riêng. Fresh Create/Archive và saved Session assignment retention
+              reverified; availability cleanup Done.'
+            blocker: Search readiness OQ-071; validation, service classification và
+              assignment prerequisites chưa established.
+      - module: Comms Hub
+        tier: 3
+        features:
+          - feature: Root
+            entry: External dev Login > Home > Campaign Manager
+            route: /commshub/campaign-manager
+            workflow_doc: docs/product/workflows/comms-hub.md
+            status: partial-interactive
+            needs_reverify: true
+            last_verified: '2026-10-22'
+            context: Source Paco Super Admin GB; external organisation visible, role
+              unverified.
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '4/12 bounded branches read-only; authenticated campaign/Outbox
+              roots và synthetic search/clear observed. Persistence chỉ restored
+              UI baseline qua reload.'
+            blocker: External role và owned campaign cleanup chưa verified; OQ-040 role
+              requirement giữ Open.
+      - module: Web Chat & Video
+        tier: 3
+        features:
+          - feature: Root
+            entry: Dashboard > Web Chat & Video > Virtual Appointments
+            route: /web-chat/appointments/
+            workflow_doc: docs/product/workflows/web-chat-video.md
+            status: blocked
+            needs_reverify: true
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: none,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Module auth gate observed; 0/1 bounded authenticated-root
+              branch, chưa access feature body.'
+            blocker: Paco header verified nhưng module Login riêng; OQ-068 cần approved
+              session prerequisite.
+      - module: Health Forms
+        tier: 4
+        features:
+          - feature: Root
+            entry: Sidebar > Health Forms > Designer
+            route: /health-forms/builder/
+            workflow_doc: docs/product/workflows/health-forms.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: partial,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Saved lifecycle 8/14 và unsaved Preview 5/7 giữ riêng.
+              Required/recording config giữ qua draft reopen; answer và blur
+              không ẩn Required marker, draft đã discard.'
+            blocker: V2 chờ OQ-055 và Preview semantics chờ OQ-075; list matching
+              Inconclusive, server validation và response lifecycle chưa kiểm.
+            open_questions: [ OQ-055, OQ-075 ]
+      - module: Role Groups
+        tier: 5
+        features:
+          - feature: Root
+            entry: Authenticated session > direct known route
+            route: /paco/configuration/staff/role-groups
+            workflow_doc: docs/product/workflows/admin-sso.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '3/8 bounded read-only branches; search/clear và paging markers
+              restored qua reload. Data accuracy và saved persistence chưa
+              verified.'
+            blocker: Shared Save giữ DEC-shared-list-save pending; không owned source cho
+              staff receiver.
+            decision: DEC-shared-list-save
+      - {
+          module: Dashboards,
+          tier: 6,
+          features:
+            [
+              {
+                  feature: Dashboard,
+                  entry: Auth context Next,
+                  route: /paco/dashboard,
+                  status: mapped,
+                  needs_reverify: false,
+                  last_verified: '2026-10-22'
+                }
+            ]
+        }
+      - module: Analytics & Reports
+        tier: 6
+        features:
+          - feature: Root
+            entry: Authenticated session > known SCR route > Reporting
+            route: /paco/analytics-reports
+            workflow_doc: docs/product/workflows/analytics-reports.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '2/6 bounded read-only branches; SCR và Patient Cases denial end
+              states verified. Saved report persistence chưa chạy.'
+            blocker: OQ-069 report permission prerequisite chưa rõ; Analytics alternate
+              navigation Inconclusive.
+          - feature: Patient Analyser
+            entry: Authenticated session > direct known route > Advanced Search
+            route: /patient-analyser/
+            workflow_doc: docs/product/workflows/analytics-reports.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '5/11 bounded branches; synthetic query apply/reopen, reload
+              retention và owned-rule cleanup verified. Persistence chỉ UI query
+              preference.'
+            blocker: Cohort correctness Inconclusive do pager blank; Save Report target và
+              cleanup chưa established.
+      - module: Case Load Management
+        tier: 6
+        features:
+          - feature: Root
+            entry: Authenticated session > Case Workboards
+            route: /paco/workboards?tab=case
+            workflow_doc: docs/product/workflows/case-load-management.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Breadth 3/8 và independent search/presentation 4/6 giữ riêng.
+              Current-board no-match, mode clear và List URL/reload observed;
+              Card/Board/blank baseline restored.'
+            blocker: Matching completion còn Inconclusive; owned board lifecycle chờ
+              DEC-workboard-create.
+            decision: DEC-workboard-create
+      - module: Capacity & Demand
+        tier: 6
+        features:
+          - feature: Root
+            entry: Authenticated session > direct known route > CLINICIAN CAPACITY
+            route: /capacity-demand/
+            workflow_doc: docs/product/workflows/capacity-demand.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Historical date 4/9 và independent role/card 2/5 giữ riêng.
+              Doctor grey/non-grey reload retention và info hover/dismiss
+              observed; exact initial marker chưa capture.'
+            blocker: Session/observation controls hidden và chart tooltip Inconclusive; tiếp
+              depth cần naturally visible path hoặc diagnostic basis mới.
+      - {
+          module: Quick Pay,
+          tier: 6,
+          features:
+            [
+              {
+                  feature: Root,
+                  entry: Sidebar > Quick Pay,
+                  route: null,
+                  status: unmapped,
+                  needs_reverify: true,
+                  blocker: Payment actions outside autonomous scope.
+                }
+            ]
+        }
+      - module: User Portal
+        tier: 6
+        features:
+          - feature: Root
+            entry: Sidebar > Users > User Portal
+            route: /paco-connect/user-training-portal
+            workflow_doc: docs/product/workflows/user-training-portal.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: 'Historical 6/10 và independent viewer/FAQ 6/8 giữ riêng.
+              Video/progress/pop-out và FAQ search/category/reload reset
+              verified, media/tab baseline restored.'
+            blocker: Embedded guide content Blocked OQ-074; Technical Support
+              destination/request scope chưa kiểm.
+            open_questions: [ OQ-074 ]
+      - module: Rocket Bar
+        tier: 6
+        features:
+          - feature: Root
+            entry: Sidebar > Rocket Bar
+            route: null
+            workflow_doc: docs/product/workflows/rocket-bar.md
+            status: blocked
+            needs_reverify: false
+            last_verified: '2026-10-22'
+            coverage:
+              {
+                navigation: partial,
+                main_workflow: none,
+                branches_states: partial,
+                mutation: none,
+                validation: none,
+                persistence: none,
+                relationships: none,
+                errors_edge: none
+              }
+            coverage_note: '1/3 bounded launcher branches; menu open/close verified, source
+              page không đổi.'
+            blocker: Client runtime/destination và approved launch/install scope chờ OQ-070.
+      - module: Configuration
+        tier: 7
+        features:
+          - {
+              feature: Root,
+              entry: Sidebar > Configuration,
+              route: null,
+              status: unmapped,
+              needs_reverify: true
+            }
+          - feature: Teams
+            entry: Configuration > Users & Staff > Teams
+            route: /paco/configuration/staff/teams
+            workflow_doc: docs/product/workflows/staff-teams.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: none,
+                persistence: partial,
+                relationships: partial,
+                errors_edge: partial
+              }
+            coverage_note: '4/7 branches; owned Create/Rename reload verified, fresh Work
+              Board picker follows both triggers. No-member source retained theo
+              approval.'
+            blocker: Member assignment, validation và remove lifecycle chưa exercise.
+            decision: DEC-shared-list-save
+          - feature: Services
+            entry: Configuration > Organisation > Services
+            route: /paco/configuration/organisation/services
+            workflow_doc: docs/product/workflows/organisation-services.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '4/7 current-role branches; Create Not set, Rename/Community
+              Update and confirmed Delete reload verified; 3 persisted changes,
+              cleanup Done.'
+            blocker: Required/duplicate/server boundaries, Delete Cancel và consumer chưa
+              exercise; shared Save footprint chưa established.
+            decision: DEC-shared-list-save
+          - feature: Announcements
+            entry: Configuration > Organisation > Announcements
+            route: /paco/configuration/organisation/announcements
+            workflow_doc: docs/product/workflows/organisation-announcements.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '3/7 saved Service Updates branches; no-location
+              Create/Update/Delete+Save verified qua reload/reopen, 3 persisted
+              changes, cleanup Done.'
+            blocker: Validation, Welcome/formatting, location và delivery/receiver chưa
+              exercise.
+            decision: DEC-shared-list-save
+          - feature: Dx Priority
+            entry: Configuration > Organisation > Dx Priority
+            route: /paco/configuration/organisation/dx-priorities
+            workflow_doc: docs/product/workflows/organisation-dx-priorities.md
+            status: partial-interactive
+            needs_reverify: false
+            last_verified: '2026-10-23'
+            coverage:
+              {
+                navigation: done,
+                main_workflow: partial,
+                branches_states: partial,
+                mutation: partial,
+                validation: none,
+                persistence: partial,
+                relationships: none,
+                errors_edge: partial
+              }
+            coverage_note: '3/6 current-role branches; own pair Add/Remove and reload
+              discard verified, role continuity verified.'
+            blocker: Saved mapping domain, validation và receiver chưa established; no saved
+              mutation.
+            decision: DEC-shared-list-save
     frontier:
-    - {target: Patients remaining branches, priority: 50, reason: Offline entry Blocked tại OS role picker; retry khi context prerequisite thay đổi, saved lifecycle decision vẫn pending., provenance: auto-20261022-2011/ledger.md#5}
-    - {target: Appointment Book remaining branches, priority: 25, reason: Quick Book draft/reset và filter lifetime done; no-match completion cần diagnostic basis mới, saved booking fixture và selector changed-selection scope chưa mở., provenance: auto-20261023-0000/ledger.md#2}
-    - {target: Appointment Books source remaining branches, priority: 30, reason: Main owned lifecycle cleanup Done; search OQ-071 và sharing/Export scope cần basis trước depth mới., provenance: auto-20261022-1742/ledger.md#3}
-    - {target: Appointment Sessions unresolved cleanup and rename, priority: 45, reason: Template Delete verified; OQ-073 generated-occurrence cleanup indeterminate và OQ-072 rename Inconclusive, không replay mutation hoặc restore fixtures., provenance: auto-20261022-2011/ledger.md#3–4}
-    - {target: Slot Types remaining branches, priority: 25, reason: Main owned lifecycle và Session receiver cleanup Done; validation/classification/assignments deferred, search OQ-071 Open., provenance: auto-20261022-1742/ledger.md#6}
-    - {target: Web Chat & Video, priority: 35, reason: Blocked on module auth prerequisite OQ-068; skip until changed., provenance: auto-20261022-1001/ledger.md#15}
-    - {target: Comms Hub remaining branches, priority: 40, reason: External role/owned cleanup prerequisite before mutations; read-only breadth complete., provenance: auto-20261022-1001/ledger.md#14}
-    - {target: Analytics & Reports remaining branches, priority: 30, reason: Report data flow chờ OQ-069; không retry permission gates khi prerequisite chưa đổi., provenance: auto-20261022-1206/ledger.md#15}
-    - {target: Case Load Management remaining branches, priority: 20, reason: Search modes và List/Card baseline đã verified; matching correctness cần diagnostic basis mới, owned board decision pending., provenance: auto-20261023-0000/ledger.md#3}
-    - {target: Capacity & Demand remaining branches, priority: 20, reason: Role marker và info hover có end states; hidden Session/observation controls và chart tooltip cần path mới trước depth, metric correctness chưa có trusted basis., provenance: auto-20261022-2011/ledger.md#6–7}
-    - {target: Health Forms remaining branches, priority: 20, reason: Unsaved Preview pass và draft cleanup done; OQ-075 semantics và OQ-055 V2 chưa đổi, không replay query hoặc retained source lifecycle., provenance: auto-20261023-0000/ledger.md#8}
-    - {target: Role Groups remaining branches, priority: 35, reason: Current-role root/search/paging complete; shared Save decision unchanged, no retry., provenance: auto-20261022-1206/ledger.md#2}
-    - {target: Care Navigation remaining branches, priority: 25, reason: First Name+A/fresh Last Name+A results và reload reset observed; clinical fixture decision pending và field-switch timing chưa established., provenance: auto-20261022-1742/ledger.md#4}
-    - {target: User Portal remaining branches, priority: 10, reason: Native video và FAQ filter end states verified; guide content chờ OQ-074 embed prerequisite, Technical Support scope chưa rõ., provenance: auto-20261023-0000/ledger.md#5}
-    - {target: Rocket Bar client workflow, priority: 10, reason: OQ-070 chặn client/runtime và launch/install scope; không retry khi prerequisite chưa đổi., provenance: auto-20261022-1414/ledger.md#6}
-    - {target: Patient Analyser remaining branches, priority: 30, reason: Query preference đã cleanup; cohort correctness và Save Report ownership/cleanup chưa established., provenance: auto-20261022-1414/ledger.md#7–8}
-    open_questions: [OQ-040, OQ-055, OQ-063, OQ-064, OQ-065, OQ-066, OQ-067, OQ-068, OQ-069, OQ-070, OQ-071, OQ-072, OQ-073, OQ-074, OQ-075]
+      - {
+          target: Patients remaining branches,
+          priority: 35,
+          reason: Owned saved lifecycle và Profile receiver verified; ưu tiên downstream
+            booking/media trước duplicate hoặc offline depth.,
+          provenance: auto-20261023-0223/ledger.md#3–4
+        }
+      - {
+          target: Appointment Book remaining branches,
+          priority: 25,
+          reason: Quick Book draft/reset và filter lifetime done; no-match completion cần
+            diagnostic basis mới,
+          saved booking fixture và selector changed-selection scope chưa mở.,
+          provenance: auto-20261023-0000/ledger.md#2
+        }
+      - {
+          target: Appointment Books source remaining branches,
+          priority: 30,
+          reason: Main owned lifecycle cleanup Done; search OQ-071 và sharing/Export scope
+            cần basis trước depth mới.,
+          provenance: auto-20261022-1742/ledger.md#3
+        }
+      - {
+          target: Appointment Sessions unresolved cleanup and rename,
+          priority: 45,
+          reason: Template Delete verified; OQ-073 generated-occurrence cleanup
+            indeterminate và OQ-072 rename Inconclusive,
+          không replay mutation hoặc restore fixtures.,
+          provenance: auto-20261022-2011/ledger.md#3–4
+        }
+      - {
+          target: Slot Types remaining branches,
+          priority: 25,
+          reason: Main owned lifecycle và Session receiver cleanup Done;
+            validation/classification/assignments deferred,
+          search OQ-071 Open.,
+          provenance: auto-20261022-1742/ledger.md#6
+        }
+      - {
+          target: Web Chat & Video,
+          priority: 35,
+          reason: Blocked on module auth prerequisite OQ-068; skip until changed.,
+          provenance: auto-20261022-1001/ledger.md#15
+        }
+      - {
+          target: Comms Hub remaining branches,
+          priority: 40,
+          reason: External role/owned cleanup prerequisite before mutations; read-only
+            breadth complete.,
+          provenance: auto-20261022-1001/ledger.md#14
+        }
+      - {
+          target: Analytics & Reports remaining branches,
+          priority: 30,
+          reason: Report data flow chờ OQ-069; không retry permission gates khi
+            prerequisite chưa đổi.,
+          provenance: auto-20261022-1206/ledger.md#15
+        }
+      - {
+          target: Case Load Management remaining branches,
+          priority: 20,
+          reason: Search modes và List/Card baseline đã verified; matching correctness cần
+            diagnostic basis mới,
+          owned board decision pending.,
+          provenance: auto-20261023-0000/ledger.md#3
+        }
+      - {
+          target: Capacity & Demand remaining branches,
+          priority: 20,
+          reason: Role marker và info hover có end states; hidden Session/observation
+            controls và chart tooltip cần path mới trước depth,
+          metric correctness chưa có trusted basis.,
+          provenance: auto-20261022-2011/ledger.md#6–7
+        }
+      - {
+          target: Health Forms remaining branches,
+          priority: 20,
+          reason: Unsaved Preview pass và draft cleanup done; OQ-075 semantics và OQ-055
+            V2 chưa đổi,
+          không replay query hoặc retained source lifecycle.,
+          provenance: auto-20261023-0000/ledger.md#8
+        }
+      - {
+          target: Role Groups remaining branches,
+          priority: 35,
+          reason: Current-role root/search/paging complete; shared Save decision unchanged,
+          no retry.,
+          provenance: auto-20261022-1206/ledger.md#2
+        }
+      - {
+          target: Care Navigation remaining branches,
+          priority: 25,
+          reason: First Name+A/fresh Last Name+A results và reload reset observed;
+            clinical fixture decision pending và field-switch timing chưa
+            established.,
+          provenance: auto-20261022-1742/ledger.md#4
+        }
+      - {
+          target: User Portal remaining branches,
+          priority: 10,
+          reason: Native video và FAQ filter end states verified; guide content chờ OQ-074
+            embed prerequisite,
+          Technical Support scope chưa rõ.,
+          provenance: auto-20261023-0000/ledger.md#5
+        }
+      - {
+          target: Rocket Bar client workflow,
+          priority: 10,
+          reason: OQ-070 chặn client/runtime và launch/install scope; không retry khi
+            prerequisite chưa đổi.,
+          provenance: auto-20261022-1414/ledger.md#6
+        }
+      - {
+          target: Patient Analyser remaining branches,
+          priority: 30,
+          reason: Query preference đã cleanup; cohort correctness và Save Report
+            ownership/cleanup chưa established.,
+          provenance: auto-20261022-1414/ledger.md#7–8
+        }
+    open_questions:
+      [
+        OQ-040,
+        OQ-055,
+        OQ-063,
+        OQ-064,
+        OQ-065,
+        OQ-066,
+        OQ-067,
+        OQ-068,
+        OQ-069,
+        OQ-070,
+        OQ-071,
+        OQ-072,
+        OQ-073,
+        OQ-074,
+        OQ-075
+      ]
     leftovers:
-    - {name: QA-test-auto-20261022-2011-session-1, feature: Appointment Sessions source, state: Template deleted and source absence verified; generated own occurrences cleanup indeterminate, ledger: auto-20261022-2011/ledger.md#3}
+      - {
+          name: QA-test-auto-20261023-0819-template-1,
+          feature: Patient Profile Documents template,
+          state: Saved template and fresh picker preview verified; generated document
+            cleaned,
+          template management/delete UI not located.,
+          ledger: auto-20261023-0819/ledger.md#3
+        }
+      - {
+          name: QA-test-auto-20261023-0223-role-1,
+          feature: Role Groups,
+          state: Add đóng overlay nhưng exact search trước và sau reload không có row; cần
+            independent picker reconcile trước retry.,
+          ledger: auto-20261023-0223/ledger.md#12–13
+        }
+      - {
+          name: QA-test-auto-20261022-2011-session-1,
+          feature: Appointment Sessions source,
+          state: Template deleted and source absence verified; generated own occurrences
+            cleanup indeterminate,
+          ledger: auto-20261022-2011/ledger.md#3
+        }
     retained_records:
-    - {name: QA-test-auto-20261022-1206-form-1-edited, feature: Health Forms / Designer, state: Archived qua UI và reload verified; không hard delete., ledger: auto-20261022-1206/ledger.md#13}
-    - {name: QA-test-auto-20261022-1742-book-1-edited, feature: Appointment Books source, state: UI Archive và fresh source/selector absence verified; retention có thể theo UI copy nhưng chưa kiểm., ledger: auto-20261022-1742/ledger.md#3}
-    - {name: QA-test-auto-20261022-1742-slot-1-edited, feature: Slot Types source, state: UI Archive và fresh source/Session picker absence verified; retention chưa kiểm., ledger: auto-20261022-1742/ledger.md#6}
-    - {name: QA-test-auto-20261022-2011-book-1, feature: Appointment Books source, state: UI Archive và fresh source/Session/schedule picker absence verified; retention chưa kiểm., ledger: auto-20261022-2011/ledger.md#3–4}
-    - {name: QA-test-auto-20261022-2011-slot-1, feature: Slot Types source, state: UI Archive và fresh source/Session picker absence verified; retention chưa kiểm., ledger: auto-20261022-2011/ledger.md#3}
+      - {
+          name: QA-test-auto-20261023-0506-team-1-edited,
+          feature: Teams,
+          state: 'No-member owned Team Create/Rename reload verified; intentionally
+            retained theo answered DEC-shared-list-save.',
+          ledger: auto-20261023-0506/ledger.md#8–9
+        }
+      - {
+          name: QA-test-Autonomous-Pacora,
+          feature: Patient Search,
+          state: Synthetic patient Create và exact row persistence sau reload verified;
+            intentionally retained theo answered decision.,
+          ledger: auto-20261023-0223/ledger.md#3
+        }
+      - {
+          name: QA-test-auto-20261022-1206-form-1-edited,
+          feature: Health Forms / Designer,
+          state: Archived qua UI và reload verified; không hard delete.,
+          ledger: auto-20261022-1206/ledger.md#13
+        }
+      - {
+          name: QA-test-auto-20261022-1742-book-1-edited,
+          feature: Appointment Books source,
+          state: UI Archive và fresh source/selector absence verified; retention có thể
+            theo UI copy nhưng chưa kiểm.,
+          ledger: auto-20261022-1742/ledger.md#3
+        }
+      - {
+          name: QA-test-auto-20261022-1742-slot-1-edited,
+          feature: Slot Types source,
+          state: UI Archive và fresh source/Session picker absence verified; retention
+            chưa kiểm.,
+          ledger: auto-20261022-1742/ledger.md#6
+        }
+      - {
+          name: QA-test-auto-20261022-2011-book-1,
+          feature: Appointment Books source,
+          state: UI Archive và fresh source/Session/schedule picker absence verified;
+            retention chưa kiểm.,
+          ledger: auto-20261022-2011/ledger.md#3–4
+        }
+      - {
+          name: QA-test-auto-20261022-2011-slot-1,
+          feature: Slot Types source,
+          state: UI Archive và fresh source/Session picker absence verified; retention
+            chưa kiểm.,
+          ledger: auto-20261022-2011/ledger.md#3
+        }
     active_run:
-      run_id: auto-20261023-0000
-      started_at: '2026-10-23T00:00:11.168Z'
-      budget: {max_features: 6, max_minutes: 120, max_meaningful_states: 80}
-      used: {features: 4, minutes: 105, meaningful_states: 25}
-      usage_measured_at: '2026-10-23T01:44:19.188Z'
-      current_target: Health Forms Preview cleaned checkpoint; rescore before original deadline
+      run_id: auto-20261023-0903
+      started_at: 2026-10-23T09:03:04.442Z
+      budget:
+        max_features: 6
+        max_minutes: 120
+        max_meaningful_states: 80
+      used:
+        features: 0
+        minutes: 0
+        meaningful_states: 0
+      usage_measured_at: 2026-10-23T02:42:23.002Z
+      current_target: Owned Patient Profile Consultations Admin note
       current_origin: https://blinx.dev.blinxpaco-np.com
-      current_path: /health-forms/builder/
-      stage: paused
-      stop_reason: context_checkpoint
+      current_path: /paco/patient-profile/:id/consultations
+      stage: running
+      stop_reason: null
       pending_navigation: null
-      pending_mutation: null
-      pending_reconciliation: null
-      ledger_path: test-results/product-explore/auto-20261023-0000/ledger.md
-      outcome_path: test-results/product-explore/auto-20261023-0000/outcome.json
+      pending_mutation: auto-20261023-0903/ledger.md#1 Update owned synthetic admin note
+      pending_reconciliation: Role picker exact own name absent; scope chưa đủ để kết
+        luận global absence, không replay Add
+      ledger_path: test-results/product-explore/auto-20261023-0903/ledger.md
+      outcome_path: test-results/product-explore/auto-20261023-0903/outcome.json
+      locked_role: Super Admin GB
+      last_tick_at: 2026-10-23T09:03:04.442Z
     runs:
-    - {run_id: auto-20261022-1001, date: '2026-10-22', stage: done, progress: 'Budget exhausted; 4 workflows và 1 module auth gate; 19/43 branches, draft discarded; 0 saved persistence/relationships/OQs closed.', outcome_path: test-results/product-explore/auto-20261022-1001/outcome.json}
-    - {run_id: auto-20261022-1206, date: '2026-10-22', stage: done, progress: 'Budget exhausted; 5 workflows, 20/45 bounded branches, 3 persisted business mutations và 1 retained Archived record; 0 two-sided edges, decisions unlocked hoặc important OQs closed.', outcome_path: test-results/product-explore/auto-20261022-1206/outcome.json}
-    - {run_id: auto-20261022-1414, date: '2026-10-22', stage: done, progress: 'Budget exhausted; 3 workflows, 1 launcher và 1 selector boundary, 17/35 bounded branches; query preference reload/reset verified, 0 business mutations, two-sided relationships, decisions unlocked hoặc important OQs closed.', outcome_path: test-results/product-explore/auto-20261022-1414/outcome.json}
-    - {run_id: auto-20261022-1742, date: '2026-10-22', stage: done, progress: 'Budget exhausted; 5 T1/T2 workflows, 26/45 bounded branches, 6 persisted mutations và 2 unique two-sided relationships với 6 triggers; 0 active leftovers, decisions unlocked hoặc important OQs closed.', outcome_path: test-results/product-explore/auto-20261022-1742/outcome.json}
-    - {run_id: auto-20261022-2011, date: '2026-10-22', stage: done, progress: 'Budget exhausted; 2 T2/T6 workflows investigated, 2 prerequisites và 1 T1 context gate; 17/27 bounded branches, 6 persisted mutations, 3 observed relationships/5 triggers với 1 new edge; 1 potential leftover, 0 blockers unlocked/OQs closed.', outcome_path: test-results/product-explore/auto-20261022-2011/outcome.json}
-    - {run_id: auto-20261023-0000, date: '2026-10-23', stage: paused, progress: 'Context checkpoint; 4 T2/T4/T6 workflows investigated, 20/27 bounded branches, 0 persisted business mutations/new records/relationships; draft/UI/media/tab cleanup Done, carried potential occurrence leftover unchanged, OQ-074/OQ-075 Open.', outcome_path: test-results/product-explore/auto-20261023-0000/outcome.json}
+      - {
+          run_id: auto-20261022-1001,
+          date: '2026-10-22',
+          stage: done,
+          progress: 'Budget exhausted; 4 workflows và 1 module auth gate; 19/43 branches,
+            draft discarded; 0 saved persistence/relationships/OQs closed.',
+          outcome_path: test-results/product-explore/auto-20261022-1001/outcome.json
+        }
+      - {
+          run_id: auto-20261022-1206,
+          date: '2026-10-22',
+          stage: done,
+          progress: 'Budget exhausted; 5 workflows, 20/45 bounded branches, 3 persisted
+            business mutations và 1 retained Archived record; 0 two-sided edges,
+            decisions unlocked hoặc important OQs closed.',
+          outcome_path: test-results/product-explore/auto-20261022-1206/outcome.json
+        }
+      - {
+          run_id: auto-20261022-1414,
+          date: '2026-10-22',
+          stage: done,
+          progress: 'Budget exhausted; 3 workflows, 1 launcher và 1 selector boundary,
+            17/35 bounded branches; query preference reload/reset verified, 0
+            business mutations, two-sided relationships, decisions unlocked hoặc
+            important OQs closed.',
+          outcome_path: test-results/product-explore/auto-20261022-1414/outcome.json
+        }
+      - {
+          run_id: auto-20261022-1742,
+          date: '2026-10-22',
+          stage: done,
+          progress: 'Budget exhausted; 5 T1/T2 workflows, 26/45 bounded branches, 6
+            persisted mutations và 2 unique two-sided relationships với 6
+            triggers; 0 active leftovers, decisions unlocked hoặc important OQs
+            closed.',
+          outcome_path: test-results/product-explore/auto-20261022-1742/outcome.json
+        }
+      - {
+          run_id: auto-20261022-2011,
+          date: '2026-10-22',
+          stage: done,
+          progress: 'Budget exhausted; 2 T2/T6 workflows investigated, 2 prerequisites và
+            1 T1 context gate; 17/27 bounded branches, 6 persisted mutations, 3
+            observed relationships/5 triggers với 1 new edge; 1 potential
+            leftover, 0 blockers unlocked/OQs closed.',
+          outcome_path: test-results/product-explore/auto-20261022-2011/outcome.json
+        }
+      - {
+          run_id: auto-20261023-0000,
+          date: '2026-10-23',
+          stage: done,
+          progress: 'Budget exhausted; 4 T2/T4/T6 workflows investigated, 20/27 bounded
+            branches, 0 persisted business mutations/new records/relationships;
+            current-run cleanup Done theo evidence cuối, browser nay blank,
+            carried potential occurrence unchanged; bốn decisions đã answered
+            ngoài run, chưa exercise.',
+          outcome_path: test-results/product-explore/auto-20261023-0000/outcome.json
+        }
+      - {
+          run_id: auto-20261023-0223,
+          date: '2026-10-23',
+          stage: done,
+          progress: 'Feature budget 6/6, active 54 phút; 2 persisted mutations và 1
+            Profile edge từ saved patient, các pass sau
+            validation/draft/identity; 2 potential leftovers, owner prerequisite
+            chưa unlocked.',
+          outcome_path: test-results/product-explore/auto-20261023-0223/outcome.json
+        }
+      - {
+          run_id: auto-20261023-0506,
+          date: '2026-10-23',
+          stage: done,
+          progress: 'Feature budget 6/6; 48.2 active minutes, 13 persisted mutations, 1
+            new unique Team-to-board edge/hai triggers;
+            Documents/Services/Announcements và Dx draft cleanup Done, Team
+            retained, hai carried potential leftovers unchanged.',
+          outcome_path: test-results/product-explore/auto-20261023-0506/outcome.json
+        }
+      - {
+          run_id: auto-20261023-0713,
+          date: '2026-10-23',
+          stage: done,
+          progress: '6 bounded workflows, 16/30 branch groups; 2 persisted changes, 0 new
+            relationships/OQs closed; cleanup Done/N/A, historical leftovers
+            unchanged.',
+          outcome_path: test-results/product-explore/auto-20261023-0713/outcome.json
+        }
+      - {
+          run_id: auto-20261023-0819,
+          date: '2026-10-23',
+          stage: done,
+          progress: '6 bounded workflows, 17/28 groups, 7 persisted changes và 1 Download;
+            generated documents cleaned, own template leftover, OQ-076 narrowed,
+            OQ-077 Open, 0 cross-feature edges.',
+          outcome_path: test-results/product-explore/auto-20261023-0819/outcome.json
+        }
     next_steps:
-    - 'Resume run0000 sau auth/actual-role check; giữ original deadline 2026-10-23T02:00:11.168Z, nếu hết budget chỉ closure, không reset run.'
-    - 'Appointment, Work Boards, User Portal và Health Forms Preview bounded passes đã xong; không replay completed probes hoặc failed hypotheses.'
-    - 'Rescore independent T1–T6 gaps hoặc unmapped Configuration khi còn budget; OQ-074/OQ-075 và unchanged auth/clinical/shared blockers không retry.'
-    - 'OQ-073 giữ potential occurrence leftover; chỉ reconcile bằng safe scoped UI path mới, không tạo fixture chain hoặc restore archived prerequisites.'
-    - 'Giữ bốn decisions pending/null, OQ-072 và protected notes; chỉ autonomous checkpoint, không ticket/discovery checkpoint.'
+      - 'Run auto-20261023-0819 done 6/6; shared preflight Shared Records rồi
+        start run mới, ưu tiên Patient Profile nhánh khác chưa map, không replay
+        Smartcard gate hoặc successful Download.'
+      - 'My Profile email không khớp approved recipient; Work Board valid Save
+        chờ safe owner mapping mới, không repeat name-only lookup hoặc sửa
+        email.'
+      - 'Role picker đã no-result theo ledger #14; không replay group Add, Quick
+        Book query hay force disabled Save.'
+      - 'OQ-073 giữ potential occurrence leftover; chỉ reconcile bằng safe
+        scoped UI path mới, không replay Delete hoặc restore archived
+        prerequisites.'
+      - 'Không replay completed bounded passes hay unchanged OQ-074/OQ-075; giữ
+        protected notes, chỉ autonomous checkpoint và không ticket/discovery
+        checkpoint.'
     decisions:
-    - {id: DEC-shared-list-save, scope: whole-list, status: answered, answer: 'Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.', open_questions: [OQ-064], source: Blinx Deployment.decisions.DEC-shared-list-save, affected: [Teams, Services, Announcements, Dx Priority, Role Groups]}
-    - {id: DEC-staff-create, scope: unknown-scope, status: answered, answer: 'Tester duyệt 2026-10-23: cho tạo staff QA-test với email fiona.nguyen@blinxsolutions.com (invite/identity gửi tới email này OK); không cần xóa, giữ lại để tái sử dụng cho lần sau.', open_questions: [OQ-051], source: Blinx Deployment.decisions.DEC-staff-create, affected: [Staff Profiles]}
-    - {id: DEC-patient-fixture, scope: unknown-scope, status: answered, answer: 'Tester duyệt 2026-10-23: cho tạo patient synthetic tên QA-test-*, NHS number random hợp lệ mod-11 trong dải test 999xxxxxxx; email chỉ fiona.nguyen@blinxsolutions.com, phone để trống (không SMS); không cần cleanup, để lại trên dev; được dùng patient đó như bình thường (booking/media) và được dùng patient có sẵn trên dev.', open_questions: [OQ-065], source: Blinx Deployment.decisions.DEC-patient-fixture, affected: [Patient Search, Quick Book, Virtual Appointments, Media Library]}
-    - {id: DEC-workboard-create, scope: unknown-scope, status: answered, answer: 'Tester duyệt 2026-10-23: cho tạo board QA-test, không cần xóa. Notification nếu có chỉ tới fiona.nguyen@blinxsolutions.com. Tester chưa rõ màn này; gán case/task/staff theo policy CLAUDE.md (dữ liệu có sẵn trên dev được dùng).', open_questions: [OQ-066], source: Blinx Deployment.decisions.DEC-workboard-create, affected: [Case Workboards]}
+      - {
+          id: DEC-shared-list-save,
+          scope: whole-list,
+          status: answered,
+          answer: 'Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên
+            shared list Teams, Services, Announcements, Dx Priority thoải mái
+            như manual test; không cần xóa dòng QA-test sau đó. Riêng Role
+            Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính
+            group đó; KHÔNG sửa quyền role group có sẵn.',
+          open_questions: [ OQ-064 ],
+          source: Blinx Deployment.decisions.DEC-shared-list-save,
+          affected: [ Teams, Services, Announcements, Dx Priority, Role Groups ]
+        }
+      - {
+          id: DEC-staff-create,
+          scope: unknown-scope,
+          status: answered,
+          answer: 'Tester duyệt 2026-10-23: cho tạo staff QA-test với email
+            fiona.nguyen@blinxsolutions.com (invite/identity gửi tới email này
+            OK); không cần xóa, giữ lại để tái sử dụng cho lần sau.',
+          open_questions: [ OQ-051 ],
+          source: Blinx Deployment.decisions.DEC-staff-create,
+          affected: [ Staff Profiles ]
+        }
+      - {
+          id: DEC-patient-fixture,
+          scope: unknown-scope,
+          status: answered,
+          answer: 'Tester duyệt 2026-10-23: cho tạo patient synthetic tên QA-test-*, NHS
+            number random hợp lệ mod-11 trong dải test 999xxxxxxx; email chỉ
+            fiona.nguyen@blinxsolutions.com, phone để trống (không SMS); không
+            cần cleanup, để lại trên dev; được dùng patient đó như bình thường
+            (booking/media) và được dùng patient có sẵn trên dev.',
+          open_questions: [ OQ-065 ],
+          source: Blinx Deployment.decisions.DEC-patient-fixture,
+          affected: [ Patient Search, Quick Book, Virtual Appointments, Media Library ]
+        }
+      - {
+          id: DEC-workboard-create,
+          scope: unknown-scope,
+          status: answered,
+          answer: 'Tester duyệt 2026-10-23: cho tạo board QA-test, không cần xóa.
+            Notification nếu có chỉ tới fiona.nguyen@blinxsolutions.com. Tester
+            chưa rõ màn này; gán case/task/staff theo policy CLAUDE.md (dữ liệu
+            có sẵn trên dev được dùng).',
+          open_questions: [ OQ-066 ],
+          source: Blinx Deployment.decisions.DEC-workboard-create,
+          affected: [ Case Workboards ]
+        }

@@ -2,6 +2,15 @@
 
 Owner: `paco-explore` mode `autonomous` (và `interact`). Chỉ ghi relationship có evidence quan sát ở cả hai phía; tên giống nhau chỉ là `Inferred`. Không PII/test data id.
 
+## Teams receiver — 2026-10-23
+
+| From → To | Trigger | Observed effect | Classification | Evidence / ledger ref | Last verified |
+|---|---|---|---|---|---|
+| `Users & Staff / Teams` → `Work Boards / Assign Staff/Team` | Owned Create và page Save, source reload | Fresh new-board treeselect có exact owned Team; không select/Save | `Observed: dev, Super Admin GB` | `product-explore/auto-20261023-0506/ledger.md#8–9` | 2026-10-23 |
+| `Users & Staff / Teams` → `Work Boards / Assign Staff/Team` | Owned Rename và page Save, source reload | Fresh treeselect edited present, old absent; Cancel đóng draft | `Observed: dev, Super Admin GB` | `product-explore/auto-20261023-0506/ledger.md#9` | 2026-10-23 |
+
+Một unique availability edge với hai triggers; không saved assignment/notification proof. Source intentionally retained theo answered decision.
+
 | From → To | Trigger | Observed effect | Classification | Evidence / ledger ref | Last verified |
 |---|---|---|---|---|---|
 | `Organisation / Skills` → `Staff Profiles / Skill Capabilities` | Create owned Skill | Fresh unsaved `Add Care Professional` → `Skill Capabilities & Attributes` picker có exact owned Name; không chọn/lưu profile | `Observed: dev, Blinx Deployment` | `product-explore/auto-20261021-1359/ledger.md#11`, `skills-staff-picker.js` | 2026-10-21 |
@@ -109,5 +118,13 @@ Later Patient offline entry dừng tại context gate; Capacity role/card intera
 - `User Portal / guide-video-FAQ`: category viewer, native media pop-out và FAQ search/category reset là help-content/own UI navigation; không business record source/receiver effect. Module labels và instructional prose không tạo two-sided edge hoặc authorization; Scribe refusal giữ OQ-074. `[Observed: dev, Super Admin GB, 2026-10-23]` — `product-explore/auto-20261023-0000/ledger.md#5`.
 
 - `Health Forms Designer / unsaved Preview`: component configuration và neutral answer/clear/reopen chỉ owned draft/presentation; không template/response Save hoặc clinical receiver. Không thêm two-sided edge; historical V2 uncertainty và retained records giữ nguyên. `[Observed: dev, Super Admin GB, 2026-10-23]` — `product-explore/auto-20261023-0000/ledger.md#8`.
+
+## Patient Search → Profile — 2026-10-23
+
+| From → To | Trigger | Observed effect | Classification | Evidence/ledger ref | Last verified |
+|---|---|---|---|---|---|
+| Patient Search owned registration/demographics → Patient Profile Dashboard | Create, Known As Save rồi Actions Profile | Source identity/updated field giữ sau list reload; receiver hiện đúng owned identity và Known As, actual Super Admin GB verified | Observed | `product-explore/auto-20261023-0223/ledger.md#3–4` | 2026-10-23 |
+
+Một new two-sided edge; chưa clinical filing, booking/media receiver hoặc downstream Delete effect. Patient retained theo approval; historical Session occurrence uncertainty không đổi.
 
 ## Tester notes

@@ -134,4 +134,29 @@
 - Open questions: `OQ-052` (global Save footprint), server validation rules, persisted CRUD, Case Type consumer, downstream mapping
 - Exact resume state: Services list `/paco/configuration/organisation/services`, 4 baseline rows, no owned draft, no dialogs; next feature do autonomous checkpoint quyết định
 
+## Saved lifecycle — Super Admin GB, 2026-10-23
+
+- Classification: `Observed`, dev, role `Super Admin GB`; historical `Blinx Deployment` sections above remain separate.
+- Authorization: `DEC-shared-list-save` answered; page `Save` permitted for synthetic Services. Historical approval stops above no longer block this authorized scope; whole-list write footprint still unproven.
+- Provenance: `product-explore/auto-20261023-0506/ledger.md#10`.
+- `Add Another` → owned numeric ID/name, `Case Type` left `Not set` → `Save` → reload: fifth row persisted, exact ID/name and blank Case Type. This input accepted; not proof all numeric IDs valid.
+- Rename owned service and choose `Community` → `Save` → reload: edited name and Case Type persisted together. No clinical case created.
+- `Remove service` on owned persisted row opens `Delete Confirmation` with exact name, `Cancel` / `Delete`. Confirm `Delete` showed `Item deleted successfully!`; after loading/reload owned row absent, baseline count four, zero dialogs. No extra footer Save needed after confirmed deletion. Footer Save was clicked while confirmation open before confirm; no separate effect established.
+- Runnable cleanup check: `test-results/product-explore/auto-20261023-0506/services-cleanup-check.js`, passed. Three persisted changes; cleanup `Done`, no new leftover.
+
+### Current-role mutation coverage
+
+| Branch | Status | Evidence / limitation |
+|---|---|---|
+| Create with Case Type Not set/reload | Performed | Exact synthetic Name/ID persisted |
+| Rename/reload | Performed | Exact edited name persisted |
+| Case Type selection/Save/reload | Performed | Community persisted with rename |
+| Remove/confirmation/reload | Performed | Success, owned absent, four baseline rows |
+| Required/duplicate validation | Skipped | Bounded pass; no message observed |
+| Server boundary/ID domain | Skipped | Client-only historical checks not server proof |
+| Downstream receiver | Skipped | No UI-supported consumer verified |
+
+- Coverage: `Partial`, 4/7 current-role branches; historical draft denominator not additive.
+- Remaining: required/duplicate rules, accepted ID domain, Delete Cancel, consumers and shared Save concurrency footprint. No new defect or relationship claim.
+
 ## Tester notes

@@ -80,6 +80,28 @@
 - `[Open Question; OQ-062]` Owned prerequisites, Add/Remove/change saved lifecycle, validation, persistence và consumer chưa verified. Không dùng populated picker hoặc disabled fields làm requirement.
 - Selective console/network diagnosis `Not Run` trước connector failure; không suy nguyên nhân từ console count.
 
+## Current-role pair draft — Super Admin GB, 2026-10-23
+
+`Observed`; provenance `product-explore/auto-20261023-0506/ledger.md#12`. `DEC-shared-list-save` permits current shared Save scope; historical approval stops above no longer apply to authorized scope.
+
+- Add Service & Priority appends one empty pair and enables Save. Remove only appended pair restores baseline pair count but Save remains enabled; reload restores disabled Save after loading settles.
+- Appended pair exposes Service and Priority pickers; no selection or Save performed. Existing dev data authorization exists, but saved mapping/domain semantics not established in this bounded pass.
+- Current Super Admin GB header visible before/after reload; historical role-label absence not reproduced in this role, old cause unresolved.
+- Cleanup draft Done; no persisted business mutation, new leftover or relationship.
+
+### Current-role mutation coverage
+
+| Branch | Status | End state / limitation |
+|---|---|---|
+| Add own pair | Performed | Appended empty pair, Save enabled |
+| Remove appended pair | Performed | Baseline count restored, Save still enabled |
+| Reload discard / role continuity | Performed | Settled baseline, Save disabled, role verified |
+| Saved mapping/update/delete | Skipped | Domain mapping not established; no Save |
+| Validation | Skipped | No submit; server rules unknown |
+| Receiver | Skipped | No source saved |
+
+Coverage `Partial`, 3/6 current-role branches, separate historical 4/7 read-only inventory. Loading can briefly render zero pairs; wait for settled baseline before readback.
+
 ## Mutation coverage
 
 | Workflow branch | Status (Performed/Skipped/Not supported) | Reason if skipped | Validation tried / found | Transitions observed / visible | Persistence verified (how) | Cleanup |

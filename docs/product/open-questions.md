@@ -427,7 +427,7 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
 **Question:** `Teams` footer `Save` chỉ ghi delta owned Team hay toàn shared list? Có cách create/cleanup scoped riêng và owned staff prerequisite để test member assignment không? Add New → Add chỉ tạo draft, reload không persist; không bấm Save khi write footprint chưa chắc.
 **Impact:** Medium
-**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#9`; `workflows/staff-teams.md`. Không sửa row/member có sẵn; draft đã discard, không active leftover.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#9`; current `[Observed: Super Admin GB]` `product-explore/auto-20261023-0506/ledger.md#8–9`: authorized owned Create/Rename Save giữ qua reload, Work Board picker theo hai triggers; no-member source retained theo approval. Shared-list write footprint và member semantics chưa được chứng minh.
 **Created:** 2026-10-21
 **Answered:** 2026-10-23
 
@@ -444,7 +444,7 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Status:** Answered — `DEC-shared-list-save`
 **Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
 **Question:** `Organisation` → `Services` footer `Save` ghi delta owned service hay toàn shared list? Có cách create/update/remove scoped riêng không; `Service ID` có rule required/unique/domain nào, và `Case Type`/service được tiêu thụ ở đâu?
-**Impact:** Medium — chặn persisted CRUD và cross-feature effect; không bấm Save khi write footprint chưa rõ. Khác OQ-050: Services dùng entity/form riêng, chưa suy Save semantics từ Teams.
+**Impact:** Medium — authorization đã giải quyết bằng DEC; `Super Admin GB` đã verified Create, Rename/Case Type Update, Delete qua reload (`product-explore/auto-20261023-0506/ledger.md#10`), cleanup Done. Shared-list write footprint, domain/unique rules và consumer vẫn chưa established; không suy semantics từ Teams.
 **Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#15`, `services-draft-check.js`; `workflows/organisation-services.md`. 4 editable baseline rows; Add Another tạo owned draft, Remove riêng draft về 4, Add/reload về 4 và 0 owned inputs. ID lọc non-digit/max15, Name max255, Case Type mở 14 option labels; chưa Save/select option, không server-validation/downstream claim.
 **Created:** 2026-10-21
 **Answered:** 2026-10-23
@@ -516,7 +516,7 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Status:** Answered — `DEC-shared-list-save`
 **Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
 **Question:** `Organisation / Announcements` shared page-level `Save` ghi delta owned block hay toàn Welcome/Service list? Có cách tạo scoped owned persisted announcement với separate write footprint và cleanup không? Saved validation rules (required/trim/length/duplicate), location assignment persistence, recipients/triggers/location effect và saved lifecycle là gì?
-**Impact:** Medium — chặn persisted CRUD, domain validation và delivery/receiver assertions; không bấm shared Save khi write footprint/owned target/lifecycle chưa rõ. Khác OQ-050/OQ-052: Announcements dùng accordion/page-Save riêng, chưa suy Save semantics từ Teams/Services.
+**Impact:** Medium — authorization resolved; current Super Admin GB Create/Update/Delete+Save without location verified qua reload/reopen, cleanup Done (`product-explore/auto-20261023-0506/ledger.md#11`). Shared write footprint, domain validation và delivery/location semantics vẫn chưa established.
 **Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-2259/ledger.md#5–10`, `ui-observations.json#announcements`; `workflows/organisation-announcements.md`. Welcome Message 2 existing blocks, Service Updates 1 block baseline; own unsaved drafts Add/Delete/reload và Add/reload-discard đều baseline1/owned text0 sau cleanup. `Apply to locations` picker 285 rendered options; không chọn option/Save. Toolbar formatting/link/table/image visible, end states chưa exercise. Không bấm shared Save; persisted create/update/delete, server validation, location assignment persistence, recipients/triggers và delivery/receiver `Not Run`. Read-only reconciliation `2026-10-22T01:07:48.305Z`: baseline1editor/exact own matches0/0/dialogs0/roletrue, no Save; `resume-preflight-20261022-0103/ledger.md#4–6`, run2259 ledger #12–13. Organisation continuity qua re-auth chưa independently established; latest connector notice sau sweep chặn current check, timestamp null. Không trả lời saved-lifecycle question hoặc tăng coverage.
 **Created:** 2026-10-21
 **Answered:** 2026-10-23
@@ -544,6 +544,7 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 
 **ID:** OQ-063
 **Status:** Open
+**Current-role check (2026-10-23):** `[Observed]` Super Admin GB header verified trước/sau Dx Priority settled reload (`product-explore/auto-20261023-0506/ledger.md#12`); historical absence không reproduced trong role này, không giải thích cause cũ.
 **Question:** Cách read-only nào xác minh actual active role/context khi header thiếu exact `Blinx Deployment` hoặc hiển thị `Config Admin` trong run intended `Blinx Deployment`? Quan sát tại `Dx Priority`, Reports và Dashboard có cùng cause không, hay chỉ header/context behavior khác nhau?
 **Impact:** Medium — chặn tiếp autonomous mutation/feature mới cho tới verify role; path-based `CHECK_AUTH_SCRIPT` true không đủ. Không credential retry hoặc switch role/logout chỉ để ép label trở lại.
 **Evidence:** `[Observed / Open Question]` preflight `resume-preflight-20261022-0151/ledger.md#2–4` role verified trước run; `product-explore/auto-20261022-0158/ledger.md#3–4`: role wait timeout25s sau reload, readbacks `02:04:40.420Z`/`02:05:30.280Z` role absent, root render/loginInputs0/dialogs0. `More options` mở `02:06:23.494Z`, targeted snapshot sau đó chỉ application shortcuts, không role proof/snapshot timestamp. Later plugin/user `CONNECTION_CLOSED`, notice timestamp null/current recheck Blocked; không browser action sau notice, không selective console/network/root-cause proof.
@@ -687,6 +688,29 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Impact:** Chưa có trusted basis để dùng marker visibility làm required-answer pass/fail assertion.
 **Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261023-0000/ledger.md#8`: owned unsaved Text Input Required on/recording off, marker vẫn visible sau synthetic answer và blur; khác historical Blinx Deployment observation tại `product-explore/auto-20261021-1626/ledger.md#4–5`, không response Save/Submit.
 **Linked:** `Health Forms Designer`, `workflows/health-forms.md`; không authorize response submit hoặc clinical filing.
+**Created:** 2026-10-23
+**Answered:** -
+
+### Document default review semantics (2026-10-23)
+
+**ID:** OQ-076
+**Status:** Open
+**Question:** Editor `No review needed` có quy định initial saved review status khác `Pending Review`, hay selector và review status là hai thuộc tính độc lập?
+**Impact:** Chưa có trusted basis để đánh giá initial review status hoặc notification/queue behavior.
+**Evidence:** `[Observed: dev, Super Admin GB]` `product-explore/auto-20261023-0506/ledger.md#2–3`: synthetic Document tạo với default copy, saved card Pending/detail Pending Review; manual Reviewed sau settled Save/reload verified; own document deleted, cleanup verified.
+**Current evidence:** `product-explore/auto-20261023-0819/ledger.md#1`: control là checkbox, fresh default unchecked; explicit checked trước Save vẫn detail Pending Review sau reload. Không còn chỉ dựa trên label text; semantics/expected initial state vẫn cần trusted basis.
+**Linked:** `Patient Profile / Documents`, `workflows/patient-profile.md`.
+**Created:** 2026-10-23
+**Answered:** -
+
+### Document template management / cleanup (2026-10-23)
+
+**ID:** OQ-077
+**Status:** Open
+**Question:** UI nào quản lý rename/delete template tạo bằng Patient Profile Documents `Save as Template`?
+**Impact:** Owned template còn trên dev vì picker không có management action và bounded Configuration > Patient scan chưa tìm thấy route.
+**Evidence:** `[Observed: dev, Super Admin GB]` `product-explore/auto-20261023-0819/ledger.md#3`: Save/reload picker/preview verified, generated document cleanup Done; template còn trong autonomous leftovers.
+**Linked:** `Patient Profile / Documents`, `workflows/patient-profile.md`.
 **Created:** 2026-10-23
 **Answered:** -
 

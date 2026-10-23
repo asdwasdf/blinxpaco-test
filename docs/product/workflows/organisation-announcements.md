@@ -139,4 +139,28 @@ Inventory giới hạn theo workflow branch/end state; không toàn bộ feature
 - `[Observed; ledger #11–13]` Connector pause sau `23:09:25.321Z` được recover cho final sweep. Run2259 đóng `done` tại `2026-10-22T01:12:45.669Z` do elapsed133/120, không thêm feature/state hoặc Complete/deep/product verdict. Sau sweep, latest Playwright plugin/user `CONNECTION_CLOSED` notice lại chặn current UI/auth recheck; notice timestamp null, không browser action sau latest notice. Final measured cleanup sweep `Pass` chỉ read-only scope; current recheck `Blocked`, không current-state guarantee.
 - Resume theo `docs/product/explore/autonomous-state.yaml`; fresh run chỉ sau reconnect/auth/role/read-only reconciliation, không reopen closed2259. Autonomous checkpoint riêng, ticket/discovery không đổi. OQ-061 còn Open; không retry shared `Save` khi basis chưa đổi.
 
+## Saved Service Updates — Super Admin GB, 2026-10-23
+
+- `Observed`, dev, `Super Admin GB`; provenance `product-explore/auto-20261023-0506/ledger.md#11`. Historical role/draft results above remain separate.
+- `DEC-shared-list-save` authorizes shared page Save for current synthetic scope; historical approval stops above no longer block it. Shared write footprint and delivery semantics remain unknown.
+- Add another creates empty rich-text block with empty `Apply to locations`; enter own synthetic text, leave location empty, Save. `Announcements updated successfully!`; reload/reopen retains own block. Saved list order can change: scope owned block by exact text, never index.
+- Edit only own text, Save/reload/reopen: edited text persists.
+- Delete in ancestor containing exactly one owned editor/one Delete removes block without confirmation; Save/reload/reopen verifies absence. Success-toast wait missed transient; reconciliation used reload, not repeated Save.
+- Three persisted changes, cleanup Done; one baseline Service editor remains, own prefix absent, zero dialogs. No location selected, no delivery/receiver verified.
+
+### Current-role mutation coverage
+
+| Branch | Status | Validation / persistence / cleanup |
+|---|---|---|
+| Create with no location | Performed | Save/reload/reopen retains text; no validation error observed |
+| Own Update | Performed | Edited text survives reload/reopen |
+| Own Delete + Save | Performed | Reload/reopen own absent; cleanup Done |
+| Required/duplicate validation | Skipped | Bounded saved pass; trusted rules unknown |
+| Welcome/formatting | Skipped | Separate content/toolbar branch |
+| Location association | Skipped | No approved receiver mapping verified |
+| Receiver/delivery | Skipped | No UI-supported consumer verified |
+
+- Coverage `Partial`, 3/7 current-role branches; historical draft denominator not additive.
+- Remaining: validation, Welcome/formatting, association effect, receiver/delivery and shared-write concurrency footprint. No new anomaly verdict.
+
 ## Tester notes

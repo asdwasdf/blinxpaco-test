@@ -1,5 +1,178 @@
 # Patient Profile & PDS Gate 1 Epic
 
+## Trends và Shared Records — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0819/ledger.md#5–6`.
+
+- Dashboard `View all trends` mở `Trends & Measurements` cùng route dashboard; `All Measurements`/`Priority Only` đổi pressed state. Baseline empty copy `No priority measurements found` không chứng minh patient khỏe hoặc dataset đầy đủ.
+- Search synthetic đổi thành `No measurements found matching your search`; clear/All trả baseline; Back/reopen query blank và All selected. Coverage 3/5 read-only groups: root/back, mode toggle, search/clear/reopen; populated detail và range/chart correctness Skipped vì không fixture. Cleanup N/A; navigation done, branches/errors partial, các dimension business mutation/persistence/relationships none.
+- Shared Records route `/paco/patient-profile/:id/shared-records` có Date Selection, Search, GP Connect, Launch NCRS. Sau batch search/clear/date click xuất hiện `Smartcard Login Required`; trigger riêng chưa xác định. Close khôi phục blank search/All Time, không external login/handoff.
+- Shared Records coverage 2/5 groups: root và Smartcard gate dismiss Performed; populated record/date filtering/external handoffs Skipped thiếu Smartcard prerequisite. Cleanup N/A; navigation/branches/errors partial, workflow/mutation/validation/persistence/relationships none. Không clinical access hoặc mutation.
+
+## Template Library menu boundary — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0819/ledger.md#4`.
+
+- Configuration > Clinical Config > Template Library visible; pointer/native anchor clicks đóng menu nhưng route giữ `/paco/configuration/organisation/general`, không tab/dialog mới. Auth/role vẫn đúng qua shared preflight.
+- Coverage 1/3 bounded groups: menu interaction Performed; library root/owned template cleanup Skipped vì destination chưa tới. Không mutation, permission/defect verdict hoặc cross-feature relationship. OQ-077 vẫn Open; template leftover giữ checkpoint.
+
+## Documents own template lifecycle — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0819/ledger.md#3`.
+
+- `Save as Template` mở dialog Template Name required, Category Letter/Referral/Other, optional Description; Save template không Save patient document, editor vẫn mở.
+- Discard document draft/reload rồi `From Template` có own template và synthetic preview; `Use this template` chuyển body vào editor nhưng title blank. Điền title Save/reload tạo patient document; Delete/reload trở empty verified.
+- Picker tự chọn baseline đầu; không tự dùng baseline. Không template management/delete tại picker hoặc bounded Configuration > Patient menu; own template còn lại, ghi checkpoint để cleanup khi có UI path.
+- Mutation coverage 4/6 bounded groups: picker/back, template Save/readback, Use/body draft, generated document Save/Delete Performed; template update/delete và category/validation Skipped. Ba persisted changes; document cleanup Done, template Leftover. Navigation done; workflow/branches/mutation/persistence partial, validation/relationships/errors none; source-to-picker là same-feature dependency, không cross-feature edge.
+
+## Documents pointer Download control — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0819/ledger.md#2`.
+
+- Owned generated PDF qua `Document actions` button và pointer `Download` menuitem tạo download event, filename đúng synthetic title, failure null. Native-dispatch timeout pass trước không reproduced bằng pointer; không product defect established.
+- Default `No review needed` unchecked, Save/reload detail vẫn `Pending Review`, giống checked control #1; OQ-076 semantics vẫn Open.
+- Mutation coverage 3/4 bounded groups: Create/readback, Download completion, Delete/reload Performed; PDF content validation Skipped. Hai persisted changes và một Download; cleanup Done, không new leftover/relationship. Navigation done; workflow/branches/mutation/persistence/errors partial, validation/relationships none.
+
+## Documents explicit review checkbox — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0819/ledger.md#1`.
+
+- `No review needed` là checkbox; fresh editor unchecked. Label click thay checked state, không mở dropdown; Cancel/reopen trở unchecked.
+- Explicit checked được xác minh trước Save; success rồi reload/list/detail vẫn `Pending Review`. OQ-076 vẫn Open vì semantics chưa có trusted basis; không kết luận defect.
+- Owned card action nên scope `button`: nested span và button cùng accessible label có thể làm count/locator không unique. Pointer menu Delete/confirmation và reload empty verified.
+- Mutation coverage 4/5 bounded groups: checkbox toggle, Cancel/reopen, checked Save/readback, Delete/reload Performed; unchecked saved control Skipped. Hai persisted changes; cleanup Done, không new leftover/relationship. Navigation done; workflow/branches/mutation/validation/persistence/errors partial, relationships none.
+
+## Dashboard customisation picker — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0713/ledger.md#7`.
+
+- Route `/paco/patient-profile/:id/dashboard`; `Customise Dashboard` accessible name kèm selected count. Picker có Search, 14 card labels, `Reset`; không Save/Cancel observed.
+- Unmatched search không còn card option; `Timeline` search thu một label. Clear/reopen query blank, `14 Selected` giữ nguyên; close picker verified.
+- Coverage Partial (read-only), 3/5 bounded groups: open/close, unmatched search, matching/clear/reopen. Selection/persistence và Reset Skipped vì scope/auto-persistence chưa rõ. Không clinical action, mutation hoặc new leftover; cleanup N/A.
+- Navigation done; branches/errors partial; main workflow/mutation/validation/persistence/relationships none. Search không chứng minh card data correctness.
+
+## Timeline root — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0713/ledger.md#5`.
+
+- Route `/paco/patient-profile/:id/timeline`; root `No data`, Search, fullscreen, All Time/year controls, Sector/Event Type/Organisation/Status pickers, Patient/My org/External toggles.
+- Continuation: fullscreen chuyển thành `Exit full screen`; exit khôi phục `Expand to full screen`. Event Type chọn `Document` hiện `1 Selected`; reload settled `No data`, cả bốn picker trở `0 Selected`. Chưa chứng minh filtering correctness trên populated data.
+- Coverage Partial (read-only), 2/4 bounded groups: root và filter/fullscreen controls Performed; populated detail/source correlation Skipped vì chưa fixture. Auth expiry trước đó được khôi phục cùng role; không product failure established.
+- Navigation done; branches/persistence partial (chỉ preference reset); mutation/validation/relationships none. Cleanup N/A, controls reset; no new leftover.
+
+## Documents Download diagnostic — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0713/ledger.md#6`.
+
+- Synthetic Document Create hiển thị success; auth recovery cùng role rồi list/detail xác minh saved title. Cleanup cuối cùng reload empty list và own title absent.
+- Native dispatch vào menu `Download` không cho download event trong 20 giây; kết quả `Inconclusive`, chưa chứng minh file/content hoặc product defect. Native menu dispatch cũng không mở Delete confirmation; pointer click mở được, nên locator dispatch là diagnostic confounder.
+- Mutation coverage riêng 2/3 bounded groups: prerequisite Create/readback và Delete/reload Performed; Download completion/content chưa verified. Hai persisted changes, cleanup Done; không new leftover hoặc relationship. Navigation done; main workflow/branches/mutation/persistence/errors partial, validation/relationships none.
+
+## Payments placeholder — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0713/ledger.md#4`.
+
+- Route `/paco/patient-profile/:id/payments`; tabpanel renders only `Payments`, no button/input/link observed. This does not establish billing history absence or feature unsupported.
+- Coverage `Partial (read-only)`, 1/3 bounded branches: root Performed; history and transaction flow Skipped because observed root exposes neither.
+- Navigation done; other dimensions none, no mutation, validation or persistence verified. Cleanup N/A; no new leftover.
+
+## Patient Comms empty receiver — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0713/ledger.md#3`.
+
+- Route `/paco/patient-profile/:id/patient-comms`; Search, Date Selection, seven category links; no create/send button observed within tabpanel.
+- All comms empty label `No messages to show`; health forms category changes query and label to `No Health Forms to show`. Accessible category names lowercase despite visual capitalization.
+- Synthetic search/clear on empty data retains empty root; matching correctness unverified. Date Selection exposes From/To calendars, Cancel/Apply; Cancel retains All time.
+- Coverage `Partial (read-only)`, 4/7 branches: root, category switch, empty search/clear, date open/Cancel. Skipped populated detail/matching, date Apply/filter correctness, source-send correlation due missing comms fixture.
+- Navigation done; branches/errors partial; main workflow, mutation, validation, persistence and relationships none. No source send, receiver relationship, new leftover or defect verdict; cleanup N/A, controls closed.
+
+## Tasks draft — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0713/ledger.md#1–2`.
+
+- Owned Profile `Tasks`, route `/paco/patient-profile/:id/tasks`, root `Total Tasks: 0`; Active/Closed/All, grouping, Filters and Create New task visible.
+- Create dialog prefills patient. Task Type `Free text` reveals title; Board, Description, column and Due Date marked required; staff/team, reviewer, status, priority and resources also visible.
+- Save disabled on blank form; title/description filled leaves `workboard_id: Required` and `task_due_date: Invalid input`. No submit; server rules unknown.
+- Cancel then reopen resets type/description; Cancel/reload returns empty root, zero dialogs. Cleanup Done; no persisted task.
+- Board picker populated but safe notification mapping not verified; no board/assignee selected, comment added or resource uploaded. Existing dev data authorization is not recipient proof.
+
+### Mutation coverage — Tasks
+
+| Branch | Status | End state / limitation |
+|---|---|---|
+| Empty root | Performed | Total Tasks: 0 |
+| Task Type / Free text | Performed | Title field visible |
+| Title/description validation gate | Performed | Remaining Board/date errors, Save disabled |
+| Cancel/reopen/reload | Performed | Draft reset, empty root; cleanup Done |
+| Valid Save | Skipped | Safe Board/notification mapping needed |
+| Saved update/status/delete | Skipped | No saved fixture |
+| Resource/comment/attachment | Skipped | Separate mutations not exercised |
+| Cross-feature receiver | Skipped | No saved source |
+
+Coverage Partial, 4/8 bounded branches; navigation done, main workflow/branches/mutation/validation/persistence partial, relationships none, errors/edge partial. Persistence covers draft discard only. Filters/grouping remain untested.
+
+## Autonomous owned patient receiver — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0223/ledger.md#3–4`.
+
+- Entry: exact owned `Patient Search` result → pinned `Actions` → `Profile` → `/paco/patient-profile/:id/dashboard`; actual destination role independently verified.
+- Source patient Create và optional `Known As` Update đã giữ sau list reload; Profile receiver hiển thị owned identity và updated field. Một observed two-sided edge từ registration/demographics tới Profile, không suy clinical filing hoặc booking/media propagation.
+- Dashboard có `Patient actions`, `Customise Dashboard`, `Trends`, `Health Report` và cards; mới map receiver, chưa thay dashboard, clinical record, pharmacy, risk hoặc send.
+- Mutation coverage: **1/1 bounded receiver-readback branch Performed**, không enumerated Profile lifecycle; navigation `done`, main_workflow/branches_states/relationships `partial`, mutation/validation/persistence chưa exercise riêng tại receiver. Owned source intentionally retained theo patient decision; không Profile draft.
+
+
+## Owned Documents lifecycle — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0506/ledger.md#1–3`.
+
+- Entry: owned Patient Search row mở Profile; tab `Documents` tại `/paco/patient-profile/:id/documents`. Empty state `There are no documents for this patient yet`. `Create New` có `Document`, `Fit Note`, `From Template`; Upload riêng.
+- `Document` mở editor với `Document Title`, rich text, merge fields, `Save as Template`, review selector, `Preview`, `Cancel`, `Save`. Blank Save: `Please enter a document title`; title-only Save: `Document content cannot be empty`.
+- Synthetic title/body Save: `Document saved successfully`; generated PDF xuất hiện trong list và detail sau reload. Không dùng merge fields hoặc clinical content.
+- Detail `Pending Review` có option `Reviewed`; đợi `Saving...` kết thúc rồi reload/reopen, detail và card đều `Reviewed`. Reload quá sớm từng cho Pending; không coi immediate DOM hoặc filter button `Reviewed` là persistence proof.
+- Default editor hiển thị `No review needed` nhưng saved record ban đầu `Pending Review`/card `Pending`; semantics chưa rõ, chưa kết luận defect.
+- `Document actions` có `Download`, `Send to patient`, `Create Task`, `Delete`. Delete own record mở confirmation `This action cannot be undone and will be audited.`; confirm và reload trở empty state, exact owned title absent. Cleanup `Done`.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | Validation / end state / persistence | Cleanup |
+|---|---|---|---|
+| Empty list và Document editor entry | Performed | Empty state rồi editor visible | Done |
+| Blank title gate | Performed | Exact title error; editor retained | Done |
+| Empty content gate | Performed | Exact content error; editor retained | Done |
+| Valid Create và list/detail readback | Performed | Success; generated PDF/title qua reload | Done |
+| Pending Review → Reviewed | Performed | Detail/card Reviewed sau settled Save và reload/reopen | Done |
+| Delete confirmation và deletion | Performed | Reload empty và exact title absent | Done |
+| Preview / Cancel / duplicate / boundary | Skipped | Chưa exercise riêng | N/A |
+| Review selector semantics / reverse transition | Skipped | Cần focused experiment mới | N/A |
+| Upload / Download / From Template | Skipped | Chưa exercise trong bounded pass | N/A |
+| Fit Note / Analyse / annotation / comments / task / send | Skipped | Chưa map scope hoặc downstream side effects | N/A |
+
+**6/10 bounded branch groups**, `Partial`. Navigation done; main workflow, branches, mutation, validation, persistence partial; relationships none; errors/edge partial. Ba persisted business mutations: Create, review update, Delete. Không two-sided cross-feature edge; PDF generation là same-feature result. Existing synthetic patient retained; không document leftover. Runnable cleanup check: `test-results/product-explore/auto-20261023-0506/documents-cleanup-check.js`.
+
+## Document draft Preview và discard — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0506/ledger.md#4`.
+
+- `Preview` mở `Document Preview`, render synthetic body, có `Save Document`; Close giữ draft title. Không bấm preview Save.
+- Dirty editor `Cancel` mở `Discard unsaved changes?`; `Keep Editing` giữ title; `Discard & Exit` trở list empty. Reload xác minh draft không persist.
+- Click copy `No review needed` không lộ options trong pass; OQ-076 vẫn Open.
+- Mutation coverage riêng **3/4 bounded branches Performed**: Preview/Close, Keep Editing, Discard/reload; preview Save Skipped để không replay completed saved lifecycle. Duplicate/boundary và review semantics chưa exercise. Cleanup Done, không new saved record hoặc edge; denominator độc lập với historical 6/10 groups.
+
+## Owned Patient Appointments receiver — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0506/ledger.md#5`.
+
+- `Appointments` tab mở `/paco/patient-profile/:id/appointments`; `Search appointments`, grid columns `Appt Type`, `Appointment Name`, `Date`, `Start Time`, `End Time`, `Status`, `Actions`; settled `No Rows To Show` trên owned synthetic patient, không tabpanel button.
+- Mutation coverage **1/3 bounded branches**: root empty Performed; known matching/search và booked-row lifecycle Skipped vì chưa owned appointment fixture. Read-only Partial; navigation done, branches/errors partial, main workflow/mutation/validation/persistence/relationships none. Không booking propagation hoặc two-sided relationship evidence; cleanup N/A, không leftover.
+
+## Synthetic TXT Upload — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0506/ledger.md#6–7`.
+
+- `Upload a document` mở native single-file chooser; accept `.pdf,.jpg,.jpeg,.png,.doc,.docx,.txt,.csv,.xlsx`. Chọn synthetic TXT tự upload ngay, không intermediate form; success toast, filename trong card và detail sau reload. Đây UI accept list, chưa chứng minh server hỗ trợ mọi extension.
+- Owned uploaded item có `Pending Review`; không bấm Analyse/send/task. Exact owned item Delete/confirm rồi reload về empty state, filename absent; cleanup Done.
+- Mutation coverage **3/6 bounded branches Performed**: chooser/cancel, TXT upload/reload/detail, Delete/reload. Unsupported format/size, other accepted formats, Download Skipped vì ngoài bounded pass. Hai persisted mutations: Upload và Delete; không new cross-feature relationship hoặc leftover.
+
 ## PDS Gate 1 — Epic Overview (PAC2-63)
 
 ### Epic Summary

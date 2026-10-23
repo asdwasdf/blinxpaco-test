@@ -7,6 +7,17 @@
 - Last verified: `2026-10-21`
 - Provenance: `product-explore/auto-20261021-1359/ledger.md#9`.
 
+## Super Admin GB saved Team và Work Board receiver — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0506/ledger.md#8–9`; page Save authorized qua answered `DEC-shared-list-save`, supersedes historical approval stop cho current pass, không suy write footprint.
+
+- `Add New` → synthetic Name → Add → page `Save`; reload sau list settle có đúng một owned name input. Không chọn member hoặc đổi existing rows.
+- Đổi exact owned name → page Save → reload giữ edited, old absent. Không kiểm duplicate/blank/server rule trong pass này.
+- Fresh Work Board new form `Assign Staff/Team` treeselect có source name sau Create; sau rename picker có edited và old absent. Không select hoặc Save board; Cancel đóng draft.
+- Một unique observed relationship Teams → Work Board Assign Staff/Team, hai triggers Create/Rename; chỉ picker availability, chưa saved assignment/permissions/notification proof.
+- Mutation coverage **4/7 bounded branches Performed**: Create/reload, Rename/reload, Create receiver, Rename receiver; member assignment, delete/restore và validation Skipped. Hai persisted mutations; own no-member Team intentionally retained theo approval, draft cleanup Done. Không force unknown remove icon.
+- Current coverage `Partial`: navigation done; main workflow/branches/mutation/persistence/relationships partial; validation none, errors/edge partial. Historical role/1-of-6 draft pass giữ riêng.
+
 ## Business context observed
 
 - `[Observed]` `Configuration` → `Users & Staff` có `Staff Profiles`, `Role Groups`, `Teams`.
