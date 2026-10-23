@@ -7,9 +7,7 @@
         "--user-data-dir",
         "playwright/.mcp-browsers/user",
         "--storage-state",
-        "playwright/.auth/user-session.json",
-        "--port",
-        "3101"
+        "playwright/.auth/user-session.json"
       ]
     },
     "playwright-plugin": {
@@ -19,9 +17,7 @@
         "--user-data-dir",
         "playwright/.mcp-browsers/plugin",
         "--storage-state",
-        "playwright/.auth/plugin-session.json",
-        "--port",
-        "3102"
+        "playwright/.auth/plugin-session.json"
       ]
     }
   }
