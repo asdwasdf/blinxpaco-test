@@ -23,24 +23,71 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 ### Module: Appointment Book (PACO Connect)
 
 #### Appointment Book (root)
-- Coverage: Partial
-- Entry: `/paco/dashboard` → sidebar `Appointment Book` → submenu `Appointment Book`
+- Coverage: Partial (read-only), Super Admin GB breadth 7/15, selector boundary 1/4, selector search/baseline 4/7 và draft/filter pass 5/6 giữ riêng; Blinx Deployment 4/15, saved booking lifecycle chưa chạy.
+- Entry: authenticated session → direct route `/paco-connect/appointment-book` reverified; sidebar/submenu `Appointment Book` là historical navigation hint.
 - Route: `/paco-connect/appointment-book`
-- Role observed: `Super Admin GB`
+- Role observed: `Super Admin GB` (actual header verified); `Blinx Deployment` (pass trước, riêng coverage).
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-8241` (`feature-location.md`); cũng quan sát ở `PAC2-8384`, `PAC2-7137`, `PAC2-8552`
-- Last verified: `2026-10-02`
+- Source: `product-explore/auto-20261022-1742/ledger.md#2` (selector search/baseline); `auto-20261022-1414/ledger.md#9–10` (selector boundary); `auto-20261022-1001/ledger.md#9–11` (breadth); pass trước `auto-20261022-0236/ledger.md#12–15`; lịch sử `PAC2-8241` (`feature-location.md`), `PAC2-8384`, `PAC2-7137`, `PAC2-8552`.
+- Last verified: `2026-10-23`
 - Aliases: `Appt. Book`, `Appointment Book`, `PACO Connect`, `Day view`
 - Tickets: `PAC2-8241`, `PAC2-8384`, `PAC2-7137`, `PAC2-8552`
-- Note: document response báo HTTP `404` nhưng UI vẫn render; chờ `Loading` biến mất thay vì dựa vào HTTP status. Nội dung phụ thuộc `Appt. Book` selector và ngày đang chọn. Landmarks: `Day`/`Week`/`Month`/`Year`, `Sessions`, `Booked`, `Available`, `Quick Book`, `Filters`, `Group Send`, `Export`.
+- Note: document HTTP `404` vẫn render UI; chờ actual header và `Loading your appointment data` biến mất. Selector synthetic search hiện `No appointment books found` nhưng status giữ selected count; clear/reopen/reload giữ selection baseline và blank query. Không đổi selection hoặc thử `Done`/`Cancel`; saved fixture OQ-065 giữ pending.
 - Logic chính:
   - Summary `Sessions`/`Booked`/`Available` phải bằng tổng detail block cùng ngày/book/filter `[Confirmed]` (PAC2-7137)
   - Appointment có 2 session holder chỉ tính `1` vào `Booked` `[Confirmed]` (PAC2-7137/TC-004)
   - Slot `Bookable` off vẫn hiện nhãn `Non-bookable`, bị loại khỏi `Available` `[Observed]` (PAC2-7137)
-- Defect đã biết:
+  - Blank `Quick Book` có `Find Appointment` disabled; All/My/All restore được. Calendar/date và synthetic root search/clear có end states, chưa saved booking hoặc count correctness `[Observed]` (`product-explore/auto-20261022-1001/ledger.md#10–11`).
+- Defect đã biết (lịch sử, chưa retest trong autonomous):
   - `PAC2-7137` Fail: `Day` `Booked` đếm theo holder (3), `Week` đếm theo appointment (2)
-- Chi tiết: `workflows/appointment-book.md#count-summary-dayweek`
+- Chi tiết: `workflows/appointment-book.md#super-admin-gb-breadth--2026-10-22`; pass trước tại `#autonomous-breadth-2026-10-22`, logic ticket tại `#count-summary-dayweek`.
+- Relationship mới: owned source Create/rename/Archive reflected trong fresh selector; selection unchanged. `[Observed]` — `product-explore/auto-20261022-1742/ledger.md#3`; source lifecycle giữ riêng bên dưới.
+- Later draft/filter behavior: Quick Book `Reset` xóa gender preference nhưng giữ search/hierarchy scope; Close/reopen reset draft. `Booked` criterion giữ qua drawer reopen, reload trả exact baseline; patient no-match completion Inconclusive. `[Observed: dev, Super Admin GB, 2026-10-23]` — `product-explore/auto-20261023-0000/ledger.md#2`.
+
+#### Appointment Sessions source (Configuration)
+- Coverage: Partial (interactive), historical draft 5/9 và saved lifecycle 9/15 giữ riêng; generated-occurrence cleanup Inconclusive.
+- Entry: Known Configuration root hoặc `Appointment Books` region → `Sessions`.
+- Route: `/paco-connect/configuration/`
+- Role observed: `Super Admin GB` (actual header verified).
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-1742/ledger.md#5–6`; saved pass `product-explore/auto-20261022-2011/ledger.md#2–4`.
+- Last verified: `2026-10-22`
+- Logic chính: Blank Name native required; named Save cần Slot Type và Appointment Book. Fresh own prerequisites đủ Create, Name/assignments retained trong fresh editor; Edit/Cancel bỏ draft, template Delete verified bằng settled source absence.
+- Note: Rename Save Inconclusive, metadata check-time-edit-impact 404 (OQ-072); Archive gate dẫn affected CSV, generated-occurrence cleanup sau Delete chưa proven (OQ-073). Historical Frequency/Untimed/discard defaults giữ riêng; không existing assignment hoặc booking mutation.
+- Chi tiết: `workflows/appointment-sessions-settings.md`.
+
+#### Appointment Slot Types source (Configuration)
+- Coverage: Partial (interactive), 7/14 bounded branches; owned Create/rename/Archive persistence và fresh Session receiver verified.
+- Entry: `Configuration` → button `Appointment Books` → region cùng tên → `Slot Types`.
+- Route: `/paco-connect/configuration/#service-types`
+- Role observed: `Super Admin GB` (actual header verified).
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-1742/ledger.md#6`.
+- Last verified: `2026-10-22`
+- Logic chính: Minimal owned Name Save retained qua reload/fresh editor; Edit/Cancel bỏ draft, rename retained; Create/rename/Archive reflected trong fresh Session picker, không chọn option hoặc Save Session.
+- Note: Name native required absent không chứng minh optional server rule; source search readiness OQ-071. Later prerequisite pass Create/Archive và saved Session assignment retained, fresh picker cleanup verified; historical 7/14 giữ riêng. — `product-explore/auto-20261022-2011/ledger.md#3`.
+- Chi tiết: `workflows/appointment-slot-types-settings.md`.
+
+#### Appointment Books source (Configuration)
+- Coverage: Partial (interactive), 8/12 bounded source branches; schedule selector coverage giữ riêng.
+- Entry: `Configuration` → hover `Appointment Books` → child `Appointment Books`.
+- Route: `/paco-connect/configuration/#appointment-books`
+- Role observed: `Super Admin GB` (actual header verified).
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-1742/ledger.md#3`.
+- Last verified: `2026-10-22`
+- Aliases: `Add Appointment Book`, `Edit Appointment Book`, `Archive Appointment Book`
+- Logic chính:
+  - `Name` blank bị native required validation; minimal owned Create retained qua reload/fresh editor.
+  - Edit/Cancel bỏ draft; saved rename retained qua reload/fresh editor.
+  - Create, rename và Archive reflected trong fresh schedule selector; không thay selected book.
+  - Archive/Continue đóng dialog; fresh source/receiver không còn owned option, không chứng minh hard delete hoặc analytics retention.
+- Note: Source search/filter correctness Inconclusive (OQ-071). Later prerequisite Create→saved Session assignment và Archive→fresh Session picker absence thêm Book→Session edge; schedule selector cleanup reverified, không schedule occurrence proof. — `product-explore/auto-20261022-2011/ledger.md#3–4`.
+- Chi tiết: `workflows/appointment-books-settings.md`.
 
 #### Appointment Book — feature-branch route
 - Coverage: Minimal
@@ -297,7 +344,208 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - `PAC2-8552` Blocked: 9/9 case, thiếu approval mutation/fixture/DB owner
 - Chi tiết: `workflows/appointment-book.md#hiệu-năng-bookingcancel-partitioned-table`
 
+### Module: Case Load Management
+
+#### Case Workboards
+- Current-role coverage: `Super Admin GB` breadth 3/8 và independent search/presentation 4/6 giữ riêng; current-board no-match/clear, Case ID/Patient mode/clear và List/Card reload/restoration verified. Sources `product-explore/auto-20261022-1206/ledger.md#16`, `product-explore/auto-20261023-0000/ledger.md#3`; no saved mutation, DEC-workboard-create pending.
+- Current-role reusable behavior: Board search no-match hiển thị Tasks/Cases zero, `Clear search` restore sidebar; current-board search có explicit no-match helper. Case ID/Patient đổi input, matching completion Inconclusive; List marker và `?view=list` giữ qua reload, Card/Board/blank searches restored. Filters unchanged Save disabled; delayed-score cause Open, không patient card opened.
+- Current-role chi tiết: `workflows/case-load-management.md#independent-search-modes-và-presentation--2026-10-23`; historical denominators và context giữ riêng.
+- Coverage lịch sử: Partial (read-only), 3/9 bounded branches, destination context chưa verified
+- Entry: `/paco/dashboard` → sidebar `Case Load Management` → submenu `Case Workboards`
+- Route: `/paco/workboards?tab=case` (auto-select existing board → `/paco/workboards/:id`)
+- Role context: intended `Blinx Deployment`, chưa verified tại destination; Reports và Dashboard sau đó hiển thị `Config Admin`.
+- Environment: `dev`
+- Classification: `Observed`
+- Source: historical `product-explore/auto-20261022-0714/ledger.md#10–12`; current-role `product-explore/auto-20261023-0000/ledger.md#3`
+- Last verified: `2026-10-23`
+- Aliases: `Workboards`, `Case Boards`, `My Case`
+- Logic chính:
+  - Controls: search mode `Board`/`Case ID`/`Patient`, Board name field, `Tasks`/`Cases` counts, `Create new board`, `Search this board`, List/Card view toggle, `Filters` `[Observed]`.
+  - `Create new board` mở form blank `/paco/workboards/new-workboard`: fields Assign Staff/Team, Board Owner, Organisation, Type (options Case/Task opened, not selected), Add Actioned Cases, Permission, Display resolved, Home Visit Board, Default Consultation Template, Columns. Save và Cancel enabled; không nhập name, không Save `[Observed]`.
+  - `Cancel` đóng form, list auto-select board khác có sẵn; form absent sau đó `[Observed]`.
+  - `My Case` submenu handoff tới `/paco/patient-profile/:id/cases/:id`; rời ngay không đọc clinical content `[Observed]`.
+  - Historical empty `My Case` (2026-09-15, 2026-10-01) khác current handoff; giữ cả hai provenance, không kết luận data condition `[Observed]`.
+- Gaps: 3/9 performed (root, blank form Type/Cancel, My Case handoff); 6 skipped (search, view toggle, Filters, saved create/readback, board update/cleanup, assignment/case/task lifecycle). Không thấy saved persistence/validation/two-sided relationship. Scoped cleanup/private/default visibility unknown; create class `unknown-scope`, không reuse shared-list/staff rootcause. OQ-066 cho safe owned fixture.
+- Chi tiết: `workflows/case-load-management.md#autonomous-work-boards--2026-10-22`; không dùng observation context-unverified làm permission proof.
+
 ### Module: Configuration
+
+#### Organisation — Skills
+- Coverage: Partial (interactive), 8/14 nhánh có end state
+- Entry: `/paco/dashboard` → sidebar `Configuration` → `Organisation` → `Skills`
+- Route: `/paco/configuration/organisation/skills`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1359/ledger.md#2`–`#7`, `#11`
+- Last verified: `2026-10-21`
+- Aliases: `Add Skill`, `Edit Skill`, `Copy Skill`, `Archive Skill`
+- Logic chính:
+  - Create minimal với Name; duplicate bị từ chối bằng `Resource already exist` / `The resource you are trying to add already exists` `[Observed; ledger #3, #5]`.
+  - Edit Cancel bỏ draft; Save rename còn sau reload; Copy tự nối ` copy` vào Name đã nhập `[Observed; ledger #4–#5]`.
+  - Archive có Cancel/Confirm; Confirm bỏ row khỏi active grid, toast `Skill deleted successfully`; không chứng minh hard deletion `[Observed; ledger #7]`.
+  - Create/rename/archive source phản ánh exact Name trong fresh Staff Profile `Skill Capabilities` picker; không chọn/lưu profile, chưa chứng minh saved assignment `[Observed; ledger #11]`.
+- Gaps: audit end state, mapping Pathways/SNOMED/RBAC, empty/whitespace server validation, archive retention chưa verified; không có defect confirmed.
+- Chi tiết: `workflows/organisation-skills.md`
+
+#### Organisation — Services
+- Coverage: Partial (read-only + unsaved draft), 2/7 nhánh có end state; persisted mutation 0
+- Entry: `/paco/dashboard` → `Configuration` → `Organisation` → `Services`
+- Route: `/paco/configuration/organisation/services`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1359/ledger.md#14`–`#15`
+- Last verified: `2026-10-21`
+- Aliases: `Add Another`, `Remove service`, `Service ID`, `Service Name`, `Case Type`
+- Logic chính:
+  - Editable list có `Service ID`, `Service Name`, `Case Type`, `Add Another`, `Remove service` và footer `Save` chung. Không chỉnh row có sẵn `[Observed; ledger #15]`.
+  - Owned draft: Add/Remove quay lại baseline; Add/reload không persist, 0 owned inputs. ID lọc non-digit và max15; Name max255; Case Type mở 14 options nhưng không chọn/lưu `[Observed; ledger #15]`.
+- Gaps: shared-list Save footprint, server required/unique/domain rule, persisted CRUD và receiver chưa verified; không defect verdict.
+- Chi tiết: `workflows/organisation-services.md`; safety gap `OQ-052`.
+
+#### Organisation — Pathways Config
+- Coverage: Minimal (read-only), Blocked
+- Entry: `/paco/dashboard` → `Configuration` → `Organisation` → `Pathways Config`
+- Route: `/paco/configuration/organisation/pathways`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1359/ledger.md#8`
+- Last verified: `2026-10-21`
+- Logic chính: visible menu hiện tới `Page Not Found`; tái hiện qua menu, reload, fresh tab. Skills control render được. Chưa map được CRUD hoặc chứng minh quan hệ Skills/Pathways; không kết luận HTTP status/root cause.
+- Chi tiết: `workflows/organisation-pathways.md`; blocker `OQ-049`.
+
+#### Organisation — Practice Profiles
+- Coverage: Partial (read-only), Blocked — 0/1 nhánh truy cập feature root
+- Entry: `/paco/dashboard` → `Configuration` → `Organisation` → `Practice Profiles`
+- Route: `/paco/configuration/organisation/practice-profiles`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1626/ledger.md#13`, `practice-profiles-route-check.js`
+- Last verified: `2026-10-21`
+- Aliases: `Practice Profiles`
+- Logic chính: visible menu tới `Page Not Found` / `Sorry, the page you are looking for does not exist.`; reload và fresh tab cùng context tái hiện; Skills control render được. Không tạo data/draft/mutation. Purpose/entities/consumers chưa biết; không suy cùng root cause với Pathways Config (OQ-049).
+- Chi tiết: `workflows/practice-profiles.md`; blocker `OQ-057`.
+
+#### Organisation — Locations
+- Coverage: Partial (interactive), 7/12 nhánh trong inventory giới hạn có end state; cleanup `Done`
+- Entry: `/paco/dashboard` → `Configuration` → `Organisation` → `Locations`
+- Route: `/paco/configuration/organisation/locations`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1844/ledger.md#3–19`, `ui-observations.json`
+- Last verified: `2026-10-21T20:00:15.316Z` (read-only cleaned/cancelled Names0/dialogs0/roleVerifiedtrue; latest connector notice sau Sharing Agreements menu chưa recheck)
+- Aliases: `Add Location`, `Location`, `Enter Address`, `View Audit`, `Archive`
+- Logic chính:
+  - Scoped `Location` Save tạo owned record; search/reload rồi nested Address reopen xác nhận persistence. Edit Name/City/Line2 qua Address Confirm và parent Save còn đúng sau reload/reopen; contacts giữ nguyên `[Observed; ledger #7–11]`.
+  - Empty Email Save giữ dialog với native `Please fill out this field.`; Address trống có custom `Address is required`. Empty/whitespace Name, invalid Email và Confirm gating chỉ kiểm client; không suy server rule `[Observed; ledger #4–7]`.
+  - Nested Address Cancel/Close giữ draft trong cùng parent; parent Close rồi fresh reload/reopen trả persisted City gốc. Add Name-only draft Close/no Save có exact row0/dialogs0 sau reload. Parent Save sau nested Cancel và intent/root cause chưa biết `[Observed; ledger #9–10,#15]`.
+  - Archive cleanup: Cancel/reload giữ owned row, read-only Edit assignment+sharing empty, Close, exact Archive warning, confirm1; owned row0 ngay sau confirm và sau reload, dialogs0/roleVerifiedtrue. UI Archive cleanup Done, không status-cell/hard deletion/retention/Restore proof `[Observed; ledger #14]`.
+- Gaps: `View Audit`, retention/Restore, server duplicate/invalid/boundary rules, staff/sharing assignment và receiver chưa verified. Original notice recovered cho cleanup; notice sau Add Close recovered qua auth/role/read-only reconciliation20:00:15.316Z. Latest notice sau Sharing Agreements menu chưa recheck. Không product Fail/root cause inferred hoặc observed relationship edge mới.
+- Chi tiết: `workflows/organisation-locations.md`; câu hỏi `OQ-058`, `OQ-059`.
+
+#### Organisation — Dx Priority
+- Coverage: Partial (read-only), 4/7 nhánh trong inventory giới hạn có end state; 3 `Skipped`
+- Entry: `Configuration` → `Organisation` → visible menu `Dx Priority`
+- Route: `/paco/configuration/organisation/dx-priorities`
+- Role observed: `Blinx Deployment` verified trước run; sau fresh Dx reload exact role label absent, current role chưa verified
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-0158/ledger.md#1–5`, `ui-observations.json`; preflight `resume-preflight-20261022-0151/ledger.md#2–4`
+- Last verified: root `2026-10-22T02:00:25.168Z`, search/pickers `02:02–02:03Z`; last measured root `02:05:30.280Z` nhưng role label absent. Global `More options` mở `02:06:23.494Z`; subsequent snapshot không timestamp riêng. Later `CONNECTION_CLOSED` chặn current recheck; không current-role/product verdict.
+- Aliases: `Dx Priority`, `DX Priorities`, `Search Priorities...`
+- Logic chính:
+  - Root có `Disposition Code`, `Disposition Text`, `Service`, `Priority`, `Add Service & Priority`, `Remove pair` và disabled shared `Save`; chưa thấy isolated owned target trong bounded root `[Observed; ledger #2]`.
+  - Synthetic no-match có `No priorities match “<synthetic-query>”`; clear phục hồi rendered baseline. Đây search, không domain validation `[Observed; ledger #3]`.
+  - Service/Priority pickers read-only mở/đóng, không chọn/Save; populated options không relationship proof. Reload root render nhưng exact role absent; cause chưa biết `[Observed; ledger #3–4]`.
+- Gaps: shared Add/Remove/change/Save `Skipped`, owned target/write footprint/domain rules/saved persistence/consumer OQ-062; active-role readback sau reload OQ-063. No mutation/new records/receiver/possible defect; last global menu open, final UI sweep Blocked.
+- Chi tiết: `workflows/organisation-dx-priorities.md`.
+
+#### Organisation — Announcements
+- Coverage: Partial (interactive) — 4/8 nhánh giới hạn có end state, 4 `Skipped`; chỉ own unsaved drafts
+- Entry: `/paco/dashboard` → `Configuration` → `Organisation` → `Announcements`
+- Route: `/paco/configuration/organisation/announcements`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-2259/ledger.md#5–10`, `ui-observations.json#announcements`
+- Last verified: `2026-10-22T01:07:48.305Z` — chỉ read-only cleanup reconciliation: Service editors1/exact own matches0/0/dialogs0/roletrue; không full feature revalidation. Nguồn `resume-preflight-20261022-0103/ledger.md#4`, run2259 ledger #12–13; latest connector notice sau sweep lại chặn current recheck, timestamp null.
+- Aliases: `Announcements`, `Welcome Message`, `Service Updates`, `Apply to locations`
+- Logic chính:
+  - Root có Welcome Message/Service Updates accordion và page-level `Save`. Welcome 2 existing blocks, Service 1 block; toolbar formatting/link/table/image và `Apply to locations` picker 285 rendered options (không dataset total). Không sửa existing content/chọn location `[Observed; ledger #5–6]`.
+  - Own Service draft: `Add another` baseline1→2, fill unique synthetic, scoped `Delete` unique editor/button → baseline1; fresh reload owned text0. `Add`/reload không `Save`/`Delete` cũng baseline1/owned text0. Cleanup Done: dialogs0, no pending Save `[Observed; ledger #7–10]`.
+  - Shared page-level `Save` write footprint, persisted lifecycle/validation, location effect và recipients/triggers chưa xác lập (OQ-061). Không bấm `Save` `[Open Question]`.
+- Gaps: saved announcement create/update/delete, server validation rules, location assignment persistence, delivery/receiver và Welcome/formatting branches chưa verified; không defect verdict.
+- Chi tiết: `workflows/organisation-announcements.md`; câu hỏi `OQ-061`.
+
+#### Organisation — Sharing Agreements
+- Coverage: Partial (read-only), cumulative 4/5 bounded branches có end state; 1 nhánh Skipped
+- Entry: `/paco/dashboard` → `Configuration` → `Organisation` → `Sharing Agreements`
+- Route: `/paco/configuration/organisation/sharing-agreements`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1844/ledger.md#17–19`, `auto-20261021-2259/ledger.md#1–4`, `ui-observations.json#sharing_agreements`
+- Last verified: `2026-10-22T01:08:14.018Z` — chỉ read-only route/role và layout baseline six200px/unpinned/dialogs0/menu absent, không replay experiment/full feature revalidation. Nguồn `resume-preflight-20261022-0103/ledger.md#4`, run2259 ledger #12–13; latest connector notice sau sweep chặn current recheck, timestamp null. Run1844 menu click `20:04:00.999Z`, subsequent snapshot không timestamp riêng.
+- Aliases: `Organisations you share data with`, `Column Menu`
+- Logic chính:
+  - Root có heading `Organisations you share data with`, columns `ODS Code`, `Name`, `Address`, `Access`, `Status`, `ID`; ba rendered center rows không phải dataset total `[Observed; run 1844 ledger #18]`.
+  - Status label `active` và Access labels `prescribing`, `consultations`, `documents`, `codings` chỉ là display; chưa thử permission/effect/relationship `[Observed; run 1844 ledger #18]`.
+  - Header `Name` mở `Column Menu` với tabs `general`/`columns`; columns tab six checked columns, Filter Columns Input `Status` filters column names only (layout search), clear restored six, no checkbox changed `[Observed; run 2259 ledger #2]`.
+  - General layout `Autosize This Column` → Name width 200→279px; fresh reload six headers 200px/unpinned, no layout persistence trong context đã thử; baseline restored `23:02:44.955Z`, dialogs `0` `[Observed; run 2259 ledger #3–4]`.
+  - Paging four controls `visible:false`/`hidden ancestor` measured `23:01:07.299Z`; visibility only, no navigation/support proof; branch Skipped not `Not supported` `[Observed; run 2259 ledger #2]`.
+  - Bounded root không thấy feature Add/Save/row Actions/search/input; không kết luận CRUD unsupported. Column menu/filter chỉ layout UI preference only, no agreement-record mutations/domain persistence/receiver `[Observed; run 1844 #18–19, run 2259 #1–4]`.
+- Gaps: purpose/lifecycle/owned prerequisite/write footprint, CRUD/validation/persistence và receiver; general other choices (pin/autosize all/reset, column toggle/order, data-row sort/filter) untested; paging navigation Skipped. Coverage dimensions: navigation done, main_workflow partial, branches_states partial (4/5), mutation none, validation none, persistence partial (own layout reload only, NOT business data), relationships none, errors_edge none. Confidence Medium bounded navigation/layout, no product verdict/deep/Complete. Connector blocker recovered trong preflight 2253 cho run 2259 measurements. Không product Fail/root cause inferred hoặc observed edge.
+- Chi tiết: `workflows/organisation-sharing-agreements.md`; câu hỏi `OQ-060`.
+
+#### Users & Staff — Teams
+- Coverage: Minimal (read-only + unsaved draft), persisted mutation 0
+- Entry: `/paco/dashboard` → `Configuration` → `Users & Staff` → `Teams`
+- Route: `/paco/configuration/staff/teams`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1359/ledger.md#9`
+- Last verified: `2026-10-21`
+- Logic chính: `Add New` mở Name (`50 characters max`); Add tạo draft, reload bỏ draft. `Save` chung cho editable team list chưa click do chưa xác lập shared-data write footprint. Không đổi staff/member có sẵn.
+- Chi tiết: `workflows/staff-teams.md`; safety gap `OQ-050`.
+
+#### Users & Staff — Staff Profiles
+- Coverage: Partial (read-only), 4/9 nhánh có end state; Staff Profile mutation 0
+- Entry: `/paco/dashboard` → `Configuration` → `Users & Staff` → `Staff Profiles`
+- Route: `/paco/configuration/staff/profiles`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1359/ledger.md#10`–`#11`
+- Last verified: `2026-10-21`
+- Aliases: `Add Care Professional`, `Skill Capabilities & Attributes`
+- Logic chính:
+  - List có `Active`/`Archived`, search, pagination; Add dialog có `General`, `Roles & Permissions`, `Skill Capabilities & Attributes`; General yêu cầu First/Last Name, Gender, Email. Chưa submit `Create` `[Observed; ledger #10]`.
+  - Fresh `Skill Capabilities` picker phản ánh owned Skill create/rename/archive; receiver draft đóng, không chọn/lưu, không email/invite `[Observed; ledger #11]`.
+- Gaps: safe Email/identity/invite side effects, saved capability/roles/Attributes, Teams consumer chưa verified.
+- Chi tiết: `workflows/staff-profiles.md`; safety gap `OQ-051`.
+
+#### Users & Staff / Role Groups
+- Current-role coverage: `Super Admin GB` 3/8 bounded branches read-only; actual header verified tại root/reload, synthetic search/clear và paging markers restored. Source `product-explore/auto-20261022-1206/ledger.md#2`; data accuracy chưa verified.
+- Coverage lịch sử: Partial (read-only), 3/8 bounded branches có end state, role qualification giữ riêng.
+- Entry: `/paco/dashboard` → sidebar `Configuration` → `Users & Staff` → `Role Groups`
+- Route: `/paco/configuration/staff/role-groups`
+- Role context: exact `Blinx Deployment` label checked trước navigation và tại Media Library/Outstanding Reviews; chưa independently established là active-role header hoặc checked tại Role Groups root.
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-0714/ledger.md#6–9,#11–12`
+- Last verified: `2026-10-22`
+- Aliases: `Role Groups`, `Search Role Groups`
+- Logic chính:
+  - Root có heading Role Groups, Search input, page controls, Add New/Edit buttons. Grid fields Role, Role Group, RBAC Role, RBAC Activities, Activity Status. Footer Save disabled `[Observed]` (ledger #7).
+  - Search synthetic no-match không có role rows, không empty message; clear restore list, Save vẫn disabled `[Observed]` (ledger #7).
+  - Pagination Page 2 active content đổi, Page 1 restore marker về 1, content khác trong memory compare, Search blank `[Observed]` (ledger #7).
+- Gaps: Add New/Edit/Save shared config chưa bấm do write footprint chưa xác lập (OQ-064 / `DEC-shared-list-save`). Domain validation, RBAC/Status changes, staff assignment receiver chưa verified.
+- Chi tiết: `workflows/admin-sso.md#autonomous-role-groups-breadth--2026-10-22`
 
 #### Code Rule Config
 - Coverage: Minimal
@@ -322,14 +570,14 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 ### Module: Comms Hub (external host `nhs-comms-hub-dev.blinxhealthcare.com`)
 
 #### Campaign Manager
-- Coverage: Partial
-- Entry: `/paco/dashboard` → expand sidebar → `Comms Hub` (icon label `Quick Send`) → submenu `Campaign Manager` → login riêng của Comms Hub (tester đăng nhập thủ công) → `Campaign Manager`
+- Coverage: Partial (read-only), current authenticated external pass 4/12 bounded branches; old Blinx Deployment login-boundary pass 1/7 giữ riêng
+- Entry: exact external dev Login → authenticated Home → `Campaign Manager` link; Paco sidebar handoff verified trong pass trước
 - Route: `/commshub/campaign-manager`
-- Role observed: `Super Admin GB`
+- Role observed: `Super Admin GB` tại source Paco; external role chưa xác minh, không carry permissions
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-6982` (`feature-location.md`); cũng quan sát ở `PAC2-6540`, `PAC2-7201`, `PAC2-1805`
-- Last verified: `2026-10-01`
+- Source: `product-explore/auto-20261022-1001/ledger.md#13–14`; lịch sử `PAC2-6982` (`feature-location.md`), `PAC2-6540`, `PAC2-7201`, `PAC2-1805`, `auto-20261022-0500/ledger.md#2–3`
+- Last verified: `2026-10-22` cho authenticated root/search/Outbox read-only
 - Aliases: `Campaign Manager`, `Comms Hub`, `PaComms` (top-bar, khác module sidebar)
 - Tickets: `PAC2-6982`, `PAC2-6540`, `PAC2-7201`, `PAC2-1805`
 - Note: Paco session không share với Comms Hub; cần login riêng. Landmarks: `Create Campaign`, `Campaign Outbox`, `Search campaigns`, `Clear Filters`, `Show All Columns`, `Viewing data for` (org context), nhóm `Non-Shared Campaigns`/`Shared Campaigns`. Dropdown `Viewing data for` dễ đóng ngoài ý muốn. Role `GP Paco Assist`/`Super User`/`Blinx Deployment` thấy top-bar `PaComms` bị disabled (`PAC2-6540`).
@@ -340,17 +588,18 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 - Defect đã biết:
   - `PAC2-7201` Fail dự kiến: dev cho org được share `Edit`+`Delete`; pattern ngược cho org tạo
   - `PAC2-1805` Fail kỹ thuật: `Resend` HTTP 400, không toast (ngoài scope ticket)
-- Chi tiết: `workflows/comms-hub.md#campaign-manager-và-campaign-outbox`; `workflows/comms-hub.md#shared-campaign-và-quyền-viewedit`
+- Current blocker: auth riêng đã qua; external role và owned lifecycle cleanup chưa verified, OQ-040 role requirement giữ Open. Root search/clear và Outbox keyboard search có end states, chưa campaign mutation/Send.
+- Chi tiết: `workflows/comms-hub.md#authenticated-breadth--2026-10-22`; pass trước tại `#autonomous-breadth-exploration-2026-10-22`, logic ticket tại `#campaign-manager-và-campaign-outbox` và `#shared-campaign-và-quyền-viewedit`
 
 #### Campaign Outbox
-- Coverage: Minimal
+- Coverage: Partial (read-only root/search), chưa selected campaign hoặc Resend
 - Entry: `Comms Hub` → `Campaign Manager` → `Campaign Outbox`
 - Route: `/commshub/campaign-outbox`
-- Role observed: `Super Admin GB`
+- Role observed: Source Paco `Super Admin GB`; external role unverified, historical role giữ riêng
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-6540` (`feature-location.md`)
-- Last verified: `2026-09-15`
+- Source: `product-explore/auto-20261022-1001/ledger.md#14`; lịch sử `PAC2-6540` (`feature-location.md`)
+- Last verified: `2026-10-22` cho root và synthetic keyboard search/clear
 - Aliases: `Outbox`, `Campaign Outbox`
 - Tickets: `PAC2-6540`
 - Note: root hiển thị `Campaigns`, `Campaign Types`, prompt chọn campaign. Chọn campaign có thể mở dữ liệu bệnh nhân/message; dòng có `Resend` là mutation (đã quan sát lỗi HTTP 400 ổn định ở `PAC2-1805`, defect riêng).
@@ -366,36 +615,111 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 ### Module: Health Forms
 
 #### Health Forms Designer
-- Coverage: Minimal
+- Current-role coverage: `Super Admin GB` saved lifecycle 8/14 và independent unsaved Preview 5/7 giữ riêng, `Partial (interactive)`. Preview answer retained nhưng Required marker vẫn visible sau blur; config/draft reset verified, không response submit. Sources `product-explore/auto-20261022-1206/ledger.md#3–13`, `product-explore/auto-20261023-0000/ledger.md#8`; prior draft-only 4/8 riêng.
+- Coverage lịch sử: `Blinx Deployment` Partial (8/18 workflow branches, interactive); saved lifecycle giữ scope/provenance riêng.
 - Entry: `/paco/dashboard` → `Expand sidebar` → `Health Forms` → `Designer`
 - Route: `/health-forms/builder/`
-- Role observed: `Admin` (QA xác nhận trong hội thoại, chưa độc lập xác minh trên UI)
+- Role observed: `Super Admin GB` (actual header verified 2026-10-23); `Admin` (QA xác nhận trong hội thoại, chưa độc lập xác minh trên UI); `Blinx Deployment` (autonomous 2026-10-21)
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-6982` (`feature-location.md`); cross-org scope `PAC2-3934` (Blocked 2026-10-18)
-- Last verified: `2026-10-18` (PAC2-3934 survey on dev chung; encounter `AutoTest Consultation Form` × N template, không có consultation submit route)
+- Source: `PAC2-6982` (`feature-location.md`); cross-org scope `PAC2-3934` (Blocked 2026-10-18); autonomous `product-explore/auto-20261021-1626/ledger.md`
+- Last verified: `2026-10-23` (Super Admin GB unsaved Preview 5/7; saved lifecycle và historical role giữ riêng)
 - Aliases: `Designer`, `Health Forms`, `form builder`, `Consultation Form`
 - Tickets: `PAC2-6982`, `PAC2-3934` (Blocked)
-- Note: grid có cột `Health Form Name`, `Created By Organisation`, `Shared To Organisation(s)`, `Archived`, `Editable`, `Actions`. Chỉ xem; không mở row/`Actions`. PAC2-3934 survey 2026-10-18 trên dev chung tìm `AutoTest Consultation Form` template (consultation form type), không có UI consultation screen để submit/file form.
+- Note: grid có cột `Health Form Name`, `Created By Organisation`, `Shared To Organisation(s)`, `Archived`, `Editable`, `Actions`. PAC2-3934 survey 2026-10-18 chỉ xem, không mở row/`Actions`; thấy consultation template nhưng không có consultation submit/file screen. Autonomous 2026-10-21 đã exercise 8/18 nhánh trên owned template. Dimensions navigation/main_workflow/persistence done trong scope đã chạy, branches_states/mutation/validation/relationships/errors_edge partial; Clone/V2/response persistence chưa verified.
 - Logic chính:
-  - Component `Blood Pressure`: `SYS`/`DIA`, ghi nhận combined hoặc `Separate Diastolic and Systolic entries` `[Observed]` (PAC2-4399)
-  - Form có `Created by` và `Shared To`; Shared Campaign cho child org truy cập form `[Confirmed]` (PAC2-6982)
-  - Editor không hiển thị ConceptID/DescriptionID nên không đủ làm bằng chứng mapping `[Observed]` (PAC2-4399)
+  - `Blood Pressure` có `SYS`/`DIA`, combined hoặc `Separate Diastolic and Systolic entries`; editor không lộ ConceptID/DescriptionID nên không đủ proof mapping `[Observed]` (PAC2-4399). Shared Campaign cho child org truy cập form là rule `[Confirmed]` từ PAC2-6982, không re-test trong autonomous run.
+  - Owned `Health Form Title` + một `Text Input`, `Save Form`, sharing0, `Continue`: list reload thấy `Active`/`Editable Yes`, reopen còn label/Required/record-question/score config. Title empty làm Save disabled, whitespace enabled nhưng không invalid submit `[Observed]` (run1626 ledger #3–5; OQ-056).
+  - Rename draft qua breadcrumb discard giữ tên gốc; `Update Form`/`Continue` persist tên mới sau reload `[Observed]` (run1626 ledger #6).
+  - Archive/filter/reload thấy `Archived`; trên Archived source `Cancel` giữ status, button `Archive` restore `Active`, re-Archive cleanup giữ `Archived`. Active owned0/retained1/draft0/dialog0; UI Archive không hard deletion `[Observed]` (run1626 ledger #7–10; OQ-053).
+- Gaps/unexpected observations: Archived-source Clone blank hai lần, no Save, source Edit control có content (OQ-054); V2 chưa load rows sau fresh reload/wait20s, relationship `Inconclusive`, không observed edge (OQ-055). Còn 10/18 nhánh chưa có end state; không product verdict hoặc Complete/deep.
 - Defect đã biết:
-  - `PAC2-6982` Blocked: TC-001/002 chưa xác minh form child tạo không `Shared To`
-- Chi tiết: `workflows/health-forms.md#health-form-designer--component-blood-pressure`
+  - `PAC2-6982` Blocked: TC-001/002 chưa xác minh form child tạo không `Shared To`. Autonomous observations không tự thành defect verdict.
+- Current-role reusable behavior: sharing `0`, saved Text Input config readback, rename discard/save và Archive persistence đã verified; Actions rỗng ở tab cũ nhưng fresh tab có controls, root cause Open. UI Archive giữ retained record, không hard delete `[Observed]` — `product-explore/auto-20261022-1206/ledger.md#6–13`.
+- Chi tiết: `workflows/health-forms.md#super-admin-gb-unsaved-preview--2026-10-23`, `workflows/health-forms.md#super-admin-gb-saved-lifecycle--2026-10-22`, `workflows/health-forms.md#health-form-designer--component-blood-pressure`, `workflows/health-forms.md#autonomous-exploration-2026-10-21`
+
+#### Health Forms Designer V2
+- Current-role coverage: `Super Admin GB` read-only receiver probe, `Inconclusive`; query retained, loading indicator gone nhưng không data rows. Source legacy có exact Active record lúc probe; resource errors chưa chứng minh causality — `product-explore/auto-20261022-1206/ledger.md#12`, verified `2026-10-22`.
+- Coverage lịch sử: Partial (read-only probe), `Blocked` loading; không persisted mutation
+- Entry: `/paco/dashboard` → sidebar `Health Forms` → `Designer V2`
+- Route: `/paco/health-forms/`
+- Role observed: `Blinx Deployment`
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261021-1626/ledger.md#7`, `ui-observations.json#designer_v2`
+- Last verified: `2026-10-21`
+- Logic chính: heading `Health Form Templates`, list/search/filter landmark đã thấy. Fresh reload chờ20s chưa có rendered data rows; legacy control có owned source `Active` lúc probe. Document GET200/console errors2 không đủ backend diagnosis hoặc proof data absence.
+- Gaps: Designer relationship `Inconclusive`, source hiện Archived nên receiver archived visibility cũng chưa biết (OQ-055). Không retry cùng loading blocker nếu context chưa đổi.
+- Chi tiết: `workflows/health-forms.md#cross-feature-relationships`
+
+### Module: Web Chat & Video
+
+#### Virtual Appointments
+- Current-role result: `Blocked`; verified `Super Admin GB` Paco header, module `Welcome Back`/`Log in` gate tại `/web-chat/`, không feature body. 0/1 bounded authenticated-root branch, OQ-068; source `product-explore/auto-20261022-1001/ledger.md#15`.
+- Coverage lịch sử: Partial (4/8 bounded branches, read-only, role label `Blinx Deployment`; không cộng vào current-role coverage)
+- Entry: `/paco/dashboard` → sidebar `Web Chat & Video` → submenu `Virtual Appointments`
+- Route: `/web-chat/appointments/`
+- Role context: exact `Blinx Deployment` label observed tại root (2026-10-22), active-role/header chưa independently established; `GP - paco assist` giữ provenance lịch sử 2026-09-14.; `Super Admin GB` (shell-only 2026-09-16, SSO redirect 2026-10-01)
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-0500/ledger.md#6–7`; lịch sử survey batch31
+- Last verified: `2026-10-22`
+- Aliases: `Virtual Appointments`, `Web Chat`, `Video Consultations`
+- Note: Full body render không SSO trong pass này với role `Blinx Deployment`. Landmarks: `Date Range`, `Appt. Type` (Video Consultations/All Appointment Types), appointment grid. Lịch sử role `Super Admin GB` gặp SSO redirect; `GP - paco assist` từng render full module.
+- Logic chính:
+  - Date Range Yesterday Cancel giữ Today label; Yesterday Apply hiện 1 row rendered, không đọc/click; Today restore về 0 rows `[Observed]` (`ledger.md#7`).
+  - Video Consultations và All Appointment Types chờ tới empty state (0 rows, Today, picker đóng, search blank) `[Observed]` (`ledger.md#7`).
+  - Không có `Create`/`Book` visible trong pass này; appointment action fixture chưa có `[Observed]`.
+  - Selected filter marker và data accuracy vẫn chưa verified `[Open Question]`.
+- Gaps: Search/Columns/Filters interactions, appointment lifecycle, Create/Book flow chưa chạy. Không khẳng định entitlement cause, permission requirement hay dataset empty reason.
+- Chi tiết: `workflows/web-chat-video.md#autonomous-breadth-2026-10-22`
+
+#### Media Library
+- Coverage: Partial (1/3 bounded branches, read-only)
+- Entry: `/paco/dashboard` → sidebar `Web Chat & Video` → submenu `Media Library`
+- Route: `/web-chat/media-library/`
+- Role context: exact `Blinx Deployment` label observed tại root (2026-10-22), active-role/header chưa independently established; `GP - paco assist` giữ provenance lịch sử 2026-09-14.
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-0714/ledger.md#8`
+- Last verified: `2026-10-22`
+- Aliases: `Media Library`
+- Note: Root render với `No Patient Selected` prompt. Controls: `PATIENT` Search, `MEDIA TYPE` (Audio/Chat Transcript/Message Log/Video). Không thấy Upload/Add New/Create trong bounded root check.
+- Logic chính:
+  - No Patient Selected hiện prompt `To view media files, please select a patient from the control panel on the left.` `[Observed]`.
+  - PATIENT Search và MEDIA TYPE filter visible nhưng không submit/select; patient fixture chờ OQ-065, media fixture riêng chưa xác lập `[Observed]`.
+  - Không Upload/Add New/Create visible trong pass này; không khẳng định tính năng unsupported `[Observed]`.
+- Gaps: Patient selection lifecycle, media fixture ownership/cleanup, media-type filtering, Upload/Create workflow. 1/3 bounded branches performed (root/no-patient); patient→media và media-type results skipped chờ fixture.
+- Chi tiết: `workflows/web-chat-video.md#media-library-autonomous-2026-10-22`
+
+#### Outstanding Reviews
+- Coverage: Partial (2/7 bounded branches, read-only)
+- Entry: `/paco/dashboard` → sidebar `Web Chat & Video` → submenu `Outstanding Reviews`
+- Route: `/web-chat/review/`
+- Role context: exact `Blinx Deployment` label observed tại root (2026-10-22), active-role/header chưa independently established; `GP - paco assist` giữ provenance lịch sử 2026-09-14.
+- Environment: `dev`
+- Classification: `Observed`
+- Source: `product-explore/auto-20261022-0714/ledger.md#8–9`
+- Last verified: `2026-10-22`
+- Aliases: `Outstanding Reviews`, `Consultations for Review`
+- Note: Breadcrumb `Consultations`, heading `CONSULTATIONS FOR REVIEW`. Grid columns: Patient Name, Appt. Type, Clinician Name, Review Status, Appt. Time, Pt. Arrived, Wait Time, Call Ended, Call Duration, Action. Empty state `No Rows To Show`.
+- Logic chính:
+  - Date Range open/Cancel giữ `Today`, picker đóng, grid empty `[Observed]`.
+  - Grid columns từ ledger; empty state 0 rows, không đọc existing clinical records `[Observed]`.
+- Gaps: Date Range Apply, Search, Columns, Filters interactions, owned review action fixture/lifecycle. 2/7 bounded branches performed (root-empty, DateRangeCancel); 5 skipped chờ breadth gate và consultation fixture.
+- Chi tiết: `workflows/web-chat-video.md#outstanding-reviews-autonomous-2026-10-22`
 
 ### Module: Patient
 
 #### Patient Search
-- Coverage: Minimal
-- Entry: `/paco/dashboard` → sidebar `Patient Search` (nếu click sidebar không điều hướng thì mở trực tiếp route)
+- Coverage: Partial
+- Entry: `/paco/dashboard` → sidebar `Patients` → submenu `Patient Search`; direct route là historical fallback.
 - Route: `/paco/patient-search` (dev feature-branch: `/paco/feature-branch/<ticket-branch>/patient-search`)
-- Role observed: `Super Admin GB`
+- Role observed: `Super Admin GB` (current autonomous header tại root); `Blinx Deployment` (pass trước, coverage riêng)
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-6763` (`feature-location.md`); cũng quan sát ở `PAC2-6540` (role `GP Paco Assist`)
-- Last verified: `2026-10-13`
+- Source: `product-explore/auto-20261022-1001/ledger.md#3–7`; pass trước `auto-20261022-0236/ledger.md#1–9`; lịch sử `PAC2-6763`, `PAC2-6540`
+- Last verified: `2026-10-22`
 - Aliases: `Patient Search`, `Search Patients`
 - Tickets: `PAC2-6763`, `PAC2-6540`, `PAC2-8998`, `PAC2-8999`
 - Note: có `Filters`, `Actions` column, `Create new patient`; không có `Advanced Search` hay deleted-patient filter ở state quan sát (`PAC2-6540`). Chỉ dùng row do tester duyệt là synthetic `Test Patient`; không ghi identifier. Top-bar dropdown có footer `Include deleted patients` checkbox `[Observed]` (PAC2-8998).
@@ -404,13 +728,18 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - Connect branch: chọn patient chuyển sang profile baseline (mất branch context) `[Observed]` (PAC2-4700)
   - Top-bar patient search dropdown cap 50 results mỗi lần (max 100); label `Results (50)` `[Confirmed]` (PAC2-8998/REQ-006)
   - PDS panel hiển thị tối đa 50 rows qua AG Grid virtual scroll; heading `Patient Search (N)` = total match (không phải visible count) `[Confirmed]` (PAC2-8998/REQ-007)
+  - Owned draft: valid Last Name + synthetic Date of Birth mở demographic steps không cần bấm `PDS Check`; tên chứa digits hiện client error `[Observed]` (`product-explore/auto-20261022-0236/ledger.md#5–6`)
+  - Close rồi fresh reopen bỏ owned draft; saved Create/Edit/Archive chưa exercise vì safe registration fixture/cleanup chưa xác minh, OQ-065 `[Observed / Open Question]` (cùng ledger #6–9)
 - Defect đã biết:
   - `PAC2-4399` Inconclusive: `Quick Form` lỗi thiếu patient number trên demo patient
   - `PAC2-8998` Pass: fix PR #7376 tokenise `,`/space + match từng token với first/middle/surname ở bất kỳ thứ tự nào; cap 50 dropdown + PDS panel
-- Chi tiết: `workflows/patient-profile.md#patient-search-và-patient-actions`
+- Current role coverage: historical `Super Admin GB` 4/7 bounded branches `Partial (read-only)`; root/search và filter Cancel/reset, intent/count semantics OQ-067. Later independent offline entry 0/1 `Blocked` tại OS role picker, chưa feature body hoặc destination role verification; Connect header không chứng minh OS auth. Saved lifecycle vẫn chờ OQ-065, không cộng passes. `[Observed: dev, 2026-10-22]` — `product-explore/auto-20261022-2011/ledger.md#5`.
+- Chi tiết: `workflows/patient-search.md#super-admin-gb-breadth--2026-10-22`; pass trước `#autonomous-breadth-2026-10-22`; lịch sử patient actions: `workflows/patient-profile.md#patient-search-và-patient-actions`
 
 #### Care Navigator — Patient View (PAC2-7144)
-- Coverage: Minimal
+- Current-role entry: Sidebar `Patients` > `Care Navigation` > `/patient-search/?careRoute`; actual `Super Admin GB` header và `Care Navigator`/`Search Patients...` verified. `[Observed: dev, 2026-10-22]` — `product-explore/auto-20261022-1414/ledger.md#2–3`.
+- Current-role coverage: historical 4/7 và later A-Z result experiment 2/3 giữ riêng, `Partial (read-only)`; First Name+A và fresh Last Name+A có populated grid, field-switch completion Inconclusive do `Fetching results...`. Reload reset blank; không patient selection hoặc clinical handoff, OQ-065 giữ pending. Source `product-explore/auto-20261022-1742/ledger.md#4`; chi tiết `workflows/care-navigation.md`.
+- Historical coverage: Minimal
 - Entry: `https://blinx.dev.blinxpaco-np.com/paco-connect/dashboard` → `Care Navigation` button → `patient-search/` → search patient → Care Navigator view
 - Route: `/patient-search/` → Care Navigator patient view
 - Role observed: `Blinx Deployment`
@@ -519,7 +848,10 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
 ### Module: Analytics & Reports
 
 #### Analytics and Reports (root)
-- Coverage: Minimal
+- Current-role coverage: `Super Admin GB` 2/6 bounded read-only branches; root/Patient Cases permission end states verified, report-data workflow `Blocked` theo OQ-069. Source `product-explore/auto-20261022-1206/ledger.md#15`, verified `2026-10-22`.
+- Current-role entry/route: authenticated session → known SCR route → `/paco/analytics-reports`; actual header verified, SCR not-authorized message. `Patient Cases` → `/paco/analytics-reports/patient-cases` giữ `Access Denied` sau reload; Analytics click chưa changed known state.
+- Current-role gaps: report body/search/filter/export/saved lifecycle chưa chạy; không patient/report data inspected hoặc two-sided edge. Chi tiết: `workflows/analytics-reports.md#super-admin-gb-reports-access--2026-10-22`.
+- Coverage lịch sử: Minimal
 - Entry: `/paco/dashboard` → sidebar `Analytics & Reports` → submenu `Reports`
 - Route: `/paco/analytics-reports`
 - Role observed: `GP Paco Assist`
@@ -537,25 +869,39 @@ Harvest ngày `2026-10-02` từ 15 `feature-location.md`. Mọi entry đều `Cl
   - `PAC2-6540` Inconclusive: TC-002 rerun trên dataset mutable (TC-001 Pass)
 - Chi tiết: `workflows/analytics-reports.md#deleted-patients-trong-advanced-search`
 
+#### Reports — autonomous context boundary (2026-10-22)
+- Coverage: root boundary only; intended-role workflow `Blocked`
+- Entry: sidebar `Analytics & Reports` → `Reports`
+- Route: `/paco/analytics-reports/scr-reports`
+- Role context: `Config Admin` visible tại Reports và Dashboard header; intended `Blinx Deployment` không có ở final header check nhưng có ngoài header.
+- Environment: `dev`
+- Classification: `Observed / Open Question`
+- Source: `product-explore/auto-20261022-0714/ledger.md#11–12`; OQ-063
+- Last observed: `2026-10-22`
+- Logic chính: `Reporting`, `SCR (0 records)`, report tree và `Search consent...`/`Export`/`Columns`/`Filters` visible; không thao tác data/export hoặc suy quyền `Blinx Deployment`.
+- Gaps: exact intended role/context phải verified trước navigation tiếp; cause và thời điểm context khác chưa biết.
+- Chi tiết: `workflows/analytics-reports.md#autonomous-reports-boundary--2026-10-22`
+
 #### Patient & Medication Analyser
-- Coverage: Minimal
-- Entry: authenticated demo host → direct route `/patient-analyser/` (menu `Analytics & Reports` → `Patient Analyser` dẫn tới route cũ trả 404 trên host này)
+- Coverage: Partial (read-only), current-role 5/11 bounded branches; query apply/reopen, reload retention và owned-rule cleanup verified, chưa saved report lifecycle.
+- Entry: authenticated session → direct known route `/patient-analyser/`; actual header verified. Historical menu route `/patient-analyser-new/` chưa reverified trong pass này.
 - Route: `/patient-analyser/`
 - Role observed: `Super Admin GB`
 - Environment: `dev`
 - Classification: `Observed`
-- Source: `PAC2-3798` (`feature-location.md`)
-- Last verified: `2026-09-21`
+- Source: `product-explore/auto-20261022-1414/ledger.md#7–8`; lịch sử `PAC2-3798` (`feature-location.md`)
+- Last verified: `2026-10-22`
 - Aliases: `Patient Analyser`, `Medication Analyser`, `supergrid`, `Advanced Search`
 - Tickets: `PAC2-3798`
-- Note: tab `Patient Details`, `Patient Analyser`, `Medication Analyser`; `Advanced Search 0`, `Columns`, `Filters`; `New`/`Save` là mutation boundary. Chờ `Patients:` count và footer rows-loaded; không assert giá trị. Xem conflict bên dưới.
+- Current behavior: `Advanced Patient Search` có `Query builder`, Full Name field/operator/value, `Reference Report(s)`, `Search`/`Cancel`; synthetic contains query đổi badge 0 thành 1 và retained qua reload/reopen. Xóa đúng owned rule rồi Search khôi phục badge 0 qua reload, không business record.
+- Gaps: grid 0 rendered rows nhưng pager blank, cohort correctness `Inconclusive`; `Save Report` target/cleanup chưa established. Historical tabs/Columns/Filters và menu-route conflict giữ riêng, chưa reverified.
 - Logic chính:
   - Tạo/clear `advanced search` không refresh; `Patient count` tải độc lập với grid `[Confirmed]` (PAC2-3798)
   - `Pivot mode` + helper; URL `/patient-analyser/#<report-id>` tải lại đúng report `[Confirmed]` (PAC2-3798)
   - Search cũ deprecated được dựng lại thành rule lồng nhau khi load `[Confirmed]` (PAC2-3798)
 - Defect đã biết:
   - `PAC2-3798` Inconclusive: sidebar trỏ `/patient-analyser-new/` 404; AG Grid license `Invalid License`
-- Chi tiết: `workflows/analytics-reports.md#patient--medication-analyser-supergrid`
+- Chi tiết: `workflows/analytics-reports.md#super-admin-gb-patient-analyser--2026-10-22`; logic ticket tại `#patient--medication-analyser-supergrid`.
 
 ### Module: Patient-facing Scheduler (external host `*.blinxscheduler-np.com`)
 
@@ -796,17 +1142,28 @@ Harvest 2026-10-02 từ 17 ticket. Mọi entry `Classification: Observed/Confirm
 - `PACO Connect` dev chung: `PAC2-7579/feature-location.md` quan sát `/paco-connect/dashboard` render dashboard sau auth ngày 2026-10-21 dù document HTTP `404`; không tổng quát hóa nhận định route thiếu từ survey cũ. `/paco-connect/campaigns/create` vẫn hiện UI `404` sau SPA load trong context đã kiểm tra; không suy ra cần branch.
 - Role: `PAC2-6982` ghi role `Admin` do QA xác nhận, chưa verify trên UI.
 
+### Module: User Portal
+
+#### User Guides / FAQs
+- Entry: Sidebar `Users` > `User Portal`.
+- Route: `/paco-connect/user-training-portal`
+- Role/environment/date: `Super Admin GB`, `dev`, `2026-10-23`.
+- Classification: `Observed`; sources `product-explore/auto-20261022-1414/ledger.md#4–5`, `product-explore/auto-20261023-0000/ledger.md#5`.
+- Coverage: `Partial (read-only)`, historical 6/10 và independent viewer/FAQ 6/8 giữ riêng; category View All/back, outer guide boundary, video/playback/pop-out, FAQ search/category reset verified.
+- Logic chính: Users mở help/training; guide iframe refused-to-connect OQ-074. Video Maximise mở loaded/paused about:blank tab và pause source; FAQ known match/clear/category/reload trả baseline. Help prose không là permission spec, document HTTP404 vẫn render app.
+- Chi tiết: `workflows/user-training-portal.md`; embedded guide content Blocked, Technical Support scope chưa kiểm; own UI/media/tab cleanup Done.
+
 ### Route hints (chưa verified)
 
 Chưa đủ điều kiện làm entry chuẩn; không dùng làm automation gate.
 
 - `Template Manager`, `Patient Manager` (submenu `Comms Hub`): chỉ thấy button submenu, chưa mở root (`PAC2-1805`, `PAC2-6982`, `PAC2-6540`).
 - Shared campaign → patient scheduler link (PCN/child org): route patient chưa verified, cần campaign/link thật (`PAC2-6982`, `PAC2-7201`). Context org hierarchy đã được QA xác nhận nhưng không ghi tên org ở đây.
-- `Rocketbar` (PACO OS sidebar): chưa locate, không có feature-branch URL (`PAC2-4700`).
+- `Rocketbar` (PACO OS sidebar): historical PAC2-4700 chưa locate; current `Super Admin GB` sidebar entry đã verified ngày 2026-10-22, mở menu `Launch Rocket Bar`/`Download Rocket Bar`, không đổi source route. 1/3 bounded launcher branches, client main flow `Blocked` OQ-070; chưa launch/download/install. `[Observed: dev]` — `product-explore/auto-20261022-1414/ledger.md#6`; chi tiết `workflows/rocket-bar.md`.
 - GP Supergrid login `/login/` trên host feature-branch GP: `Blocked` (auth/host ngoài `allowedHosts`) (`PAC2-4700`).
 - `Quick Book` trong `Appointment Book`: trigger booking, chưa mở vì có thể tạo draft/mutation (`PAC2-8552`).
 - Appointment drawer đa slot (`Slot Count`): mở bằng click block appointment đã có trong session grid; chỉ từ execution observation (`PAC2-8552`).
-- `Capacity & Demand` `/capacity-demand/`: route từ survey, bị loại khỏi scope `PAC2-4399`; chưa re-verify (`PAC2-4399`).
+- `Capacity & Demand` `/capacity-demand/`: actual `Super Admin GB` header verified; historical date pass 4/9 và independent role/card pass 2/5 giữ riêng. Date Apply/reload và `All Time` restore observed; later Doctor grey→non-grey/reload retention và info hover/dismiss observed, exact original marker chưa capture. Session/observation controls computed hidden (`Blocked`), natural chart tooltip `Inconclusive`; metric correctness chưa kiểm. `[Observed: dev, 2026-10-22]` — `product-explore/auto-20261022-1206/ledger.md#17–18`, `auto-20261022-2011/ledger.md#6–7`; chi tiết: `workflows/capacity-demand.md`.
 - Patient filing flow cho blood-pressure (qua `Patient Search` → patient context): chưa xác nhận exact entry (`PAC2-4399`).
 - Cancel Session confirmation dialog (Configuration `Sessions`): label chưa quan sát (`PAC2-8552`).
 - `Patient Analyser` tab và `Advanced Search` dialog trong `/patient-analyser/`: visible, chưa mở (`PAC2-3798`).

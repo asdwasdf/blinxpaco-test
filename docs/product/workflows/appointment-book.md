@@ -1,13 +1,225 @@
 # Workflow: Appointment Book (PACO Connect)
 
-- Classification: `[Observed: dev, Super Admin GB, 2026-10-02]` (header) — logic bên dưới giữ tag riêng từng bullet
+- Classification: `[Observed: dev, Super Admin GB, 2026-10-22]` cho current-role breadth; pass `Blinx Deployment` và lịch sử ticket giữ scope riêng.
 - Aliases: `Appointment Book`, `Appt. Book`, `PACO Connect`, `Appointment Settings`, `Session`, `Slot`
-- Coverage: `Partial`
-- Confidence: `Low`
+- Coverage: `Partial (read-only)` — Super Admin GB breadth 7/15, selector boundary 1/4 và later selector search/baseline 4/7 giữ riêng; Blinx Deployment 4/15, chưa saved booking lifecycle.
+- Confidence: `Medium` cho root/forms/view hiện tại; ticket/feature-branch không tự áp vào dev hiện tại.
 
-File này được tạo ngày 2026-10-02 để gom logic từ ticket cho module Appointment Book (day view, filter, session/slot editor, session configuration, booking/cancel backend). Route và landmark xem `docs/product/feature-map.md` (module `Appointment Book (PACO Connect)`).
+File tạo ngày 2026-10-02 để gom logic ticket; bổ sung autonomous breadth ngày 2026-10-22. Route và landmark xem `docs/product/feature-map.md` (module `Appointment Book (PACO Connect)`).
 
-## Business context observed
+## Autonomous breadth (2026-10-22)
+
+### Location, actor và entities
+
+- `[Observed]` Role `Blinx Deployment` mở trực tiếp `/paco-connect/appointment-book`; toolbar có `Day`, `Week`, `Month`, `Year`, `Previous`, `Next`, `Go to today`, `Quick Book`, `Filters`, `Group Send`, `Export`. Chờ role và `Loading your appointment data` biến mất; document HTTP `404` vẫn render root usable. — `product-explore/auto-20261022-0236/ledger.md#12`.
+- `[Observed]` `Day` ban đầu active; có session/slot structure, summary `Sessions`, `Booked`, `Available`, page search `Search patients, NHS number, clinicians, times...` tách global search. Summary chưa đối chiếu detail; book selector chưa xác định trong pass này. — `ledger.md#12,#15` cùng run.
+- `[Observed]` Navigation/search/filter/view là read-only. `Quick Book` đã mở form, chưa submit; `Find Appointment` chỉ là gate đã quan sát, chưa chứng minh tạo booking. `Group Send` (`SEND`) và `Export` (`DOWNLOAD`) mới thấy control, chưa bấm. Saved booking/update/cancel/session-slot edit là candidate từ lịch sử, chưa reverify entry hiện tại. — `ledger.md#12–15`.
+
+### Required test data và safety boundary
+
+- `[Open Question]` Saved booking cần patient synthetic do run sở hữu, slot/session owned và cleanup an toàn. `DEC-patient-fixture` / OQ-065 đã pending; không dùng patient, booking hoặc shared slot có sẵn làm fixture. Không retry dependency trước khi tester trả lời. — `ledger.md#14–15`.
+- `[Observed]` Pass này chỉ đổi view/filter selection và query synthetic; không tạo appointment/session/slot, không chọn patient, không `Find Appointment`, `Group Send` hay `Export`. — `ledger.md#13–15`.
+
+### Interactive flow observed
+
+1. `[Observed]` Từ root đã load, mở `Filters`: drawer role `complementary`, không phải dialog. `All Appts` checked, `My Appts` unchecked; có `Reset all`, hai `Deselect all`, `Close`. — `ledger.md#13`.
+2. `[Observed]` Filter groups gồm `Booked`, `Available`, `Non-Bookable`; các status `Patient Arrived`, `Consultation Started`, `Consultation Ended`, `Patient Left`, `Did Not Attend`, `Appointment Cancelled`; accordions `Healthcare Professional`, `Patient`, `Appointment Type`, `Slot Type`, `Session Name`, `Location`. Chỉ map labels, chưa chọn status/accordion option. — `ledger.md#13`.
+3. `[Observed]` Chọn `My Appts`, đọc checked state, chọn lại `All Appts`, xác minh `My Appts` unchecked rồi `Close`. Dataset filtering correctness và saved preferences chưa kiểm. — `ledger.md#13`.
+4. `[Observed]` `Quick Book` mở dialog có `Select Patient`, `Search patients...`, `Within Organisations Hierarchy` unchecked và search sessions/slot types/clinicians/campaigns/locations. Footer `Reset` enabled, `Find Appointment` disabled khi chưa chọn patient. — `ledger.md#14`.
+5. `[Observed]` Query patient synthetic đã nhập nhưng không có settled empty-result proof; không chọn result. Clear query rồi `Close` đưa về root, không booking. — `ledger.md#14`.
+6. `[Observed]` `Day` sang `Week` đổi query `viewAs=week`; về `Day` đổi `viewAs=agenda`. Loading hidden, root search trống, Filters và Quick Book đóng sau restore. — `ledger.md#15`.
+
+### Validation, states và persistence
+
+| Nhánh | Đã thử | Quan sát | Giới hạn |
+|---|---|---|---|
+| Blank Quick Book | Mở form, không chọn patient | `Find Appointment` disabled | Chưa xác định toàn bộ required fields hoặc server validation |
+| Patient search | Query synthetic, chờ empty state | Không có recognized empty message/ARIA option; action vẫn disabled | Kết quả `Inconclusive`, không chứng minh no-match hoặc defect |
+| All/My view | Chọn rồi restore | Checked state phản ánh và trở lại baseline | Không chứng minh dataset hay persisted preference |
+| Day/Week | Chuyển rồi restore | Active view và URL query đổi | Không saved business persistence hoặc count correctness |
+
+`[Observed]` — `product-explore/auto-20261022-0236/ledger.md#13–15`. Không saved mutation; cleanup chỉ query/filter/view vừa đổi.
+
+### Cross-feature relationships
+
+- `[Observed / Open Question]` Quick Book có patient search, nhưng chưa có owned saved patient và chưa booking; không đủ source/receiver evidence cho two-sided edge với Patient Search/Profile. Dùng OQ-065 hiện có cho patient dependency. — `ledger.md#14–15`.
+- `[Unverified hypothesis]` Session/slot configuration và communications có thể cấp context hoặc consume booking; chưa probe receiver trong pass này. — `ledger.md#11,#15`.
+
+### Anomalies và unverified behavior
+
+- `[Observed]` Normal entry click có actionability timeout trước dispatch; read-only kiểm visible/enabled/center hit trước guarded forced entry, form render bất đồng bộ. Đây automation observation, chưa product defect. — `ledger.md#13–14`.
+- `[Open Question]` Chưa kiểm book selector, selected filter dataset, Month/Year/date navigation, root search; chưa booking/readback/edit/reschedule/cancel/status/session-slot changes, send/export hoặc audit/profile handoff. Historical defects bên dưới chưa retest trong run này. — `ledger.md#15`.
+
+### Execution guidance
+
+Dùng dev host đã cấu hình, role visible và loaded root. Chỉ read-only branch độc lập khi patient fixture còn pending; restore đúng selection/view trước khi rời màn. Booking hoặc status/session-slot mutation phải có owned target, runtime gate, ledger và UI cleanup đã xác định; không lấy real/shared record để mở khóa flow.
+
+### Automation guidance
+
+- `[Observed]` Scope Filters bằng heading trong `complementary`; scope Quick Book bằng dialog chứa `Search patients...`. Global dialog count và immediate return sau click không đủ xác nhận form đã mở. — `ledger.md#13–14`.
+- `[Observed]` Chờ actual active view/loading/role; không assert navigation thất bại từ HTTP `404`. Query `viewAs` hỗ trợ view readback, không thay persistence proof. — `ledger.md#12,#15`.
+- `[Open Question]` Patient search thiếu settled-result landmark; không assert no-match bằng 0 ARIA options. Không assert current count, booking status hoặc historical defect nếu chưa fixture và basis đáng tin. — `ledger.md#14–15`.
+
+## Super Admin GB breadth — 2026-10-22
+
+`[Observed: dev, Super Admin GB, 2026-10-22]` — `product-explore/auto-20261022-1001/ledger.md#9–11`. Coverage độc lập với pass `Blinx Deployment` phía trên.
+
+### Location, workflow và dữ liệu
+
+- Direct route `/paco-connect/appointment-book` render root, actual header exact role và organisation đã chọn; document HTTP `404` không ngăn UI load. Baseline `Day`, page search blank, date hiện tại; `Appt. Book` selector visible nhưng chưa mở.
+- Entities/controls đã map: calendar, sessions/slots, summary, book selector, search, `Filters`, `Quick Book`, `Group Send`, `Export`. Calendar/search/filter là read-only; booking/session-slot thay đổi là mutation candidate, send/export cần owned-data scope.
+- Chỉ synthetic query; không chọn patient, book hoặc shared schedule record. Saved booking giữ `DEC-patient-fixture`/OQ-065 và prerequisite owned slot/session, cleanup; không retry dependency pending.
+
+### Interactive flow, validation và persistence
+
+1. `Day` → `Month` render table `Month View`, month heading và `Go to this month`; `Year` render month-calendar buttons và `Go to this year`. Chọn October từ Year mở Month October, chuyển `Day` chọn ngày đầu tháng.
+2. `Previous` lùi một ngày, `Next` trở lại; `Go to today` restore baseline. `Week` rồi `Day` đổi active view và query `viewAs`; chưa kiểm aggregate/count correctness.
+3. Root search synthetic có `No available sessions.` và zero summary; clear phục hồi schedule. Không dùng patient/NHS data.
+4. `Filters` là complementary drawer; `All Appts` → `My Appts` → `All Appts` có checked end states. Reload/reopen vẫn baseline All; selected dataset correctness và preference persistence chưa được phân lập.
+5. Blank `Quick Book Appointment` có patient search, session/slot/appt type/clinician/Email & SMS/location/date preferences; `Find Appointment` disabled. Không chọn option, không submit; đóng về root.
+6. Final reload/readback: role đúng, `Day`, date baseline, search blank, drawer/dialog đóng, schedule hiện. Không saved business persistence hoặc error-message validation.
+
+### Relationships, anomalies và guidance
+
+- Patient search trong Quick Book chỉ source-side control; không owned patient/booking hoặc receiver effect, chưa thêm two-sided relationship.
+- Drawer Close có outside-viewport automation error trong animation; chỉ reconcile current drawer, đợi enter-done rồi đóng. Script batch trước lỗi là incomplete diagnostic, không passing cleanup test.
+- Execution: reuse verified route, chờ actual header/loading/active view; giữ baseline view/date/query/All Appts. Booking, session-slot, send/export không dùng existing data để vượt fixture gate.
+- Automation: scope main search bằng exact placeholder, Quick Book bằng named dialog, Filters bằng complementary; chờ `Month View`/active calendar mode và settled empty message, không chỉ query URL. Count semantics và saved lifecycle cần trusted basis/owned fixtures.
+
+## Super Admin GB book-selector boundary — 2026-10-22
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261022-1414/ledger.md#9–10`; later independent pass, không cộng vào 7/15 của run1001.
+
+- Loaded root và actual header verified; `Appt. Book` mở dialog `Select Appointment Books`, có textbox `Search appointment books` (placeholder `Search appointment books...`), listbox `Appointment books`, sections `Selected`/`Other books` và `Close`. Có selected option; không chọn/bỏ chọn existing book hoặc đọc schedule/patient details.
+- Chỉ open/map selector; chưa thử search/empty/clear, close/reopen hoặc selection persistence. Khi resume đã quá deadline gốc và browser ở `Login`, picker absent; không recovery hoặc tiếp tục branch trong run hết budget.
+- Không query/selection change hoặc business record được tạo; owned-data cleanup `Done`, không leftovers. Authenticated selector baseline/reload verification `Inconclusive`, không coi picker absent tại Login là close/persistence proof.
+- Execution: sau auth helper và actual-role check trong run mới, mở picker, giữ selection baseline chỉ trong script memory, search synthetic token rồi clear và `Close`; không click option/shared schedule. Chờ end state thật, không giả định zero options luôn là empty result.
+- Automation: scope named dialog/textbox/listbox; prepared `appointment-selector.js` mới syntax-checked, chưa chạy nên không dùng làm result. Search/filter correctness, domain validation và saved business persistence `Not Run`.
+- Cross-feature: chỉ mapped same-feature selector; không owned Appointment Book source hoặc schedule receiver effect, không thêm two-sided edge.
+
+## Super Admin GB selector search và baseline — 2026-10-22
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261022-1742/ledger.md#2`; independent later pass, không cộng với denominators trước.
+
+- `Select Appointment Books` có search/listbox, selected/unselected options, status selected count, `Close`, `Cancel`, `Done`. Đợi selected option settled trước lấy baseline; immediate count sau open từng trả 0 rồi thành 1, không là mất selection.
+- Synthetic search không match hiện exact `No appointment books found`, listbox không còn option nhưng status vẫn `1 selected`; clear khôi phục list và exact original selection. Search visibility không đồng nghĩa deselection.
+- `Close` rồi reopen giữ search blank và selection cũ; reload loaded root/actual role rồi reopen vẫn cùng selection và blank query, cuối cùng đóng picker. Chỉ unchanged baseline retention, không verification persistence của selection mới hoặc saved business record.
+- Không click book option, `Done` hoặc `Cancel`; matching-search correctness, changed-selection Apply/Cancel và domain validation `Not Run`. Cleanup `Done`, không business record/leftover hoặc two-sided edge mới.
+- Execution/automation: scope named dialog, wait selected option/loaded root; giữ original labels trong memory để so equality, không lưu shared book names. Chỉ dùng exact empty message cộng query/list/status để phân biệt empty state với render delay; restore query trước Close.
+
+## Quick Book draft và filter lifetime — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0000/ledger.md#2`. Independent pass, không cộng historical breadth/selector denominators.
+
+- `Quick Book Appointment` có patient search, hierarchy scope và preference panels. `Find Appointment` disabled khi chưa chọn Patient, Slot Type và Email & SMS; tooltip nêu ba prerequisites, chưa server validation.
+- Synthetic random-letter patient query giữ trong input sau debounce và `Enter`, nhưng không recognized empty/result end state trong bounded waits; search completion `Inconclusive`. `Clear search` đưa input về blank, clear control biến mất; không lấy 0 ARIA options làm no-match proof.
+- Footer `Reset` giữ synthetic patient query và checked `Within Organisations Hierarchy` trong attempt đã kiểm. `Close` rồi mở lại đưa query về blank và hierarchy unchecked; đây transient draft discard, không saved patient/booking persistence.
+- `Clinician Gender` có `Male`, `Female`, `I don't mind`, ban đầu `aria-checked=false`. Chọn `Male` có checked true; `Reset` xóa preference selection, cả ba false. Reset selection khác search/scope lifetime; intended contract chưa xác lập.
+- Filters: bỏ đúng `Booked` giữ unchecked qua Close/reopen; reload khôi phục exact original status signature và `All Appts`. Final fresh reload/reopen giữ baseline, dialog/drawer đóng. Không kiểm dataset accuracy hoặc storage mechanism.
+- Execution: Quick Book search và enum preference chỉ own unsaved view; không chọn existing patient/session/slot/clinician, `Find Appointment`, send/export hoặc shared Save. Filter selected marker nằm ở child checkbox class, không outer button ARIA.
+- Một console resource 404 ở final reload không xác lập nguyên nhân search/Reset. Không business mutation/new record hoặc cross-feature edge; carried Session occurrence OQ-073 không liên quan và chưa resolved.
+
+### Mutation coverage — draft/filter pass
+
+**5/6 bounded branches**, `Partial (read-only)`.
+
+| Branch | Exercised | End state / reason | Persistence | Cleanup |
+|---|---|---|---|---|
+| Synthetic query / Clear search | Performed | Query retained, Clear blank và button absent | Transient input | Done |
+| Query + hierarchy / Reset | Performed | Both unchanged sau Reset | No saved state proof | Done qua Close/reopen |
+| Gender preference / Reset | Performed | Male checked rồi cả ba false | Transient selection | Done |
+| Close / reopen draft | Performed | Blank query, unchecked hierarchy, Find disabled | Fresh form default | Done |
+| Booked criterion retention / restore | Performed | Unchecked retained qua reopen; reload exact baseline | UI reset after reload | Done |
+| Patient search no-match completion | Skipped | `Inconclusive`: no recognized result/empty end state | Not Run | Done — query clear/discard |
+
+Validation chỉ disabled gate; duplicate/format/server và saved booking transitions untested. Dimensions: navigation `done`; main_workflow, branches_states, validation, persistence, errors_edge `partial`; mutation/relationships `none`. Matching correctness, Reset intended scope và changed preference server persistence chưa established.
+
+## Cross-feature relationships
+
+- `[Observed: dev, Super Admin GB, 2026-10-22]` `Appointment Books source` → `Select Appointment Books`: owned Create xuất hiện unselected; rename thay original bằng edited; Archive làm cả hai absent trong fresh picker với `No appointment books found`. Selection baseline unchanged, query cleared và picker đóng; không booking/clinical relationship. Một unique relationship với ba trigger observations. Source lifecycle xem `appointment-books-settings.md`; evidence `product-explore/auto-20261022-1742/ledger.md#3`.
+
+- `[Observed: dev, Super Admin GB, 2026-10-22]` Later prerequisite pass reverify owned Book Archive→selector absence bằng exact `No appointment books found`; settled selection unchanged, query cleared và dialog closed. Không chọn book/`Done`, không independent generated Session occurrence cleanup proof; OQ-073 giữ `Inconclusive`. — `product-explore/auto-20261022-2011/ledger.md#4`.
+
+## Mutation coverage
+
+### Blinx Deployment — historical autonomous pass
+
+Map giới hạn 15 nhánh/candidate từ UI hiện tại và lịch sử đã đánh dấu; không khẳng định tất cả action còn supported trên current role/build. `Performed` chỉ khi đã thấy end state. `[Observed]` — `product-explore/auto-20261022-0236/ledger.md#13–15`.
+
+| Nhánh | Trạng thái | End state / lý do chưa chạy | Persistence / cleanup |
+|---|---|---|---|
+| Filters open/close | Performed | Drawer đóng | Không saved persistence; Done |
+| All/My/All selection | Performed | Baseline `All Appts` restored | Dataset/persistence chưa kiểm; Done |
+| Blank Quick Book gate/close | Performed | `Find Appointment` disabled, dialog đóng | Không saved draft; Done |
+| Day/Week/Day | Performed | `Day` active, loading hidden | URL state only; Done |
+| Quick Book patient search | Skipped | Đã thử, thiếu settled result/end state | Query cleared; Done |
+| Selected filter/data correctness | Skipped | Chỉ map/current selection branch | N/A |
+| Month/Year/date navigation | Skipped | Visible controls, breadth chưa chạy | N/A |
+| Root search/clear | Skipped | Chỉ thấy input | N/A |
+| Owned booking/create readback | Skipped | OQ-065; owned slot và cleanup chưa đủ | N/A |
+| Owned edit/reschedule/cancel | Skipped | Historical candidate, current entry và owned booking chưa có | N/A |
+| Attendance/status transitions | Skipped | Historical candidate; filter labels không là mutation proof | N/A |
+| Session/slot edit | Skipped | Historical candidate, chưa owned target/cleanup | N/A |
+| Group Send | Skipped | Chưa owned booking/recipient scope | N/A |
+| Export | Skipped | Chưa giới hạn export vào owned data | N/A |
+| Patient/profile handoff | Skipped | Historical candidate, chưa owned source | N/A |
+
+Tổng: **4/15** nhánh/candidate có end state, **0** saved mutations với verified persistence, **0** two-sided relationships. Validation mới blank-form gate; saved validation/transitions vẫn untested. Coverage: navigation `done`; main workflow, branches/states, validation `partial`; mutation, persistence, relationships, errors/edge `none`. Cleanup Done, không leftover mới. — `ledger.md#15`.
+
+### Super Admin GB — current autonomous pass
+
+`[Observed: dev, Super Admin GB, 2026-10-22]` — `product-explore/auto-20261022-1001/ledger.md#9–11`. Bounded map hiện tại 15 nhánh; không cộng coverage role khác.
+
+| Nhánh | Trạng thái | End state / lý do chưa chạy | Persistence / cleanup |
+|---|---|---|---|
+| Calendar mode cycle | Performed | Month, Year, Week và restored Day observed | Reload baseline Day; Done |
+| Year → Month drilldown | Performed | October control mở Month October | View only; Done |
+| Previous / Next / Today | Performed | Date đổi và baseline trở lại | View only; Done |
+| Root search / clear | Performed | Settled empty rồi schedule phục hồi | Blank sau reload; Done |
+| Filters open / close | Performed | Drawer đóng | Done |
+| All / My / All | Performed | Checked selection restored | All sau reload, dataset chưa kiểm; Done |
+| Blank Quick Book gate / close | Performed | Find Appointment disabled, dialog đóng | Không saved draft; Done |
+| Book selector | Skipped | Chỉ map control | N/A |
+| Selected filter criteria / dataset | Skipped | Breadth gate; chưa apply criteria | N/A |
+| Quick Book patient search | Skipped | Blank gate đủ cho pass, chưa thử query | N/A |
+| Owned booking create / edit / cancel | Skipped | Pending patient fixture; owned slot/cleanup chưa map | N/A |
+| Session / slot mutation | Skipped | Chưa owned target | N/A |
+| Group Send | Skipped | Chưa owned booking/recipient scope | N/A |
+| Export | Skipped | Chưa giới hạn owned data | N/A |
+| Patient / profile handoff | Skipped | Chưa owned source | N/A |
+
+Tổng **7/15**, `Partial (read-only)`; **0** saved business mutations/persistence, **0** two-sided relationships. Navigation `done`; main workflow, branches/states, validation, transient persistence và errors/edge `partial`; mutation/relationships `none`. Validation mới blank disabled gate; saved transitions và count correctness untested. Cleanup Done, không leftover mới.
+
+### Super Admin GB — later independent selector pass
+
+`[Observed]` — `product-explore/auto-20261022-1414/ledger.md#9–10`. Bounded map **1/4**, không whole-feature inventory và không cộng với previous run.
+
+| Nhánh | Trạng thái | End state / lý do chưa chạy | Persistence / cleanup |
+|---|---|---|---|
+| Selector open / map | Performed | Named dialog/search/listbox/sections render | Không thay query/selection; owned-data cleanup Done, final picker absent tại Login |
+| Synthetic search / empty / clear | Skipped | Budget hết trước execution; prepared script chưa chạy | N/A |
+| Close / reopen baseline | Skipped | Auth expired trước verification, không click Close | N/A |
+| Selection / reload persistence | Skipped | Không chọn existing/shared book; auth/budget không cho verify baseline | N/A |
+
+Navigation/branches `partial` trong pass riêng; mutation, validation, persistence, relationships `none`; không đổi coverage dimensions từ prior breadth. Main booking workflow vẫn pending fixture, domain lifecycle `Not Run`.
+
+### Super Admin GB — selector search và unchanged baseline pass
+
+`[Observed]` — `product-explore/auto-20261022-1742/ledger.md#2`. **4/7 bounded branches**, không cộng coverage các run/role khác.
+
+| Nhánh | Trạng thái | End state / lý do chưa chạy | Persistence / cleanup |
+|---|---|---|---|
+| Selector open / map | Performed | Search/listbox/selection status và Close/Cancel/Done visible | Transient UI; Done |
+| Synthetic empty search / clear | Performed | Exact empty message; clear khôi phục list/selection | UI reset; Done |
+| Close / reopen | Performed | Query blank, original selection unchanged | Reopen baseline; Done |
+| Unchanged selection reload | Performed | Loaded root và fresh picker giữ baseline/query blank | Baseline retention only; Done |
+| Matching search correctness | Skipped | Chưa có owned source/book fixture | N/A |
+| Changed selection / Done | Skipped | Không chọn existing/shared book trong pass | N/A |
+| Changed selection / Cancel | Skipped | Không thay selection; không thử Cancel | N/A |
+
+Navigation/branches/persistence `partial` trong pass; persistence chỉ unchanged UI baseline, không saved change. Mutation/validation/relationships `none`, 0 business records/leftovers; booking lifecycle vẫn chờ prerequisite riêng.
+
+## Business context observed (lịch sử ticket)
 
 - Visible purpose: xem lịch theo ngày/tuần/tháng/năm, đặt/hủy appointment, cấu hình `Session` (template → child session) và `Slot`. `[Observed]` — PAC2-7137/exploration.md, PAC2-8552/exploration.md
 - Actor/role: `Super Admin GB` (7786, 8241, 8384, 8552, 7137); ticket 7137 nhắc `Config Admin` chưa xác nhận. `[Observed]` — PAC2-7137/status.md, PAC2-7786/automation.md

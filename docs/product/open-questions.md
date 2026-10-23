@@ -357,6 +357,8 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Question:** Comms Hub SSO yêu cầu Super Admin GB role; clinic role `blinx_johnny.bravo` (Blinx Deployment) không đủ quyền. Sidebar `Quick Send` trong PACO cũng không trigger navigation cho role này. Cần user Super Admin GB riêng để access Comms Hub Outbox `Resend` workflow.
 **Impact:** Critical — Workaround chính để generate JWT scheduler link bị chặn. Cần QA cấp Super Admin GB account.
 **Evidence:** PAC2-7727/exploration.md O-4 (2026-10-16 retry); feature-map.md Comms Hub role observed `Super Admin GB`
+**Update (2026-10-22):** `[Observed / Open Question]` Với role `Blinx Deployment` trên Paco, sidebar `Comms Hub` > `Campaign Manager` đã chuyển được cùng tab tới external `/commshub/login`; nhận định lịch sử không trigger navigation không tái hiện trong context này. Helper chưa qua auth riêng trong pass đó, có redirect SSO; role requirement và nguyên nhân chưa xác lập. — `product-explore/auto-20261022-0500/ledger.md#2–3`.
+**Current context (2026-10-22):** `[Observed / Open Question]` Source Paco `Super Admin GB`; dedicated helper dùng actual credential-method control đạt authenticated external Home/Campaign Manager/Outbox, organisation header đúng, external role không visible. Auth blocker gỡ cho context này, chưa chứng minh required role; chỉ read-only search/navigation, không Send/Resend. — `product-explore/auto-20261022-1001/ledger.md#13–14`.
 **Created:** 2026-10-16
 **Answered:** -
 
@@ -393,5 +395,299 @@ Dedupe từ 3 nhóm logic; `Status: Open`, `Created: 2026-10-02`, `Answered: -`.
 **Diagnostic:** Fresh PAC admin login không khắc phục. UI-triggered `POST /paco/feature-branch/pac2-7579/undefined/v1/chat/completions` trên frontend host trả `403` `[Observed]`; literal `undefined` gợi ý AI base URL thiếu/sai config `[Inferred]`, exact build/runtime variable và nguyên nhân reject chưa biết. Cần owner deployment kiểm tra; không rewrite endpoint/bypass. — PAC2-7579/test-data-ledger.md#chẩn-đoán-403-theo-tester--2026-10-21; `test-results/PAC2-7579-403-diagnosis-20261021.json`.
 **Created:** 2026-10-21
 **Answered:** Một phần 2026-10-21 — persisted source tag/source mới availability và request sai target đã quan sát; full A → B vẫn Open do generation `403`.
+
+### Autonomous product exploration (2026-10-21)
+
+**ID:** OQ-047
+**Status:** Open
+**Question:** `Skills` → `View Audit` có end state/permission/loading signal nào? Hai lần mở trên owned records chưa thấy audit panel; chưa xác lập completion timing nên kết quả `Inconclusive`, không defect.
+**Impact:** Low
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#6`; `workflows/organisation-skills.md`.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-048
+**Status:** Open (partially answered)
+**Question:** Rule Name của Skills (empty Edit/whitespace/length), semantics suffix ` copy`, retention/Restore sau Archive, và hiệu ứng Pathways/RBAC hoặc saved staff assignment khi rename/archive là gì? Add empty disable Confirm, Edit empty vẫn enable Save; chưa submit invalid vì giữ `QA-test` ownership.
+**Impact:** Medium
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#3`–`#7`, `#11`; owned Skill create/rename/archive phản ánh exact Name ở fresh Staff Profile `Skill Capabilities` picker. Không chọn/lưu receiver; saved assignment và Pathways/SNOMED/RBAC mapping chưa thử. 4/4 owned Skills đã UI Archive; retention chưa biết.
+**Created:** 2026-10-21
+**Answered:** Một phần 2026-10-21 — availability/rename/removal trong unsaved Staff Profile picker đã Observed; validator phía server, intent của Copy suffix, archived retention/Restore và persisted downstream effects vẫn Open.
+
+**ID:** OQ-049
+**Status:** Open
+**Question:** Visible menu `Configuration` → `Organisation` → `Pathways Config` đưa tới `/paco/configuration/organisation/pathways` chỉ render `Page Not Found`: route triển khai đúng là gì, hay cần role/context khác? Root cause chưa biết; không suy từ static audio 404.
+**Impact:** Medium
+**Evidence:** `[Observed / Possible defect]` `product-explore/auto-20261021-1359/ledger.md#8`; menu re-entry, reload chờ heading và fresh tab cùng context đều tái hiện; Skills control render được.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-050
+**Status:** Answered — `DEC-shared-list-save`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
+**Question:** `Teams` footer `Save` chỉ ghi delta owned Team hay toàn shared list? Có cách create/cleanup scoped riêng và owned staff prerequisite để test member assignment không? Add New → Add chỉ tạo draft, reload không persist; không bấm Save khi write footprint chưa chắc.
+**Impact:** Medium
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#9`; `workflows/staff-teams.md`. Không sửa row/member có sẵn; draft đã discard, không active leftover.
+**Created:** 2026-10-21
+**Answered:** 2026-10-23
+
+**ID:** OQ-051
+**Status:** Answered — `DEC-staff-create`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23: cho tạo staff QA-test với email fiona.nguyen@blinxsolutions.com (invite/identity gửi tới email này OK); không cần xóa, giữ lại để tái sử dụng cho lần sau.
+**Question:** `Staff Profiles` → `Add Care Professional` → `Create` có tạo identity, invite hoặc email tự động không? Cần safe unique Email và cleanup scope nào để tạo owned staff không trùng account/ảnh hưởng quyền người dùng có sẵn?
+**Impact:** Medium — chặn persisted profile/role/capability/Teams assignment; vẫn đọc được unsaved picker.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#10`–`#11`; `workflows/staff-profiles.md`. General required First/Last Name, Gender, Email; không nhập dữ liệu hoặc submit Create. Chỉ mở receiver draft rồi Close; không send/invite.
+**Created:** 2026-10-21
+**Answered:** 2026-10-23
+
+**ID:** OQ-052
+**Status:** Answered — `DEC-shared-list-save`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
+**Question:** `Organisation` → `Services` footer `Save` ghi delta owned service hay toàn shared list? Có cách create/update/remove scoped riêng không; `Service ID` có rule required/unique/domain nào, và `Case Type`/service được tiêu thụ ở đâu?
+**Impact:** Medium — chặn persisted CRUD và cross-feature effect; không bấm Save khi write footprint chưa rõ. Khác OQ-050: Services dùng entity/form riêng, chưa suy Save semantics từ Teams.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1359/ledger.md#15`, `services-draft-check.js`; `workflows/organisation-services.md`. 4 editable baseline rows; Add Another tạo owned draft, Remove riêng draft về 4, Add/reload về 4 và 0 owned inputs. ID lọc non-digit/max15, Name max255, Case Type mở 14 option labels; chưa Save/select option, không server-validation/downstream claim.
+**Created:** 2026-10-21
+**Answered:** 2026-10-23
+
+### Health Forms autonomous (2026-10-21)
+
+**ID:** OQ-053
+**Status:** Open
+**Question:** `Archive/Unarchive` trên source `Archived` vẫn mở prompt/button `Archive`; confirm làm source `Active` sau reload. Wording và state transition mong đợi là gì? Intent/root cause chưa biết; không kết luận behavior đúng hoặc sai.
+**Impact:** Low — wording không thể hiện rõ effect đã quan sát; cần trusted requirement trước verdict.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1626/ledger.md#8`, `ui-observations.json#archive`; Cancel/reload giữ Archived, confirm/reload thành Active, re-Archive cleanup thành Archived. `workflows/health-forms.md#mutation-coverage`.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-054
+**Status:** Open
+**Question:** `Clone Health Form` từ source `Archived` hai lần mở create-new editor với Title/Dropzone rỗng, source component không có, `Save Form` disabled, trong khi source `Edit` vẫn có content. Clone có hỗ trợ Archived source không, và load/completion signal đúng là gì? Root cause và Active-source behavior chưa verified.
+**Impact:** Medium — persisted Clone copy chưa có end state; không Save clone, persistence `Not Run`, hai drafts đã bỏ.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1626/ledger.md#9`, `ui-observations.json#clone`; source Edit control có content. Diagnostic lần hai captured requests200/failed0/console0/pageerror0; không payload inspection, HTTP200 không proof data loaded. `workflows/health-forms.md#mutation-coverage` nhánh9.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-055
+**Status:** Open
+**Question:** `Designer V2` (`/paco/health-forms/`) hiện heading `Health Form Templates` nhưng chưa có rendered data rows; fresh reload chờ20s vẫn vậy, legacy control thấy source `Active` lúc probe. Điều kiện load/permission/filter và quan hệ với legacy Designer là gì? Source hiện đã Archived; receiver archived visibility chưa biết.
+**Impact:** Medium — relationship `Inconclusive`, không observed edge; không chứng minh template absent hoặc sync thiếu.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1626/ledger.md#7`, `ui-observations.json#designer_v2`; lần vào đầu và fresh reload đều chưa thấy rows, chỉ fresh reload có explicit wait20s. Console errors2/pageerror0, same-origin capture chỉ GETdocument200, không đủ backend diagnosis. `workflows/health-forms.md#mutation-coverage` nhánh10.
+**Current-role evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261022-1206/ledger.md#12–13`: source Active lúc probe, exact V2 search retained và loading indicator gone nhưng 0 data rows; concurrent resource errors không chứng minh causality. Source sau probe Archived; relationship giữ `Inconclusive`, không retry nếu prerequisite chưa đổi.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-056
+**Status:** Open
+**Question:** `Health Form Title` rỗng làm `Save` disabled nhưng whitespace làm enabled. Trusted trim/required/length/duplicate rule phía client và server là gì? Invalid Title chưa submit, không kết luận server chấp nhận hoặc client bug.
+**Impact:** Low — chỉ client-state observation; invalid/duplicate/boundary persistence chưa chạy.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1626/ledger.md#4`, `ui-observations.json#validation`; khôi phục valid Title trước Save, không invalid submit. `workflows/health-forms.md#mutation-coverage` nhánh4/11.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-057
+**Status:** Open
+**Question:** `Configuration` → `Organisation` → `Practice Profiles` visible menu tới route `/paco/configuration/organisation/practice-profiles` chỉ render `Page Not Found`: route triển khai đúng là gì, hay cần role/deployment khác? Root cause chưa biết; không suy từ Pathways Config error (OQ-049).
+**Impact:** Medium — chặn map action/ownership và kiểm owned workflow; entity/consumer/relationship chưa biết, không suy quan hệ với `Staff Profiles` hoặc HTTP status/backend unavailable.
+**Evidence:** `[Observed / Blocked]` `product-explore/auto-20261021-1626/ledger.md#13`, `practice-profiles-route-check.js`, `resume-observations.json#practice_profiles`; visible menu, reload chờ heading và fresh tab cùng browser context đều `Page Not Found`; `Skills` control render được.
+**Created:** 2026-10-21
+**Answered:** -
+
+### Locations autonomous (2026-10-21)
+
+**ID:** OQ-058
+**Status:** Open
+**Question:** Nested `Enter Address` → `Cancel` hoặc `Close` có chủ ý giữ draft trong cùng parent `Location` không? Nếu sau Cancel bấm parent `Save`, draft Address có được persist không? Chưa chạy nhánh Save sau Cancel, chưa có trusted intent hoặc root cause.
+**Impact:** Medium — cần phân biệt parent buffer với persisted value trước verdict; không kết luận mất dữ liệu hoặc product Fail từ label Cancel.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1844/ledger.md#9–11`, `address-cancel-check.js`, `ui-observations.json#address_cancel_diagnostic`; cùng parent giữ City draft sau Cancel/Close, parent Close rồi fresh reload/reopen trả City gốc. Explicit Confirm/Save update riêng đã persist. Selective console/network diagnosis chưa chạy. Connection failure original recovered qua auth/reconciliation; cleanup Done 19:27:59.966Z. Notice sau Add Close recovered qua auth/role và read-only exact cleaned/cancelled rows0/dialogs0 tại20:00:15.316Z — ledger #17. Latest connector notice sau Sharing Agreements Column Menu chưa có current UI recheck; notice timestamp không có — ledger #18–19.
+**Created:** 2026-10-21
+**Answered:** -
+
+**ID:** OQ-059
+**Status:** Open
+**Question:** `Locations` có trusted required/trim/format/duplicate/length rules nào cho Name, Contact Number, Email và các Address fields? Empty/whitespace Name, invalid Email native validity và Address Confirm gating chỉ là client observation; server rules chưa verified.
+**Impact:** Medium — empty Name Save enabled nhưng không submit unnamed data; Email input type text không proof invalid recipient được server chấp nhận. Không suy City/County/Postcode optional vì Confirm enabled sau Line1.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1844/ledger.md#4–7`, `ui-observations.json#validation`; empty Email Save bị native message `Please fill out this field.`, Address trống bị custom `Address is required`. Valid synthetic create/update được UI reload/reopen; duplicate/server-invalid/boundary chưa chạy. Connection failure original recovered qua auth/reconciliation; cleanup Done 19:27:59.966Z. Notice sau Add Close recovered qua auth/role và read-only exact cleaned/cancelled rows0/dialogs0 tại20:00:15.316Z — ledger #17. Latest connector notice sau Sharing Agreements Column Menu chưa có current UI recheck; notice timestamp không có — ledger #18–19. `workflows/organisation-locations.md`.
+**Created:** 2026-10-21
+**Answered:** -
+
+### Announcements autonomous (2026-10-21)
+
+**ID:** OQ-061
+**Status:** Answered — `DEC-shared-list-save`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
+**Question:** `Organisation / Announcements` shared page-level `Save` ghi delta owned block hay toàn Welcome/Service list? Có cách tạo scoped owned persisted announcement với separate write footprint và cleanup không? Saved validation rules (required/trim/length/duplicate), location assignment persistence, recipients/triggers/location effect và saved lifecycle là gì?
+**Impact:** Medium — chặn persisted CRUD, domain validation và delivery/receiver assertions; không bấm shared Save khi write footprint/owned target/lifecycle chưa rõ. Khác OQ-050/OQ-052: Announcements dùng accordion/page-Save riêng, chưa suy Save semantics từ Teams/Services.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-2259/ledger.md#5–10`, `ui-observations.json#announcements`; `workflows/organisation-announcements.md`. Welcome Message 2 existing blocks, Service Updates 1 block baseline; own unsaved drafts Add/Delete/reload và Add/reload-discard đều baseline1/owned text0 sau cleanup. `Apply to locations` picker 285 rendered options; không chọn option/Save. Toolbar formatting/link/table/image visible, end states chưa exercise. Không bấm shared Save; persisted create/update/delete, server validation, location assignment persistence, recipients/triggers và delivery/receiver `Not Run`. Read-only reconciliation `2026-10-22T01:07:48.305Z`: baseline1editor/exact own matches0/0/dialogs0/roletrue, no Save; `resume-preflight-20261022-0103/ledger.md#4–6`, run2259 ledger #12–13. Organisation continuity qua re-auth chưa independently established; latest connector notice sau sweep chặn current check, timestamp null. Không trả lời saved-lifecycle question hoặc tăng coverage.
+**Created:** 2026-10-21
+**Answered:** 2026-10-23
+
+### Sharing Agreements autonomous (2026-10-21)
+
+**ID:** OQ-060
+**Status:** Open
+**Question:** `Sharing Agreements` hỗ trợ purpose/lifecycle/actions nào trong role `Blinx Deployment`? Có UI path tạo agreement bằng owned synthetic prerequisites, separate write footprint và cleanup an toàn không? Chưa map scoped form/CRUD; không coi existing organisation list hoặc Access labels là permission hay relationship proof.
+**Impact:** Medium — chặn thiết kế owned mutation/validation/persistence và receiver assertions; không kết luận CRUD unsupported hoặc tự sửa shared agreement.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261021-1844/ledger.md#17–19`, `auto-20261021-2259/ledger.md#1–4`, `ui-observations.json#sharing_agreements`: visible entry/root, grid columns và Name `Column Menu` observed. Cumulative 4/5 bounded branches Partial read-only (root/menu/general-layout/columns/paging order): Performed 4, Skipped 1. Columns tab six checked columns; Filter Columns Input `Status` filters column names only (layout search), clear restored six, no checkbox changed. Autosize This Column Name width200→279, fresh reload six200/unpinned, no layout persistence trong context đã thử; baseline restored `23:02:44.955Z`, dialogs `0`. Paging four controls `visible:false`/`hidden ancestor` measured `23:01:07.299Z`, visibility only, no navigation/support proof; branch Skipped not `Not supported`. Bounded root không thấy feature Add/Save/row Actions. Other general choices (pin/autosizeall/reset, column toggle/order, data-row sort/filter, paging navigation) và owned lifecycle/validation/prerequisites/receiver chưa verified. Column menu/filter chỉ own layout UI preference only, no agreement-record mutations/domain persistence/receiver. Run1844 menu-open click `20:04:00.999Z`, run2259 baseline restored `23:02:44.955Z`. Historical connector blocker recovered preflight2253. Coverage dimensions: navigation done, main_workflow partial, branches_states partial (4/5), mutation none, validation none, persistence partial (own layout reload only, NOT business data), relationships none, errors_edge none. Confidence Medium bounded navigation/layout, no product verdict/deep/Complete. Final read-only reconciliation `2026-10-22T01:08:14.018Z`: six200px/unpinned/dialogs0/menu absent/roletrue, no agreement/layout mutation replay; `resume-preflight-20261022-0103/ledger.md#4–6`, run2259 ledger #12–13. Latest connector notice sau sweep chặn current check, timestamp null; owned lifecycle/write footprint vẫn Open. `workflows/organisation-sharing-agreements.md`.
+**Created:** 2026-10-21
+**Answered:** -
+
+### Dx Priority autonomous (2026-10-22)
+
+**ID:** OQ-062
+**Status:** Answered — `DEC-shared-list-save`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
+**Question:** `Dx Priority` có UI path tạo isolated owned disposition/pair và cleanup an toàn không? `Add Service & Priority`, `Remove pair`, chọn Service/Priority và page-level `Save` ghi delta hay toàn shared configuration? Trusted domain rules/validation, source prerequisites và downstream consumer là gì?
+**Impact:** Medium — chặn saved lifecycle/validation/persistence/receiver; không sửa existing disposition/pair hoặc shared Save để tìm rule. Không suy clinical meaning từ label hoặc dependency từ populated picker.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261022-0158/ledger.md#2–5`, `ui-observations.json`, `workflows/organisation-dx-priorities.md`. Root `DX Priorities`/Disposition Code/Text/Service/Priority và disabled shared Save; synthetic no-match/clear, read-only Service/Priority picker open/close có end state. 4/7 bounded branches Partial read-only, 3 shared-write branches Skipped; no selection/Add/Remove/Save/new record. No saved persistence/domain validation/two-sided relationship proof. Rendered counts chỉ context observation, không rule/dataset total.
+**Created:** 2026-10-22
+**Answered:** 2026-10-23
+
+**ID:** OQ-063
+**Status:** Open
+**Question:** Cách read-only nào xác minh actual active role/context khi header thiếu exact `Blinx Deployment` hoặc hiển thị `Config Admin` trong run intended `Blinx Deployment`? Quan sát tại `Dx Priority`, Reports và Dashboard có cùng cause không, hay chỉ header/context behavior khác nhau?
+**Impact:** Medium — chặn tiếp autonomous mutation/feature mới cho tới verify role; path-based `CHECK_AUTH_SCRIPT` true không đủ. Không credential retry hoặc switch role/logout chỉ để ép label trở lại.
+**Evidence:** `[Observed / Open Question]` preflight `resume-preflight-20261022-0151/ledger.md#2–4` role verified trước run; `product-explore/auto-20261022-0158/ledger.md#3–4`: role wait timeout25s sau reload, readbacks `02:04:40.420Z`/`02:05:30.280Z` role absent, root render/loginInputs0/dialogs0. `More options` mở `02:06:23.494Z`, targeted snapshot sau đó chỉ application shortcuts, không role proof/snapshot timestamp. Later plugin/user `CONNECTION_CLOSED`, notice timestamp null/current recheck Blocked; không browser action sau notice, không selective console/network/root-cause proof.
+**Created:** 2026-10-22
+**Note (2026-10-22):** Các notice `CONNECTION_CLOSED` trong evidence là của hai server `.mcp.json` `playwright-user`/`playwright-plugin` (lỗi `EADDRINUSE`), không phải Claude Playwright plugin; câu hỏi về role vẫn Open.
+**Current evidence (2026-10-22):** `[Observed / Open Question]` `product-explore/auto-20261022-0714/ledger.md#6–12`: exact role checked trước Role Groups và tại hai Web Chat child roots; chưa independently checked tại Case Load. Reports và Dashboard header hiển thị `Config Admin`; final targeted Dashboard header check không có intended role, dù toàn trang có `Blinx Deployment` ngoài header. Không switch role, credential retry hoặc quy cause cho availability; historical checks không tự chứng minh active-role continuity.
+**Resume preflight (2026-10-22):** `[Observed / Open Question]` `product-explore/resume-preflight-20261022-0946/ledger.md#1–4`: `.env` helper tới picker chỉ offered `Super Admin GB`, không `Blinx Deployment`, với Organisation/Location đã chọn. Tester sau đó chốt `Dùng Super Admin GB`; exact role hoàn tất và Dashboard header verified, checkpoint riêng. Không còn chờ role choice; nguyên nhân role cũ/header-context vẫn Open, bốn mutation decisions không đổi.
+**Answered:** -
+
+### Shared-list Save decision (2026-10-22)
+
+**ID:** OQ-064
+**Status:** Answered — `DEC-shared-list-save`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23 (option a): cho bấm page/footer Save trên shared list Teams, Services, Announcements, Dx Priority thoải mái như manual test; không cần xóa dòng QA-test sau đó. Riêng Role Groups: chỉ tạo role group mới tên QA-test và sửa quyền trên chính group đó; KHÔNG sửa quyền role group có sẵn.
+**Question:** Có được bấm page/footer `Save` trên list dùng chung khi diff chỉ thêm rồi xoá một dòng `QA-test` không? Nếu không, có cách tạo/xoá scoped riêng cho từng feature không?
+**Impact:** Medium — cùng một root cause chặn persisted CRUD của 5 feature; mỗi feature vẫn explore được các nhánh read-only/unsaved độc lập.
+**Scope:** `whole-list` candidate — page/footer `Save` trên shared configuration; chưa xác minh ghi delta hay toàn list, giữ authorization gate trước khi chạy.
+**Linked:** OQ-050 (`Users & Staff / Teams`), OQ-052 (`Organisation / Services`), OQ-061 (`Organisation / Announcements`), OQ-062 (`Organisation / Dx Priority`), plus `Users & Staff / Role Groups` (disabled footer Save, share cùng pattern). Câu hỏi domain riêng của từng feature vẫn giữ ở OQ gốc.
+**Evidence:** Xem evidence trong từng OQ gốc; Role Groups `product-explore/auto-20261022-0714/ledger.md#6–7`.
+**Created:** 2026-10-22
+**Answered:** 2026-10-23
+
+### Case Workboards fixture (2026-10-22)
+
+**ID:** OQ-066
+**Status:** Answered — `DEC-workboard-create`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23: cho tạo board QA-test, không cần xóa. Notification nếu có chỉ tới fiona.nguyen@blinxsolutions.com. Tester chưa rõ màn này; gán case/task/staff theo policy CLAUDE.md (dữ liệu có sẵn trên dev được dùng).
+**Question:** `Create new board` có cách tạo owned board minimal với scope cleanup/visibility/notification/write footprint đã xác lập không? Scoped cleanup, private/default visibility và permission sharing unknown; create class là `unknown-scope`, không reuse shared-list/staff rootcause.
+**Impact:** Medium — chặn saved board lifecycle, assignment và case/task relationship; form blank và Cancel end states vẫn chạy độc lập.
+**Linked:** `Case Load Management / Case Workboards`, `workflows/case-load-management.md`; decision `DEC-workboard-create` pending trong autonomous state; destination role/context cần reverify.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261022-0714/ledger.md#10`: `Create new board` mở `/paco/workboards/new-workboard` form blank, Type options Case/Task opened không chọn, không nhập name, Cancel đóng/auto-select board khác; không Save/assignment/case mutation. 3/9 bounded branches performed, 6 skipped; no saved persistence/validation/two-sided relationship. My Case handoff tới profile case không chứng minh create→receiver hoặc active ownership.
+**Created:** 2026-10-22
+**Answered:** 2026-10-23
+
+### Patient registration fixture (2026-10-22)
+
+**ID:** OQ-065
+**Status:** Answered — `DEC-patient-fixture`
+**Answer:** `[Confirmed: tester 2026-10-23]` Tester duyệt 2026-10-23: cho tạo patient synthetic tên QA-test-*, NHS number random hợp lệ mod-11 trong dải test 999xxxxxxx; email chỉ fiona.nguyen@blinxsolutions.com, phone để trống (không SMS); không cần cleanup, để lại trên dev; được dùng patient đó như bình thường (booking/media) và được dùng patient có sẵn trên dev.
+**Question:** Có fixture đăng ký patient hoàn toàn synthetic với giá trị bắt buộc hợp lệ, scope không gọi external identity/notification và đường UI cleanup đã duyệt không?
+**Impact:** Chặn saved patient lifecycle và patient-dependent booking/media; search, unsaved draft và Appointment Book/Virtual Appointments/Media Library read-only vẫn chạy độc lập. Patient fixture không thay thế prerequisite owned booking, slot/session, media và cleanup.
+**Linked:** `Patients / Patient Search`, `Patients / Care Navigation`, `Appointment Book / Quick Book`, `Web Chat & Video / Virtual Appointments`, `Web Chat & Video / Media Library`, `workflows/patient-search.md`, `workflows/care-navigation.md`, `workflows/appointment-book.md`, `workflows/web-chat-video.md`; decision `DEC-patient-fixture` trong autonomous state.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261022-0236/ledger.md#5–9,#14–15`: patient draft mở các step không cần PDS và discard qua fresh reopen; blank Quick Book có `Find Appointment` disabled, chưa có owned saved fixture hoặc owned slot/cleanup. `product-explore/auto-20261022-0500/ledger.md#6–7`: Virtual Appointments root và filter end states đã observed; chưa có owned appointment để exercise lifecycle. `product-explore/auto-20261022-0714/ledger.md#8`: Media Library root `No Patient Selected`, patient search không submit; media fixture ownership/cleanup riêng chưa xác lập.
+**Current-role evidence (2026-10-22):** `[Observed: dev, Super Admin GB]` `product-explore/auto-20261022-1001/ledger.md#9–11`: independent calendar/search/filter end states và blank Quick Book disabled gate đã chạy; không chọn patient hoặc retry pending fixture.
+**Created:** 2026-10-22
+**Answered:** 2026-10-23
+
+### Patient Search filter Cancel (2026-10-22)
+
+**ID:** OQ-067
+**Status:** Open
+**Question:** `Filters` → `Cancel` phải bỏ Postcode draft hay giữ live filter? Heading count có ý nghĩa gì khi `Cancel` không đổi field cũng làm count đổi trong khi rows vẫn hiện?
+**Impact:** Medium — cần trusted intent trước assertion về discard/apply và total match; không suy saved patient hoặc server mutation từ transient grid state.
+**Evidence:** `[Observed: dev, Super Admin GB]` `product-explore/auto-20261022-1001/ledger.md#4–7`; hai isolated synthetic Postcode inputs rồi `Cancel` có zero-result UI và giữ draft khi reopen, không `Save`; fresh reload reset filter và rows trở lại. Control `Cancel` không đổi field vẫn có rows, count đổi. Console không xác lập filter-specific cause.
+**Linked:** `Patients / Patient Search`, `workflows/patient-search.md#super-admin-gb-breadth--2026-10-22`.
+**Created:** 2026-10-22
+**Answered:** -
+
+### Web Chat module authentication (2026-10-22)
+
+**ID:** OQ-068
+**Status:** Open
+**Question:** Prerequisite/session và đường đăng nhập được duyệt nào mở Web Chat cho `Super Admin GB` khi Paco header đã authenticated nhưng module vẫn hiện `Welcome Back`/`Log in`?
+**Impact:** Chặn current-role Virtual Appointments body; không replay Paco credential hoặc tương tác external identity host chưa cấu hình.
+**Evidence:** `[Observed / Open Question]` `product-explore/auto-20261022-1001/ledger.md#15`; actual sidebar entry giữ verified Paco header, destination `/web-chat/` có module Login, không `Date Range`. Historical same-role SSO boundary: `workflows/web-chat-video.md#discovery-update-run-20261001-085609`.
+**Linked:** `Web Chat & Video / Virtual Appointments`, `workflows/web-chat-video.md#super-admin-gb-auth-boundary--2026-10-22`; module auth gate độc lập với `DEC-patient-fixture`.
+**Created:** 2026-10-22
+**Answered:** -
+
+### Reports current-role access (2026-10-22)
+
+**ID:** OQ-069
+**Status:** Open
+**Question:** Permission/role prerequisite nào cho `Super Admin GB` xem SCR/Patient Cases khi actual header verified nhưng SCR báo not authorized và Patient Cases `Access Denied`; `Analytics` trong Reporting shell phải mở view nào?
+**Impact:** Chặn current-role report data/search/filter và owned report lifecycle; không suy denial là defect hoặc tự đổi quyền.
+**Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261022-1206/ledger.md#15`, `reports-observation.json`; SCR denial và Patient Cases denial sau reload, return SCR settled header verified, Analytics click chưa changed known state.
+**Linked:** `Analytics & Reports / Reports`, `workflows/analytics-reports.md#super-admin-gb-reports-access--2026-10-22`; độc lập với historical role-context OQ-063.
+**Created:** 2026-10-22
+**Answered:** -
+
+### Rocket Bar client prerequisite (2026-10-22)
+
+**ID:** OQ-070
+**Status:** Open
+**Question:** Installed Rocket Bar/client nào được phép dùng trong browser QA này; `Launch Rocket Bar` và `Download Rocket Bar` có destination, installation và cleanup scope được duyệt nào?
+**Impact:** Chặn main desktop/client workflow; launcher menu vẫn map read-only được, không tự install hoặc launch runtime chưa rõ.
+**Evidence:** `[Observed: dev, Super Admin GB]` `product-explore/auto-20261022-1414/ledger.md#6`: menu có hai enabled buttons, source page không đổi; chưa execute launch/download, menu đã đóng.
+**Linked:** `Rocket Bar`, `workflows/rocket-bar.md`; độc lập với OQ-026 đã answered về desktop launcher khác global patient search.
+**Created:** 2026-10-22
+**Answered:** -
+
+### Appointment configuration source search semantics (2026-10-22)
+
+**ID:** OQ-071
+**Status:** Open
+**Question:** `Search Appointment Book...` và `Search Slot Type...` lọc rows đã tải hay toàn bộ source, và khi nào query retained/early fill sau reload được áp dụng lại?
+**Impact:** Chặn dùng initial search miss/row absence làm persistence hoặc cleanup proof; cần exact owned editor và independent receiver readback.
+**Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261022-1742/ledger.md#3,#6`: owned Create/rename retained trong fresh editors nhưng reload/query retained hoặc early fill chưa hiện row; Book Enter không đổi, later clear/retype mới hiện exact row. Cleanup có independent receiver empty sau Archive; chưa xác định nguyên nhân chung.
+**Linked:** `Appointment Books source`, `Slot Types source`, `workflows/appointment-books-settings.md`, `workflows/appointment-slot-types-settings.md`; không là permission hoặc mutation-authorization decision.
+**Created:** 2026-10-22
+**Answered:** -
+
+### Saved Session rename không persist (2026-10-22)
+
+**ID:** OQ-072
+**Status:** Open
+**Question:** Vì sao owned Session rename `Save` giữ drawer mở và original Name vẫn retained sau Discard/reload; lỗi `POST /dev/api/sessions/check-time-edit-impact` 404 có liên quan và có tái hiện trên fresh independent fixture không?
+**Impact:** Chưa thể xác nhận saved Edit workflow hoặc defect/root cause, không retry mutation khi kết quả chưa reconcile.
+**Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261022-2011/ledger.md#3`: Save một lần, native inputs valid, metadata 404; fresh original present/edited absent sau Discard, rename `Inconclusive`.
+**Linked:** `Appointment Sessions source`, `workflows/appointment-sessions-settings.md`.
+**Created:** 2026-10-22
+**Answered:** -
+
+### Session template Delete và generated-occurrence cleanup (2026-10-22)
+
+**ID:** OQ-073
+**Status:** Open
+**Question:** `Delete` owned Session template có loại generated occurrences hay chỉ source template; UI read-only nào xác nhận independently khi own Book/Slot Type đã Archive?
+**Impact:** Giữ một potential leftover và cleanup `Inconclusive`, chưa thể kết luận schedule còn active hoặc đã sạch.
+**Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261022-2011/ledger.md#3–4`: Archive gate/export trước Delete có hai exact owned Session rows; fresh source sau Delete absent, prerequisites source/receiver absent sau Archive, nhưng không independent schedule readback.
+**Linked:** `Appointment Sessions source`, `Appointment Book`, `workflows/appointment-sessions-settings.md`; không authorize restore, cancellation hoặc existing-record mutation.
+**Created:** 2026-10-22
+**Answered:** -
+
+### User Portal embedded guide content không mở (2026-10-23)
+
+**ID:** OQ-074
+**Status:** Open
+**Question:** Điều kiện nào cho phép embedded Scribe guide trong `User Portal` tải content khi viewer hiện `scribehow.com refused to connect.`; đây là browser/embed policy hay cấu hình guide?
+**Impact:** Chặn kiểm guide steps/content dù category drilldown và outer viewer/Close đã có end states.
+**Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261023-0000/ledger.md#5`: exact guide icon mở drawer có iframe Scribe và rendered refusal; không interact destination, bypass policy hoặc dùng HTTP status làm root-cause proof.
+**Linked:** `User Portal`, `workflows/user-training-portal.md`; không authorize external-site interaction hoặc policy change.
+**Created:** 2026-10-23
+**Answered:** -
+
+### Health Form Preview Required marker semantics (2026-10-23)
+
+**ID:** OQ-075
+**Status:** Open
+**Question:** Badge `Required*` trong Designer `Preview Form` là static required-field indicator hay validation feedback cần biến mất khi answer hợp lệ?
+**Impact:** Chưa có trusted basis để dùng marker visibility làm required-answer pass/fail assertion.
+**Evidence:** `[Observed / Open Question: dev, Super Admin GB]` `product-explore/auto-20261023-0000/ledger.md#8`: owned unsaved Text Input Required on/recording off, marker vẫn visible sau synthetic answer và blur; khác historical Blinx Deployment observation tại `product-explore/auto-20261021-1626/ledger.md#4–5`, không response Save/Submit.
+**Linked:** `Health Forms Designer`, `workflows/health-forms.md`; không authorize response submit hoặc clinical filing.
+**Created:** 2026-10-23
+**Answered:** -
 
 ## Tester notes

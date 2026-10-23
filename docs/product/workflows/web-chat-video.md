@@ -87,4 +87,179 @@
 - Với role `Super Admin GB` đã đăng nhập PACO, cả ba mục chuyển `/web-chat/?rd=/<page>/` → màn `Welcome Back` với nút `Log in` → `login.microsoftonline.com` (`Sign in to your account`). Web Chat dùng SSO Microsoft riêng.
 - Tester quyết định bỏ qua Web Chat trong run này; không đăng nhập, không lưu URL SAML.
 
+## Autonomous breadth 2026-10-22
+
+`Observed: dev, Blinx Deployment, 2026-10-22`; autonomous product exploration run `auto-20261022-0500`, checkpoint `docs/product/explore/autonomous-state.yaml`. Không có mutation; mọi điểm dưới đây là hành vi hiện tại, chưa đối chiếu requirement.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | End state hoặc lý do |
+|---|---|---|
+| Menu tới feature root | `Performed` | Filters và appointments table render |
+| `Video Consultations` rồi `All Appointment Types` | `Performed` | Cả hai tới empty state; chưa xác minh selected marker hoặc data accuracy |
+| `Yesterday` rồi `Cancel` | `Performed` | Giữ `Today`, picker đóng |
+| `Yesterday` rồi `Apply`, khôi phục `Today` | `Performed` | Label đổi, có rendered row; khôi phục empty state |
+| Search | `Skipped` | Hai search inputs chưa exercise |
+| `Columns` | `Skipped` | Deferred theo breadth gate |
+| `Filters` panel | `Skipped` | Deferred theo breadth gate |
+| Owned appointment action/lifecycle | `Skipped` | Chưa có owned booking, patient fixture và slot/cleanup |
+
+4/8 bounded nhánh, `Partial (read-only)`. Submission validation và business state transitions chưa thử; filter state không phải saved persistence. Cleanup filter UI `Done`: `Today`, picker đóng, searches blank, `All Appointment Types` đã click nhưng selected marker chưa verified; không tạo business record hoặc leftover. `Media Library` và `Outstanding Reviews` chưa mở.
+
+### Entry và render
+
+- Entry: Dashboard → sidebar `Web Chat & Video` → submenu `Virtual Appointments`.
+- Route: `/web-chat/appointments/` trên configured dev host.
+- Role verified: `Blinx Deployment` trước click.
+- Full body render: title `Web Chat & Video`, `Date Range` visible, không SSO redirect trong lần này.
+- Root snapshot: `virtual-appointments-root.yml` (local test-results).
+
+### Date Range filter
+
+- **Yesterday Cancel**: chọn Yesterday → Cancel giữ label Today, picker đóng, 0 rows, empty state.
+- **Yesterday Apply**: chọn Yesterday → Apply đổi label Yesterday, 1 rendered row visible (không đọc/click row), picker đóng.
+- **Today restore**: chọn Today → Apply khôi phục label Today, 0 rows, empty state, picker đóng.
+- Filter state không phải saved business persistence; cleanup restored Today.
+
+### Appointment Type filter
+
+- **Video Consultations**: chờ tới empty state (0 rows, Today, picker đóng, search inputs blank).
+- **All Appointment Types**: chờ tới empty state (0 rows, Today, picker đóng, search inputs blank).
+- Selected filter marker và data accuracy chưa verified.
+
+### Mutation boundary
+
+- Không có `Create`/`Book` button visible trong pass này.
+- Appointment action fixture chưa có (OQ-065 patient fixture làm context hint cho appointment-dependent workflows).
+- Không mutate existing appointment; Search/Columns/Filter interactions/lifecycle skipped.
+
+### Evidence
+
+- Provenance: `product-explore/auto-20261022-0500/ledger.md#6–7`; chronology và diagnostic counts nằm trong ledger.
+- Final baseline: exact role visible, `Today`, empty state, picker đóng, searches blank.
+
+### Open questions
+
+- Không khẳng định nguyên nhân dataset empty, permission requirement cho Create/Book, hay historical SSO defect resolved với role này.
+- Appointment lifecycle, current role variant access và appointment action fixture scope vẫn là open questions (OQ-065 context hint).
+
+## Media Library (autonomous 2026-10-22)
+
+`Observed: dev, intended Blinx Deployment label, 2026-10-22`; run `auto-20261022-0714`, checkpoint `docs/product/explore/autonomous-state.yaml`. Exact label observed nhưng chưa independently established là active-role header; không mutation, giữ qualification từ ledger #12.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | End state hoặc lý do |
+|---|---|---|
+| Menu tới feature root | `Performed` | `No Patient Selected` prompt và controls render |
+| Patient Search → select patient → media grid | `Skipped` | Chờ owned patient fixture (OQ-065) |
+| Media Type filter → result verification | `Skipped` | Chờ owned patient và media fixture |
+
+1/3 bounded nhánh, `Partial (read-only)`. Patient selection lifecycle, media fixture ownership/cleanup và media-type filtering chưa thử; không tạo business record hoặc leftover.
+
+### Entry và render
+
+- Entry: Dashboard → sidebar `Web Chat & Video` → submenu `Media Library`.
+- Route: `/web-chat/media-library/` trên configured dev host.
+- Exact label `Blinx Deployment` observed tại root; vị trí active-role/header chưa independently established, cần reverify trước role-access assertion.
+- Full body render: heading `Media Library`, `No Patient Selected` prompt và controls visible.
+- Root evidence: `product-explore/auto-20261022-0714/ledger.md#8`; không có standalone root snapshot trong run folder.
+
+### No Patient Selected state
+
+- Prompt: `No Patient Selected` với exact text `To view media files, please select a patient from the control panel on the left.`
+- Controls visible: `PATIENT` Search input, `MEDIA TYPE` filter với 4 options (Audio, Chat Transcript, Message Log, Video).
+- Không thấy Upload/Add New/Create button trong bounded root check này; không khẳng định tính năng unsupported.
+
+### Mutation boundary
+
+- Patient search không submit query; patient selection chờ owned fixture (OQ-065).
+- Media Type filter không click; media fixture ownership/cleanup riêng chưa xác lập.
+- Không Upload/Create/Edit/Delete media hoặc select existing patient.
+
+### Evidence
+
+- Provenance: `product-explore/auto-20261022-0714/ledger.md#8,#12`.
+- Final baseline: exact role visible, `No Patient Selected`, controls render, 0 patient/media actions.
+
+### Open questions
+
+- Owned patient prerequisite nằm trong OQ-065 / `DEC-patient-fixture`; media fixture ownership/cleanup/scope riêng chưa biết.
+- Upload/Create workflow có tồn tại không, hay Media Library chỉ read-only view.
+- Patient→media relationship persistence và media-type accuracy chưa verified.
+
+## Outstanding Reviews (autonomous 2026-10-22)
+
+`Observed: dev, intended Blinx Deployment label, 2026-10-22`; run `auto-20261022-0714`, checkpoint `docs/product/explore/autonomous-state.yaml`. Exact label observed nhưng chưa independently established là active-role header; không mutation, giữ qualification từ ledger #12.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | End state hoặc lý do |
+|---|---|---|
+| Menu tới feature root | `Performed` | Empty grid, breadcrumb và controls render |
+| Date Range open/Cancel | `Performed` | Picker mở/đóng, giữ Today |
+| Date Range Apply | `Skipped` | Deferred theo breadth gate |
+| Search | `Skipped` | Deferred theo breadth gate |
+| Columns | `Skipped` | Deferred theo breadth gate |
+| Filters | `Skipped` | Deferred theo breadth gate |
+| Owned review action | `Skipped` | Chờ consultation fixture và lifecycle |
+
+2/7 bounded nhánh, `Partial (read-only)`. Date Range Apply/filter, Search, Columns, Filters interactions và owned review lifecycle chưa thử; không tạo business record hoặc leftover. Cleanup UI `Done`: `Today`, picker đóng, empty grid.
+
+### Entry và render
+
+- Entry: Dashboard → sidebar `Web Chat & Video` → submenu `Outstanding Reviews`.
+- Route: `/web-chat/review/` trên configured dev host.
+- Exact label `Blinx Deployment` observed tại root; vị trí active-role/header chưa independently established, cần reverify trước role-access assertion.
+- Full body render: breadcrumb `Consultations`, heading `CONSULTATIONS FOR REVIEW`, grid và controls visible.
+- Root evidence: `product-explore/auto-20261022-0714/ledger.md#9`; không có standalone root snapshot trong run folder.
+
+### Empty grid state
+
+- Heading: `CONSULTATIONS FOR REVIEW`.
+- Grid columns: Patient Name, Appt. Type, Clinician Name, Review Status, Appt. Time, Pt. Arrived, Wait Time, Call Ended, Call Duration, Action.
+- Empty state: `No Rows To Show`, 0 rendered data rows.
+- Không đọc existing clinical records; grid chỉ observation context, không dataset total.
+
+### Date Range filter
+
+- **Open**: Date Range control mở picker với Cancel/Apply buttons.
+- **Cancel**: chọn Cancel đóng picker, giữ label `Today`, grid vẫn empty.
+- Filter state không phải saved business persistence; cleanup restored `Today`, picker đóng.
+
+### Mutation boundary
+
+- Date Range Apply không thử; Search/Columns/Filters không open.
+- Consultation review action fixture chưa có; không select row/submit review.
+- Không mutate existing consultation; owned review lifecycle `Not Run`.
+
+### Evidence
+
+- Provenance: `product-explore/auto-20261022-0714/ledger.md#9,#12`.
+- Final baseline: exact role visible, breadcrumb Consultations, empty grid, `Today`, picker đóng.
+
+### Open questions
+
+- Dataset empty nguyên nhân (permission, org context, hay dev data absence) chưa biết.
+- Consultation fixture ownership/cleanup và saved review action scope chưa xác lập.
+- Search/Columns/Filters/Apply behavior và review lifecycle chưa verified.
+
+## Super Admin GB auth boundary — 2026-10-22
+
+`[Observed / Open Question: dev, Super Admin GB]` — `product-explore/auto-20261022-1001/ledger.md#15`.
+
+- Entry reverified: authenticated Dashboard → `Web Chat & Video` → `Virtual Appointments`. Current active-role header verified before navigation and in destination shell.
+- Destination resolves to `/web-chat/` with `Welcome Back` and `Log in`; `Date Range` and appointments body do not render within bounded wait. No password form in module body.
+- Paco Login recovery uses shared `.env` helper once, then fresh header verification; never replay credentials at context picker or module `Log in`. Module authentication is distinct from Paco shell authentication.
+- Historical same-role SSO boundary from 2026-10-01 remains relevant. Current pass does not click module `Log in` or navigate/interact with external identity provider; approved module session prerequisite remains OQ-068.
+- Current result: `Blocked`. Prior role filter/body observations remain historical, not current-role coverage. No inferred entitlement cause or product defect.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | End state hoặc lý do |
+|---|---|---|
+| Authenticated `Virtual Appointments` root | `Skipped` | Module `Welcome Back` gate; Paco header authenticated nhưng feature body chưa access |
+
+0/1 bounded workflow branch; auth gate observed only. Search/date/layout controls chưa map trong current-role body; validation, saved state transitions, persistence và relationships `Not Run`. Không patient fixture retry hoặc record mutation; cleanup `N/A`, không leftover. Resume từ T4 `Health Forms`, không lặp gate khi prerequisite chưa đổi.
+
 ## Tester notes

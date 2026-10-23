@@ -97,4 +97,88 @@
 - Approval stop: `Create new case`, `Create new board`, `Filters > Save` (persistence chưa rõ).
 - Gap: `Loading workboards...` còn hiện lúc 3.5s; chưa phân biệt empty với tải chậm.
 
+## Autonomous Work Boards — 2026-10-22
+
+`Observed: dev, intended Blinx Deployment; destination role/context chưa verified`; evidence `product-explore/auto-20261022-0714/ledger.md#10–12`. Chỉ mở form blank rồi `Cancel`, không submit hoặc tạo business record; sau đó Reports và Dashboard hiển thị `Config Admin`, thời điểm/nguyên nhân context khác chưa rõ.
+
+- Entry: sidebar `Case Load Management` mở submenu `My Case`, `Unallocated`, `Case Workboards`, `Task Workboards`.
+- `Case Workboards` (`/paco/workboards?tab=case`) auto-select board có sẵn → `/paco/workboards/:id`.
+- Controls: search mode `Board`/`Case ID`/`Patient`, Board name field, counts `Tasks`/`Cases`, `Create new board`, `Search this board`, List/Card view toggle, `Filters`.
+- `Create new board` mở form blank tại `/paco/workboards/new-workboard`: fields `Assign Staff`/`Team`, `Board Owner`, `Organisation`, `Type`, `Add Actioned Cases`, `Permission for users to create tasks`, `Display resolved cards for`, `Home Visit Board`, `Default Consultation Template`, `Columns`. `Save` và `Cancel` enabled; không bấm `Save`.
+- `Type` dropdown mở options `Case`/`Task`; không chọn, không nhập name, không Save.
+- `Cancel` đóng form, list auto-select board khác có sẵn; form absent sau đó.
+- `My Case` submenu handoff tới `/paco/patient-profile/:id/cases/:id`; rời ngay không đọc clinical content/actions. Historical empty `My Case` khác 2026-09-15 và 2026-10-01; giữ cả hai provenance, không kết luận rootcause data condition.
+- Bounded branches performed: 3/9 (root, blank form `Type`/`Cancel`, `My Case` handoff); 6 skipped (search, view toggle, `Filters`, saved create/readback, board update/cleanup, assignment/case/task lifecycle).
+- Không thấy saved persistence/validation/two-sided relationship. Scoped cleanup/private/default visibility unknown; create class là `unknown-scope`, không reuse shared-list/staff rootcause từ feature khác.
+- Mutation coverage: `Create new board` form opened nhưng không submit; `Cancel` reverted, không business record. Decision `DEC-workboard-create` cho main workflow.
+- Open question `OQ-066`: safe owned new board fixture, visibility/notification/write footprint/cleanup behavior.
+
+## Mutation coverage
+
+| Nhánh/candidate | Thực hiện | End state hoặc lý do |
+|---|---|---|
+| Submenu / Work Boards root | `Performed` | Existing board tự được chọn; destination role/context chưa verified |
+| Blank new-board form / Type options / Cancel | `Performed` | `Case`/`Task` visible, không chọn hoặc nhập; Cancel đóng form |
+| My Case navigation | `Performed` | Tới redacted patient-case route; không đọc clinical content/action |
+| Board search | `Skipped` | Chưa thử trong bounded breadth |
+| List/Card view | `Skipped` | Chưa thử trong bounded breadth |
+| Filters | `Skipped` | Chưa mở/chưa Save |
+| Saved create/readback | `Skipped` | `DEC-workboard-create` pending, unknown scope |
+| Board update/cleanup | `Skipped` | Không owned saved board |
+| Assignment/case/task lifecycle | `Skipped` | Existing/shared clinical data không trong mutation scope |
+
+3/9 bounded nhánh có end state, context-unverified; không gán access cho role `Blinx Deployment`. Validation chưa thử; business state transitions/persistence và two-sided relationships `Not Run`. Cleanup unsaved form `Done`, business records `N/A`, không leftovers. Reverify exact role trước tiếp main workflow.
+
+## Super Admin GB Work Boards breadth — 2026-10-22
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261022-1206/ledger.md#16`. Current-role bounded pass riêng với historical context-unverified pass.
+
+- Known `/paco/workboards?tab=case` auto-select existing board tại `/paco/workboards/:id`; actual role header và `Work Boards` verified. Root có `Board`/`Case ID`/`Patient`, `Board name`, `Search this board`, `View My Tasks Only`/`View My Cases Only`, counts `Tasks`/`Cases`, `Create new board`, `Filters`.
+- Synthetic `Board name` search cho Tasks/Cases zero và board list không rows; `Clear search` khôi phục populated sidebar, query blank. Chỉ UI search state, chưa kiểm dataset/count accuracy hoặc saved board.
+- `Filters`: `Age`, `Incoming Service`, `Pathway`, `Skills`, `Priority`, `Case Status`, `PDS Validated Status`; unchanged `Save` disabled. `Cancel` không edit đóng panel; reload giữ blank searches/closed panel. Không filter `Save`.
+- `Case score updates are delayed.` từng hiện trên populated board; early post-reload check không thấy notice không đủ chứng minh resolved. Chưa triage scoring/console causality; không patient card/clinical content inspected.
+- `DEC-workboard-create`/OQ-066 giữ pending, không reopen create form hoặc retry shared prerequisites. Không assignment/status/priority/write, My Case hoặc patient handoff.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | End state / persistence / lý do | Cleanup |
+|---|---|---|---|
+| Current-role Work Boards root | `Performed` | Auto-selected populated board, actual header verified | `Done`: không record |
+| Synthetic Board search / Clear search | `Performed` | Tasks/Cases zero rồi populated list restored | `Done`: query blank |
+| Unchanged Filters / Cancel | `Performed` | Panel/disabled Save, Cancel/reload closed | `Done`: baseline reload |
+| Current-board search / Case ID / Patient modes | `Skipped` | Chưa exercise trong bounded pass | `N/A` |
+| List/Card presentation | `Skipped` | Chưa xác lập toggle target/end state | `N/A` |
+| Saved board create/readback | `Skipped` | DEC-workboard-create pending | `N/A` |
+| Board update/cleanup | `Skipped` | Không owned saved board | `N/A` |
+| Assignment/case/task/clinical lifecycle | `Skipped` | Existing/shared clinical data ngoài mutation scope | `N/A` |
+
+**3/8 bounded branches**, `Partial (read-only)`. UI baseline qua reload verified; input/domain validation, business transitions/persistence và two-sided relationships `Not Run`; không mutation hoặc leftover. Counts là environment observations, không trusted expected result.
+
+## Independent search modes và presentation — 2026-10-23
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261023-0000/ledger.md#3`. Pass riêng với historical 3/8 current-role và 3/9 context-unverified; không cộng denominators.
+
+- `Search this board` với synthetic query có helper `Nothing on this board matches [query]. Search all boards by patient or case ID.` Clear query đưa field về blank và helper gone. Đây current-board no-match UI, chưa matching accuracy trên known owned case.
+- Sidebar `Case ID` mode đổi active marker và input thành `Case ID`; `Patient` mode thành `Patient name`. Synthetic query/Enter retained nhưng không recognized result copy trong bounded wait; Patient sidebar counters về zero. Query completion/matching correctness còn `Inconclusive`; đổi mode/clear và restore `Board` verified.
+- Baseline `Card view`; `List view` đổi active presentation marker và URL có `?view=list`, giữ qua reload. Chưa tách URL-driven state khỏi saved preference. Restore `Card view`, reload không còn `view` query; actual role, `Board`, blank searches và original presentation verified.
+- `Set your status` reappears sau reload; `Remind me later` dismiss mà không chọn colleague-visible status. Presentation script timeout ở restoration do modal intercept; separate guarded cleanup verified, không replay full script hoặc force click.
+- Không clinical card/record selection, assignment/status update, new board, business mutation hoặc two-sided relationship. `DEC-workboard-create` và OQ-066 không đổi.
+
+### Mutation coverage
+
+| Nhánh | Thực hiện | End state / persistence / lý do | Cleanup |
+|---|---|---|---|
+| Current-board synthetic no-match / clear | `Performed` | Exact scoped helper rồi blank/helper gone | `Done` |
+| Case ID mode / query clear | `Performed` | Mode/input đổi, own query cleared | `Done` |
+| Patient mode / query clear | `Performed` | Mode/input đổi, zero sidebar counters rồi own query cleared | `Done` |
+| List/Card presentation / reload / restore | `Performed` | List marker và URL retained; Card baseline verified sau reload | `Done` |
+| Case ID matching completion | `Skipped` | `Inconclusive`: chưa recognized result completion | `N/A` |
+| Patient matching completion | `Skipped` | `Inconclusive`: zero counters không chứng minh matching correctness | `N/A` |
+
+**4/6 independent bounded branches**, `Partial (read-only)`. Native Case ID input không có required/pattern/min/max constraint; domain validation và business transitions/persistence `Not Run`. Persistence chỉ own presentation URL/UI lifetime; final blank searches, `Board`/Card baseline và closed dialogs/drawers verified. Không new records/leftovers; carried Session occurrence uncertainty không được giải quyết bởi pass này.
+
+## Cross-feature relationships
+
+`[Observed]` Search modes và List/Card là same-feature UI states; không source mutation hoặc observed receiver effect nên không thêm two-sided edge. — `product-explore/auto-20261023-0000/ledger.md#3`.
+
 ## Tester notes

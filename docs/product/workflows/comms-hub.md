@@ -111,6 +111,83 @@ locator.type('text', {delay: 80});
 - Patient Manager: recipient list `Non-Shared Lists (33)` / `Shared Lists (186)`; ô `Actions` trống trên các dòng quan sát được (`Open Question`).
 - Handoff từ Paco: Patient Analyser `Send to Comms Hub`/`Group Quick Send` (SEND boundary, chưa thực hiện).
 
+## Autonomous breadth exploration 2026-10-22
+
+`Observed: dev, Blinx Deployment trên Paco, 2026-10-22`; evidence `product-explore/auto-20261022-0500/ledger.md#2–3`. Role trong Comms Hub chưa xác minh; các section lịch sử bên trên không được reverify qua lần này.
+
+### Navigation và entry
+
+Từ `Dashboard`, mở sidebar, chọn `Comms Hub` rồi button `Campaign Manager`; cùng tab chuyển tới `https://nhs-comms-hub-dev.blinxhealthcare.com/commshub/login`. Login là boundary đã tới, chưa phải authenticated campaign root.
+
+### Auth boundary và verification result
+
+Comms helper attempted automated login; evaluation interrupted by navigation before credential submission. Reconciliation saw collapsed credential inputs, `Username and Password` toggle, và external SSO redirect `login.microsoftonline.com`. Helper selected first `Sign In` button; evaluation interrupted again.
+
+**Verification:** `false` — không chứng minh credential acceptance, Comms Hub role acquisition, hoặc campaign root access. Partial navigation reached login boundary; authenticated campaign functionality không reach.
+
+**Result:** `Blocked` (authentication boundary)
+
+### Mutation coverage
+
+| Branch | Status | Note |
+|--------|--------|------|
+| Dashboard → Comms Hub → Campaign Manager login handoff | `Performed` | External dev `/commshub/login` reached; endstate unauthenticated |
+| Authenticated campaign root access | `Skipped` | Auth boundary not crossed |
+| Campaign create/read/update/delete | `Skipped` | Historical candidates, not current verified |
+| Campaign compose/Send | `Skipped` | Historical candidates, not current verified |
+| Message create/Send | `Skipped` | Historical candidates, not current verified |
+| Template operations | `Skipped` | Historical candidates, not current verified |
+| Patient list operations | `Skipped` | Historical candidates, not current verified |
+
+**Coverage:** 1 navigation branch performed (handoff/login boundary) / 7 total candidate branches. No campaign, message, template, or patient list CRUD. No Send actions. No saved persistence hoặc two-sided business edge verified.
+
+**Cleanup:** N/A — no business records created.
+
+### Execution và automation guidance
+
+- Comms helper chỉ chạy trên exact allowlisted external dev host (`nhs-comms-hub-dev.blinxhealthcare.com`)
+- Nếu helper vẫn chưa authenticated, tester hoàn tất SSO thủ công; không tự tương tác hoặc submit trên host SSO ngoài allowlist
+- Không bypass validation hoặc internal flags; historical code snippets trong workflow chưa được re-verify
+- Không dùng private/undocumented API endpoints
+- Test data: không mutation trên real patients hoặc shared campaigns
+- Communication scope: approved email recipient only (`fiona.nguyen@blinxsolutions.com`); không SMS
+
+## Authenticated breadth — 2026-10-22
+
+`[Observed: dev, source Paco Super Admin GB; external role unverified]` — `product-explore/auto-20261022-1001/ledger.md#13–14`. Không chuyển coverage hoặc permissions Paco sang host external.
+
+### Context, entry và safety
+
+- Dedicated `.env` helper với actual credential method đã mở đạt `/commshub/`; header hiện home organisation `Haringey Demo Org`, không role label. Helper fixed-wait trả early failure nhưng fresh verify authenticated; không retry credentials.
+- Home link `Campaign Manager` có double-prefix href, normalize tới `/commshub/campaign-manager`. Root có Shared/Non-Shared groups, status/type filters, org context, search, `Create Campaign`, `Campaign Outbox` và layout controls.
+- Read-only search/navigation độc lập; không mở existing row, không đổi org, không create/compose/send/import/export. External role/context chưa đủ cho mutation; historical internal-state/validation-bypass snippets không dùng.
+
+### Flow và reusable automation
+
+1. Root synthetic `Search campaigns` có 0 rows, không visible no-rows overlay; clear phục hồi collapsed groups. Không chờ overlay bắt buộc nếu UI không render.
+2. `Campaign Outbox` có date range, type/campaign list và search riêng; không chọn campaign/recipient. `fill` rồi Enter chưa filter list trong observation này; `pressSequentially` cùng query có 0 displayed items. Ctrl+A/Backspace phục hồi list.
+3. Return Campaign Manager rồi reload: search blank, groups load. Không saved persistence hoặc two-sided business handoff; chưa thử validation/saved transitions.
+4. Execution/automation: exact allowlisted host, verify auth riêng, chờ actual page/list. Login toggle có suffix `-->`; credential Sign In phải đúng form, không SSO button. Sau helper navigation/early result, reconcile UI trước retry. Chỉ keyboard search behavior đã observed, không product-defect assertion từ `fill` khác keyboard.
+
+### Mutation coverage
+
+| Nhánh | Trạng thái | End state / lý do chưa chạy | Persistence / cleanup |
+|---|---|---|---|
+| Authenticated campaign root | Performed | Loaded root/groups | Done |
+| Root search / clear | Performed | 0 rows rồi groups restored | Blank sau reload; Done |
+| Outbox navigation / return | Performed | Outbox root rồi campaign root | Done |
+| Outbox keyboard search / clear | Performed | 0 displayed items rồi list restored | Query blank; Done |
+| Selected status / type / org | Skipped | Breadth gate, không đổi context | N/A |
+| Owned campaign lifecycle | Skipped | External role/cleanup chưa verified | N/A |
+| Compose / Send / Resend | Skipped | Chưa owned campaign/recipient scope | N/A |
+| Selected campaign recipient detail | Skipped | Chưa owned source | N/A |
+| Template operations | Skipped | Feature khác, chưa root current context | N/A |
+| Patient list operations | Skipped | Feature khác, chưa owned recipient fixture | N/A |
+| Export | Skipped | Chưa giới hạn owned data | N/A |
+| Create-form validation | Skipped | External role/context chưa đủ | N/A |
+
+**4/12** bounded branches, `Partial (read-only)`; 0 saved mutations/business persistence, 0 relationships, cleanup Done/không leftover mới. Navigation/main workflow/branches/transient persistence/errors `partial` vì external role unverified; mutation/validation/relationships `none`. OQ-040 role requirement vẫn Open dù auth boundary hiện tại đã qua.
+
 ## Logic từ ticket
 
 Nguồn: `PAC2-1805`, `PAC2-3798`, `PAC2-4399`, `PAC2-4700`, `PAC2-5776`, `PAC2-6540`, `PAC2-6982`, `PAC2-7201`, `PAC2-7579`, `PAC2-8522`.

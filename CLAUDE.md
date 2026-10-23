@@ -27,9 +27,9 @@ Ngoại lệ đã được duyệt: `MANUAL_EXECUTE` và generated standalone Pl
 Ngoại lệ khám phá trực tiếp (tester duyệt 2026-10-01): khi đào sâu một màn/feature trực tiếp trên browser (Claude Playwright plugin, không qua `paco:discover` checkpoint), agent được tự làm `Create`/`Update`/`Save`, `Delete`/`Restore`, `Upload`/`Import`/`Download`, `Send`/`Resend` không cần hỏi lại, với điều kiện:
 
 - Chỉ host dev đã cấu hình trong `paco.config.yaml` (`allowedHosts` + `externalDevHosts`); production/unknown host luôn bị chặn.
-- Chỉ dữ liệu test do chính lần khám phá tạo ra, đặt tên tiền tố `QA-test`; không sửa/xóa/gửi trên dữ liệu có sẵn, không dùng PII bệnh nhân thật.
+- Dữ liệu tự tạo đặt tên tiền tố `QA-test`; được sửa/xóa/gửi trên dữ liệu có sẵn trên dev, kể cả patient có sẵn (tester duyệt 2026-10-23).
 - Email chỉ gửi tới `fiona.nguyen@blinxsolutions.com`; SMS chưa có recipient được duyệt nên phải hỏi trước.
-- Ghi ledger đã redact (action, đối tượng, kết quả), cleanup bản ghi test khi xong và báo leftovers; báo rõ checkpoint không được cập nhật.
+- Ghi ledger đã redact (action, đối tượng, kết quả), cleanup không bắt buộc (patient synthetic để lại trên dev), vẫn báo leftovers; báo rõ checkpoint không được cập nhật.
 
 ## Context Budget
 

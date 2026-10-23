@@ -1,9 +1,140 @@
 # Workflow: Patient Search
 
-- Classification: `[Observed: dev feature-branch, Super Admin GB, 2026-10-13]`
+- Classification: `[Observed: dev, Blinx Deployment, 2026-10-22]`; lịch sử feature-branch `Super Admin GB` giữ riêng bên dưới.
 - Aliases: `Patient Search`, `Search Patients`, `top-bar patient search`, `PDS search`
-- Coverage: `Partial (search/filter behavior observed; mutation paths out of scope)`
-- Confidence: `High` for tokenise + cap 50; `Medium` for AG Grid virtual-scroll behavior
+- Coverage: `Partial (interactive)` — autonomous breadth 6/15 nhánh; chỉ owned unsaved draft, chưa saved patient lifecycle.
+- Confidence: `Medium` cho flow hiện tại; tokenise/cap trong ticket không reverify ở lần autonomous này.
+
+## Autonomous breadth (2026-10-22)
+
+`[Observed: dev, Blinx Deployment]` — `product-explore/auto-20261022-0236/ledger.md#1–9`.
+
+### Context, entry và actions
+
+- Direct `/paco/patient-search` đã reverify; chờ exact role và loaded heading trước action. Global `Search patients by name or NHS number` khác page `Search Patients...`.
+- Page search với synthetic no-match trả `Patient Search (0)`; clear trả loaded grid. Heading và rendered row count khác nhau, không lấy số đang thấy làm requirement.
+- `Filters` mở drawer có Title, Age, Gender, Ethnicity, Country of Birth, Language, Postcode, Practice; `Clear all`, `Cancel`, `Save`. Đã Cancel, chưa đổi hoặc Save filter.
+- Row ellipsis mở `Profile`, `View`, `Edit`, `View Audit`, `Archive`, `Save for offline access`; chỉ mở/đóng menu, không chọn item trên existing patient. `Offline config` visible nhưng chưa mở.
+
+### Required test data
+
+- Owned draft dùng `QA-test` prefix, synthetic date; tên chứa run digits bị client reject. Dùng alias chỉ chữ, dấu gạch nối và khoảng trắng cho draft; chi tiết fixture nằm trong ledger.
+- Chưa có safe registration fixture, trusted required values hoặc saved-patient cleanup đã xác minh; OQ-065 / `DEC-patient-fixture` chặn saved lifecycle, không chặn search hoặc draft.
+
+### Interactive flow (owned test data)
+
+1. `Create new patient` mở `Create New Patient`, mặc định `Patient` / `Registration Type: Permanent`; `Create` disabled.
+2. Empty Last Name có `Last name is required`. Surname chứa digits hiện `Only letters, apostrophes, dashes, and spaces are allowed.`; sửa alias hợp lệ và synthetic Date of Birth bỏ lỗi, mở được `Personal` không cần bấm `PDS Check`.
+3. Đã vào sáu step visible: `Patient`, `Personal`, `Contact`, `Address`, `Healthcare Provider`, `Relationships & Permissions`; chỉ map form, không thêm relationship/provider hoặc gửi dữ liệu.
+4. `Personal`: Title, First Name(s), Last Name, Date of Birth, Gender, Preferred Spoken Language có dấu `*`; English mặc định. Empty First Name hiện `First name is required`; dấu `*` không chứng minh server validation.
+5. `Contact`: Phone Numbers/Add Another, Primary Email, Preferred Contact Method, Confirmed By, SMS/Email consent. `Address`: primary address, Postcode có dấu `*`, Add Another. `Healthcare Provider`: GP/Practice, hospital/registration, pharmacy. `Relationships & Permissions`: own draft Primary Patient, empty household, Add Another, Permissions & Access.
+6. Header close bỏ draft; fresh reopen surname/Date of Birth trống, close lần nữa. Root restored, không saved patient được submit; search alias là supporting check, không independent persistence proof khi debounce chưa settled.
+
+### Validation behavior
+
+| Field / rule | Input | Message / behavior | Submit blocked? | Classification |
+|---|---|---|---|---|
+| Last Name | Empty draft | `Last name is required` | `Create` disabled; chưa submit | `Observed` |
+| Last Name | Owned name có digits | `Only letters, apostrophes, dashes, and spaces are allowed.` | `Create` disabled | `Observed` |
+| Last Name + Date of Birth | Letters-only owned alias + synthetic date | Visible error hết; các step mở được, `PDS Check` enabled | `Create` vẫn disabled vì form chưa đủ | `Observed` |
+| First Name(s) | Empty `Personal` | `First name is required` | `Create` disabled | `Observed` |
+
+### Cross-feature relationships
+
+- `Profile`/`View` là candidate handoff; chưa theo link hoặc tạo saved source nên chưa có two-sided edge. Household/Practice labels không chứng minh receiver relationship.
+
+### Anomalies and unverified behavior
+
+- Standard clicks đợi stable bị timeout dù button visible/enabled; hit-test reconciliation rồi guarded forced click mở control. Đây automation/actionability observation, chưa product defect.
+- Chưa xác minh saved Create, server rules, duplicate, owned Edit/Archive/Restore, profile persistence, PDS, offline hoặc relationship creation. Không reuse existing patient, gọi external PDS hoặc invent NHS/contact/address để vượt gate.
+
+## Mutation coverage
+
+| Workflow branch | Status | Reason if skipped | Validation / state observed | Persistence | Cleanup |
+|---|---|---|---|---|---|
+| Page search no-match / clear | Performed | — | Empty result rồi loaded root | Không saved mutation | N/A |
+| Filters open / Cancel | Performed | — | Drawer đóng, root restored | Chưa thử Save | Done |
+| Blank Create gate | Performed | — | Required message, disabled Create | Không submit | Done |
+| Invalid → valid owned draft | Performed | — | Name error hết, step gate mở | Draft only | Done |
+| Six-step draft map / discard | Performed | — | Form navigation, blank fresh reopen | Draft discard verified | Done |
+| Actions menu open / close | Performed | — | Labels mapped, không chọn item | Không saved mutation | Done |
+| Filters Save | Skipped | Breadth pass chỉ map/Cancel | Chưa đổi filter | No | N/A |
+| Saved Create | Skipped | OQ-065, safe fixture/cleanup chưa có | Client gate only | No | N/A |
+| Owned Edit Save / Cancel | Skipped | Cần saved owned patient | Chỉ thấy action | No | N/A |
+| Archive / Restore | Skipped | Cần saved owned patient và cleanup | Chỉ thấy Archive | No | N/A |
+| Profile / View handoff | Skipped | Không dùng existing patient làm fixture | Chỉ thấy menu | No | N/A |
+| View Audit | Skipped | Chưa có owned audit source | Chỉ thấy menu | No | N/A |
+| Offline workflow | Skipped | Chưa map scope/lifecycle | Labels only | No | N/A |
+| PDS Check | Skipped | External lookup/identity scope chưa rõ | Enabled sau valid draft | No | N/A |
+| Relationship add | Skipped | Chưa có owned source/target | Empty relationship state | No | N/A |
+
+- Branches exercised / found: **6/15**, bounded map; root/step views không tự tính thêm branch.
+- Dimensions: navigation `done`; main_workflow, branches_states, mutation, validation, persistence, errors_edge `partial`; relationships `none`. Persistence ở đây chỉ draft discard, không saved patient.
+
+## Automation guidance
+
+- Scope create form bằng heading `Create New Patient`, không tổng dialog count vì calendar có `Choose Date` dialog riêng. Step labels không có accessible tab name.
+- Chờ role visible, heading/result state và actual row presence; không hardcode một grid container hoặc lấy heading zero đang hydration làm empty-data proof.
+- Locator timeout không connector loss; sau partial script đọc lại state trước action tiếp. Header close phải scope riêng, không generic mọi xmark.
+- Automated assertions về tokenise/cap chỉ dùng trusted ticket basis bên dưới; autonomous observation không thêm requirement.
+
+## Provenance and gaps
+
+- Environment `dev`, role `Blinx Deployment`, observed `2026-10-22`; raw scoped form/menu snapshots và ledger ở `test-results/product-explore/auto-20261022-0236/`.
+- OQ-065 / `DEC-patient-fixture`: safe registration values, owned write effects và UI cleanup; tiếp main workflow khi dependency được cung cấp, không lặp pending branch.
+- Autonomous cleanup verified: owned draft discarded, fresh form blank; root không dialog/menu/filter drawer, không saved patient submit. Ticket/discovery checkpoint không đổi.
+
+## Super Admin GB breadth — 2026-10-22
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261022-1001/ledger.md#3–7`. Scope riêng với pass `Blinx Deployment` phía trên; không cộng coverage giữa role.
+
+### Entry và workflow
+
+- Sidebar `Patients` mở submenu `Patient Search` / `Care Navigation`; `Patient Search` tới `/paco/patient-search`, exact role verified tại destination header.
+- Root có page search, `Filters`, `Offline config`, `Create new patient`, patient grid và `Actions` column. Chỉ aggregate UI được kiểm, không chọn existing patient hoặc mở clinical data.
+- Synthetic no-match trả `Patient Search (0)` và 0 rows. Sau clear search trong cùng page, zero-result UI còn giữ khi Postcode draft tồn tại; reload khôi phục loaded rows. Không suy search-clear failure độc lập khỏi filter state.
+- `Filters` là complementary drawer, có Title, Age, Gender, Ethnicity, Country of Birth, Language, Postcode, Practice và `Clear all` / `Cancel` / `Save`.
+- Hai lần isolated từ fresh baseline: đổi Postcode bằng synthetic no-match rồi `Cancel`, drawer đóng nhưng root hiển thị 0 rows và reopen giữ Postcode. Không bấm `Save`; reload đưa Postcode về trống và khôi phục rows. Control `Cancel` không đổi field vẫn có rows nhưng heading count đổi; ý định `Cancel`, thời điểm áp dụng và count semantics chưa xác lập (OQ-067).
+
+### Safety, validation và persistence
+
+- Saved Create không chạy vì `DEC-patient-fixture` còn pending; không retry registration/PDS hoặc dùng existing patient làm fixture. `Offline config` và filter `Save` chưa exercise.
+- Không validation submit, saved patient mutation hoặc persisted business state. Chỉ transient search/filter state được đo; reload reset đã verified, không chứng minh server write footprint.
+- Cleanup `Done`: fresh reload, search trống, rows hiện, drawer đóng, header đúng role. Không tạo business record/leftover.
+
+### Cross-feature relationships
+
+- `Care Navigation` chỉ submenu label, chưa mở receiver; không saved patient source nên chưa có two-sided relationship. OQ-065 vẫn là fixture prerequisite.
+
+### Mutation coverage — current role
+
+| Workflow branch | Status | End state / reason | Validation / transition | Persistence | Cleanup |
+|---|---|---|---|---|---|
+| Root access và interaction map | Performed | Loaded grid, destination header verified | Controls mapped | Not Run | Done |
+| Synthetic no-match / reload restore | Performed | 0 rows; reload có rows | Empty / loaded | Transient reset only | Done |
+| Filters unchanged / Cancel | Performed | Drawer đóng, rows còn | Heading count đổi, cause Open | Not Run | Done |
+| Postcode edit / Cancel / reopen / reload | Performed | Zero result, draft retained; reload blank | Hai isolated inputs, no Save | Không giữ qua reload | Done |
+| Filters Save / Clear all apply | Skipped | Chưa map apply semantics; ưu tiên breadth | Not Run | No | N/A |
+| Saved patient lifecycle | Skipped | OQ-065 / `DEC-patient-fixture` pending | Không submit | No | N/A |
+| Offline workflow | Skipped | Scope/cleanup chưa map | Not Run | No | N/A |
+
+- **4/7 bounded branches**, `Partial (read-only)`; chưa enumerate row actions hoặc toàn bộ supported lifecycle cho role này. Không copy 6/15 coverage của role cũ.
+- Dimensions: navigation `done`; main_workflow, branches_states, persistence, errors_edge `partial`; mutation, validation, relationships `none`. Persistence chỉ filter reload reset.
+- Unexpected behavior `Observed / Open Question`, chưa product verdict hoặc nguyên nhân kỹ thuật. Console chỉ lỗi appointments 403 và asset 404, chưa liên hệ được với filter.
+- Automation guidance: chờ drawer animation settled trước footer click; locator timeout cần reconcile, không replay cả batch. Root loaded phải kiểm rows cùng header, không dùng count ngay sau navigation làm proof.
+
+## Offline entry attempt — 2026-10-22
+
+`[Observed: dev, intended Super Admin GB]` — `product-explore/auto-20261022-2011/ledger.md#5`.
+
+- Independent `Offline config` open/map/Cancel experiment chưa tới feature body: known Patient Search route chuyển tới OS role picker. Exact offered context được chọn, `Next` một lần vẫn ở picker, không alert; không retry Login/Next.
+- Actual `Super Admin GB` ở Connect trước navigation không xác lập OS destination auth/role. Current Patient Search access `Blocked` tại context prerequisite; historical verified root phía trên vẫn giữ provenance, không coi access đã reverified.
+- **0/1 bounded branch**, `Partial (read-only)`: offline open/map/close `Skipped`, result `Blocked`; validation/transitions/persistence `Not Run`, cleanup `N/A`. Không offline control click, patient selection, download, enable hoặc Save.
+- Không tạo record, new relationship hoặc mutation; saved-patient decision OQ-065 vẫn pending. Chỉ retry offline entry khi OS context prerequisite thay đổi.
+
+## Lịch sử ticket / feature-branch (2026-10-13)
+
+Các phần dưới mô tả scope read-only cũ, không phải safety policy cho autonomous hiện tại.
 
 ## Business context observed
 
@@ -108,3 +239,5 @@ Tổng hợp defects theo từng feature từ các ticket đã test; mỗi bulle
 - **`OQ-028`:** Dev data không có 2-word first name; TC-006 Skipped với reason (covered by Tony 15k prod sweep) `[Answered 2026-10-13]`
 - **`OQ-027`:** UI affordance cho total match = `Patient Search (N)` heading ở PDS page; `Results (50)` label ở top-bar dropdown (hai cách khác nhau) `[Answered 2026-10-13]`
 - **`OQ-026`:** Top-bar = global header search, không phải `Rocket Bar` desktop app launcher `[Answered 2026-10-13]`
+
+## Tester notes

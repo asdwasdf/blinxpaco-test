@@ -7,6 +7,7 @@ roles:
     map_last_built: null          # YYYY-MM-DD
     modules:
       - module: "<Module>"
+        tier: 7                     # 1 Patient … 5 Role Groups, 6 other operational, 7 Configuration/admin
         features:
           - feature: "<Feature>"
             entry: "<nav path>"
@@ -24,7 +25,17 @@ roles:
               persistence: none
               relationships: none
               errors_edge: none
-            blocker: null
+            coverage_note: null     # ≤2 short sentences, no timestamps; details in ledger
+            blocker: null           # ≤2 short sentences; shared-cause blockers link a decision id
+            decision: null          # e.g. DEC-shared-list-save
+    decisions:                      # grouped blockers needing tester authorization
+      - id: "DEC-<slug>"
+        question: "<one consolidated question>"
+        scope: whole-list           # owned-row | whole-list | unknown-scope
+        open_questions: []          # OQ ids sharing this root cause
+        affected: []                # features
+        status: pending             # pending | answered
+        answer: null                # tester answer + date + ledger ref
     frontier:                       # pending exploration targets
       - target: "<Module/Feature or branch>"
         reason: "<why>"
@@ -39,5 +50,5 @@ roles:
       used: { features: 0, minutes: 0, meaningful_states: 0 }
       current_target: null
       stage: done                   # mapping | exploring | cleanup | paused | done
-    runs: []                        # { run_id, date, features, outcome_path }
-    next_steps: []
+    runs: []                        # one line per run: { run_id, date, stage, progress, outcome_path }
+    next_steps: []                  # ≤5 items, ≤1 sentence each

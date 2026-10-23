@@ -112,4 +112,59 @@
 
 - `Analytics & Reports > Capacity & Demand` mở app `/capacity-demand/` với dữ liệu (tổng appointment booked, planned vs actual hours).
 
+## Super Admin GB date-filter persistence — 2026-10-22
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261022-1206/ledger.md#17–18`.
+
+- Known route `/capacity-demand/` có actual role header và `CLINICIAN CAPACITY`; aggregate cards populated. Không dùng metric values làm expected results.
+- `Date Range` từ `All Time` mở 20 presets. Calendar có hai tháng, `Cancel` và `Apply`; `Cancel` giữ `All Time` và đóng calendar.
+- Visible `This Month` → `Apply` đổi label; fresh reload giữ `This Month`. Chọn `All Time` → `Apply` rồi reload khôi phục baseline, calendar đóng. Đây là UI filter persistence; storage mechanism và metric recalculation chưa verified.
+- Current root có role selection, observation section, session filter, năm card info buttons và sáu charts; chưa exercise các nhánh này.
+- Execution: dùng visible controls, chờ settled actual header/date field; reconcile trước retry. Không dùng hướng dẫn force-hide overlay/dispatch lên hidden controls trong phần historical phía trên; các kỹ thuật và số liệu cũ chưa re-verify trong pass này.
+- Cross-feature relationships: chỉ same-feature filter state; không source/receiver effect hai phía.
+
+## Mutation coverage
+
+**4/9 bounded nhánh**, `Partial (read-only)`; denominator chỉ map current pass.
+
+| Branch | Exercised | Observed end state / reason | Persistence | Cleanup |
+|---|---|---|---|---|
+| Current-role root | Performed | Actual header, populated aggregate root | Reload baseline | Done |
+| Date presets / Cancel | Performed | 20 presets; calendar đóng, `All Time` giữ nguyên | UI readback | Done |
+| `This Month` / Apply | Performed | Selected label giữ sau reload | Reload | Done |
+| Restore `All Time` | Performed | Baseline giữ sau reload, 0 dialogs | Reload | Done |
+| Role selection | Skipped | Deferred sau date persistence | Chưa kiểm | N/A |
+| Observation selection | Skipped | Deferred sau date persistence | Chưa kiểm | N/A |
+| Session filter | Skipped | Deferred sau date persistence | Chưa kiểm | N/A |
+| Card info | Skipped | Visible controls, chưa mở | Chưa kiểm | N/A |
+| Chart tooltip | Skipped | Charts visible, chưa hover | Chưa kiểm | N/A |
+
+Validation/metric correctness chưa kiểm; transitions observed chỉ filter labels. Không business-record mutation, export/share hoặc browser-storage access; không tạo record, baseline đã restore.
+
+## Independent role/card pass — 2026-10-22
+
+`[Observed: dev, Super Admin GB]` — `product-explore/auto-20261022-2011/ledger.md#6–7`. Historical date pass **4/9** phía trên giữ riêng.
+
+- Actual destination header cần chờ shell settle; root có `All Time`, clinician-role chips và sáu card families. Role ở app khác không chứng minh access app này.
+- Exact visible `Doctor` click đổi child icon/text marker sang grey; outer chip class/style không phản ánh selected state. Từ observed grey state, click restore non-grey rồi reload giữ cùng color. Original child color chưa capture trước first click, nên không kết luận exact initial selection hoặc metric correctness.
+- Clinician card info mở bằng natural hover, không phải click trong pass này; hover heading dismiss. Help copy mô tả axes, clinical-role lines và loại session type `List`, không là trusted calculation rule.
+- `Sessions Selected` có DOM rect nhưng computed `visibility: hidden`; observation `Search observation` cũng hidden, scoped actionable `Open` không có. Không force-click, unhide, dispatch hoặc keyboard-select; historical hidden-control instructions không áp dụng cho pass hiện tại.
+- Natural chart-path hover bị background rect intercept; natural SVG hover không hiện tooltip. Tooltip interaction `Inconclusive`, chưa xác lập defect hoặc nguyên nhân.
+- Persistence chỉ UI marker retention sau reload; không validation submit, export, saved business mutation hoặc new two-sided relationship. Không record được tạo; exact original marker restoration chưa proven.
+
+### Mutation coverage — independent pass
+
+**2/5 bounded branches**, `Partial (read-only)`; không cộng denominator historical date pass.
+
+| Branch | Exercised | End state / reason | Persistence | Cleanup |
+|---|---|---|---|---|
+| Doctor toggle / restore | Performed | Grey rồi non-grey; exact original color chưa capture | Non-grey color retained sau reload | Done — no business record; initial marker equality unverified |
+| Clinician card info hover / dismiss | Performed | Tooltip hiện rồi đóng | Transient UI | Done |
+| Session filter open / close | Skipped | `Blocked`: control computed hidden; 0 clicks | Not Run | N/A |
+| Observation search / clear | Skipped | `Blocked`: hidden input, không naturally actionable opener | Not Run | N/A |
+| Chart tooltip | Skipped | `Inconclusive`: intercepted line hover, natural SVG hover không tooltip | Not Run | N/A |
+
+- Untested: metric correctness, role-selection semantics, changed preference persistence isolation, other info cards, observation/session selection, chart tooltip content. Dimensions: navigation `done`; main_workflow, branches_states, persistence, errors_edge `partial`; mutation/validation/relationships `none`.
+- Closure: `All Time`, non-grey Doctor marker, tooltip đóng; idle-session prompt giữ nguyên. URL/header check không chứng minh renewed session validity; auth preflight cần làm lại khi run sau bắt đầu.
+
 ## Tester notes
